@@ -355,6 +355,7 @@ class Database:
 
             # if fastStoreHudCache is true then the hudcache will be build using the limited configuration which ignores date, seats, and position
             self.build_full_hudcache = not self.import_options['fastStoreHudCache']
+            self.build_full_database = not self.import_options['liteMode']
 
             #self.hud_hero_style = 'T'  # Duplicate set of vars just for hero - not used yet.
             #self.hud_hero_hands = 2000 # Idea is that you might want all-time stats for others
@@ -1915,12 +1916,13 @@ class Database:
         if doinsert:
             self.appendSessionIds()
             self.updateTourneysSessions()
-            self.hbulk = [tuple([x for x in h[:-1]]) for h in self.hbulk]
-            q = self.sql.query['store_hand']
-            q = q.replace('%s', self.sql.query['placeholder'])
-            c = self.get_cursor()
-            c.executemany(q, self.hbulk)
-            self.commit()
+            if self.build_full_database:
+                self.hbulk = [tuple([x for x in h[:-1]]) for h in self.hbulk]
+                q = self.sql.query['store_hand']
+                q = q.replace('%s', self.sql.query['placeholder'])
+                c = self.get_cursor()
+                c.executemany(q, self.hbulk)
+                self.commit()
     
     def storeBoards(self, id, boards, doinsert):
         if boards: 

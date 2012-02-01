@@ -487,7 +487,7 @@ class Importer:
                 ####Lock Placeholder####
                 
                 for hand in phands:
-                    hand.assembleHand()
+                    hand.assembleHand(self.database)
                 
                 ####Lock Placeholder####
                 id = self.database.nextHandId()
