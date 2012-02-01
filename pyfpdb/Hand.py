@@ -283,6 +283,7 @@ class Hand(object):
                 self.hands['id'] = self.dbid_hands
                 next = id + db.hand_inc
         else:
+            self.hands['id'] = self.hands['siteHandNo']
             next = id
         return next
 
