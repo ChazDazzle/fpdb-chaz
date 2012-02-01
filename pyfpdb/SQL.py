@@ -1320,6 +1320,7 @@ class Sql:
                         activeSeats SMALLINT NOT NULL,
                         position CHAR(1),
                         tourneyTypeId SMALLINT UNSIGNED, FOREIGN KEY (tourneyTypeId) REFERENCES TourneyTypes(id),
+                        tourneyId INT UNSIGNED, FOREIGN KEY (tourneyId) REFERENCES Tourneys(id),
                         styleKey CHAR(7) NOT NULL,  /* 1st char is style (A/T/H/S), other 6 are the key */
                         HDs INT NOT NULL,
 
@@ -1435,6 +1436,7 @@ class Sql:
                         activeSeats SMALLINT,
                         position CHAR(1),
                         tourneyTypeId INT, FOREIGN KEY (tourneyTypeId) REFERENCES TourneyTypes(id),
+                        tourneyId INT, FOREIGN KEY (tourneyId) REFERENCES Tourneys(id),
                         styleKey CHAR(7) NOT NULL,  /* 1st char is style (A/T/H/S), other 6 are the key */
                         HDs INT,
 
@@ -1547,6 +1549,7 @@ class Sql:
                         activeSeats INT,
                         position TEXT,
                         tourneyTypeId INT,
+                        tourneyId INT,
                         styleKey TEXT NOT NULL,  /* 1st char is style (A/T/H/S), other 6 are the key */
                         HDs INT,
 
@@ -5543,6 +5546,7 @@ class Sql:
                 activeSeats,
                 position,
                 tourneyTypeId,
+                tourneyId,
                 styleKey,
                 HDs,
                 street0VPI,
@@ -5654,7 +5658,7 @@ class Sql:
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
-                    %s, %s)"""
+                    %s, %s, %s)"""
 
         self.query['update_hudcache'] = """
             UPDATE HudCache SET
@@ -5755,6 +5759,8 @@ class Sql:
             AND   position=%s
             AND   (case when tourneyTypeId is NULL then 1 else 
                    (case when tourneyTypeId+0=%s then 1 else 0 end) end)=1
+            AND   (case when tourneyId is NULL then 1 else 
+                   (case when tourneyId+0=%s then 1 else 0 end) end)=1
             AND   styleKey=%s"""
             
         self.query['get_hero_hudcache_start'] = """select min(hc.styleKey)
@@ -6550,9 +6556,19 @@ class Sql:
                                               VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         
+        self.query['getTourneyIdByTourneyNo'] = """SELECT t.id
+                                        FROM Tourneys t
+                                        WHERE t.tourneyTypeId=%s AND t.siteTourneyNo=%s
+        """
+        
         self.query['updateTourneyTypeId'] = """UPDATE Tourneys
                                             SET tourneyTypeId = %s
-                                            WHERE siteTourneyNo=%s
+                                            WHERE id=%s
+        """
+        
+        self.query['updateTourneyTypeIdHudCache'] = """UPDATE HudCache
+                                            SET tourneyTypeId = %s
+                                            WHERE tourneyId=%s
         """
         
         self.query['selectTourneyWithTypeId'] = """SELECT id 

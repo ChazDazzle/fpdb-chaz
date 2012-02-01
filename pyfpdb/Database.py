@@ -75,7 +75,7 @@ except ImportError:
     use_numpy = False
 
 
-DB_VERSION = 171
+DB_VERSION = 172
 
 
 # Variance created as sqlite has a bunch of undefined aggregate functions.
@@ -143,6 +143,7 @@ class Database:
                 , {'tab':'HudCache',        'col':'gametypeId',        'drop':1}
                 , {'tab':'HudCache',        'col':'playerId',          'drop':0}
                 , {'tab':'HudCache',        'col':'tourneyTypeId',     'drop':0}
+                , {'tab':'HudCache',        'col':'tourneyId',         'drop':0}
                 , {'tab':'GamesCache',      'col':'sessionId',         'drop':1}
                 , {'tab':'GamesCache',      'col':'gametypeId',        'drop':1}
                 , {'tab':'GamesCache',      'col':'playerId',          'drop':0}
@@ -178,6 +179,7 @@ class Database:
                 , {'tab':'HudCache',        'col':'gametypeId',        'drop':1}
                 , {'tab':'HudCache',        'col':'playerId',          'drop':0}
                 , {'tab':'HudCache',        'col':'tourneyTypeId',     'drop':0}
+                , {'tab':'HudCache',        'col':'tourneyId',         'drop':0}
                 , {'tab':'GamesCache',      'col':'sessionId',         'drop':1}
                 , {'tab':'GamesCache',      'col':'gametypeId',        'drop':1}
                 , {'tab':'GamesCache',      'col':'playerId',          'drop':0}
@@ -215,6 +217,7 @@ class Database:
                     , {'fktab':'HudCache',     'fkcol':'gametypeId',    'rtab':'Gametypes',     'rcol':'id', 'drop':1}
                     , {'fktab':'HudCache',     'fkcol':'playerId',      'rtab':'Players',       'rcol':'id', 'drop':0}
                     , {'fktab':'HudCache',     'fkcol':'tourneyTypeId', 'rtab':'TourneyTypes',  'rcol':'id', 'drop':1}
+                    , {'fktab':'HudCache',     'fkcol':'tourneyId',     'rtab':'Tourneys',      'rcol':'id', 'drop':1}
                     , {'fktab':'GamesCache',   'fkcol':'sessionId',     'rtab':'SessionsCache', 'rcol':'id', 'drop':1}
                     , {'fktab':'GamesCache',   'fkcol':'gametypeId',    'rtab':'Gametypes',     'rcol':'id', 'drop':1}
                     , {'fktab':'GamesCache',   'fkcol':'playerId',      'rtab':'Players',       'rcol':'id', 'drop':0}
@@ -239,6 +242,7 @@ class Database:
                     , {'fktab':'HudCache',     'fkcol':'gametypeId',    'rtab':'Gametypes',     'rcol':'id', 'drop':1}
                     , {'fktab':'HudCache',     'fkcol':'playerId',      'rtab':'Players',       'rcol':'id', 'drop':0}
                     , {'fktab':'HudCache',     'fkcol':'tourneyTypeId', 'rtab':'TourneyTypes',  'rcol':'id', 'drop':1}
+                    , {'fktab':'HudCache',     'fkcol':'tourneyId',     'rtab':'Tourneys',      'rcol':'id', 'drop':1}
                     , {'fktab':'GamesCache',   'fkcol':'sessionId',     'rtab':'SessionsCache', 'rcol':'id', 'drop':1}
                     , {'fktab':'GamesCache',   'fkcol':'gametypeId',    'rtab':'Gametypes',     'rcol':'id', 'drop':1}
                     , {'fktab':'GamesCache',   'fkcol':'playerId',      'rtab':'Players',       'rcol':'id', 'drop':0}
@@ -1519,8 +1523,19 @@ class Database:
         self.createAllForeignKeys()
     #end def rebuild_indexes
     
-    def replace_statscache(self, query):
+    def replace_statscache(self, type, query):
+        if type=='ring':
+            query = query.replace('<tourney_insert_clause>', "")
+            query = query.replace('<tourney_select_clause>', "")
+            query = query.replace('<tourney_join_clause>', "")
+            query = query.replace('<tourney_group_clause>', "")
         if self.build_full_hudcache:
+            if type=='tour':
+                query = query.replace('<tourney_insert_clause>', ",tourneyTypeId")
+                query = query.replace('<tourney_select_clause>', ",t.tourneyTypeId")
+                query = query.replace('<tourney_join_clause>', """INNER JOIN TourneysPlayers tp ON (tp.id = hp.tourneysPlayersId)
+                    INNER JOIN Tourneys t ON (t.id = tp.tourneyId)""")
+                query = rebuild_sql_tourney.replace('<tourney_group_clause>', ",t.tourneyTypeId")
             query = query.replace('<seat_num>', "h.seats as seat_num")
             query = query.replace('<hc_position>', """case when hp.position = 'B' then 'B'
                         when hp.position = 'S' then 'S'
@@ -1546,6 +1561,12 @@ class Database:
                 query = query.replace('<styleKey>', "date_format(h.startTime, 'd%y%m%d')")
                 query = query.replace('<styleKeyGroup>', ",date_format(h.startTime, 'd%y%m%d')")
         else:
+            if type=='tour':
+                query = query.replace('<tourney_insert_clause>', ",tourneyTypeId, tourneyId")
+                query = query.replace('<tourney_select_clause>', ",t.tourneyTypeId, t.id")
+                query = query.replace('<tourney_join_clause>', """INNER JOIN TourneysPlayers tp ON (tp.id = hp.tourneysPlayersId)
+                    INNER JOIN Tourneys t ON (t.id = tp.tourneyId)""")
+                query = query.replace('<tourney_group_clause>', ",t.tourneyTypeId,t.id")
             query = query.replace('<seat_num>', "'0' as seat_num")
             query = query.replace('<hc_position>', "'0' as hc_position")
             query = query.replace('<styleKey>', "'A000000' as styleKey")
@@ -1585,12 +1606,9 @@ class Database:
                         + "   or (    hp.playerId in " + str(tuple(self.hero_ids.values())) \
                         + "       and h.startTime > '" + h_start + "'))" \
                         + "   AND hp.tourneysPlayersId IS NULL)"
-            rebuild_sql_cash = self.sql.query['rebuildHudCache'].replace('<tourney_insert_clause>', "")
-            rebuild_sql_cash = rebuild_sql_cash.replace('<tourney_select_clause>', "")
-            rebuild_sql_cash = rebuild_sql_cash.replace('<tourney_join_clause>', "")
-            rebuild_sql_cash = rebuild_sql_cash.replace('<tourney_group_clause>', "")
+            rebuild_sql_cash = self.sql.query['rebuildHudCache']
             rebuild_sql_cash = rebuild_sql_cash.replace('<where_clause>', where)
-            rebuild_sql_cash = self.replace_statscache(rebuild_sql_cash)
+            rebuild_sql_cash = self.replace_statscache('ring', rebuild_sql_cash)
             if not ttid:
                 self.get_cursor().execute(self.sql.query['clearHudCache'])
                 self.get_cursor().execute(rebuild_sql_cash)
@@ -1606,13 +1624,9 @@ class Database:
                         + "   or (    hp.playerId in " + str(tuple(self.hero_ids.values())) \
                         + "       and h.startTime > '" + h_start + "'))" \
                         + "   AND hp.tourneysPlayersId >= 0)"
-            rebuild_sql_tourney = self.sql.query['rebuildHudCache'].replace('<tourney_insert_clause>', ",tourneyTypeId")
-            rebuild_sql_tourney = rebuild_sql_tourney.replace('<tourney_select_clause>', ",t.tourneyTypeId")
-            rebuild_sql_tourney = rebuild_sql_tourney.replace('<tourney_join_clause>', """INNER JOIN TourneysPlayers tp ON (tp.id = hp.tourneysPlayersId)
-                INNER JOIN Tourneys t ON (t.id = tp.tourneyId)""")
-            rebuild_sql_tourney = rebuild_sql_tourney.replace('<tourney_group_clause>', ",t.tourneyTypeId")
+            rebuild_sql_tourney = self.sql.query['rebuildHudCache']
             rebuild_sql_tourney = rebuild_sql_tourney.replace('<where_clause>', where)
-            rebuild_sql_tourney = self.replace_statscache(rebuild_sql_tourney)
+            rebuild_sql_tourney = self.replace_statscache('tour', rebuild_sql_tourney)
             self.get_cursor().execute(rebuild_sql_tourney)
             self.commit()
             #print _("Rebuild hudcache took %.1f seconds") % (time() - stime,)
@@ -2248,7 +2262,7 @@ class Database:
             
         return line
             
-    def storeHudCache(self, gid, pids, starttime, pdata, doinsert=False):
+    def storeHudCache(self, gid, pids, starttime, pdata, hdata, doinsert=False):
         update_hudcache = self.sql.query['update_hudcache']
         update_hudcache = update_hudcache.replace('%s', self.sql.query['placeholder'])
         insert_hudcache = self.sql.query['insert_hudcache']
@@ -2259,6 +2273,7 @@ class Database:
             seats = '0'
             position = '0'
             styleKey = 'A000000'
+            tourneyId = None
     
             if self.build_full_hudcache:
                 tz = datetime.utcnow() - datetime.today()
@@ -2269,6 +2284,9 @@ class Database:
                 starttime_offset = starttime - d
                 styleKey = datetime.strftime(starttime_offset, 'd%y%m%d')
                 seats = len(pids)
+            else:
+                if hdata['tourneyId']:
+                    tourneyId = hdata['tourneyId']
 
         for p in pdata:
             line = self.appendStats(pdata, p)
@@ -2280,6 +2298,7 @@ class Database:
                   ,seats
                   ,position
                   ,pdata[p]['tourneyTypeId']
+                  ,tourneyId
                   ,styleKey
                   )
             
@@ -2292,13 +2311,13 @@ class Database:
             inserts = []
             c = self.get_cursor()
             for k, line in self.hcbulk.iteritems():
-                row = line + [k[0], k[1], k[2], k[3], k[4], k[5]]
+                row = line + [j for j in k]
                 num = c.execute(update_hudcache, row)
                 # Try to do the update first. Do insert it did not work
                 if ((self.backend == self.PGSQL and c.statusmessage != "UPDATE 1")
                         or (self.backend == self.MYSQL_INNODB and num == 0)
                         or (self.backend == self.SQLITE and num.rowcount == 0)):
-                    inserts.append([k[0], k[1], k[2], k[3], k[4], k[5]] + line)
+                    inserts.append([n for n in k] + line)
                     #print "DEBUG: Successfully(?: %s) updated HudCacho using INSERT" % num
                 else:
                     #print "DEBUG: Successfully updated HudCacho using UPDATE"
@@ -2941,30 +2960,46 @@ class Database:
                 cursor.execute (self.sql.query['insertTourneyType'].replace('%s', self.sql.query['placeholder']), row)
                 ttid = self.get_last_insert_id(cursor)
             if updateDb:
+                q = self.sql.query['getTourneyIdByTourneyNo'].replace('%s', self.sql.query['placeholder'])
+                cursor.execute(q, (_ttid, obj.tourNo))
+                tmp=cursor.fetchone()
+                tid = tmp[0]
                 #print 'DEBUG createOrUpdateTourneyType:', 'old', _ttid, 'new', ttid, row
                 q = self.sql.query['updateTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
-                cursor.execute(q, (ttid, obj.tourNo))
-                self.ttclean.add(_ttid)
+                cursor.execute(q, (ttid, tid))
+                if self.build_full_hudcache:
+                    self.ttclean.add(_ttid)
+                else:
+                    q = self.sql.query['updateTourneyTypeIdHudCache'].replace('%s', self.sql.query['placeholder'])
+                    cursor.execute(q, (ttid, tid))
+                    select = self.sql.query['selectTourneyWithTypeId'].replace('%s', self.sql.query['placeholder'])
+                    delete = self.sql.query['deleteTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
+                    cursor.execute(select, (_ttid,))
+                    result=cursor.fetchone()
+                    if not result:
+                        cursor.execute(delete, (_ttid,))
+                        self.commit()
         return ttid
     
     def cleanUpTourneyTypes(self):
-        clear  = self.sql.query['clearHudCacheTourneyType'].replace('%s', self.sql.query['placeholder'])
-        select = self.sql.query['selectTourneyWithTypeId'].replace('%s', self.sql.query['placeholder'])
-        delete = self.sql.query['deleteTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
-        fetch  = self.sql.query['fetchNewTourneyTypeIds'].replace('%s', self.sql.query['placeholder'])
-        cursor = self.get_cursor()
-        for ttid in self.ttclean:
-            cursor.execute(clear, (ttid,))
-            self.commit()
-            cursor.execute(select, (ttid,))
-            result=cursor.fetchone()
-            if not result:
-                cursor.execute(delete, (ttid,))
+        if self.build_full_hudcache:
+            clear  = self.sql.query['clearHudCacheTourneyType'].replace('%s', self.sql.query['placeholder'])
+            select = self.sql.query['selectTourneyWithTypeId'].replace('%s', self.sql.query['placeholder'])
+            delete = self.sql.query['deleteTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
+            fetch  = self.sql.query['fetchNewTourneyTypeIds'].replace('%s', self.sql.query['placeholder'])
+            cursor = self.get_cursor()
+            for ttid in self.ttclean:
+                cursor.execute(clear, (ttid,))
                 self.commit()
-        if self.ttclean:
-            cursor.execute(fetch)
-            for id in cursor.fetchall():
-                self.rebuild_hudcache(None, None, id[0])
+                cursor.execute(select, (ttid,))
+                result=cursor.fetchone()
+                if not result:
+                    cursor.execute(delete, (ttid,))
+                    self.commit()
+            if self.ttclean:
+                cursor.execute(fetch)
+                for id in cursor.fetchall():
+                    self.rebuild_hudcache(None, None, id[0])
                 
     def resetttclean(self):
         self.ttclean = set()
