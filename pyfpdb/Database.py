@@ -1777,7 +1777,7 @@ class Database:
     def analyzeDB(self):
         """Do whatever the DB can offer to update index/table statistics"""
         stime = time()
-        if self.backend == self.MYSQL_INNODB:
+        if self.backend == self.MYSQL_INNODB or self.backend == self.SQLITE:
             try:
                 self.get_cursor().execute(self.sql.query['analyze'])
             except:
@@ -1797,7 +1797,7 @@ class Database:
     def vacuumDB(self):
         """Do whatever the DB can offer to update index/table statistics"""
         stime = time()
-        if self.backend == self.MYSQL_INNODB:
+        if self.backend == self.MYSQL_INNODB or self.backend == self.SQLITE:
             try:
                 self.get_cursor().execute(self.sql.query['vacuum'])
             except:
