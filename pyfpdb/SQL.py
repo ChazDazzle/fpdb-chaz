@@ -2345,7 +2345,52 @@ class Sql:
                         street3Raises INT,
                         street4Raises INT)
                         """
+                        
+        ################################
+        # Create WeeksCache
+        ################################
 
+        if db_server == 'mysql':
+            self.query['createWeeksCacheTable'] = """CREATE TABLE WeeksCache (
+                        id INT UNSIGNED AUTO_INCREMENT NOT NULL, PRIMARY KEY (id),
+                        weekStart DATETIME NOT NULL)
+                        ENGINE=INNODB
+                        """
+                        
+        elif db_server == 'postgresql':
+            self.query['createWeeksCacheTable'] = """CREATE TABLE WeeksCache (
+                        id SERIAL, PRIMARY KEY (id),
+                        weekStart timestamp without time zone NOT NULL)
+                        """
+                        
+        elif db_server == 'sqlite':
+            self.query['createWeeksCacheTable'] = """CREATE TABLE WeeksCache (
+                        id INTEGER PRIMARY KEY,
+                        weekStart timestamp NOT NULL)
+                        """
+                        
+        ################################
+        # Create MonthsCache
+        ################################
+
+        if db_server == 'mysql':
+            self.query['createMonthsCacheTable'] = """CREATE TABLE MonthsCache (
+                        id INT UNSIGNED AUTO_INCREMENT NOT NULL, PRIMARY KEY (id),
+                        monthStart DATETIME NOT NULL)
+                        ENGINE=INNODB
+                        """
+                        
+        elif db_server == 'postgresql':
+            self.query['createMonthsCacheTable'] = """CREATE TABLE MonthsCache (
+                        id SERIAL, PRIMARY KEY (id),
+                        monthStart timestamp without time zone NOT NULL)
+                        """
+                        
+        elif db_server == 'sqlite':
+            self.query['createMonthsCacheTable'] = """CREATE TABLE MonthsCache (
+                        id INTEGER PRIMARY KEY,
+                        monthStart timestamp NOT NULL)
+                        """
                         
         ################################
         # Create SessionsCache
@@ -2354,6 +2399,8 @@ class Sql:
         if db_server == 'mysql':
             self.query['createSessionsCacheTable'] = """CREATE TABLE SessionsCache (
                         id INT UNSIGNED AUTO_INCREMENT NOT NULL, PRIMARY KEY (id),
+                        weekId INT UNSIGNED, FOREIGN KEY (weekId) REFERENCES WeeksCache(id),
+                        monthId INT UNSIGNED, FOREIGN KEY (monthId) REFERENCES MonthsCache(id),
                         sessionStart DATETIME NOT NULL,
                         sessionEnd DATETIME NOT NULL)
                         ENGINE=INNODB
@@ -2362,6 +2409,8 @@ class Sql:
         elif db_server == 'postgresql':
             self.query['createSessionsCacheTable'] = """CREATE TABLE SessionsCache (
                         id SERIAL, PRIMARY KEY (id),
+                        weekId INT, FOREIGN KEY (weekId) REFERENCES WeeksCache(id),
+                        monthId INT, FOREIGN KEY (monthId) REFERENCES MonthsCache(id),
                         sessionStart timestamp without time zone NOT NULL,
                         sessionEnd timestamp without time zone NOT NULL)
                         """
@@ -2369,6 +2418,8 @@ class Sql:
         elif db_server == 'sqlite':
             self.query['createSessionsCacheTable'] = """CREATE TABLE SessionsCache (
                         id INTEGER PRIMARY KEY,
+                        weekId INT,
+                        monthId INT,
                         sessionStart timestamp NOT NULL,
                         sessionEnd timestamp NOT NULL)
                         """
@@ -2383,7 +2434,6 @@ class Sql:
                         sessionId INT UNSIGNED, FOREIGN KEY (sessionId) REFERENCES SessionsCache(id),
                         gameStart DATETIME NOT NULL,
                         gameEnd DATETIME NOT NULL,
-                        date CHAR(7) NOT NULL,  /* 1st char is style (A/T/H/S), other 6 are the key */
                         gametypeId SMALLINT UNSIGNED, FOREIGN KEY (gametypeId) REFERENCES Gametypes(id),
                         playerId INT UNSIGNED NOT NULL, FOREIGN KEY (playerId) REFERENCES Players(id),
                         played INT NOT NULL,
@@ -2402,7 +2452,6 @@ class Sql:
                         sessionId INT, FOREIGN KEY (sessionId) REFERENCES SessionsCache(id),
                         gameStart timestamp without time zone NOT NULL,
                         gameEnd timestamp without time zone NOT NULL,
-                        date CHAR(7) NOT NULL, /* 1st char is style (A/T/H/S), other 6 are the key */
                         gametypeId INT, FOREIGN KEY (gametypeId) REFERENCES Gametypes(id),
                         playerId INT, FOREIGN KEY (playerId) REFERENCES Players(id),
                         played INT,
@@ -2420,7 +2469,6 @@ class Sql:
                         sessionId INT,
                         gameStart timestamp NOT NULL,
                         gameEnd timestamp NOT NULL,
-                        date TEXT NOT NULL, /* 1st char is style (A/T/H/S), other 6 are the key */
                         gametypeId INT,
                         playerId INT,
                         played INT,
@@ -6229,9 +6277,13 @@ class Sql:
         self.query['clear_SC_T']  = """UPDATE Tourneys SET sessionId = NULL"""
         self.query['clear_SC_TP'] = """UPDATE TourneysPlayers SET startTime = NULL, endTime = NULL, played=0, hands=0"""
         self.query['clear_SC_GC'] = """UPDATE GamesCache SET sessionId = NULL"""
-        self.query['clearSessionsCache'] = """DELETE FROM SessionsCache WHERE 1"""
+        self.query['clear_WC_SC'] = """UPDATE SessionsCache SET weekId = NULL"""
+        self.query['clear_MC_SC'] = """UPDATE SessionsCache SET monthId = NULL"""
         self.query['clearGamesCache']    = """DELETE FROM GamesCache WHERE 1"""
-        self.query['update_RSC_H']        = """UPDATE Hands SET sessionId = %s, gameId = %s WHERE id = %s"""
+        self.query['clearSessionsCache'] = """DELETE FROM SessionsCache WHERE 1"""
+        self.query['clearWeeksCache']    = """DELETE FROM WeeksCache WHERE 1"""
+        self.query['clearMonthsCache']   = """DELETE FROM MonthsCache WHERE 1"""
+        self.query['update_RSC_H']       = """UPDATE Hands SET sessionId = %s, gameId = %s WHERE id = %s"""
         
         self.query['rebuildSessionsCache'] = """
                     SELECT Hands.id as id,
@@ -6261,12 +6313,28 @@ class Sql:
         ####################################
         
         self.query['select_SC'] = """
-                    SELECT id,
+                    SELECT SC.id as id,
                     sessionStart,
-                    sessionEnd
-                    FROM SessionsCache
+                    sessionEnd,
+                    weekStart,
+                    monthStart,
+                    weekId,
+                    monthId
+                    FROM SessionsCache SC
+                    INNER JOIN WeeksCache WC ON (SC.weekId = WC.id)
+                    INNER JOIN MonthsCache MC ON (SC.monthId = MC.id)
                     WHERE sessionEnd>=%s
                     AND sessionStart<=%s"""
+                    
+        self.query['select_WC'] = """
+                    SELECT id
+                    FROM WeeksCache
+                    WHERE weekStart = %s"""
+        
+        self.query['select_MC'] = """
+                    SELECT id
+                    FROM MonthsCache
+                    WHERE monthStart = %s"""
                     
         self.query['select_GC'] = """
                     SELECT id,
@@ -6283,26 +6351,36 @@ class Sql:
                     FROM GamesCache
                     WHERE gameEnd>=%s
                     AND gameStart<=%s
-                    AND date=%s
                     AND gametypeId=%s
                     AND playerId=%s"""
                     
         ####################################
         # insert
         ####################################
+        
+        self.query['insert_WC'] = """
+                    insert into WeeksCache (
+                    weekStart)
+                    values (%s)"""
+        
+        self.query['insert_MC'] = """
+                    insert into MonthsCache (
+                    monthStart)
+                    values (%s)"""
                             
         self.query['insert_SC'] = """
                     insert into SessionsCache (
+                    weekId,
+                    monthId,
                     sessionStart,
                     sessionEnd)
-                    values (%s, %s)"""
+                    values (%s, %s, %s, %s)"""
                             
         self.query['insert_GC'] = """
                     insert into GamesCache (
                     sessionId,
                     gameStart,
                     gameEnd,
-                    date,
                     gametypeId,
                     playerId,
                     played,
@@ -6312,15 +6390,23 @@ class Sql:
                     showdownWinnings,
                     nonShowdownWinnings,
                     allInEV)
-                    values (%s, %s, %s, %s, %s, %s, %s,
+                    values (%s, %s, %s, %s, %s, %s,
                             %s, %s, %s, %s, %s, %s)"""
                     
         ####################################
         # update
         ####################################
+        
+        self.query['update_WM_SC'] = """
+                    UPDATE SessionsCache SET
+                    weekId=%s,
+                    monthId=%s
+                    WHERE id=%s"""
                     
         self.query['update_SC'] = """
                     UPDATE SessionsCache SET 
+                    weekId=%s,
+                    monthId=%s,
                     sessionStart=%s,
                     sessionEnd=%s
                     WHERE id=%s"""
