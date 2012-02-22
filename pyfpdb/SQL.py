@@ -1315,7 +1315,7 @@ class Sql:
         if db_server == 'mysql':
             self.query['createHudCacheTable'] = """CREATE TABLE HudCache (
                         id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL, PRIMARY KEY (id),
-                        gametypeId SMALLINT UNSIGNED NOT NULL, FOREIGN KEY (gametypeId) REFERENCES Gametypes(id),
+                        gametypeId SMALLINT UNSIGNED, FOREIGN KEY (gametypeId) REFERENCES Gametypes(id),
                         playerId INT UNSIGNED NOT NULL, FOREIGN KEY (playerId) REFERENCES Players(id),
                         activeSeats SMALLINT NOT NULL,
                         position CHAR(1),
@@ -5801,15 +5801,7 @@ class Sql:
             street2Raises=street2Raises+%s,
             street3Raises=street3Raises+%s,
             street4Raises=street4Raises+%s
-        WHERE gametypeId+0=%s
-            AND   playerId=%s
-            AND   activeSeats=%s
-            AND   position=%s
-            AND   (case when tourneyTypeId is NULL then 1 else 
-                   (case when tourneyTypeId+0=%s then 1 else 0 end) end)=1
-            AND   (case when tourneyId is NULL then 1 else 
-                   (case when tourneyId+0=%s then 1 else 0 end) end)=1
-            AND   styleKey=%s"""
+        WHERE <where_clause>"""
             
         self.query['get_hero_hudcache_start'] = """select min(hc.styleKey)
                                                    from HudCache hc

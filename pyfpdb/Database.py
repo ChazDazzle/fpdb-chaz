@@ -2349,20 +2349,30 @@ class Database:
             else:
                 if hdata['tourneyId']:
                     tourneyId = hdata['tourneyId']
+                    gid = None
 
         for p in pdata:
             line = self.appendStats(pdata, p)
             if self.build_full_hudcache:
                 pos = {'B':'B', 'S':'S', 0:'D', 1:'C', 2:'M', 3:'M', 4:'M', 5:'E', 6:'E', 7:'E', 8:'E', 9:'E' }
                 position = pos[pdata[p]['position']]
-            k   = (gid
-                  ,pids[p]
-                  ,seats
-                  ,position
-                  ,pdata[p]['tourneyTypeId']
-                  ,tourneyId
-                  ,styleKey
-                  )
+                k   = (gid
+                      ,pids[p]
+                      ,seats
+                      ,position
+                      ,pdata[p]['tourneyTypeId']
+                      ,tourneyId
+                      ,styleKey
+                      )
+            elif tourneyId:
+                k = (pids[p]
+                    ,pdata[p]['tourneyTypeId']
+                    ,tourneyId
+                    )
+            else:
+                k = (gid
+                    ,pids[p]
+                    )
             
             if k in self.hcbulk:
                 self.hcbulk[k] = [sum(l) for l in zip(self.hcbulk[k], line)]
@@ -2374,11 +2384,36 @@ class Database:
             c = self.get_cursor()
             for k, line in self.hcbulk.iteritems():
                 row = line + [j for j in k]
+                if self.build_full_hudcache:
+                    where = """gametypeId+0=%s
+                            AND   playerId=%s
+                            AND   activeSeats=%s
+                            AND   position=%s
+                            AND   (case when tourneyTypeId is NULL then 1 else 
+                                   (case when tourneyTypeId+0=%s then 1 else 0 end) end)=1
+                            AND   (case when tourneyId is NULL then 1 else 
+                                   (case when tourneyId+0=%s then 1 else 0 end) end)=1
+                            AND   styleKey=%s"""
+                elif len(k)==3:
+                    where = """gametypeId is NULL
+                                AND playerId=%s
+                                AND tourneyTypeId=%s
+                                AND tourneyId=%s"""
+                else:
+                    where = """gametypeId is not NULL
+                             AND   gametypeId=%s
+                             AND   playerId=%s"""
+
+                update_hudcache = update_hudcache.replace('<where_clause>', where)
                 num = c.execute(update_hudcache, row)
                 # Try to do the update first. Do insert it did not work
                 if ((self.backend == self.PGSQL and c.statusmessage != "UPDATE 1")
                         or (self.backend == self.MYSQL_INNODB and num == 0)
                         or (self.backend == self.SQLITE and num.rowcount == 0)):
+                    if len(k)==3:
+                        k = (None, k[0], '0', '0', k[1], k[2], 'A000000')
+                    elif len(k)==2:
+                        k = (k[0], k[1], '0', '0', None, None, 'A000000')
                     inserts.append([n for n in k] + line)
                     #print "DEBUG: Successfully(?: %s) updated HudCacho using INSERT" % num
                 else:
