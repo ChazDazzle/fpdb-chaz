@@ -6639,15 +6639,9 @@ class Sql:
                                         WHERE t.tourneyTypeId=%s AND t.siteTourneyNo=%s
         """
         
-        self.query['updateTourneyTypeId'] = """UPDATE Tourneys
-                                            SET tourneyTypeId = %s
-                                            WHERE id=%s
-        """
+        self.query['updateTourneyTypeId'] = """UPDATE Tourneys SET tourneyTypeId = %s WHERE id=%s"""
         
-        self.query['updateTourneyTypeIdHudCache'] = """UPDATE HudCache
-                                            SET tourneyTypeId = %s
-                                            WHERE tourneyId=%s
-        """
+        self.query['updateTourneyTypeIdHudCache'] = """UPDATE HudCache SET tourneyTypeId = %s  WHERE tourneyId=%s"""
         
         self.query['selectTourneyWithTypeId'] = """SELECT id 
                                                 FROM Tourneys
@@ -6655,11 +6649,6 @@ class Sql:
         """
         
         self.query['deleteTourneyTypeId'] = """DELETE FROM TourneyTypes WHERE id = %s
-        """
-        
-        self.query['updateTourneyTypeId'] = """UPDATE Tourneys
-                                            SET tourneyTypeId = %s
-                                            WHERE siteTourneyNo=%s
         """
         
         self.query['fetchNewTourneyTypeIds'] = """SELECT TT.id
