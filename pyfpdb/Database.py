@@ -2404,8 +2404,8 @@ class Database:
                              AND   gametypeId=%s
                              AND   playerId=%s"""
 
-                update_hudcache = update_hudcache.replace('<where_clause>', where)
-                num = c.execute(update_hudcache, row)
+                q = update_hudcache.replace('<where_clause>', where)
+                num = c.execute(q, row)
                 # Try to do the update first. Do insert it did not work
                 if ((self.backend == self.PGSQL and c.statusmessage != "UPDATE 1")
                         or (self.backend == self.MYSQL_INNODB and num == 0)
@@ -3107,13 +3107,13 @@ class Database:
                     q = self.sql.query['updateTourneyTypeIdHudCache'].replace('%s', self.sql.query['placeholder'])
                     cursor.execute(q, (ttid, tid))
                     self.commit()
-                    #select = self.sql.query['selectTourneyWithTypeId'].replace('%s', self.sql.query['placeholder'])
-                    #delete = self.sql.query['deleteTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
-                    #cursor.execute(select, (_ttid,))
-                    #result=cursor.fetchone()
-                    #if not result:
-                    #    cursor.execute(delete, (_ttid,))
-                    #    self.commit()
+                    select = self.sql.query['selectTourneyWithTypeId'].replace('%s', self.sql.query['placeholder'])
+                    delete = self.sql.query['deleteTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
+                    cursor.execute(select, (_ttid,))
+                    result=cursor.fetchone()
+                    if not result:
+                        cursor.execute(delete, (_ttid,))
+                        self.commit()
         return ttid
     
     def cleanUpTourneyTypes(self):
