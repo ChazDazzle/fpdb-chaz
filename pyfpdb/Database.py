@@ -3106,13 +3106,14 @@ class Database:
                 else:
                     q = self.sql.query['updateTourneyTypeIdHudCache'].replace('%s', self.sql.query['placeholder'])
                     cursor.execute(q, (ttid, tid))
-                    select = self.sql.query['selectTourneyWithTypeId'].replace('%s', self.sql.query['placeholder'])
-                    delete = self.sql.query['deleteTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
-                    cursor.execute(select, (_ttid,))
-                    result=cursor.fetchone()
-                    if not result:
-                        cursor.execute(delete, (_ttid,))
-                        self.commit()
+                    self.commit()
+                    #select = self.sql.query['selectTourneyWithTypeId'].replace('%s', self.sql.query['placeholder'])
+                    #delete = self.sql.query['deleteTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
+                    #cursor.execute(select, (_ttid,))
+                    #result=cursor.fetchone()
+                    #if not result:
+                    #    cursor.execute(delete, (_ttid,))
+                    #    self.commit()
         return ttid
     
     def cleanUpTourneyTypes(self):
