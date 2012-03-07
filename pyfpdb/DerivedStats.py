@@ -245,9 +245,9 @@ class DerivedStats():
                 self.handsplayers[player]['wonAtSD'] = 1.0
 
         for player in hand.pot.committed:
-            self.handsplayers[player]['totalProfit'] = int(self.handsplayers[player]['winnings'] - (100*hand.pot.committed[player])- (100*hand.pot.common[player]))
-            if hand.gametype['type'] == 'ring' and pokereval:
-                self.handsplayers[player]['allInEV'] = self.handsplayers[player]['totalProfit']
+            profit = int(self.handsplayers[player]['winnings'] - (100*hand.pot.committed[player])- (100*hand.pot.common[player]))
+            self.handsplayers[player]['totalProfit'] = profit
+            self.handsplayers[player]['allInEV']     = profit
 
         self.calcCBets(hand)
 
