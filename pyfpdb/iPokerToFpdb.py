@@ -68,20 +68,20 @@ class iPoker(HandHistoryConverter):
     # Static regexes
     re_SplitHands = re.compile(r'</game>')
     re_TailSplitHands = re.compile(r'(</game>)')
-    re_GameInfo = re.compile(r"""
+    re_GameInfo = re.compile(r"""(?P<HEAD>
             <gametype>(?P<GAME>(5|7)\sCard\sStud\sL|Holdem\s(NL|SL|L)|Omaha\sPL|Omaha\sL)(\s(%(LS)s)?(?P<SB>[%(NUM)s]+)/(%(LS)s)?(?P<BB>[%(NUM)s]+))?</gametype>\s+?
             <tablename>(?P<TABLE>.+)?</tablename>\s+?
             <duration>.+</duration>\s+?
             <gamecount>.+</gamecount>\s+?
             <startdate>.+</startdate>\s+?
-            <currency>(?P<CURRENCY>.+)?</currency>
+            <currency>(?P<CURRENCY>.+)?</currency>)
             """ % substitutions, re.MULTILINE|re.VERBOSE)
-    re_GameInfoTrny = re.compile(r"""
+    re_GameInfoTrny = re.compile(r"""(?P<HEAD>
                 <tournamentname>.+?<place>(?P<PLACE>.+?)</place>
                 <buyin>(?P<BUYIN>(?P<BIAMT>.+?)(\+(?P<BIRAKE>.+?))?)</buyin>\s+?
                 <totalbuyin>(?P<TOTBUYIN>.+)</totalbuyin>\s+?
                 <ipoints>.+?</ipoints>\s+?
-                <win>(%(LS)s)?(?P<WIN>([%(NUM)s]+)|.+?)</win>
+                <win>(%(LS)s)?(?P<WIN>([%(NUM)s]+)|.+?)</win>\s+?)
             """ % substitutions, re.MULTILINE|re.VERBOSE)
     re_TotalBuyin  = re.compile(r"""(?P<BUYIN>(?P<BIAMT>[%(LS)s%(NUM)s]+)\s\+\s?(?P<BIRAKE>[%(LS)s%(NUM)s]+)?)""" % substitutions, re.MULTILINE|re.VERBOSE)
     re_HandInfo = re.compile(r'code="(?P<HID>[0-9]+)">\s+<general>\s+<startdate>(?P<DATETIME>[-/: 0-9]+)</startdate>', re.MULTILINE)
@@ -168,6 +168,7 @@ class iPoker(HandHistoryConverter):
             if not mg['SB']: tourney = True
         if 'BB' in mg:
             self.info['bb'] = self.clearMoneyString(mg['BB'])
+        self.header = mg['HEAD']
 
         if tourney:
             self.info['type'] = 'tour'
@@ -187,6 +188,7 @@ class iPoker(HandHistoryConverter):
             m2 = self.re_GameInfoTrny.search(handText)
             if m2:
                 mg =  m2.groupdict()
+                self.header = self.header + mg['HEAD']
                 if not mg['BIRAKE'] and mg['TOTBUYIN']:
                     m3 = self.re_TotalBuyin.search(mg['TOTBUYIN'])
                     if m3:

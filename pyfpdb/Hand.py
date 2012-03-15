@@ -269,23 +269,18 @@ class Hand(object):
         self.stats.getStats(self)
         self.hands = self.stats.getHands()
         self.handsplayers = self.stats.getHandsPlayers()
-        if db.build_full_database:
-            self.handsstove = self.stats.getHandsStove()
+        self.handsstove = self.stats.getHandsStove()
         
     def getHandId(self, db, id):
-        if db.build_full_database: 
-            if db.isDuplicate(self.dbid_gt, self.hands['siteHandNo']):
-                #log.info(_("Hand.insert(): hid #: %s is a duplicate") % hh['siteHandNo'])
-                self.is_duplicate = True  # i.e. don't update hudcache
-                next = id
-                raise FpdbHandDuplicate(self.hands['siteHandNo'])
-            else:
-                self.dbid_hands = id
-                self.hands['id'] = self.dbid_hands
-                next = id + db.hand_inc
-        else:
-            self.hands['id'] = self.hands['siteHandNo']
+        if db.isDuplicate(self.dbid_gt, self.hands['siteHandNo']):
+            #log.info(_("Hand.insert(): hid #: %s is a duplicate") % hh['siteHandNo'])
+            self.is_duplicate = True  # i.e. don't update hudcache
             next = id
+            raise FpdbHandDuplicate(self.hands['siteHandNo'])
+        else:
+            self.dbid_hands = id
+            self.hands['id'] = self.dbid_hands
+            next = id + db.hand_inc
         return next
 
     def insertHands(self, db, fileId, doinsert = False, printtest = False):
@@ -296,30 +291,26 @@ class Hand(object):
         self.hands['seats']      = len(self.dbid_pids)
         self.hands['fileId']     = fileId
         db.storeHand(self.hands, doinsert, printtest)
-        if db.build_full_database:
-            db.storeBoards(self.dbid_hands, self.hands['boards'], doinsert)
+        db.storeBoards(self.dbid_hands, self.hands['boards'], doinsert)
 
     def insertHandsPlayers(self, db, doinsert = False, printtest = False):
         """ Function to inserts HandsPlayers into database"""
-        if db.build_full_database:
-            db.storeHandsPlayers(self.dbid_hands, self.dbid_pids, self.handsplayers, self.tourneyId, doinsert, printtest)
+        db.storeHandsPlayers(self.dbid_hands, self.dbid_pids, self.handsplayers, self.tourneyId, doinsert, printtest)
     
     def insertHandsActions(self, db, doinsert = False, printtest = False):
         """ Function to inserts HandsActions into database"""
-        if db.build_full_database:
-            handsactions = self.stats.getHandsActions()
-            db.storeHandsActions(self.dbid_hands, self.dbid_pids, handsactions, doinsert, printtest)
+        handsactions = self.stats.getHandsActions()
+        db.storeHandsActions(self.dbid_hands, self.dbid_pids, handsactions, doinsert, printtest)
     
     def insertHandsStove(self, db, doinsert = False):
         """ Function to inserts HandsStove into database"""
-        if db.build_full_database:
-            if self.handsstove:
-                for hs in self.handsstove: hs[0] = self.dbid_hands
-            db.storeHandsStove(self.handsstove, doinsert)
+        if self.handsstove:
+            for hs in self.handsstove: hs[0] = self.dbid_hands
+        db.storeHandsStove(self.handsstove, doinsert)
 
     def updateHudCache(self, db, doinsert = False):
         """ Function to update the HudCache"""
-        if self.callHud and db.build_full_hudcache:
+        if self.callHud:
             db.storeHudCache(self.dbid_gt, self.dbid_pids, self.startTime, self.handsplayers, self.hands, doinsert)
         
     def updateSessionsCache(self, db, tz, doinsert = False):
@@ -331,21 +322,21 @@ class Hand(object):
                 
             db.storeSessionsCache(self.dbid_hands, self.dbid_pids, self.startTime, heroes, tz, doinsert) 
             db.storeCashCache(self.dbid_hands, self.dbid_pids, self.startTime, self.dbid_gt, self.gametype, self.handsplayers, heroes, self.hero, doinsert)
-            db.storeTourCache(self.dbid_hands, self.dbid_pids, self.tourneyId, self.startTime, self.gametype, self.handsplayers, heroes, self.hero, doinsert)
+            db.storeTourCache(self.dbid_hands, self.dbid_pids, self.startTime, self.tourneyId, self.gametype, self.handsplayers, heroes, self.hero, doinsert)
             
-    def updateCardsCache(self, db, doinsert = False):
+    def updateCardsCache(self, db, tz, doinsert = False):
         """ Function to update the HandsCache"""
         heroes = []
         if self.hero in self.dbid_pids: 
             heroes = [self.dbid_pids[self.hero]]
-        db.storeCardsCache(self.gametype, self.startTime, self.dbid_pids, self.dbid_gt, self.tourneyTypeId, heroes, self.handsplayers, doinsert)
+        db.storeCardsCache(self.dbid_hands, self.dbid_pids, self.startTime, self.dbid_gt, self.tourneyTypeId, self.gametype, self.handsplayers, heroes, tz, doinsert)
                 
-    def updatePositionsCache(self, db, doinsert = False):
+    def updatePositionsCache(self, db, tz, doinsert = False):
         """ Function to update the PositionsCache"""
         heroes = []
         if self.hero in self.dbid_pids: 
             heroes = [self.dbid_pids[self.hero]]
-        db.storePositionsCache(self.gametype, self.startTime, self.dbid_pids, self.dbid_gt, self.tourneyTypeId, heroes, self.handsplayers, doinsert)
+        db.storePositionsCache(self.dbid_hands, self.dbid_pids, self.startTime, self.dbid_gt, self.tourneyTypeId, self.gametype, self.handsplayers, heroes, tz, doinsert)
 
     def select(self, db, handId):
         """ Function to create Hand object from database """

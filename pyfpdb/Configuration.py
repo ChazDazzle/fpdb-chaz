@@ -527,6 +527,7 @@ class Import:
         self.sessionTimeout     = string_to_bool(node.getAttribute("sessionTimeout")    , default=30)
         self.ResultsDirectory   = node.getAttribute("ResultsDirectory")
         self.hhBulkPath         = node.getAttribute("hhBulkPath")
+        self.archivePath         = node.getAttribute("archivePath")
         self.saveActions        = string_to_bool(node.getAttribute("saveActions")      , default=False)
         self.cacheSessions      = string_to_bool(node.getAttribute("cacheSessions")    , default=False)
         self.callFpdbHud        = string_to_bool(node.getAttribute("callFpdbHud")      , default=False)
@@ -1327,6 +1328,11 @@ class Config:
             imp['ResultsDirectory']    = self.imp.ResultsDirectory
         else:
             imp['ResultsDirectory']    = "~/.fpdb/Results/"
+            
+        if self.imp.archivePath != '':
+            imp['archivePath']    = self.imp.archivePath
+        else:
+            imp['archivePath']    = "~/.fpdb/Archive/"
 
         # hhBulkPath is the default location for bulk imports (if set)
         try:    imp['hhBulkPath']    = self.imp.hhBulkPath

@@ -35,7 +35,7 @@ class Microgaming(HandHistoryConverter):
     siteId   = 20
 
     # Static regexes
-    re_GameInfo     = re.compile("""id="(?P<HID>[0-9]+)"\s
+    re_GameInfo     = re.compile("""(?P<HEAD>id="(?P<HID>[0-9]+)"\s
                                     date="(?P<DATETIME>[-:\d\s]+)"\s
                                     unicodetablename=".+"\s
                                     tablename="(?P<TABLE>.+)"\s
@@ -44,7 +44,7 @@ class Microgaming(HandHistoryConverter):
                                     tabletype="Cash\sGame"\s
                                     gametypeid="1"\sgametype="(?P<GAME>[a-zA-Z\&;]+)"\s
                                     realmoney="true"\scurrencysymbol="(?P<CURRENCY>[A-Za-z=]+)"\s
-                                    playerseat="\d+"\sbetamount="\d+"\sistournament="\d+"\srake="\d+">
+                                    playerseat="\d+"\sbetamount="\d+"\sistournament="\d+"\srake="\d+">)
                                     """, re.MULTILINE| re.VERBOSE)
     re_SplitHands   = re.compile('\n*----.+.DAT----\n*')
     re_Button       = re.compile('<ACTION TYPE="HAND_DEAL" PLAYER="(?P<BUTTON>[^"]+)">\n<CARD LINK="[0-9b]+"></CARD>\n<CARD LINK="[0-9b]+"></CARD></ACTION>\n<ACTION TYPE="ACTION_', re.MULTILINE)
@@ -130,6 +130,7 @@ class Microgaming(HandHistoryConverter):
                 info['currency'] = 'EUR'
             else:
                 info['currency'] = 'USD'
+        self.header = mg['HEAD']
         # NB: SB, BB must be interpreted as blinds or bets depending on limit type.
         return info
 
