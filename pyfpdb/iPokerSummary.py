@@ -123,7 +123,6 @@ class iPokerSummary(TourneySummary):
                 self.prizepool = None
                 self.entries   = None
                 
-                
                 if mg2['CURRENCY']:
                     self.currency = self.currencies[mg2['CURRENCY']]
                 rank = mg2['PLACE']

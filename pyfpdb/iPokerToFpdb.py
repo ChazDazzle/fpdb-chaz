@@ -404,9 +404,9 @@ class iPoker(HandHistoryConverter):
                 cards = found.group('CARDS').split(' ')
                 if street == 'SEVENTH' and self.hero != player:
                     newcards = []
-                    oldcards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in cards] #[c[1:].replace('10', 'T') + c[0].lower() for c in cards if c != 'X']
+                    oldcards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in cards]
                 else:
-                    newcards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in cards] #[c[1:].replace('10', 'T') + c[0].lower() for c in cards if c != 'X']
+                    newcards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in cards]
                     oldcards = []
                 
                 if street == 'THIRD' and len(newcards) == 3 and self.hero == player: # hero in stud game
