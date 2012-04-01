@@ -221,7 +221,7 @@ class PokerStars(HandHistoryConverter):
             info['zoom'] = True
         else:
             info['zoom'] = False
-        if 'CAP' in mg and mg['CAP'] is None:
+        if 'CAP' in mg and mg['CAP'] is not None:
             info['cap'] = True
         else:
             info['cap'] = False
