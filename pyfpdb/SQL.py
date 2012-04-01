@@ -253,7 +253,9 @@ class Sql:
                         smallBet int NOT NULL,
                         bigBet int NOT NULL,
                         maxSeats TINYINT NOT NULL,
-                        ante INT NOT NULL)
+                        ante INT NOT NULL,
+                        cap BOOLEAN,
+                        zoom BOOLEAN)
                         ENGINE=INNODB"""
         elif db_server == 'postgresql':
             self.query['createGametypesTable'] = """CREATE TABLE Gametypes (
@@ -271,7 +273,9 @@ class Sql:
                         smallBet int NOT NULL,
                         bigBet int NOT NULL,
                         maxSeats SMALLINT NOT NULL,
-                        ante INT NOT NULL)"""
+                        ante INT NOT NULL,
+                        cap BOOLEAN,
+                        zoom BOOLEAN)"""
         elif db_server == 'sqlite':
             self.query['createGametypesTable'] = """CREATE TABLE Gametypes (
                         id INTEGER PRIMARY KEY NOT NULL,
@@ -289,6 +293,8 @@ class Sql:
                         bigBet INTEGER NOT NULL,
                         maxSeats INT NOT NULL,
                         ante INT NOT NULL,
+                        cap BOOLEAN,
+                        zoom BOOLEAN,
                         FOREIGN KEY(siteId) REFERENCES Sites(id) ON DELETE CASCADE)"""
 
 
@@ -372,7 +378,6 @@ class Sql:
                             startTime DATETIME NOT NULL,
                             importTime DATETIME NOT NULL,
                             seats TINYINT NOT NULL,
-                            rush BOOLEAN,
                             boardcard1 smallint,  /* 0=none, 1-13=2-Ah 14-26=2-Ad 27-39=2-Ac 40-52=2-As */
                             boardcard2 smallint,
                             boardcard3 smallint,
@@ -412,7 +417,6 @@ class Sql:
                             startTime timestamp without time zone NOT NULL,
                             importTime timestamp without time zone NOT NULL,
                             seats SMALLINT NOT NULL,
-                            rush BOOLEAN,
                             boardcard1 smallint,  /* 0=none, 1-13=2-Ah 14-26=2-Ad 27-39=2-Ac 40-52=2-As */
                             boardcard2 smallint,
                             boardcard3 smallint,
@@ -451,7 +455,6 @@ class Sql:
                             startTime REAL NOT NULL,
                             importTime REAL NOT NULL,
                             seats INT NOT NULL,
-                            rush BOOLEAN,
                             boardcard1 INT,  /* 0=none, 1-13=2-Ah 14-26=2-Ad 27-39=2-Ac 40-52=2-As */
                             boardcard2 INT,
                             boardcard3 INT,
@@ -543,6 +546,7 @@ class Sql:
                         speed varchar(10),
                         shootout BOOLEAN,
                         matrix BOOLEAN,
+                        zoom BOOLEAN,
                         sng BOOLEAN,
                         satellite BOOLEAN,
                         doubleOrNothing BOOLEAN,
@@ -574,6 +578,7 @@ class Sql:
                         speed varchar(10),
                         shootout BOOLEAN,
                         matrix BOOLEAN,
+                        zoom BOOLEAN,
                         sng BOOLEAN,
                         satellite BOOLEAN,
                         doubleOrNothing BOOLEAN,
@@ -604,6 +609,7 @@ class Sql:
                         speed TEXT,
                         shootout BOOLEAN,
                         matrix BOOLEAN,
+                        zoom BOOLEAN,
                         sng BOOLEAN,
                         satellite BOOLEAN,
                         doubleOrNothing BOOLEAN,
@@ -6489,12 +6495,14 @@ class Sql:
                                            AND   bigBlind=%s
                                            AND   maxSeats=%s
                                            AND   ante=%s
+                                           AND   cap=%s
+                                           AND   zoom=%s
         """ #TODO: seems odd to have limitType variable in this query
 
         self.query['insertGameTypes'] = """INSERT INTO Gametypes
-                                              (siteId, currency, type, base, category, limitType
-                                              ,hiLo, mix, smallBlind, bigBlind, smallBet, bigBet, maxSeats, ante)
-                                           VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                                              (siteId, currency, type, base, category, limitType, hiLo, mix, 
+                                               smallBlind, bigBlind, smallBet, bigBet, maxSeats, ante, cap, zoom)
+                                           VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
 
         self.query['isAlreadyInDB'] = """SELECT id FROM Hands 
                                          WHERE gametypeId=%s AND siteHandNo=%s
@@ -6517,7 +6525,8 @@ class Sql:
                                                               tt.addOnCost,
                                                               tt.speed,
                                                               tt.shootout,
-                                                              tt.matrix
+                                                              tt.matrix,
+                                                              tt.zoom
                                                     FROM TourneyTypes tt 
                                                     INNER JOIN Tourneys t ON (t.tourneyTypeId = tt.id) 
                                                     WHERE t.siteTourneyNo=%s AND tt.siteId=%s
@@ -6542,12 +6551,13 @@ class Sql:
                                             AND speed=%s
                                             AND shootout=%s
                                             AND matrix=%s
+                                            AND zoom=%s
         """
 
         self.query['insertTourneyType'] = """INSERT INTO TourneyTypes
                                                   (siteId, currency, buyin, fee, category, limitType, maxSeats, sng, knockout, koBounty,
-                                                   rebuy, rebuyCost, addOn, addOnCost, speed, shootout, matrix)
-                                              VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                                   rebuy, rebuyCost, addOn, addOnCost, speed, shootout, matrix, zoom)
+                                              VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         
         self.query['updateTourneyTypeId'] = """UPDATE Tourneys

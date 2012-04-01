@@ -2829,11 +2829,12 @@ class Database:
             
         gtinfo = (siteid, game['type'], game['category'], game['limitType'], game['currency'],
                   game['mix'], int(Decimal(game['sb'])*100), int(Decimal(game['bb'])*100),
-                  game['maxSeats'], int(game['ante']*100))
+                  game['maxSeats'], int(game['ante']*100), game['cap'], game['zoom'])
         
         gtinsert = (siteid, game['currency'], game['type'], game['base'], game['category'], game['limitType'], hilo,
                     game['mix'], int(Decimal(game['sb'])*100), int(Decimal(game['bb'])*100),
-                    int(Decimal(game['bb'])*100), int(Decimal(game['bb'])*200), game['maxSeats'], int(game['ante']*100))
+                    int(Decimal(game['bb'])*100), int(Decimal(game['bb'])*200), game['maxSeats'], int(game['ante']*100),
+                    game['cap'], game['zoom'])
         
         result = self.gtcache[(gtinfo, gtinsert)]
         # NOTE: Using the LambdaDict does the same thing as:
@@ -2911,7 +2912,8 @@ class Database:
             columnNames=[desc[0] for desc in cursor.description]
             expectedValues = (('buyin', 'buyin'), ('fee', 'fee'), ('buyinCurrency', 'currency'),('isSng', 'sng'), ('maxseats', 'maxSeats')
                              , ('isKO', 'knockout'), ('koBounty', 'koBounty'), ('isRebuy', 'rebuy'), ('rebuyCost', 'rebuyCost')
-                             , ('isAddOn', 'addOn'), ('addOnCost','addOnCost'), ('speed', 'speed'), ('isShootout', 'shootout'), ('isMatrix', 'matrix'))
+                             , ('isAddOn', 'addOn'), ('addOnCost','addOnCost'), ('speed', 'speed'), ('isShootout', 'shootout') 
+                             ,('isMatrix', 'matrix'), ('isZoom', 'zoom'))
             resultDict = dict(zip(columnNames, result))
             ttid = resultDict["id"]
             for ev in expectedValues:
@@ -2927,7 +2929,7 @@ class Database:
                 category = obj.gametype['category']
             row = (obj.siteId, obj.buyinCurrency, obj.buyin, obj.fee, category,
                    obj.gametype['limitType'], obj.maxseats, obj.isSng, obj.isKO, obj.koBounty,
-                   obj.isRebuy, obj.rebuyCost, obj.isAddOn, obj.addOnCost, obj.speed, obj.isShootout, obj.isMatrix)
+                   obj.isRebuy, obj.rebuyCost, obj.isAddOn, obj.addOnCost, obj.speed, obj.isShootout, obj.isMatrix, obj.isZoom)
             cursor.execute (self.sql.query['getTourneyTypeId'].replace('%s', self.sql.query['placeholder']), row)
             tmp=cursor.fetchone()
             try:

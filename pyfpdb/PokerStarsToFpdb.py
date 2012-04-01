@@ -100,7 +100,7 @@ class PokerStars(HandHistoryConverter):
 
     # Static regexes
     re_GameInfo     = re.compile(u"""
-          PokerStars(\sGame|\sHand|\sHome\sGame|\sHome\sGame\sHand|Game|\sZoom\sHand)\s\#(?P<HID>[0-9]+):\s+
+          PokerStars(?P<TITLE>\sGame|\sHand|\sHome\sGame|\sHome\sGame\sHand|Game|\sZoom\sHand)\s\#(?P<HID>[0-9]+):\s+
           (\{.*\}\s+)?(Tournament\s\#                # open paren of tournament info
           (?P<TOURNO>\d+),\s
           # here's how I plan to use LS
@@ -116,7 +116,7 @@ class PokerStars(HandHistoryConverter):
           (?P<CURRENCY>%(LS)s|)?
           (?P<SB>[.0-9]+)/(%(LS)s)?
           (?P<BB>[.0-9]+)
-          (?P<BLAH>\s-\s[%(LS)s\d\.]+\sCap\s-\s)?        # Optional Cap part
+          (?P<CAP>\s-\s[%(LS)s\d\.]+\sCap\s-\s)?        # Optional Cap part
           \s?(?P<ISO>%(LEGAL_ISO)s)?
           \)                        # close paren of the stakes
           (?P<BLAH2>\s\[AAMS\sID:\s[A-Z0-9]+\])?         # AAMS ID: in .it HH's
@@ -217,6 +217,14 @@ class PokerStars(HandHistoryConverter):
             info['currency'] = self.currencies[mg['CURRENCY']]
         if 'MIXED' in mg:
             if mg['MIXED'] is not None: info['mix'] = self.mixes[mg['MIXED']]
+        if 'Zoom' in mg['TITLE']:
+            info['zoom'] = True
+        else:
+            info['zoom'] = False
+        if 'CAP' in mg and mg['CAP'] is None:
+            info['cap'] = True
+        else:
+            info['cap'] = False
                 
         if 'TOURNO' in mg and mg['TOURNO'] is None:
             info['type'] = 'ring'
@@ -314,6 +322,10 @@ class PokerStars(HandHistoryConverter):
                         else:
                             hand.buyin = int(Decimal(info['BIAMT']))
                             hand.fee = 0
+                    if 'Zoom' in info['TITLE']:
+                        hand.isZoom = True
+                    else:
+                        hand.isZoom = False
             if key == 'LEVEL':
                 hand.level = info[key]
 
