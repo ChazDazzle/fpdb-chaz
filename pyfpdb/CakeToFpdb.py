@@ -149,14 +149,15 @@ class Cake(HandHistoryConverter):
                 
         info['type'] = 'ring'
 
-        if info['limitType'] == 'fl' and info['bb'] is not None and info['type'] == 'ring':
-            try:
-                info['sb'] = self.Lim_Blinds[mg['BB']][0]
-                info['bb'] = self.Lim_Blinds[mg['BB']][1]
-            except KeyError:
-                tmp = handText[0:200]
-                log.error(_("CakeToFpdb.determineGameType: Lim_Blinds has no lookup for '%s' - '%s'") % (mg['BB'], tmp))
-                raise FpdbParseError
+        if info['limitType'] == 'fl' and info['bb'] is not None:
+            if info['type'] == 'ring':
+                try:
+                    info['sb'] = self.Lim_Blinds[mg['BB']][0]
+                    info['bb'] = self.Lim_Blinds[mg['BB']][1]
+                except KeyError:
+                    tmp = handText[0:200]
+                    log.error(_("CakeToFpdb.determineGameType: Lim_Blinds has no lookup for '%s' - '%s'") % (mg['BB'], tmp))
+                    raise FpdbParseError
 
         return info
 
@@ -241,6 +242,7 @@ class Cake(HandHistoryConverter):
                 hand.addBlind(a.group('PNAME'), 'secondsb', a.group('SB'))
         for a in self.re_PostBB.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'big blind', a.group('BB'))
+            hand.setUncalledBets(Decimal(a.group('BB')))
         for a in self.re_PostBoth.finditer(hand.handText):
             sb = Decimal(a.group('SB'))
             bb = Decimal(a.group('BB'))
@@ -269,16 +271,19 @@ class Cake(HandHistoryConverter):
             elif actionType == ' checks':
                 hand.addCheck( street, action.group('PNAME'))
             elif actionType == ' calls':
+                hand.setUncalledBets(None)
                 hand.addCall( street, action.group('PNAME'), action.group('BET') )
             elif actionType == ' raises':
+                hand.setUncalledBets(None)
                 hand.addRaiseTo( street, action.group('PNAME'), action.group('BETTO') )
             elif actionType == ' bets':
+                hand.setUncalledBets(None)
                 hand.addBet( street, action.group('PNAME'), action.group('BET') )
             elif actionType == ' is all in':
+                hand.setUncalledBets(None)
                 hand.addAllIn(street, action.group('PNAME'), action.group('BET'))
             else:
                 print (_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
-
 
     def readShowdownActions(self, hand):
         for shows in self.re_ShowdownAction.finditer(hand.handText):            
