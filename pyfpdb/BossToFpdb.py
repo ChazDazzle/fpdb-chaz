@@ -35,7 +35,10 @@ class Boss(HandHistoryConverter):
     siteId   = 4
     
     Lim_Blinds = {      '4.00': ('1.00', '2.00'),       '4': ('1.00', '2.00'),
+                       '10.00': ('2.50', '5.00'),      '10': ('2.50', '5.00'),
                        '20.00': ('5.00', '10.00'),     '20': ('5.00', '10.00'),
+                       '30.00': ('7.50', '15.00'),     '30': ('7.50', '15.00'),
+                       '40.00': ('10.00', '20.00'),    '40': ('10.00', '20.00'),
                   }
 
     # Static regexes
@@ -363,13 +366,13 @@ class Boss(HandHistoryConverter):
                 bet = action.group('BET')
                 if street in ('PREFLOP', 'DEAL'):
                     blind = hand.bets['BLINDSANTES'].get(action.group('PNAME'))
-                    if blind: bet = str(Decimal(action.group('BET')) - blind)
+                    if blind: bet = str(Decimal(action.group('BET')) - blind[0])
                 hand.addCallTo(street, action.group('PNAME'), bet )
             elif action.group('ATYPE') == 'ACTION_RAISE':
                 bet = action.group('BET')
                 if street in ('PREFLOP', 'DEAL'):
                     blind = hand.bets['BLINDSANTES'].get(action.group('PNAME'))
-                    if blind: bet = str(Decimal(action.group('BET')) - blind)
+                    if blind: bet = str(Decimal(action.group('BET')) - blind[0])
                 hand.addRaiseTo( street, action.group('PNAME'), action.group('BET') )
             elif action.group('ATYPE') == 'ACTION_BET':
                 hand.addBet( street, action.group('PNAME'), action.group('BET') )
@@ -381,7 +384,7 @@ class Boss(HandHistoryConverter):
                 bet = action.group('BET')
                 if street in ('PREFLOP', 'DEAL'):
                     blind = hand.bets['BLINDSANTES'].get(action.group('PNAME'))
-                    if blind: bet = str(Decimal(action.group('BET')) - blind)
+                    if blind: bet = str(Decimal(action.group('BET')) - blind[0])
                 hand.addRaiseTo( street, action.group('PNAME'), action.group('BET') )
             else:
                 print (_("DEBUG:") + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))

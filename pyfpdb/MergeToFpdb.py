@@ -78,6 +78,7 @@ class Merge(HandHistoryConverter):
                         '6.00': ('1.50', '3.00'),       '6': ('1.50', '3.00'),
                         '8.00': ('2.00', '4.00'),       '8': ('2.00', '4.00'),
                        '10.00': ('2.00', '5.00'),      '10': ('2.00', '5.00'),
+                       '12.00': ('3.00', '6.00'),      '12': ('3.00', '6.00'),
                        '20.00': ('5.00', '10.00'),     '20': ('5.00', '10.00'),
                        '30.00': ('10.00', '15.00'),    '30': ('10.00', '15.00'),
                        '40.00': ('10.00', '20.00'),    '40': ('10.00', '20.00'),
@@ -767,12 +768,13 @@ or None if we fail to get the info """
             tmp = handText[0:200]
             log.error(_("MergeToFpdb.readHandInfo: '%s'") % tmp)
             raise FpdbParseError
-        try:
-            (self.info['base'], self.info['category']) = self.Multigametypes[m2.group('MULTIGAMETYPE')]
-        except KeyError:
-            tmp = handText[0:200]
-            log.error(_("MergeToFpdb.determineGameType: Multigametypes has no lookup for '%s'") % m2.group('MULTIGAMETYPE'))
-            raise FpdbParseError
+        if m2.group('MULTIGAMETYPE'):
+            try:
+                (self.info['base'], self.info['category']) = self.Multigametypes[m2.group('MULTIGAMETYPE')]
+            except KeyError:
+                tmp = handText[0:200]
+                log.error(_("MergeToFpdb.determineGameType: Multigametypes has no lookup for '%s'") % m2.group('MULTIGAMETYPE'))
+                raise FpdbParseError
                     
     def adjustMergeTourneyStack(self, hand, player, amount):
         amount = Decimal(amount)
