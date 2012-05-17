@@ -399,7 +399,7 @@ class Merge(HandHistoryConverter):
     re_PostBoth = re.compile(r'<event sequence="[0-9]+" type="RETURN_BLIND" (?P<TIMESTAMP>timestamp="[0-9]+" )?player="(?P<PSEAT>[0-9])" amount="(?P<SBBB>[.0-9]+)"/>', re.MULTILINE)
     re_Antes = re.compile(r'<event sequence="[0-9]+" type="ANTE" (?P<TIMESTAMP>timestamp="\d+" )?player="(?P<PSEAT>[0-9])" amount="(?P<ANTE>[.0-9]+)"/>', re.MULTILINE)
     re_BringIn = re.compile(r'<event sequence="[0-9]+" type="BRING_IN" (?P<TIMESTAMP>timestamp="\d+" )?player="(?P<PSEAT>[0-9])" amount="(?P<BRINGIN>[.0-9]+)"/>', re.MULTILINE)
-    re_HeroCards = re.compile(r'<cards type="HOLE" cards="(?P<CARDS>.+)" player="(?P<PSEAT>[0-9])"', re.MULTILINE)
+    re_HeroCards = re.compile(r'<cards type="(HOLE|DRAW_DRAWN_CARDS)" cards="(?P<CARDS>.+)" player="(?P<PSEAT>[0-9])"', re.MULTILINE)
     re_Action = re.compile(r'<event sequence="[0-9]+" type="(?P<ATYPE>FOLD|CHECK|CALL|BET|RAISE|ALL_IN|SIT_OUT|DRAW|COMPLETE)"( timestamp="(?P<TIMESTAMP>[0-9]+)")? player="(?P<PSEAT>[0-9])"( amount="(?P<BET>[.0-9]+)")?( text="(?P<TXT>.+)")?/>', re.MULTILINE)
     re_AllActions = re.compile(r'<event sequence="[0-9]+" type="(?P<ATYPE>FOLD|CHECK|CALL|BET|RAISE|ALL_IN|SIT_OUT|DRAW|COMPLETE|BIG_BLIND|INITIAL_BLIND|SMALL_BLIND|RETURN_BLIND|BRING_IN|ANTE)"( timestamp="(?P<TIMESTAMP>[0-9]+)")? player="(?P<PSEAT>[0-9])"( amount="(?P<BET>[.0-9]+)")?( text="(?P<TXT>.+)")?/>', re.MULTILINE)
     re_CollectPot = re.compile(r'<winner amount="(?P<POT>[.0-9]+)" uncalled="(?P<UNCALLED>false|true)" potnumber="[0-9]+" player="(?P<PSEAT>[0-9])"', re.MULTILINE)
@@ -447,6 +447,19 @@ class Merge(HandHistoryConverter):
                 ["tour", "draw", "nl"],
                 ]
 
+    def parseHeader(self, handText, whole_file):
+        gametype = self.determineGameType(handText)
+        if gametype is None:
+            gametype = self.determineGameType(whole_file)
+            if gametype is None:
+                tmp = handText[0:200]
+                log.error(_("MergeToFpdb.determineGameType: '%s'") % tmp)
+                raise FpdbParseError
+            else:
+                if 'mix' in gametype and gametype['mix']!=None:
+                    self.mergeMultigametypes(handText)
+        return gametype        
+
     def determineGameType(self, handText):
         """return dict with keys/values:
     'type'       in ('ring', 'tour')
@@ -462,19 +475,7 @@ class Merge(HandHistoryConverter):
 or None if we fail to get the info """
 
         m = self.re_GameInfo.search(handText)
-        if not m:
-            # Information about the game type appears only at the beginning of
-            # a hand history file; hence it is not supplied with the second
-            # and subsequent hands. In these cases we use the value previously
-            # stored.
-            try:
-                if self.info['mix']!=None:
-                    self.mergeMultigametypes(handText)
-                return self.info
-            except AttributeError:
-                tmp = handText[0:200]
-                log.error(_("MergeToFpdb.determineGameType: '%s'") % tmp)
-                raise FpdbParseError
+        if not m: return None
 
         self.info = {}
         mg = m.groupdict()
