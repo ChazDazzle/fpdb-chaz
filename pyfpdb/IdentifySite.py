@@ -64,7 +64,7 @@ class Site:
             self.line_delimiter = '\n\n'
         elif self.filter_name == 'Fulltilt':
             self.line_delimiter = '\n\n\n'
-        elif self.re_SplitHands.match('\n\n'):
+        elif self.re_SplitHands.match('\n\n') and self.filter_name != 'Entraction':
              self.line_delimiter = '\n\n'
         elif self.re_SplitHands.match('\n\n\n'):
             self.line_delimiter = '\n\n\n'
