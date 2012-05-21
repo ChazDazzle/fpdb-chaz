@@ -627,6 +627,9 @@ class Hand(object):
                 sb = Decimal(str(self.sb))
                 self.bets['BLINDSANTES'][player].append(sb)
                 self.pot.addCommonMoney(player, sb)
+                
+            self.bets['BLINDSANTES'][player].append(amount)
+            self.pot.addMoney(player, amount)
 
             street = 'BLAH'
 
@@ -635,8 +638,6 @@ class Hand(object):
             elif self.gametype['base'] == 'draw':
                 street = 'DEAL'
             
-            self.bets[street][player].append(amount)
-            self.pot.addMoney(player, amount)
             if amount>self.lastBet.get(street):
                 self.lastBet[street] = amount
             self.posted = self.posted + [[player,blindtype]]
