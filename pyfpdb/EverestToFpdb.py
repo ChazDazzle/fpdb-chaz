@@ -55,8 +55,8 @@ class Everest(HandHistoryConverter):
 
     re_HandInfo = re.compile(u"""time="(?P<DATETIME>[0-9]+)"\s
                                  id="(?P<HID>[0-9]+)"\s
-                                 index="\d+"\s
-                                 blinds="([%(LS)s]?(?P<SB>[%(NUM)s]+)\s?[%(LS)s]?/[%(LS)s]?(?P<BB>[%(NUM)s]+)[%(LS)s]?)"
+                                 index="\d+?"\s
+                                 blinds="([%(LS)s]?(?P<SB>[%(NUM)s]+)\s?[%(LS)s]?/[%(LS)s]?(?P<BB>[%(NUM)s]+)\s?[%(LS)s]?)"
                                 """ % substitutions, re.VERBOSE|re.MULTILINE)
 
     re_Button = re.compile(r'<DEALER position="(?P<BUTTON>[0-9]+)"\/>')
