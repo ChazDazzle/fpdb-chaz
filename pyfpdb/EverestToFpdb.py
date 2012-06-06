@@ -52,11 +52,13 @@ class Everest(HandHistoryConverter):
                                     game="(?P<GAME>hold\-em|omaha\-hi)"\s
                                     gametype="(?P<LIMIT>[-a-zA-Z ]+)"/>)
                                 """ % substitutions, re.VERBOSE|re.MULTILINE)
+
     re_HandInfo = re.compile(u"""time="(?P<DATETIME>[0-9]+)"\s
                                  id="(?P<HID>[0-9]+)"\s
                                  index="\d+"\s
                                  blinds="([%(LS)s]?(?P<SB>[%(NUM)s]+)\s?[%(LS)s]?/[%(LS)s]?(?P<BB>[%(NUM)s]+)[%(LS)s]?)"
                                 """ % substitutions, re.VERBOSE|re.MULTILINE)
+
     re_Button = re.compile(r'<DEALER position="(?P<BUTTON>[0-9]+)"\/>')
     re_PlayerInfo = re.compile(r'<SEAT position="(?P<SEAT>[0-9]+)" name="(?P<PNAME>.+)" balance="(?P<CASH>[.0-9]+)"/>', re.MULTILINE)
     re_Board = re.compile(r'(?P<CARDS>.+)<\/COMMUNITY>', re.MULTILINE)
