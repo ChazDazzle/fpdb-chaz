@@ -300,7 +300,7 @@ class Hand(object):
 
     def insertHandsPlayers(self, db, doinsert = False, printtest = False):
         """ Function to inserts HandsPlayers into database"""
-        db.storeHandsPlayers(self.dbid_hands, self.dbid_pids, self.handsplayers, self.tourneyId, doinsert, printtest)
+        db.storeHandsPlayers(self.dbid_hands, self.dbid_pids, self.handsplayers, doinsert, printtest)
     
     def insertHandsActions(self, db, doinsert = False, printtest = False):
         """ Function to inserts HandsActions into database"""
@@ -315,7 +315,7 @@ class Hand(object):
     def updateHudCache(self, db, doinsert = False):
         """ Function to update the HudCache"""
         if self.callHud:
-            db.storeHudCache(self.dbid_gt, self.dbid_pids, self.startTime, self.handsplayers, self.hands, doinsert)
+            db.storeHudCache(self.dbid_gt, self.dbid_pids, self.startTime, self.handsplayers, doinsert)
         
     def updateSessionsCache(self, db, tz, doinsert = False):
         """ Function to update the SessionsCache"""
