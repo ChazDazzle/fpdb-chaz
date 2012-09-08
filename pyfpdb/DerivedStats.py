@@ -1005,7 +1005,7 @@ class DerivedStats():
                 else:
                     players[act[0]] = False
                 if act[1] == 'raises': break
-            else:
+            elif act[1]!='discards':
                 i+=1
         return players
 
