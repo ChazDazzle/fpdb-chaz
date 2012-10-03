@@ -164,7 +164,7 @@ class BetOnline(HandHistoryConverter):
     re_ShowdownAction   = re.compile(r"^%s: shows (?P<CARDS>.*)" % substitutions['PLYR'], re.MULTILINE)
     re_sitsOut          = re.compile("^%s sits out" %  substitutions['PLYR'], re.MULTILINE)
     re_JoinsTable       = re.compile("^.+ joins the table at seat #\d+", re.MULTILINE)
-    re_TotalPot         = re.compile(r"^Total pot (?P<POT>[.\d]+) \| Rake (?P<RAKE>[.\d]+)", re.MULTILINE)
+    re_TotalPot         = re.compile(r"^Total pot (?P<POT>[.\d]+)( \| Rake (?P<RAKE>[.\d]+))?", re.MULTILINE)
     re_ShownCards       = re.compile(r"Seat (?P<SEAT>[0-9]+): %(PLYR)s (\(.+?\)  )?(?P<SHOWED>showed|mucked) \[(?P<CARDS>.*)\]( and won \([.\d]+\))?" %  substitutions, re.MULTILINE)
     re_CollectPot       = re.compile(r"Seat (?P<SEAT>[0-9]+): %(PLYR)s (\(.+?\)  )?(collected|showed \[.*\] and won) \((%(LS)s)?(?P<POT>[.\d]+)\)" %  substitutions, re.MULTILINE)
 
@@ -581,24 +581,14 @@ class BetOnline(HandHistoryConverter):
             hand.addShownCards(cards, shows.group('PNAME'))
 
     def readCollectPot(self,hand):
-        maxpot, totalpot, pots, winners = 0, 0, {}, {}
+        hand.adjustCollected = True
         for m in self.re_CollectPot.finditer(hand.handText):
-            pots[m.group('PNAME')] = Decimal(m.group('POT'))
-            if maxpot < Decimal(m.group('POT')):
-                maxpot = Decimal(m.group('POT'))
-        for pname, pot in pots.iteritems():
-            if pot==maxpot:
-                winners[pname] = pot
-            else:
-                totalpot -= pot
+            hand.addCollectPot(player=m.group('PNAME'),pot=m.group('POT'))
         for m in self.re_TotalPot.finditer(hand.handText):
-            totalpot += Decimal(m.group('POT'))
-        for pname, pot in pots.iteritems():
-            if winners.get(pname):
-                collected = str(totalpot/len(winners))
+            if hand.rakes.get('pot'):
+                hand.rakes['pot'] += Decimal(self.clearMoneyString(m.group('POT')))
             else:
-                collected = str(pot)
-            hand.addCollectPot(player=pname,pot=collected)
+                hand.rakes['pot'] = Decimal(self.clearMoneyString(m.group('POT')))
 
     def readShownCards(self,hand):
         for m in self.re_ShownCards.finditer(hand.handText):
