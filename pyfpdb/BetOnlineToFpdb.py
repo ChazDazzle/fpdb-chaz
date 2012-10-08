@@ -111,8 +111,8 @@ class BetOnline(HandHistoryConverter):
           (
               \(?                            # open paren of the stakes
               (?P<CURRENCY>%(LS)s|)?
-              (?P<SB>[.0-9]+)/(%(LS)s)?
-              (?P<BB>[.0-9]+)
+              (?P<SB>[%(NUM)s]+)/(%(LS)s)?
+              (?P<BB>[%(NUM)s]+)
               \)?                        # close paren of the stakes
           )?
           \s?-\s
@@ -122,7 +122,7 @@ class BetOnline(HandHistoryConverter):
     re_PlayerInfo   = re.compile(u"""
           ^Seat\s(?P<SEAT>[0-9]+):\s
           (?P<PNAME>.*)\s
-          \((%(LS)s)?(?P<CASH>[.0-9]+)\sin\s[cC]hips\)""" % substitutions, 
+          \((%(LS)s)?(?P<CASH>[%(NUM)s]+)\sin\s[cC]hips\)""" % substitutions, 
           re.MULTILINE|re.VERBOSE)
 
     re_HandInfo1     = re.compile("""
@@ -148,11 +148,11 @@ class BetOnline(HandHistoryConverter):
     re_DateTime1     = re.compile("""(?P<Y>[0-9]{4})\/(?P<M>[0-9]{2})\/(?P<D>[0-9]{2})[\- ]+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?\s(?P<TZ>.*$)""", re.MULTILINE)
     re_DateTime2     = re.compile("""(?P<Y>[0-9]{4})\-(?P<M>[0-9]{2})\-(?P<D>[0-9]{2})[\- ]+(?P<H>[0-9]+):(?P<MIN>[0-9]+):(?P<S>[0-9]+)""", re.MULTILINE)
 
-    re_PostSB           = re.compile(r"^%(PLYR)s: [Pp]osts small blind (%(LS)s)?(?P<SB>[.0-9]+)" %  substitutions, re.MULTILINE)
-    re_PostBB           = re.compile(r"^%(PLYR)s: ([Pp]osts big blind|[Pp]osts? [Nn]ow)( (%(LS)s)?(?P<BB>[.0-9]+))?" %  substitutions, re.MULTILINE)
-    re_Antes            = re.compile(r"^%(PLYR)s: [Pp]osts the ante (%(LS)s)?(?P<ANTE>[.0-9]+)" % substitutions, re.MULTILINE)
-    re_BringIn          = re.compile(r"^%(PLYR)s: brings[- ]in( low|) for (%(LS)s)?(?P<BRINGIN>[.0-9]+)" % substitutions, re.MULTILINE)
-    re_PostBoth         = re.compile(r"^%(PLYR)s: [Pp]ost dead (%(LS)s)?(?P<SBBB>[.0-9]+)" %  substitutions, re.MULTILINE)
+    re_PostSB           = re.compile(r"^%(PLYR)s: [Pp]osts small blind (%(LS)s)?(?P<SB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
+    re_PostBB           = re.compile(r"^%(PLYR)s: ([Pp]osts big blind|[Pp]osts? [Nn]ow)( (%(LS)s)?(?P<BB>[%(NUM)s]+))?" %  substitutions, re.MULTILINE)
+    re_Antes            = re.compile(r"^%(PLYR)s: [Pp]osts the ante (%(LS)s)?(?P<ANTE>[%(NUM)s]+)" % substitutions, re.MULTILINE)
+    re_BringIn          = re.compile(r"^%(PLYR)s: brings[- ]in( low|) for (%(LS)s)?(?P<BRINGIN>[%(NUM)s]+)" % substitutions, re.MULTILINE)
+    re_PostBoth         = re.compile(r"^%(PLYR)s: [Pp]ost dead (%(LS)s)?(?P<SBBB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
     re_HeroCards        = re.compile(r"^Dealt [Tt]o %(PLYR)s(?: \[(?P<OLDCARDS>.+?)\])?( \[(?P<NEWCARDS>.+?)\])" % substitutions, re.MULTILINE)
     re_Action           = re.compile(r"""
                         ^%(PLYR)s:(?P<ATYPE>\s[Bb]ets|\s[Cc]hecks|\s[Rr]aises|\s[Cc]alls|\s[Ff]olds|\s[Dd]iscards|\s[Ss]tands\spat|\sReraises)
