@@ -299,9 +299,6 @@ class Winamax(HandHistoryConverter):
             if key == 'LEVEL':
                 hand.level = info[key]
 
-        m =  self.re_Button.search(hand.handText)
-        hand.buttonpos = m.groupdict().get('BUTTON', None)
-
         hand.mixed = None
 
     def readPlayerStacks(self, hand):
