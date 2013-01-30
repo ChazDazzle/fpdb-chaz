@@ -272,7 +272,7 @@ class Hand(object):
             self.tourneyId = db.getSqlTourneyIDs(self)
             self.tourneysPlayersIds = db.getSqlTourneysPlayersIDs(self)
         
-    def assembleHand(self, db):
+    def assembleHand(self):
         self.stats.getStats(self)
         self.hands = self.stats.getHands()
         self.handsplayers = self.stats.getHandsPlayers()
