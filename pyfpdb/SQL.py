@@ -822,7 +822,6 @@ class Sql:
                         street2Raises TINYINT,
                         street3Raises TINYINT,
                         street4Raises TINYINT,
-
                         actionString VARCHAR(15))
                         ENGINE=INNODB"""
         elif db_server == 'postgresql':
@@ -969,7 +968,6 @@ class Sql:
                         street2Raises SMALLINT,
                         street3Raises SMALLINT,
                         street4Raises SMALLINT,
-
                         actionString VARCHAR(15))"""
         elif db_server == 'sqlite':
             self.query['createHandsPlayersTable'] = """CREATE TABLE HandsPlayers (

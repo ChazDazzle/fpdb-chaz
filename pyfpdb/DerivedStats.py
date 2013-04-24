@@ -20,7 +20,7 @@ import L10n
 _ = L10n.get_translation()
 import Card
 from decimal_wrapper import Decimal
-
+import re
 import sys
 import logging
 # logging has been set up in fpdb.py or HUD_main.py, use their settings:
@@ -369,7 +369,7 @@ class DerivedStats():
             hp = self.handsplayers.get(pname)
             hero = pname==hand.hero
             if hp['sawShowdown'] or hp['showed'] or hero:
-                if category not in ('badugi', 'razz', '2_holdem', '5_omahahi', 'irish'):
+                if category not in ('badugi', 'razz', '2_holdem', '5_omahahi', 'irish', '5_omaha8', 'cour_hi', 'cour_hilo'):
                     hcs = hand.join_holecards(pname, asList=True)
                     hole = hcs[hrange[0]:hrange[1]]                            
                     holecards[pname] = {}
@@ -472,20 +472,32 @@ class DerivedStats():
                                                       winnings
                                                       ] )
                 elif (hp['sawShowdown'] or hp['showed']):
-                    streetId = streets[last]
-                    if hilo == 'h':
-                        histring = hand.showdownStrings.get(pname)
-                    else:
-                        lostring = hand.showdownStrings.get(pname)
-                    self.handsstove.append( [  
-                                       hand.dbid_hands,
-                                       hand.dbid_pids[player[1]],
-                                       streetId,
-                                       0,
-                                       histring,
-                                       lostring,
-                                       0
-                                    ] )
+                    streetId, boardId = streets[last], 0
+                    strings = hand.showdownStrings.get(pname).split("|")
+                    for string in strings:
+                        histring, lostring =  None, None
+                        if len(strings)>1:
+                            boardId += 1
+                        if hilo == 'h':
+                            histring = string
+                        elif hilo == 's':
+                            re_hilo = re.compile("HI:\s(?P<h>[^;]+)(;\sLO:\s(?P<l>.*))?")
+                            m = re_hilo.search(string)
+                            if m and m.group('h'):
+                                histring = m.group('h')
+                            if m and m.group('l'):
+                                lostring = m.group('l')
+                        else:
+                            lostring = string
+                        self.handsstove.append( [  
+                                           hand.dbid_hands,
+                                           hand.dbid_pids[player[1]],
+                                           streetId,
+                                           boardId,
+                                           histring,
+                                           lostring,
+                                           0
+                                        ] )
         self.handsstove += [t[:6] + [0] for t in inserts_temp]
         startstreet = None
         for pot, players in hand.pot.pots:
