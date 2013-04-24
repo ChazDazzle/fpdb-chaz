@@ -472,8 +472,9 @@ class DerivedStats():
                                                       winnings
                                                       ] )
                 elif (hp['sawShowdown'] or hp['showed']):
-                    streetId, boardId = streets[last], 0
-                    strings = hand.showdownStrings.get(pname).split("|")
+                    streetId, boardId, strings = streets[last], 0, [None]
+                    if hand.showdownStrings.get(pname):
+                        strings = hand.showdownStrings.get(pname).split("|")
                     for string in strings:
                         histring, lostring =  None, None
                         if len(strings)>1:
