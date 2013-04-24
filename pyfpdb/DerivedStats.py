@@ -369,7 +369,7 @@ class DerivedStats():
             hp = self.handsplayers.get(pname)
             hero = pname==hand.hero
             if hp['sawShowdown'] or hp['showed'] or hero:
-                if category not in ('badugi', 'razz', '2_holdem', '5_omahahi'):
+                if category not in ('badugi', 'razz', '2_holdem', '5_omahahi', 'irish'):
                     hcs = hand.join_holecards(pname, asList=True)
                     hole = hcs[hrange[0]:hrange[1]]                            
                     holecards[pname] = {}
