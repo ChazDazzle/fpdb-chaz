@@ -481,7 +481,7 @@ class DerivedStats():
                             boardId += 1
                         if hilo == 'h':
                             histring = string
-                        elif hilo == 's':
+                        elif hilo == 's' and string:
                             re_hilo = re.compile("HI:\s(?P<h>[^;]+)(;\sLO:\s(?P<l>.*))?")
                             m = re_hilo.search(string)
                             if m and m.group('h'):
