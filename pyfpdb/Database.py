@@ -3404,9 +3404,20 @@ class Database:
                 cursor.execute(fetch)
                 for id in cursor.fetchall():
                     self.rebuild_hudcache(None, None, id[0])
+                    
+    def cleanUpWeeksMonths(self):
+        pass
                 
+    def resetClean(self):
+        self.ttclean = set()
+        
     def resetttclean(self):
         self.ttclean = set()
+        
+    def cleanRequired(self):
+        if self.ttclean:
+            return True
+        return False
     
     def getSqlTourneyIDs(self, hand):
         if(self.tcache == None):
