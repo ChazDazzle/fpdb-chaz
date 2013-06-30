@@ -374,6 +374,10 @@ class MergeSummary(TourneySummary):
                             self.currency="EUR"
                         winnings = int(100*self.convert_to_decimal(m.group('WINNINGS')))
                     self.addPlayer(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount)
+         
+        if self.gametype['category'] is None:
+             log.error(_("MergeSummary.parseSummaryFile: Could not parse summary file"))
+             raise FpdbParseError  
                 
     def convert_to_decimal(self, string):
         dec = self.clearMoneyString(string)
