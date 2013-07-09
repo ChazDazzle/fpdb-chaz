@@ -70,7 +70,7 @@ class FullTiltPokerSummary(TourneySummary):
                      'LEGAL_ISO' : "USD|EUR|GBP|CAD|FPP|FTP",      # legal ISO currency codes
                             'LS' : u"\$|\xe2\x82\xac|\u20ac|", # legal currency symbols - Euro(cp1252, utf-8)
                            'TAB' : u"-\u2013'\s\da-zA-Z#_\.",      # legal characters for tablename
-                           'NUM' : u".,\d",                    # legal characters in number format
+                           'NUM' : u".,\dKM",                    # legal characters in number format
                     }
 
     re_Identify = re.compile(u'Full\sTilt\sPoker\.fr\sTournament|Full\sTilt\sPoker\sTournament\sSummary')
