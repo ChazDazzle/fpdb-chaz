@@ -3175,15 +3175,15 @@ class Database:
         id += self.hand_inc
         return id
 
-    def isDuplicate(self, gametypeID, siteHandNo):
-        if (gametypeID, siteHandNo) in self.siteHandNos:
+    def isDuplicate(self, siteId, siteHandNo):
+        if (siteHandNo, siteId) in self.siteHandNos:
             return True
         c = self.get_cursor()
-        c.execute(self.sql.query['isAlreadyInDB'], (gametypeID, siteHandNo))
+        c.execute(self.sql.query['isAlreadyInDB'], (siteHandNo, siteId))
         result = c.fetchall()
         if len(result) > 0:
             return True
-        self.siteHandNos.append((gametypeID, siteHandNo))
+        self.siteHandNos.append((siteHandNo, siteId))
         return False
     
     def getSqlPlayerIDs(self, pnames, siteid, hero):

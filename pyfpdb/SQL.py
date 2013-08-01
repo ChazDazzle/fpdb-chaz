@@ -7944,8 +7944,9 @@ class Sql:
                                                smallBlind, bigBlind, smallBet, bigBet, maxSeats, ante, cap, zoom)
                                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
 
-        self.query['isAlreadyInDB'] = """SELECT id FROM Hands 
-                                         WHERE gametypeId=%s AND siteHandNo=%s
+        self.query['isAlreadyInDB'] = """SELECT H.id FROM Hands H
+                                         INNER JOIN Gametypes G ON (G.id = H.gametypeId)
+                                         WHERE siteHandNo=%s and siteId=%s                                         
         """
         
         self.query['getTourneyTypeIdByTourneyNo'] = """SELECT tt.id,

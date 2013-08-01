@@ -277,7 +277,7 @@ class Hand(object):
         self.handsstove = self.stats.getHandsStove()
         
     def getHandId(self, db, id):
-        if db.isDuplicate(self.dbid_gt, self.hands['siteHandNo']):
+        if db.isDuplicate(self.siteId , self.hands['siteHandNo']):
             #log.info(_("Hand.insert(): hid #: %s is a duplicate") % hh['siteHandNo'])
             self.is_duplicate = True  # i.e. don't update hudcache
             next = id
