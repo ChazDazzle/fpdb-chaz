@@ -3439,7 +3439,7 @@ class Database:
         if (tmp == None): 
             c.execute (self.sql.query['insertTourney'].replace('%s', self.sql.query['placeholder']),
                         (tourneyTypeId, None, tourNo, None, None,
-                         None, None, None, None, None, None))
+                         None, None, None, None, None, None, None, None))
             result = self.get_last_insert_id(c)
         else:
             result = tmp[0]
@@ -3486,7 +3486,7 @@ class Database:
         else:
             row = (summary.tourneyTypeId, None, summary.tourNo, summary.entries, summary.prizepool, summary.startTime,
                    summary.endTime, summary.tourneyName, summary.matrixIdProcessed, summary.totalRebuyCount, 
-                   summary.totalAddOnCount)
+                   summary.totalAddOnCount, summary.comment, summary.commentTs)
             if self.printdata:
                 print ("######## Tourneys ##########")
                 import pprint
