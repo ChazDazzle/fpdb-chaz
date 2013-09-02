@@ -241,7 +241,7 @@ class FullTiltPokerSummary(TourneySummary):
                     winnings += int(100*Decimal(self.clearMoneyString(m9.group('WINNINGS'))))
                     self.currency = self.setCurrency(m9, self.currency)
                   
-            self.addPlayer(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount, info['entries'])
+            self.addPlayer(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount)
 
     def parseSummaryFile(self):
         m = self.re_TourneyInfo.search(self.summaryText[:2000])
