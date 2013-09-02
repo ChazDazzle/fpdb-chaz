@@ -38,6 +38,7 @@ import pprint
 import DerivedStats
 import Card
 import Database
+import codecs
 from HandHistoryConverter import HandHistoryConverter
 
 log = logging.getLogger("parser")
