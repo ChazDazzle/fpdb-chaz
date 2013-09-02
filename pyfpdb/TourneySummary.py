@@ -42,6 +42,12 @@ from HandHistoryConverter import HandHistoryConverter
 
 log = logging.getLogger("parser")
 
+try:
+    import xlrd
+except:
+    xlrd = None
+    log.info(_("xlrd not found. Required for importing Excel tourney results files"))
+
 class TourneySummary(object):
 
 ################################################################
@@ -268,9 +274,8 @@ winnings    (int) the money the player ended the tourney with (can be 0, or -1 i
             if rank:
                 if rank > self.ranks[name]:
                     self.ranks[name] = rank
-                self.winnings[name] += winnings
+                self.winnings[name] += (winnings - self.buyin - self.fee)
                 self.winningsCurrency.update( { name : winningsCurrency } )
-            self.rebuyCounts[name] += 1
         else:
             self.players.append(name)
             if rank:
@@ -317,4 +322,44 @@ winnings    (int) the money the player ended the tourney with (can be 0, or -1 i
 
     def printSummary(self):
         self.writeSummary(sys.stdout)
+        
+    @staticmethod            
+    def summaries_from_excel(filenameXLS, tourNoField):
+        wb = xlrd.open_workbook(filenameXLS)
+        sh = wb.sheet_by_index(0)
+        summaryTexts, rows, header, keys, entries = [], [], None, None, {}
+        for rownum in xrange(sh.nrows):
+            if rownum==0:
+                header = sh.row_values(rownum)[0]
+            elif tourNoField in sh.row_values(rownum):
+                keys = [unicode(c).encode('utf-8') for c in sh.row_values(rownum)]
+            elif keys!=None:
+                rows.append([unicode(c).encode('utf-8') for c in sh.row_values(rownum)])
+        for row in rows:
+            data = dict(zip(keys, row))
+            data['header'] = header
+            if entries.get(data[tourNoField])==None:
+                entries[data[tourNoField]] = 1
+            else:
+                entries[data[tourNoField]] += 1 
+            data['entries'] = entries[data[tourNoField]]
+            if len(data[tourNoField])>0:
+                summaryTexts.append(data)
+        return summaryTexts
 
+    @staticmethod
+    def readFile(self, filename):
+        whole_file = None
+        for kodec in self.codepage:
+            try:
+                in_fh = codecs.open(filename, 'r', kodec)
+                whole_file = in_fh.read()
+                in_fh.close()
+                break
+            except UnicodeDecodeError, e:
+                log.warning("TS.readFile: '%s' : '%s'" % (filename, e))
+            except UnicodeError, e:
+                log.warning("TS.readFile: '%s' : '%s'" % (filename, e))
+
+        return whole_file
+        

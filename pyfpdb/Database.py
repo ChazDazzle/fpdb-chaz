@@ -3576,6 +3576,10 @@ class Database:
                         setattr(summary, summaryAttribute, summaryDict)
                     elif summaryDict[player]!=None and not resultDict[ev[1]]:#object has this value but DB doesnt, so update DB
                         updateDb=True
+                    elif ev[1]==rank and summaryDict[player]!=None and resultDict[ev[1]]!=None:
+                        if int(summaryDict[player])<int(resultDict[ev[1]]):
+                            summaryDict[player] = resultDict[ev[1]]
+                        summary.winnings[player] += (resultDict['winnings'] - getattr(summary, 'buyin') - getattr(summary, 'fee'))
                 if updateDb:
                     q = self.sql.query['updateTourneysPlayer'].replace('%s', self.sql.query['placeholder'])
                     inputs = (summary.ranks[player],

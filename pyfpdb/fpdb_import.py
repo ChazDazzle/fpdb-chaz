@@ -42,6 +42,11 @@ import Database
 import Configuration
 import Exceptions
 
+try:
+    import xlrd
+except:
+    xlrd = None
+
 if __name__ == "__main__":
     Configuration.set_logfile("fpdb-log.txt")
 # logging has been set up in fpdb.py or HUD_main.py, use their settings:
@@ -566,7 +571,7 @@ class Importer:
 
         #This will barf if conv.getStatus != True
         return (stored, duplicates, partial, errors, ttime)
-        
+      
 class ProgressBar:
 
     """
