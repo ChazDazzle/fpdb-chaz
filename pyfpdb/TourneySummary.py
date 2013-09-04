@@ -275,8 +275,9 @@ winnings    (int) the money the player ended the tourney with (can be 0, or -1 i
             if rank:
                 if rank > self.ranks[name]:
                     self.ranks[name] = rank
-                self.winnings[name] += (winnings - self.buyin - self.fee)
-                self.winningsCurrency.update( { name : winningsCurrency } )
+                if self.winningsCurrency[name]==winningsCurrency:
+                    self.winnings[name] += (winnings - self.buyin - self.fee)
+                    self.winningsCurrency.update( { name : winningsCurrency } )
         else:
             self.players.append(name)
             if rank:
