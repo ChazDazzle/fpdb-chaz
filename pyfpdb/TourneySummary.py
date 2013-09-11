@@ -272,7 +272,7 @@ winnings    (int) the money the player ended the tourney with (can be 0, or -1 i
 """
         log.debug("addPlayer: rank:%s - name : '%s' - Winnings (%s)" % (rank, name, winnings))
         if name in self.players:
-            if rank:
+            if rank and self.siteId==1:
                 if rank > self.ranks[name]:
                     self.ranks[name] = rank
                 if self.winningsCurrency[name]==winningsCurrency:

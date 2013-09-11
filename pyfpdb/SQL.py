@@ -8079,7 +8079,7 @@ class Sql:
         
         self.query['getTourneysPlayersByIds'] = """SELECT *
                                                 FROM TourneysPlayers
-                                                WHERE tourneyId=%s AND playerId+0=%s            
+                                                WHERE tourneyId=%s AND playerId=%s            
         """
         
         self.query['getTourneysPlayersByTourney'] = """SELECT playerId

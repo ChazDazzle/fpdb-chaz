@@ -3576,7 +3576,11 @@ class Database:
                         setattr(summary, summaryAttribute, summaryDict)
                     elif summaryDict[player]!=None and not resultDict[ev[1]]:#object has this value but DB doesnt, so update DB
                         updateDb=True
-                    elif ev[1]=='rank' and summaryDict[player]!=None and resultDict[ev[1]]!=None and summaryDict[player]!=resultDict[ev[1]]:
+                    elif ((ev[1]=='rank') and 
+                          (summaryDict[player]!=None) and 
+                          (resultDict[ev[1]]!=None) and 
+                          (summaryDict[player]!=resultDict[ev[1]]) and
+                          (getattr(summary, "siteId")==1)):
                         if int(summaryDict[player])<int(resultDict[ev[1]]):
                             summaryDict[player] = resultDict[ev[1]]
                         if self.backend == self.PGSQL:
