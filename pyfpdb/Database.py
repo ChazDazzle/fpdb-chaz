@@ -3581,7 +3581,7 @@ class Database:
                           (resultDict[ev[1]]!=None) and 
                           (summaryDict[player]!=resultDict[ev[1]]) and
                           (getattr(summary, "siteId")==1)):
-                        if int(summaryDict[player])<int(resultDict[ev[1]]):
+                        if int(summaryDict[player])>int(resultDict[ev[1]]):
                             summaryDict[player] = resultDict[ev[1]]
                         if self.backend == self.PGSQL:
                             winningsCurrencyDb = resultDict['winningscurrency']
