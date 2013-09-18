@@ -3330,6 +3330,27 @@ class Database:
 
         return result
     
+    def defaultTourneyTypeValue(self, value1, value2, field):
+        if ((not value1) or 
+           (field=='maxseats' and value1>value2) or 
+           ((field,value1)==('buyinCurrency','NA')) or 
+           ((field,value1)==('speed','Normal')) or
+           (field=='koBounty' and value1)
+           ):
+            return True
+        return False 
+    
+    def updateObjectValue(self, obj, dbVal, objVal, objField):
+        if (objField=='koBounty' and objVal>dbVal and dbVal!=0):
+            if objVal%dbVal==0:
+                setattr(obj, objField, dbVal)
+                koCounts = getattr(obj, 'koCounts')
+                for pname, kos in koCounts.iteritems():
+                    koCount = objVal/dbVal
+                    obj.koCounts.update( {pname : koCount } )
+        else:
+            setattr(obj, objField, dbVal)
+    
     def createOrUpdateTourneyType(self, obj):
         ttid, _ttid, updateDb = None, None, False
         cursor = self.get_cursor()
@@ -3351,12 +3372,13 @@ class Database:
             resultDict = dict(zip(columnNames, result))
             ttid = resultDict["id"]
             for ev in expectedValues:
-                val = getattr(obj, ev[0])
-                if (not val or val=='NA' or (ev[0]=='maxseats'and val>resultDict[ev[1]])) and resultDict[ev[1]]:#DB has this value but object doesnt, so update object
-                    setattr(obj, ev[0], resultDict[ev[1]])
-                elif val and (resultDict[ev[1]] != val):#object has this value but DB doesnt, so update DB
+                objField, dbField = ev
+                objVal, dbVal = getattr(obj, objField), resultDict[dbField]
+                if self.defaultTourneyTypeValue(objVal, dbVal, objField) and dbVal:#DB has this value but object doesnt, so update object
+                    self.updateObjectValue(obj, dbVal, objVal, objField)
+                elif self.defaultTourneyTypeValue(dbVal, objVal, objField) and objVal:#object has this value but DB doesnt, so update DB
                     updateDb=True
-                    _ttid = ttid
+                    oldttid = ttid
         if not result or updateDb:
             if obj.gametype['mix']!='none':
                 category = obj.gametype['mix']
@@ -3379,10 +3401,10 @@ class Database:
                 cursor.execute (self.sql.query['insertTourneyType'].replace('%s', self.sql.query['placeholder']), row)
                 ttid = self.get_last_insert_id(cursor)
             if updateDb:
-                #print 'DEBUG createOrUpdateTourneyType:', 'old', _ttid, 'new', ttid, row
+                #print 'DEBUG createOrUpdateTourneyType:', 'old', oldttid , 'new', ttid, row
                 q = self.sql.query['updateTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
                 cursor.execute(q, (ttid, obj.siteId, obj.tourNo))
-                self.ttclean.add(_ttid)
+                self.ttclean.add(oldttid)
         return ttid
     
     def cleanUpTourneyTypes(self):
@@ -3576,19 +3598,6 @@ class Database:
                         setattr(summary, summaryAttribute, summaryDict)
                     elif summaryDict[player]!=None and not resultDict[ev[1]]:#object has this value but DB doesnt, so update DB
                         updateDb=True
-                    elif ((ev[1]=='rank') and 
-                          (summaryDict[player]!=None) and 
-                          (resultDict[ev[1]]!=None) and 
-                          (summaryDict[player]!=resultDict[ev[1]]) and
-                          (getattr(summary, "siteId")==1)):
-                        if int(summaryDict[player])>int(resultDict[ev[1]]):
-                            summaryDict[player] = resultDict[ev[1]]
-                        if self.backend == self.PGSQL:
-                            winningsCurrencyDb = resultDict['winningscurrency']
-                        else:
-                            winningsCurrencyDb = resultDict['winningsCurrency']
-                        if winningsCurrencyDb==getattr(summary, "winningsCurrency")[player]:
-                            summary.winnings[player] += (resultDict['winnings'] - getattr(summary, 'buyin') - getattr(summary, 'fee'))
                 if updateDb:
                     q = self.sql.query['updateTourneysPlayer'].replace('%s', self.sql.query['placeholder'])
                     inputs = (summary.ranks[player],
