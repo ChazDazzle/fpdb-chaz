@@ -161,7 +161,7 @@ def playershort(stat_dict, player):
             
 def vpip(stat_dict, player):
     stat_descriptions["vpip"] = _("Voluntarily put in preflop/3rd street %") + " (vpip)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['vpip'])/float(stat_dict[player]['n'])
         return (stat,
@@ -181,7 +181,7 @@ def vpip(stat_dict, player):
 
 def pfr(stat_dict, player):
     stat_descriptions["pfr"] = _("Preflop/3rd street raise %") + " (pfr)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['pfr'])/float(stat_dict[player]['n'])
         return (stat,
@@ -202,7 +202,7 @@ def pfr(stat_dict, player):
 
 def wtsd(stat_dict, player):
     stat_descriptions["wtsd"] = _("% went to showdown when seen flop/4th street") + " (wtsd)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['sd'])/float(stat_dict[player]['saw_f'])
         return (stat,
@@ -223,7 +223,7 @@ def wtsd(stat_dict, player):
 
 def wmsd(stat_dict, player):
     stat_descriptions["wmsd"] = _("% won some money at showdown") + " (wmsd)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['wmsd'])/float(stat_dict[player]['sd'])
         return (stat,
@@ -246,7 +246,7 @@ def wmsd(stat_dict, player):
 # already in place
 def profit100(stat_dict, player):
     stat_descriptions["profit100"] = _("Profit per 100 hands") + " (profit100)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['net'])/float(stat_dict[player]['n'])
         return (stat,
@@ -268,7 +268,7 @@ def profit100(stat_dict, player):
 
 def bbper100(stat_dict, player):
     stat_descriptions["bbper100"] = _("Big blinds won per 100 hands") + " (bbper100)"
-    stat = 0.0
+    stat = None
     #['bigblind'] is already containing number of hands * table's bigblind (e.g. 401 hands @ 5c BB = 2005)
     try:
         stat = 100.0 * float(stat_dict[player]['net']) / float(stat_dict[player]['bigblind'])
@@ -291,7 +291,7 @@ def bbper100(stat_dict, player):
 
 def BBper100(stat_dict, player):
     stat_descriptions["BBper100"] = _("Big bets won per 100 hands") + " (BBper100)"
-    stat = 0.0
+    stat = None
     #['bigblind'] is already containing number of hands * table's bigblind (e.g. 401 hands @ 5c BB = 2005)
     try:
         stat = 50 * float(stat_dict[player]['net']) / float(stat_dict[player]['bigblind'])
@@ -326,7 +326,7 @@ def saw_f(stat_dict, player):
             _('Flop/4th street seen %')
             )
     except:
-        stat = 0.0
+        stat = None
         return (stat,
             'NA',
             'sf=NA',
@@ -369,7 +369,7 @@ def n(stat_dict, player):
     
 def fold_f(stat_dict, player):
     #TODO: remove
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['fold_2'])/float(stat_dict[player]['saw_f'])
         return (stat,
@@ -390,7 +390,7 @@ def fold_f(stat_dict, player):
            
 def steal(stat_dict, player):
     stat_descriptions["steal"] = _("% steal attempted") + " (steal)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['steal'])/float(stat_dict[player]['steal_opp'])
         return (stat,
@@ -405,7 +405,7 @@ def steal(stat_dict, player):
 
 def s_steal(stat_dict, player):
     stat_descriptions["s_steal"] = _("% steal success") + " (s_steal)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['suc_st'])/float(stat_dict[player]['steal'])
         return (stat,
@@ -420,7 +420,7 @@ def s_steal(stat_dict, player):
 
 def f_SB_steal(stat_dict, player):
     stat_descriptions["f_SB_steal"] = _("% folded SB to steal") + " (f_SB_steal)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['sbnotdef'])/float(stat_dict[player]['sbstolen'])
         return (stat,
@@ -439,7 +439,7 @@ def f_SB_steal(stat_dict, player):
 
 def f_BB_steal(stat_dict, player):
     stat_descriptions["f_BB_steal"] = _("% folded BB to steal") + " (f_BB_steal)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['bbnotdef'])/float(stat_dict[player]['bbstolen'])
         return (stat,
@@ -458,7 +458,7 @@ def f_BB_steal(stat_dict, player):
                 
 def f_steal(stat_dict, player):
     stat_descriptions["f_steal"] = _("% folded blind to steal") + " (f_steal)"
-    stat = 0.0
+    stat = None
     try:
         folded_blind = stat_dict[player]['sbnotdef'] + stat_dict[player]['bbnotdef']
         blind_stolen = stat_dict[player]['sbstolen'] + stat_dict[player]['bbstolen']
@@ -480,7 +480,7 @@ def f_steal(stat_dict, player):
 
 def three_B(stat_dict, player):
     stat_descriptions["three_B"] = _("% 3 bet preflop/3rd street") + " (three_B)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['tb_0'])/float(stat_dict[player]['tb_opp_0'])
         return (stat,
@@ -499,7 +499,7 @@ def three_B(stat_dict, player):
 
 def four_B(stat_dict, player):
     stat_descriptions["four_B"] = _("% 4 bet preflop/3rd street") + " (four_B)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['fb_0'])/float(stat_dict[player]['fb_opp_0'])
         return (stat,
@@ -518,7 +518,7 @@ def four_B(stat_dict, player):
 
 def cfour_B(stat_dict, player):
     stat_descriptions["cfour_B"] = _("% cold 4 bet preflop/3rd street") + " (cfour_B)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['cfb_0'])/float(stat_dict[player]['cfb_opp_0'])
         return (stat,
@@ -537,7 +537,7 @@ def cfour_B(stat_dict, player):
 
 def squeeze(stat_dict, player):
     stat_descriptions["squeeze"] = _("% squeeze preflop") + " (squeeze)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['sqz_0'])/float(stat_dict[player]['sqz_opp_0'])
         return (stat,
@@ -557,7 +557,7 @@ def squeeze(stat_dict, player):
 
 def raiseToSteal(stat_dict, player):
     stat_descriptions["raiseToSteal"] = _("% raise to steal") + " (raiseToSteal)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['rts'])/float(stat_dict[player]['rts_opp'])
         return (stat,
@@ -576,7 +576,7 @@ def raiseToSteal(stat_dict, player):
 
 def car0(stat_dict, player):
     stat_descriptions["car_0"] = _("% called a raise preflop") + " (car_0)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['car_0'])/float(stat_dict[player]['car_opp_0'])
         return (stat,
@@ -595,7 +595,7 @@ def car0(stat_dict, player):
 
 def f_3bet(stat_dict, player):
     stat_descriptions["f_3bet"] = _("% fold to 3 bet preflop/3rd street") + " (f_3bet)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f3b_0'])/float(stat_dict[player]['f3b_opp_0'])
         return (stat,
@@ -614,7 +614,7 @@ def f_3bet(stat_dict, player):
 
 def f_4bet(stat_dict, player):
     stat_descriptions["f_4bet"] = _("% fold to 4 bet preflop/3rd street") + " (f_4bet)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f4b_0'])/float(stat_dict[player]['f4b_opp_0'])
         return (stat,
@@ -633,7 +633,7 @@ def f_4bet(stat_dict, player):
 
 def WMsF(stat_dict, player):
     stat_descriptions["WMsF"] = _("% won money when seen flop/4th street") + " (WMsF)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['w_w_s_1'])/float(stat_dict[player]['saw_1'])
         return (stat,
@@ -652,7 +652,7 @@ def WMsF(stat_dict, player):
 
 def a_freq1(stat_dict, player):
     stat_descriptions["a_freq1"] = _("Aggression frequency flop/4th street") + " (a_freq1)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['aggr_1'])/float(stat_dict[player]['saw_f'])
         return (stat,
@@ -671,7 +671,7 @@ def a_freq1(stat_dict, player):
     
 def a_freq2(stat_dict, player):
     stat_descriptions["a_freq2"] = _("Aggression frequency turn/5th street") + " (a_freq2)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['aggr_2'])/float(stat_dict[player]['saw_2'])
         return (stat,
@@ -690,7 +690,7 @@ def a_freq2(stat_dict, player):
     
 def a_freq3(stat_dict, player):
     stat_descriptions["a_freq3"] = _("Aggression frequency river/6th street") + " (a_freq3)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['aggr_3'])/float(stat_dict[player]['saw_3'])
         return (stat,
@@ -709,7 +709,7 @@ def a_freq3(stat_dict, player):
     
 def a_freq4(stat_dict, player):
     stat_descriptions["a_freq4"] = _("Aggression frequency 7th street") + " (a_freq4)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['aggr_4'])/float(stat_dict[player]['saw_4'])
         return (stat,
@@ -728,7 +728,7 @@ def a_freq4(stat_dict, player):
 
 def a_freq_123(stat_dict, player):
     stat_descriptions["a_freq_123"] = _("Post-flop aggression frequency") + " (a_freq_123)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(  stat_dict[player]['aggr_1'] + stat_dict[player]['aggr_2'] + stat_dict[player]['aggr_3']
                     ) / float(  stat_dict[player]['saw_1'] + stat_dict[player]['saw_2'] + stat_dict[player]['saw_3']);
@@ -754,7 +754,7 @@ def a_freq_123(stat_dict, player):
 
 def agg_freq(stat_dict, player):
     #TODO: remove, dupe of a_freq_123
-    stat = 0.0
+    stat = None
     try:
         #Agression on the flop and all streets
         bet_raise = stat_dict[player]['aggr_1'] + stat_dict[player]['aggr_2'] + stat_dict[player]['aggr_3'] + stat_dict[player]['aggr_4']
@@ -781,7 +781,7 @@ def agg_freq(stat_dict, player):
 
 def agg_fact(stat_dict, player):
     stat_descriptions["agg_fact"] = _("Aggression factor") + " (agg_fact)"
-    stat = 0.0
+    stat = None
     try:
         bet_raise =   stat_dict[player]['aggr_1'] + stat_dict[player]['aggr_2'] + stat_dict[player]['aggr_3'] + stat_dict[player]['aggr_4']
         post_call  =  stat_dict[player]['call_1'] + stat_dict[player]['call_2'] + stat_dict[player]['call_3'] + stat_dict[player]['call_4']
@@ -806,7 +806,7 @@ def agg_fact(stat_dict, player):
         
 def agg_fact_pct(stat_dict, player):
     stat_descriptions["agg_fact_pct"] = _("Aggression factor pct") + " (agg_fact_pct)"
-    stat = 0.0
+    stat = None
     try:
         bet_raise =   stat_dict[player]['aggr_1'] + stat_dict[player]['aggr_2'] + stat_dict[player]['aggr_3'] + stat_dict[player]['aggr_4']
         post_call  =  stat_dict[player]['call_1'] + stat_dict[player]['call_2'] + stat_dict[player]['call_3'] + stat_dict[player]['call_4']
@@ -828,7 +828,7 @@ def agg_fact_pct(stat_dict, player):
 
 def cbet(stat_dict, player):
     stat_descriptions["cbet"] = _("% continuation bet") + " (cbet)"
-    stat = 0.0
+    stat = None
     try:
         cbets = stat_dict[player]['cb_1']+stat_dict[player]['cb_2']+stat_dict[player]['cb_3']+stat_dict[player]['cb_4']
         oppt = stat_dict[player]['cb_opp_1']+stat_dict[player]['cb_opp_2']+stat_dict[player]['cb_opp_3']+stat_dict[player]['cb_opp_4']
@@ -849,7 +849,7 @@ def cbet(stat_dict, player):
     
 def cb1(stat_dict, player):
     stat_descriptions["cb1"] = _("% continuation bet flop/4th street") + " (cb1)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['cb_1'])/float(stat_dict[player]['cb_opp_1'])
         return (stat,
@@ -868,7 +868,7 @@ def cb1(stat_dict, player):
     
 def cb2(stat_dict, player):
     stat_descriptions["cb2"] = _("% continuation bet turn/5th street") + " (cb2)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['cb_2'])/float(stat_dict[player]['cb_opp_2'])
         return (stat,
@@ -887,7 +887,7 @@ def cb2(stat_dict, player):
     
 def cb3(stat_dict, player):
     stat_descriptions["cb3"] = _("% continuation bet river/6th street") + " (cb3)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['cb_3'])/float(stat_dict[player]['cb_opp_3'])
         return (stat,
@@ -906,7 +906,7 @@ def cb3(stat_dict, player):
     
 def cb4(stat_dict, player):
     stat_descriptions["cb4"] = _("% continuation bet 7th street") + " (cb4)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['cb_4'])/float(stat_dict[player]['cb_opp_4'])
         return (stat,
@@ -925,7 +925,7 @@ def cb4(stat_dict, player):
     
 def ffreq1(stat_dict, player):
     stat_descriptions["ffreq1"] = _("% fold frequency flop/4th street") + " (ffreq1)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f_freq_1'])/float(stat_dict[player]['was_raised_1'])
         return (stat,
@@ -944,7 +944,7 @@ def ffreq1(stat_dict, player):
     
 def ffreq2(stat_dict, player):
     stat_descriptions["ffreq2"] = _("% fold frequency turn/5th street") + " (ffreq2)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f_freq_2'])/float(stat_dict[player]['was_raised_2'])
         return (stat,
@@ -963,7 +963,7 @@ def ffreq2(stat_dict, player):
     
 def ffreq3(stat_dict, player):
     stat_descriptions["ffreq3"] = _("% fold frequency river/6th street") + " (ffreq3)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f_freq_3'])/float(stat_dict[player]['was_raised_3'])
         return (stat,
@@ -982,7 +982,7 @@ def ffreq3(stat_dict, player):
     
 def ffreq4(stat_dict, player):
     stat_descriptions["ffreq4"] = _("% fold frequency 7th street") + " (ffreq4)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f_freq_4'])/float(stat_dict[player]['was_raised_4'])
         return (stat,
@@ -1001,7 +1001,7 @@ def ffreq4(stat_dict, player):
         
 def f_cb1(stat_dict, player):
     stat_descriptions["f_cb1"] = _("% fold to continuation bet flop/4th street") + " (f_cb1)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f_cb_1'])/float(stat_dict[player]['f_cb_opp_1'])
         return (stat,
@@ -1020,7 +1020,7 @@ def f_cb1(stat_dict, player):
     
 def f_cb2(stat_dict, player):
     stat_descriptions["f_cb2"] = _("% fold to continuation bet turn/5th street") + " (f_cb2)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f_cb_2'])/float(stat_dict[player]['f_cb_opp_2'])
         return (stat,
@@ -1039,7 +1039,7 @@ def f_cb2(stat_dict, player):
     
 def f_cb3(stat_dict, player):
     stat_descriptions["f_cb3"] = _("% fold to continuation bet river/6th street") + " (f_cb3)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f_cb_3'])/float(stat_dict[player]['f_cb_opp_3'])
         return (stat,
@@ -1058,7 +1058,7 @@ def f_cb3(stat_dict, player):
     
 def f_cb4(stat_dict, player):
     stat_descriptions["f_cb4"] = _("% fold to continuation bet 7th street") + " (f_cb4)"
-    stat = 0.0
+    stat = None
     try:
         stat = float(stat_dict[player]['f_cb_4'])/float(stat_dict[player]['f_cb_opp_4'])
         return (stat,
