@@ -317,8 +317,8 @@ class iPoker(HandHistoryConverter):
                 hand.buttonpos = seatno
             cash = self.clearMoneyString(a.group('CASH'))
             hand.addPlayer(seatno, a.group('PNAME'), cash)
-            if a.group('WIN') != '0':
-                win = self.clearMoneyString(a.group('WIN'))
+            win = self.clearMoneyString(a.group('WIN'))
+            if Decimal(win) != 0:
                 self.playerWinnings[a.group('PNAME')] = win
                 
         if hand.maxseats==None:
