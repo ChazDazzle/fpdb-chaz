@@ -538,7 +538,14 @@ class Hand(object):
                 self.bets[street][name] = []
                 #self.holecards[name] = {} # dict from street names.
                 #self.discards[name] = {} # dict from street names.
-
+                
+    def removePlayer(self, name):
+        if self.stacks.get(name):
+            self.players = [p for p in self.players if p[1]!=name]
+            del self.stacks[name]
+            self.pot.removePlayer(name)
+            for street in self.actionStreets:
+                del self.bets[street][name]
 
     def addStreets(self, match):
         # go through m and initialise actions to empty list for each street.
@@ -828,6 +835,20 @@ class Hand(object):
             board = set([c for s in self.board.values() for c in s])
             self.addHoleCards(holeandboard.difference(board),player,shown, mucked)
             
+    def sittingOut(self):
+        dealtIn = set()
+        for i, street in enumerate(self.actionStreets):
+            for j, act in enumerate(self.actions[street]):
+                dealtIn.add(act[0])
+        for player in self.collectees.keys():
+            dealtIn.add(player)
+        for player in self.dealt:
+            dealtIn.add(player)
+        for p in list(self.players):
+            if p[1] not in dealtIn:
+                if self.gametype['type']=='ring':
+                    self.removePlayer(p[1])
+            
     def setUncalledBets(self, value):
         self.uncalledbets = value                
                 
@@ -1077,6 +1098,7 @@ class HoldemOmahaHand(Hand):
             hhc.getRake(self)
             if self.maxseats is None:
                 self.maxseats = hhc.guessMaxSeats(self)
+            self.sittingOut()
             hhc.readOther(self)
             #print "\nHand:\n"+str(self)
         elif builtFrom == "DB":
@@ -1391,6 +1413,7 @@ class DrawHand(Hand):
             hhc.getRake(self)
             if self.maxseats is None:
                 self.maxseats = hhc.guessMaxSeats(self)
+            self.sittingOut()
             hhc.readOther(self)
             
         elif builtFrom == "DB":
@@ -1580,6 +1603,7 @@ class StudHand(Hand):
             hhc.getRake(self)
             if self.maxseats is None:
                 self.maxseats = hhc.guessMaxSeats(self)
+            self.sittingOut()
             hhc.readOther(self)
             
         elif builtFrom == "DB":
@@ -1875,6 +1899,11 @@ class Pot(object):
         self.committed[player] = Decimal(0)
         self.common[player] = Decimal(0)
         self.antes[player] = Decimal(0)
+        
+    def removePlayer(self,player):
+        del self.committed[player]
+        del self.common[player]
+        del self.antes[player]
 
     def addFold(self, player):
         # addFold must be called when a player folds
