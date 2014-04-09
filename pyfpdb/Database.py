@@ -3334,6 +3334,7 @@ class Database:
     def defaultTourneyTypeValue(self, value1, value2, field):
         if ((not value1) or 
            (field=='maxseats' and value1>value2) or 
+           (field=='limitType' and value2=='mx') or 
            ((field,value1)==('buyinCurrency','NA')) or 
            ((field,value1)==('speed','Normal')) or
            (field=='koBounty' and value1)
@@ -3354,6 +3355,7 @@ class Database:
     
     def createOrUpdateTourneyType(self, obj):
         ttid, _ttid, updateDb = None, None, False
+        setattr(obj, 'limitType', obj.gametype['limitType'])
         cursor = self.get_cursor()
         q = self.sql.query['getTourneyTypeIdByTourneyNo'].replace('%s', self.sql.query['placeholder'])
         cursor.execute(q, (obj.tourNo, obj.siteId))
@@ -3362,14 +3364,14 @@ class Database:
         if result != None:
             columnNames=[desc[0] for desc in cursor.description]
             if self.backend == self.PGSQL:
-                expectedValues = (('buyin', 'buyin'), ('fee', 'fee'), ('buyinCurrency', 'currency'),('isSng', 'sng'), ('maxseats', 'maxseats')
-                             , ('isKO', 'knockout'), ('koBounty', 'kobounty'), ('isRebuy', 'rebuy'), ('rebuyCost', 'rebuycost')
+                expectedValues = (('buyin', 'buyin'), ('fee', 'fee'), ('buyinCurrency', 'currency'), ('limitType', 'limitType'), ('isSng', 'sng')
+                             , ('maxseats', 'maxseats'), ('isKO', 'knockout'), ('koBounty', 'kobounty'), ('isRebuy', 'rebuy'), ('rebuyCost', 'rebuycost')
                              , ('isAddOn', 'addon'), ('addOnCost','addoncost'), ('speed', 'speed'), ('isShootout', 'shootout'), ('isMatrix', 'matrix'))
             else:
-                expectedValues = (('buyin', 'buyin'), ('fee', 'fee'), ('buyinCurrency', 'currency'),('isSng', 'sng'), ('maxseats', 'maxSeats')
-                             , ('isKO', 'knockout'), ('koBounty', 'koBounty'), ('isRebuy', 'rebuy'), ('rebuyCost', 'rebuyCost')
+                expectedValues = (('buyin', 'buyin'), ('fee', 'fee'), ('buyinCurrency', 'currency'), ('limitType', 'limitType'), ('isSng', 'sng')
+                             , ('maxseats', 'maxSeats'), ('isKO', 'knockout'), ('koBounty', 'koBounty'), ('isRebuy', 'rebuy'), ('rebuyCost', 'rebuyCost')
                              , ('isAddOn', 'addOn'), ('addOnCost','addOnCost'), ('speed', 'speed'), ('isShootout', 'shootout') 
-                             ,('isMatrix', 'matrix'), ('isZoom', 'zoom'))
+                             , ('isMatrix', 'matrix'), ('isZoom', 'zoom'))
             resultDict = dict(zip(columnNames, result))
             ttid = resultDict["id"]
             for ev in expectedValues:
@@ -3382,11 +3384,13 @@ class Database:
                     oldttid = ttid
         if not result or updateDb:
             if obj.gametype['mix']!='none':
-                category = obj.gametype['mix']
+                category, limitType = obj.gametype['mix'], 'mx'
+            elif result != None and resultDict['limitType']=='mx':
+                category, limitType = resultDict['category'], 'mx'
             else:
-                category = obj.gametype['category']
+                category, limitType = obj.gametype['category'], obj.gametype['limitType']
             row = (obj.siteId, obj.buyinCurrency, obj.buyin, obj.fee, category,
-                   obj.gametype['limitType'], obj.maxseats, obj.isSng, obj.isKO, obj.koBounty,
+                   limitType, obj.maxseats, obj.isSng, obj.isKO, obj.koBounty,
                    obj.isRebuy, obj.rebuyCost, obj.isAddOn, obj.addOnCost, obj.speed, obj.isShootout, obj.isMatrix, obj.isZoom)
             cursor.execute (self.sql.query['getTourneyTypeId'].replace('%s', self.sql.query['placeholder']), row)
             tmp=cursor.fetchone()
