@@ -848,6 +848,8 @@ class Hand(object):
             if p[1] not in dealtIn:
                 if self.gametype['type']=='ring':
                     self.removePlayer(p[1])
+        if len(self.players)<2:
+            raise FpdbHandPartial(_("Less than 2 players - Assuming hand '%s' was cancelled.") % (self.handid))
             
     def setUncalledBets(self, value):
         self.uncalledbets = value                
