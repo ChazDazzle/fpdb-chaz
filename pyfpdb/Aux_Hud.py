@@ -305,7 +305,7 @@ class Simple_table_popup_menu(gtk.Window):
         stat_range_combo_dict = {} #[position][screentext, field value]
         stat_range_combo_dict[0] = ((_('Since:')+" "+_('All Time')), "A")
         stat_range_combo_dict[1] = ((_('Since:')+" "+_('Session')), "S")
-        stat_range_combo_dict[2] = ((_('Since:')+" "+(_('%d Days') % n)+" - - >"), "T")
+        stat_range_combo_dict[2] = ((_('Since:')+" "+_('n Days')+" - - >"), "T")
 #combobox seatsstyle
         seats_style_combo_dict = {} #[position][screentext, field value]
         seats_style_combo_dict[0] = ((_('Number of Seats:')+" "+_('Any Number')), "A")
