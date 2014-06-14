@@ -83,7 +83,7 @@ class Hud:
 
         # Just throw error and die if any serious config issues are discovered
         if self.supported_games_parameters == None:
-            log.error(_("No <game_stat_set> found for %s games for type %s\n") % (self.poker_game, self.game_type))
+            log.error(_("No <game_stat_set> found for %s games for type %s.\n") % (self.poker_game, self.game_type))
             return
             
         if self.layout_set == None:
