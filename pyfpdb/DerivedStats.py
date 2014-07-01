@@ -400,10 +400,10 @@ class DerivedStats():
                                 if 'omaha' not in game:
                                     if board['board'][n]:
                                         cards = hole + board['board'][n]
-                                        cards  = [str(c) for c in cards]
+                                        cards  = [str(c) for c in cards if Card.encodeCardList.get(c)!=None or c=='0x']
                                         bcards = []
                                 holecards[pname]['cards'] += [cards]
-                                if ('0x' not in cards) and ((base=='hold' and len(board['board'][n])>=3) or (base!='hold' and len(cards)==reduce(lambda x, y: y-x,hrange))):
+                                if ('XX' not in cards) and ('0x' not in cards) and ((base=='hold' and len(board['board'][n])>=3) or (base!='hold' and len(cards)==reduce(lambda x, y: y-x,hrange))):
                                      if hilo == 'h':
                                          best_hi = pokereval.best_hand("hi", cards, bcards)
                                          hicards = [pokereval.card2string(i) for i in best_hi[1:]]
