@@ -88,7 +88,7 @@ class Winamax(HandHistoryConverter):
             \)\s-\s
             (?P<DATETIME>.*)
             Table:\s\'(?P<TABLE>[^(]+)
-            (.(?P<TOURNO>\d+).\#(?P<TABLENO>\d+))?.*
+            (.(?P<TOURNO>\d+).\s?\#(?P<TABLENO>\d+))?.*
             \'
             \s(?P<MAXPLAYER>\d+)\-max
             \s(?P<MONEY>\(real\smoney\))?
