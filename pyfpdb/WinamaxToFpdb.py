@@ -126,8 +126,8 @@ class Winamax(HandHistoryConverter):
             #helander2222 posts blind ($0.25), lopllopl posts blind ($0.50).
             player_re = "(?P<PNAME>" + "|".join(map(re.escape, players)) + ")"
             subst = {'PLYR': player_re, 'PLYR2': player_re.replace('PNAME', 'PNAME2'), 'CUR': self.sym[hand.gametype['currency']]}
-            self.re_PostSB    = re.compile('%(PLYR)s posts small blind (%(CUR)s)?(?P<SB>[\.0-9]+)(%(CUR)s)?' % subst, re.MULTILINE)
             self.re_PostBB    = re.compile('%(PLYR)s posts big blind (%(CUR)s)?(?P<BB>[\.0-9]+)(%(CUR)s)?' % subst, re.MULTILINE)
+            self.re_PostSB    = re.compile('%(PLYR)s posts small blind (%(CUR)s)?(?P<SB>[\.0-9]+)(%(CUR)s)?(out of position)?' % subst, re.MULTILINE)
             self.re_DenySB    = re.compile('(?P<PNAME>.*) deny SB' % subst, re.MULTILINE)
             self.re_Antes     = re.compile(r"^%(PLYR)s posts ante (%(CUR)s)?(?P<ANTE>[\.0-9]+)(%(CUR)s)?" % subst, re.MULTILINE)
             self.re_BringIn   = re.compile(r"^%(PLYR)s brings[- ]in( low|) for (%(CUR)s)?(?P<BRINGIN>[\.0-9]+(%(CUR)s)?)" % subst, re.MULTILINE)
@@ -357,12 +357,8 @@ class Winamax(HandHistoryConverter):
 
     def readBlinds(self, hand):
         if not self.re_DenySB.search(hand.handText):
-            try:
-                m = self.re_PostSB.search(hand.handText)
-                hand.addBlind(m.group('PNAME'), 'small blind', m.group('SB'))
-            except exceptions.AttributeError: # no small blind
-                log.warning( _("No small blinds found.")+str(sys.exc_info()) )
-            #hand.addBlind(None, None, None)
+            for a in self.re_PostSB.finditer(hand.handText):
+                hand.addBlind(a.group('PNAME'), 'small blind', a.group('SB'))
         for a in self.re_PostBB.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'big blind', a.group('BB'))
             amount = Decimal(a.group('BB').replace(u',', u''))
