@@ -125,7 +125,7 @@ class Winamax(HandHistoryConverter):
             #ANTES/BLINDS
             #helander2222 posts blind ($0.25), lopllopl posts blind ($0.50).
             player_re = "(?P<PNAME>" + "|".join(map(re.escape, players)) + ")"
-            subst = {'PLYR': player_re, 'CUR': self.sym[hand.gametype['currency']]}
+            subst = {'PLYR': player_re, 'PLYR2': player_re.replace('PNAME', 'PNAME2'), 'CUR': self.sym[hand.gametype['currency']]}
             self.re_PostSB    = re.compile('%(PLYR)s posts small blind (%(CUR)s)?(?P<SB>[\.0-9]+)(%(CUR)s)?' % subst, re.MULTILINE)
             self.re_PostBB    = re.compile('%(PLYR)s posts big blind (%(CUR)s)?(?P<BB>[\.0-9]+)(%(CUR)s)?' % subst, re.MULTILINE)
             self.re_DenySB    = re.compile('(?P<PNAME>.*) deny SB' % subst, re.MULTILINE)
@@ -134,6 +134,7 @@ class Winamax(HandHistoryConverter):
             self.re_PostBoth  = re.compile('(?P<PNAME>.*): posts small \& big blind \( (%(CUR)s)?(?P<SBBB>[\.0-9]+)(%(CUR)s)?\)' % subst)
             self.re_PostDead  = re.compile('(?P<PNAME>.*) posts dead blind \((%(CUR)s)?(?P<DEAD>[\.0-9]+)(%(CUR)s)?\)' % subst, re.MULTILINE)
             self.re_HeroCards = re.compile('Dealt\sto\s%(PLYR)s\s\[(?P<CARDS>.*)\]' % subst)
+            self.re_AlternativeSBBB = re.compile(u"%(PLYR)s posts (%(CUR)s)?(?P<SB>[\.0-9]+)(%(CUR)s)?\s%(PLYR2)s posts (%(CUR)s)?(?P<BB>[\.0-9]+)(%(CUR)s)?\s" % subst, re.MULTILINE)
 
             self.re_Action = re.compile('(, )?(?P<PNAME>.*?)(?P<ATYPE> bets| checks| raises| calls| folds)( (%(CUR)s)?(?P<BET>[\d\.]+)(%(CUR)s)?)?( and is all-in)?' % subst)
             self.re_ShowdownAction = re.compile('(?P<PNAME>[^\(\)\n]*) (\((small blind|big blind|button)\) )?shows \[(?P<CARDS>.+)\]')
@@ -371,6 +372,21 @@ class Winamax(HandHistoryConverter):
             hand.addBlind(a.group('PNAME'), 'secondsb', a.group('DEAD'))
         for a in self.re_PostBoth.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'small & big blinds', a.group('SBBB'))
+        if hand.actions['BLINDSANTES'] == []:
+            #if no blinds are found, try alternative method: sometimes Winamax writes
+            # *** ANTE/BLINDS ***
+            # Jadepoker posts 15
+            # eveauber posts 30
+            # instead of :
+            # *** ANTE/BLINDS ***
+            # Jadepoker posts small blind 15
+            # eveauber posts big blind 30
+            try:
+                m = self.re_AlternativeSBBB.search(hand.handText)
+                hand.addBlind(m.group('PNAME'), 'small blind', m.group('SB'))
+                hand.addBlind(m.group('PNAME2'), 'big blind', m.group('BB'))
+            except:
+                log.warning( _("Alternate method for finding sb and bb failed.")+str(sys.exc_info()) )
 
     def readAntes(self, hand):
         log.debug(_("reading antes"))
