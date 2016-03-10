@@ -324,12 +324,7 @@ class Winamax(HandHistoryConverter):
                        r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S](?P<TURN>\[\S\S\].+(?=\*\*\* RIVER \*\*\*)|.+))?"
                        r"(\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S](?P<RIVER>\[\S\S\].+))?", hand.handText,re.DOTALL)
 
-        try:
-            hand.addStreets(m)
-#            print "adding street", m.group(0)
-#            print "---"
-        except:
-            log.info(_("Failed to add streets. handtext=%s"))
+        hand.addStreets(m)
 
     #Needs to return a list in the format
     # ['player1name', 'player2name', ...] where player1name is the sb and player2name is bb,
