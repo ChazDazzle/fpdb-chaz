@@ -383,7 +383,7 @@ class Sql:
                         hero BOOLEAN,
                         chars TEXT,
                         comment TEXT,
-                        commentTs datetime,
+                        commentTs timestamp,
                         FOREIGN KEY(siteId) REFERENCES Sites(id) ON DELETE CASCADE)"""
 
 
@@ -417,7 +417,7 @@ class Sql:
                             gametypeId INT,
                             description TEXT,
                             shortDesc TEXT,
-                            ratingTime datetime,
+                            ratingTime timestamp,
                             handCount int)"""
 
 
@@ -515,8 +515,8 @@ class Sql:
                             gametypeId INT NOT NULL,
                             sessionId INT,
                             fileId INT NOT NULL,
-                            startTime datetime NOT NULL,
-                            importTime datetime NOT NULL,
+                            startTime timestamp NOT NULL,
+                            importTime timestamp NOT NULL,
                             seats INT NOT NULL,
                             heroSeat INT NOT NULL,
                             maxPosition INT NOT NULL,
@@ -772,8 +772,8 @@ class Sql:
                         siteTourneyNo INT,
                         entries INT,
                         prizepool INT,
-                        startTime datetime,
-                        endTime datetime,
+                        startTime timestamp,
+                        endTime timestamp,
                         tourneyName TEXT,
                         totalRebuyCount INT,
                         totalAddOnCount INT,
@@ -1184,7 +1184,7 @@ class Sql:
                         totalProfit INT,
                         allInEV INT,
                         comment TEXT,
-                        commentTs datetime,
+                        commentTs timestamp,
                         tourneysPlayersId INT,
 
                         wonWhenSeenStreet1 INT,
