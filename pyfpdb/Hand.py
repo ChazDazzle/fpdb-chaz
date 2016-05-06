@@ -1061,7 +1061,7 @@ class HoldemOmahaHand(Hand):
             pass # or indeed don't pass and complain instead
         log.debug("HoldemOmahaHand")
         self.allStreets = ['BLINDSANTES', 'PREFLOP','FLOP','TURN','RIVER']
-        self.holeStreets = ['PREFLOP']
+        self.holeStreets = ['BLINDSANTES', 'PREFLOP']
         if gametype['category']=='irish':
             self.discardStreets = ['TURN']
         else:
