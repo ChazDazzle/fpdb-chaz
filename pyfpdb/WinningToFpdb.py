@@ -118,7 +118,7 @@ class Winning(HandHistoryConverter):
     }
     
     re_GameInfo = re.compile(u"""
-        Game\sID:\s\d+\s
+        Game\sID:\s(?P<HID>\d+)\s
         (?P<SB>[%(NUM)s]+)/(?P<BB>[%(NUM)s]+)\s
         (?P<TABLE>.+?)\s
         \((?P<GAME>Hold\'em|Omaha|Omaha\sHiLow|Seven\sCards\sStud|Seven\sCards\sStud\sHiLow)\)$
@@ -135,15 +135,6 @@ class Winning(HandHistoryConverter):
         """ % substitutions, 
         re.MULTILINE|re.VERBOSE
     )
-    
-    re_HandInfo = re.compile("""
-        Game\sID:\s(?P<HID>\d+)\s
-        [%(NUM)s]+/[%(NUM)s]+\s
-        (?P<TABLE>.+?)\s
-        \(Hold\'em|Omaha|Omaha\sHiLow|Seven\sCards\sStud|Seven\sCards\sStud\sHiLow\)$    
-        """ % substitutions,  
-        re.MULTILINE|re.VERBOSE
-    )    
     
     re_DateTime = re.compile("""
         ^Game\sstarted\sat:\s
@@ -311,7 +302,7 @@ class Winning(HandHistoryConverter):
             raise FpdbHandPartial(_("Hand is not cleanly split into pre and post Summary"))
         
         info = {}
-        m  = self.re_HandInfo.search(hand.handText)
+        m  = self.re_GameInfo.search(hand.handText)
         m2 = self.re_DateTime.search(hand.handText)
         if m is None or m2 is None:
             tmp = hand.handText[0:200]
