@@ -171,6 +171,7 @@ class iPoker(HandHistoryConverter):
     re_SitsOut = re.compile(r'<event sequence="[0-9]+" type="SIT_OUT" player="(?P<PSEAT>[0-9])"/>', re.MULTILINE)
     re_DateTime1 = re.compile("""(?P<D>[0-9]{2})\-(?P<M>[a-zA-Z]{3})\-(?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
     re_DateTime2 = re.compile("""(?P<D>[0-9]{2})\/(?P<M>[0-9]{2})\/(?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
+    re_DateTime3 = re.compile("""(?P<Y>[0-9]{4})\/(?P<M>[0-9]{2})\/(?P<D>[0-9]{2})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
     re_MaxSeats = re.compile(r'(?P<SEATS>[0-9]+) Max', re.MULTILINE)
     re_TourNo = re.compile(r'\(\#(?P<TOURNO>\d+)\)', re.MULTILINE)
     re_non_decimal = re.compile(r'[^\d.,]+')
@@ -337,10 +338,19 @@ class iPoker(HandHistoryConverter):
             try:
                 hand.startTime = datetime.datetime.strptime(m.group('DATETIME'), '%Y-%m-%d %H:%M:%S')
             except ValueError:
-                datestr = '%d/%m/%Y %H:%M:%S'
                 date_match = self.re_DateTime2.search(m.group('DATETIME'))
-                if date_match.group('S') == None:
-                    datestr = '%d/%m/%Y %H:%M'
+                if date_match:
+                    datestr = '%d/%m/%Y %H:%M:%S'
+                    if date_match.group('S') == None:
+                        datestr = '%d/%m/%Y %H:%M'
+                else:
+                    date_match1 = self.re_DateTime3.search(m.group('DATETIME'))
+                    datestr = '%Y/%m/%d %H:%M:%S'
+                    if date_match1 == None:
+                        log.error(_("iPokerToFpdb.readHandInfo Could not read datetime: '%s'") % hand.handid)
+                        raise FpdbParseError
+                    if date_match1.group('S') == None:
+                        datestr = '%Y/%m/%d %H:%M'
                 hand.startTime = datetime.datetime.strptime(m.group('DATETIME'), datestr)
 
         if self.info['type'] == 'tour':

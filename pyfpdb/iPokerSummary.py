@@ -82,6 +82,7 @@ class iPokerSummary(TourneySummary):
     re_TotalBuyin = re.compile(r"""(?P<BUYIN>(?P<BIAMT>[%(LS)s%(NUM)s]+)\s\+\s?(?P<BIRAKE>[%(LS)s%(NUM)s]+)?)""" % substitutions, re.MULTILINE|re.VERBOSE)
     re_DateTime1 = re.compile("""(?P<D>[0-9]{2})\-(?P<M>[a-zA-Z]{3})\-(?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
     re_DateTime2 = re.compile("""(?P<D>[0-9]{2})\/(?P<M>[0-9]{2})\/(?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
+    re_DateTime3 = re.compile("""(?P<Y>[0-9]{4})\/(?P<M>[0-9]{2})\/(?P<D>[0-9]{2})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
     re_Place     = re.compile("\d+")
     re_FPP       = re.compile(r'Pts\s')
     
@@ -129,8 +130,17 @@ class iPokerSummary(TourneySummary):
             except ValueError:
                 datestr = '%d/%m/%Y %H:%M:%S'
                 date_match = self.re_DateTime2.search(mg['DATETIME'])
-                if date_match.group('S') == None:
-                    datestr = '%d/%m/%Y %H:%M'
+                if date_match != None:
+                    if date_match.group('S') == None:
+                        datestr = '%d/%m/%Y %H:%M'
+                else:
+                    date_match1 = self.re_DateTime3.search(mg['DATETIME'])
+                    datestr = '%Y/%m/%d %H:%M:%S'
+                    if date_match1 == None:
+                        log.error(_("iPokerSummary.parseSummary Could not read datetime"))
+                        raise FpdbParseError
+                    if date_match1.group('S') == None:
+                        datestr = '%Y/%m/%d %H:%M'
                 self.startTime = datetime.datetime.strptime(mg['DATETIME'], datestr)
 
         if not mg['CURRENCY'] or mg['CURRENCY']=='fun':
