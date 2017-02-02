@@ -856,7 +856,7 @@ class DerivedStats():
         for i in range(5): self.hands['street%dRaises' % i] = 0
 
         for (i, street) in enumerate(hand.actionStreets[1:]):
-            self.hands['street%dRaises' % i] = len(filter( lambda action: action[1] in ('raises','bets'), hand.actions[street]))
+            self.hands['street%dRaises' % i] = len(filter( lambda action: action[1] in ('raises','bets','completes'), hand.actions[street]))
 
     def calcSteals(self, hand):
         """Fills raiseFirstInChance|raisedFirstIn, fold(Bb|Sb)ToSteal(Chance|)
@@ -915,14 +915,17 @@ class DerivedStats():
 
     def calc34BetStreet0(self, hand):
         """Fills street0_(3|4)B(Chance|Done), other(3|4)BStreet0"""
-        bet_level = 1 # bet_level after 3-bet is equal to 3
-        squeeze_chance, raise_chance, action_cnt = False, True, {}
+        if hand.gametype['base'] == 'stud':
+            bet_level = 0 # bet_level after 3-bet is equal to 3
+        else:
+            bet_level = 1 # bet_level after 3-bet is equal to 3
+        squeeze_chance, raise_chance, action_cnt, first_agressor = False, True, {}, None
         p0_in = set([x[0] for x in hand.actions[hand.actionStreets[0]] if not x[-1]])
         p1_in = set([x[0] for x in hand.actions[hand.actionStreets[1]]])
         p_in = p1_in.union(p0_in)
         for p in p_in: action_cnt[p] = 0
         for action in hand.actions[hand.actionStreets[1]]:
-            pname, act, aggr, allin = action[0], action[1], action[1] in ('raises', 'bets'), False
+            pname, act, aggr, allin = action[0], action[1], action[1] in ('raises', 'bets', 'completes'), False
             player_stats = self.handsplayers.get(pname)
             action_cnt[pname] += 1
             if len(action) > 3 and act != 'discards':
@@ -933,9 +936,10 @@ class DerivedStats():
             if act == 'folds' or allin or player_stats['sitout']:
                 p_in.discard(pname)
                 if player_stats['sitout']: continue
-            if bet_level == 1:
-                if aggr:
+            if bet_level < 2:
+                if first_agressor == None:
                     first_agressor = pname
+                if aggr:                    
                     bet_level += 1
                 continue
             elif bet_level == 2:
@@ -1017,7 +1021,7 @@ class DerivedStats():
         for tupleread in hand.actions[hand.actionStreets[1]]:
             action = tupleread[1]
             if fast_forward:
-                if action == 'raises':
+                if action in ('raises', 'completes'):
                     fast_forward = False # raisefound, end fast-forward
             else:
                 player = tupleread[0]
@@ -1173,7 +1177,7 @@ class DerivedStats():
         None if there were no bets or raises on that street
         """
         for act in actions:
-            if act[1] in ('bets', 'raises'):
+            if act[1] in ('bets', 'raises', 'completes'):
                 return act[0]
         return None
     
@@ -1190,7 +1194,8 @@ class DerivedStats():
                     players[act[0]] = True
                 else:
                     players[act[0]] = False
-                if act[1] == 'raises': break
+                if act[1] == 'raises' or act[1] == 'completes': 
+                    break
             elif act[1]!='discards':
                 i+=1
         return players
@@ -1200,7 +1205,7 @@ class DerivedStats():
             None if there were no bets or raises on that street"""
         lastbet = None
         for act in actions[street]:
-            if act[1] in ('bets', 'raises'):
+            if act[1] in ('bets', 'raises', 'completes'):
                 lastbet = act[0]
         return lastbet
 
@@ -1213,7 +1218,7 @@ class DerivedStats():
             if act[0] == player:
                 noBetsBefore = True
                 break
-            if act[1] in ('bets', 'raises'):
+            if act[1] in ('bets', 'raises', 'completes'):
                 break
         return noBetsBefore
 
@@ -1223,7 +1228,7 @@ class DerivedStats():
         betOrRaise = False
         for act in actions[street]:
             if act[0] == player and act[1] not in ('discards', 'stands pat'):
-                if act[1] in ('bets', 'raises'):
+                if act[1] in ('bets', 'raises', 'completes'):
                     betOrRaise = True
                 else:
                     # player found but did not bet or raise as their first action
