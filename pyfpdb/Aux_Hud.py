@@ -141,7 +141,7 @@ class Simple_Stat_Window(Aux_Base.Seat_Window):
     def button_release_right(self, event):  #show pop up
         widget = self.childAt(event.pos())
 
-        if widget.stat_dict and self.popup_count == 0: # do not popup on empty blocks or if one is already active
+        if widget.stat_dict and self.popup_count == 0 and widget.aw_popup: # do not popup on empty blocks or if one is already active
             pu = Popup.popup_factory(
                 seat = widget.aw_seat,
                 stat_dict = widget.stat_dict,
@@ -149,7 +149,7 @@ class Simple_Stat_Window(Aux_Base.Seat_Window):
                 pop = self.aw.config.popup_windows[widget.aw_popup],
                 hand_instance = self.aw.hud.hand_instance,
                 config = self.aw.config)
-            pu.setStyleSheet("background:%s;color:%s;" % (self.aw.bgcolor, self.aw.fgcolor))
+            pu.setStyleSheet("QWidget{background:%s;color:%s;}QToolTip{}" % (self.aw.bgcolor, self.aw.fgcolor))
                     
     def create_contents(self, i):
         self.setStyleSheet("QWidget{background:%s;color:%s;}QToolTip{}" % (self.aw.bgcolor, self.aw.fgcolor))
