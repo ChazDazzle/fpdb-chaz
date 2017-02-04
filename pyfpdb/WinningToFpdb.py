@@ -416,7 +416,11 @@ class Winning(HandHistoryConverter):
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
         m = self.re_Board.search(hand.streets[street])
-        hand.setCommunityCards(street, [c.replace("10", "T") for c in m.group('CARDS').split(' ')])
+        if m:
+            hand.setCommunityCards(street, [c.replace("10", "T") for c in m.group('CARDS').split(' ')])
+        else:
+            log.error("WinningToFpdb.readCommunityCards: No community cards found on %s %s" % (street, hand.handid))
+            raise FpdbParseError
 
     def readAntes(self, hand):
         log.debug(_("reading antes"))

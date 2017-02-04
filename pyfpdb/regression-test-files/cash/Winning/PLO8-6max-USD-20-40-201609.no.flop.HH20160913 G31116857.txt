@@ -1,0 +1,43 @@
+Game started at: 2016/9/13 21:59:15
+Game ID: 727152195 20/40 (PRR) Urayuli (Omaha HiLow)
+Seat 6 is the button
+Seat 1: Player0 (1347.87).
+Seat 3: Player1 (1048.48).
+Seat 4: Player2 (4166.88).
+Seat 5: Player3 (2156.25).
+Seat 6: Player4 (2790.49).
+Player Player0 has small blind (10)
+Player Player1 is timed out.
+Player Player1 sitting out
+Player Player2 has big blind (20)
+*** FLOP ***:
+Player Player0 received a card.
+Player Player0 received a card.
+Player Player0 received a card.
+Player Player0 received a card.
+Player Player2 received a card.
+Player Player2 received a card.
+Player Player2 received a card.
+Player Player2 received a card.
+Player Player3 received a card.
+Player Player3 received a card.
+Player Player3 received a card.
+Player Player3 received a card.
+Player Player4 received a card.
+Player Player4 received a card.
+Player Player4 received a card.
+Player Player4 received a card.
+Player Player3 folds
+Player Player4 raises (40)
+Player Player0 raises (50)
+Player Player4 folds
+Uncalled bet (20) returned to Player3
+Player Player3 mucks cards
+------ Summary ------
+Pot: 79.25. Rake 0.51. JP fee 0.24
+Player Player0 does not show cards.Bets: 0. Collects: 0. Wins: 0.
+Player Player1 does not show cards.Bets: 0. Collects: 0. Wins: 0.
+Player Player2 does not show cards.Bets: 0. Collects: 0. Wins: 0.
+*Player Player3 mucks (does not show cards). Bets: 40. Collects: 79.25. Wins: 39.25.
+Player Player4 does not show cards.Bets: 40. Collects: 0. Loses: 40.
+Game ended at: 2016/9/13 22:0:53
