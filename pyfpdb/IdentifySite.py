@@ -186,7 +186,7 @@ class IdentifySite:
             try:
                 wb = xlrd.open_workbook(in_path)
                 sh = wb.sheet_by_index(0)
-                header = sh.cell(0,0).value
+                header = str(sh.cell(0,0).value)
                 return header, 'utf-8'
             except xlrd.XLRDError:
                 return None, None
