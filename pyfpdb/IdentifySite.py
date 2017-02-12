@@ -188,7 +188,7 @@ class IdentifySite:
                 sh = wb.sheet_by_index(0)
                 header = str(sh.cell(0,0).value)
                 return header, 'utf-8'
-            except xlrd.XLRDError:
+            except:
                 return None, None
         for kodec in self.codepage:
             try:
