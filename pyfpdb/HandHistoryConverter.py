@@ -443,6 +443,10 @@ or None if we fail to get the info """
     def setFileType(self, filetype = "text", codepage='utf8'):
         self.filetype = filetype
         self.codepage = codepage
+        
+    # Import from string
+    def setObs(self, text):
+        self.obs = text
 
     def __listof(self, x):
         if isinstance(x, list) or isinstance(x, tuple):
@@ -473,6 +477,8 @@ or None if we fail to get the info """
         elif self.filetype == "xml":
             doc = xml.dom.minidom.parse(filename)
             self.doc = doc
+        elif self.filetype == "":
+            pass
 
     def guessMaxSeats(self, hand):
         """Return a guess at maxseats when not specified in HH."""
