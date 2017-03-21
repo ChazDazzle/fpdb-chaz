@@ -611,7 +611,12 @@ class DerivedStats():
                             holecards.append(holes)
                             holeplayers.append(p)
                     if len(holecards)>1:
-                        win = pokereval.winners(game = evalgame, pockets = holecards, board = board)
+                        try:
+                            win = pokereval.winners(game = evalgame, pockets = holecards, board = board)
+                        except RuntimeError:
+                            log.error("assembleHandsPots: error evaluating winners for hand %s %s" % (hand.handid, hand.in_path))
+                            win = {}
+                            win[hiLoKey[hilo][0]] = [0]
                     else:
                         win = {}
                         win[hiLoKey[hilo][0]] = [0]

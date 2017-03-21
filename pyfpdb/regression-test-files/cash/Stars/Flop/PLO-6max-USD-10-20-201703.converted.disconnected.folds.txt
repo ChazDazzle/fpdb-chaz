@@ -1,0 +1,29 @@
+PokerStars Hand #3430831896: Omaha Pot Limit ($10/$20) - 2017/02/28 20:57:17
+Table '#11402878' 6-max Seat #3 is the button
+Seat 1: UTGplus1 ($1,970 in chips)
+Seat 2: UTGplus2 ($2,004 in chips)
+Seat 3: brian ($3,678 in chips)
+Seat 4: Small Blind ($2,744 in chips)
+Seat 5: Big Blind ($1,979.98 in chips)
+Seat 6: UTG ($4,257 in chips)
+Small Blind: posts small blind $10
+Big Blind: posts big blind $20
+*** HOLE CARDS ***
+Dealt to brian [5h 2s 6h Td]
+UTG: folds
+UTGplus1: folds
+UTGplus2: raises $60 to $60
+brian: folds
+Small Blind: folds (disconnect)
+Big Blind: folds
+Uncalled bet ($40) returned to UTGplus2
+UTGplus2: shows [Th Qs Qh 2c]
+UTGplus2 collected $50 from pot
+*** SUMMARY ***
+Total pot $50 | Rake $0.00
+Seat 1: UTGplus1 mucked [8d 6s Qc 5s]
+Seat 2: UTGplus2 showed [Th Qs Qh 2c] and won ($50)
+Seat 3: brian (button) mucked [5h 2s 6h Td]
+Seat 4: Small Blind (small blind) mucked [9c 8h 3h Jc]
+Seat 5: Big Blind (big blind) mucked [3d 6d 8s Tc]
+Seat 6: UTG mucked [9s 2h 4h 7s]
