@@ -528,8 +528,12 @@ class PokerStars(HandHistoryConverter):
                 hand.addBlind(a.group('PNAME'), 'small blind', a.group('SB'))
                 liveBlind = False
             else:
-                # Post dead blinds as ante
-                hand.addBlind(a.group('PNAME'), 'secondsb', a.group('SB'))
+                names = [p[1] for p in hand.players]
+                if "Big Blind" in names or "Small Blind" in names:
+                    hand.addBlind(a.group('PNAME'), 'small blind', a.group('SB'))
+                else:
+                    # Post dead blinds as ante
+                    hand.addBlind(a.group('PNAME'), 'secondsb', a.group('SB'))
         for a in self.re_PostBB.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'big blind', a.group('BB'))
         for a in self.re_PostBoth.finditer(hand.handText):
