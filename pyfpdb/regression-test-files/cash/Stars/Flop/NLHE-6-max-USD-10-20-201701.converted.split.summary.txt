@@ -1,0 +1,29 @@
+PokerStars Hand #3406008447: Hold'em No Limit ($10/$20) - 2017/01/01 17:36:54
+Table '#11251690' 6-max Seat #5 is the button
+Seat 1: Big Blind ($1,646.95 in chips)
+Seat 2: UTG ($1,642.05 in chips)
+Seat 3: UTGplus1 ($2,037 in chips)
+Seat 4: UTGplus2 ($2,645 in chips)
+Seat 5: brian ($2,756 in chips)
+Seat 6: Small Blind ($1,350 in chips)
+Small Blind: posts small blind $10
+Big Blind: posts big blind $20
+*** HOLE CARDS ***
+Dealt to brian [4c Td]
+UTG: folds
+UTGplus1: folds
+UTGplus2: folds
+brian: folds
+Small Blind: folds
+*** SHOW DOWN ***
+Big Blind: shows [Jc 4d] (high card Jack)
+Uncalled bet ($20) returned to Big Blind
+Big Blind collected $10 from pot
+*** SUMMARY ***
+Total pot $10 | Rake $0.00
+Seat 1: Big Blind (big blind) collected $10
+Seat 2: UTG mucked [2s 7d]
+Seat 3: UTGplus1 mucked [6c 3s]
+Seat 4: UTGplus2 mucked [Tc 6s]
+Seat 5: brian (button) mucked [4c Td]
+Seat 6: Small Blind (small blind) mucked [Jd 8c]

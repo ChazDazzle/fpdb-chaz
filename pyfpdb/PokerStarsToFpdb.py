@@ -200,6 +200,7 @@ class PokerStars(HandHistoryConverter):
     re_WinningRankOther = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place and received %(CUR)s(?P<AMT>[.0-9]+)\.$" %  substitutions, re.MULTILINE)
     re_RankOther        = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place$" %  substitutions, re.MULTILINE)
     re_Cancelled        = re.compile('Hand\scancelled', re.MULTILINE)
+    re_Uncalled         = re.compile('Uncalled bet \(%(CUR)s(?P<BET>[.\d]+)\) returned to' %  substitutions, re.MULTILINE)
     #APTEM-89 wins the $0.27 bounty for eliminating Hero
     #ChazDazzle wins the 22000 bounty for eliminating berkovich609
     #JKuzja, vecenta split the $50 bounty for eliminating ODYSSES
@@ -637,14 +638,27 @@ class PokerStars(HandHistoryConverter):
                     hand.koCounts[a.group('PNAME')] += 1        
 
     def readCollectPot(self,hand):
+        #Bovada walks are calculated incorrectly in converted PokerStars hands
+        acts, bovadaUncalled = hand.actions.get('PREFLOP'), False
+        if acts != None and len([a for a in acts if a[1] != 'folds']) == 0:
+            m0 = self.re_Uncalled.search(hand.handText)
+            if m0 and m0.group('BET') == str(hand.bb):
+                bovadaUncalled = True
         i=0
+        pre, post = hand.handText.split('*** SUMMARY ***')
         if hand.runItTimes==0:
-            for m in self.re_CollectPot.finditer(hand.handText):
-                hand.addCollectPot(player=m.group('PNAME'),pot=m.group('POT'))
+            for m in self.re_CollectPot.finditer(post):
+                if bovadaUncalled:
+                    hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(m.group('POT'))*2))
+                else:
+                    hand.addCollectPot(player=m.group('PNAME'),pot=m.group('POT'))
                 i+=1
         if i==0:
-            for m in self.re_CollectPot2.finditer(hand.handText):
-                hand.addCollectPot(player=m.group('PNAME'),pot=m.group('POT'))
+            for m in self.re_CollectPot2.finditer(pre):
+                if bovadaUncalled:
+                    hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(m.group('POT'))*2))
+                else:
+                    hand.addCollectPot(player=m.group('PNAME'),pot=m.group('POT'))
 
     def readShownCards(self,hand):
         for m in self.re_ShownCards.finditer(hand.handText):
