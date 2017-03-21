@@ -303,7 +303,10 @@ class Hand(object):
             #log.debug(_("Hand.insert(): hid #: %s is a duplicate") % self.hands['siteHandNo'])
             self.is_duplicate = True  # i.e. don't update hudcache
             next = id
-            raise FpdbHandDuplicate(self.hands['siteHandNo'])
+            if self.publicDB:
+                raise FpdbHandDuplicate("%s-%s-%s" % (str(self.siteId), str(self.hands['siteHandNo']), self.hands['heroSeat']))
+            else:
+                raise FpdbHandDuplicate("%s-%s" % (str(self.siteId), str(self.hands['siteHandNo'])))
         else:
             self.dbid_hands = id
             self.hands['id'] = self.dbid_hands

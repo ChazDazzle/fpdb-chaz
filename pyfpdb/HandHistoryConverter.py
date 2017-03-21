@@ -447,6 +447,7 @@ or None if we fail to get the info """
     # Import from string
     def setObs(self, text):
         self.obs = text
+        self.whole_file = text
 
     def __listof(self, x):
         if isinstance(x, list) or isinstance(x, tuple):
