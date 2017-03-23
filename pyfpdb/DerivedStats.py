@@ -942,9 +942,9 @@ class DerivedStats():
                 p_in.discard(pname)
                 if player_stats['sitout']: continue
             if bet_level < 2:
-                if first_agressor == None:
-                    first_agressor = pname
-                if aggr:                    
+                if aggr:
+                    if first_agressor == None:
+                        first_agressor = pname            
                     bet_level += 1
                 continue
             elif bet_level == 2:
