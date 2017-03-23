@@ -388,7 +388,7 @@ class Hand(object):
         # Discripter must be set to lowercase as postgres returns all descriptors lower case and SQLight returns them as they are
         res = [dict(line) for line in [zip([ column[0].lower() for column in c.description], row) for row in c.fetchall()]]
         for row in res:
-            self.addPlayer(row['seatno'],row['name'],str(row['chips']), str(row['position']))
+            self.addPlayer(row['seatno'],row['name'],str(row['chips']), str(row['position']), row['sitout'], str(row['bounty']))
             cardlist = []
             cardlist.append(Card.valueSuitFromCard(row['card1']))
             cardlist.append(Card.valueSuitFromCard(row['card2']))
