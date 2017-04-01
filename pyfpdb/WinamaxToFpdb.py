@@ -83,7 +83,7 @@ class Winamax(HandHistoryConverter):
 # Table: 'Charenton-le-Pont' 9-max (real money) Seat #5 is the button
     re_HandInfo = re.compile(u"""
             \s*Winamax\sPoker\s-\s
-            (?P<RING>(CashGame|Go\sFast\s"\w+"))?
+            (?P<RING>(CashGame|Go\sFast\s"[^"]+"))?
             (?P<TOUR>Tournament\s
             (?P<TOURNAME>.+)?\s
             buyIn:\s(?P<BUYIN>(?P<BIAMT>[%(LS)s\d\,.]+)?(\s\+?\s|-)(?P<BIRAKE>[%(LS)s\d\,.]+)?\+?(?P<BOUNTY>[%(LS)s\d\.]+)?\s?(?P<TOUR_ISO>%(LEGAL_ISO)s)?|(?P<FREETICKET>[\sa-zA-Z]+))?\s
