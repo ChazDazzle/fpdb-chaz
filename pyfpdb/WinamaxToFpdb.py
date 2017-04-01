@@ -74,7 +74,7 @@ class Winamax(HandHistoryConverter):
 
     # Static regexes
     # ***** End of hand R5-75443872-57 *****
-    re_Identify = re.compile(u'Winamax\sPoker\s\-\s(CashGame|Tournament\s")')
+    re_Identify = re.compile(u'Winamax\sPoker\s\-\s')
     re_SplitHands = re.compile(r'\n\n')
 
 
@@ -83,7 +83,7 @@ class Winamax(HandHistoryConverter):
 # Table: 'Charenton-le-Pont' 9-max (real money) Seat #5 is the button
     re_HandInfo = re.compile(u"""
             \s*Winamax\sPoker\s-\s
-            (?P<RING>CashGame)?
+            (?P<RING>(CashGame|Go\sFast\s"\w+"))?
             (?P<TOUR>Tournament\s
             (?P<TOURNAME>.+)?\s
             buyIn:\s(?P<BUYIN>(?P<BIAMT>[%(LS)s\d\,.]+)?(\s\+?\s|-)(?P<BIRAKE>[%(LS)s\d\,.]+)?\+?(?P<BOUNTY>[%(LS)s\d\.]+)?\s?(?P<TOUR_ISO>%(LEGAL_ISO)s)?|(?P<FREETICKET>[\sa-zA-Z]+))?\s
@@ -201,6 +201,11 @@ class Winamax(HandHistoryConverter):
                 info['currency'] = 'EUR'
             else:
                 info['currency'] = 'play'
+                
+            if 'Go Fast' in mg.get('RING'):
+                info['fast'] = True
+            else:
+                info['fast'] = False
 
         if 'LIMIT' in mg:
             if mg['LIMIT'] in self.limits:
