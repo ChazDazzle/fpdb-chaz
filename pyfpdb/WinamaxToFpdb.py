@@ -74,7 +74,7 @@ class Winamax(HandHistoryConverter):
 
     # Static regexes
     # ***** End of hand R5-75443872-57 *****
-    re_Identify = re.compile(u'Winamax\sPoker\s\-\s')
+    re_Identify = re.compile(u'Winamax\sPoker\s\-\s(CashGame|Go\sFast|Tournament\s\")')
     re_SplitHands = re.compile(r'\n\n')
 
 
