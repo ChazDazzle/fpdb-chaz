@@ -141,8 +141,10 @@ class Bovada(HandHistoryConverter):
     re_ShowdownAction   = re.compile(r"^%(PLYR)s (?P<HERO>\s?\[ME\]\s)?: Card dealt to a spot \[(?P<CARDS>.*)\]" % substitutions, re.MULTILINE)
     #re_ShownCards       = re.compile("^Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(?P<SHOWED>showed|mucked) \[(?P<CARDS>.*)\]( and won \([.\d]+\) with (?P<STRING>.*))?" % substitutions, re.MULTILINE)
     re_CollectPot1      = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: Hand (R|r)esult(\-Side (P|p)ot)? %(CUR)s(?P<POT1>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
+    re_Bounty           = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: BOUNTY PRIZE \[%(CUR)s(?P<BOUNTY>[%(NUM)s]+)\]" %  substitutions, re.MULTILINE)
     re_Dealt            = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: Card dealt to a spot" % substitutions, re.MULTILINE)
     re_Buyin            = re.compile(r"(\s-\s\d+\s-\s(?P<TOURNAME>.+?))?\s-\s(?P<BUYIN>(?P<BIAMT>[%(LS)s\d\.]+)-(?P<BIRAKE>[%(LS)s\d\.]+)?)\s-\s" % substitutions)
+    re_Knockout         = re.compile(r"\s\((?P<BOUNTY>[%(LS)s\d\.]+)\sKnockout" % substitutions)
     re_Stakes           = re.compile(r"(RING|ZONE)\s-\s(?P<CURRENCY>%(LS)s|)?(?P<SB>[%(NUM)s]+)-(%(LS)s)?(?P<BB>[%(NUM)s]+)" % substitutions)
     re_Summary          = re.compile(r"\*\*\*\sSUMMARY\s\*\*\*")
     re_Hole_Third       = re.compile(r"\*\*\*\s(3RD\sSTREET|HOLE\sCARDS)\s\*\*\*")
@@ -258,6 +260,8 @@ class Bovada(HandHistoryConverter):
         m = self.re_Buyin.search(self.in_path)
         if m: info.update(m.groupdict())
         hand.allInBlind = False
+        m2 = self.re_Knockout.search(self.in_path)
+        if m2: info.update(m2.groupdict())
         
         for key in info:
             if key == 'DATETIME':
@@ -288,6 +292,13 @@ class Bovada(HandHistoryConverter):
                             #FIXME: handle other currencies, play money
                             log.error(_("BovadaToFpdb.readHandInfo: Failed to detect currency.") + " Hand ID: %s: '%s'" % (hand.handid, info[key]))
                             raise FpdbParseError
+                    
+                        if info.get('BOUNTY') != None:
+                            info['BOUNTY'] = info['BOUNTY'].strip(u'$€£') # Strip here where it isn't 'None'
+                            hand.koBounty = int(100*Decimal(info['BOUNTY']))
+                            hand.isKO = True
+                        else:
+                            hand.isKO = False
 
                         info['BIAMT'] = info['BIAMT'].strip(u'$')
                         
@@ -615,4 +626,13 @@ class Bovada(HandHistoryConverter):
 
     def readShownCards(self,hand):
         pass
+    
+
+    def readTourneyResults(self, hand):
+        """Reads knockout bounties and add them to the koCounts dict"""
+        for a in self.re_Bounty.finditer(hand.handText):
+            player = self.playerSeatFromPosition('BovadaToFpdb.readCollectPot', hand.handid, a.group('PNAME'))
+            if player not in hand.koCounts:
+                hand.koCounts[player] = 0
+            hand.koCounts[player] += 1    
         
