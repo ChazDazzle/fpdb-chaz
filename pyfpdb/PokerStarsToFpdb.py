@@ -645,10 +645,12 @@ class PokerStars(HandHistoryConverter):
     def readCollectPot(self,hand):
         #Bovada walks are calculated incorrectly in converted PokerStars hands
         acts, bovadaUncalled = hand.actions.get('PREFLOP'), False
-        if acts != None and len([a for a in acts if a[1] != 'folds']) == 0:
-            m0 = self.re_Uncalled.search(hand.handText)
-            if m0 and Decimal(m0.group('BET')) == Decimal(hand.bb):
-                bovadaUncalled = True
+        names = [p[1] for p in hand.players]
+        if "Big Blind" in names or "Small Blind" in names:
+            if acts != None and len([a for a in acts if a[1] != 'folds']) == 0:
+                m0 = self.re_Uncalled.search(hand.handText)
+                if m0 and Decimal(m0.group('BET')) == Decimal(hand.bb):
+                    bovadaUncalled = True
         i=0
         pre, post = hand.handText.split('*** SUMMARY ***')
         if hand.runItTimes==0:
