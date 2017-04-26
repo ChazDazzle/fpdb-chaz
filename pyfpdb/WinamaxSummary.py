@@ -53,7 +53,7 @@ class WinamaxSummary(TourneySummary):
     re_SummaryTourneyInfo = re.compile(u"""\s:\s
                                            ((?P<LIMIT>No\sLimit|Limit|LIMIT|Pot\sLimit)\s)?
                                            (?P<GAME>.+)?
-                                           \((?P<TOURNO>[0-9]+)\)(\s-\sLate\sregistration)?\s+
+                                           \((?P<TOURNO>[0-9]+)\)(\s-\sLate\s(r|R)egistration)?\s+
                                            (Player\s:\s(?P<PNAME>.*)\s+)?
                                            Buy-In\s:\s(?P<BUYIN>(?P<BIAMT>.+)\s\+\s(?P<BIRAKE>.+)|Freeroll|Gratuit|Ticket\suniquement|Free|Ticket)\s+
                                            (Rebuy\scost\s:\s(?P<REBUY>(?P<REBUYAMT>.+)\s\+\s(?P<REBUYRAKE>.+))\s+)?
@@ -69,6 +69,8 @@ class WinamaxSummary(TourneySummary):
                                            (Speed\s:\s(?P<SPEED>.+)?\s+)?
                                            (Flight\sID\s:\s.+\s+)?
                                            (Levels\s:\s.+\s+)?
+                                           (Total\srebuys\s:\s(?P<TREBUYS>\d+)\s+)?
+                                           (Total\saddons\s:\s(?P<TADDONS>\d+)\s+)?
                                            (Prizepool\s:\s(?P<PRIZEPOOL2>[.0-9%(LS)s]+)\s+)?
                                            Tournament\sstarted\s(?P<DATETIME>[0-9]{4}\/[0-9]{2}\/[0-9]{2}\s[0-9]{2}:[0-9]{2}:[0-9]{2}\sUTC)\s+
                                            (?P<BLAH>You\splayed\s.+)\s+
