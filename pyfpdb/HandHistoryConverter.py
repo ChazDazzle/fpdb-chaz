@@ -626,7 +626,7 @@ or None if we fail to get the info """
             # ACT is full of politicians and Tasmania will never notice.
             # Using Sydney. 
             givenTZ = timezone('Australia/Sydney')
-        elif givenTimezone == 'NZT': # New Zealand Time
+        elif givenTimezone in ('NZST', 'NZT'): # New Zealand Time
             givenTZ = timezone('Pacific/Auckland')
         elif givenTimezone == 'UTC': # Universal time co-ordinated
             givenTZ = pytz.UTC
