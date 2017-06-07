@@ -69,7 +69,7 @@ class Bovada(HandHistoryConverter):
                       '100.00': ('25.00', '50.00'),     '100': ('25.00', '50.00'),
                   }
 
-    limits = { 'No Limit':'nl', 'Pot Limit':'pl', 'Fixed Limit':'fl'}
+    limits = { 'No Limit':'nl', 'Pot Limit':'pl', 'Fixed Limit':'fl', 'Turbo': 'nl'}
     games = {                          # base, category
                                "HOLDEM" : ('hold','holdem'),
                                 'OMAHA' : ('hold','omahahi'),
@@ -94,7 +94,7 @@ class Bovada(HandHistoryConverter):
           (?P<TOURNO>\d+)\sTBL\#(?P<TABLENO>\d+),
           \s)?
           (?P<HU>1\son\s1\s)? 
-          (?P<LIMIT>No\sLimit|Fixed\sLimit|Pot\sLimit)?
+          (?P<LIMIT>No\sLimit|Fixed\sLimit|Pot\sLimit|Turbo)?
           (\s?Normal\s?)?
           (-\sLevel\s\d+?\s
           \(?                            # open paren of the stakes
@@ -263,6 +263,11 @@ class Bovada(HandHistoryConverter):
         m2 = self.re_Knockout.search(self.in_path)
         if m2: info.update(m2.groupdict())
         
+        if "Hyper Turbo" in self.in_path:
+            hand.speed = "Hyper"
+        elif  "Turbo" in self.in_path:
+            hand.speed = "Turbo"
+        
         for key in info:
             if key == 'DATETIME':
                 m1 = self.re_DateTime.finditer(info[key])
@@ -309,7 +314,6 @@ class Bovada(HandHistoryConverter):
 
                         hand.buyin = int(100*Decimal(info['BIAMT']))
                         hand.fee = int(100*Decimal(info['BIRAKE']))
-
             if key == 'TABLE':
                 if info.get('TABLENO'):
                     hand.tablename = info.get('TABLENO')
