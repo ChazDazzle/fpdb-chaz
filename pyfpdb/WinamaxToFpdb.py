@@ -350,6 +350,9 @@ class Winamax(HandHistoryConverter):
             if plist.get(a.group('PNAME')) is None:
                 hand.addPlayer(int(a.group('SEAT')), a.group('PNAME'), a.group('CASH'))
                 plist[a.group('PNAME')] = [int(a.group('SEAT')), a.group('CASH')]
+                
+        if len(plist.keys()) < 2:
+            raise FpdbHandPartial(_("Less than 2 players in hand! %s.") % hand.handid)
 
     def markStreets(self, hand):
         if hand.gametype['base'] == "hold":
