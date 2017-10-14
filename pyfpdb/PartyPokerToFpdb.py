@@ -315,6 +315,7 @@ class PartyPoker(HandHistoryConverter):
                 try:
                     info['sb'] = self.NLim_Blinds_20bb[mg['CASHBI']][0]
                     info['bb'] = self.NLim_Blinds_20bb[mg['CASHBI']][1]
+                    info['buyinType'] = 'shallow'
                 except KeyError:
                     tmp = handText[0:200]
                     log.error(_("PartyPokerToFpdb.determineGameType: NLim_Blinds_20bb has no lookup for '%s' - '%s'") % (mg['CASHBI'], tmp))
@@ -323,8 +324,10 @@ class PartyPoker(HandHistoryConverter):
                 try:
                     if Decimal(mg['CASHBI']) >= 10000:
                         nl_bb = str((Decimal(mg['CASHBI'])/100).quantize(Decimal("0.01")))
+                        info['buyinType'] = 'deep'
                     else:
                         nl_bb = str((Decimal(mg['CASHBI'])/50).quantize(Decimal("0.01")))
+                        info['buyinType'] = 'regular'
                     info['sb'] = self.Lim_Blinds[nl_bb][0]
                     info['bb'] = self.Lim_Blinds[nl_bb][1]
                 except KeyError:
@@ -342,6 +345,7 @@ class PartyPoker(HandHistoryConverter):
                 info['sb'] = mg['SB']
             if 'BB' in mg:
                 info['bb'] = mg['BB']
+            info['buyinType'] = 'regular'
         if 'CURRENCY' in mg:
             if mg['CURRENCY'] == None:
                 info['currency'] = self.currencies['$']
