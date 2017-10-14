@@ -66,6 +66,7 @@ class PartyPoker(HandHistoryConverter):
                        '20.00': ('5.00', '10.00'),     '20': ('5.00', '10.00'),
                        '30.00': ('10.00', '15.00'),    '30': ('10.00', '15.00'),
                        '40.00': ('10.00', '20.00'),    '40': ('10.00', '20.00'),
+                       '50.00': ('10.00', '25.00'),    '50': ('10.00', '25.00'),
                        '60.00': ('15.00', '30.00'),    '60': ('15.00', '30.00'),
                       '100.00': ('25.00', '50.00'),   '100': ('25.00', '50.00'),
                       '200.00': ('50.00', '100.00'),  '200': ('50.00', '100.00'),
@@ -320,7 +321,10 @@ class PartyPoker(HandHistoryConverter):
                     raise FpdbParseError
             else:
                 try:
-                    nl_bb = str((Decimal(mg['CASHBI'])/50).quantize(Decimal("0.01")))
+                    if Decimal(mg['CASHBI']) >= 10000:
+                        nl_bb = str((Decimal(mg['CASHBI'])/100).quantize(Decimal("0.01")))
+                    else:
+                        nl_bb = str((Decimal(mg['CASHBI'])/50).quantize(Decimal("0.01")))
                     info['sb'] = self.Lim_Blinds[nl_bb][0]
                     info['bb'] = self.Lim_Blinds[nl_bb][1]
                 except KeyError:
