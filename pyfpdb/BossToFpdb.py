@@ -156,8 +156,10 @@ class Boss(HandHistoryConverter):
             info['sb'] = mg['SB']
         if 'BB' in mg:
             info['bb'] = mg['BB']
-        if 'CURRENCY' in mg:
+        if 'CURRENCY' in mg and info['type'] == 'ring':
             info['currency'] = mg['CURRENCY']
+        else:
+            info['currency'] = 'T$'
         # NB: SB, BB must be interpreted as blinds or bets depending on limit type.
         if info['limitType'] == 'fl' and info['bb'] is not None:
             if info['type'] == 'ring':
