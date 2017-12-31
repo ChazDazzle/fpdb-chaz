@@ -3375,6 +3375,8 @@ class Database:
                 tables = ('HudCache',)
             elif self.cacheSessions:
                 tables = ('CardsCache', 'PositionsCache')
+            else:
+                tables = set([])
             select = self.sql.query['selectTourneyWithTypeId'].replace('%s', self.sql.query['placeholder'])
             delete = self.sql.query['deleteTourneyTypeId'].replace('%s', self.sql.query['placeholder'])
             cursor = self.get_cursor()
@@ -3456,10 +3458,12 @@ class Database:
     def rebuild_caches(self):
         if self.callHud and self.cacheSessions:
             tables = ('HudCache','CardsCache', 'PositionsCache')
+        elif self.callHud:
+            tables = ('HudCache',)
         elif self.cacheSessions:
             tables = ('CardsCache', 'PositionsCache')
         else:
-            tables = ('HudCache',)
+            tables = set([])
         for t in tables:
             self.rebuild_cache(None, None, t)
                 
