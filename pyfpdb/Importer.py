@@ -496,6 +496,7 @@ class Importer:
                         hand = ihands[-1]
                         hp, hero = hand.handsplayers, hand.hero
                         hand.hero, self.database.hbulk, hand.handsplayers  = 0, self.database.hbulk[:-1], [] #making sure we don't insert data from this hand
+                        self.database.bbulk = [b for b in self.database.bbulk if hand.dbid_hands != b[0]]
                         hand.updateSessionsCache(self.database, None, doinsert)
                         hand.insertHands(self.database, fpdbfile.fileId, doinsert, self.settings['testData'])
                         hand.updateCardsCache(self.database, None, doinsert)
