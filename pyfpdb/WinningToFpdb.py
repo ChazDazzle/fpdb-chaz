@@ -121,7 +121,8 @@ class Winning(HandHistoryConverter):
         Game\sID:\s(?P<HID>\d+)\s
         (?P<SB>[%(NUM)s]+)/(?P<BB>[%(NUM)s]+)\s
         (?P<TABLE>.+?)\s
-        \((?P<GAME>Hold\'em|Omaha|Omaha\sHiLow|Seven\sCards\sStud|Seven\sCards\sStud\sHiLow)\)$
+        \((?P<GAME>Hold\'em|Omaha|Omaha\sHiLow|Seven\sCards\sStud|Seven\sCards\sStud\sHiLow)\)
+        (\s(?P<MAX>\d+\-max))?$
         """ % substitutions, 
         re.MULTILINE|re.VERBOSE
     )
@@ -208,7 +209,7 @@ class Winning(HandHistoryConverter):
         .+?\.\s?
         Bets:\s[%(NUM)s]+\.\s
         Collects:\s(?P<POT>[%(NUM)s]+)\.\s
-        (Wins|Loses):\s[%(NUM)s]+\.
+        (Wins|Loses):\s[%(NUM)s]+\.?
         $""" %  substitutions, 
         re.MULTILINE|re.VERBOSE
     )
@@ -323,6 +324,9 @@ class Winning(HandHistoryConverter):
             
         if 'HID' in info:
             hand.handid = info['HID']
+            
+        if 'MAX' in info and info['MAX'] != None:
+            hand.maxseats = int(info['MAX'].replace('-max', ''))
             
         if not hand.maxseats:
             if hand.gametype['base'] == 'stud':
