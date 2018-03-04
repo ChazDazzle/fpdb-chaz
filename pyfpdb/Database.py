@@ -3542,7 +3542,10 @@ class Database:
                 #        summary.startTime=resultDict[ev]
             if updateDb:
                 q = self.sql.query['updateTourney'].replace('%s', self.sql.query['placeholder'])
-                row = (summary.entries, summary.prizepool, summary.startTime.replace(tzinfo=None), summary.endTime.replace(tzinfo=None), summary.tourneyName,
+                startTime, endTime = None, None
+                if (summary.startTime!=None): startTime = summary.startTime.replace(tzinfo=None)
+                if (summary.endTime!=None): endTime = summary.endTime.replace(tzinfo=None)
+                row = (summary.entries, summary.prizepool, startTime, endTime, summary.tourneyName,
                        summary.totalRebuyCount, summary.totalAddOnCount, summary.comment, summary.commentTs, 
                        summary.added, summary.addedCurrency, tourneyId
                       )
