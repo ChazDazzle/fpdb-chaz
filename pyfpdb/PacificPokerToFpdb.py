@@ -84,7 +84,7 @@ class PacificPoker(HandHistoryConverter):
     # Static regexes
     re_GameInfo     = re.compile(u"""
           (\#Game\sNo\s:\s[0-9]+\\n)?
-          \*\*\*\*\*\s(Cassava|888poker|888\.es)\s(?P<FAST>Snap\sPoker\s)?Hand\sHistory\sfor\sGame\s(?P<HID>[0-9]+)\s\*\*\*\*\*\\n
+          \*\*\*\*\*\s(Cassava|888poker|888)(\.[a-z]{2})?\s(?P<FAST>Snap\sPoker\s)?Hand\sHistory\sfor\sGame\s(?P<HID>[0-9]+)\s\*\*\*\*\*\\n
           (?P<CURRENCY1>%(LS)s)?\s?(?P<SB>[%(NUM)s]+)\s?(?P<CURRENCY2>%(LS)s)?/(%(LS)s)?\s?(?P<BB>[%(NUM)s]+)\s?(%(LS)s)?\sBlinds\s
           (?P<LIMIT>No\sLimit|Fix\sLimit|Pot\sLimit)\s
           (?P<GAME>Holdem|Omaha|OmahaHL|Hold\'em|Omaha\sHi/Lo|OmahaHL)
@@ -124,7 +124,7 @@ class PacificPoker(HandHistoryConverter):
           Seat\s(?P<BUTTON>[0-9]+)\sis\sthe\sbutton
           """ % substitutions, re.MULTILINE|re.VERBOSE)
 
-    re_Identify     = re.compile(u'\*{5}\s(Cassava|888poker|888\.es)\s(Snap\sPoker\s)?Hand\sHistory\sfor\sGame\s\d+\s')
+    re_Identify     = re.compile(u'\*{5}\s(Cassava|888poker|888)(\.[a-z]{2})?\s(Snap\sPoker\s)?Hand\sHistory\sfor\sGame\s\d+\s')
     re_SplitHands   = re.compile('\n\n+')
     re_TailSplitHands   = re.compile('(\n\n\n+)')
     re_Button       = re.compile('Seat (?P<BUTTON>\d+) is the button', re.MULTILINE)
