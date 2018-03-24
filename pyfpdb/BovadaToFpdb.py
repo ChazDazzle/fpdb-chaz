@@ -124,7 +124,12 @@ class Bovada(HandHistoryConverter):
     re_SplitHands   = re.compile('\n\n+')
     re_TailSplitHands   = re.compile('(\n\n\n+)')
     re_Button       = re.compile('Dealer : Set dealer\/Bring in spot \[(?P<BUTTON>\d+)\]', re.MULTILINE)
-    re_Board        = re.compile(r"Board \[(?P<FLOP>\S\S\S? \S\S\S? \S\S\S?)?\s+?(?P<TURN>\S\S\S?)?\s+?(?P<RIVER>\S\S\S?)?\]")
+    re_Board1       = re.compile(r"Board \[(?P<FLOP>\S\S\S? \S\S\S? \S\S\S?)?\s+?(?P<TURN>\S\S\S?)?\s+?(?P<RIVER>\S\S\S?)?\]")
+    re_Board2       = {
+        "FLOP": re.compile(r"\*\*\* FLOP \*\*\* \[(?P<CARDS>\S\S \S\S \S\S)\]"),
+        "TURN": re.compile(r"\*\*\* TURN \*\*\* \[\S\S \S\S \S\S\] \[(?P<CARDS>\S\S)\]"),
+        "RIVER": re.compile(r"\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S\] \[(?P<CARDS>\S\S)\]")
+    }
     re_DateTime     = re.compile("""(?P<Y>[0-9]{4})\-(?P<M>[0-9]{2})\-(?P<D>[0-9]{2})[\- ]+(?P<H>[0-9]+):(?P<MIN>[0-9]+):(?P<S>[0-9]+)""", re.MULTILINE)
     # These used to be compiled per player, but regression tests say
     # we don't have to, and it makes life faster.
@@ -412,18 +417,23 @@ class Bovada(HandHistoryConverter):
         if not hand.streets.get(firststreet):
             hand.streets[firststreet] = hand.handText
         if hand.gametype['base'] == "hold":
-            m1 = self.re_Board.search(hand.handText)
+            m1 = self.re_Board1.search(hand.handText)
             for street in ('FLOP', 'TURN', 'RIVER'):
                 if m1 and m1.group(street) and not hand.streets.get(street):
                     hand.streets[street] = m1.group(street)
             
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
-        if street in ('FLOP','TURN','RIVER'):   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
-            m = self.re_Board.search(hand.handText)
-            if m and m.group(street):
-                cards = m.group(street).split(' ')
-                hand.setCommunityCards(street, cards)
+        if hand.gametype['fast']:
+            m = self.re_Board2[street].search(hand.handText)
+            if m and m.group('CARDS'):
+                hand.setCommunityCards(street, m.group('CARDS').split(' '))
+        else:
+            if street in ('FLOP','TURN','RIVER'):   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
+                m = self.re_Board1.search(hand.handText)
+                if m and m.group(street):
+                    cards = m.group(street).split(' ')
+                    hand.setCommunityCards(street, cards)
 
     def readAntes(self, hand):
         antes = None
