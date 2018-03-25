@@ -555,8 +555,9 @@ class PokerStars(HandHistoryConverter):
 #                        hand.involved = False
 #                    else:
                     hand.hero = found.group('PNAME')
-                    newcards = found.group('NEWCARDS').split(' ')
-                    hand.addHoleCards(street, hand.hero, closed=newcards, shown=False, mucked=False, dealt=True)
+                    if 'cards' not in found.group('NEWCARDS'):
+                        newcards = found.group('NEWCARDS').split(' ')
+                        hand.addHoleCards(street, hand.hero, closed=newcards, shown=False, mucked=False, dealt=True)
 
         for street, text in hand.streets.iteritems():
             if not text or street in ('PREFLOP', 'DEAL'): continue  # already done these
