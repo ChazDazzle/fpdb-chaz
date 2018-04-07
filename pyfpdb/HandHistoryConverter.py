@@ -240,6 +240,7 @@ HandHistoryConverter: '%(sitename)s'
             if 'fast' not in gametype: gametype['fast'] = False
             if 'newToGame' not in gametype: gametype['newToGame'] = False
             if 'homeGame' not in gametype: gametype['homeGame'] = False
+            if 'split' not in gametype: gametype['split'] = False
             type = gametype['type']
             base = gametype['base']
             limit = gametype['limitType']

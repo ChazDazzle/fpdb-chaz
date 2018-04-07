@@ -132,7 +132,8 @@ class PokerStars(HandHistoryConverter):
           )?
           # close paren of tournament info
           (?P<MIXED>HORSE|8\-Game|8\-GAME|HOSE|Mixed\sOmaha\sH/L|Mixed\sHold\'em|Mixed\sPLH/PLO|Mixed\sNLH/PLO|Mixed\sOmaha|Triple\sStud)?\s?\(?
-          (?P<GAME>Hold\'em|HOLD\'EM|Razz|RAZZ|7\sCard\sStud|7\sCARD\sSTUD|7\sCard\sStud\sHi/Lo|7\sCARD\sSTUD\sHI/LO|Omaha|OMAHA|Omaha\sHi/Lo|OMAHA\sHI/LO|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|5\sCard\sOmaha(\sHi/Lo)?|Courchevel(\sHi/Lo)?)\s
+          (?P<SPLIT>Split)?\s?
+          (?P<GAME>Hold\'em|HOLD\'EM|Hold\'em|Razz|RAZZ|7\sCard\sStud|7\sCARD\sSTUD|7\sCard\sStud\sHi/Lo|7\sCARD\sSTUD\sHI/LO|Omaha|OMAHA|Omaha\sHi/Lo|OMAHA\sHI/LO|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|5\sCard\sOmaha(\sHi/Lo)?|Courchevel(\sHi/Lo)?)\s
           (?P<LIMIT>No\sLimit|NO\sLIMIT|Fixed\sLimit|Limit|LIMIT|Pot\sLimit|POT\sLIMIT|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop)\)?,?\s
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?
@@ -285,6 +286,10 @@ class PokerStars(HandHistoryConverter):
             info['buyinType'] = 'cap'
         else:
             info['buyinType'] = 'regular'
+        if 'SPLIT' in mg and mg['SPLIT'] == 'Split':
+            info['split'] = True
+        else:
+            info['split'] = False
                 
         if 'TOURNO' in mg and mg['TOURNO'] is None:
             info['type'] = 'ring'
@@ -471,7 +476,15 @@ class PokerStars(HandHistoryConverter):
 
         # PREFLOP = ** Dealing down cards **
         # This re fails if,  say, river is missing; then we don't get the ** that starts the river.
-        if hand.gametype['base'] in ("hold"):
+        if hand.gametype['split']:
+            m =  re.search(r"\*\*\* HOLE CARDS \*\*\*(?P<PREFLOP>.+(?=\*\*\* FIRST\sFLOP \*\*\*)|.+)"
+                       r"(\*\*\* FIRST FLOP \*\*\* (?P<FLOP1>\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* SECOND\sFLOP \*\*\*)|.+))?"
+                       r"(\*\*\* SECOND FLOP \*\*\* (?P<FLOP2>\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* FIRST\sTURN \*\*\*)|.+))?"
+                       r"(\*\*\* FIRST TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN1>\[\S\S\].+(?=\*\*\* SECOND TURN \*\*\*)|.+))?"
+                       r"(\*\*\* SECOND TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN2>\[\S\S\].+(?=\*\*\* FIRST RIVER \*\*\*)|.+))?" 
+                       r"(\*\*\* FIRST RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER1>\[\S\S\].+?(?=\*\*\* SECOND RIVER \*\*\*)|.+))?"
+                       r"(\*\*\* SECOND RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER2>\[\S\S\].+))?", hand.handText,re.DOTALL)
+        elif hand.gametype['base'] in ("hold"):
             m =  re.search(r"\*\*\* HOLE CARDS \*\*\*(?P<PREFLOP>(.+(?P<FLOPET>\[\S\S\]))?.+(?=\*\*\* (FIRST\s)?FLOP \*\*\*)|.+)"
                        r"(\*\*\* FLOP \*\*\*(?P<FLOP> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* (FIRST\s)?TURN \*\*\*)|.+))?"
                        r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN>\[\S\S\].+(?=\*\*\* (FIRST\s)?RIVER \*\*\*)|.+))?"
@@ -582,10 +595,16 @@ class PokerStars(HandHistoryConverter):
 
 
     def readAction(self, hand, street):
-        m = self.re_Action.finditer(hand.streets[street])
+        if hand.gametype['split'] and street in hand.communityStreets:
+            s = street + '2'
+        else:
+            s = street
+        if not hand.streets[s]:
+            return
+        m = self.re_Action.finditer(hand.streets[s])
         for action in m:
             acts = action.groupdict()
-            #print "DEBUG: acts: %s" %acts
+            #log.error("DEBUG: %s acts: %s" % (street, acts))
             if action.group('ATYPE') == ' folds':
                 hand.addFold( street, action.group('PNAME'))
             elif action.group('ATYPE') == ' checks':

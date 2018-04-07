@@ -85,6 +85,7 @@ class PokerStarsSummary(TourneySummary):
     re_TourneyInfo = re.compile(u"""
                         \#(?P<TOURNO>[0-9]+),\s
                         ((?P<LIMIT>No\sLimit|NO\sLIMIT|Limit|LIMIT|Pot\sLimit|POT\sLIMIT|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop)\s)?
+                        (?P<SPLIT>Split)?\s?
                         (?P<GAME>Hold\'em|Razz|RAZZ|7\sCard\sStud|7\sCard\sStud\sHi/Lo|Omaha|Omaha\sHi/Lo|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|5\sCard\sOmaha(\sHi/Lo)?|Courchevel(\sHi/Lo)?|HORSE|8\-Game|HOSE|Mixed\sOmaha\sH/L|Mixed\sHold\'em|Mixed\sPLH/PLO|Mixed\sNLH/PLO||Mixed\sOmaha|Triple\sStud)\s+
                         (?P<DESC>[ a-zA-Z]+\s+)?
                         (Buy-In:\s(?P<CURRENCY>[%(LS)s]?)(?P<BUYIN>[,.0-9]+)(\s(?P<CURRENCY1>(FPP|SC)))?(\/[%(LS)s]?(?P<FEE>[,.0-9]+))?(\/[%(LS)s]?(?P<BOUNTY>[,.0-9]+))?(?P<CUR>\s(%(LEGAL_ISO)s))?\s+)?
@@ -103,6 +104,7 @@ class PokerStarsSummary(TourneySummary):
                         ur'(<td>(?P<TOURNAME>.*)</td>)?' \
                         ur'<td align="right">' \
                             ur'(?P<LIMIT>[ a-zA-Z\-]+)\s' \
+                            ur'(?P<SPLIT>Split)?\s?' \
                             ur'(?P<GAME>Hold\'em|Razz|RAZZ|7\sCard\sStud|7\sCard\sStud\sH/L|Omaha|Omaha\sH/L|Badugi|Triple\sDraw\s2\-7(\sLowball)?|Single\sDraw\s2\-7(\sLowball)?|5\sCard\sDraw|5\sCard\sOmaha(\sH/L)?|Courchevel(\sH/L)?|HORSE|Horse|8\-Game|HOSE|Hose|Omaha\sH/L\sMixed|Hold\'em\sMixed|PLH/PLO\sMixed|NLH/PLO\sMixed|Triple\sStud|NLH/NLO\sMixed|Mixed\sNLH/NLO|Mixed\sOmaha\sH/L|Mixed\sHold\'em|Mixed\sPLH/PLO|Mixed\sNLH/PLO)</td>' \
                         ur'<td.*?>(?P<CURRENCY>(%(LEGAL_ISO)s)?)(&nbsp;)?</td>' \
                         ur'<td.*?>(?P<BUYIN>([,.0-9 ]+|Freeroll))(?P<FPPBUYIN>(\s|&nbsp;)(FPP|SC|StarsCoin))?</td>' \
@@ -122,6 +124,7 @@ class PokerStarsSummary(TourneySummary):
     re_XLSTourneyInfo['Tourney'] = re.compile(r'(?P<TOURNO>[0-9]+)')
     re_XLSTourneyInfo['Name'] = re.compile(ur'(?P<TOURNAME>.*)')
     re_XLSTourneyInfo['Game'] = re.compile(ur'(?P<LIMIT>[ a-zA-Z\-]+)\s' \
+                                           ur'(?P<SPLIT>Split)?\s?'
                                            ur'(?P<GAME>Hold\'em|Razz|RAZZ|7\sCard\sStud|7\sCard\sStud\sH/L|Omaha|Omaha\sH/L|Badugi|Triple\sDraw\s2\-7(\sLowball)?|Single\sDraw\s2\-7(\sLowball)?|5\sCard\sDraw|5\sCard\sOmaha(\sH/L)?|Courchevel(\sH/L)?|HORSE|Horse|8\-Game|HOSE|Hose|Omaha\sH/L\sMixed|Hold\'em\sMixed|PLH/PLO\sMixed|NLH/PLO\sMixed|Triple\sStud|NLH/NLO\sMixed|Mixed\sNLH/NLO|Mixed\sOmaha\sH/L|Mixed\sHold\'em|Mixed\sPLH/PLO|Mixed\sNLH/PLO)')
     re_XLSTourneyInfo['Currency'] = re.compile(ur'(?P<CURRENCY>(%(LEGAL_ISO)s)?)' % substitutions)
     re_XLSTourneyInfo['Buy-In'] = re.compile(ur'(?P<BUYIN>([,.0-9]+|Freeroll))(?P<FPPBUYIN>\s(FPP|SC|StarsCoin))?')
@@ -245,6 +248,8 @@ class PokerStarsSummary(TourneySummary):
             self.gametype['limitType'] = self.limits[info['LIMIT']]
         if 'GAME'      in info: 
             self.gametype['category']  = self.games[info['GAME']][1]
+        if 'SPLIT' in info and info['SPLIT'] == 'Split':
+            self.isSplit = True
         if info['BUYIN'] != None:
             if info['BUYIN']=='Freeroll':
                 self.buyin = 0
@@ -344,6 +349,8 @@ class PokerStarsSummary(TourneySummary):
         else:
             self.gametype['limitType'] = 'fl'
         if 'GAME'      in mg: self.gametype['category']  = self.games[mg['GAME']][1]
+        if 'SPLIT' in mg and mg['SPLIT'] == 'Split':
+            self.isSplit = True
         if mg['BOUNTY'] != None and mg['FEE'] != None:
             self.koBounty = int(100*Decimal(self.clearMoneyString(mg['FEE'])))
             self.isKO = True

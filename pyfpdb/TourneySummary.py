@@ -114,8 +114,9 @@ class TourneySummary(object):
         self.chanceCount = 0
         self.isMultiEntry = False
         self.isReEntry = False
-        self.isHomeGame = False
         self.isNewToGame = False
+        self.isHomeGame = False
+        self.isSplit = False
         self.isFifty50 = False
         self.isTime = False
         self.timeAmt = 0

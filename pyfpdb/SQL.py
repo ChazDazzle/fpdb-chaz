@@ -305,7 +305,8 @@ class Sql:
                         buyinType varchar(9) NOT NULL,
                         fast BOOLEAN,
                         newToGame BOOLEAN,
-                        homeGame BOOLEAN)
+                        homeGame BOOLEAN,
+                        split BOOLEAN)
                         ENGINE=INNODB"""
         elif db_server == 'postgresql':
             self.query['createGametypesTable'] = """CREATE TABLE Gametypes (
@@ -327,7 +328,8 @@ class Sql:
                         buyinType varchar(9) NOT NULL,
                         fast BOOLEAN,
                         newToGame BOOLEAN,
-                        homeGame BOOLEAN)"""
+                        homeGame BOOLEAN,
+                        split BOOLEAN)"""
         elif db_server == 'sqlite':
             self.query['createGametypesTable'] = """CREATE TABLE Gametypes (
                         id INTEGER PRIMARY KEY NOT NULL,
@@ -349,6 +351,7 @@ class Sql:
                         fast INT,
                         newToGame INT,
                         homeGame INT,
+                        split INT,
                         FOREIGN KEY(siteId) REFERENCES Sites(id) ON DELETE CASCADE)"""
 
 
@@ -623,6 +626,7 @@ class Sql:
                         fast BOOLEAN, 
                         newToGame BOOLEAN,
                         homeGame BOOLEAN,
+                        split BOOLEAN,
                         sng BOOLEAN,
                         fifty50 BOOLEAN,
                         time BOOLEAN,
@@ -670,6 +674,7 @@ class Sql:
                         fast BOOLEAN,
                         newToGame BOOLEAN,
                         homeGame BOOLEAN,
+                        split BOOLEAN,
                         sng BOOLEAN,
                         fifty50 BOOLEAN,
                         time BOOLEAN,
@@ -716,6 +721,7 @@ class Sql:
                         fast BOOLEAN,
                         newToGame BOOLEAN,
                         homeGame BOOLEAN,
+                        split BOOLEAN,
                         sng BOOLEAN,
                         fifty50 BOOLEAN,
                         time BOOLEAN,
@@ -8594,11 +8600,12 @@ class Sql:
                                            AND   fast=%s
                                            AND   newToGame=%s
                                            AND   homeGame=%s
+                                           AND   split=%s
         """ #TODO: seems odd to have limitType variable in this query
 
         self.query['insertGameTypes'] = """insert into Gametypes (siteId, currency, type, base, category, limitType, hiLo, mix, 
-                                               smallBlind, bigBlind, smallBet, bigBet, maxSeats, ante, buyinType, fast, newToGame, homeGame)
-                                           values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                                               smallBlind, bigBlind, smallBet, bigBet, maxSeats, ante, buyinType, fast, newToGame, homeGame, split)
+                                           values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
 
         self.query['isAlreadyInDB'] = """SELECT H.id FROM Hands H
                                          INNER JOIN Gametypes G ON (H.gametypeId = G.id)
@@ -8634,6 +8641,7 @@ class Sql:
                                                               tt.reEntry,
                                                               tt.homeGame,
                                                               tt.newToGame,
+                                                              tt.split,
                                                               tt.fifty50,
                                                               tt.time,
                                                               tt.timeAmt,
@@ -8679,6 +8687,7 @@ class Sql:
                                             AND reEntry=%s
                                             AND homeGame=%s
                                             AND newToGame=%s
+                                            AND split=%s
                                             AND fifty50=%s
                                             AND time=%s
                                             AND timeAmt=%s
@@ -8694,11 +8703,11 @@ class Sql:
         self.query['insertTourneyType'] = """insert into TourneyTypes (
                                                    siteId, currency, buyin, fee, category, limitType, maxSeats, sng, knockout, koBounty, progressive,
                                                    rebuy, rebuyCost, addOn, addOnCost, speed, shootout, matrix, fast,
-                                                   stack, step, stepNo, chance, chanceCount, multiEntry, reEntry, homeGame, newToGame,
+                                                   stack, step, stepNo, chance, chanceCount, multiEntry, reEntry, homeGame, newToGame, split,
                                                    fifty50, time, timeAmt, satellite, doubleOrNothing, cashOut, onDemand, flighted, guarantee, guaranteeAmt
                                                    )
                                               values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
-                                                      %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                                      %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         
         if db_server == 'sqlite':  

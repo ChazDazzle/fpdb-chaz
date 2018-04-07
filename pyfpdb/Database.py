@@ -80,7 +80,7 @@ except ImportError:
     use_numpy = False
 
 
-DB_VERSION = 208
+DB_VERSION = 209
 
 # Variance created as sqlite has a bunch of undefined aggregate functions.
 
@@ -3219,12 +3219,12 @@ class Database:
             
         gtinfo = (siteid, game['type'], game['category'], game['limitType'], game['currency'],
                   game['mix'], int(Decimal(game['sb'])*100), int(Decimal(game['bb'])*100), game['maxSeats'],
-                  int(game['ante']*100), game['buyinType'], game['fast'], game['newToGame'], game['homeGame'])
+                  int(game['ante']*100), game['buyinType'], game['fast'], game['newToGame'], game['homeGame'], game['split'])
         
         gtinsert = (siteid, game['currency'], game['type'], game['base'], game['category'], game['limitType'], hilo,
                     game['mix'], int(Decimal(game['sb'])*100), int(Decimal(game['bb'])*100),
                     int(Decimal(game['bb'])*100), int(Decimal(game['bb'])*200), game['maxSeats'], int(game['ante']*100),
-                    game['buyinType'], game['fast'], game['newToGame'], game['homeGame'])
+                    game['buyinType'], game['fast'], game['newToGame'], game['homeGame'], game['split'])
         
         result = self.gtcache[(gtinfo, gtinsert)]
         # NOTE: Using the LambdaDict does the same thing as:
@@ -3319,7 +3319,7 @@ class Database:
                              , ('isAddOn', 'addon'), ('addOnCost','addoncost'), ('speed', 'speed'), ('isShootout', 'shootout')
                              , ('isMatrix', 'matrix'), ('isFast', 'fast'), ('stack', 'stack'), ('isStep', 'step'), ('stepNo', 'stepno')
                              , ('isChance', 'chance'), ('chanceCount', 'chancecount'), ('isMultiEntry', 'multientry'), ('isReEntry', 'reentry')
-                             , ('isHomeGame', 'homegame'), ('isNewToGame', 'newtogame'), ('isFifty50', 'fifty50'), ('isTime', 'time')
+                             , ('isHomeGame', 'homegame'), ('isNewToGame', 'newtogame'), ('isSplit', 'split'), ('isFifty50', 'fifty50'), ('isTime', 'time')
                              , ('timeAmt', 'timeamt'), ('isSatellite', 'satellite'), ('isDoubleOrNothing', 'doubleornothing'), ('isCashOut', 'cashout')
                              , ('isOnDemand', 'ondemand'), ('isFlighted', 'flighted'), ('isGuarantee', 'guarantee'), ('guaranteeAmt', 'guaranteeamt'))
             resultDict = dict(zip(columnNames, result))
@@ -3343,7 +3343,7 @@ class Database:
                    limitType, obj.maxseats, obj.isSng, obj.isKO, obj.koBounty, obj.isProgressive,
                    obj.isRebuy, obj.rebuyCost, obj.isAddOn, obj.addOnCost, obj.speed, obj.isShootout, 
                    obj.isMatrix, obj.isFast, obj.stack, obj.isStep, obj.stepNo, obj.isChance, obj.chanceCount,
-                   obj.isMultiEntry, obj.isReEntry, obj.isHomeGame, obj.isNewToGame, obj.isFifty50, obj.isTime,
+                   obj.isMultiEntry, obj.isReEntry, obj.isHomeGame, obj.isNewToGame, obj.isSplit, obj.isFifty50, obj.isTime,
                    obj.timeAmt, obj.isSatellite, obj.isDoubleOrNothing, obj.isCashOut, obj.isOnDemand, obj.isFlighted, 
                    obj.isGuarantee, obj.guaranteeAmt)
             cursor.execute (self.sql.query['getTourneyTypeId'].replace('%s', self.sql.query['placeholder']), row)

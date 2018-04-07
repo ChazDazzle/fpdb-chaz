@@ -190,18 +190,22 @@ class DerivedStats():
         
         #print "cards: ",cards
         
-        self.hands['boards']     = []
-        self.hands['runItTwice']      = False           
+        self.hands['boards'] = []
+        self.hands['runItTwice'] = False           
         for i in range(hand.runItTimes):
-            self.hands['runItTwice']  = True
             boardcards = []
             for street in hand.communityStreets:
                 boardId = i+1
                 street_i = street + str(boardId)
                 if street_i in hand.board:
                     boardcards += hand.board[street_i]
-            boardcards = [u'0x', u'0x', u'0x', u'0x', u'0x'] + boardcards
-            cards = [Card.encodeCard(c) for c in boardcards[-5:]]
+            if hand.gametype['split']:
+                boardcards = boardcards + [u'0x', u'0x', u'0x', u'0x', u'0x']
+                cards = [Card.encodeCard(c) for c in boardcards[:5]]
+            else:
+                self.hands['runItTwice'] = True
+                boardcards = [u'0x', u'0x', u'0x', u'0x', u'0x'] + boardcards
+                cards = [Card.encodeCard(c) for c in boardcards[-5:]]
             self.hands['boards'] += [[boardId] + cards]
 
         #print "DEBUG: %s self.getStreetTotals = (%s, %s, %s, %s, %s, %s)" %  tuple([hand.handid] + list(hand.getStreetTotals()))
