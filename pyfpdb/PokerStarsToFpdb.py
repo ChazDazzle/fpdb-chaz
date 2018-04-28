@@ -612,7 +612,10 @@ class PokerStars(HandHistoryConverter):
             elif action.group('ATYPE') == ' calls':
                 hand.addCall( street, action.group('PNAME'), self.clearMoneyString(action.group('BET')) )
             elif action.group('ATYPE') == ' raises':
-                hand.addRaiseTo( street, action.group('PNAME'), self.clearMoneyString(action.group('BETTO')) )
+                if action.group('BETTO') is not None:
+                    hand.addRaiseTo( street, action.group('PNAME'), self.clearMoneyString(action.group('BETTO')) )
+                elif action.group('BET') is not None:
+                   hand.addCallandRaise( street, action.group('PNAME'), self.clearMoneyString(action.group('BET')) ) 
             elif action.group('ATYPE') == ' bets':
                 hand.addBet( street, action.group('PNAME'), self.clearMoneyString(action.group('BET')) )
             elif action.group('ATYPE') == ' discards':
