@@ -61,12 +61,16 @@ def _buildStatsInitializer():
     init['street0VPIChance']    = True
     init['street0VPI']          = False
     init['street0AggrChance']   = True
+    init['street0_2BChance']    = False
+    init['street0_2BDone']      = False
     init['street0_3BChance']    = False
     init['street0_3BDone']      = False
     init['street0_4BChance']    = False
     init['street0_4BDone']      = False
     init['street0_C4BChance']   = False
     init['street0_C4BDone']     = False
+    init['street0_FoldTo2BChance']= False
+    init['street0_FoldTo2BDone']= False
     init['street0_FoldTo3BChance']= False
     init['street0_FoldTo3BDone']= False
     init['street0_FoldTo4BChance']= False
@@ -945,15 +949,27 @@ class DerivedStats():
             if act == 'folds' or allin or player_stats['sitout']:
                 p_in.discard(pname)
                 if player_stats['sitout']: continue
-            if bet_level < 2:
+            if bet_level == 0:
                 if aggr:
                     if first_agressor == None:
                         first_agressor = pname            
                     bet_level += 1
                 continue
+            elif bet_level == 1:
+                player_stats['street0_2BChance'] = raise_chance
+                if aggr:
+                    if first_agressor == None:
+                        first_agressor = pname
+                    player_stats['street0_2BDone'] = True
+                    bet_level += 1
+                continue
             elif bet_level == 2:
                 player_stats['street0_3BChance'] = raise_chance
                 player_stats['street0_SqueezeChance'] = squeeze_chance
+                if pname == first_agressor:
+                    player_stats['street0_FoldTo2BChance'] = True
+                    if act == 'folds':
+                        player_stats['street0_FoldTo2BDone'] = True
                 if not squeeze_chance and act == 'calls':
                     squeeze_chance = True
                     continue

@@ -80,7 +80,7 @@ except ImportError:
     use_numpy = False
 
 
-DB_VERSION = 209
+DB_VERSION = 210
 
 # Variance created as sqlite has a bunch of undefined aggregate functions.
 
@@ -193,12 +193,16 @@ HANDS_PLAYERS_KEYS = [
     'startCards',
     'street0CalledRaiseChance',
     'street0CalledRaiseDone',
+    'street0_2BChance',
+    'street0_2BDone',
     'street0_3BChance',
     'street0_3BDone',
     'street0_4BChance',
     'street0_4BDone',
     'street0_C4BChance',
     'street0_C4BDone',
+    'street0_FoldTo2BChance',
+    'street0_FoldTo2BDone',
     'street0_FoldTo3BChance',
     'street0_FoldTo3BDone',
     'street0_FoldTo4BChance',
@@ -280,12 +284,16 @@ CACHE_KEYS = [
     'street0Aggr',
     'street0CalledRaiseChance',
     'street0CalledRaiseDone',
+    'street0_2BChance',
+    'street0_2BDone',
     'street0_3BChance',
     'street0_3BDone',
     'street0_4BChance',
     'street0_4BDone',
     'street0_C4BChance',
     'street0_C4BDone',
+    'street0_FoldTo2BChance',
+    'street0_FoldTo2BDone',
     'street0_FoldTo3BChance',
     'street0_FoldTo3BDone',
     'street0_FoldTo4BChance',

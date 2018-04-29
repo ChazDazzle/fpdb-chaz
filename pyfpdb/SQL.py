@@ -855,12 +855,16 @@ class Sql:
                         street0Aggr BOOLEAN,
                         street0CalledRaiseChance TINYINT,
                         street0CalledRaiseDone TINYINT,
+                        street0_2BChance BOOLEAN,
+                        street0_2BDone BOOLEAN,
                         street0_3BChance BOOLEAN,
                         street0_3BDone BOOLEAN,
                         street0_4BChance BOOLEAN,
                         street0_C4BChance BOOLEAN,
                         street0_4BDone BOOLEAN,
                         street0_C4BDone BOOLEAN,
+                        street0_FoldTo2BChance BOOLEAN,
+                        street0_FoldTo2BDone BOOLEAN,
                         street0_FoldTo3BChance BOOLEAN,
                         street0_FoldTo3BDone BOOLEAN,
                         street0_FoldTo4BChance BOOLEAN,
@@ -1035,12 +1039,16 @@ class Sql:
                         street0Aggr BOOLEAN,
                         street0CalledRaiseChance SMALLINT,
                         street0CalledRaiseDone SMALLINT,
+                        street0_2BChance BOOLEAN,
+                        street0_2BDone BOOLEAN,
                         street0_3BChance BOOLEAN,
                         street0_3BDone BOOLEAN,
                         street0_4BChance BOOLEAN,
                         street0_4BDone BOOLEAN,
                         street0_C4BChance BOOLEAN,
                         street0_C4BDone BOOLEAN,
+                        street0_FoldTo2BChance BOOLEAN,
+                        street0_FoldTo2BDone BOOLEAN,
                         street0_FoldTo3BChance BOOLEAN,
                         street0_FoldTo3BDone BOOLEAN,
                         street0_FoldTo4BChance BOOLEAN,
@@ -1214,12 +1222,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -1602,12 +1614,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -1723,12 +1739,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -1844,12 +1864,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -1970,12 +1994,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -2091,12 +2119,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -2212,12 +2244,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -2340,12 +2376,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -2463,12 +2503,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -2586,12 +2630,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -2789,12 +2837,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -2911,12 +2963,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -3032,12 +3088,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -3157,12 +3217,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -3279,12 +3343,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -3400,12 +3468,16 @@ class Sql:
                         street0Aggr INT,
                         street0CalledRaiseChance INT,
                         street0CalledRaiseDone INT,
+                        street0_2BChance INT,
+                        street0_2BDone INT,
                         street0_3BChance INT,
                         street0_3BDone INT,
                         street0_4BChance INT,
                         street0_4BDone INT,
                         street0_C4BChance INT,
                         street0_C4BDone INT,
+                        street0_FoldTo2BChance INT,
+                        street0_FoldTo2BDone INT,
                         street0_FoldTo3BChance INT,
                         street0_FoldTo3BDone INT,
                         street0_FoldTo4BChance INT,
@@ -6182,12 +6254,16 @@ class Sql:
                 ,street0Aggr
                 ,street0CalledRaiseChance
                 ,street0CalledRaiseDone
+                ,street0_2BChance
+                ,street0_2BDone
                 ,street0_3BChance
                 ,street0_3BDone
                 ,street0_4BChance
                 ,street0_4BDone
                 ,street0_C4BChance
                 ,street0_C4BDone
+                ,street0_FoldTo2BChance
+                ,street0_FoldTo2BDone
                 ,street0_FoldTo3BChance
                 ,street0_FoldTo3BDone
                 ,street0_FoldTo4BChance
@@ -6295,12 +6371,16 @@ class Sql:
                       ,sum(street0Aggr)
                       ,sum(street0CalledRaiseChance)
                       ,sum(street0CalledRaiseDone)
+                      ,sum(street0_2BChance)
+                      ,sum(street0_2BDone)
                       ,sum(street0_3BChance)
                       ,sum(street0_3BDone)
                       ,sum(street0_4BChance)
                       ,sum(street0_4BDone)
                       ,sum(street0_C4BChance)
                       ,sum(street0_C4BDone)
+                      ,sum(street0_FoldTo2BChance)
+                      ,sum(street0_FoldTo2BDone)
                       ,sum(street0_FoldTo3BChance)
                       ,sum(street0_FoldTo3BDone)
                       ,sum(street0_FoldTo4BChance)
@@ -6416,12 +6496,16 @@ class Sql:
                 ,street0Aggr
                 ,street0CalledRaiseChance
                 ,street0CalledRaiseDone
+                ,street0_2BChance
+                ,street0_2BDone
                 ,street0_3BChance
                 ,street0_3BDone
                 ,street0_4BChance
                 ,street0_4BDone
                 ,street0_C4BChance
                 ,street0_C4BDone
+                ,street0_FoldTo2BChance
+                ,street0_FoldTo2BDone
                 ,street0_FoldTo3BChance
                 ,street0_FoldTo3BDone
                 ,street0_FoldTo4BChance
@@ -6529,12 +6613,16 @@ class Sql:
                       ,sum(CAST(street0Aggr as integer))
                       ,sum(CAST(street0CalledRaiseChance as integer))
                       ,sum(CAST(street0CalledRaiseDone as integer))
+                      ,sum(CAST(street0_2BChance as integer))
+                      ,sum(CAST(street0_2BDone as integer))
                       ,sum(CAST(street0_3BChance as integer))
                       ,sum(CAST(street0_3BDone as integer))
                       ,sum(CAST(street0_4BChance as integer))
                       ,sum(CAST(street0_4BDone as integer))
                       ,sum(CAST(street0_C4BChance as integer))
                       ,sum(CAST(street0_C4BDone as integer))
+                      ,sum(CAST(street0_FoldTo2BChance as integer))
+                      ,sum(CAST(street0_FoldTo2BDone as integer))
                       ,sum(CAST(street0_FoldTo3BChance as integer))
                       ,sum(CAST(street0_FoldTo3BDone as integer))
                       ,sum(CAST(street0_FoldTo4BChance as integer))
@@ -6650,12 +6738,16 @@ class Sql:
                 ,street0Aggr
                 ,street0CalledRaiseChance
                 ,street0CalledRaiseDone
+                ,street0_2BChance
+                ,street0_2BDone
                 ,street0_3BChance
                 ,street0_3BDone
                 ,street0_4BChance
                 ,street0_4BDone
                 ,street0_C4BChance
                 ,street0_C4BDone
+                ,street0_FoldTo2BChance
+                ,street0_FoldTo2BDone
                 ,street0_FoldTo3BChance
                 ,street0_FoldTo3BDone
                 ,street0_FoldTo4BChance
@@ -6763,12 +6855,16 @@ class Sql:
                       ,sum(CAST(street0Aggr as integer))
                       ,sum(CAST(street0CalledRaiseChance as integer))
                       ,sum(CAST(street0CalledRaiseDone as integer))
+                      ,sum(CAST(street0_2BChance as integer))
+                      ,sum(CAST(street0_2BDone as integer))
                       ,sum(CAST(street0_3BChance as integer))
                       ,sum(CAST(street0_3BDone as integer))
                       ,sum(CAST(street0_4BChance as integer))
                       ,sum(CAST(street0_4BDone as integer))
                       ,sum(CAST(street0_C4BChance as integer))
                       ,sum(CAST(street0_C4BDone as integer))
+                      ,sum(CAST(street0_FoldTo2BChance as integer))
+                      ,sum(CAST(street0_FoldTo2BDone as integer))
                       ,sum(CAST(street0_FoldTo3BChance as integer))
                       ,sum(CAST(street0_FoldTo3BDone as integer))
                       ,sum(CAST(street0_FoldTo4BChance as integer))
@@ -6891,12 +6987,16 @@ class Sql:
                 street0Aggr,
                 street0CalledRaiseChance,
                 street0CalledRaiseDone,
+                street0_2BChance,
+                street0_2BDone,
                 street0_3BChance,
                 street0_3BDone,
                 street0_4BChance,
                 street0_4BDone,
                 street0_C4BChance,
                 street0_C4BDone,
+                street0_FoldTo2BChance,
+                street0_FoldTo2BDone,
                 street0_FoldTo3BChance,
                 street0_FoldTo3BDone,
                 street0_FoldTo4BChance,
@@ -7018,7 +7118,8 @@ class Sql:
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
-                    %s, %s)"""
+                    %s, %s, %s, %s, %s,
+                    %s)"""
 
         self.query['update_hudcache'] = """
             UPDATE HudCache SET
@@ -7029,12 +7130,16 @@ class Sql:
             street0Aggr=street0Aggr+%s,
             street0CalledRaiseChance=street0CalledRaiseChance+%s,
             street0CalledRaiseDone=street0CalledRaiseDone+%s,
+            street0_2BChance=street0_2BChance+%s,
+            street0_2BDone=street0_2BDone+%s,
             street0_3BChance=street0_3BChance+%s,
             street0_3BDone=street0_3BDone+%s,
             street0_4BChance=street0_4BChance+%s,
             street0_4BDone=street0_4BDone+%s,
             street0_C4BChance=street0_C4BChance+%s,
             street0_C4BDone=street0_C4BDone+%s,
+            street0_FoldTo2BChance=street0_FoldTo2BChance+%s,
+            street0_FoldTo2BDone=street0_FoldTo2BDone+%s,
             street0_FoldTo3BChance=street0_FoldTo3BChance+%s,
             street0_FoldTo3BDone=street0_FoldTo3BDone+%s,
             street0_FoldTo4BChance=street0_FoldTo4BChance+%s,
@@ -7180,10 +7285,14 @@ class Sql:
                 street0CalledRaiseDone,
                 street0_3BChance,
                 street0_3BDone,
+                street0_2BChance,
+                street0_2BDone,
                 street0_4BChance,
                 street0_4BDone,
                 street0_C4BChance,
                 street0_C4BDone,
+                street0_FoldTo2BChance,
+                street0_FoldTo2BDone,
                 street0_FoldTo3BChance,
                 street0_FoldTo3BDone,
                 street0_FoldTo4BChance,
@@ -7305,8 +7414,8 @@ class Sql:
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
-                    %s, %s
-                    )"""
+                    %s, %s, %s, %s, %s,
+                    %s)"""
 
         self.query['update_cardscache'] = """
             UPDATE CardsCache SET
@@ -7317,12 +7426,16 @@ class Sql:
                     street0Aggr=street0Aggr+%s,
                     street0CalledRaiseChance=street0CalledRaiseChance+%s,
                     street0CalledRaiseDone=street0CalledRaiseDone+%s,
+                    street0_2BChance=street0_2BChance+%s,
+                    street0_2BDone=street0_2BDone+%s,
                     street0_3BChance=street0_3BChance+%s,
                     street0_3BDone=street0_3BDone+%s,
                     street0_4BChance=street0_4BChance+%s,
                     street0_4BDone=street0_4BDone+%s,
                     street0_C4BChance=street0_C4BChance+%s,
                     street0_C4BDone=street0_C4BDone+%s,
+                    street0_FoldTo2BChance=street0_FoldTo2BChance+%s,
+                    street0_FoldTo2BDone=street0_FoldTo2BDone+%s,
                     street0_FoldTo3BChance=street0_FoldTo3BChance+%s,
                     street0_FoldTo3BDone=street0_FoldTo3BDone+%s,
                     street0_FoldTo4BChance=street0_FoldTo4BChance+%s,
@@ -7463,12 +7576,16 @@ class Sql:
                 street0Aggr,
                 street0CalledRaiseChance,
                 street0CalledRaiseDone,
+                street0_2BChance,
+                street0_2BDone,
                 street0_3BChance,
                 street0_3BDone,
                 street0_4BChance,
                 street0_4BDone,
                 street0_C4BChance,
                 street0_C4BDone,
+                street0_FoldTo2BChance,
+                street0_FoldTo2BDone,
                 street0_FoldTo3BChance,
                 street0_FoldTo3BDone,
                 street0_FoldTo4BChance,
@@ -7590,7 +7707,8 @@ class Sql:
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s
+                    %s, %s, %s, %s, %s,
+                    %s, %s, %s
                     )"""
 
         self.query['update_positionscache'] = """
@@ -7602,12 +7720,16 @@ class Sql:
                     street0Aggr=street0Aggr+%s,
                     street0CalledRaiseChance=street0CalledRaiseChance+%s,
                     street0CalledRaiseDone=street0CalledRaiseDone+%s,
+                    street0_2BChance=street0_2BChance+%s,
+                    street0_2BDone=street0_2BDone+%s,
                     street0_3BChance=street0_3BChance+%s,
                     street0_3BDone=street0_3BDone+%s,
                     street0_4BChance=street0_4BChance+%s,
                     street0_4BDone=street0_4BDone+%s,
                     street0_C4BChance=street0_C4BChance+%s,
                     street0_C4BDone=street0_C4BDone+%s,
+                    street0_FoldTo2BChance=street0_FoldTo2BChance+%s,
+                    street0_FoldTo2BDone=street0_FoldTo2BDone+%s,
                     street0_FoldTo3BChance=street0_FoldTo3BChance+%s,
                     street0_FoldTo3BDone=street0_FoldTo3BDone+%s,
                     street0_FoldTo4BChance=street0_FoldTo4BChance+%s,
@@ -7802,12 +7924,16 @@ class Sql:
                     street0Aggr,
                     street0CalledRaiseChance,
                     street0CalledRaiseDone,
+                    street0_2BChance,
+                    street0_2BDone,
                     street0_3BChance,
                     street0_3BDone,
                     street0_4BChance,
                     street0_4BDone,
                     street0_C4BChance,
                     street0_C4BDone,
+                    street0_FoldTo2BChance,
+                    street0_FoldTo2BDone,
                     street0_FoldTo3BChance,
                     street0_FoldTo3BDone,
                     street0_FoldTo4BChance,
@@ -7950,12 +8076,16 @@ class Sql:
                     street0Aggr,
                     street0CalledRaiseChance,
                     street0CalledRaiseDone,
+                    street0_2BChance,
+                    street0_2BDone,
                     street0_3BChance,
                     street0_3BDone,
                     street0_4BChance,
                     street0_4BDone,
                     street0_C4BChance,
                     street0_C4BDone,
+                    street0_FoldTo2BChance,
+                    street0_FoldTo2BDone,
                     street0_FoldTo3BChance,
                     street0_FoldTo3BDone,
                     street0_FoldTo4BChance,
@@ -8078,7 +8208,7 @@ class Sql:
                             %s, %s, %s, %s, %s,
                             %s, %s, %s, %s, %s,
                             %s, %s, %s, %s, %s,
-                            %s)"""
+                            %s, %s, %s, %s, %s)"""
                             
         self.query['insert_TC'] = """insert into TourneysCache (
                     sessionId,
@@ -8093,12 +8223,16 @@ class Sql:
                     street0Aggr,
                     street0CalledRaiseChance,
                     street0CalledRaiseDone,
+                    street0_2BChance,
+                    street0_2BDone,
                     street0_3BChance,
                     street0_3BDone,
                     street0_4BChance,
                     street0_4BDone,
                     street0_C4BChance,
                     street0_C4BDone,
+                    street0_FoldTo2BChance,
+                    street0_FoldTo2BDone,
                     street0_FoldTo3BChance,
                     street0_FoldTo3BDone,
                     street0_FoldTo4BChance,
@@ -8221,7 +8355,7 @@ class Sql:
                             %s, %s, %s, %s, %s,
                             %s, %s, %s, %s, %s,
                             %s, %s, %s, %s, %s,
-                            %s)"""
+                            %s, %s, %s, %s, %s)"""
                     
         ####################################
         # update
@@ -8252,12 +8386,16 @@ class Sql:
                     street0Aggr=street0Aggr+%s,
                     street0CalledRaiseChance=street0CalledRaiseChance+%s,
                     street0CalledRaiseDone=street0CalledRaiseDone+%s,
+                    street0_2BChance=street0_2BChance+%s,
+                    street0_2BDone=street0_2BDone+%s,
                     street0_3BChance=street0_3BChance+%s,
                     street0_3BDone=street0_3BDone+%s,
                     street0_4BChance=street0_4BChance+%s,
                     street0_4BDone=street0_4BDone+%s,
                     street0_C4BChance=street0_C4BChance+%s,
                     street0_C4BDone=street0_C4BDone+%s,
+                    street0_FoldTo2BChance=street0_FoldTo2BChance+%s,
+                    street0_FoldTo2BDone=street0_FoldTo2BDone+%s,
                     street0_FoldTo3BChance=street0_FoldTo3BChance+%s,
                     street0_FoldTo3BDone=street0_FoldTo3BDone+%s,
                     street0_FoldTo4BChance=street0_FoldTo4BChance+%s,
@@ -8368,12 +8506,16 @@ class Sql:
                     street0Aggr=street0Aggr+%s,
                     street0CalledRaiseChance=street0CalledRaiseChance+%s,
                     street0CalledRaiseDone=street0CalledRaiseDone+%s,
+                    street0_2BChance=street0_2BChance+%s,
+                    street0_2BDone=street0_2BDone+%s,
                     street0_3BChance=street0_3BChance+%s,
                     street0_3BDone=street0_3BDone+%s,
                     street0_4BChance=street0_4BChance+%s,
                     street0_4BDone=street0_4BDone+%s,
                     street0_C4BChance=street0_C4BChance+%s,
                     street0_C4BDone=street0_C4BDone+%s,
+                    street0_FoldTo2BChance=street0_FoldTo2BChance+%s,
+                    street0_FoldTo2BDone=street0_FoldTo2BDone+%s,
                     street0_FoldTo3BChance=street0_FoldTo3BChance+%s,
                     street0_FoldTo3BDone=street0_FoldTo3BDone+%s,
                     street0_FoldTo4BChance=street0_FoldTo4BChance+%s,
@@ -8988,12 +9130,16 @@ class Sql:
                 startCards,
                 street0CalledRaiseChance,
                 street0CalledRaiseDone,
+                street0_2BChance,
+                street0_2BDone,
                 street0_3BChance,
                 street0_3BDone,
                 street0_4BChance,
                 street0_4BDone,
                 street0_C4BChance,
                 street0_C4BDone,
+                street0_FoldTo2BChance,
+                street0_FoldTo2BDone,
                 street0_FoldTo3BChance,
                 street0_FoldTo3BDone,
                 street0_FoldTo4BChance,
@@ -9093,7 +9239,8 @@ class Sql:
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
                     %s, %s, %s, %s, %s,
-                    %s, %s
+                    %s, %s, %s, %s, %s,
+                    %s
                 )"""
 
         self.query['store_hands_actions'] = """insert into HandsActions (
