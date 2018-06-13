@@ -129,7 +129,7 @@ class Bovada(HandHistoryConverter):
         "FLOP": re.compile(r"\*\*\* FLOP \*\*\* \[(?P<CARDS>\S\S \S\S \S\S)\]"),
         "TURN": re.compile(r"\*\*\* TURN \*\*\* \[\S\S \S\S \S\S\] \[(?P<CARDS>\S\S)\]"),
         "RIVER": re.compile(r"\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S\] \[(?P<CARDS>\S\S)\]")
-    }
+    } 
     re_DateTime     = re.compile("""(?P<Y>[0-9]{4})\-(?P<M>[0-9]{2})\-(?P<D>[0-9]{2})[\- ]+(?P<H>[0-9]+):(?P<MIN>[0-9]+):(?P<S>[0-9]+)""", re.MULTILINE)
     # These used to be compiled per player, but regression tests say
     # we don't have to, and it makes life faster.
@@ -417,16 +417,23 @@ class Bovada(HandHistoryConverter):
         if not hand.streets.get(firststreet):
             hand.streets[firststreet] = hand.handText
         if hand.gametype['base'] == "hold":
-            m1 = self.re_Board1.search(hand.handText)
-            for street in ('FLOP', 'TURN', 'RIVER'):
-                if m1 and m1.group(street) and not hand.streets.get(street):
-                    hand.streets[street] = m1.group(street)
+            if hand.gametype['fast']:
+                for street in ('FLOP', 'TURN', 'RIVER'):
+                    m1 = self.re_Board2[street].search(hand.handText)
+                    if m1 and m1.group('CARDS') and not hand.streets.get(street):
+                        hand.streets[street] = m1.group('CARDS')
+            else:
+                m1 = self.re_Board1.search(hand.handText)
+                for street in ('FLOP', 'TURN', 'RIVER'):
+                    if m1 and m1.group(street) and not hand.streets.get(street):
+                        hand.streets[street] = m1.group(street)
             
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
         if hand.gametype['fast']:
             m = self.re_Board2[street].search(hand.handText)
             if m and m.group('CARDS'):
+                print street, m.group('CARDS').split(' ')
                 hand.setCommunityCards(street, m.group('CARDS').split(' '))
         else:
             if street in ('FLOP','TURN','RIVER'):   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
