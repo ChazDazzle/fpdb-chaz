@@ -363,7 +363,7 @@ class Cake(HandHistoryConverter):
             elif actionType == ' is all in':
                 hand.addAllIn(street, action.group('PNAME'), bet)
             else:
-                print (_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
+                log.error(_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
 
     def readShowdownActions(self, hand):
         pass

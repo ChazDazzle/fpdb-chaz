@@ -68,6 +68,7 @@ class Site:
         self.copyGameHeader = obj.copyGameHeader
         self.summaryInFile  = obj.summaryInFile
         self.re_Identify    = obj.re_Identify
+        #self.obj            = obj
         if summary:
             self.summary = summary
             self.re_SumIdentify = getattr(__import__(summary), summary, None).re_Identify
@@ -290,7 +291,7 @@ class IdentifySite:
                 try: #TODO: this is a dirty hack. Borrowed from fpdb_import
                     name = unicode(name, "utf8", "replace")
                 except TypeError:
-                    print TypeError
+                    log.error(TypeError)
                 mod = __import__(f.site.hhc_fname)
                 obj = getattr(mod, f.site.filter_name, None)
                 hhc = obj(self.config, in_path = name, sitename = f.site.hhc_fname, autostart = False)

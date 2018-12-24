@@ -321,7 +321,7 @@ class Entraction(HandHistoryConverter):
             elif action.group('ATYPE') == 'All-In':
                 hand.addAllIn(street, action.group('PNAME'), self.clearMoneyString(action.group('BET')))
             else:
-                print (_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
+                log.debug(_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
 
 
     def readShowdownActions(self, hand):

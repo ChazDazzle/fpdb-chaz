@@ -424,7 +424,7 @@ class Boss(HandHistoryConverter):
                 else:
                     hand.addRaiseTo( street, player, bet)
             else:
-                print (_("DEBUG:") + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
+                log.debug(_("DEBUG:") + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
         self.calculateAntes(street, hand)
                 
     def calculateAntes(self, street, hand):

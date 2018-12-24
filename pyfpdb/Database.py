@@ -833,7 +833,7 @@ class Database:
                         raise FpdbPostgresqlAccessDenied(errmsg = ex.args[0])
                     else:
                         msg = ex.args[0]
-                    print msg
+                    log.error(msg)
                     raise FpdbError(msg)
         elif backend == Database.SQLITE:
             create = True
@@ -845,7 +845,6 @@ class Database:
 
             if database != ":memory:":
                 if not os.path.isdir(self.config.dir_database) and create:
-                    print _("Creating directory: '%s'") % (self.config.dir_database)
                     log.info(_("Creating directory: '%s'") % (self.config.dir_database))
                     os.mkdir(self.config.dir_database)
                 database = os.path.join(self.config.dir_database, database)
@@ -1176,7 +1175,7 @@ class Database:
             seats_min, seats_max = num_seats, num_seats
         else:
             seats_min, seats_max = 0, 10
-            print "bad seats_style value:", seats_style
+            log.warning("bad seats_style value: " + seats_style)
 
         if h_seats_style == 'A':
             h_seats_min, h_seats_max = 0, 10
@@ -1186,7 +1185,7 @@ class Database:
             h_seats_min, h_seats_max = num_seats, num_seats
         else:
             h_seats_min, h_seats_max = 0, 10
-            print "bad h_seats_style value:", h_seats_style
+            log.warning("bad h_seats_style value: " + h_seats_style)
 
         if stat_range == 'S' or h_stat_range == 'S':
             self.get_stats_from_hand_session(hand, stat_dict, hero_id
@@ -1375,8 +1374,8 @@ class Database:
         except:
             ret = -1
             err = traceback.extract_tb(sys.exc_info()[2])
-            print _("*** Database get_last_insert_id error: ") + str(sys.exc_info()[1])
-            print "\n".join( [e[0]+':'+str(e[1])+" "+e[2] for e in err] )
+            log.error(_("*** Database get_last_insert_id error: ") + str(sys.exc_info()[1]))
+            log.error("\n".join( [e[0]+':'+str(e[1])+" "+e[2] for e in err] ))
             raise
         return ret
     

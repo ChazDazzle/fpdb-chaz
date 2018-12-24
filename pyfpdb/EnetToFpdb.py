@@ -368,7 +368,7 @@ class Enet(HandHistoryConverter):
             elif action.group('ATYPE') == ' goes all-in':
                 hand.addAllIn(street, action.group('PNAME'), self.clearMoneyString(action.group('BET')) )
             else:
-                print (_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
+                log.debug(_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
 
 
     def readShowdownActions(self, hand):

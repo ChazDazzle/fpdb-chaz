@@ -190,7 +190,7 @@ class PokerTrackerSummary(TourneySummary):
                     winnings=None
                     
                 if len(name)==0:
-                    print "DEBUG: a.groupdict(): %d %s" % (i, mg)
+                    log.debug("DEBUG: a.groupdict(): %d %s" % (i, mg))
     
                 #print "DEBUG: addPlayer(%s, %s, %s, %s, None, None, None)" %(rank, name, winnings, self.currency)
                 #print "DEBUG: self.buyin: %s self.fee %s" %(self.buyin, self.fee)

@@ -433,7 +433,6 @@ class Bovada(HandHistoryConverter):
         if hand.gametype['fast']:
             m = self.re_Board2[street].search(hand.handText)
             if m and m.group('CARDS'):
-                print street, m.group('CARDS').split(' ')
                 hand.setCommunityCards(street, m.group('CARDS').split(' '))
         else:
             if street in ('FLOP','TURN','RIVER'):   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
@@ -613,7 +612,7 @@ class Bovada(HandHistoryConverter):
                 elif action.group('ATYPE') in (' Card dealt to a spot', ' Big blind/Bring in'):
                     pass
                 else:
-                    print (_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
+                    log.debug(_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
                 
     def allInBlind(self, hand, street, action, actiontype):
         if street in ('PREFLOP', 'DEAL'):

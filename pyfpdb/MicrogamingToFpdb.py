@@ -381,7 +381,7 @@ class Microgaming(HandHistoryConverter):
             elif action.group('ATYPE') == 'MoneyReturned':
                 pass # Deal with elsewhere
             else:
-                print (_("DEBUG:") + _("Unimplemented %s: '%s' '%s'") % ("readAction", pname, action.group('ATYPE')))
+                log.debug(_("DEBUG:") + _("Unimplemented %s: '%s' '%s'") % ("readAction", pname, action.group('ATYPE')))
             #elif action.group('ATYPE') == 'ACTION_ALLIN':
             #    hand.addRaiseBy( street, action.group('PNAME'), action.group('BET') )
             #elif action.group('ATYPE') == 'ACTION_DISCARD':

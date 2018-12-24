@@ -473,7 +473,7 @@ or None if we fail to get the info """
                 except:
                     pass
             else:
-                print _("unable to read file with any codec in list!"), self.in_path
+                log.error(_("unable to read file with any codec in list!") + " " + self.in_path)
                 self.obs = ""
                 return False
         elif self.filetype == "xml":
@@ -717,7 +717,6 @@ def get_out_fh(out_path, parameters):
                 os.makedirs(out_dir) 
             except: # we get a WindowsError here in Windows.. pretty sure something else for Linux :D 
                 log.error(_("Unable to create output directory %s for HHC!") % out_dir) 
-                print(_("Unable to create output directory %s for HHC!") % out_dir)
             else: 
                 log.info(_("Created directory '%s'") % out_dir) 
         try: 

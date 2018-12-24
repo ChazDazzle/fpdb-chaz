@@ -533,7 +533,7 @@ class Winning(HandHistoryConverter):
                 else:
                     hand.addCallandRaise(street, player, amount)
             else:
-                print (_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
+                log.debug(_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action.group('PNAME'), action.group('ATYPE')))
 
     def readCollectPot(self,hand):
         for m in self.re_CollectPot.finditer(hand.handText):
