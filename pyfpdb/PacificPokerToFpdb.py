@@ -119,7 +119,7 @@ class PacificPoker(HandHistoryConverter):
            )
           ((?P<MAX>\d+)\sMax\s)?
           (\(Real\sMoney\))?
-          (?P<PLAY>\(Practice\sPlay\))?
+          (?P<PLAY>\((Practice\sPlay|Play\sMoney)\))?
           \\n
           Seat\s(?P<BUTTON>[0-9]+)\sis\sthe\sbutton
           """ % substitutions, re.MULTILINE|re.VERBOSE)
@@ -256,7 +256,7 @@ class PacificPoker(HandHistoryConverter):
                         hand.buyinCurrency="USD"
                     elif info['BUYIN'].find(u"€")!=-1:
                         hand.buyinCurrency="EUR"
-                    elif 'PLAY' in info and info['PLAY'] != "Practice Play":
+                    elif 'PLAY' in info and info['PLAY'] != "Practice Play" and info['PLAY'] != "Play Money":
                         hand.buyinCurrency="FREE"
                     else:
                         #FIXME: handle other currencies, FPP, play money
