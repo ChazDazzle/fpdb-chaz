@@ -93,7 +93,7 @@ class PokerTracker(HandHistoryConverter):
     re_Site = re.compile(u'(?P<SITE>EverestPoker\sGame\s\#|GAME\s\#|MERGE_GAME\s\#|Merge\sGame\s\#|\*{2}\s(Game\sID|Hand\s\#)\s)\d+')
     # Static regexes
     re_GameInfo1     = re.compile(u"""
-          (?P<SITE>GAME\s\#|MERGE_GAME\s\#|Merge\sGame\s\#)(?P<HID>[0-9\-]+)(\sVersion:[\d\.]+\sUncalled)?(:?Y?\s+|\s\|\s)
+          (?P<SITE>GAME\s\#|MERGE_GAME\s\#|Merge\sGame\s\#)(?P<HID>[0-9\-]+)(\sVersion:[\d\.]+\s(?P<UNCALLED>Uncalled:Y))?(:?\s+|\s\|\s)
           (?P<GAME>Holdem|Texas\sHold\'em|Omaha|Omaha\sHi|Omaha\sHi/Lo)\s\s?
           ((?P<LIMIT>PL|NL|FL|No\sLimit|Limit|LIMIT|Pot\sLimit)\s\s?)?
           (?P<TOUR>Tournament)?
@@ -307,7 +307,7 @@ class PokerTracker(HandHistoryConverter):
             info.update(m.groupdict())
         info.update(m2.groupdict())
         
-        if self.sitename != 'Everest':
+        if self.sitename != 'Everest' and info['UNCALLED'] is None:
             hand.setUncalledBets(True)
 
         #print 'readHandInfo', info
