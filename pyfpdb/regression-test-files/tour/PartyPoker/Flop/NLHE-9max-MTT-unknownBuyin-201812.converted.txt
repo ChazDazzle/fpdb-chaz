@@ -1,0 +1,43 @@
+***** Hand History for Game 1111111111 ***** (Poker Stars)
+Tourney Hand NL Texas Hold'em - Sunday, December 23, 07:21:56 ET 2018
+Table 2481408818 659 (Real Money)
+Seat 3 is the button
+Seat 1: Player1 ( 1232368 ) - VPIP: 27, PFR: 22, 3B: 12, AF: 3,5, Hands: 172
+Seat 2: Player2 ( 158365 ) - VPIP: 18, PFR: 15, 3B: 7, AF: 0,0, Hands: 61
+Seat 3: Player3 ( 143531 ) - VPIP: 13, PFR: 13, 3B: 9, AF: 0,0, Hands: 23
+Seat 4: Hero ( 331791 ) - VPIP: 24, PFR: 15, 3B: 6, AF: 2,8, Hands: 100003
+Seat 5: Player5 ( 344388 ) - VPIP: 16, PFR: 11, 3B: 11, AF: 2,7, Hands: 125
+Seat 6: Player6 ( 216032 ) - VPIP: 9, PFR: 9, 3B: 0, AF: 0,0, Hands: 32
+Seat 7: Player7 ( 178943 ) - VPIP: 26, PFR: 12, 3B: 0, AF: 4,3, Hands: 101
+Seat 8: Player8 ( 299257 ) - VPIP: 22, PFR: 22, 3B: 0, AF: 0,0, Hands: 9
+Seat 9: Player9 ( 380236 ) - VPIP: 13, PFR: 7, 3B: 0, AF: 0,0, Hands: 46
+Player1 posts ante of [1200].
+Player2 posts ante of [1200].
+Player3 posts ante of [1200].
+Hero posts ante of [1200].
+Player5 posts ante of [1200].
+Player6 posts ante of [1200].
+Player7 posts ante of [1200].
+Player8 posts ante of [1200].
+Player9 posts ante of [1200].
+Hero posts small blind [6000].
+Player5 posts big blind [12000].
+** Dealing down cards **
+Dealt to Hero [ Qs As ]
+Player6 folds
+Player7 folds
+Player8 raises [24000]
+Player9 folds
+Player1 raises [72000]
+Player2 folds
+Player3 folds
+Hero raises [324591]
+Player5 folds
+Player8 folds
+Player1 calls [258591]
+** Dealing Flop ** [ 7s, Td, 4c ]
+** Dealing Turn ** [ 2s ]
+** Dealing River ** [ Kh ]
+Hero shows [Qs, As ]
+Player1 shows [Th, Ts ]
+Player1 wins 707982 from main pot

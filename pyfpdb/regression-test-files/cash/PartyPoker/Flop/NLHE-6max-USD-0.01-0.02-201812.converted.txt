@@ -1,0 +1,37 @@
+***** Hand History for Game 1111111111 ***** (Poker Stars)
+$2.00 USD NL Texas Hold'em - Thursday, December 27, 03:20:55 ET 2018
+Table Halley (Real Money)
+Seat 1 is the button
+Seat 1: Player1 ( $2.75 USD ) - VPIP: 21, PFR: 14, 3B: 5, AF: 1,7, Hands: 139
+Seat 2: Player2 ( $2.18 USD ) - VPIP: 24, PFR: 13, 3B: 6, AF: 2,1, Hands: 119
+Seat 3: Player3 ( $5.45 USD ) - VPIP: 31, PFR: 19, 3B: 13, AF: 3,0, Hands: 91
+Seat 4: Hero ( $11.56 USD ) - VPIP: 24, PFR: 19, 3B: 7, AF: 1,7, Hands: 244432
+Seat 5: Player5 ( $2.02 USD ) - VPIP: 17, PFR: 13, 3B: 4, AF: 0,0, Hands: 47
+Seat 6: Player6 ( $2.98 USD ) - VPIP: 15, PFR: 9, 3B: 3, AF: 1,9, Hands: 539
+Player2 posts small blind [$0.01 USD].
+Player3 posts big blind [$0.02 USD].
+** Dealing down cards **
+Dealt to Hero [ Kd Kh ]
+Hero raises [$0.06 USD]
+Player5 folds
+Player6 folds
+Player1 folds
+Player2 calls [$0.05 USD]
+Player3 raises [$0.26 USD]
+Hero calls [$0.22 USD]
+Player2 calls [$0.22 USD]
+** Dealing Flop ** [ 8h, Jh, 7h ]
+Player2 checks
+Player3 checks
+Hero bets [$0.29 USD]
+Player2 folds
+Player3 raises [$0.87 USD]
+Hero calls [$0.58 USD]
+** Dealing Turn ** [ 2s ]
+Player3 bets [$1.66 USD]
+Hero calls [$1.66 USD]
+** Dealing River ** [ Jc ]
+Player3 bets [$2.64 USD]
+Hero folds
+Player3 wins $2.64 USD
+Player3 wins $5.69 USD from main pot

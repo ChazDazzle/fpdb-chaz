@@ -91,10 +91,17 @@ class PartyPoker(HandHistoryConverter):
                  'April':4, 'Apr':4, 'May':5, 'May':5, 'June':6, 'Jun':6,
                   'July':7, 'Jul':7, 'August':8, 'Aug':8, 'September':9, 'Sep':9,
                'October':10, 'Oct':10, 'November':11, 'Nov':11, 'December':12, 'Dec':12}
+    
+    sites = {     'Poker Stars' : ('PokerStars', 2),
+                  'PokerMaster' : ('PokerStars', 2),
+                       'IPoker' : ('iPoker', 14),
+                        'Party' : ('PartyPoker', 9),
+                      'Pacific' : ('PacificPoker', 10)
+             }
 
     # Static regexes
     re_GameInfo = re.compile(u"""
-            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s+
+            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}(\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific)\))?\s+
             (.+?\shas\sleft\sthe\stable\.\s+)*
             (.+?\sfinished\sin\s\d+\splace\.\s+)*
             ((?P<CURRENCY>[%(LS)s]))?\s*
@@ -119,7 +126,7 @@ class PartyPoker(HandHistoryConverter):
             (\(No\sDP\)\s)?
             \(\s?(?P<PLAY>Real|Play)\s+Money\s?\)\s+(--\s*)? # FIXME: check if play money is correct
             Seat\s+(?P<BUTTON>\d+)\sis\sthe\sbutton
-            \s+Total\s+number\s+of\s+players\s+\:\s+(?P<PLYRS>\d+)/?(?P<MAX>\d+)?
+            (\s+Total\s+number\s+of\s+players\s+\:\s+(?P<PLYRS>\d+)/?(?P<MAX>\d+)?)?
             """, re.VERBOSE|re.MULTILINE|re.DOTALL)
 
     re_GameInfoTrny1     = re.compile(u"""
@@ -145,6 +152,15 @@ class PartyPoker(HandHistoryConverter):
             (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em))\s+
             (?:(?P<BUYIN>[%(LS)s]?\s?[%(NUM)s]+)\s*(?P<BUYIN_CURRENCY>%(LEGAL_ISO)s)?\s*Buy-in\s+)?
             (\+\s(?P<FEE>[%(LS)s]?\s?[%(NUM)s]+)\sEntry\sFee\s+)?
+            \s*\-\s*
+            (?P<DATETIME>.+)
+            """ % substitutions, re.VERBOSE | re.UNICODE)
+    
+    re_GameInfoTrny3     = re.compile(u"""
+            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific)\)\s+
+            Tourney\sHand\s
+            (?P<LIMIT>(NL|PL|FL|))\s*
+            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em))\s+
             \s*\-\s*
             (?P<DATETIME>.+)
             """ % substitutions, re.VERBOSE | re.UNICODE)
@@ -209,7 +225,7 @@ class PartyPoker(HandHistoryConverter):
                 r"%(PLYR)s posts big blind \+ dead [%(BRAX)s]?%(CUR_SYM)s?(?P<BBNDEAD>[.,0-9]+)\s*%(CUR_SYM)s?[%(BRAX)s]?\.?\s*$" %  subst,
                 re.MULTILINE)
             self.re_Antes = re.compile(
-                r"%(PLYR)s posts ante [%(BRAX)s]?%(CUR_SYM)s(?P<ANTE>[.,0-9]+)\s*%(CUR)s[%(BRAX)s]?\.?\s*$" %  subst,
+                r"%(PLYR)s posts ante( of)? [%(BRAX)s]?%(CUR_SYM)s(?P<ANTE>[.,0-9]+)\s*%(CUR)s[%(BRAX)s]?\.?\s*$" %  subst,
                 re.MULTILINE)
             self.re_HeroCards = re.compile(
                 r"Dealt to %(PLYR)s \[\s*(?P<NEWCARDS>.+)\s*\]" % subst,
@@ -270,6 +286,8 @@ class PartyPoker(HandHistoryConverter):
             else:
                 m = None
         if not m:
+            m = self.re_GameInfoTrny3.search(handText)
+        if not m:
             m = self.re_Disconnected.search(handText)
             if m:
                 message = _("Player Disconnected")
@@ -289,6 +307,10 @@ class PartyPoker(HandHistoryConverter):
         mg = m.groupdict()
         mg.update(extra)
         #print "DEBUG: mg: %s" % mg
+        
+        if 'SITE' in mg and mg['SITE'] != None:
+            self.sitename = self.sites[mg['SITE']][0]
+            self.siteId   = self.sites[mg['SITE']][1] # Needs to match id entry in Sites database
 
         if 'LIMIT' in mg and mg['LIMIT'] != None:
             info['limitType'] = self.limits[mg['LIMIT']]
@@ -339,12 +361,14 @@ class PartyPoker(HandHistoryConverter):
             if m:
                 mg['SB'] = m.group('SB')
                 mg['BB'] = m.group('BB')
-            mg['SB'] = self.clearMoneyString(mg['SB'])
-            mg['BB'] = self.clearMoneyString(mg['BB'])
             if 'SB' in mg:
-                info['sb'] = mg['SB']
+                info['sb'] = self.clearMoneyString(mg['SB'])
+            else:
+                info['sb'] = None
             if 'BB' in mg:
-                info['bb'] = mg['BB']
+                info['bb'] = self.clearMoneyString(mg['BB'])
+            else:
+                info['bb'] = None
             info['buyinType'] = 'regular'
         if 'CURRENCY' in mg:
             if mg['CURRENCY'] == None:
@@ -377,7 +401,7 @@ class PartyPoker(HandHistoryConverter):
 
 
     def readHandInfo(self, hand):
-        info, m2, extra = {}, None, {}
+        info, m2, extra, type3 = {}, None, {}, False
         hand.handText = hand.handText.replace(u'\x00', u'')
         if self.re_emailedHand.search(hand.handText):
             hand.emailedHand = True
@@ -396,7 +420,8 @@ class PartyPoker(HandHistoryConverter):
                     extra.update(m3.groupdict())
                     extra.update(m4.groupdict())
                 else:
-                    m2 = None
+                    m2 = self.re_GameInfoTrny3.search(hand.handText)
+                    type3 = True
         if m is None or m2 is None:
             tmp = hand.handText[0:200]
             log.error(_("PartyPokerToFpdb.readHandInfo: '%s'") % tmp)
@@ -483,6 +508,12 @@ class PartyPoker(HandHistoryConverter):
                 hand.gametype['currency'] = 'play'
             if key == 'MAX' and info[key] is not None:
                 hand.maxseats = int(info[key])
+                
+            if type3:
+                hand.tourNo = info['TABLE']
+                hand.buyin = 0
+                hand.fee = 0
+                hand.buyinCurrency = "NA"
 
     def readButton(self, hand):
         m = self.re_Button.search(hand.handText)
@@ -603,16 +634,20 @@ class PartyPoker(HandHistoryConverter):
 
     def readBlinds(self, hand):
         noSmallBlind = bool(self.re_NoSmallBlind.search(hand.handText))
-        if hand.gametype['type'] == 'ring':
+        if hand.gametype['type'] == 'ring' or hand.gametype['sb'] is None or hand.gametype['bb'] is None:
             try:
                 assert noSmallBlind==False
                 for m in self.re_PostSB.finditer(hand.handText):
                     hand.addBlind(m.group('PNAME'), 'small blind', self.clearMoneyString(m.group('SB')))
+                    if hand.gametype['sb'] is None:
+                        hand.gametype['sb'] = self.clearMoneyString(m.group('SB'))
             except: # no small blind
                 hand.addBlind(None, None, None)
 
             for a in self.re_PostBB.finditer(hand.handText):
                 hand.addBlind(a.group('PNAME'), 'big blind', self.clearMoneyString(a.group('BB')))
+                if hand.gametype['bb'] is None:
+                    hand.gametype['bb'] = self.clearMoneyString(a.group('BB'))
 
             for a in self.re_PostDead.finditer(hand.handText):
                 hand.addBlind(a.group('PNAME'), 'both', self.clearMoneyString(a.group('BBNDEAD')))
