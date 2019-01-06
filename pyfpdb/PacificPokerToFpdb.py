@@ -84,7 +84,7 @@ class PacificPoker(HandHistoryConverter):
     # Static regexes
     re_GameInfo     = re.compile(u"""
           (\#Game\sNo\s:\s[0-9]+\\n)?
-          \*\*\*\*\*?\s(Cassava|888poker|888)(\.[a-z]{2})?\s(?P<FAST>Snap\sPoker\s)?Hand\sHistory\sfor\sGame\s(?P<HID>[0-9]+)\s\*\*\*\*\*\\n
+          \*\*\*\*\*?\s(Cassava|888poker|888)(\.[a-z]{2})?\s(?P<FAST>Snap\sPoker\s)?(BLAST\s)?Hand\sHistory\sfor\sGame\s(?P<HID>[0-9]+)\s\*\*\*\*\*\\n
           (?P<CURRENCY1>%(LS)s)?\s?(?P<SB>[%(NUM)s]+)\s?(?P<CURRENCY2>%(LS)s)?/(%(LS)s)?\s?(?P<BB>[%(NUM)s]+)\s?(%(LS)s)?\sBlinds\s
           (?P<LIMIT>No\sLimit|Fix\sLimit|Pot\sLimit)\s
           (?P<GAME>Holdem|Omaha|OmahaHL|Hold\'em|Omaha\sHi/Lo|OmahaHL)
