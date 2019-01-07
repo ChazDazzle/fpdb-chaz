@@ -1,0 +1,34 @@
+#Game No : 896313800
+***** 888.ro Hand History for Game 896313800 *****
+8.000 $/16.000 $ Blinds No Limit Holdem - *** 
+Tournament #132736084 40 $ + 4 $ - Table #10 6 Max (Real Money)
+Seat 4 is the button
+Total number of players : 5
+Seat 2: 1betUwill ( 298.064 $ )
+Seat 4: Grazietutti ( 617.146 $ )
+Seat 6: gutomparagua ( 854.876 $ )
+Seat 7: pro_Kiev888 ( 323.032 $ )
+Seat 9: rodger_batya ( 576.882 $ )
+Grazietutti posts ante [2.000 $]
+pro_Kiev888 posts ante [2.000 $]
+1betUwill posts ante [2.000 $]
+gutomparagua posts ante [2.000 $]
+rodger_batya posts ante [2.000 $]
+gutomparagua posts small blind [8.000 $]
+pro_Kiev888 posts big blind [16.000 $]
+** Dealing down cards **
+Dealt to Grazietutti [ Qs, Qd ]
+rodger_batya raises [32.000 $]
+1betUwill folds
+Grazietutti raises [88.000 $]
+gutomparagua folds
+pro_Kiev888 folds
+rodger_batya raises [542.882 $]
+Grazietutti calls [486.882 $]
+** Dealing flop ** [ 2s, Ks, Ah ]
+** Dealing turn ** [ 9h ]
+** Dealing river ** [ Kc ]
+** Summary **
+Grazietutti shows [ Qs, Qd ]
+rodger_batya shows [ 8c, 8h ]
+Grazietutti collected [ 1.183.764 $ ]

@@ -682,9 +682,9 @@ or None if we fail to get the info """
             return money # No commas until 0,01 or 1,00
         if money[-3] == ',':
             money = money[:-3] + '.' + money[-2:]
-        if len(money) > 7:
-            if money[-7] == '.':
-                money = money[:-7] + ',' + money[-6:]
+        if len(money) > 8:
+            if money[-8] == '.':
+                money = money[:-8] + ',' + money[-7:]
         if len(money) > 4:
             if money[-4] == '.':
                 money = money[:-4] + ',' + money[-3:]
