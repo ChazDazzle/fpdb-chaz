@@ -153,10 +153,11 @@ class iPoker(HandHistoryConverter):
             <nickname>(?P<HERO>.+)?</nickname>
             """ % substitutions, re.MULTILINE|re.VERBOSE)
     re_GameInfoTrny = re.compile(r"""(?P<HEAD>
-                <tournamentname>.+?<place>(?P<PLACE>.+?)</place>
+                (<tournamentcode>(?P<TOURNO>\d+)</tournamentcode>\s+?)?
+                <tournamentname>(?P<NAME>.+?)</tournamentname>\s*<place>(?P<PLACE>.+?)</place>\s*
                 <buyin>(?P<BUYIN>(?P<BIAMT>.+?)(\+(?P<BIRAKE>.+?))?(\+(?P<BIRAKE1>.+?))?)</buyin>\s+?
                 <totalbuyin>(?P<TOTBUYIN>.*)</totalbuyin>\s+?
-                <ipoints>.+?</ipoints>\s+?
+                (<ipoints>.+?</ipoints>\s+?)?
                 <win>(%(LS)s)?(?P<WIN>([%(NUM)s]+)|.+?)</win>\s+?)
             """ % substitutions, re.MULTILINE|re.VERBOSE)
     re_Buyin = re.compile(r"""(?P<BUYIN>[%(NUM)s]+)""" % substitutions, re.MULTILINE|re.VERBOSE)
@@ -265,8 +266,10 @@ class iPoker(HandHistoryConverter):
             self.tinfo['buyin'] = 0
             self.tinfo['fee'] = 0
             m2 = self.re_GameInfoTrny.search(handText)
-            if m2:
+            if m2:                
                 mg =  m2.groupdict()
+                if mg['TOURNO']:
+                    self.tinfo['tourNo'] = mg['TOURNO']
                 if not mg['BIRAKE'] and mg['TOTBUYIN']:
                     m3 = self.re_TotalBuyin.search(mg['TOTBUYIN'])
                     if m3:

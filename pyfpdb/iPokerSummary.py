@@ -71,10 +71,11 @@ class iPokerSummary(TourneySummary):
             """ % substitutions, re.MULTILINE|re.VERBOSE)
 
     re_GameInfoTrny = re.compile(r"""
-                <tournamentname>(?P<NAME>.+?)</tournamentname><place>(?P<PLACE>.+?)</place>
+                (<tournamentcode>(?P<TOURNO>\d+)</tournamentcode>\s+?)?
+                <tournamentname>(?P<NAME>.+?)</tournamentname>\s*<place>(?P<PLACE>.+?)</place>\s*
                 <buyin>(?P<BUYIN>(?P<BIAMT>.+?)(\+(?P<BIRAKE>.+?))?(\+(?P<BIRAKE1>.+?))?)</buyin>\s+?
                 <totalbuyin>(?P<TOTBUYIN>.*)</totalbuyin>\s+?
-                <ipoints>.+?</ipoints>\s+?
+                (<ipoints>.+?</ipoints>\s+?)?
                 <win>(?P<CURRENCY>%(LS)s)?(?P<WIN>([%(NUM)s]+)|.+?)</win>
             """ % substitutions, re.MULTILINE|re.VERBOSE)
     re_Buyin = re.compile(r"""(?P<BUYIN>[%(NUM)s]+)""" % substitutions, re.MULTILINE|re.VERBOSE)
@@ -169,6 +170,8 @@ class iPokerSummary(TourneySummary):
                 self.prizepool = None
                 self.entries   = None
 
+                if mg2['TOURNO']:
+                    self.tourNo = mg2['TOURNO']
                 if mg2['CURRENCY']:
                     self.currency = self.currencies[mg2['CURRENCY']]
                 rank, winnings = None, None
@@ -176,7 +179,7 @@ class iPokerSummary(TourneySummary):
                     rank     = int(mg2['PLACE'])
                     winnings = int(100*self.convert_to_decimal(mg2['WIN']))
 
-                self.tourneyName = mg2['NAME'][:40]
+                self.tourneyName = mg2['NAME'].replace(" " + self.tourNo, "")
 
                 if not mg2['BIRAKE'] and mg2['TOTBUYIN']:
                     m3 = self.re_TotalBuyin.search(mg2['TOTBUYIN'])

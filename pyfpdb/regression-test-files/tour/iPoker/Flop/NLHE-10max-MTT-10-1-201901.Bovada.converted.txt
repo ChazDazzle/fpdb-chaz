@@ -1,0 +1,72 @@
+<session sessioncode="200442">
+  <general>
+    <mode>real</mode>
+    <gametype>Holdem NL</gametype>
+    <tablename>Table 14 $10,000 Guaranteed (10K Chips 10-Minute Levels) 21387619</tablename>
+    <duration>N/A</duration>
+    <gamecount>0</gamecount>
+    <startdate>2019-01-07 01:45:17</startdate>
+    <currency>USD</currency>
+    <nickname>yurk</nickname>
+    <bets>0</bets>
+    <wins>0</wins>
+    <chipsin>0</chipsin>
+    <chipsout>0</chipsout>
+    <ipoints>0</ipoints>
+    <statuspoints>0</statuspoints>
+    <awardpoints>0</awardpoints>
+    <tournamentcode>21387619</tournamentcode>
+    <tournamentname>$10,000 Guaranteed (10K Chips 10-Minute Levels) 21387619</tournamentname>
+    <place>0</place>
+    <buyin>$10+$1</buyin>
+    <totalbuyin>$11</totalbuyin>
+    <win>0</win>
+  </general>
+<game gamecode="3805968550">
+  <general>
+    <startdate>2019-01-07 01:49:25</startdate>
+    <players>
+      <player seat="1" name="P184-880618SH" chips="10000" dealer="0" win="0" bet="10" rebuy="0" addon="0" />
+      <player seat="2" name="P191-229068DJ" chips="10000" dealer="0" win="0" bet="20" rebuy="0" addon="0" />
+      <player seat="3" name="P111-284346EY" chips="10000" dealer="0" win="0" bet="75" rebuy="0" addon="0" />
+      <player seat="4" name="P11-618966BD" chips="10000" dealer="0" win="0" bet="0" rebuy="0" addon="0" />
+      <player seat="5" name="yurk" chips="10000" dealer="0" win="0" bet="0" rebuy="0" addon="0" />
+      <player seat="6" name="P141-270741AE" chips="10000" dealer="0" win="0" bet="20" rebuy="0" addon="0" />
+      <player seat="8" name="P169-673801OD" chips="10000" dealer="0" win="0" bet="0" rebuy="0" addon="0" />
+      <player seat="9" name="P80-630380KQ" chips="10000" dealer="0" win="300" bet="175" rebuy="0" addon="0" />
+      <player seat="10" name="P122-432410FD" chips="10000" dealer="1" win="0" bet="0" rebuy="0" addon="0" />
+    </players>
+  </general>
+  <round no="0">
+    <action no="1" player="P184-880618SH" type="1" sum="10" cards="[cards]" />
+    <action no="2" player="P191-229068DJ" type="2" sum="20" cards="[cards]" />
+  </round>
+  <round no="1">
+    <cards type="Pocket" player="P184-880618SH">X X</cards>
+    <cards type="Pocket" player="P191-229068DJ">X X</cards>
+    <cards type="Pocket" player="P111-284346EY">X X</cards>
+    <cards type="Pocket" player="P11-618966BD">X X</cards>
+    <cards type="Pocket" player="yurk">CK H9</cards>
+    <cards type="Pocket" player="P141-270741AE">X X</cards>
+    <cards type="Pocket" player="P169-673801OD">X X</cards>
+    <cards type="Pocket" player="P80-630380KQ">X X</cards>
+    <cards type="Pocket" player="P122-432410FD">X X</cards>
+    <action no="3" player="P111-284346EY" type="3" sum="20" cards="" />
+    <action no="4" player="P11-618966BD" type="0" sum="0" cards="" />
+    <action no="5" player="yurk" type="0" sum="0" cards="" />
+    <action no="6" player="P141-270741AE" type="3" sum="20" cards="" />
+    <action no="7" player="P169-673801OD" type="0" sum="0" cards="" />
+    <action no="8" player="P80-630380KQ" type="23" sum="75" cards="" />
+    <action no="9" player="P122-432410FD" type="0" sum="0" cards="" />
+    <action no="10" player="P184-880618SH" type="0" sum="0" cards="" />
+    <action no="11" player="P191-229068DJ" type="0" sum="0" cards="" />
+    <action no="12" player="P111-284346EY" type="3" sum="55" cards="" />
+    <action no="13" player="P141-270741AE" type="0" sum="0" cards="" />
+  </round>
+  <round no="2">
+    <cards type="Flop" player="">DA SK D10</cards>
+    <action no="14" player="P111-284346EY" type="4" sum="0" cards="" />
+    <action no="15" player="P80-630380KQ" type="5" sum="100" cards="" />
+    <action no="16" player="P111-284346EY" type="0" sum="0" cards="" />
+  </round>
+</game>
