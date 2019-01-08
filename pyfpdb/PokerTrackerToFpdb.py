@@ -307,7 +307,7 @@ class PokerTracker(HandHistoryConverter):
             info.update(m.groupdict())
         info.update(m2.groupdict())
         
-        if self.sitename != 'Everest' and info['UNCALLED'] is None:
+        if self.sitename != 'Everest' and info.get('UNCALLED') is None:
             hand.setUncalledBets(True)
 
         #print 'readHandInfo', info
