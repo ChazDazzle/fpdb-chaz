@@ -96,12 +96,13 @@ class PartyPoker(HandHistoryConverter):
                   'PokerMaster' : ('PokerStars', 2),
                        'IPoker' : ('iPoker', 14),
                         'Party' : ('PartyPoker', 9),
-                      'Pacific' : ('PacificPoker', 10)
+                      'Pacific' : ('PacificPoker', 10),
+                          'WPN' : ('WinningPoker', 24)
              }
 
     # Static regexes
     re_GameInfo = re.compile(u"""
-            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}(\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific)\))?\s+
+            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}(\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific|WPN)\))?\s+
             (.+?\shas\sleft\sthe\stable\.\s+)*
             (.+?\sfinished\sin\s\d+\splace\.\s+)*
             ((?P<CURRENCY>[%(LS)s]))?\s*
@@ -157,7 +158,7 @@ class PartyPoker(HandHistoryConverter):
             """ % substitutions, re.VERBOSE | re.UNICODE)
     
     re_GameInfoTrny3     = re.compile(u"""
-            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific)\)\s+
+            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific|WPN)\)\s+
             Tourney\sHand\s
             (?P<LIMIT>(NL|PL|FL|))\s*
             (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em))\s+
