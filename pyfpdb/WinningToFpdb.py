@@ -33,7 +33,7 @@ class Winning(HandHistoryConverter):
 
     # Class Variables
 
-    sitename = "Winning"
+    sitename = "WinningPoker"
     filetype = "text"
     codepage = ("utf-16", "utf8", "cp1252")
     siteId   = 24 # Needs to match id entry in Sites database
