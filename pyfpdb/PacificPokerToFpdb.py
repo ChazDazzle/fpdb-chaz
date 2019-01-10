@@ -124,7 +124,7 @@ class PacificPoker(HandHistoryConverter):
           Seat\s(?P<BUTTON>[0-9]+)\sis\sthe\sbutton
           """ % substitutions, re.MULTILINE|re.VERBOSE)
 
-    re_Identify     = re.compile(u'\*{4,5}\s(Cassava|888poker|888)(\.[a-z]{2})?\s(Snap\sPoker\s)?Hand\sHistory\sfor\sGame\s\d+\s')
+    re_Identify     = re.compile(u'\*{4,5}\s(Cassava|888poker|888)(\.[a-z]{2})?\s(Snap\sPoker\s|BLAST\s)?Hand\sHistory\sfor\sGame\s\d+\s')
     re_SplitHands   = re.compile('\n\n+')
     re_TailSplitHands   = re.compile('(\n\n\n+)')
     re_Button       = re.compile('Seat (?P<BUTTON>\d+) is the button', re.MULTILINE)
