@@ -408,7 +408,7 @@ class Winning(HandHistoryConverter):
         if hand.gametype['base'] in ("hold"):
             m =  re.search(r"(?P<PREFLOP>.+(?=\*\*\* FLOP \*\*\*:)|.+)"
                        r"(\*\*\* FLOP \*\*\*:(?P<FLOP> (\[\S\S\S?] )?\[\S\S\S? ?\S\S\S? \S\S\S?].+(?=\*\*\* TURN \*\*\*:)|.+))?"
-                       r"(\*\*\* TURN \*\*\*: \[\S\S\S? \S\S\S? \S\S\S?] (?P<TURN>\[\S\S\].+(?=\*\*\* RIVER \*\*\*:)|.+))?"
+                       r"(\*\*\* TURN \*\*\*: \[\S\S\S? \S\S\S? \S\S\S?] (?P<TURN>\[\S\S\S?\].+(?=\*\*\* RIVER \*\*\*:)|.+))?"
                        r"(\*\*\* RIVER \*\*\*: \[\S\S\S? \S\S\S? \S\S\S? \S\S\S?] ?(?P<RIVER>\[\S\S\S?\].+))?", hand.handText,re.DOTALL)
         elif hand.gametype['base'] in ("stud"):
             m =  re.search(r"(?P<THIRD>.+(?=\*\*\* Third street \*\*\*)|.+)"
