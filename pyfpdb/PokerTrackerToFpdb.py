@@ -146,8 +146,8 @@ class PokerTracker(HandHistoryConverter):
           re.MULTILINE|re.VERBOSE)
 
     re_HandInfo_Tour     = re.compile("""
-          ^Table\s(?P<TABLE>[^\n]+),\s(?P<TOURNO>\d+)\s
-          (?P<TOUR>\(Tournament:\s(.+)?\sBuy\-In:\s(?P<BUYIN>(?P<BIAMT>[%(LS)s\d\.]+)\+?(?P<BIRAKE>[%(LS)s\d\.]+))\))
+          ^Table\s(?P<TABLE>.*),\s(?P<TOURNO>\d+)(,\s\d+)?\s
+          (?P<TOUR>\(Tournament:\s(.+)?\sBuy\-In:\s(?P<BUYIN>(?P<BIAMT>[%(LS)s\d\.]+)\s?\+?\s?(?P<BIRAKE>[%(LS)s\d\.]+))\))
           """ % substitutions
           , re.MULTILINE|re.VERBOSE)
     

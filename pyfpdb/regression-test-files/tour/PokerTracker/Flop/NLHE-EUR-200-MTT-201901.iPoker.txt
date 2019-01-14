@@ -1,0 +1,40 @@
+GAME #8177615700 Version:18.5.6.4 Uncalled:Y Texas Hold'em NL Tournament 2019-01-10 19:32:38/GMT
+Table €200 Deepstack Turbo, 942927853, 942393668 (Tournament: €200 Deepstack Turbo Buy-In: €0.91 + €0.09)
+Seat 1: NENNO12311 (€52,280.00 in chips)
+Seat 3: RobMaranho (€49,820.00 in chips)
+Seat 5: Abutter (€49,670.00 in chips) DEALER
+Seat 6: ROBERTBEX789 (€48,290.00 in chips)
+Seat 8: ChoccyCookie (€49,970.00 in chips)
+Seat 10: ETERNAL23 (€49,970.00 in chips)
+ROBERTBEX789: Post Ante €15.00
+ChoccyCookie: Post Ante €15.00
+ETERNAL23: Post Ante €15.00
+NENNO12311: Post Ante €15.00
+RobMaranho: Post Ante €15.00
+Abutter: Post Ante €15.00
+ROBERTBEX789: Post SB €75.00
+ChoccyCookie: Post BB €150.00
+*** HOLE CARDS ***
+Dealt to RobMaranho [HQ DQ]
+ETERNAL23: Fold
+NENNO12311: Call €150.00
+RobMaranho: Raise (NF) €600.00
+Abutter: Fold
+ROBERTBEX789: Raise (NF) €1,050.00
+ChoccyCookie: Fold
+NENNO12311: Fold
+RobMaranho: Call €450.00
+*** FLOP *** [C9 H3 C5]
+ROBERTBEX789: Bet €150.00
+RobMaranho: Raise (NF) €1,176.00
+ROBERTBEX789: Call €1,026.00
+*** TURN *** [DA]
+ROBERTBEX789: Check
+RobMaranho: Bet €2,100.00
+ROBERTBEX789: Call €2,100.00
+*** RIVER *** [CQ]
+ROBERTBEX789: Bet €33,000.00
+RobMaranho: Fold
+*** SUMMARY ***
+Total pot €9,042.00 Rake €0.00
+ROBERTBEX789: wins €9,042.00
