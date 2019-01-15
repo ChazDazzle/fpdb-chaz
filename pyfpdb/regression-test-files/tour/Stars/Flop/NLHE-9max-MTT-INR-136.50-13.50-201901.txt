@@ -1,0 +1,31 @@
+PokerStars Hand #194396658766: Tournament #2475523986, ₹136.50+₹13.50 INR Hold'em No Limit - Level XXVI (2000/4000) - 2018/12/13 17:20:46 IST [2018/12/13 6:50:46 ET]
+Table '2475523986 8' 9-max Seat #9 is the button
+Seat 2: OfficerJimLahey (142301 in chips) 
+Seat 7: COyourACES (247220 in chips) 
+Seat 9: craaaap (20479 in chips) 
+OfficerJimLahey: posts the ante 500
+COyourACES: posts the ante 500
+craaaap: posts the ante 500
+OfficerJimLahey: posts small blind 2000
+COyourACES: posts big blind 4000
+*** HOLE CARDS ***
+Dealt to craaaap [Ad Kc]
+craaaap: raises 15979 to 19979 and is all-in
+OfficerJimLahey: raises 121822 to 141801 and is all-in
+COyourACES: calls 137801
+*** FLOP *** [8d 8c Td]
+*** TURN *** [8d 8c Td] [9d]
+*** RIVER *** [8d 8c Td 9d] [6h]
+*** SHOW DOWN ***
+OfficerJimLahey: shows [7h 7c] (a straight, Six to Ten)
+COyourACES: shows [Jh Jc] (two pair, Jacks and Eights)
+OfficerJimLahey collected 243644 from side pot
+craaaap: shows [Ad Kc] (a pair of Eights)
+OfficerJimLahey collected 61437 from main pot
+craaaap finished the tournament in 3rd place and received ₹1520 .35.
+*** SUMMARY ***
+Total pot 305081 Main pot 61437. Side pot 243644. | Rake 0 
+Board [8d 8c Td 9d 6h]
+Seat 2: OfficerJimLahey (small blind) showed [7h 7c] and won (305081) with a straight, Six to Ten
+Seat 7: COyourACES (big blind) showed [Jh Jc] and lost with two pair, Jacks and Eights
+Seat 9: craaaap (button) showed [Ad Kc] and lost with a pair of Eights

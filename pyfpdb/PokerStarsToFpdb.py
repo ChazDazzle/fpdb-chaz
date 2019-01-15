@@ -37,12 +37,12 @@ class PokerStars(HandHistoryConverter):
     filetype = "text"
     codepage = ("utf8", "cp1252", "ISO-8859-1")
     siteId   = 2 # Needs to match id entry in Sites database
-    sym = {'USD': "\$", 'CAD': "\$", 'T$': "", "EUR": "\xe2\x82\xac", "GBP": "\£", "play": ""}         # ADD Euro, Sterling, etc HERE
+    sym = {'USD': "\$", 'CAD': "\$", 'T$': "", "EUR": "\xe2\x82\xac", "GBP": "\£", "play": "", "INR": "\₹"}         # ADD Euro, Sterling, etc HERE
     substitutions = {
-                     'LEGAL_ISO' : "USD|EUR|GBP|CAD|FPP|SC",      # legal ISO currency codes
-                            'LS' : u"\$|\xe2\x82\xac|\u20ac|\£|", # legal currency symbols - Euro(cp1252, utf-8)
+                     'LEGAL_ISO' : "USD|EUR|GBP|CAD|FPP|SC|INR",      # legal ISO currency codes
+                            'LS' : u"\$|\xe2\x82\xac|\u20ac|\£|\u20b9|", # legal currency symbols - Euro(cp1252, utf-8)
                            'PLYR': r'\s?(?P<PNAME>.+?)',
-                            'CUR': u"(\$|\xe2\x82\xac|\u20ac||\£|)",
+                            'CUR': u"(\$|\xe2\x82\xac|\u20ac||\£|\u20b9|)",
                           'BRKTS': r'(\(button\) |\(small blind\) |\(big blind\) |\(button\) \(small blind\) |\(button\) \(big blind\) )?',
                     }
                     
@@ -372,6 +372,8 @@ class PokerStars(HandHistoryConverter):
                             hand.buyinCurrency="GBP"
                         elif info[key].find(u"€")!=-1:
                             hand.buyinCurrency="EUR"
+                        elif info[key].find(u"₹")!=-1:
+                            hand.buyinCurrency="INR"
                         elif info[key].find("FPP")!=-1:
                             hand.buyinCurrency="PSFP"
                         elif info[key].find("SC")!=-1:
@@ -383,7 +385,7 @@ class PokerStars(HandHistoryConverter):
                             log.error(_("PokerStarsToFpdb.readHandInfo: Failed to detect currency.") + " Hand ID: %s: '%s'" % (hand.handid, info[key]))
                             raise FpdbParseError
 
-                        info['BIAMT'] = info['BIAMT'].strip(u'$€£FPPSC')
+                        info['BIAMT'] = info['BIAMT'].strip(u'$€£FPPSC₹')
                         
                         if hand.buyinCurrency!="PSFP":
                             if info['BOUNTY'] != None:
@@ -391,13 +393,13 @@ class PokerStars(HandHistoryConverter):
                                 tmp = info['BOUNTY']
                                 info['BOUNTY'] = info['BIRAKE']
                                 info['BIRAKE'] = tmp
-                                info['BOUNTY'] = info['BOUNTY'].strip(u'$€£') # Strip here where it isn't 'None'
+                                info['BOUNTY'] = info['BOUNTY'].strip(u'$€£₹') # Strip here where it isn't 'None'
                                 hand.koBounty = int(100*Decimal(info['BOUNTY']))
                                 hand.isKO = True
                             else:
                                 hand.isKO = False
 
-                            info['BIRAKE'] = info['BIRAKE'].strip(u'$€£')
+                            info['BIRAKE'] = info['BIRAKE'].strip(u'$€£₹')
 
                             hand.buyin = int(100*Decimal(info['BIAMT'])) + hand.koBounty
                             hand.fee = int(100*Decimal(info['BIRAKE']))

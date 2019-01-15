@@ -74,8 +74,8 @@ class PokerStarsSummary(TourneySummary):
                }
 
     substitutions = {
-                     'LEGAL_ISO' : "USD|EUR|GBP|CAD|FPP|SC",    # legal ISO currency codes
-                            'LS' : u"\$|\xe2\x82\xac|\u20AC||\£|" # legal currency symbols - Euro(cp1252, utf-8)
+                     'LEGAL_ISO' : "USD|EUR|GBP|CAD|FPP|SC|INR",    # legal ISO currency codes
+                            'LS' : u"\$|\xe2\x82\xac|\u20AC||\£|\u20b9|" # legal currency symbols - Euro(cp1252, utf-8)
                     }
     
     re_Identify = re.compile(u'((PokerStars|Full\sTilt)\sTournament\s\#\d+|<title>TOURNEYS:)')
@@ -379,6 +379,7 @@ class PokerStarsSummary(TourneySummary):
                 if mg['CUR'] == "$":     targetCurrency="USD"
                 elif mg['CUR'] == u"€":  targetCurrency="EUR"
                 elif mg['CUR'] == u"£":  targetCurrency="GBP"
+                elif mg['CUR'] == u"₹":  targetCurrency="INR"
                 elif mg['CUR'] == "FPP": targetCurrency="PSFP"
                 elif mg['CUR'] == "SC": targetCurrency="PSFP"              
             
@@ -393,6 +394,7 @@ class PokerStarsSummary(TourneySummary):
         if mg['CURRENCY'] == "$":     self.buyinCurrency="USD"
         elif mg['CURRENCY'] == u"€":  self.buyinCurrency="EUR"
         elif mg['CURRENCY'] == u"£":  self.buyinCurrency="GBP"
+        elif mg['CURRENCY'] == u"₹":  self.buyinCurrency="INR"
         elif mg['CURRENCY1'] == "FPP": self.buyinCurrency="PSFP"
         elif mg['CURRENCY1'] == "SC": self.buyinCurrency="PSFP"
         elif not mg['CURRENCY']:      self.buyinCurrency="play"
@@ -423,6 +425,7 @@ class PokerStarsSummary(TourneySummary):
                 if mg['CUR'] == "$":     self.currency="USD"
                 elif mg['CUR'] == u"€":  self.currency="EUR"
                 elif mg['CUR'] == u"£":  self.currency="GBP"
+                elif mg['CUR'] == u"₹":  self.currency="INR"
                 elif mg['CUR1'] == "FPP": self.currency="PSFP"
                 elif mg['CUR1'] == "SC": self.currency="PSFP"
 
