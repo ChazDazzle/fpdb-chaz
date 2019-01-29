@@ -44,6 +44,7 @@ card_map_abbr = [
 games = {              # base, category
              'holdem' : ('hold','holdem', 'h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,2)]), 
            '2_holdem' : ('hold', None, 'h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,3)]),
+           '6_holdem' : ('hold', None, 'h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,2)]), 
             'omahahi' : ('hold','omaha','h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,4)]), 
           'omahahilo' : ('hold','omaha8', 's', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,4)]),
              'irish'  : ('hold', None,'h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,4)]), 
@@ -98,7 +99,7 @@ iter = {0: 50000,
         }
 
 def decodeStartHandValue(game, value):
-    if game == "holdem":
+    if game in ('holdem', '6_holdem'):
         return twoStartCardString(value)
     elif game == "razz":
         return decodeRazzStartHand(value)
@@ -107,7 +108,7 @@ def decodeStartHandValue(game, value):
 
 def calcStartCards(hand, player):
     hcs = hand.join_holecards(player, asList=True)
-    if hand.gametype['category'] == 'holdem':
+    if hand.gametype['category'] in ('holdem', '6_holdem'):
         value1 = card_map.get(hcs[0][0])
         value2 = card_map.get(hcs[1][0])
         return twoStartCards(value1, hcs[0][1], value2, hcs[1][1])

@@ -691,7 +691,7 @@ class DerivedStats():
         
         # set blinds first, then others from pfbao list, avoids problem if bb
         # is missing from pfbao list or if there is no small blind
-        sb, bb, bi = False, False, False
+        sb, bb, bi, ub = False, False, False, False
         if hand.gametype['base'] == 'stud':
             # Stud position is determined after cards are dealt
             # First player to act is always the bring-in position in stud
@@ -702,10 +702,13 @@ class DerivedStats():
                 # TODO fix: if ante all and no actions and no bring in
             #    bi = [hand.actions[hand.actionStreets[0]][0][0]]
         else:
+            ub = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] == 'button blind']
             bb = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] == 'big blind']
             sb = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] == 'small blind']
 
         # if there are > 1 sb or bb only the first is used!
+        if ub:
+            self.handsplayers[ub[0]]['street0InPosition'] = True
         if bb:
             self.handsplayers[bb[0]]['position'] = 'B'
             self.handsplayers[bb[0]]['street0InPosition'] = True
@@ -736,7 +739,7 @@ class DerivedStats():
 
     def vpip(self, hand):
         vpipers = set()
-        bb = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] == 'big blind']
+        bb = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] in ('big blind', 'button blind')]
         for act in hand.actions[hand.actionStreets[1]]:
             if act[1] in ('calls','bets', 'raises', 'completes'):
                 vpipers.add(act[0])
@@ -880,9 +883,12 @@ class DerivedStats():
         """
         steal_attempt = False
         raised = False
-        steal_positions = (1, 0, 'S')
         if hand.gametype['base'] == 'stud':
             steal_positions = (2, 1, 0)
+        elif len([x for x in hand.actions[hand.actionStreets[0]] if x[1] == 'button blind']) > 0:
+            steal_positions = (3, 2, 1)
+        else:
+            steal_positions = (1, 0, 'S')
         for action in hand.actions[hand.actionStreets[1]]:
             pname, act = action[0], action[1]
             player_stats = self.handsplayers.get(pname)

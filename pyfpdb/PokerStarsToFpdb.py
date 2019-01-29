@@ -43,7 +43,7 @@ class PokerStars(HandHistoryConverter):
                             'LS' : u"\$|\xe2\x82\xac|\u20ac|\£|\u20b9|", # legal currency symbols - Euro(cp1252, utf-8)
                            'PLYR': r'\s?(?P<PNAME>.+?)',
                             'CUR': u"(\$|\xe2\x82\xac|\u20ac||\£|\u20b9|)",
-                          'BRKTS': r'(\(button\) |\(small blind\) |\(big blind\) |\(button\) \(small blind\) |\(button\) \(big blind\) )?',
+                          'BRKTS': r'(\(button\) |\(small blind\) |\(big blind\) |\(button blind\) |\(button\) \(small blind\) |\(button\) \(big blind\) )?',
                     }
                     
     # translations from captured groups to fpdb info strings
@@ -89,6 +89,7 @@ class PokerStars(HandHistoryConverter):
     games = {                          # base, category
                               "Hold'em" : ('hold','holdem'),
                               "HOLD'EM" : ('hold','holdem'), 
+                           "6+ Hold'em" : ('hold','6_holdem'),
                                 'Omaha' : ('hold','omahahi'),
                                 'OMAHA' : ('hold','omahahi'),
                           'Omaha Hi/Lo' : ('hold','omahahilo'),
@@ -133,7 +134,7 @@ class PokerStars(HandHistoryConverter):
           # close paren of tournament info
           (?P<MIXED>HORSE|8\-Game|8\-GAME|HOSE|Mixed\sOmaha\sH/L|Mixed\sHold\'em|Mixed\sPLH/PLO|Mixed\sNLH/PLO|Mixed\sOmaha|Triple\sStud)?\s?\(?
           (?P<SPLIT>Split)?\s?
-          (?P<GAME>Hold\'em|HOLD\'EM|Hold\'em|Razz|RAZZ|7\sCard\sStud|7\sCARD\sSTUD|7\sCard\sStud\sHi/Lo|7\sCARD\sSTUD\sHI/LO|Omaha|OMAHA|Omaha\sHi/Lo|OMAHA\sHI/LO|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|5\sCard\sOmaha(\sHi/Lo)?|Courchevel(\sHi/Lo)?)\s
+          (?P<GAME>Hold\'em|HOLD\'EM|Hold\'em|6\+\sHold\'em|Razz|RAZZ|7\sCard\sStud|7\sCARD\sSTUD|7\sCard\sStud\sHi/Lo|7\sCARD\sSTUD\sHI/LO|Omaha|OMAHA|Omaha\sHi/Lo|OMAHA\sHI/LO|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|5\sCard\sOmaha(\sHi/Lo)?|Courchevel(\sHi/Lo)?)\s
           (?P<LIMIT>No\sLimit|NO\sLIMIT|Fixed\sLimit|Limit|LIMIT|Pot\sLimit|POT\sLIMIT|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop)\)?,?\s
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?
@@ -141,8 +142,7 @@ class PokerStars(HandHistoryConverter):
           \(?                            # open paren of the stakes
           (?P<CURRENCY>%(LS)s|)?
           (ante\s\d+,\s)?
-          (?P<SB>[.0-9]+)/(%(LS)s)?
-          (?P<BB>[.0-9]+)
+          ((?P<SB>[.0-9]+)/(%(LS)s)?(?P<BB>[.0-9]+)|Button\sBlind\s(?P<CURRENCY1>%(LS)s|)(?P<BUB>[.0-9]+)\s\-\sAnte\s(%(LS)s)?[.0-9]+\s)
           (?P<CAP>\s-\s[%(LS)s]?(?P<CAPAMT>[.0-9]+)\sCap\s-\s)?        # Optional Cap part
           \s?(?P<ISO>%(LEGAL_ISO)s)?
           \)                        # close paren of the stakes
@@ -181,6 +181,7 @@ class PokerStars(HandHistoryConverter):
     # we don't have to, and it makes life faster.
     re_PostSB           = re.compile(r"^%(PLYR)s: posts small blind %(CUR)s(?P<SB>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_PostBB           = re.compile(r"^%(PLYR)s: posts big blind %(CUR)s(?P<BB>[,.0-9]+)" %  substitutions, re.MULTILINE)
+    re_PostBUB          = re.compile(r"^%(PLYR)s: posts button blind %(CUR)s(?P<BUB>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_Antes            = re.compile(r"^%(PLYR)s: posts the ante %(CUR)s(?P<ANTE>[,.0-9]+)" % substitutions, re.MULTILINE)
     re_BringIn          = re.compile(r"^%(PLYR)s: brings[- ]in( low|) for %(CUR)s(?P<BRINGIN>[,.0-9]+)" % substitutions, re.MULTILINE)
     re_PostBoth         = re.compile(r"^%(PLYR)s: posts small \& big blinds %(CUR)s(?P<SBBB>[,.0-9]+)" %  substitutions, re.MULTILINE)
@@ -267,11 +268,16 @@ class PokerStars(HandHistoryConverter):
             info['limitType'] = self.limits[mg['LIMIT']]
         if 'GAME' in mg:
             (info['base'], info['category']) = self.games[mg['GAME']]
-        if 'SB' in mg:
+        if 'SB' in mg and mg['SB'] is not None:
             info['sb'] = mg['SB']
-        if 'BB' in mg:
+        if 'BB' in mg and mg['BB'] is not None:
             info['bb'] = mg['BB']
-        if 'CURRENCY' in mg:
+        if 'BUB' in mg and mg['BUB'] is not None:
+            info['sb'] = '0'
+            info['bb'] = mg['BUB']
+        if 'CURRENCY1' in mg and mg['CURRENCY1'] is not None:
+            info['currency'] = self.currencies[mg['CURRENCY1']]
+        elif 'CURRENCY' in mg:
             info['currency'] = self.currencies[mg['CURRENCY']]
         if 'MIXED' in mg:
             if mg['MIXED'] is not None: info['mix'] = self.mixes[mg['MIXED']]
@@ -298,8 +304,8 @@ class PokerStars(HandHistoryConverter):
             info['type'] = 'tour'
             if 'ZOOM' in mg['TOUR']:
                 info['fast'] = True
-            
-        if not mg['CURRENCY'] and info['type']=='ring':
+        
+        if info.get('currency') in ('T$', None) and info['type']=='ring':
             info['currency'] = 'play'
 
         if info['limitType'] == 'fl' and info['bb'] is not None:
@@ -560,7 +566,9 @@ class PokerStars(HandHistoryConverter):
         for a in self.re_PostBoth.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'both', self.clearMoneyString(a.group('SBBB')))
         for a in self.re_PostStraddle.finditer(hand.handText):
-            hand.addBlind(a.group('PNAME'), 'big blind', self.clearMoneyString(a.group('STRADDLE')))
+            hand.addBlind(a.group('PNAME'), 'straddle', self.clearMoneyString(a.group('STRADDLE')))
+        for a in self.re_PostBUB.finditer(hand.handText):
+            hand.addBlind(a.group('PNAME'), 'button blind', self.clearMoneyString(a.group('BUB')))
 
     def readHoleCards(self, hand):
 #    streets PREFLOP, PREDRAW, and THIRD are special cases beacause
