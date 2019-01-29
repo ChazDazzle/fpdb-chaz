@@ -682,14 +682,28 @@ or None if we fail to get the info """
             return money # No commas until 0,01 or 1,00
         if money[-3] == ',':
             money = money[:-3] + '.' + money[-2:]
-        if len(money) > 8:
-            if money[-8] == '.':
-                money = money[:-8] + ',' + money[-7:]
-        if len(money) > 4:
-            if money[-4] == '.':
-                money = money[:-4] + ',' + money[-3:]
+            if len(money) > 15:
+                if money[-15] == '.':
+                    money = money[:-15] + ',' + money[-14:]
+            if len(money) > 11:
+                if money[-11] == '.':
+                    money = money[:-11] + ',' + money[-10:]
+            if len(money) > 7:
+                if money[-7] == '.':
+                    money = money[:-7] + ',' + money[-6:]
+        else:
+            if len(money) > 12:
+                if money[-12] == '.':
+                    money = money[:-12] + ',' + money[-11:]
+            if len(money) > 8:
+                if money[-8] == '.':
+                    money = money[:-8] + ',' + money[-7:]
+            if len(money) > 4:
+                if money[-4] == '.':
+                    money = money[:-4] + ',' + money[-3:]
 
         return money.replace(',', '').replace("'", '')
+
 
 def getTableTitleRe(config, sitename, *args, **kwargs):
     "Returns string to search in windows titles for current site"
