@@ -120,7 +120,7 @@ class Winning(HandHistoryConverter):
     re_GameInfo = re.compile(u"""
         Game\sID:\s(?P<HID>\d+)\s
         (?P<SB>[%(NUM)s]+)/(?P<BB>[%(NUM)s]+)\s
-        (?P<TABLE>.+?)\s
+        (?P<TABLE>.+?)?\s
         \((?P<GAME>Hold\'em|Omaha|Omaha\sHiLow|Seven\sCards\sStud|Seven\sCards\sStud\sHiLow)\)
         (\s(?P<MAX>\d+\-max))?$
         """ % substitutions, 
@@ -276,20 +276,22 @@ class Winning(HandHistoryConverter):
         else:
             info['type'] = 'ring'
             
-        if 'TABLE' in mg:
+        if 'TABLE' in mg and mg['TABLE'] is not None:
             if re.match('PM\s',mg['TABLE']):
                 info['currency'] = 'play'
             elif info['type'] == 'tour':
                 info['currency'] = 'T$'
             else:
                 info['currency'] = 'USD'
-        
-        if '(Cap)' in mg['TABLE']:
-            info['buyinType'] = 'cap'
-        elif '(Short)' in mg['TABLE']:
-            info['buyinType'] = 'shallow'
+            
+            if '(Cap)' in mg['TABLE']:
+                info['buyinType'] = 'cap'
+            elif '(Short)' in mg['TABLE']:
+                info['buyinType'] = 'shallow'
+            else:
+                info['buyinType'] = 'regular'
         else:
-            info['buyinType'] = 'regular'
+            info['currency'] = 'T$'
 
         if info['limitType'] == 'fl' and info['bb'] is not None:
             info['sb'] = str((Decimal(mg['SB'])/2).quantize(Decimal("0.01")))
@@ -336,7 +338,7 @@ class Winning(HandHistoryConverter):
             else:
                 hand.maxseats = 10
         
-        if 'TABLE' in info:
+        if 'TABLE' in info and info['TABLE'] is not None:
             if hand.tourNo:
                 hand.buyin = 0
                 hand.fee = 0
@@ -390,6 +392,11 @@ class Winning(HandHistoryConverter):
                 buyin_type = self.re_buyinType.search(info['TABLE'])
                 if buyin_type:
                     hand.gametype['buyinType'] = self.buyin[buyin_type.group('BUYINTYPE')]
+        else:
+            hand.buyin = 0
+            hand.fee = 0
+            hand.buyinCurrency="NA" 
+            hand.tablename = 1
     
     def readButton(self, hand):
         m = self.re_Button.search(hand.handText)
