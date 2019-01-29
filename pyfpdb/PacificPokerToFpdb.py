@@ -114,7 +114,7 @@ class PacificPoker(HandHistoryConverter):
                   (.+?)
                 ))
               )
-              \s-\sTable\s\#(?P<TABLEID>\d+)\s
+              (\s-\sTable\s\#(?P<TABLEID>\d+))?\s
             )
            )
           ((?P<MAX>\d+)\sMax\s)?
@@ -284,6 +284,9 @@ class PacificPoker(HandHistoryConverter):
             if key == 'PLAY' and info['PLAY'] is not None:
                 #hand.currency = 'play' # overrides previously set value
                 hand.gametype['currency'] = 'play'
+                
+        if 'TOURNO' in info and info['TOURNO'] is not None and hand.tablename == "":
+            hand.tablename = 1
     
     def readButton(self, hand):
         m = self.re_Button.search(hand.handText)
