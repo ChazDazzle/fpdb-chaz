@@ -50,8 +50,9 @@ class Everleaf(HandHistoryConverter):
     re_Identify    = re.compile(u'\*{5}\sHand\shistory\sfor\sgame\s#\d+\s|Partouche\sPoker\s')
     re_SplitHands  = re.compile(r"\n\n\n+")
     re_TailSplitHands  = re.compile(r"(\n\n\n+)")
+    re_HID         = re.compile(ur"Game\s\#(?P<HID>[0-9]+)")
     re_GameInfo    = re.compile(ur"^(Blinds )? ?(?P<CURRENCY>[%(LS)s]?)(?P<SB>[%(NUM)s]+) ?/ ? ?[%(LS)s]?(?P<BB>[%(NUM)s]+) (?P<LIMIT>NL|PL|) ?(?P<GAME>(Hold\'em|Omaha|7\sCard\sStud))" % substitutions, re.MULTILINE)
-    re_HandInfo    = re.compile(ur".*\n(.*#|.* partie )(?P<HID>[0-9]+).*(\n|\n\n)(Blinds )? ?(?P<CURRENCY>[%(LS)s])?(?P<SB>[%(NUM)s]+) ?/ ?(?:[%(LS)s])?(?P<BB>[%(NUM)s]+) (?P<GAMETYPE>.+?)(\s-\s(?P<MAX>\d+)\sMax)? - (?P<DATETIME>\d\d\d\d/\d\d/\d\d - \d\d:\d\d:\d\d)\nTable (?P<TABLE>.+$)" % substitutions, re.MULTILINE) 
+    re_HandInfo    = re.compile(ur".*\n(.*#|.* partie )[0-9]+.*(\n|\n\n)(Blinds )? ?(?P<CURRENCY>[%(LS)s])?(?P<SB>[%(NUM)s]+) ?/ ?(?:[%(LS)s])?(?P<BB>[%(NUM)s]+) (?P<GAMETYPE>.+?)(\s-\s(?P<MAX>\d+)\sMax)? - (?P<DATETIME>\d\d\d\d/\d\d/\d\d - \d\d:\d\d:\d\d)\nTable (?P<TABLE>.+$)" % substitutions, re.MULTILINE) 
     re_Button      = re.compile(ur"^Seat (?P<BUTTON>\d+) is the button$", re.MULTILINE)
     re_PlayerInfo  = re.compile(ur"""^Seat\s(?P<SEAT>[0-9]+):\s(?P<PNAME>.*)\s+
                                     \(
@@ -61,6 +62,7 @@ class Everleaf(HandHistoryConverter):
                                   """ % substitutions, re.MULTILINE|re.VERBOSE)
     re_Board       = re.compile(ur"\[ (?P<CARDS>.+) \]")
     re_TourneyInfoFromFilename = re.compile(ur".*TID_(?P<TOURNO>[0-9]+)-(?P<TABLE>[0-9]+).*\.txt")
+    re_TourneyFromHH = re.compile("Tournament\s\#(?P<TOURNO>[0-9]+)")
 
 
     def compilePlayerRegexs(self, hand):
@@ -69,15 +71,15 @@ class Everleaf(HandHistoryConverter):
             # we need to recompile the player regexs.
             self.compiledPlayers = players
             
-            self.re_PostSB          = re.compile(ur"^%(PLAYERS)s: posts small blind \[ ?[%(LS)s]? (?P<SB>[%(NUM)s]+)\s?.*\]$" % self.substitutions, re.MULTILINE)
-            self.re_PostBB          = re.compile(ur"^%(PLAYERS)s: posts big blind \[ ?[%(LS)s]? (?P<BB>[%(NUM)s]+)\s?.*\]$" % self.substitutions, re.MULTILINE)
-            self.re_PostBoth        = re.compile(ur"^%(PLAYERS)s: posts both blinds \[ ?[%(LS)s]? (?P<SBBB>[%(NUM)s]+)\s.*\]$" % self.substitutions, re.MULTILINE)
-            self.re_Antes           = re.compile(ur"^%(PLAYERS)s: posts ante \[ ?[%(LS)s]? (?P<ANTE>[%(NUM)s]+)\s.*\]$" % self.substitutions, re.MULTILINE)
+            self.re_PostSB          = re.compile(ur"^%(PLAYERS)s: posts small blind \[ ?[%(LS)s]? ?(?P<SB>[%(NUM)s]+)\s?.*\]$" % self.substitutions, re.MULTILINE)
+            self.re_PostBB          = re.compile(ur"^%(PLAYERS)s: posts big blind \[ ?[%(LS)s]? ?(?P<BB>[%(NUM)s]+)\s?.*\]$" % self.substitutions, re.MULTILINE)
+            self.re_PostBoth        = re.compile(ur"^%(PLAYERS)s: posts both blinds \[ ?[%(LS)s]? ?(?P<SBBB>[%(NUM)s]+)\s.*\]$" % self.substitutions, re.MULTILINE)
+            self.re_Antes           = re.compile(ur"^%(PLAYERS)s: posts ante \[ ?[%(LS)s]? ?(?P<ANTE>[%(NUM)s]+)\s.*\]$" % self.substitutions, re.MULTILINE)
             self.re_BringIn         = re.compile(ur"^%(PLAYERS)s posts bring-in  ?[%(LS)s]?\s?(?P<BRINGIN>[%(NUM)s]+)\." % self.substitutions, re.MULTILINE)
             self.re_Completes       = re.compile(ur"^%(PLAYERS)s completes to  ?[%(LS)s]?\s?(?P<BET>[%(NUM)s]+)\." % self.substitutions, re.MULTILINE)
             self.re_HeroCards       = re.compile(ur"^Dealt to %(PLAYERS)s \[ (?P<CARDS>.*) \]$" % self.substitutions, re.MULTILINE)
             # ^%s(?P<ATYPE>: bets| checks| raises| calls| folds)(\s\[(?:\$| €|) (?P<BET>[.,\d]+) (USD|EURO|EUR|Chips)\])?
-            self.re_Action          = re.compile(ur"^%(PLAYERS)s(?P<ATYPE>: bets| checks| raises| calls| folds)(\s\[(?: ?[%(LS)s]?) (?P<BET>[%(NUM)s]+)\s?(USD|EURO|EUR|Chips|GEL|)\])?" % self.substitutions, re.MULTILINE)
+            self.re_Action          = re.compile(ur"^%(PLAYERS)s(?P<ATYPE>: bets| checks| raises| calls| folds)(\s\[(?: ?[%(LS)s]?) ?(?P<BET>[%(NUM)s]+)\s?(USD|EURO|EUR|Chips|GEL|)\])?" % self.substitutions, re.MULTILINE)
             self.re_ShowdownAction  = re.compile(ur"^%(PLAYERS)s (?P<SHOWED>shows|mucks) \[ (?P<CARDS>.*) \] (?P<STRING>.*)" % self.substitutions, re.MULTILINE)
             self.re_CollectPot      = re.compile(ur"^%(PLAYERS)s wins ( (high|low) )?\(?\s?[%(LS)s]?\s?(?P<POT>[%(NUM)s]+)\s?(USD|EURO|EUR|chips|GEL)?\)?" % self.substitutions, re.MULTILINE)
 
@@ -171,7 +173,8 @@ or None if we fail to get the info """
             raise FpdbParseError
         
         #log.debug("HID %s, Table %s" % (m.group('HID'),  m.group('TABLE')))
-        hand.handid =  m.group('HID')
+        mh = self.re_HID.search(hand.handText)
+        hand.handid =  mh.group('HID')
         hand.tablename = m.group('TABLE')
         if m.group('MAX'):
             hand.maxseats = int(m.group('MAX'))     # assume 4-max unless we have proof it's a larger/smaller game, since everleaf doesn't give seat max info
@@ -191,6 +194,14 @@ or None if we fail to get the info """
             hand.buyin = 0
             hand.fee = 0
             hand.buyinCurrency = 'NA'
+        else:
+            t1 = self.re_TourneyFromHH.search(hand.handText)
+            if t1:
+                hand.tourNo =  t1.group('TOURNO')
+                hand.tablename = m.group('TABLE')
+                hand.buyin = 0
+                hand.fee = 0
+                hand.buyinCurrency = 'NA'
             #TODO we should fetch info including buyincurrency, buyin and fee from URL:
             #           https://www.poker4ever.com/tourney/%TOURNEY_NUMBER%
 
@@ -295,7 +306,7 @@ or None if we fail to get the info """
                 hand.addComplete( street, action.group('PNAME'), action.group('BET'))
         m = self.re_Action.finditer(hand.streets[street])
         for action in m:
-            log.debug("%s %s" % (action.group('ATYPE'), action.groupdict()))
+            #log.error("%s %s" % (action.group('ATYPE'), action.groupdict()))
             if action.group('ATYPE') == ' folds':
                 hand.addFold( street, action.group('PNAME'))
             elif action.group('ATYPE') == ' checks':
