@@ -691,7 +691,7 @@ class DerivedStats():
         
         # set blinds first, then others from pfbao list, avoids problem if bb
         # is missing from pfbao list or if there is no small blind
-        sb, bb, bi, ub = False, False, False, False
+        sb, bb, bi, ub, st = False, False, False, False, False
         if hand.gametype['base'] == 'stud':
             # Stud position is determined after cards are dealt
             # First player to act is always the bring-in position in stud
@@ -705,6 +705,7 @@ class DerivedStats():
             ub = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] == 'button blind']
             bb = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] == 'big blind']
             sb = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] == 'small blind']
+            st = [x[0] for x in hand.actions[hand.actionStreets[0]] if x[1] == 'straddle']
 
         # if there are > 1 sb or bb only the first is used!
         if ub:
@@ -721,6 +722,8 @@ class DerivedStats():
             self.handsplayers[bi[0]]['position'] = 'S'
             self.handsplayers[bi[0]]['street0FirstToAct'] = True
             if bi[0] in players:  players.remove(bi[0])
+        if st:
+            players.insert(0, players.pop())
 
         #print "DEBUG: actions: '%s'" % actions
         #print "DEBUG: bb: '%s' sb: '%s' bi: '%s' plyrs: '%s'" %(bb, sb, bi, players)
