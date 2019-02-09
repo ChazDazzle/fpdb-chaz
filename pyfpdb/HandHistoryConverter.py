@@ -559,7 +559,7 @@ or None if we fail to get the info """
         if HandHistoryConverter.re_tzOffset.match(givenTimezone):
             offset = int(givenTimezone[-5:])
             givenTimezone = givenTimezone[0:-5]
-            #log.debug("changeTimeZone: offset=") + str(offset))
+            #log.debug("changeTimeZone: offset=" + str(offset))
         else: offset=0
 
         if givenTimezone in ("ET", "EST", "EDT"):
@@ -568,7 +568,7 @@ or None if we fail to get the info """
             #since CEST will only be used in summer time it's ok to treat it as identical to CET.
             givenTZ = timezone('Europe/Berlin')
             #Note: Daylight Saving Time is standardised across the EU so this should be fine
-        elif givenTimezone == 'GMT': # GMT is always the same as UTC
+        elif givenTimezone in ('GT', 'GMT'): # GMT is always the same as UTC
             givenTZ = timezone('GMT')
             # GMT cannot be treated as WET because some HH's are explicitly
             # GMT+-delta so would be incorrect during the summertime 
@@ -593,7 +593,7 @@ or None if we fail to get the info """
             givenTZ = timezone('Canada/Newfoundland')
         elif givenTimezone == 'ART': # Argentinian Time
             givenTZ = timezone('America/Argentina/Buenos_Aires')
-        elif givenTimezone == 'BRT': # Brasilia Time
+        elif givenTimezone in ('BRT', 'BRST'): # Brasilia Time
             givenTZ = timezone('America/Sao_Paulo')
         elif givenTimezone == 'VET':
             givenTZ = timezone('America/Caracas')
@@ -627,12 +627,16 @@ or None if we fail to get the info """
             # ACT is full of politicians and Tasmania will never notice.
             # Using Sydney. 
             givenTZ = timezone('Australia/Sydney')
-        elif givenTimezone in ('NZST', 'NZT'): # New Zealand Time
+        elif givenTimezone in ('NZST', 'NZT', 'NZDT'): # New Zealand Time
             givenTZ = timezone('Pacific/Auckland')
         elif givenTimezone == 'UTC': # Universal time co-ordinated
             givenTZ = pytz.UTC
         elif givenTimezone in pytz.all_timezones:
             givenTZ = timezone(givenTimezone)
+        else:
+            timezone_lookup = dict([(pytz.timezone(x).localize(datetime.datetime.now()).tzname(), x) for x in pytz.all_timezones])
+            if givenTimezone in timezone_lookup:
+                givenTZ = timezone(timezone_lookup[givenTimezone])
 
         if givenTZ is None:
             # do not crash if timezone not in list, just return UTC localized time
