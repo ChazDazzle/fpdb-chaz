@@ -177,6 +177,7 @@ class iPoker(HandHistoryConverter):
     re_TourNo = re.compile(r'\(\#(?P<TOURNO>\d+)\)', re.MULTILINE)
     re_non_decimal = re.compile(r'[^\d.,]+')
     re_Partial = re.compile('<startdate>', re.MULTILINE)
+    re_UncalledBets = re.compile('<uncalled_bet_enabled>true<\/uncalled_bet_enabled>')
     re_FPP = re.compile(r'Pts\s')
     
     def compilePlayerRegexs(self, hand):
@@ -239,6 +240,11 @@ class iPoker(HandHistoryConverter):
             if not mg['SB']: tourney = True
         if 'BB' in mg:
             self.info['bb'] = self.clearMoneyString(mg['BB'])
+            
+        if self.re_UncalledBets.search(handText):
+            self.uncalledbets = False
+        else:
+            self.uncalledbets = True
 
         if tourney:
             self.info['type'] = 'tour'
@@ -560,15 +566,6 @@ class iPoker(HandHistoryConverter):
             else:
                 log.error(_("DEBUG:") + " " + _("Unimplemented %s: '%s' '%s'") % ("readAction", action['PNAME'], action['ATYPE']))
 
-    def readShowdownActions(self, hand):
-        # Cards lines contain cards
-        pass
-
-    def readCollectPot(self, hand):
-        hand.setUncalledBets(True)
-        for pname, pot in self.playerWinnings.iteritems():
-            hand.addCollectPot(player=pname, pot=self.clearMoneyString(pot))
-
     def readShownCards(self, hand):
         # Cards lines contain cards
         pass
@@ -594,6 +591,15 @@ class iPoker(HandHistoryConverter):
         if mo == 2: return 2
         if mo <= 6: return 6
         return 10
+
+    def readCollectPot(self, hand):
+        hand.setUncalledBets(self.uncalledbets)
+        for pname, pot in self.playerWinnings.iteritems():
+            hand.addCollectPot(player=pname, pot=self.clearMoneyString(pot))
+
+    def readShownCards(self, hand):
+        # Cards lines contain cards
+        pass
 
     @staticmethod
     def getTableTitleRe(type, table_name=None, tournament = None, table_number=None):
