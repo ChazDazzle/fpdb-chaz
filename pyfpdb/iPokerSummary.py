@@ -71,7 +71,7 @@ class iPokerSummary(TourneySummary):
             """ % substitutions, re.MULTILINE|re.VERBOSE)
 
     re_GameInfoTrny = re.compile(r"""
-                (<tournamentcode>(?P<TOURNO>\d+)</tournamentcode>\s+?)?
+                (<tour(nament)?code>(?P<TOURNO>\d+)</tour(nament)?code>\s+?)?
                 <tournamentname>(?P<NAME>.+?)</tournamentname>\s*<place>(?P<PLACE>.+?)</place>\s*
                 <buyin>(?P<BUYIN>(?P<BIAMT>.+?)(\+(?P<BIRAKE>.+?))?(\+(?P<BIRAKE1>.+?))?)</buyin>\s+?
                 <totalbuyin>(?P<TOTBUYIN>.*)</totalbuyin>\s+?
@@ -157,9 +157,6 @@ class iPokerSummary(TourneySummary):
             tourNo = mg['TABLE'].split(',')[-1].strip().split(' ')[0]
             if tourNo.isdigit():
                 self.tourNo = tourNo
-            else:
-                log.error(_("iPokerSummary.parseSummary: Could Not Parse tourNo"))
-                raise FpdbParseError
 
         if tourney:
             m2 = self.re_GameInfoTrny.search(self.summaryText)
@@ -202,6 +199,9 @@ class iPokerSummary(TourneySummary):
                 self.addPlayer(rank, hero, winnings, self.currency, None, None, None)
             else:
                 raise FpdbHandPartial(hid=self.tourNo)
+            if self.tourNo is None:
+                log.error(_("iPokerSummary.parseSummary: Could Not Parse tourNo"))
+                raise FpdbParseError
         else:
             tmp = self.summaryText[0:200]
             log.error(_("iPokerSummary.determineGameType: Text does not appear to be a tournament '%s'") % tmp)

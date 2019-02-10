@@ -153,7 +153,7 @@ class iPoker(HandHistoryConverter):
             <nickname>(?P<HERO>.+)?</nickname>
             """ % substitutions, re.MULTILINE|re.VERBOSE)
     re_GameInfoTrny = re.compile(r"""(?P<HEAD>
-                (<tournamentcode>(?P<TOURNO>\d+)</tournamentcode>\s+?)?
+                (<tour(nament)?code>(?P<TOURNO>\d+)</tour(nament)?code>\s+?)?
                 <tournamentname>(?P<NAME>.+?)</tournamentname>\s*<place>(?P<PLACE>.+?)</place>\s*
                 <buyin>(?P<BUYIN>(?P<BIAMT>.+?)(\+(?P<BIRAKE>.+?))?(\+(?P<BIRAKE1>.+?))?)</buyin>\s+?
                 <totalbuyin>(?P<TOTBUYIN>.*)</totalbuyin>\s+?
@@ -260,9 +260,6 @@ class iPoker(HandHistoryConverter):
                 tourNo = mg['TABLE'].split(',')[-1].strip().split(' ')[0]
                 if tourNo.isdigit():
                     self.tinfo['tourNo'] = tourNo
-                else:
-                    log.error(_("iPokerToFpdb.determineGameType: Could Not Parse tourNo"))
-                    raise FpdbParseError
                 
             self.tablename = '1'
             if not mg['CURRENCY'] or mg['CURRENCY']=='fun':
@@ -298,6 +295,9 @@ class iPoker(HandHistoryConverter):
                     #  NOTE: Both place and win can have the value N/A
             if self.tinfo['buyin'] == 0:
                 self.tinfo['buyinCurrency'] = 'FREE'
+            if self.tinfo.get('tourNo') is None:
+                log.error(_("iPokerToFpdb.determineGameType: Could Not Parse tourNo"))
+                raise FpdbParseError
         else:
             self.info['type'] = 'ring'
             self.tablename = mg['TABLE']
