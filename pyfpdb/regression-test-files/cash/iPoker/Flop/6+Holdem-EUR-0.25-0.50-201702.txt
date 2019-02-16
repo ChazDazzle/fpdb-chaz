@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="6661728946">
+ <general>
+  <mode>real</mode>
+  <gametype>Six Plus Holdem NL €0.25/€0.50</gametype>
+  <tablename>Six Plus CCCLIII, 888556518</tablename>
+  <tablecurrency>EUR</tablecurrency>
+  <duration>01:22:43</duration>
+  <gamecount>121</gamecount>
+  <startdate>2017-02-07 21:38:49</startdate>
+  <currency>EUR</currency>
+  <nickname>BribriPoker</nickname>
+  <bets>€122.71</bets>
+  <wins>€61.47</wins>
+  <chipsin>€50.25</chipsin>
+  <chipsout>€53.18</chipsout>
+  <statuspoints>2.05</statuspoints>
+  <awardpoints>3.70</awardpoints>
+  <ipoints>2.05</ipoints>
+ </general>
+ <game gamecode="7423436714">
+  <general>
+   <startdate>2017-02-07 21:38:49</startdate>
+   <players>
+    <player name="mickymurphy" bet="€9.50" win="€13.10" dealer="0" chips="€50" seat="1"/>
+    <player name="3opbkAAA" bet="€4" win="€0" dealer="1" chips="€50" seat="5"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="€0.25" cards="" player="3opbkAAA" no="1" type="1"/>
+   <action sum="€0.50" cards="" player="mickymurphy" no="2" type="2"/>
+  </round>
+  <round no="1">
+   <cards player="3opbkAAA" type="Pocket">X X</cards>
+   <action sum="€1.50" cards="" player="3opbkAAA" no="3" type="23"/>
+   <cards player="mickymurphy" type="Pocket">X X</cards>
+   <action sum="€4" cards="" player="mickymurphy" no="4" type="23"/>
+   <action sum="€2.50" cards="" player="3opbkAAA" no="5" type="3"/>
+  </round>
+  <round no="2">
+   <cards player="" type="Flop">SK H6 S7</cards>
+   <action sum="€5.50" cards="" player="mickymurphy" no="6" type="5"/>
+   <action sum="€0" cards="" player="3opbkAAA" no="7" type="0"/>
+  </round>
+ </game>
