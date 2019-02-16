@@ -50,6 +50,7 @@ class Winning(HandHistoryConverter):
     }
     games = {# base, category
         "Hold'em" : ('hold','holdem'),
+        "Six Plus Hold'em" : ('hold','6_holdem'),
         'Omaha' : ('hold','omahahi'),
         'Omaha HiLow' : ('hold','omahahilo'),
         'Seven Cards Stud' : ('stud','studhi'),
@@ -121,7 +122,7 @@ class Winning(HandHistoryConverter):
         Game\sID:\s(?P<HID>\d+)\s
         (?P<SB>[%(NUM)s]+)/(?P<BB>[%(NUM)s]+)\s
         (?P<TABLE>.+?)?\s
-        \((?P<GAME>Hold\'em|Omaha|Omaha\sHiLow|Seven\sCards\sStud|Seven\sCards\sStud\sHiLow)\)
+        \((?P<GAME>(Six\sPlus\s)?Hold\'em|Omaha|Omaha\sHiLow|Seven\sCards\sStud|Seven\sCards\sStud\sHiLow)\)
         (\s(?P<MAX>\d+\-max))?$
         """ % substitutions, 
         re.MULTILINE|re.VERBOSE
@@ -153,7 +154,7 @@ class Winning(HandHistoryConverter):
         
     re_Table = re.compile(u"""
         ^(?P<CURRENCY>[%(LS)s]|)?(?P<BUYIN>[%(NUM)s]+)\s
-        ((?P<GAME>Holdem|PLO|PLO8|Omaha\sHi/Lo|Omaha|PL\sOmaha|PL\sOmaha\sHi/Lo|PLO\sHi/Lo)\s?)?
+        ((?P<GAME>(Six\sPlus\s)?Holdem|PLO|PLO8|Omaha\sHi/Lo|Omaha|PL\sOmaha|PL\sOmaha\sHi/Lo|PLO\sHi/Lo)\s?)?
         ((?P<SPECIAL>(GTD|Freeroll|FREEBUY|Freebuy))\s?)?
         ((?P<SPEED>(Turbo|Hyper\sTurbo|Regular))\s?)?
         ((?P<MAX>(\d+\-Max|Heads\-up|Heads\-Up))\s?)?

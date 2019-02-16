@@ -1,0 +1,39 @@
+Game started at: 2019/2/16 8:37:2
+Game ID: 1377529121 0.02/0.05 6+ (PRR) ($5 Max) (Six Plus Hold'em)
+Seat 5 is the button
+Seat 1: ChazDazzle (2).
+Seat 3: primo4 (4.98).
+Seat 5: validraize (9.65).
+Seat 6: WhatAcrock420 (4.82).
+Player WhatAcrock420 has small blind (0.02)
+Player ChazDazzle has big blind (0.05)
+Player WhatAcrock420 received a card.
+Player WhatAcrock420 received a card.
+Player ChazDazzle received card: [6s]
+Player ChazDazzle received card: [6c]
+Player primo4 received a card.
+Player primo4 received a card.
+Player validraize received a card.
+Player validraize received a card.
+Player primo4 calls (0.05)
+Player validraize raises (0.22)
+Player WhatAcrock420 folds
+Player ChazDazzle calls (0.17)
+Player primo4 folds
+*** FLOP ***: [7h Kh 8s]
+Player ChazDazzle checks
+Player validraize checks
+*** TURN ***: [7h Kh 8s] [6d]
+Player ChazDazzle bets (0.05)
+Player validraize folds
+Uncalled bet (0.05) returned to ChazDazzle
+Player ChazDazzle mucks cards
+------ Summary ------
+Pot: 0.49. Rake 0.02
+Board: [7h Kh 8s 6d]
+*Player ChazDazzle mucks (does not show cards). Bets: 0.22. Collects: 0.49. Wins: 0.27.
+Player primo4 does not show cards.Bets: 0.05. Collects: 0. Loses: 0.05.
+Player validraize does not show cards.Bets: 0.22. Collects: 0. Loses: 0.22.
+Player WhatAcrock420 does not show cards.Bets: 0.02. Collects: 0. Loses: 0.02.
+Game ended at: 2019/2/16 8:37:46
+
