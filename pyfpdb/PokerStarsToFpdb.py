@@ -218,6 +218,9 @@ class PokerStars(HandHistoryConverter):
                         for\s(splitting\sthe\selimination\sof|eliminating)\s(?P<ELIMINATED>.+?)\s
                         and\stheir\sown\sbounty\sincreases\sby\s%(CUR)s(?P<INCREASE>[\.0-9]+)\sto\s%(CUR)s(?P<ENDAMT>[\.0-9]+)$"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
+    re_Rake             = re.compile(u"""
+                        Total\spot\s%(CUR)s(?P<POT>[,\.0-9]+)\s\|\sRake\s%(CUR)s(?P<RAKE>[,\.0-9]+)"""
+                         %  substitutions, re.MULTILINE|re.VERBOSE)
 
     def compilePlayerRegexs(self,  hand):
         players = set([player[1] for player in hand.players])
@@ -230,7 +233,10 @@ class PokerStars(HandHistoryConverter):
                 'CUR': u"(\$|\xe2\x82\xac|\u20ac||\£|)"
             }
             self.re_HeroCards = re.compile(r"^Dealt to %(PLYR)s(?: \[(?P<OLDCARDS>.+?)\])?( \[(?P<NEWCARDS>.+?)\])" % subst, re.MULTILINE)
-            self.re_ShownCards = re.compile("^Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(?P<SHOWED>showed|mucked) \[(?P<CARDS>.*)\]( and (lost|(won|collected) \(%(CUR)s(?P<POT>[,\.\d]+)\)) with (?P<STRING>.+?)(,\sand\s(won\s\(%(CUR)s[\.\d]+\)|lost)\swith\s(?P<STRING2>.*))?)?$" % subst, re.MULTILINE)   
+            if self.siteId == 26:
+                self.re_ShownCards = re.compile("^Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(?P<SHOWED>showed|mucked) \[(?P<CARDS>.*)\]( and (lost|(won|collected) %(CUR)s(?P<POT>[,\.\d]+) with (?P<STRING>.+?))(,\sand\s(lost|won\s%(CUR)s[\.\d]+\swith\s(?P<STRING2>.*)))?)?$" % subst, re.MULTILINE)
+            else: 
+                self.re_ShownCards = re.compile("^Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(?P<SHOWED>showed|mucked) \[(?P<CARDS>.*)\]( and (lost|(won|collected) \(%(CUR)s(?P<POT>[,\.\d]+)\)) with (?P<STRING>.+?)(,\sand\s(won\s\(%(CUR)s[\.\d]+\)|lost)\swith\s(?P<STRING2>.*))?)?$" % subst, re.MULTILINE)   
 
     def readSupportedGames(self):
         return [["ring", "hold", "nl"],
@@ -750,6 +756,16 @@ class PokerStars(HandHistoryConverter):
 
                 #print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
                 hand.addShownCards(cards=cards, player=m.group('PNAME'), shown=shown, mucked=mucked, string=string)
+    
+    # TEMP for Run it Once Poker            
+    def getRake(self, hand):
+        if self.siteId == 26:
+            m = self.re_Rake.search(hand.handText)
+            if m:
+                hand.totalpot = Decimal(self.clearMoneyString(m.group('POT')))
+                hand.rake = Decimal(self.clearMoneyString(m.group('RAKE')))
+        else:
+            HandHistoryConverter.getRake(self, hand)
 
     @staticmethod
     def getTableTitleRe(type, table_name=None, tournament = None, table_number=None):
