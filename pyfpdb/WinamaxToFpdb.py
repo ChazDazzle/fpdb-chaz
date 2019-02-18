@@ -56,8 +56,9 @@ class Winamax(HandHistoryConverter):
     limits = { 'no limit':'nl', 'pot limit' : 'pl', 'fixed limit':'fl'}
 
     games = {                          # base, category
-                                "Holdem" : ('hold','holdem'),
-                                 'Omaha' : ('hold','omahahi'),
+                                 "Holdem": ('hold','holdem'),
+                                  "Omaha": ('hold','omahahi'),
+                                 "Omaha5": ('hold','5_omahahi'),
                            "5 Card Omaha": ('hold','5_omahahi'),
                      "5 Card Omaha Hi/Lo": ('hold','5_omahahi'), #incorrect in file
                             "Omaha Hi/Lo": ('hold','omahahilo'),
@@ -90,7 +91,7 @@ class Winamax(HandHistoryConverter):
             (level:\s(?P<LEVEL>\d+))?
             .*)?
             \s-\sHandId:\s\#(?P<HID1>\d+)-(?P<HID2>\d+)-(?P<HID3>\d+)\s-\s  # REB says: HID3 is the correct hand number
-            (?P<GAME>Holdem|Omaha|5\sCard\sOmaha|5\sCard\sOmaha\sHi/Lo|Omaha\sHi/Lo|7\-Card\sStud|7\-Card\sStud\sHi/Lo|Razz|2\-7\sTriple\sDraw)\s
+            (?P<GAME>Holdem|Omaha|Omaha5|5\sCard\sOmaha|5\sCard\sOmaha\sHi/Lo|Omaha\sHi/Lo|7\-Card\sStud|7\-Card\sStud\sHi/Lo|Razz|2\-7\sTriple\sDraw)\s
             (?P<LIMIT>fixed\slimit|no\slimit|pot\slimit)\s
             \(
             (((%(LS)s)?(?P<ANTE>[.0-9]+)(%(LS)s)?)/)?
