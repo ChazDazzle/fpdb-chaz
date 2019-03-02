@@ -340,9 +340,17 @@ class PokerStarsSummary(TourneySummary):
             log.error(_("PokerStarsSummary.parseSummaryFile: '%s'") % self.summaryText)
             raise FpdbParseError
 
-        #print "DEBUG: m.groupdict(): %s" % m.groupdict()
-
+        #print "DEBUG: m.groupdict(): %s" % m.groupdict()        
         mg = m.groupdict()
+            
+        if 'DATETIME'  in mg: m1 = self.re_DateTime.finditer(mg['DATETIME'])
+        datetimestr = "2000/01/01 00:00:00"  # default used if time not found
+        for a in m1:
+            datetimestr = "%s/%s/%s %s:%s:%s" % (a.group('Y'), a.group('M'),a.group('D'),a.group('H'),a.group('MIN'),a.group('S'))
+            
+        self.startTime = datetime.datetime.strptime(datetimestr, "%Y/%m/%d %H:%M:%S") # also timezone at end, e.g. " ET"
+        self.startTime = HandHistoryConverter.changeTimezone(self.startTime, "ET", "UTC")
+
         if 'TOURNO'    in mg: self.tourNo = mg['TOURNO']
         if 'LIMIT'     in mg and mg['LIMIT'] is not None:
             self.gametype['limitType'] = self.limits[mg['LIMIT']]
@@ -361,8 +369,12 @@ class PokerStarsSummary(TourneySummary):
             self.fee   = int(100*Decimal(self.clearMoneyString(mg['FEE'])))
         if 'PRIZEPOOL' in mg and mg['PRIZEPOOL'] != None:
             if 'Sunday Million' in mg['PRIZEPOOL']:
-                self.isSatellite = True
-                targetBuyin, targetCurrency = 21500, "USD"                
+                self.isSatellite = True                
+                newBuyinDate = HandHistoryConverter.changeTimezone(datetime.datetime.strptime("2019/01/27 00:00:00", "%Y/%m/%d %H:%M:%S"), "ET", "UTC")
+                if self.startTime > newBuyinDate:
+                    targetBuyin, targetCurrency = 10900, "USD"
+                else:
+                    targetBuyin, targetCurrency = 21500, "USD"  
             else:
                 self.prizepool = int(Decimal(self.clearMoneyString(mg['PRIZEPOOL'])))
         if 'ENTRIES'   in mg: self.entries               = int(mg['ENTRIES'])
@@ -382,14 +394,6 @@ class PokerStarsSummary(TourneySummary):
                 elif mg['CUR'] == u"₹":  targetCurrency="INR"
                 elif mg['CUR'] == "FPP": targetCurrency="PSFP"
                 elif mg['CUR'] == "SC": targetCurrency="PSFP"              
-            
-        if 'DATETIME'  in mg: m1 = self.re_DateTime.finditer(mg['DATETIME'])
-        datetimestr = "2000/01/01 00:00:00"  # default used if time not found
-        for a in m1:
-            datetimestr = "%s/%s/%s %s:%s:%s" % (a.group('Y'), a.group('M'),a.group('D'),a.group('H'),a.group('MIN'),a.group('S'))
-            
-        self.startTime = datetime.datetime.strptime(datetimestr, "%Y/%m/%d %H:%M:%S") # also timezone at end, e.g. " ET"
-        self.startTime = HandHistoryConverter.changeTimezone(self.startTime, "ET", "UTC")
 
         if mg['CURRENCY'] == "$":     self.buyinCurrency="USD"
         elif mg['CURRENCY'] == u"€":  self.buyinCurrency="EUR"
