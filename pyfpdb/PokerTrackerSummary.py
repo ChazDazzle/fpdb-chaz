@@ -65,6 +65,10 @@ class PokerTrackerSummary(TourneySummary):
                         Tourney\sType:\s(?P<LIMIT>No\sLimit|Limit|LIMIT|Pot\sLimit|N/A)\s+
                         Players:\s(?P<ENTRIES>\d+)\s+
                         """ % substitutions ,re.VERBOSE|re.MULTILINE)
+    
+    re_Max = re.compile("\((?P<MAX>\d+)\smax\)\s")
+    re_Speed = re.compile("(?P<SPEED>Turbo|Hyper\-Turbo)")
+    re_Sng = re.compile("\s(?P<SNG>SNG)\s")
 
     re_Player = re.compile(u"""
         Place:\s(?P<RANK>[0-9]+),\s
@@ -85,7 +89,8 @@ class PokerTrackerSummary(TourneySummary):
         'PokerStars': 'PokerStars',
         'Full Tilt': 'Fulltilt',
         'Party Poker': 'PartyPoker',
-        'Merge': 'Merge'
+        'Merge': 'Merge',
+        'Winamax':'Winamax'
     }
 
     @staticmethod
@@ -119,7 +124,23 @@ class PokerTrackerSummary(TourneySummary):
             self.gametype['limitType'] = 'nl'
         else:
             self.gametype['limitType'] = 'pl'
-        if 'TYPE'      in mg: self.tourneyName = mg['TYPE']
+        if 'TYPE'      in mg: 
+            self.tourneyName = mg['TYPE']
+            t1 = self.re_Max.search(self.tourneyName)
+            if t1:
+                self.maxseats = int(t1.group('MAX'))
+            t2 = self.re_Speed.search(self.tourneyName)
+            if t2:
+                if t2.group('SPEED')=='Turbo':
+                    self.speed = 'Turbo'
+                elif t2.group('SPEED')=='Hyper-Turbo':
+                    self.speed = 'Hyper'
+            t3 = self.re_Sng.search(self.tourneyName)
+            if t3: self.isSng = True
+            if "DEEP" in self.tourneyName:
+                self.stack = "Deep"
+            if "SATELLITE" in self.tourneyName:
+                self.isSatellite = True            
         if mg['BUYIN'] != None:
             self.buyin = int(100*Decimal(self.clearMoneyString(mg['BUYIN'])))
         if mg['FEE'] != None:
