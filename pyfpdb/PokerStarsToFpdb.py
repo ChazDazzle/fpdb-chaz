@@ -219,7 +219,7 @@ class PokerStars(HandHistoryConverter):
                         and\stheir\sown\sbounty\sincreases\sby\s%(CUR)s(?P<INCREASE>[\.0-9]+)\sto\s%(CUR)s(?P<ENDAMT>[\.0-9]+)$"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
     re_Rake             = re.compile(u"""
-                        Total\spot\s%(CUR)s(?P<POT>[,\.0-9]+)\s\|\sRake\s%(CUR)s(?P<RAKE>[,\.0-9]+)"""
+                        Total\spot\s%(CUR)s(?P<POT>[,\.0-9]+)(.+?)?\s\|\sRake\s%(CUR)s(?P<RAKE>[,\.0-9]+)"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
 
     def compilePlayerRegexs(self,  hand):
