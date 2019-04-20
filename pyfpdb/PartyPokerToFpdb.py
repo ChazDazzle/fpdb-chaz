@@ -51,6 +51,7 @@ class PartyPoker(HandHistoryConverter):
                "7 Card Stud Hi-Lo" : ('stud','studhilo'),
                      "7 Card Stud" : ('stud','studhi'),
                   "Double Hold'em" : ('hold','2_holdem'),
+                      "Short Deck" : ('hold','6_holdem'),
             }
 
     Lim_Blinds = {      '0.04': ('0.01', '0.02'),    '0.08': ('0.02', '0.04'),
@@ -111,7 +112,7 @@ class PartyPoker(HandHistoryConverter):
              ((?P<CASHBI>[%(NUM)s]+)\s*(?:%(LEGAL_ISO)s)?\s*)(?P<FAST2>fastforward\s)?(?P<LIMIT2>(NL|PL|FL|))?\s*
             )
             (Tourney\s*)?
-            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em))\s*
+            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em|Short\sDeck))\s*
             (Game\sTable\s*)?
             (
              (\((?P<LIMIT>(NL|PL|FL|Limit|))\)\s*)?
@@ -133,7 +134,7 @@ class PartyPoker(HandHistoryConverter):
     re_GameInfoTrny1     = re.compile(u"""
             \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s+
             (?P<LIMIT>(NL|PL|FL|))\s*
-            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em))\s+
+            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em|Short\sDeck))\s+
             (?:(?P<BUYIN>[%(LS)s]?\s?[%(NUM)s]+)\s*(?P<BUYIN_CURRENCY>%(LEGAL_ISO)s)?\s*Buy-in\s+)?
             (\+\s(?P<FEE>[%(LS)s]?\s?[%(NUM)s]+)\sEntry\sFee\s+)?
             Trny:\s?(?P<TOURNO>\d+)\s+
@@ -150,7 +151,7 @@ class PartyPoker(HandHistoryConverter):
     re_GameInfoTrny2     = re.compile(u"""
             \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s+
             (?P<LIMIT>(NL|PL|FL|))\s*
-            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em))\s+
+            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em|Short\sDeck))\s+
             (?:(?P<BUYIN>[%(LS)s]?\s?[%(NUM)s]+)\s*(?P<BUYIN_CURRENCY>%(LEGAL_ISO)s)?\s*Buy-in\s+)?
             (\+\s(?P<FEE>[%(LS)s]?\s?[%(NUM)s]+)\sEntry\sFee\s+)?
             \s*\-\s*
@@ -161,7 +162,7 @@ class PartyPoker(HandHistoryConverter):
             \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific|WPN)\)\s+
             Tourney\sHand\s
             (?P<LIMIT>(NL|PL|FL|))\s*
-            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em))\s+
+            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em|Short\sDeck))\s+
             \s*\-\s*
             (?P<DATETIME>.+)
             """ % substitutions, re.VERBOSE | re.UNICODE)
@@ -223,7 +224,10 @@ class PartyPoker(HandHistoryConverter):
                 r"%(PLYR)s posts big blind [%(BRAX)s]?%(CUR_SYM)s?(?P<BB>[.,0-9]+)\s*(%(CUR)s)?[%(BRAX)s]?\.?\s*$"
                 %  subst, re.MULTILINE)
             self.re_PostDead = re.compile(
-                r"%(PLYR)s posts big blind \+ dead [%(BRAX)s]?%(CUR_SYM)s?(?P<BBNDEAD>[.,0-9]+)\s*%(CUR_SYM)s?[%(BRAX)s]?\.?\s*$" %  subst,
+                r"%(PLYR)s posts big blind \+ dead [%(BRAX)s]?%(CUR_SYM)s?(?P<BBNDEAD>[.,0-9]+)\s*%(CUR)s?[%(BRAX)s]?\.?\s*$" %  subst,
+                re.MULTILINE)
+            self.re_PostBUB = re.compile(
+                r"%(PLYR)s posts button blind  ?[%(BRAX)s]?%(CUR_SYM)s?(?P<BUB>[.,0-9]+)\s*%(CUR)s?[%(BRAX)s]?\.?\s*$" %  subst,
                 re.MULTILINE)
             self.re_Antes = re.compile(
                 r"%(PLYR)s posts ante( of)? [%(BRAX)s]?%(CUR_SYM)s(?P<ANTE>[.,0-9]+)\s*%(CUR)s[%(BRAX)s]?\.?\s*$" %  subst,
@@ -358,18 +362,22 @@ class PartyPoker(HandHistoryConverter):
                     log.error(_("PartyPokerToFpdb.determineGameType: Lim_Blinds has no lookup for '%s' - '%s'") % (nl_bb, tmp))
                     raise FpdbParseError
         else:
-            m = self.re_NewLevel.search(handText)
-            if m:
-                mg['SB'] = m.group('SB')
-                mg['BB'] = m.group('BB')
-            if 'SB' in mg:
-                info['sb'] = self.clearMoneyString(mg['SB'])
+            if info['category'] == '6_holdem':
+                info['sb'] = '0'
+                info['bb'] = self.clearMoneyString(mg['SB'])
             else:
-                info['sb'] = None
-            if 'BB' in mg:
-                info['bb'] = self.clearMoneyString(mg['BB'])
-            else:
-                info['bb'] = None
+                m = self.re_NewLevel.search(handText)
+                if m:
+                    mg['SB'] = m.group('SB')
+                    mg['BB'] = m.group('BB')
+                if 'SB' in mg:
+                    info['sb'] = self.clearMoneyString(mg['SB'])
+                else:
+                    info['sb'] = None
+                if 'BB' in mg:
+                    info['bb'] = self.clearMoneyString(mg['BB'])
+                else:
+                    info['bb'] = None
             info['buyinType'] = 'regular'
         if 'CURRENCY' in mg:
             if mg['CURRENCY'] == None:
@@ -649,6 +657,9 @@ class PartyPoker(HandHistoryConverter):
                 hand.addBlind(a.group('PNAME'), 'big blind', self.clearMoneyString(a.group('BB')))
                 if hand.gametype['bb'] is None:
                     hand.gametype['bb'] = self.clearMoneyString(a.group('BB'))
+                    
+            for a in self.re_PostBUB.finditer(hand.handText):
+                hand.addBlind(a.group('PNAME'), 'button blind', self.clearMoneyString(a.group('BUB')))
 
             for a in self.re_PostDead.finditer(hand.handText):
                 hand.addBlind(a.group('PNAME'), 'both', self.clearMoneyString(a.group('BBNDEAD')))
@@ -680,10 +691,15 @@ class PartyPoker(HandHistoryConverter):
                     smallBlindSeat = findFirstNonEmptySeat(int(hand.buttonpos) + 1)
                 blind = smartMin(hand.sb, playersMap[smallBlindSeat][1])
                 hand.addBlind(playersMap[smallBlindSeat][0], 'small blind', blind)
-
-            bigBlindSeat = findFirstNonEmptySeat(smallBlindSeat + 1)
-            blind = smartMin(hand.bb, playersMap[bigBlindSeat][1])
-            hand.addBlind(playersMap[bigBlindSeat][0], 'big blind', blind)
+                
+            if hand.gametype['category'] == '6_holdem':
+                bigBlindSeat = findFirstNonEmptySeat(smallBlindSeat + 1)
+                blind = smartMin(hand.bb, playersMap[bigBlindSeat][1])
+                hand.addBlind(playersMap[bigBlindSeat][0], 'button blind', blind)
+            else:
+                bigBlindSeat = findFirstNonEmptySeat(smallBlindSeat + 1)
+                blind = smartMin(hand.bb, playersMap[bigBlindSeat][1])
+                hand.addBlind(playersMap[bigBlindSeat][0], 'big blind', blind)
 
     def readBringIn(self, hand):
         pass
