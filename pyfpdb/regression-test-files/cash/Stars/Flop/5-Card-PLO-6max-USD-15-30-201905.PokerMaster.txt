@@ -1,0 +1,27 @@
+PokerMaster Hand #1905261509100000: Omaha Pot Limit ($15/$30 USD) - 2019/05/26 12:53:33 UTC
+Table 'PPP_5Cards_FIVE_1500_201509' 6-max Seat #6 is the button
+Seat 3: pp1863696 ($3000 in chips) 
+Seat 6: pp1844675 ($1500 in chips) 
+# {"gt":"PLO","tn":"PPP_5Cards_FIVE_1500_201509","tid":201509,"pn":{"2":"Player0","5":"Player1"},"pids":{"2":1863696,"5":1844675}}
+pp1844675: posts small blind $15
+pp1863696: posts big blind $30
+*** HOLE CARDS ***
+Dealt to pp1844675 [9c Qc 9h Jc Qs]
+pp1844675: raises $60 to $90
+pp1863696: calls $60
+*** FLOP *** [2h 5h 8h]
+pp1863696: checks 
+pp1844675: checks 
+*** TURN *** [2h 5h 8h] [2s]
+pp1863696: bets $120
+pp1844675: calls $120
+*** RIVER *** [2h 5h 8h 2s] [7c]
+pp1863696: bets $325
+pp1844675: folds 
+Uncalled bet ($325) returned to pp1863696
+pp1863696 collected $409 from pot
+*** SUMMARY ***
+Total pot $420 | Rake $11 
+Board [2h 5h 8h 2s 7c]
+Seat 3: pp1863696 (big blind) collected ($409)
+Seat 6: pp1844675 (button) (small blind) folded on the River

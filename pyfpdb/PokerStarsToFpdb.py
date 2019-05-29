@@ -308,6 +308,9 @@ class PokerStars(HandHistoryConverter):
             if mg['SITE'] == 'PokerMaster':
                 self.sitename = "PokerMaster"
                 self.siteId   = 25 
+                m1  = self.re_HandInfo.search(handText,re.DOTALL)
+                if m1 and '_5Cards_' in m1.group('TABLE'):
+                    info['category'] = '5_omahahi'
             elif mg['SITE'] == 'Run It Once Poker':
                 self.sitename = "Run It Once Poker"
                 self.siteId   = 26
