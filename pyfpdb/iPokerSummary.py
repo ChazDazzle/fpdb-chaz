@@ -60,7 +60,7 @@ class iPokerSummary(TourneySummary):
     re_Identify = re.compile(u'<game\sgamecode=')
 
     re_GameType = re.compile(ur"""
-            <gametype>(?P<GAME>((?P<CATEGORY>(5|7)\sCard\sStud(\sHi\-Lo)?|(Six\sPlus\s)?Holdem|Omaha(\sHi\-Lo)?)\s(?P<LIMIT>NL|SL|L|LZ|PL|БЛ|LP|No\slimit|Pot\slimit|Limit))|LH\s(?P<LSB>[%(NUM)s]+)/(?P<LBB>[%(NUM)s]+).+?)
+            <gametype>(?P<GAME>((?P<CATEGORY>(5|7)\sCard\sStud(\sHi\-Lo)?|(Six\sPlus\s)?Holdem|Omaha(\sHi\-Lo)?)?\s?(?P<LIMIT>NL|SL|L|LZ|PL|БЛ|LP|No\slimit|Pot\slimit|Limit))|LH\s(?P<LSB>[%(NUM)s]+)/(?P<LBB>[%(NUM)s]+).+?)
             (\s(%(LS)s)?(?P<SB>[%(NUM)s]+)/(%(LS)s)?(?P<BB>[%(NUM)s]+))?(\sAnte\s(%(LS)s)?(?P<ANTE>[%(NUM)s]+))?</gametype>\s+?
             <tablename>(?P<TABLE>.+)?</tablename>\s+?
             (<(tablecurrency|tournamentcurrency)>.*</(tablecurrency|tournamentcurrency)>\s+?)?
@@ -114,7 +114,10 @@ class iPokerSummary(TourneySummary):
             tourney = True
 #                self.gametype['limitType'] = 
         if 'GAME' in mg:
-            (self.gametype['base'], self.gametype['category']) = self.games[mg['CATEGORY']]
+            if mg['CATEGORY'] is None:
+                (self.info['base'], self.info['category']) = ('hold', '5_omahahi') 
+            else:
+                (self.gametype['base'], self.gametype['category']) = self.games[mg['CATEGORY']]
         if 'LIMIT' in mg:
             self.gametype['limitType'] = self.limits[mg['LIMIT']]
 
