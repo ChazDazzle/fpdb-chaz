@@ -2345,7 +2345,7 @@ class Database:
             print ("###### End Hands ########")
             
         # Tablename can have odd charachers
-        hdata['tableName'] = Charset.to_db_utf8(hdata['tableName'])
+        hdata['tableName'] = Charset.to_db_utf8(hdata['tableName'])[:50]
         
         self.hids.append(hdata['id'])
         self.hbulk.append( [ hdata['tableName'],
