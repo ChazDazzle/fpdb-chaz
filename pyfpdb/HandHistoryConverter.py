@@ -187,7 +187,7 @@ HandHistoryConverter: '%(sitename)s'
         self.index -= (lenobs - len(self.obs))
         self.obs = self.obs.lstrip()
         lenobs = len(self.obs)
-        self.obs = self.obs.replace('\r\n', '\n')
+        self.obs = self.obs.replace('\r\n', '\n').replace(u'\xa0', u' ')
         if lenobs != len(self.obs):
             self.isCarraige = True
         # maybe archive params should be one archive param, then call method in specific converter?
@@ -221,7 +221,7 @@ HandHistoryConverter: '%(sitename)s'
         if self.isPartial(handText):
             raise FpdbHandPartial(_("Could not identify as a %s hand") % self.sitename)
         if self.copyGameHeader:
-            gametype = self.parseHeader(handText, self.whole_file.replace('\r\n', '\n'))
+            gametype = self.parseHeader(handText, self.whole_file.replace('\r\n', '\n').replace(u'\xa0', u' '))
         else:
             gametype = self.determineGameType(handText)
         hand = None
