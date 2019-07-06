@@ -1,0 +1,32 @@
+Run It Once Poker Hand #30263279:  Hold'em No Limit (€0.05/€0.10) - 2019/06/25 15:55 UTC [2019/06/25 16:55 CET]
+Table ID '30263259' 6-Max Seat #1 is the button
+Seat 1: TestPlayer_1 (€10 in chips)
+Seat 3: Galen U (€10 in chips)
+Seat 6: Leroy D (€10 in chips)
+Galen U: posts small blind €0.05
+Leroy D: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to TestPlayer_1 [6c 7d]
+Dealt to Galen U [Ad Qd]
+Dealt to Leroy D [2s 7c]
+TestPlayer_1: folds
+Galen U: raises €0.35 to €0.45
+Leroy D: calls €0.35
+*** FLOP *** [Qs Kd 5c]
+Galen U: checks
+Leroy D: checks
+*** TURN *** [Qs Kd 5c] [4h]
+Galen U: checks
+Leroy D: checks
+*** RIVER *** [Qs Kd 5c 4h] [3h]
+Galen U: checks
+Leroy D: checks
+*** SHOWDOWN ***
+Galen U shows [Ad Qd] for Pair [Ad Kd Qs Qd 5c]
+Galen U collected €0.76 from pot
+*** SUMMARY ***
+Total pot €0.90 | Rake €0.14
+Board [Qs Kd 5c 4h 3h]
+Seat 1: TestPlayer_1 (button) folded before Flop
+Seat 3: Galen U (small blind) showed [Ad Qd] and won €0.76 with Pair of Q and A K 5
+Seat 6: Leroy D (big blind) mucked [2s 7c] and lost
