@@ -444,7 +444,7 @@ class DerivedStats():
     def getAllInEV(self, hand, evalgame, holeplayers, boards, streets, holecards):
         startstreet, potId, allInStreets = None, 0, hand.allStreets[1:]
         for pot, players in hand.pot.pots:
-            if potId ==0: pot += sum(hand.pot.common.values())
+            if potId ==0: pot += (sum(hand.pot.common.values()) + hand.pot.stp)
             potId+=1
             for street in allInStreets:
                 board = boards[street]
@@ -548,7 +548,7 @@ class DerivedStats():
             rakes, totrake, potId = {}, 0, 0
             board = [str(b) for b in hand.board['FLOP'] + hand.board['TURN'] + hand.board['RIVER']]
             for pot, players in hand.pot.pots:
-                if potId ==0: pot += sum(hand.pot.common.values())
+                if potId ==0: pot += (sum(hand.pot.common.values()) + hand.pot.stp)
                 potId+=1
                 holecards = []
                 for p in players:
@@ -599,7 +599,7 @@ class DerivedStats():
             #print 'DEBUG hand.collectees', hand.collectees
             rakes, totrake, potId = {}, 0, 0
             for pot, players in hand.pot.pots:
-                if potId ==0: pot += sum(hand.pot.common.values())
+                if potId ==0: pot += (sum(hand.pot.common.values()) + hand.pot.stp)
                 potId+=1
                 boards, boardId, sumpot = self.getBoardsList(hand), 0, 0
                 for b in boards:
