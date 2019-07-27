@@ -763,7 +763,7 @@ class PokerStars(HandHistoryConverter):
             m = re_RevealedCards.finditer(hand.handText)
             for found in m:                
                 cards = found.group('NEWCARDS').split(' ')
-                hand.addShownCards(cards=cards, player=found.group('PNAME'), shown=False, mucked=False)
+                hand.addShownCards(cards=cards, player=found.group('PNAME'), shown=True, mucked=False)
                 
         for m in self.re_ShownCards.finditer(hand.handText):
             if m.group('CARDS') is not None:
