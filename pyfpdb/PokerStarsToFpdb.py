@@ -758,6 +758,13 @@ class PokerStars(HandHistoryConverter):
                     hand.addCollectPot(player=m.group('PNAME'),pot=pot)
 
     def readShownCards(self,hand):
+        if self.siteId == 26:
+            re_RevealedCards = re.compile(r"^Dealt to %(PLYR)s(?: \[(?P<OLDCARDS>.+?)\])?( \[(?P<NEWCARDS>.+?)\])" % self.substitutions, re.MULTILINE)
+            m = re_RevealedCards.finditer(hand.handText)
+            for found in m:                
+                cards = found.group('NEWCARDS').split(' ')
+                hand.addShownCards(cards=cards, player=found.group('PNAME'), shown=False, mucked=False)
+                
         for m in self.re_ShownCards.finditer(hand.handText):
             if m.group('CARDS') is not None:
                 cards = m.group('CARDS')
@@ -772,6 +779,7 @@ class PokerStars(HandHistoryConverter):
 
                 #print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
                 hand.addShownCards(cards=cards, player=m.group('PNAME'), shown=shown, mucked=mucked, string=string)
+            
 
     @staticmethod
     def getTableTitleRe(type, table_name=None, tournament = None, table_number=None):
