@@ -221,6 +221,10 @@ class PokerStars(HandHistoryConverter):
     re_Rake             = re.compile(u"""
                         Total\spot\s%(CUR)s(?P<POT>[,\.0-9]+)(.+?)?\s\|\sRake\s%(CUR)s(?P<RAKE>[,\.0-9]+)"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
+    
+    re_STP             = re.compile(u"""
+                        STP\sadded:\s%(CUR)s(?P<AMOUNT>[,\.0-9]+)"""
+                         %  substitutions, re.MULTILINE|re.VERBOSE)
 
     def compilePlayerRegexs(self,  hand):
         players = set([player[1] for player in hand.players])
@@ -563,6 +567,12 @@ class PokerStars(HandHistoryConverter):
                 hand.setCommunityCards(street, m.group('CARDS').split(' '))
         if street in ('FLOP1', 'TURN1', 'RIVER1', 'FLOP2', 'TURN2', 'RIVER2'):
             hand.runItTimes = 2
+            
+    def readSTP(self, hand):
+        log.debug(_("read Splash the Pot"))
+        m = self.re_STP.search(hand.handText)
+        if m:
+            hand.addSTP(m.group('AMOUNT'))
 
     def readAntes(self, hand):
         log.debug(_("reading antes"))
@@ -715,7 +725,7 @@ class PokerStars(HandHistoryConverter):
         #Bovada walks are calculated incorrectly in converted PokerStars hands
         acts, bovadaUncalled_v1, bovadaUncalled_v2, blindsantes, adjustment = hand.actions.get('PREFLOP'), False, False, 0, 0
         names = [p[1] for p in hand.players]
-        if "Big Blind" in names or "Small Blind" in names or "Dealer" in names:
+        if "Big Blind" in names or "Small Blind" in names or "Dealer" in names or self.siteId == 26:
             if acts != None and len([a for a in acts if a[1] != 'folds']) == 0:
                 m0 = self.re_Uncalled.search(hand.handText)
                 if m0 and Decimal(m0.group('BET')) == Decimal(hand.bb):
@@ -730,7 +740,7 @@ class PokerStars(HandHistoryConverter):
         if hand.runItTimes==0:
             for m in self.re_CollectPot.finditer(post):
                 pot = self.clearMoneyString(m.group('POT'))
-                if bovadaUncalled_v1 and Decimal(pot) == blindsantes:
+                if bovadaUncalled_v1 and Decimal(pot) == (blindsantes + hand.pot.stp):
                     hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot) - adjustment))
                 elif bovadaUncalled_v2:
                     hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot)*2))
@@ -740,7 +750,7 @@ class PokerStars(HandHistoryConverter):
         if i==0:
             for m in self.re_CollectPot2.finditer(pre):
                 pot = self.clearMoneyString(m.group('POT'))
-                if bovadaUncalled_v1 and Decimal(pot) == blindsantes:
+                if bovadaUncalled_v1 and Decimal(pot) == (blindsantes + hand.pot.stp):
                     hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot) - adjustment))
                 elif bovadaUncalled_v2:
                     hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot)*2))
@@ -762,16 +772,6 @@ class PokerStars(HandHistoryConverter):
 
                 #print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
                 hand.addShownCards(cards=cards, player=m.group('PNAME'), shown=shown, mucked=mucked, string=string)
-    
-    # TEMP for Run it Once Poker            
-    def getRake(self, hand):
-        if self.siteId == 26:
-            m = self.re_Rake.search(hand.handText)
-            if m:
-                hand.totalpot = Decimal(self.clearMoneyString(m.group('POT')))
-                hand.rake = Decimal(self.clearMoneyString(m.group('RAKE')))
-        else:
-            HandHistoryConverter.getRake(self, hand)
 
     @staticmethod
     def getTableTitleRe(type, table_name=None, tournament = None, table_number=None):

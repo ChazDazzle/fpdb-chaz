@@ -651,6 +651,11 @@ class Hand(object):
             Rb = Ai - C
             Rt = Bp + Rb
             self._addRaise(street, player, C, Rb, Rt)
+        
+    def addSTP(self, amount):
+        amount = amount.replace(u',', u'') #some sites have commas
+        amount = Decimal(amount)
+        self.pot.setSTP(amount)
 
     def addAnte(self, player, ante):
         log.debug("%s %s antes %s", 'BLINDSANTES', player, ante)
@@ -1115,7 +1120,8 @@ class HoldemOmahaHand(Hand):
                 return
 
             hhc.readBlinds(self)
-
+            
+            hhc.readSTP(self)
             hhc.readAntes(self)
             hhc.readButton(self)
             hhc.readHoleCards(self)
@@ -1323,6 +1329,7 @@ class DrawHand(Hand):
                 log.error("DrawHand.__init__: " + _("Street 'DEAL' is empty. Was hand '%s' cancelled?") % self.handid)
                 raise FpdbParseError
             hhc.readBlinds(self)
+            hhc.readSTP(self)
             hhc.readAntes(self)
             hhc.readButton(self)
             hhc.readHoleCards(self)
@@ -1504,6 +1511,7 @@ class StudHand(Hand):
             hhc.readPlayerStacks(self)
             hhc.compilePlayerRegexs(self)
             hhc.markStreets(self)
+            hhc.readSTP(self)
             hhc.readAntes(self)
             hhc.readBringIn(self)
             hhc.readHoleCards(self)
@@ -1788,6 +1796,7 @@ class Pot(object):
         self.sym          = u'$' # this is the default currency symbol
         self.pots         = []
         self.handid       = 0
+        self.stp          = 0
 
     def setSym(self, sym):
         self.sym = sym
@@ -1816,9 +1825,12 @@ class Pot(object):
         # addMoney must be called for any actions that put money in the pot, in the order they occur
         self.contenders.add(player)
         self.committed[player] += amount
+        
+    def setSTP(self, amount):
+        self.stp = amount
 
     def markTotal(self, street):
-        self.streettotals[street] = sum(self.committed.values()) + sum(self.common.values())
+        self.streettotals[street] = sum(self.committed.values()) + sum(self.common.values()) + self.stp
 
     def getTotalAtStreet(self, street):
         if street in self.streettotals:
@@ -1826,7 +1838,7 @@ class Pot(object):
         return 0
 
     def end(self):
-        self.total = sum(self.committed.values()) + sum(self.common.values())
+        self.total = sum(self.committed.values()) + sum(self.common.values()) + self.stp
 
         # Return any uncalled bet.
         if sum(self.common.values())>0 and sum(self.common.values())==sum(self.antes.values()):
