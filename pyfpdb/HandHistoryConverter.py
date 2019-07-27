@@ -395,7 +395,7 @@ or None if we fail to get the info """
     Pass any big blind to hand.addBlind(<name>, "big blind", <value>)
     Pass any play posting both big and small blinds to hand.addBlind(<name>, 'both', <vale>)
     """
-    def readSTP(self, hand): abstract
+    def readSTP(self, hand): pass
     def readAntes(self, hand): abstract
     """Function for reading the antes from the hand history and passing the hand.addAnte"""
     def readBringIn(self, hand): abstract
