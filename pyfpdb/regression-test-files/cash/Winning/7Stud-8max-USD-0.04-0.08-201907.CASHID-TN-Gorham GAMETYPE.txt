@@ -1,0 +1,71 @@
+Hand #85198832 - 7Stud(Fixed Limit) - $0.04/$0.08 - 2019/07/28 16:15:58 UTC
+Gorham 8-max
+Seat 1: Hero ($0.39)
+Seat 4: Player0 ($5.44)
+Seat 5: Player1 ($1.56)
+Seat 7: Player2 ($4.11)
+Seat 8: Player3 ($2.24)
+Player2 posts ante $0.01
+Player0 posts ante $0.01
+Hero posts ante $0.01
+Player1 posts ante $0.01
+Player3 posts ante $0.01
+*** 3rd STREET ***
+Main pot $0.05 | Rake $0.00
+Dealt to Hero [As 2s Qs]
+Dealt to Player2 [Qd]
+Dealt to Player3 [Tc]
+Dealt to Player0 [7d]
+Dealt to Player1 [3h]
+Player1 brings in $0.02
+Player2 calls $0.02
+Player3 folds
+Hero raises $0.04 to $0.04
+Player0 calls $0.04
+Player1 calls $0.02
+Player2 calls $0.02
+*** 4th STREET ***
+Main pot $0.21 | Rake $0.00
+Dealt to Hero [As 2s Qs] [3c]
+Dealt to Player0 [7d] [6h]
+Dealt to Player1 [3h] [3d]
+Dealt to Player2 [Qd] [2d]
+Player1 checks
+Player2 checks
+Hero checks
+Player0 checks
+*** 5th STREET ***
+Main pot $0.21 | Rake $0.00
+Dealt to Hero [As 2s Qs 3c] [8c]
+Dealt to Player0 [7d 6h] [4h]
+Dealt to Player1 [3h 3d] [Jd]
+Dealt to Player2 [Qd 2d] [Ac]
+Player1 checks
+Player2 checks
+Hero checks
+Player0 checks
+*** 6th STREET ***
+Main pot $0.21 | Rake $0.00
+Dealt to Hero [As 2s Qs 3c 8c] [5d]
+Dealt to Player0 [7d 6h 4h] [5s]
+Dealt to Player1 [3h 3d Jd] [8h]
+Dealt to Player2 [Qd 2d Ac] [Ad]
+Player2 bets $0.08
+Hero calls $0.08
+Player0 folds
+Player1 folds
+*** 7th STREET ***
+Main pot $0.36 | Rake $0.01
+Dealt to Hero [As 2s Qs 3c 8c 5d] [Jc]
+Player2 bets $0.08
+Hero folds
+Uncalled bet ($0.08) returned to Player2
+Player2 does not show
+*** SUMMARY ***
+Total pot $0.36 | Rake $0.01
+Seat 1: Hero folded on the 7th Street
+Seat 4: Player0 folded on the 6th Street
+Seat 5: Player1 folded on the 6th Street
+Seat 7: Player2 did not show and won $0.36
+Seat 8: Player3 folded on the 3rd Street and did not bet
+

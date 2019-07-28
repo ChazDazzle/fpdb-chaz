@@ -1,0 +1,57 @@
+Game Hand #82980175 - Tournament #11212445 - Omaha H/L(Pot Limit) - Level 1 (250.00/500.00)- 2019/07/25 02:31:33 UTC
+Table '1' 9-max Seat #3 is the button
+Seat 1: Hero (30000.00)
+Seat 3: Player0 (30000.00)
+Seat 4: Player1 (30000.00)
+Seat 5: Player2 (30000.00)
+Seat 6: Player3 (30000.00)
+Seat 9: Player4 (30000.00)
+Dealt to Hero [4s]
+Dealt to Player3 [7s]
+Dealt to Player0 [Qc]
+Dealt to Player1 [7h]
+Dealt to Player4 [6d]
+Dealt to Player2 [3s]
+Hero posts ante 25.00
+Player0 posts ante 25.00
+Player1 posts ante 25.00
+Player2 posts ante 25.00
+Player3 posts ante 25.00
+Player4 posts ante 25.00
+Player1 posts the small blind 250.00
+Player2 posts the big blind 500.00
+*** HOLE CARDS ***
+Main pot 150.00
+Dealt to Hero [Ks 9h 3d Th]
+Player3 raises 1900.00 to 1900.00
+Player4 folds
+Hero folds
+Player0 folds
+Player1 calls 1650.00
+Player2 folds
+*** FLOP *** [8d Jh 9d]
+Main pot 4450.00
+Player1 bets 2225.00
+Player3 raises 11125.00 to 11125.00
+Player1 calls 8900.00
+*** TURN *** [8d Jh 9d] [5s]
+Main pot 26700.00
+Player1 checks
+Player3 bets 16950.00 and is all-in
+Player1 calls 16950.00 and is all-in
+*** RIVER *** [8d Jh 9d 5s] [2c]
+Main pot 60600.00
+*** SHOW DOWN ***
+Main pot 60600.00
+Player1 shows [Kc Jc 2h 3s] (HI - two pair, Jacks and Deuces [Jh Jc 2h 2c 9d])
+Player3 shows [Td Ad Qd 4s] (HI - a straight, Queen high [Qd Jh Td 9d 8d] | LO - [8,5,4,2,1])
+Player3 collected 60600.00 from main pot
+*** SUMMARY ***
+Total pot 60600.00
+Board [8d Jh 9d 5s 2c]
+Seat 1: Hero folded on the Pre-Flop and did not bet
+Seat 3: Player0 (button) folded on the Pre-Flop
+Seat 4: Player1 (small blind) showed [Kc Jc 2h 3s] and lost with HI - two pair, Jacks and Deuces [Jh Jc 2h 2c 9d]
+Seat 5: Player2 (big blind) folded on the Pre-Flop
+Seat 6: Player3 showed [Td Ad Qd 4s] and won 60600.00 with HI - a straight, Queen high [Qd Jh Td 9d 8d] | LO - [8,5,4,2,1]
+Seat 9: Player4 folded on the Pre-Flop and did not bet
