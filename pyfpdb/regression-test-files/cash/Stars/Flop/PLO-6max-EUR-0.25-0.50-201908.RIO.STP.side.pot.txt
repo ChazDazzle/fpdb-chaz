@@ -1,0 +1,50 @@
+Run It Once Poker Hand #36197946:  Omaha Pot Limit (€0.25/€0.50) - 2019/08/14 17:55 UTC [2019/08/14 18:55 CET]
+Table ID '36197292' 6-Max Seat #1 is the button
+Seat 1: Roger D (€96.85 in chips)
+Seat 2: Rusty I (€39.09 in chips)
+Seat 3: Hero (€50 in chips)
+Seat 4: Ricky N (€121.42 in chips)
+Seat 5: Nelson B (€30.36 in chips)
+Seat 6: Reggie U (€50 in chips)
+Rusty I: posts small blind €0.25
+Hero: posts big blind €0.50
+*** HOLE CARDS ***
+STP added: €5.00
+Dealt to Rusty I [9s 8c 6s 5d]
+Dealt to Hero [4h 2d 7h Qs]
+Dealt to Ricky N [Ac Jd 5h 4d]
+Dealt to Nelson B [8h Jc 2h 3c]
+Dealt to Reggie U [7c 6c 9h Td]
+Dealt to Roger D [3s Ah 8d 8s]
+Ricky N: raises €1.25 to €1.75
+Nelson B: folds
+Reggie U: calls €1.75
+Roger D: calls €1.75
+Rusty I: raises €7.50 to €9.25
+Hero: folds
+Ricky N: raises €22.50 to €31.75
+Reggie U: calls €30
+Roger D: folds
+Rusty I: raises €7.34 to €39.09 and is all-in
+Ricky N: calls €7.34
+Reggie U: calls €7.34
+*** FLOP *** [2c Kd 5c]
+Ricky N: bets €82.33 and is all-in
+Reggie U: calls €10.91 and is all-in
+*** TURN *** [2c Kd 5c] [2s]
+*** RIVER *** [2c Kd 5c 2s] [Ad]
+*** SHOWDOWN ***
+Ricky N shows [Ac Jd 5h 4d] for Two Pairs [Ad Ac Kd 5h 5c]
+Ricky N shows [Ac Jd 5h 4d] for Two Pairs [Ad Ac Kd 5h 5c]
+Uncalled bet (€71.42) returned to Ricky N
+Ricky N collected €26.82 from side pot 1
+Ricky N collected €122.02 from pot
+*** SUMMARY ***
+Total pot €146.34 | Main pot €119.52 | Side pot €21.82 | STP €5.00 | Rake €2.50
+Board [2c Kd 5c 2s Ad]
+Seat 5: Nelson B folded before Flop
+Seat 3: Hero (big blind) folded before Flop
+Seat 1: Roger D (button) folded before Flop
+Seat 4: Ricky N showed [Ac Jd 5h 4d] and won €143.84 with Two Pairs A 5 and K
+Seat 2: Rusty I (small blind) mucked [9s 8c 6s 5d] and lost
+Seat 6: Reggie U mucked [7c 6c 9h Td] and lost
