@@ -710,6 +710,7 @@ class DerivedStats():
         # if there are > 1 sb or bb only the first is used!
         if ub:
             self.handsplayers[ub[0]]['street0InPosition'] = True
+            if ub[0] not in players: players.append(ub[0])              
         if bb:
             self.handsplayers[bb[0]]['position'] = 'B'
             self.handsplayers[bb[0]]['street0InPosition'] = True
@@ -726,7 +727,7 @@ class DerivedStats():
             players.insert(0, players.pop())
 
         #print "DEBUG: actions: '%s'" % actions
-        #print "DEBUG: bb: '%s' sb: '%s' bi: '%s' plyrs: '%s'" %(bb, sb, bi, players)
+        #print "DEBUG: ub: '%s' bb: '%s' sb: '%s' bi: '%s' plyrs: '%s'" %(ub, bb, sb, bi, players)
         for i,player in enumerate(reversed(players)): 
             self.handsplayers[player]['position'] = i
             self.hands['maxPosition'] = i
