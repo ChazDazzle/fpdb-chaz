@@ -174,7 +174,7 @@ class Importer:
     def addImportFile(self, filename, site = "auto"):
         #print "addimportfile: filename is a", filename.__class__
         # filename not guaranteed to be unicode
-        if self.filelist.get(filename)!=None or not os.path.exists(filename):
+        if self.filelist.get(filename)!=None or not os.path.exists(filename) or filename.endswith('winamax_positioning_file.dat'):
             return False
 
         self.idsite.processFile(filename)
