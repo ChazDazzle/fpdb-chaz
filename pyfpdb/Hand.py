@@ -481,7 +481,7 @@ class Hand(object):
         if cards[4]:
             self.setCommunityCards('RIVER', [cards[4]])
 
-        if res['runittwice'] or self.gametype['split']:
+        if res['runittwice'] or self.gametype.get('split'):
             # Get runItTwice boards
             q = db.sql.query['singleHandBoards']
             q = q.replace('%s', db.sql.query['placeholder'])
