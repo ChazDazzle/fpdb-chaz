@@ -474,7 +474,7 @@ if __name__ == '__main__':
     settings.update(config.get_default_paths())
 
     from PyQt5.QtWidgets import QApplication, QMainWindow
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     import SQL
     sql = SQL.Sql(db_server=settings['db-server'])
     i = GuiSessionViewer(config, sql, None, None)

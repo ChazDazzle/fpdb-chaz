@@ -337,7 +337,7 @@ if __name__== "__main__":
 
     if(options.gui == True):
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        app = QApplication([])
+        app = QApplication(["FPDB"])
         i = GuiAutoImport(settings, config, None, None)
         main_window = QMainWindow()
         main_window.setCentralWidget(i)

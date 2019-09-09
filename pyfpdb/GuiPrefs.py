@@ -119,7 +119,7 @@ if __name__=="__main__":
     config = Configuration.Config()
 
     from PyQt5.QtWidgets import QApplication, QMainWindow
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     main_window = QMainWindow()
     main_window.show()
     prefs = GuiPrefs(config, main_window)

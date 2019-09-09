@@ -164,7 +164,7 @@ if __name__=="__main__":
     config = Configuration.Config()
 
     from PyQt5.QtWidgets import QApplication, QMainWindow
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     main_window = QMainWindow()
     i = GuiLogView(config, main_window, None)
     main_window.show()

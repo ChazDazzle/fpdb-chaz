@@ -339,7 +339,7 @@ if __name__ == "__main__":
     settings.update(config.get_default_paths())
 
     from PyQt5.QtWidgets import QMainWindow
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     sql = SQL.Sql(db_server=settings['db-server'])
     main_window = QMainWindow()
     i = GuiHandViewer(config, sql, main_window)

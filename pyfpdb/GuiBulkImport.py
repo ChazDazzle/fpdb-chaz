@@ -137,7 +137,7 @@ if __name__ == '__main__':
     settings['cl_options'] = string.join(sys.argv[1:])
 
     from PyQt5.QtWidgets import QApplication, QMainWindow
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     main_window = QMainWindow()
     main_window.setCentralWidget(GuiBulkImport(settings, config))
     main_window.show()

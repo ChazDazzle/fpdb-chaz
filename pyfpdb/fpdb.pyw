@@ -1315,6 +1315,6 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
 
 
 if __name__ == "__main__":
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     me = fpdb()
     app.exec_()
