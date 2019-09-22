@@ -701,13 +701,14 @@ class PokerStars(HandHistoryConverter):
             m = self.re_WinningRankOne.search(hand.handText)
             if m: winner = m.group('PNAME')
             
-            for pname, amount in koAmounts.iteritems():
-                if pname == winner:
-                    end = (amount + hand.endBounty[pname])
-                    hand.koCounts[pname] = (amount + hand.endBounty[pname]) / Decimal(hand.koBounty)
-                else:
-                    end = 0
-                    hand.koCounts[pname] = amount / Decimal(hand.koBounty)
+            if hand.koBounty > 0:
+                for pname, amount in koAmounts.iteritems():
+                    if pname == winner:
+                        end = (amount + hand.endBounty[pname])
+                        hand.koCounts[pname] = (amount + hand.endBounty[pname]) / Decimal(hand.koBounty)
+                    else:
+                        end = 0
+                        hand.koCounts[pname] = amount / Decimal(hand.koBounty)
         else:
             for a in self.re_Bounty.finditer(hand.handText):
                 if a.group('SPLIT') == 'split':

@@ -1,0 +1,65 @@
+PokerStars Hand #204469397162: Tournament #2570765244, Freeroll  Hold'em No Limit - Level XII (350/700) - 2019/09/21 16:47:02 MSK [2019/09/21 9:47:02 ET]
+Table '2570765244 708' 9-max Seat #1 is the button
+Seat 1: Player0 (34539 in chips, $0.91 bounty) 
+Seat 2: Player1 (270 in chips, $0.61 bounty) 
+Seat 3: Player2 (38719 in chips, $3.70 bounty) 
+Seat 4: Player3 (502 in chips, $0.61 bounty) is sitting out
+Seat 5: Player4 (38232 in chips, $2.26 bounty) 
+Seat 6: Player5 (16208 in chips, $1.96 bounty) 
+Seat 7: Player6 (11898 in chips, $1.97 bounty) 
+Seat 8: Player7 (24479 in chips, $2.41 bounty) 
+Seat 9: Player8 (14745 in chips, $2.49 bounty) 
+Player0: posts the ante 85
+Player1: posts the ante 85
+Player2: posts the ante 85
+Player3: posts the ante 85
+Player4: posts the ante 85
+Player5: posts the ante 85
+Player6: posts the ante 85
+Player7: posts the ante 85
+Player8: posts the ante 85
+Player1: posts small blind 185 and is all-in
+Player2: posts big blind 700
+*** HOLE CARDS ***
+Dealt to Player1 [6h 5s]
+Player3: folds 
+Player4: folds 
+Player5: raises 700 to 1400
+Player6: folds 
+Player7: folds 
+Player8: calls 1400
+Player0: calls 1400
+Player2: calls 700
+*** FLOP *** [7h 7s 3s]
+Player2: checks 
+Player5: checks 
+Player8: checks 
+Player0: checks 
+*** TURN *** [7h 7s 3s] [8c]
+Player2: bets 3500
+Player5: folds 
+Player8: folds 
+Player0: calls 3500
+*** RIVER *** [7h 7s 3s 8c] [8d]
+Player2: bets 7000
+Player0: folds 
+Uncalled bet (7000) returned to Player2
+*** SHOW DOWN ***
+Player2: shows [2c Qh] (two pair, Eights and Sevens)
+Player2 collected 11860 from side pot
+Player1: shows [6h 5s] (two pair, Eights and Sevens - lower kicker)
+Player2 collected 1690 from main pot
+Player2 wins $0.31 for eliminating Player1 and their own bounty increases by $0.30 to $4
+Player1 finished the tournament in 1020th place
+*** SUMMARY ***
+Total pot 13550 Main pot 1690. Side pot 11860. | Rake 0 
+Board [7h 7s 3s 8c 8d]
+Seat 1: Player0 (button) folded on the River
+Seat 2: Player1 (small blind) showed [6h 5s] and lost with two pair, Eights and Sevens
+Seat 3: Player2 (big blind) showed [2c Qh] and won (13550) with two pair, Eights and Sevens
+Seat 4: Player3 folded before Flop (didn't bet)
+Seat 5: Player4 folded before Flop (didn't bet)
+Seat 6: Player5 folded on the Turn
+Seat 7: Player6 folded before Flop (didn't bet)
+Seat 8: Player7 folded before Flop (didn't bet)
+Seat 9: Player8 folded on the Turn
