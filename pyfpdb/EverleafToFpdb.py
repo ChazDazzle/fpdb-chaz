@@ -214,14 +214,6 @@ or None if we fail to get the info """
         for a in m:
             seatnum = int(a.group('SEAT'))
             hand.addPlayer(seatnum, a.group('PNAME'), a.group('CASH'))
-            if seatnum > 8:
-                hand.maxseats = 10 # they added 8-seat games now
-            elif seatnum > 6:
-                hand.maxseats = 8 # everleaf currently does 2/6/10 games, so if seats > 6 are in use, it must be 10-max.
-                # TODO: implement lookup list by table-name to determine maxes, then fall back to 6 default/10 here, if there's no entry in the list?
-            elif seatnum > 4:
-                hand.maxseats = 6 # they added 4-seat games too!
-
 
     def markStreets(self, hand):
         if hand.gametype['base'] == 'hold':
