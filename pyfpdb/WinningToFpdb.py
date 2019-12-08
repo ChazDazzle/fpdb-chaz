@@ -269,7 +269,7 @@ class Winning(HandHistoryConverter):
     )
     
     re_Action2       = re.compile(r"""
-        ^%(PLYR)s(?P<ATYPE>\sbets|\schecks|\sraises|\scalls|\sfolds)
+        ^%(PLYR)s(?P<ATYPE>\sbets|\schecks|\sraises|\scalls|\sfolds|\scaps|\scap|\sstraddle)
         (\s%(CUR)s(?P<BET>[,.\d]+))?(\sto\s%(CUR)s(?P<BETTO>[,.\d]+))? 
         \s*(and\sis\sall\-in)?\s*$"""
         %  substitutions, re.MULTILINE|re.VERBOSE
@@ -972,7 +972,7 @@ class Winning(HandHistoryConverter):
                 hand.addCheck( street, action.group('PNAME'))
             elif action.group('ATYPE') == ' calls':
                 hand.addCall( street, action.group('PNAME'), self.clearMoneyString(action.group('BET')) )
-            elif action.group('ATYPE') == ' raises':
+            elif action.group('ATYPE') in (' raises', ' straddle', ' caps', ' cap'):
                 if action.group('BETTO') is not None:
                     hand.addRaiseTo( street, action.group('PNAME'), self.clearMoneyString(action.group('BETTO')) )
                 elif action.group('BET') is not None:
