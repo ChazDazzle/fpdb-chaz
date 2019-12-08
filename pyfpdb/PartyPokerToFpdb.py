@@ -45,12 +45,14 @@ class PartyPoker(HandHistoryConverter):
     limits = { 'NL':'nl', 'PL':'pl', '':'fl', 'FL':'fl', 'Limit':'fl' }
     games = {                         # base, category
                    "Texas Hold'em" : ('hold','holdem'),
+                    "Texas Holdem" : ('hold','holdem'),
                            'Omaha' : ('hold','omahahi'),
                         'Omaha Hi' : ('hold','omahahi'),
                      'Omaha Hi-Lo' : ('hold','omahahilo'),
                "7 Card Stud Hi-Lo" : ('stud','studhilo'),
                      "7 Card Stud" : ('stud','studhi'),
                   "Double Hold'em" : ('hold','2_holdem'),
+                   "Double Holdem" : ('hold','2_holdem'),
                       "Short Deck" : ('hold','6_holdem'),
             }
 
@@ -104,7 +106,7 @@ class PartyPoker(HandHistoryConverter):
 
     # Static regexes
     re_GameInfo = re.compile(u"""
-            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}(\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific|WPN)\))?\s+
+            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\w+?\s\*{5}(\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific|WPN)\))?\s+
             (.+?\shas\sleft\sthe\stable\.\s+)*
             (.+?\sfinished\sin\s\d+\splace\.\s+)*
             ((?P<CURRENCY>[%(LS)s]))?\s*
@@ -113,12 +115,13 @@ class PartyPoker(HandHistoryConverter):
              ((?P<CASHBI>[%(NUM)s]+)\s*(?:%(LEGAL_ISO)s)?\s*)(?P<FAST2>fastforward\s)?(?P<LIMIT2>(NL|PL|FL|))?\s*
             )
             (Tourney\s*)?
-            (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em|Short\sDeck))\s*
+            (?P<GAME>(Texas\sHold\'?em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'?em|Short\sDeck))\s*
             (Game\sTable\s*)?
             (
              (\((?P<LIMIT>(NL|PL|FL|Limit|))\)\s*)?
-             (\((?P<SNG>STT|MTT)\sTournament\s\#(?P<TOURNO>\d+)\)\s*)?
+             (\((?P<SNG>SNG|STT|MTT)(\sJackPot)?\sTournament\s\#(?P<TOURNO>\d+)\)\s*)?
             )?
+            (?:\s\(Buyin\s(?P<BUYIN>[%(LS)s][%(NUM)s]+)\s\+\s(?P<FEE>[%(LS)s][%(NUM)s]+)\))?
             \s*-\s*
             (?P<DATETIME>.+)
             """ % substitutions, re.VERBOSE | re.UNICODE)
@@ -133,7 +136,7 @@ class PartyPoker(HandHistoryConverter):
             """, re.VERBOSE|re.MULTILINE|re.DOTALL)
 
     re_GameInfoTrny1     = re.compile(u"""
-            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s+
+            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\w+?\s\*{5}\s+
             (?P<LIMIT>(NL|PL|FL|))\s*
             (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em|Short\sDeck))\s+
             (?:(?P<BUYIN>[%(LS)s]?\s?[%(NUM)s]+)\s*(?P<BUYIN_CURRENCY>%(LEGAL_ISO)s)?\s*Buy-in\s+)?
@@ -150,7 +153,7 @@ class PartyPoker(HandHistoryConverter):
             """ % substitutions, re.VERBOSE | re.UNICODE)
     
     re_GameInfoTrny2     = re.compile(u"""
-            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s+
+            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\w+?\s\*{5}\s+
             (?P<LIMIT>(NL|PL|FL|))\s*
             (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em|Short\sDeck))\s+
             (?:(?P<BUYIN>[%(LS)s]?\s?[%(NUM)s]+)\s*(?P<BUYIN_CURRENCY>%(LEGAL_ISO)s)?\s*Buy-in\s+)?
@@ -160,7 +163,7 @@ class PartyPoker(HandHistoryConverter):
             """ % substitutions, re.VERBOSE | re.UNICODE)
     
     re_GameInfoTrny3     = re.compile(u"""
-            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\s\*{5}\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific|WPN)\)\s+
+            \*{5}\sHand\sHistory\s(F|f)or\sGame\s(?P<HID>\d+)\w+?\s\*{5}\s\((?P<SITE>Poker\sStars|PokerMaster|Party|IPoker|Pacific|WPN)\)\s+
             Tourney\sHand\s
             (?P<LIMIT>(NL|PL|FL|))\s*
             (?P<GAME>(Texas\sHold\'em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'em|Short\sDeck))\s+
@@ -188,7 +191,7 @@ class PartyPoker(HandHistoryConverter):
 
     re_NewLevel = re.compile(u"^Blinds(-Antes)?\((?P<SB>[%(NUM)s ]+)/(?P<BB>[%(NUM)s ]+)(?:\s*-\s*(?P<ANTE>[%(NUM)s ]+))?\)" % substitutions, re.VERBOSE|re.MULTILINE|re.DOTALL)
     re_CountedSeats = re.compile("^Total\s+number\s+of\s+players\s*:\s*(?P<COUNTED_SEATS>\d+)", re.MULTILINE)
-    re_Identify     = re.compile(u'\*{5}\sHand\sHistory\s[fF]or\sGame\s\d+\s')
+    re_Identify     = re.compile(u'\*{5}\sHand\sHistory\s[fF]or\sGame\s\d+\w+?\s')
     re_SplitHands   = re.compile('\n\n+')
     re_TailSplitHands   = re.compile('(\x00+)')
     lineSplitter    = '\n'
