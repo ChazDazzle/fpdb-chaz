@@ -115,7 +115,7 @@ class Cake(HandHistoryConverter):
                         """
                          %  substitutions, re.MULTILINE|re.VERBOSE)
     re_sitsOut          = re.compile("^%s sits out" %  substitutions['PLYR'], re.MULTILINE)
-    re_ShownCards       = re.compile(r"^%s: (?P<SHOWED>shows|mucks) \[(?P<CARDS>.*)\] (\((?P<STRING>.*)\))?" % substitutions['PLYR'], re.MULTILINE)
+    re_ShownCards       = re.compile(r"^%s: (?P<SHOWED>shows|mucks) \[(?P<CARDS>.*)\] ?(\((?P<STRING>.*)\))?" % substitutions['PLYR'], re.MULTILINE)
     re_CollectPot       = re.compile(r"^%(PLYR)s:? wins (low pot |high pot )?%(CUR)s(?P<POT>[%(NUM)s]+)((\swith.+?)?\s+\(EUR\s(%(CUR)s)?(?P<EUROVALUE>[%(NUM)s]+)\))?" %  substitutions, re.MULTILINE)
     re_Finished         = re.compile(r"%(PLYR)s:? finished \d+ out of \d+ players" %  substitutions, re.MULTILINE)
     re_Dealer           = re.compile(r"Dealer:") #Some Cake hands just omit the game line so we can just discard them as partial
@@ -388,7 +388,7 @@ class Cake(HandHistoryConverter):
                     mucked = True
                     cards = [c.strip() for c in cards.split(',')] # needs to be a list, not a set--stud needs the order
 
-                #print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
+                print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
                 try:
                     hand.checkPlayerExists(m.group('PNAME'))
                     player = m.group('PNAME')
