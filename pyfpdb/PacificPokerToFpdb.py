@@ -42,7 +42,7 @@ class PacificPoker(HandHistoryConverter):
                      'LEGAL_ISO' : "USD|EUR|GBP|CAD|FPP",     # legal ISO currency codes
                            'PLYR': r'(?P<PNAME>.+?)',
                             'LS' : u"\$|\xe2\x82\xac|\u20ac|", # legal currency symbols - Euro(cp1252, utf-8)
-                           'NUM' : u".,\d\xa0",
+                           'NUM' : u"\s.,\d\xa0",
                            'CUR' : u"(\$|\xe2\x82\xac|\u20ac|)"
                     }
                     
