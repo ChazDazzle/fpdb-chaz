@@ -96,6 +96,7 @@ class PokerStars(HandHistoryConverter):
                           'OMAHA HI/LO' : ('hold','omahahilo'),
                          '5 Card Omaha' : ('hold', '5_omahahi'),
                    '5 Card Omaha Hi/Lo' : ('hold', '5_omaha8'),
+                         '6 Card Omaha' : ('hold', '6_omahahi'),
                            'Courchevel' : ('hold', 'cour_hi'),
                      'Courchevel Hi/Lo' : ('hold', 'cour_hilo'),
                                  'Razz' : ('stud','razz'), 
@@ -134,7 +135,7 @@ class PokerStars(HandHistoryConverter):
           # close paren of tournament info
           (?P<MIXED>HORSE|8\-Game|8\-GAME|HOSE|Mixed\sOmaha\sH/L|Mixed\sHold\'em|Mixed\sPLH/PLO|Mixed\sNLH/PLO|Mixed\sOmaha|Triple\sStud)?\s?\(?
           (?P<SPLIT>Split)?\s?
-          (?P<GAME>Hold\'em|HOLD\'EM|Hold\'em|6\+\sHold\'em|Razz|RAZZ|7\sCard\sStud|7\sCARD\sSTUD|7\sCard\sStud\sHi/Lo|7\sCARD\sSTUD\sHI/LO|Omaha|OMAHA|Omaha\sHi/Lo|OMAHA\sHI/LO|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|5\sCard\sOmaha(\sHi/Lo)?|Courchevel(\sHi/Lo)?)\s
+          (?P<GAME>Hold\'em|HOLD\'EM|Hold\'em|6\+\sHold\'em|Razz|RAZZ|7\sCard\sStud|7\sCARD\sSTUD|7\sCard\sStud\sHi/Lo|7\sCARD\sSTUD\sHI/LO|Omaha|OMAHA|Omaha\sHi/Lo|OMAHA\sHI/LO|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|(5|6)\sCard\sOmaha(\sHi/Lo)?|Courchevel(\sHi/Lo)?)\s
           (?P<LIMIT>No\sLimit|NO\sLIMIT|Fixed\sLimit|Limit|LIMIT|Pot\sLimit|POT\sLIMIT|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop)\)?,?\s
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?

@@ -1,0 +1,29 @@
+PokerStars Hand #211860382557:  6 Card Omaha Pot Limit ($0.25/$0.50 USD) - 2020/04/12 13:14:23 ET
+Table 'Telephus XI' 6-max Seat #3 is the button
+Seat 2: Player0 ($50.75 in chips) 
+Seat 3: Player1 ($24.01 in chips) 
+Seat 5: Player2 ($103.95 in chips) 
+Seat 6: Hero ($50 in chips) 
+Player2: posts small blind $0.25
+Hero: posts big blind $0.50
+*** HOLE CARDS ***
+Dealt to Hero [3s 7s 6d Qd Jc 2d]
+Player0: folds 
+Player1 has timed out
+Player1: folds 
+Player2: calls $0.25
+Hero: checks 
+*** FLOP *** [4c Kh 2s]
+Player2: checks 
+Hero: bets $0.95
+Player2: folds 
+Uncalled bet ($0.95) returned to Hero
+Hero collected $0.95 from pot
+Hero: doesn't show hand 
+*** SUMMARY ***
+Total pot $1 | Rake $0.05 
+Board [4c Kh 2s]
+Seat 2: Player0 folded before Flop (didn't bet)
+Seat 3: Player1 (button) folded before Flop (didn't bet)
+Seat 5: Player2 (small blind) folded on the Flop
+Seat 6: Hero (big blind) collected ($0.95)
