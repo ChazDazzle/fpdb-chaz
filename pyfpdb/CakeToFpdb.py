@@ -388,7 +388,7 @@ class Cake(HandHistoryConverter):
                     mucked = True
                     cards = [c.strip() for c in cards.split(',')] # needs to be a list, not a set--stud needs the order
 
-                print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
+                #print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
                 try:
                     hand.checkPlayerExists(m.group('PNAME'))
                     player = m.group('PNAME')
