@@ -73,6 +73,7 @@ class Hand(object):
         self.uncalledbets = False
         self.checkForUncalled = False
         self.adjustCollected = False
+        self.cashedOut = False
 
         # tourney stuff
         self.tourNo = None
