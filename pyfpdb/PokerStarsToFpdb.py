@@ -741,10 +741,11 @@ class PokerStars(HandHistoryConverter):
         i=0
         pre, post = hand.handText.split('*** SUMMARY ***')
         if hand.runItTimes==0:
-            m1 = self.re_CashedOut.search(pre)
-            if m1:
-                hand.addCollectPot(player=m1.group('PNAME'),pot=m1.group('POT'))
-                hand.cashedOut = True
+            if self.re_CashedOut.search(pre):
+                for m1 in self.re_CashedOut.finditer(pre):
+                    pot = self.clearMoneyString(m1.group('POT'))
+                    hand.addCollectPot(player=m1.group('PNAME'),pot=pot)
+                    hand.cashedOut = True
             else:
                 for m in self.re_CollectPot.finditer(post):
                     pot = self.clearMoneyString(m.group('POT'))
