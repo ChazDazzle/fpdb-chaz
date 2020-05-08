@@ -201,8 +201,9 @@ class PokerStars(HandHistoryConverter):
     re_sitsOut          = re.compile("^%s sits out" %  substitutions['PLYR'], re.MULTILINE)
     #re_ShownCards       = re.compile("^Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(?P<SHOWED>showed|mucked) \[(?P<CARDS>.*)\]( and (lost|(won|collected) \(%(CUR)s(?P<POT>[.\d]+)\)) with (?P<STRING>.+?)(,\sand\s(won\s\(%(CUR)s[.\d]+\)|lost)\swith\s(?P<STRING2>.*))?)?$" % substitutions, re.MULTILINE)
     re_CollectPot       = re.compile(r"Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(collected|showed \[.*\] and (won|collected)) \(?%(CUR)s(?P<POT>[,.\d]+)\)?(, mucked| with.*|)" %  substitutions, re.MULTILINE)
-    re_CollectPot2      = re.compile(r"^%(PLYR)s collected %(CUR)s(?P<POT>[,.\d]+)" %  substitutions, re.MULTILINE)
-    re_CashedOut        = re.compile(r"^%(PLYR)s cashed out the hand for %(CUR)s(?P<POT>[,.\d]+)\s\|\sCash\sOut\sFee\s%(CUR)s(?P<RAKE>[,\.0-9]+)" %  substitutions, re.MULTILINE)
+    #Vinsand88 cashed out the hand for $2.19 | Cash Out Fee $0.02
+    re_CollectPot2      = re.compile(r"^%(PLYR)s (collected|cashed out the hand for) %(CUR)s(?P<POT>[,.\d]+)" %  substitutions, re.MULTILINE)
+    re_CashedOut        = re.compile(r"cashed\sout\sthe\shand")
     re_WinningRankOne   = re.compile(u"^%(PLYR)s wins the tournament and receives %(CUR)s(?P<AMT>[,\.0-9]+) - congratulations!$" %  substitutions, re.MULTILINE)
     re_WinningRankOther = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place and received %(CUR)s(?P<AMT>[,.0-9]+)\.$" %  substitutions, re.MULTILINE)
     re_RankOther        = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place$" %  substitutions, re.MULTILINE)
@@ -740,22 +741,17 @@ class PokerStars(HandHistoryConverter):
                     blindsantes = sum([a[2] for a in hand.actions.get('BLINDSANTES')]) 
         i=0
         pre, post = hand.handText.split('*** SUMMARY ***')
-        if hand.runItTimes==0:
-            if self.re_CashedOut.search(pre):
-                for m1 in self.re_CashedOut.finditer(pre):
-                    pot = self.clearMoneyString(m1.group('POT'))
-                    hand.addCollectPot(player=m1.group('PNAME'),pot=pot)
-                    hand.cashedOut = True
-            else:
-                for m in self.re_CollectPot.finditer(post):
-                    pot = self.clearMoneyString(m.group('POT'))
-                    if bovadaUncalled_v1 and Decimal(pot) == (blindsantes + hand.pot.stp):
-                        hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot) - adjustment))
-                    elif bovadaUncalled_v2:
-                        hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot)*2))
-                    else:
-                        hand.addCollectPot(player=m.group('PNAME'),pot=pot)
-                    i+=1
+        hand.cashedOut = self.re_CashedOut.search(pre) != None
+        if hand.runItTimes==0 and hand.cashedOut == False:
+            for m in self.re_CollectPot.finditer(post):
+                pot = self.clearMoneyString(m.group('POT'))
+                if bovadaUncalled_v1 and Decimal(pot) == (blindsantes + hand.pot.stp):
+                    hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot) - adjustment))
+                elif bovadaUncalled_v2:
+                    hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot)*2))
+                else:
+                    hand.addCollectPot(player=m.group('PNAME'),pot=pot)
+                i+=1
         if i==0:
             for m in self.re_CollectPot2.finditer(pre):
                 pot = self.clearMoneyString(m.group('POT'))
