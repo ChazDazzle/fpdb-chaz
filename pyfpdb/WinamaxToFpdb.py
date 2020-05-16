@@ -478,7 +478,8 @@ class Winamax(HandHistoryConverter):
                     hand.addHoleCards(street, player, open=newcards, closed=oldcards, shown=False, mucked=False, dealt=False)
 
     def readAction(self, hand, street):
-        m = self.re_Action.finditer(hand.streets[street])
+        streetsplit = hand.streets[street].split('*** SUMMARY ***')
+        m = self.re_Action.finditer(streetsplit[0])
         for action in m:
             #acts = action.groupdict()
             #print "DEBUG: acts: %s" % acts
