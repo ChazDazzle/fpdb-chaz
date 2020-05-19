@@ -82,7 +82,9 @@ class PokerStarsSummary(TourneySummary):
     
     re_Identify = re.compile(u'((PokerStars|Full\sTilt)\sTournament\s\#\d+|<title>TOURNEYS:)')
     
-    re_TourNo = re.compile("\#(?P<TOURNO>[0-9]+),")
+    re_TourNo = re.compile("\#(?P<TOURNO>[0-9]+),")    
+    re_Header = re.compile("History\sRequest\s\-\s")
+    re_emailHeader = re.compile("Delivered\-To\:\s")
 
     re_TourneyInfo = re.compile(u"""
                         \#(?P<TOURNO>[0-9]+),\s
@@ -336,8 +338,12 @@ class PokerStarsSummary(TourneySummary):
             self.addPlayer(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount)
 
     def parseSummaryFile(self):
-        m = self.re_TourneyInfo.search(self.summaryText)
+        m = self.re_TourneyInfo.search(self.summaryText.replace('=20', ''))
         if m == None:
+            if self.re_Header.match(self.summaryText):
+                raise FpdbHandPartial
+            if self.re_emailHeader.match(self.summaryText):
+                raise FpdbHandPartial
             tmp = self.summaryText[0:200]
             log.error(_("PokerStarsSummary.parseSummaryFile: '%s'") % self.summaryText)
             raise FpdbParseError
