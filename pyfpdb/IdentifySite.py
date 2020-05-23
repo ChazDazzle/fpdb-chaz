@@ -238,7 +238,7 @@ class IdentifySite:
                             f.ftype = "summary"
                             return f
                 else:
-                    m3 = site.re_SumIdentify.search(whole_file[:5000])
+                    m3 = site.re_SumIdentify.search(whole_file[:10000])
                     if m3:
                         f.site = site
                         f.ftype = "summary"

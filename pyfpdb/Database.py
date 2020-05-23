@@ -3178,7 +3178,7 @@ class Database:
     def insertPlayer(self, name, site_id, hero):
         insert_player = "INSERT INTO Players (name, siteId, hero, chars) VALUES (%s, %s, %s, %s)"
         insert_player = insert_player.replace('%s', self.sql.query['placeholder'])
-        _name = Charset.to_db_utf8(name)
+        _name = Charset.to_db_utf8(name)[:32]
         if re_char.match(_name[0]):
             char = '123'
         elif len(_name)==1 or re_char.match(_name[1]):

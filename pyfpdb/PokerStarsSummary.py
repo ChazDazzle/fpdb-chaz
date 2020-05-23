@@ -103,6 +103,15 @@ class PokerStarsSummary(TourneySummary):
                         (?P<DATETIME>.*$)
                         """ % substitutions ,re.VERBOSE|re.MULTILINE)
     
+    #You made 5 rebuys and 1 addons for a total of USD 3,180.00.
+    re_rebuyAddOn = re.compile("""
+                        You\smade\s(?P<REBUYCOUNT>\d+)\srebuys\sand\s(?P<ADDONCOUNT>\d+)\saddons\sfor\sa\stotal\sof\s(%(LEGAL_ISO)s)\s(?P<REBUYADDON>[,.0-9]+)
+                               """ % substitutions ,re.VERBOSE|re.MULTILINE)
+    #You collected 5 bounties for a total of USD 875.00.
+    re_KOBounties = re.compile("""
+                        You\scollected\s(?P<KOCOUNT>\d+)\sbounties\sfor\sa\stotal\sof\s(%(LEGAL_ISO)s)\s(?P<KOBOUNTY>[,.0-9]+)
+                               """ % substitutions ,re.VERBOSE|re.MULTILINE)
+    
     re_HTMLTourneyInfo = re.compile(ur'<td align="right">(?P<DATETIME>.*)</td>' \
                         ur'<td align="center">(?P<TOURNO>[0-9]+)</td>' \
                         ur'(<td>(?P<TOURNAME>.*)</td>)?' \
@@ -150,6 +159,7 @@ class PokerStarsSummary(TourneySummary):
     re_HTMLDateTime = re.compile("""(?P<M>[0-9]+)\/(?P<D>[0-9]+)\/(?P<Y>[0-9]{4})[\- ]+(?P<H>[0-9]+):(?P<MIN>[0-9]+):(?P<S>[0-9]+) (?P<AMPM>(AM|PM))""", re.MULTILINE)
     re_HTMLTourneyExtraInfo = re.compile("\[(Deep\s)?((?P<MAX>\d+)-Max,\s?)?((\dx\-)?(?P<SPEED>Turbo|Hyper\-Turbo))?(, )?(?P<REBUYADDON1>\dR\dA)?")
     re_XLSDateTime = re.compile("^[.0-9]+$")
+    re_Rank = re.compile(u"^You\sfinished\sin\s(?P<RANK>[0-9]+)(st|nd|rd|th)\splace\.", re.MULTILINE)
     #re_WinningRankOne   = re.compile(u"^%(PLYR)s wins the tournament and receives %(CUR)s(?P<AMT>[\.0-9]+) - congratulations!$" %  substitutions, re.MULTILINE)
     #re_WinningRankOther = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place and received %(CUR)s(?P<AMT>[.0-9]+)\.$" %  substitutions, re.MULTILINE)
     #re_RankOther        = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place$" %  substitutions, re.MULTILINE)
@@ -171,8 +181,6 @@ class PokerStarsSummary(TourneySummary):
         if self.hhtype == "summary":
             self.parseSummaryFile()
         elif self.hhtype == "html":
-            if self.header==self.summaryText:
-                raise FpdbHandPartial
             self.parseSummaryHtml()
         elif self.hhtype == "xls":
             self.parseSummaryXLS()
@@ -228,6 +236,8 @@ class PokerStarsSummary(TourneySummary):
             m1 = self.re_HTMLPlayer2.search(self.header)
         m2 = self.re_HTMLTourneyInfo.search(self.summaryText)
         if m1 == None or m2==None:
+            if self.re_HTMLPlayer1.search(self.summaryText) or self.re_HTMLPlayer2.search(self.summaryText):
+                raise FpdbHandPartial
             tmp1 = self.header[0:200] if m1 == None else 'NA'
             tmp2 = self.summaryText if m2 == None else 'NA'
             log.error(_("PokerStarsSummary.parseSummaryHtml: '%s' '%s") % (tmp1, tmp2))
@@ -261,12 +271,21 @@ class PokerStarsSummary(TourneySummary):
                 self.buyin = int(100*Decimal(self.clearMoneyString(info['BUYIN'].replace(" ", ""))))
         if info['FEE'] != None:
             self.fee   = int(100*Decimal(self.clearMoneyString(info['FEE'].replace(" ", ""))))
-        if (('REBUYADDON' in info and Decimal(self.clearMoneyString(info['REBUYADDON'].replace(" ", "")))>0) or
-            ('REBUYADDON1' in info and info['REBUYADDON1'] != None)):
+        if (('REBUYADDON' in info and Decimal(self.clearMoneyString(info['REBUYADDON'].replace(" ", "")))>0)):
+            self.isRebuy   = True
+            self.isAddOn   = True            
+            rebuyAddOnAmt = int(100*Decimal(self.clearMoneyString(info['REBUYADDON'].replace(" ", ""))))
+            if self.buyin != 0:
+                rebuys = int(rebuyAddOnAmt / self.buyin)
+                if rebuys != 0:
+                    self.fee = self.fee / (rebuys + 1)
+            self.rebuyCost = self.buyin + self.fee
+            self.addOnCost = self.buyin + self.fee
+        if ('REBUYADDON1' in info and info['REBUYADDON1'] != None):
             self.isRebuy   = True
             self.isAddOn   = True
-            self.rebuyCost = self.buyin
-            self.addOnCost = self.buyin
+            self.rebuyCost = self.buyin + self.fee
+            self.addOnCost = self.buyin + self.fee
         if 'ENTRIES'   in info: 
             self.entries = int(self.clearMoneyString(info['ENTRIES']))
         if 'MAX' in info and info['MAX'] != None:
@@ -323,19 +342,32 @@ class PokerStarsSummary(TourneySummary):
             rebuyCount = None
             addOnCount = None
             koCount = None
+            entryId = 1
             
             if 'WINNINGS' in info and info['WINNINGS'] != None:
                 winnings = int(100*Decimal(self.clearMoneyString(info['WINNINGS'])))
                 
-            if self.isRebuy:
+            if (('REBUYADDON' in info and Decimal(self.clearMoneyString(info['REBUYADDON'].replace(" ", "")))>0)):
                 rebuyAddOnAmt = int(100*Decimal(self.clearMoneyString(info['REBUYADDON'].replace(" ", ""))))
-                rebuyCount = rebuyAddOnAmt/self.rebuyCost
+                rebuyCount = rebuyAddOnAmt/self.buyin
                 
             # KOs should be exclusively handled in the PokerStars hand history files
             if 'KOS' in info and info['KOS'] != None and info['KOS'] != '0.00':
                 self.isKO = True
-                    
-            self.addPlayer(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount)
+                
+            
+            re_HTMLEntries = re.compile(ur'<td align="center">%s</td>.+?<td align="?right"?>(?P<RANK>[,.0-9]+)</td>' % self.tourNo, re.IGNORECASE)
+            m = re_HTMLEntries.finditer(self.header)
+            entries = []
+            for a in m:
+                entries.append(int(self.clearMoneyString(a.group('RANK'))))
+            entries.sort(reverse=True)
+                
+            if len(entries) > 1: 
+                entryId = entries.index(rank) + 1
+                self.isReEntry = True
+            
+            self.addPlayer(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount, entryId)
 
     def parseSummaryFile(self):
         m = self.re_TourneyInfo.search(self.summaryText.replace('=20', ''))
@@ -375,6 +407,18 @@ class PokerStarsSummary(TourneySummary):
             self.buyin = int(100*Decimal(self.clearMoneyString(mg['BUYIN']))) + self.koBounty
         if mg['FEE'] != None:
             self.fee   = int(100*Decimal(self.clearMoneyString(mg['FEE'])))
+            
+        m2 = self.re_rebuyAddOn.search(self.summaryText)
+        if m2 and m2.group('REBUYCOUNT') != None:
+            self.isRebuy = True
+            self.isAddOn = True
+            #You made 5 rebuys and 1 addons for a total of USD 3,180.00.
+            rebuyCountHero = int(m2.group('REBUYCOUNT')) + int(m2.group('ADDONCOUNT')) #combine b/c html summary does not split out
+            self.rebuyCost = self.buyin + self.fee
+            self.addOnCost = self.buyin + self.fee
+        else:
+            rebuyCountHero = None
+            
         if 'PRIZEPOOL' in mg and mg['PRIZEPOOL'] != None:
             if 'Sunday Million' in mg['PRIZEPOOL']:
                 self.isSatellite = True                
@@ -419,6 +463,12 @@ class PokerStarsSummary(TourneySummary):
             self.isFast = True
             
         self.lookupStructures(self.startTime)
+        
+        m3 = self.re_Rank.search(self.summaryText)
+        if m3:
+            heroRank = int(m3.group('RANK'))
+        else:
+            heroRank = 0
 
         m = self.re_Player.finditer(self.summaryText)
         for a in m:
@@ -430,7 +480,7 @@ class PokerStarsSummary(TourneySummary):
             rebuyCount = None
             addOnCount = None
             koCount = None
-            entryId = 1
+            entryId = 1             
 
             if 'WINNINGS' in mg and mg['WINNINGS'] != None:
                 winnings = int(100*Decimal(self.clearMoneyString(mg['WINNINGS'])))
@@ -468,8 +518,12 @@ class PokerStarsSummary(TourneySummary):
             if 'ENTRYID' in mg and mg['ENTRYID'] != None: 
                 entryId = int(mg['ENTRYID'])
                 self.isReEntry = True
+            
+            if heroRank == rank and entryId == 1:
+                rebuyCount = rebuyCountHero
+                addOnCount = None
+                koCount = None
 
-            #TODO: currency, ko/addon/rebuy count -> need examples!
             #print "DEBUG: addPlayer(%s, %s, %s, %s, None, None, None)" %(rank, name, winnings, self.currency)
             #print "DEBUG: self.buyin: %s self.fee %s" %(self.buyin, self.fee)
             self.addPlayer(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount, entryId)
