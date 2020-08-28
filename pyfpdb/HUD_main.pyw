@@ -119,7 +119,7 @@ class HUD_main(QObject):
         self.stdinThread.start()
 
         # a main window
-        self.main_window = QWidget(None, Qt.Dialog)
+        self.main_window = QWidget(None, Qt.Window)
 
         if options.xloc is not None or options.yloc is not None:
             if options.xloc is None:
