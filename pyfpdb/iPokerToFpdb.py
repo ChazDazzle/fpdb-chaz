@@ -179,6 +179,7 @@ class iPoker(HandHistoryConverter):
     re_non_decimal = re.compile(r'[^\d.,]+')
     re_Partial = re.compile('<startdate>', re.MULTILINE)
     re_UncalledBets = re.compile('<uncalled_bet_enabled>true<\/uncalled_bet_enabled>')
+    re_ClientVersion = re.compile('<client_version>(?P<VERSION>[.\d]+)</client_version>')
     re_FPP = re.compile(r'Pts\s')
     
     def compilePlayerRegexs(self, hand):
@@ -249,6 +250,11 @@ class iPoker(HandHistoryConverter):
             self.uncalledbets = False
         else:
             self.uncalledbets = True
+            mv = self.re_ClientVersion.search(handText)
+            if mv:
+                major_version = mv.group('VERSION').split('.')[0]
+                if int(major_version) >= 20:
+                    self.uncalledbets = False
 
         if tourney:
             self.info['type'] = 'tour'
