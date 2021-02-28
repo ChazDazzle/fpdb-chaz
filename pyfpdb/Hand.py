@@ -1303,7 +1303,7 @@ class DrawHand(Hand):
         self.allStreets = ['BLINDSANTES', 'DEAL', 'DRAWONE']
         self.holeStreets = ['DEAL', 'DRAWONE']
         self.actionStreets = ['BLINDSANTES', 'DEAL', 'DRAWONE']
-        if gametype['category'] in ["27_3draw","badugi", "a5_3draw"]:
+        if gametype['category'] in ["27_3draw","badugi", "a5_3draw", "badacey", "badeucey"]:
             self.streetList += ['DRAWTWO', 'DRAWTHREE']
             self.allStreets += ['DRAWTWO', 'DRAWTHREE']
             self.holeStreets += ['DRAWTWO', 'DRAWTHREE']

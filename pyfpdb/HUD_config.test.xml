@@ -2064,6 +2064,8 @@
         <hhc site="Enet" converter="EnetToFpdb"/>
         <hhc site="SealsWithClubs" converter="SealsWithClubsToFpdb"/>
         <hhc site="WinningPoker" converter="WinningToFpdb" summaryImporter="WinningSummary"/>
+        <hhc site="GGPoker" converter="GGPokerToFpdb"/>
+        <hhc site="KingsClub" converter="KingsClubToFpdb"/>
     </hhcs>
 
 

@@ -80,7 +80,7 @@ except ImportError:
     use_numpy = False
 
 
-DB_VERSION = 212
+DB_VERSION = 214
 
 # Variance created as sqlite has a bunch of undefined aggregate functions.
 
@@ -1884,6 +1884,8 @@ class Database:
         c.execute("INSERT INTO Sites (id,name,code) VALUES ('24', 'WinningPoker', 'WP')")
         c.execute("INSERT INTO Sites (id,name,code) VALUES ('25', 'PokerMaster', 'PM')")
         c.execute("INSERT INTO Sites (id,name,code) VALUES ('26', 'Run It Once Poker', 'RO')")
+        c.execute("INSERT INTO Sites (id,name,code) VALUES ('27', 'GGPoker', 'GG')")
+        c.execute("INSERT INTO Sites (id,name,code) VALUES ('28', 'KingsClub', 'KC')")
         #Fill Actions
         c.execute("INSERT INTO Actions (id,name,code) VALUES ('1', 'ante', 'A')")
         c.execute("INSERT INTO Actions (id,name,code) VALUES ('2', 'small blind', 'SB')")
