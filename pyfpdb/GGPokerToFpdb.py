@@ -122,7 +122,7 @@ class GGPoker(HandHistoryConverter):
           (?P<LIMIT>No\sLimit|Fixed\sLimit|Limit|Pot\sLimit|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop),?\s
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?
-          (Level(?P<LEVEL>[IVXLC\d]+)\s)?
+          (Level(?P<LEVEL>[IVXLC\d]+)\s?)?
           \(?                            # open paren of the stakes
           (?P<CURRENCY>%(LS)s|)?
           (ante\s\d+,\s)?
