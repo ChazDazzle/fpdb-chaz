@@ -95,6 +95,7 @@ class Bovada(HandHistoryConverter):
           \s)?
           (?P<HU>1\son\s1\s)? 
           (?P<LIMIT>No\sLimit|Fixed\sLimit|Pot\sLimit|Turbo)?
+          (\s\[(?P<VERSION>MVS)\])?
           (\s?Normal\s?)?
           (-\sLevel\s\d+?\s
           \(?                            # open paren of the stakes
@@ -330,9 +331,14 @@ class Bovada(HandHistoryConverter):
                 hand.maxseats = int(info[key])
             if key == 'HU' and info[key] != None:
                 hand.maxseats = 2
+            if key == 'VERSION':
+                hand.version = info[key]
                 
         if not hand.maxseats:
             hand.maxseats = 9
+            
+        if not hand.version:
+            hand.version = 'LEGACY'
     
     def readButton(self, hand):
         m = self.re_Button.search(hand.handText)
@@ -346,7 +352,7 @@ class Bovada(HandHistoryConverter):
         else:
             m = self.re_PlayerInfo.finditer(hand.handText)
         for a in m:
-            if re.search(r"%s (\s?\[ME\]\s)?: Card dealt to a spot" % re.escape(a.group('PNAME')), hand.handText):
+            if re.search(r"%s (\s?\[ME\]\s)?: Card dealt to a spot" % re.escape(a.group('PNAME')), hand.handText) or hand.version == 'MVS':
                 if not hand.buttonpos and a.group('PNAME')=='Dealer':
                     hand.buttonpos = int(a.group('SEAT'))
                 if a.group('HERO'):
@@ -634,7 +640,7 @@ class Bovada(HandHistoryConverter):
             re_CollectPot = self.re_CollectPot2
         else:
             re_CollectPot = self.re_CollectPot1
-        for m in re_CollectPot.finditer(hand.handText):
+        for m in re_CollectPot.finditer(hand.handText.replace(" [ME]", "")):# [ME]
             collect, pot = m.groupdict(), 0
             if 'POT1' in collect and collect['POT1']!=None:
                 pot += Decimal(self.clearMoneyString(collect['POT1']))
