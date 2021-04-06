@@ -1,0 +1,1712 @@
+Poker Hand #OM181427446: Omaha Pot Limit ($0.5/$1) - 2020/04/14 07:56:19
+Table 'PLOBronze12' 6-max Seat #6 is the button
+Seat 1: b84ff923 ($80.61 in chips)
+Seat 2: Hero ($100 in chips)
+Seat 4: b673c93c ($25.18 in chips)
+Seat 5: 6da5da63 ($21 in chips)
+Seat 6: e0ced697 ($110.24 in chips)
+b84ff923: posts small blind $0.5
+Hero: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Qs Qc 6c 3s]
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+b673c93c: folds
+6da5da63: folds
+e0ced697: folds
+b84ff923: raises $2 to $3
+Hero: calls $2
+*** FLOP *** [9c 8d Qh]
+b84ff923: bets $4
+Hero: calls $4
+*** TURN *** [9c 8d Qh] [Ts]
+b84ff923: checks
+Hero: checks
+*** RIVER *** [9c 8d Qh Ts] [Ah]
+b84ff923: bets $7
+Hero: folds
+Uncalled bet ($7) returned to b84ff923
+*** SHOWDOWN ***
+b84ff923 collected $14 from pot
+*** SUMMARY ***
+Total pot $14
+Board [9c 8d Qh Ts Ah]
+Seat 1: b84ff923 (small blind) won ($14)
+Seat 2: Hero (big blind) folded on the River
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: 6da5da63 folded before Flop (didn't bet)
+Seat 6: e0ced697 (button) folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427458: Omaha Pot Limit ($0.5/$1) - 2020/04/14 07:57:11
+Table 'PLOBronze12' 6-max Seat #1 is the button
+Seat 1: b84ff923 ($87.19 in chips)
+Seat 2: Hero ($93 in chips)
+Seat 3: 23aca38f ($20 in chips)
+Seat 4: b673c93c ($25.18 in chips)
+Seat 5: 6da5da63 ($21 in chips)
+Seat 6: e0ced697 ($110.24 in chips)
+Hero: posts small blind $0.5
+23aca38f: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Jh Jd 8d 4h]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+b673c93c: folds
+6da5da63: folds
+e0ced697: raises $2 to $3
+b84ff923: folds
+Hero: calls $2.5
+23aca38f: calls $2
+*** FLOP *** [6c Kh Kc]
+Hero: checks
+23aca38f: checks
+e0ced697: checks
+*** TURN *** [6c Kh Kc] [Ah]
+Hero: checks
+23aca38f: checks
+e0ced697: bets $7
+Hero: folds
+23aca38f: folds
+Uncalled bet ($7) returned to e0ced697
+*** SHOWDOWN ***
+e0ced697 collected $9 from pot
+*** SUMMARY ***
+Total pot $9
+Board [6c Kh Kc Ah]
+Seat 1: b84ff923 (button) folded before Flop (didn't bet)
+Seat 2: Hero (small blind) folded on the Turn
+Seat 3: 23aca38f (big blind) folded on the Turn
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: 6da5da63 folded before Flop (didn't bet)
+Seat 6: e0ced697 won ($9)
+
+
+Poker Hand #OM181427480: Omaha Pot Limit ($0.5/$1) - 2020/04/14 07:58:23
+Table 'PLOBronze12' 6-max Seat #2 is the button
+Seat 1: b84ff923 ($87.19 in chips)
+Seat 2: Hero ($90 in chips)
+Seat 3: 23aca38f ($17 in chips)
+Seat 4: b673c93c ($25.18 in chips)
+Seat 5: 6da5da63 ($21 in chips)
+Seat 6: e0ced697 ($115.97 in chips)
+23aca38f: posts small blind $0.5
+b673c93c: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ac Kh Jh 5s]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+6da5da63: folds
+e0ced697: folds
+b84ff923: folds
+Hero: raises $2.5 to $3.5
+23aca38f: calls $3
+b673c93c: calls $2.5
+*** FLOP *** [6c Kd Qc]
+23aca38f: checks
+b673c93c: checks
+Hero: bets $10.5
+23aca38f: calls $10.5
+b673c93c: folds
+*** TURN *** [6c Kd Qc] [3s]
+23aca38f: bets $3 and is all-in
+Hero: calls $3
+23aca38f: shows [6s Jd Kc Ts] (Pair of Kings and Pair of Sixes)
+Hero: shows [5s Jh Ac Kh] (Pair of Kings)
+23aca38f: get an all-in insurance (premium ($0/$4/$0) for ($0/$10.8/$0) - (Mandatory/Main/Sub))
+*** RIVER *** [6c Kd Qc 3s] [6h]
+23aca38f: pay premium of all-in insurance ($4)
+*** SHOWDOWN ***
+23aca38f collected $37.5 from pot
+*** SUMMARY ***
+Total pot $37.5
+Board [6c Kd Qc 3s 6h]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero (button) showed [Ac Kh Jh 5s] and lost with Pair of Kings and Pair of Sixes
+Seat 3: 23aca38f (small blind) showed [Kc Jd Ts 6s] and won ($37.5) with Sixes Full over Kings, AII Premium ($4)
+Seat 4: b673c93c (big blind) folded on the Flop
+Seat 5: 6da5da63 folded before Flop (didn't bet)
+Seat 6: e0ced697 folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427500: Omaha Pot Limit ($0.5/$1) - 2020/04/14 07:59:45
+Table 'PLOBronze12' 6-max Seat #3 is the button
+Seat 1: b84ff923 ($87.19 in chips)
+Seat 2: Hero ($73 in chips)
+Seat 3: 23aca38f ($31.41 in chips)
+Seat 4: b673c93c ($21.68 in chips)
+Seat 5: 6da5da63 ($21 in chips)
+Seat 6: e0ced697 ($115.97 in chips)
+b673c93c: posts small blind $0.5
+6da5da63: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Kc Jd 5d 3d]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+e0ced697: folds
+b84ff923: folds
+Hero: folds
+23aca38f: calls $1
+b673c93c: calls $0.5
+6da5da63: checks
+*** FLOP *** [2c Kh 4h]
+b673c93c: bets $1.5
+6da5da63: raises $6 to $7.5
+23aca38f: folds
+b673c93c: calls $6
+*** TURN *** [2c Kh 4h] [3s]
+b673c93c: bets $13.18 and is all-in
+6da5da63: calls $12.5 and is all-in
+Uncalled bet ($0.68) returned to b673c93c
+b673c93c: shows [4d 9c 5h 3c] (Pair of Fours and Pair of Treys)
+6da5da63: shows [Kd 7s Jh 2h] (Pair of Kings and Pair of Twos)
+*** RIVER *** [2c Kh 4h 3s] [9s]
+*** SHOWDOWN ***
+6da5da63 collected $43 from pot
+*** SUMMARY ***
+Total pot $43
+Board [2c Kh 4h 3s 9s]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 23aca38f (button) folded on the Flop
+Seat 4: b673c93c (small blind) showed [9c 5h 4d 3c] and lost with Pair of Nines and Pair of Fours
+Seat 5: 6da5da63 (big blind) showed [Kd Jh 7s 2h] and won ($43) with Pair of Kings and Pair of Twos
+Seat 6: e0ced697 folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427519: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:00:44
+Table 'PLOBronze12' 6-max Seat #5 is the button
+Seat 1: b84ff923 ($87.19 in chips)
+Seat 2: Hero ($73 in chips)
+Seat 3: 23aca38f ($30.41 in chips)
+Seat 5: 6da5da63 ($40.74 in chips)
+Seat 6: e0ced697 ($115.97 in chips)
+e0ced697: posts small blind $0.5
+b84ff923: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ah Ks 4s 3h]
+Dealt to 23aca38f 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+Hero: raises $2.5 to $3.5
+23aca38f: folds
+6da5da63: folds
+e0ced697: folds
+b84ff923: calls $2.5
+*** FLOP *** [5d As 5c]
+b84ff923: checks
+Hero: bets $2
+b84ff923: folds
+Uncalled bet ($2) returned to Hero
+*** SHOWDOWN ***
+Hero collected $7.5 from pot
+*** SUMMARY ***
+Total pot $7.5
+Board [5d As 5c]
+Seat 1: b84ff923 (big blind) folded on the Flop
+Seat 2: Hero won ($7.5)
+Seat 3: 23aca38f folded before Flop (didn't bet)
+Seat 5: 6da5da63 (button) folded before Flop (didn't bet)
+Seat 6: e0ced697 (small blind) folded before Flop
+
+
+Poker Hand #OM181427528: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:01:17
+Table 'PLOBronze12' 6-max Seat #6 is the button
+Seat 1: b84ff923 ($83.69 in chips)
+Seat 2: Hero ($76.78 in chips)
+Seat 3: 23aca38f ($30.41 in chips)
+Seat 4: b673c93c ($10 in chips)
+Seat 5: 6da5da63 ($40.74 in chips)
+Seat 6: e0ced697 ($115.47 in chips)
+b84ff923: posts small blind $0.5
+Hero: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ks Kc Ts 6c]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+23aca38f: folds
+b673c93c: folds
+6da5da63: folds
+e0ced697: raises $2 to $3
+b84ff923: folds
+Hero: raises $6 to $9
+e0ced697: calls $6
+*** FLOP *** [3h Ac Qc]
+Hero: bets $9.5
+e0ced697: folds
+Uncalled bet ($9.5) returned to Hero
+*** SHOWDOWN ***
+Hero collected $18.5 from pot
+*** SUMMARY ***
+Total pot $18.5
+Board [3h Ac Qc]
+Seat 1: b84ff923 (small blind) folded before Flop
+Seat 2: Hero (big blind) won ($18.5)
+Seat 3: 23aca38f folded before Flop (didn't bet)
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: 6da5da63 folded before Flop (didn't bet)
+Seat 6: e0ced697 (button) folded on the Flop
+
+
+Poker Hand #OM181427541: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:02:14
+Table 'PLOBronze12' 6-max Seat #1 is the button
+Seat 1: b84ff923 ($83.19 in chips)
+Seat 2: Hero ($85.73 in chips)
+Seat 3: 23aca38f ($30.41 in chips)
+Seat 4: b673c93c ($10 in chips)
+Seat 5: 6da5da63 ($40.74 in chips)
+Seat 6: e0ced697 ($106.47 in chips)
+Hero: posts small blind $0.5
+23aca38f: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Kd Kc 8s 5c]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+b673c93c: raises $2.5 to $3.5
+6da5da63: folds
+e0ced697: folds
+b84ff923: folds
+Hero: raises $8 to $11.5
+23aca38f: folds
+b673c93c: calls $6.5 and is all-in
+Uncalled bet ($1.5) returned to Hero
+Hero: shows [Kd 5c 8s Kc]
+b673c93c: shows [9s Qh Ac As]
+*** FLOP *** [9d Ad 2c]
+*** TURN *** [9d Ad 2c] [2s]
+*** RIVER *** [9d Ad 2c 2s] [Js]
+*** SHOWDOWN ***
+b673c93c collected $21 from pot
+*** SUMMARY ***
+Total pot $21
+Board [9d Ad 2c 2s Js]
+Seat 1: b84ff923 (button) folded before Flop (didn't bet)
+Seat 2: Hero (small blind) showed [Kd Kc 8s 5c] and lost with Pair of Kings and Pair of Twos
+Seat 3: 23aca38f (big blind) folded before Flop
+Seat 4: b673c93c showed [As Ac Qh 9s] and won ($21) with Aces Full over Twos
+Seat 5: 6da5da63 folded before Flop (didn't bet)
+Seat 6: e0ced697 folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427552: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:03:02
+Table 'PLOBronze12' 6-max Seat #2 is the button
+Seat 1: b84ff923 ($83.19 in chips)
+Seat 2: Hero ($75.73 in chips)
+Seat 3: 23aca38f ($29.41 in chips)
+Seat 4: b673c93c ($20.37 in chips)
+Seat 5: 6da5da63 ($40.74 in chips)
+Seat 6: e0ced697 ($106.47 in chips)
+23aca38f: posts small blind $0.5
+b673c93c: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ah Ac Jd 9s]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+6da5da63: folds
+e0ced697: folds
+b84ff923: folds
+Hero: raises $2.5 to $3.5
+23aca38f: calls $3
+b673c93c: folds
+*** FLOP *** [5s 3d 7h]
+23aca38f: checks
+Hero: checks
+*** TURN *** [5s 3d 7h] [5d]
+23aca38f: checks
+Hero: bets $2
+23aca38f: calls $2
+*** RIVER *** [5s 3d 7h 5d] [7c]
+23aca38f: checks
+Hero: checks
+23aca38f: shows [Td 9c Kd 8d] (Pair of Sevens)
+Hero: shows [Ah 9s Ac Jd] (Pair of Aces and Pair of Sevens)
+*** SHOWDOWN ***
+Hero collected $12 from pot
+*** SUMMARY ***
+Total pot $12
+Board [5s 3d 7h 5d 7c]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero (button) showed [Ah Ac Jd 9s] and won ($12) with Pair of Aces and Pair of Sevens
+Seat 3: 23aca38f (small blind) showed [Kd Td 9c 8d] and lost with Pair of Sevens
+Seat 4: b673c93c (big blind) folded before Flop
+Seat 5: 6da5da63 folded before Flop (didn't bet)
+Seat 6: e0ced697 folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427572: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:04:17
+Table 'PLOBronze12' 6-max Seat #3 is the button
+Seat 1: b84ff923 ($83.19 in chips)
+Seat 2: Hero ($81.87 in chips)
+Seat 3: 23aca38f ($23.91 in chips)
+Seat 4: b673c93c ($19.37 in chips)
+Seat 5: 6da5da63 ($40.74 in chips)
+Seat 6: e0ced697 ($106.47 in chips)
+b673c93c: posts small blind $0.5
+6da5da63: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [As 7h 7d 4d]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+e0ced697: folds
+b84ff923: folds
+Hero: folds
+23aca38f: calls $1
+b673c93c: calls $0.5
+6da5da63: raises $3 to $4
+23aca38f: calls $3
+b673c93c: folds
+*** FLOP *** [2s 2h Ac]
+6da5da63: checks
+23aca38f: checks
+*** TURN *** [2s 2h Ac] [9d]
+6da5da63: bets $3
+23aca38f: folds
+Uncalled bet ($3) returned to 6da5da63
+*** SHOWDOWN ***
+6da5da63 collected $9 from pot
+*** SUMMARY ***
+Total pot $9
+Board [2s 2h Ac 9d]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 23aca38f (button) folded on the Turn
+Seat 4: b673c93c (small blind) folded before Flop
+Seat 5: 6da5da63 (big blind) won ($9)
+Seat 6: e0ced697 folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427584: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:05:06
+Table 'PLOBronze12' 6-max Seat #4 is the button
+Seat 1: b84ff923 ($83.19 in chips)
+Seat 2: Hero ($81.87 in chips)
+Seat 3: 23aca38f ($19.91 in chips)
+Seat 4: b673c93c ($18.37 in chips)
+Seat 5: 6da5da63 ($45.47 in chips)
+Seat 6: e0ced697 ($106.47 in chips)
+6da5da63: posts small blind $0.5
+e0ced697: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Js 9d 8s 8d]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+b84ff923: raises $2.5 to $3.5
+Hero: folds
+23aca38f: raises $8.5 to $12
+b673c93c: folds
+6da5da63: folds
+e0ced697: folds
+b84ff923: calls $8.5
+*** FLOP *** [Ks 5c Qh]
+b84ff923: checks
+23aca38f: bets $7.91 and is all-in
+b84ff923: folds
+Uncalled bet ($7.91) returned to 23aca38f
+*** SHOWDOWN ***
+23aca38f collected $25.5 from pot
+*** SUMMARY ***
+Total pot $25.5
+Board [Ks 5c Qh]
+Seat 1: b84ff923 folded on the Flop
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 23aca38f won ($25.5)
+Seat 4: b673c93c (button) folded before Flop (didn't bet)
+Seat 5: 6da5da63 (small blind) folded before Flop
+Seat 6: e0ced697 (big blind) folded before Flop
+
+
+Poker Hand #OM181427598: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:05:50
+Table 'PLOBronze12' 6-max Seat #5 is the button
+Seat 1: b84ff923 ($71.19 in chips)
+Seat 2: Hero ($81.87 in chips)
+Seat 3: 23aca38f ($32.65 in chips)
+Seat 4: b673c93c ($18.37 in chips)
+Seat 5: 6da5da63 ($44.97 in chips)
+Seat 6: e0ced697 ($105.47 in chips)
+e0ced697: posts small blind $0.5
+b84ff923: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Kd Js Jh Tc]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+Hero: raises $2.5 to $3.5
+23aca38f: calls $3.5
+b673c93c: folds
+6da5da63: calls $3.5
+e0ced697: folds
+b84ff923: folds
+*** FLOP *** [5c 5h 7c]
+Hero: checks
+23aca38f: checks
+6da5da63: bets $3
+Hero: calls $3
+23aca38f: raises $10.5 to $13.5
+6da5da63: folds
+Hero: folds
+Uncalled bet ($10.5) returned to 23aca38f
+*** SHOWDOWN ***
+23aca38f collected $21 from pot
+*** SUMMARY ***
+Total pot $21
+Board [5c 5h 7c]
+Seat 1: b84ff923 (big blind) folded before Flop
+Seat 2: Hero folded on the Flop
+Seat 3: 23aca38f won ($21)
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: 6da5da63 (button) folded on the Flop
+Seat 6: e0ced697 (small blind) folded before Flop
+
+
+Poker Hand #OM181427611: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:06:54
+Table 'PLOBronze12' 6-max Seat #6 is the button
+Seat 1: b84ff923 ($70.19 in chips)
+Seat 2: Hero ($75.37 in chips)
+Seat 3: 23aca38f ($46.52 in chips)
+Seat 4: b673c93c ($18.37 in chips)
+Seat 5: 6da5da63 ($38.47 in chips)
+Seat 6: e0ced697 ($104.97 in chips)
+b84ff923: posts small blind $0.5
+Hero: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [5s 4s 3c 2h]
+Dealt to 23aca38f 
+Dealt to b673c93c 
+Dealt to 6da5da63 
+Dealt to e0ced697 
+23aca38f: calls $1
+b673c93c: folds
+6da5da63: folds
+e0ced697: raises $3.5 to $4.5
+b84ff923: calls $4
+Hero: folds
+23aca38f: calls $3.5
+*** FLOP *** [8d 7c Qd]
+b84ff923: bets $14.5
+23aca38f: calls $14.5
+e0ced697: calls $14.5
+*** TURN *** [8d 7c Qd] [3h]
+b84ff923: bets $51.19 and is all-in
+23aca38f: calls $27.52 and is all-in
+e0ced697: calls $51.19
+b84ff923: shows [Qh Qs As Tc] (Three Queens)
+23aca38f: shows [8h Jd 7d 5h] (Pair of Eights and Pair of Sevens)
+e0ced697: shows [Ad 6h Ac 2d] (Pair of Aces)
+*** RIVER *** [8d 7c Qd 3h] [7h]
+*** SHOWDOWN ***
+b84ff923 collected $140.56 from pot
+b84ff923 collected $47.34 from pot
+*** SUMMARY ***
+Total pot $187.9
+Board [8d 7c Qd 3h 7h]
+Seat 1: b84ff923 (small blind) showed [As Qs Qh Tc] and won ($187.9) with Queens Full over Sevens
+Seat 2: Hero (big blind) folded before Flop
+Seat 3: 23aca38f showed [Jd 8h 7d 5h] and lost with Sevens Full over Eights
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: 6da5da63 folded before Flop (didn't bet)
+Seat 6: e0ced697 (button) showed [Ad Ac 6h 2d] and lost with Pair of Aces and Pair of Sevens
+
+
+Poker Hand #OM181427630: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:08:21
+Table 'PLOBronze12' 6-max Seat #1 is the button
+Seat 1: b84ff923 ($181.3 in chips)
+Seat 2: Hero ($74.37 in chips)
+Seat 4: b673c93c ($18.37 in chips)
+Seat 5: bc0a5c1b ($40 in chips)
+Seat 6: e0ced697 ($100 in chips)
+Hero: posts small blind $0.5
+b673c93c: posts big blind $1
+bc0a5c1b: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ah Js Th 9s]
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to e0ced697 
+bc0a5c1b: checks
+e0ced697: folds
+b84ff923: raises $2.5 to $3.5
+Hero: raises $9 to $12.5
+b673c93c: folds
+bc0a5c1b: folds
+b84ff923: calls $9
+*** FLOP *** [Jc Qc 6s]
+Hero: bets $27
+b84ff923: folds
+Uncalled bet ($27) returned to Hero
+*** SHOWDOWN ***
+Hero collected $27 from pot
+*** SUMMARY ***
+Total pot $27
+Board [Jc Qc 6s]
+Seat 1: b84ff923 (button) folded on the Flop
+Seat 2: Hero (small blind) won ($27)
+Seat 4: b673c93c (big blind) folded before Flop
+Seat 5: bc0a5c1b folded before Flop
+Seat 6: e0ced697 folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427648: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:09:20
+Table 'PLOBronze12' 6-max Seat #2 is the button
+Seat 1: b84ff923 ($168.8 in chips)
+Seat 2: Hero ($88.06 in chips)
+Seat 4: b673c93c ($17.37 in chips)
+Seat 5: bc0a5c1b ($39 in chips)
+Seat 6: e0ced697 ($100 in chips)
+b673c93c: posts small blind $0.5
+bc0a5c1b: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Qs 9d 3d 2d]
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to e0ced697 
+e0ced697: folds
+b84ff923: raises $2.5 to $3.5
+Hero: folds
+b673c93c: folds
+bc0a5c1b: calls $2.5
+*** FLOP *** [6d 7h 7c]
+bc0a5c1b: checks
+b84ff923: checks
+*** TURN *** [6d 7h 7c] [7d]
+bc0a5c1b: bets $4
+b84ff923: calls $4
+*** RIVER *** [6d 7h 7c 7d] [9h]
+bc0a5c1b: checks
+b84ff923: checks
+bc0a5c1b: shows [5c Qc Th 5s] (Sevens Full over Fives)
+b84ff923: shows [Ts Jd Jc Kc] (Sevens Full over Jacks)
+*** SHOWDOWN ***
+b84ff923 collected $15.5 from pot
+*** SUMMARY ***
+Total pot $15.5
+Board [6d 7h 7c 7d 9h]
+Seat 1: b84ff923 showed [Kc Jd Jc Ts] and won ($15.5) with Sevens Full over Jacks
+Seat 2: Hero (button) folded before Flop (didn't bet)
+Seat 4: b673c93c (small blind) folded before Flop
+Seat 5: bc0a5c1b (big blind) showed [Qc Th 5s 5c] and lost with Sevens Full over Fives
+Seat 6: e0ced697 folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427667: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:10:33
+Table 'PLOBronze12' 6-max Seat #4 is the button
+Seat 1: b84ff923 ($176.34 in chips)
+Seat 2: Hero ($88.06 in chips)
+Seat 4: b673c93c ($16.87 in chips)
+Seat 5: bc0a5c1b ($31.5 in chips)
+Seat 6: 1891714e ($100 in chips)
+bc0a5c1b: posts small blind $0.5
+1891714e: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Kd Js 9c 3h]
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+b84ff923: folds
+Hero: folds
+b673c93c: calls $1
+bc0a5c1b: calls $0.5
+1891714e: checks
+*** FLOP *** [Jd Ac 5h]
+bc0a5c1b: checks
+1891714e: checks
+b673c93c: checks
+*** TURN *** [Jd Ac 5h] [7d]
+bc0a5c1b: checks
+1891714e: bets $2
+b673c93c: folds
+bc0a5c1b: calls $2
+*** RIVER *** [Jd Ac 5h 7d] [Qs]
+bc0a5c1b: checks
+1891714e: checks
+bc0a5c1b: shows [Ks Th Tc 7h] (Aces-High Straight)
+1891714e: shows [Ad 8d Qh 7c] (Pair of Aces and Pair of Queens)
+*** SHOWDOWN ***
+bc0a5c1b collected $7 from pot
+*** SUMMARY ***
+Total pot $7
+Board [Jd Ac 5h 7d Qs]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 4: b673c93c (button) folded on the Turn
+Seat 5: bc0a5c1b (small blind) showed [Ks Th Tc 7h] and won ($7) with Aces-High Straight
+Seat 6: 1891714e (big blind) showed [Ad Qh 8d 7c] and lost with Pair of Aces and Pair of Queens
+
+
+Poker Hand #OM181427682: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:11:27
+Table 'PLOBronze12' 6-max Seat #5 is the button
+Seat 1: b84ff923 ($176.34 in chips)
+Seat 2: Hero ($88.06 in chips)
+Seat 4: b673c93c ($15.87 in chips)
+Seat 5: bc0a5c1b ($35.29 in chips)
+Seat 6: 1891714e ($97 in chips)
+1891714e: posts small blind $0.5
+b84ff923: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Jh Jc 9d 3h]
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+Hero: folds
+b673c93c: folds
+bc0a5c1b: folds
+1891714e: raises $2 to $3
+b84ff923: folds
+Uncalled bet ($2) returned to 1891714e
+*** SHOWDOWN ***
+1891714e collected $2 from pot
+*** SUMMARY ***
+Total pot $2
+Seat 1: b84ff923 (big blind) folded before Flop
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: bc0a5c1b (button) folded before Flop (didn't bet)
+Seat 6: 1891714e (small blind) collected ($2)
+
+
+Poker Hand #OM181427693: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:12:19
+Table 'PLOBronze12' 6-max Seat #6 is the button
+Seat 1: b84ff923 ($175.34 in chips)
+Seat 2: Hero ($88.06 in chips)
+Seat 4: b673c93c ($15.87 in chips)
+Seat 5: bc0a5c1b ($35.29 in chips)
+Seat 6: 1891714e ($98 in chips)
+b84ff923: posts small blind $0.5
+Hero: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ah Ac Ks 4d]
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+b673c93c: folds
+bc0a5c1b: folds
+1891714e: folds
+b84ff923: folds
+Uncalled bet ($0.5) returned to Hero
+*** SHOWDOWN ***
+Hero collected $1 from pot
+*** SUMMARY ***
+Total pot $1
+Seat 1: b84ff923 (small blind) folded before Flop
+Seat 2: Hero (big blind) collected ($1)
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: bc0a5c1b folded before Flop (didn't bet)
+Seat 6: 1891714e (button) folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427706: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:13:03
+Table 'PLOBronze12' 6-max Seat #1 is the button
+Seat 1: b84ff923 ($174.84 in chips)
+Seat 2: Hero ($88.56 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($15.87 in chips)
+Seat 5: bc0a5c1b ($35.29 in chips)
+Seat 6: 1891714e ($98 in chips)
+Hero: posts small blind $0.5
+424ef870: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ad Jc 7d 5s]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+b673c93c: calls $1
+bc0a5c1b: folds
+1891714e: calls $1
+b84ff923: folds
+Hero: calls $0.5
+424ef870: checks
+*** FLOP *** [7s 6h Tc]
+Hero: checks
+424ef870: checks
+b673c93c: bets $2
+1891714e: calls $2
+Hero: folds
+424ef870: folds
+*** TURN *** [7s 6h Tc] [2s]
+b673c93c: checks
+1891714e: checks
+*** RIVER *** [7s 6h Tc 2s] [8h]
+b673c93c: checks
+1891714e: bets $8
+b673c93c: folds
+Uncalled bet ($8) returned to 1891714e
+*** SHOWDOWN ***
+1891714e collected $8 from pot
+*** SUMMARY ***
+Total pot $8
+Board [7s 6h Tc 2s 8h]
+Seat 1: b84ff923 (button) folded before Flop (didn't bet)
+Seat 2: Hero (small blind) folded on the Flop
+Seat 3: 424ef870 (big blind) folded on the Flop
+Seat 4: b673c93c folded on the River
+Seat 5: bc0a5c1b folded before Flop (didn't bet)
+Seat 6: 1891714e won ($8)
+
+
+Poker Hand #OM181427718: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:14:08
+Table 'PLOBronze12' 6-max Seat #2 is the button
+Seat 1: b84ff923 ($174.84 in chips)
+Seat 2: Hero ($87.56 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($12.87 in chips)
+Seat 5: bc0a5c1b ($35.29 in chips)
+Seat 6: 1891714e ($102.76 in chips)
+424ef870: posts small blind $0.5
+b673c93c: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [9s 8c 3h 2s]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+bc0a5c1b: raises $2.5 to $3.5
+1891714e: folds
+b84ff923: folds
+Hero: folds
+424ef870: folds
+b673c93c: folds
+Uncalled bet ($2.5) returned to bc0a5c1b
+*** SHOWDOWN ***
+bc0a5c1b collected $2.5 from pot
+*** SUMMARY ***
+Total pot $2.5
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero (button) folded before Flop (didn't bet)
+Seat 3: 424ef870 (small blind) folded before Flop
+Seat 4: b673c93c (big blind) folded before Flop
+Seat 5: bc0a5c1b collected ($2.5)
+Seat 6: 1891714e folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427731: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:14:49
+Table 'PLOBronze12' 6-max Seat #3 is the button
+Seat 1: b84ff923 ($174.84 in chips)
+Seat 2: Hero ($87.56 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($11.87 in chips)
+Seat 5: bc0a5c1b ($36.79 in chips)
+Seat 6: 1891714e ($102.76 in chips)
+b673c93c: posts small blind $0.5
+bc0a5c1b: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Qs 9s 8h 4d]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+1891714e: raises $2 to $3
+b84ff923: folds
+Hero: folds
+424ef870: folds
+b673c93c: folds
+bc0a5c1b: calls $2
+*** FLOP *** [8s Qd Jh]
+bc0a5c1b: checks
+1891714e: bets $3.5
+bc0a5c1b: folds
+Uncalled bet ($3.5) returned to 1891714e
+*** SHOWDOWN ***
+1891714e collected $6.5 from pot
+*** SUMMARY ***
+Total pot $6.5
+Board [8s Qd Jh]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 (button) folded before Flop (didn't bet)
+Seat 4: b673c93c (small blind) folded before Flop
+Seat 5: bc0a5c1b (big blind) folded on the Flop
+Seat 6: 1891714e won ($6.5)
+
+
+Poker Hand #OM181427740: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:15:25
+Table 'PLOBronze12' 6-max Seat #4 is the button
+Seat 1: b84ff923 ($174.84 in chips)
+Seat 2: Hero ($87.56 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($11.37 in chips)
+Seat 5: bc0a5c1b ($33.79 in chips)
+Seat 6: 1891714e ($106.07 in chips)
+bc0a5c1b: posts small blind $0.5
+1891714e: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ks Kc Qd 9s]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+b84ff923: folds
+Hero: raises $2.5 to $3.5
+424ef870: folds
+b673c93c: calls $3.5
+bc0a5c1b: folds
+1891714e: folds
+*** FLOP *** [3h Td Jc]
+Hero: bets $8.5
+b673c93c: folds
+Uncalled bet ($8.5) returned to Hero
+*** SHOWDOWN ***
+Hero collected $8.5 from pot
+*** SUMMARY ***
+Total pot $8.5
+Board [3h Td Jc]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero won ($8.5)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c (button) folded on the Flop
+Seat 5: bc0a5c1b (small blind) folded before Flop
+Seat 6: 1891714e (big blind) folded before Flop
+
+
+Poker Hand #OM181427753: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:15:57
+Table 'PLOBronze12' 6-max Seat #5 is the button
+Seat 1: b84ff923 ($174.84 in chips)
+Seat 2: Hero ($92.31 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($7.87 in chips)
+Seat 5: bc0a5c1b ($33.29 in chips)
+Seat 6: 1891714e ($105.07 in chips)
+1891714e: posts small blind $0.5
+b84ff923: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [9d 8h 7s 4s]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+Hero: folds
+424ef870: folds
+b673c93c: folds
+bc0a5c1b: calls $1
+1891714e: calls $0.5
+b84ff923: checks
+*** FLOP *** [Jd Ad 3s]
+1891714e: checks
+b84ff923: bets $2
+bc0a5c1b: folds
+1891714e: folds
+Uncalled bet ($2) returned to b84ff923
+*** SHOWDOWN ***
+b84ff923 collected $3 from pot
+*** SUMMARY ***
+Total pot $3
+Board [Jd Ad 3s]
+Seat 1: b84ff923 (big blind) won ($3)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: bc0a5c1b (button) folded on the Flop
+Seat 6: 1891714e (small blind) folded on the Flop
+
+
+Poker Hand #OM181427763: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:16:39
+Table 'PLOBronze12' 6-max Seat #6 is the button
+Seat 1: b84ff923 ($176.75 in chips)
+Seat 2: Hero ($92.31 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($7.87 in chips)
+Seat 5: bc0a5c1b ($32.29 in chips)
+Seat 6: 1891714e ($104.07 in chips)
+b84ff923: posts small blind $0.5
+Hero: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ad Kh Tc 9d]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+Dealt to 1891714e 
+424ef870: folds
+b673c93c: calls $1
+bc0a5c1b: calls $1
+1891714e: calls $1
+b84ff923: calls $0.5
+Hero: raises $5 to $6
+b673c93c: folds
+bc0a5c1b: calls $5
+1891714e: folds
+b84ff923: calls $5
+*** FLOP *** [8h 6h Qc]
+b84ff923: checks
+Hero: bets $8
+bc0a5c1b: folds
+b84ff923: folds
+Uncalled bet ($8) returned to Hero
+*** SHOWDOWN ***
+Hero collected $20 from pot
+*** SUMMARY ***
+Total pot $20
+Board [8h 6h Qc]
+Seat 1: b84ff923 (small blind) folded on the Flop
+Seat 2: Hero (big blind) won ($20)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c folded before Flop
+Seat 5: bc0a5c1b folded on the Flop
+Seat 6: 1891714e (button) folded before Flop
+
+
+Poker Hand #OM181427786: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:18:02
+Table 'PLOBronze12' 6-max Seat #1 is the button
+Seat 1: b84ff923 ($170.75 in chips)
+Seat 2: Hero ($105.71 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($6.87 in chips)
+Seat 5: bc0a5c1b ($26.29 in chips)
+Hero: posts small blind $0.5
+424ef870: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Qs Jc Th 6s]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to bc0a5c1b 
+b673c93c: raises $2.5 to $3.5
+bc0a5c1b: folds
+b84ff923: folds
+Hero: folds
+424ef870: folds
+Uncalled bet ($2.5) returned to b673c93c
+*** SHOWDOWN ***
+b673c93c collected $2.5 from pot
+*** SUMMARY ***
+Total pot $2.5
+Seat 1: b84ff923 (button) folded before Flop (didn't bet)
+Seat 2: Hero (small blind) folded before Flop
+Seat 3: 424ef870 (big blind) folded before Flop
+Seat 4: b673c93c collected ($2.5)
+Seat 5: bc0a5c1b folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427790: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:18:20
+Table 'PLOBronze12' 6-max Seat #2 is the button
+Seat 1: b84ff923 ($170.75 in chips)
+Seat 2: Hero ($105.21 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($8.37 in chips)
+424ef870: posts small blind $0.5
+b673c93c: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ks Jd 3d 2c]
+Dealt to 424ef870 
+Dealt to b673c93c 
+b84ff923: folds
+Hero: folds
+424ef870: folds
+Uncalled bet ($0.5) returned to b673c93c
+*** SHOWDOWN ***
+b673c93c collected $1 from pot
+*** SUMMARY ***
+Total pot $1
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero (button) folded before Flop (didn't bet)
+Seat 3: 424ef870 (small blind) folded before Flop
+Seat 4: b673c93c (big blind) collected ($1)
+
+
+Poker Hand #OM181427794: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:18:36
+Table 'PLOBronze12' 6-max Seat #3 is the button
+Seat 1: b84ff923 ($170.75 in chips)
+Seat 2: Hero ($105.21 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($8.87 in chips)
+b673c93c: posts small blind $0.5
+b84ff923: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Qc 7h 5c 3s]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Hero: folds
+424ef870: raises $2 to $3
+b673c93c: calls $2.5
+b84ff923: folds
+*** FLOP *** [Ac 9h Td]
+b673c93c: checks
+424ef870: bets $7
+b673c93c: folds
+Uncalled bet ($7) returned to 424ef870
+*** SHOWDOWN ***
+424ef870 collected $7 from pot
+*** SUMMARY ***
+Total pot $7
+Board [Ac 9h Td]
+Seat 1: b84ff923 (big blind) folded before Flop
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 (button) won ($7)
+Seat 4: b673c93c (small blind) folded on the Flop
+
+
+Poker Hand #OM181427804: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:19:07
+Table 'PLOBronze12' 6-max Seat #4 is the button
+Seat 1: b84ff923 ($169.75 in chips)
+Seat 2: Hero ($105.21 in chips)
+Seat 3: 424ef870 ($103.79 in chips)
+Seat 4: b673c93c ($5.87 in chips)
+b84ff923: posts small blind $0.5
+Hero: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ah Qs 9c 5d]
+Dealt to 424ef870 
+Dealt to b673c93c 
+424ef870: folds
+b673c93c: calls $1
+b84ff923: folds
+Hero: checks
+*** FLOP *** [Ks Td 8h]
+Hero: checks
+b673c93c: checks
+*** TURN *** [Ks Td 8h] [3s]
+Hero: checks
+b673c93c: checks
+*** RIVER *** [Ks Td 8h 3s] [7s]
+Hero: bets $2.5
+b673c93c: folds
+Uncalled bet ($2.5) returned to Hero
+*** SHOWDOWN ***
+Hero collected $2.5 from pot
+*** SUMMARY ***
+Total pot $2.5
+Board [Ks Td 8h 3s 7s]
+Seat 1: b84ff923 (small blind) folded before Flop
+Seat 2: Hero (big blind) won ($2.5)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c (button) folded on the River
+
+
+Poker Hand #OM181427818: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:19:49
+Table 'PLOBronze12' 6-max Seat #1 is the button
+Seat 1: b84ff923 ($169.25 in chips)
+Seat 2: Hero ($106.64 in chips)
+Seat 3: 424ef870 ($103.79 in chips)
+Seat 4: b673c93c ($4.87 in chips)
+Seat 5: be54fa91 ($100 in chips)
+Hero: posts small blind $0.5
+424ef870: posts big blind $1
+be54fa91: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Js 5d 5c 2d]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+b673c93c: calls $1
+be54fa91: checks
+b84ff923: raises $2 to $3
+Hero: folds
+424ef870: folds
+b673c93c: calls $2
+be54fa91: calls $2
+*** FLOP *** [Jd Qc Ac]
+b673c93c: bets $1.87 and is all-in
+be54fa91: calls $1.87
+b84ff923: calls $1.87
+*** TURN *** [Jd Qc Ac] [Ts]
+be54fa91: checks
+b84ff923: bets $11
+be54fa91: calls $11
+*** RIVER *** [Jd Qc Ac Ts] [9h]
+be54fa91: checks
+b84ff923: bets $38.11
+be54fa91: folds
+Uncalled bet ($38.11) returned to b84ff923
+b84ff923: shows [Ah Kh 5h 5s] (Aces-High Straight)
+b673c93c: shows [9s 7h Kc Jc] (Aces-High Straight)
+*** SHOWDOWN ***
+b84ff923 collected $8.05 from pot
+b673c93c collected $8.06 from pot
+b84ff923 collected $22 from pot
+*** SUMMARY ***
+Total pot $38.11
+Board [Jd Qc Ac Ts 9h]
+Seat 1: b84ff923 (button) showed [Ah Kh 5s 5h] and won ($30.05) with Aces-High Straight
+Seat 2: Hero (small blind) folded before Flop
+Seat 3: 424ef870 (big blind) folded before Flop
+Seat 4: b673c93c showed [Kc Jc 9s 7h] and won ($8.06) with Aces-High Straight
+Seat 5: be54fa91 folded on the River
+
+
+Poker Hand #OM181427842: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:21:11
+Table 'PLOBronze12' 6-max Seat #2 is the button
+Seat 1: b84ff923 ($181.76 in chips)
+Seat 2: Hero ($106.14 in chips)
+Seat 3: 424ef870 ($102.79 in chips)
+Seat 4: b673c93c ($7.62 in chips)
+Seat 5: be54fa91 ($84.13 in chips)
+424ef870: posts small blind $0.5
+b673c93c: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Th 9d 6c 2s]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+be54fa91: raises $2 to $3
+b84ff923: folds
+Hero: folds
+424ef870: folds
+b673c93c: calls $2
+*** FLOP *** [Js 4s 5c]
+b673c93c: checks
+be54fa91: bets $5
+b673c93c: folds
+Uncalled bet ($5) returned to be54fa91
+*** SHOWDOWN ***
+be54fa91 collected $6.5 from pot
+*** SUMMARY ***
+Total pot $6.5
+Board [Js 4s 5c]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero (button) folded before Flop (didn't bet)
+Seat 3: 424ef870 (small blind) folded before Flop
+Seat 4: b673c93c (big blind) folded on the Flop
+Seat 5: be54fa91 won ($6.5)
+
+
+Poker Hand #OM181427852: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:21:45
+Table 'PLOBronze12' 6-max Seat #3 is the button
+Seat 1: b84ff923 ($181.76 in chips)
+Seat 2: Hero ($106.14 in chips)
+Seat 3: 424ef870 ($102.29 in chips)
+Seat 4: b673c93c ($4.62 in chips)
+Seat 5: be54fa91 ($87.44 in chips)
+b673c93c: posts small blind $0.5
+be54fa91: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Qh 8h 6h 4c]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+b84ff923: folds
+Hero: folds
+424ef870: raises $2 to $3
+b673c93c: raises $1.62 to $4.62 and is all-in
+be54fa91: raises $12.24 to $16.86
+424ef870: folds
+Uncalled bet ($12.24) returned to be54fa91
+be54fa91: shows [Ac Ks Jc 9s]
+b673c93c: shows [Jh Tc 3s Jd]
+*** FLOP *** [Qd Th 3h]
+*** TURN *** [Qd Th 3h] [Td]
+*** RIVER *** [Qd Th 3h Td] [Kh]
+*** SHOWDOWN ***
+b673c93c collected $12.24 from pot
+*** SUMMARY ***
+Total pot $12.24
+Board [Qd Th 3h Td Kh]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 (button) folded before Flop
+Seat 4: b673c93c (small blind) showed [Jh Jd Tc 3s] and won ($12.24) with Tens Full over Treys
+Seat 5: be54fa91 (big blind) showed [Ac Ks Jc 9s] and lost with Aces-High Straight
+
+
+Poker Hand #OM181427863: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:22:25
+Table 'PLOBronze12' 6-max Seat #4 is the button
+Seat 1: b84ff923 ($181.76 in chips)
+Seat 2: Hero ($106.14 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($11.88 in chips)
+Seat 5: be54fa91 ($82.82 in chips)
+Seat 6: 1788934b ($50 in chips)
+be54fa91: posts small blind $0.5
+1788934b: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Js 8d 6h 5s]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+b84ff923: folds
+Hero: folds
+424ef870: folds
+b673c93c: calls $1
+be54fa91: folds
+1788934b: checks
+*** FLOP *** [As 9h 3h]
+1788934b: checks
+b673c93c: bets $1.5
+1788934b: folds
+Uncalled bet ($1.5) returned to b673c93c
+*** SHOWDOWN ***
+b673c93c collected $2.5 from pot
+*** SUMMARY ***
+Total pot $2.5
+Board [As 9h 3h]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c (button) won ($2.5)
+Seat 5: be54fa91 (small blind) folded before Flop
+Seat 6: 1788934b (big blind) folded on the Flop
+
+
+Poker Hand #OM181427875: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:22:53
+Table 'PLOBronze12' 6-max Seat #5 is the button
+Seat 1: b84ff923 ($181.76 in chips)
+Seat 2: Hero ($106.14 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($13.31 in chips)
+Seat 5: be54fa91 ($82.32 in chips)
+Seat 6: 1788934b ($49 in chips)
+1788934b: posts small blind $0.5
+b84ff923: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Qc 9s 6h 4c]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+Hero: folds
+424ef870: folds
+b673c93c: calls $1
+be54fa91: folds
+1788934b: calls $0.5
+b84ff923: checks
+*** FLOP *** [Ts 7c 8s]
+1788934b: checks
+b84ff923: bets $3
+b673c93c: folds
+1788934b: folds
+Uncalled bet ($3) returned to b84ff923
+*** SHOWDOWN ***
+b84ff923 collected $3 from pot
+*** SUMMARY ***
+Total pot $3
+Board [Ts 7c 8s]
+Seat 1: b84ff923 (big blind) won ($3)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c folded on the Flop
+Seat 5: be54fa91 (button) folded before Flop (didn't bet)
+Seat 6: 1788934b (small blind) folded on the Flop
+
+
+Poker Hand #OM181427889: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:23:49
+Table 'PLOBronze12' 6-max Seat #6 is the button
+Seat 1: b84ff923 ($183.67 in chips)
+Seat 2: Hero ($106.14 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($12.31 in chips)
+Seat 5: be54fa91 ($82.32 in chips)
+Seat 6: 1788934b ($48 in chips)
+b84ff923: posts small blind $0.5
+Hero: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ac 8h 3h 2c]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+424ef870: folds
+b673c93c: calls $1
+be54fa91: raises $3.5 to $4.5
+1788934b: folds
+b84ff923: folds
+Hero: folds
+b673c93c: calls $3.5
+*** FLOP *** [2h 6d Ad]
+b673c93c: checks
+be54fa91: bets $5.5
+b673c93c: folds
+Uncalled bet ($5.5) returned to be54fa91
+*** SHOWDOWN ***
+be54fa91 collected $10.5 from pot
+*** SUMMARY ***
+Total pot $10.5
+Board [2h 6d Ad]
+Seat 1: b84ff923 (small blind) folded before Flop
+Seat 2: Hero (big blind) folded before Flop
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c folded on the Flop
+Seat 5: be54fa91 won ($10.5)
+Seat 6: 1788934b (button) folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427905: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:24:45
+Table 'PLOBronze12' 6-max Seat #1 is the button
+Seat 1: b84ff923 ($183.17 in chips)
+Seat 2: Hero ($105.14 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($7.81 in chips)
+Seat 5: be54fa91 ($88.01 in chips)
+Seat 6: 1788934b ($48 in chips)
+Hero: posts small blind $0.5
+424ef870: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [9h 9d 7h 5d]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+b673c93c: calls $1
+be54fa91: folds
+1788934b: folds
+b84ff923: folds
+Hero: raises $3 to $4
+424ef870: folds
+b673c93c: folds
+Uncalled bet ($3) returned to Hero
+*** SHOWDOWN ***
+Hero collected $3 from pot
+*** SUMMARY ***
+Total pot $3
+Seat 1: b84ff923 (button) folded before Flop (didn't bet)
+Seat 2: Hero (small blind) collected ($3)
+Seat 3: 424ef870 (big blind) folded before Flop
+Seat 4: b673c93c folded before Flop
+Seat 5: be54fa91 folded before Flop (didn't bet)
+Seat 6: 1788934b folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427920: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:25:30
+Table 'PLOBronze12' 6-max Seat #2 is the button
+Seat 1: b84ff923 ($183.17 in chips)
+Seat 2: Hero ($107.05 in chips)
+Seat 3: 424ef870 ($101 in chips)
+Seat 4: b673c93c ($6.81 in chips)
+Seat 5: be54fa91 ($88.01 in chips)
+Seat 6: 1788934b ($48 in chips)
+424ef870: posts small blind $0.5
+b673c93c: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Jh Th 7s 6d]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+be54fa91: raises $2.5 to $3.5
+1788934b: folds
+b84ff923: calls $3.5
+Hero: folds
+424ef870: folds
+b673c93c: folds
+*** FLOP *** [6s Jc Js]
+be54fa91: checks
+b84ff923: bets $4.5
+be54fa91: calls $4.5
+*** TURN *** [6s Jc Js] [Tc]
+be54fa91: checks
+b84ff923: bets $12
+be54fa91: folds
+Uncalled bet ($12) returned to b84ff923
+*** SHOWDOWN ***
+b84ff923 collected $17.5 from pot
+*** SUMMARY ***
+Total pot $17.5
+Board [6s Jc Js Tc]
+Seat 1: b84ff923 won ($17.5)
+Seat 2: Hero (button) folded before Flop (didn't bet)
+Seat 3: 424ef870 (small blind) folded before Flop
+Seat 4: b673c93c (big blind) folded before Flop
+Seat 5: be54fa91 folded on the Turn
+Seat 6: 1788934b folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427929: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:26:14
+Table 'PLOBronze12' 6-max Seat #3 is the button
+Seat 1: b84ff923 ($192.15 in chips)
+Seat 2: Hero ($107.05 in chips)
+Seat 3: 424ef870 ($100.5 in chips)
+Seat 4: b673c93c ($5.81 in chips)
+Seat 5: be54fa91 ($80.01 in chips)
+Seat 6: 1788934b ($48 in chips)
+b673c93c: posts small blind $0.5
+be54fa91: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Kd 6c 5s 4c]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+1788934b: folds
+b84ff923: folds
+Hero: folds
+424ef870: raises $2 to $3
+b673c93c: folds
+be54fa91: calls $2
+*** FLOP *** [Qh 5c 6h]
+be54fa91: checks
+424ef870: checks
+*** TURN *** [Qh 5c 6h] [Ac]
+be54fa91: bets $3.5
+424ef870: calls $3.5
+*** RIVER *** [Qh 5c 6h Ac] [Kc]
+be54fa91: bets $7
+424ef870: folds
+Uncalled bet ($7) returned to be54fa91
+*** SHOWDOWN ***
+be54fa91 collected $13.5 from pot
+*** SUMMARY ***
+Total pot $13.5
+Board [Qh 5c 6h Ac Kc]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 (button) folded on the River
+Seat 4: b673c93c (small blind) folded before Flop
+Seat 5: be54fa91 (big blind) won ($13.5)
+Seat 6: 1788934b folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427941: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:27:03
+Table 'PLOBronze12' 6-max Seat #4 is the button
+Seat 1: b84ff923 ($192.15 in chips)
+Seat 2: Hero ($107.05 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($5.31 in chips)
+Seat 5: be54fa91 ($86.61 in chips)
+Seat 6: 1788934b ($48 in chips)
+be54fa91: posts small blind $0.5
+1788934b: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ad Jh 6c 2d]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+b84ff923: folds
+Hero: folds
+424ef870: folds
+b673c93c: calls $1
+be54fa91: folds
+1788934b: checks
+*** FLOP *** [2s As 7h]
+1788934b: checks
+b673c93c: bets $1.5
+1788934b: calls $1.5
+*** TURN *** [2s As 7h] [8d]
+1788934b: checks
+b673c93c: checks
+*** RIVER *** [2s As 7h 8d] [6s]
+1788934b: checks
+b673c93c: bets $2.81 and is all-in
+1788934b: folds
+Uncalled bet ($2.81) returned to b673c93c
+*** SHOWDOWN ***
+b673c93c collected $5.5 from pot
+*** SUMMARY ***
+Total pot $5.5
+Board [2s As 7h 8d 6s]
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c (button) won ($5.5)
+Seat 5: be54fa91 (small blind) folded before Flop
+Seat 6: 1788934b (big blind) folded on the River
+
+
+Poker Hand #OM181427955: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:27:44
+Table 'PLOBronze12' 6-max Seat #5 is the button
+Seat 1: b84ff923 ($192.15 in chips)
+Seat 2: Hero ($107.05 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($8.15 in chips)
+Seat 5: be54fa91 ($86.11 in chips)
+Seat 6: 1788934b ($45.5 in chips)
+1788934b: posts small blind $0.5
+b84ff923: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Kc Jh 9s 7d]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+Hero: folds
+424ef870: folds
+b673c93c: calls $1
+be54fa91: folds
+1788934b: folds
+b84ff923: checks
+*** FLOP *** [6h Td Ac]
+b84ff923: checks
+b673c93c: checks
+*** TURN *** [6h Td Ac] [8h]
+b84ff923: checks
+b673c93c: checks
+*** RIVER *** [6h Td Ac 8h] [Th]
+b84ff923: bets $2
+b673c93c: folds
+Uncalled bet ($2) returned to b84ff923
+*** SHOWDOWN ***
+b84ff923 collected $2.5 from pot
+*** SUMMARY ***
+Total pot $2.5
+Board [6h Td Ac 8h Th]
+Seat 1: b84ff923 (big blind) won ($2.5)
+Seat 2: Hero folded before Flop (didn't bet)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c folded on the River
+Seat 5: be54fa91 (button) folded before Flop (didn't bet)
+Seat 6: 1788934b (small blind) folded before Flop
+
+
+Poker Hand #OM181427965: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:28:29
+Table 'PLOBronze12' 6-max Seat #6 is the button
+Seat 1: b84ff923 ($193.58 in chips)
+Seat 2: Hero ($107.05 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($7.15 in chips)
+Seat 5: be54fa91 ($86.11 in chips)
+Seat 6: 1788934b ($45 in chips)
+b84ff923: posts small blind $0.5
+Hero: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Td 8d 5s 2c]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+424ef870: folds
+b673c93c: calls $1
+be54fa91: folds
+1788934b: calls $1
+b84ff923: folds
+Hero: checks
+*** FLOP *** [Ah 4h 9c]
+Hero: checks
+b673c93c: checks
+1788934b: checks
+*** TURN *** [Ah 4h 9c] [3c]
+Hero: bets $3.5
+b673c93c: folds
+1788934b: folds
+Uncalled bet ($3.5) returned to Hero
+*** SHOWDOWN ***
+Hero collected $3.5 from pot
+*** SUMMARY ***
+Total pot $3.5
+Board [Ah 4h 9c 3c]
+Seat 1: b84ff923 (small blind) folded before Flop
+Seat 2: Hero (big blind) won ($3.5)
+Seat 3: 424ef870 folded before Flop (didn't bet)
+Seat 4: b673c93c folded on the Turn
+Seat 5: be54fa91 folded before Flop (didn't bet)
+Seat 6: 1788934b (button) folded on the Turn
+
+
+Poker Hand #OM181427991: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:29:59
+Table 'PLOBronze12' 6-max Seat #1 is the button
+Seat 1: b84ff923 ($193.08 in chips)
+Seat 2: Hero ($109.45 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($6.15 in chips)
+Seat 5: be54fa91 ($86.11 in chips)
+Seat 6: 1788934b ($44 in chips)
+Hero: posts small blind $0.5
+424ef870: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Js 8s 8d 5h]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+b673c93c: folds
+be54fa91: raises $2 to $3
+1788934b: folds
+b84ff923: folds
+Hero: folds
+424ef870: calls $2
+*** FLOP *** [Th Td 4d]
+424ef870: checks
+be54fa91: bets $6.5
+424ef870: folds
+Uncalled bet ($6.5) returned to be54fa91
+*** SHOWDOWN ***
+be54fa91 collected $6.5 from pot
+*** SUMMARY ***
+Total pot $6.5
+Board [Th Td 4d]
+Seat 1: b84ff923 (button) folded before Flop (didn't bet)
+Seat 2: Hero (small blind) folded before Flop
+Seat 3: 424ef870 (big blind) folded on the Flop
+Seat 4: b673c93c folded before Flop (didn't bet)
+Seat 5: be54fa91 won ($6.5)
+Seat 6: 1788934b folded before Flop (didn't bet)
+
+
+Poker Hand #OM181427999: Omaha Pot Limit ($0.5/$1) - 2020/04/14 08:30:39
+Table 'PLOBronze12' 6-max Seat #2 is the button
+Seat 1: b84ff923 ($193.08 in chips)
+Seat 2: Hero ($108.95 in chips)
+Seat 3: 424ef870 ($100 in chips)
+Seat 4: b673c93c ($6.15 in chips)
+Seat 5: be54fa91 ($89.42 in chips)
+Seat 6: 1788934b ($44 in chips)
+424ef870: posts small blind $0.5
+b673c93c: posts big blind $1
+*** HOLE CARDS ***
+Dealt to b84ff923 
+Dealt to Hero [Ad Kc 9h 6h]
+Dealt to 424ef870 
+Dealt to b673c93c 
+Dealt to be54fa91 
+Dealt to 1788934b 
+be54fa91: raises $2 to $3
+1788934b: folds
+b84ff923: folds
+Hero: folds
+424ef870: folds
+b673c93c: folds
+Uncalled bet ($2) returned to be54fa91
+*** SHOWDOWN ***
+be54fa91 collected $2.5 from pot
+*** SUMMARY ***
+Total pot $2.5
+Seat 1: b84ff923 folded before Flop (didn't bet)
+Seat 2: Hero (button) folded before Flop (didn't bet)
+Seat 3: 424ef870 (small blind) folded before Flop
+Seat 4: b673c93c (big blind) folded before Flop
+Seat 5: be54fa91 collected ($2.5)
+Seat 6: 1788934b folded before Flop (didn't bet)
+
+

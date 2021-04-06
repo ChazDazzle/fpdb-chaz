@@ -1,0 +1,3103 @@
+Poker Hand #TM106348078: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level4 (90/180) - 2020/06/23 19:21:09
+Table '1' 6-max Seat #4 is the button
+Seat 1: 442b49d7 (27,617 in chips)
+Seat 2: 2a1934a5 (6,402 in chips)
+Seat 3: Hero (10,000 in chips)
+Seat 4: bd16e59d (8,669 in chips)
+Seat 6: 7067fd75 (16,372 in chips)
+442b49d7: posts the ante 30
+7067fd75: posts the ante 30
+2a1934a5: posts the ante 30
+bd16e59d: posts the ante 30
+Hero: posts the ante 30
+7067fd75: posts small blind 90
+442b49d7: posts big blind 180
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Ac 8h 7c 2c]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+2a1934a5: raises 600 to 780
+Hero: folds
+bd16e59d: folds
+7067fd75: folds
+442b49d7: folds
+Uncalled bet (600) returned to 2a1934a5
+*** SHOWDOWN ***
+2a1934a5 collected 600 from pot
+*** SUMMARY ***
+Total pot 600
+Seat 1: 442b49d7 (big blind) folded before Flop
+Seat 2: 2a1934a5 collected (600)
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d (button) folded before Flop
+Seat 6: 7067fd75 (small blind) folded before Flop
+
+
+Poker Hand #TM106348084: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level4 (90/180) - 2020/06/23 19:21:33
+Table '1' 6-max Seat #6 is the button
+Seat 1: 442b49d7 (27,407 in chips)
+Seat 2: 2a1934a5 (6,792 in chips)
+Seat 3: Hero (9,970 in chips)
+Seat 4: bd16e59d (8,639 in chips)
+Seat 6: 7067fd75 (16,252 in chips)
+442b49d7: posts the ante 30
+7067fd75: posts the ante 30
+2a1934a5: posts the ante 30
+bd16e59d: posts the ante 30
+Hero: posts the ante 30
+442b49d7: posts small blind 90
+2a1934a5: posts big blind 180
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Js Jc 5s 5h]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+Hero: raises 216 to 396
+bd16e59d: folds
+7067fd75: folds
+442b49d7: calls 306
+2a1934a5: calls 216
+*** FLOP *** [Qh 6d 6h]
+442b49d7: checks
+2a1934a5: checks
+Hero: checks
+*** TURN *** [Qh 6d 6h] [As]
+442b49d7: checks
+2a1934a5: checks
+Hero: checks
+*** RIVER *** [Qh 6d 6h As] [Kh]
+442b49d7: checks
+2a1934a5: checks
+Hero: checks
+442b49d7: shows [5c 8s 6c 2d] (Three Sixes)
+2a1934a5: shows [Td Th 9d 4d] (Pair of Tens and Pair of Sixes)
+Hero: shows [Js 5h 5s Jc] (Pair of Jacks and Pair of Sixes)
+*** SHOWDOWN ***
+442b49d7 collected 1,338 from pot
+*** SUMMARY ***
+Total pot 1,338
+Board [Qh 6d 6h As Kh]
+Seat 1: 442b49d7 (small blind) showed [8s 6c 5c 2d] and won (1,338) with Three Sixes
+Seat 2: 2a1934a5 (big blind) showed [Th Td 9d 4d] and lost with Pair of Tens and Pair of Sixes
+Seat 3: Hero showed [Js Jc 5s 5h] and lost with Pair of Jacks and Pair of Sixes
+Seat 4: bd16e59d folded before Flop
+Seat 6: 7067fd75 (button) folded before Flop
+
+
+Poker Hand #TM106348098: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level4 (90/180) - 2020/06/23 19:23:14
+Table '1' 6-max Seat #1 is the button
+Seat 1: 442b49d7 (28,319 in chips)
+Seat 2: 2a1934a5 (6,366 in chips)
+Seat 3: Hero (9,544 in chips)
+Seat 4: bd16e59d (8,609 in chips)
+Seat 6: 7067fd75 (16,222 in chips)
+442b49d7: posts the ante 30
+7067fd75: posts the ante 30
+2a1934a5: posts the ante 30
+bd16e59d: posts the ante 30
+Hero: posts the ante 30
+2a1934a5: posts small blind 90
+Hero: posts big blind 180
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Jc Tc 8d 2c]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+bd16e59d: folds
+7067fd75: raises 306 to 486
+442b49d7: calls 486
+2a1934a5: folds
+Hero: folds
+*** FLOP *** [Qs Jd 9s]
+7067fd75: bets 900
+442b49d7: raises 3,192 to 4,092
+7067fd75: folds
+Uncalled bet (3,192) returned to 442b49d7
+*** SHOWDOWN ***
+442b49d7 collected 3,192 from pot
+*** SUMMARY ***
+Total pot 3,192
+Board [Qs Jd 9s]
+Seat 1: 442b49d7 (button) won (3,192)
+Seat 2: 2a1934a5 (small blind) folded before Flop
+Seat 3: Hero (big blind) folded before Flop
+Seat 4: bd16e59d folded before Flop
+Seat 6: 7067fd75 folded on the Flop
+
+
+Poker Hand #TM106348105: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level4 (90/180) - 2020/06/23 19:24:08
+Table '1' 6-max Seat #2 is the button
+Seat 1: 442b49d7 (30,095 in chips)
+Seat 2: 2a1934a5 (6,246 in chips)
+Seat 3: Hero (9,334 in chips)
+Seat 4: bd16e59d (8,579 in chips)
+Seat 6: 7067fd75 (14,806 in chips)
+442b49d7: posts the ante 30
+7067fd75: posts the ante 30
+2a1934a5: posts the ante 30
+bd16e59d: posts the ante 30
+Hero: posts the ante 30
+Hero: posts small blind 90
+bd16e59d: posts big blind 180
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Kc Tc 7s 3s]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+7067fd75: folds
+442b49d7: folds
+2a1934a5: folds
+Hero: calls 90
+bd16e59d: checks
+*** FLOP *** [6d 3d Ts]
+Hero: bets 382
+bd16e59d: folds
+Uncalled bet (382) returned to Hero
+*** SHOWDOWN ***
+Hero collected 510 from pot
+*** SUMMARY ***
+Total pot 510
+Board [6d 3d Ts]
+Seat 1: 442b49d7 folded before Flop
+Seat 2: 2a1934a5 (button) folded before Flop
+Seat 3: Hero (small blind) won (510)
+Seat 4: bd16e59d (big blind) folded on the Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106348110: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level4 (90/180) - 2020/06/23 19:24:38
+Table '1' 6-max Seat #3 is the button
+Seat 1: 442b49d7 (30,065 in chips)
+Seat 2: 2a1934a5 (6,216 in chips)
+Seat 3: Hero (9,634 in chips)
+Seat 4: bd16e59d (8,369 in chips)
+Seat 6: 7067fd75 (14,776 in chips)
+442b49d7: posts the ante 30
+7067fd75: posts the ante 30
+2a1934a5: posts the ante 30
+bd16e59d: posts the ante 30
+Hero: posts the ante 30
+bd16e59d: posts small blind 90
+7067fd75: posts big blind 180
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Ks 6d 3c 2s]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+442b49d7: raises 210 to 390
+2a1934a5: folds
+Hero: folds
+bd16e59d: folds
+7067fd75: calls 210
+*** FLOP *** [Js 3d 5h]
+7067fd75: checks
+442b49d7: bets 540
+7067fd75: folds
+Uncalled bet (540) returned to 442b49d7
+*** SHOWDOWN ***
+442b49d7 collected 1,020 from pot
+*** SUMMARY ***
+Total pot 1,020
+Board [Js 3d 5h]
+Seat 1: 442b49d7 won (1,020)
+Seat 2: 2a1934a5 folded before Flop
+Seat 3: Hero (button) folded before Flop
+Seat 4: bd16e59d (small blind) folded before Flop
+Seat 6: 7067fd75 (big blind) folded on the Flop
+
+
+Poker Hand #TM106348117: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level4 (90/180) - 2020/06/23 19:25:17
+Table '1' 6-max Seat #4 is the button
+Seat 1: 442b49d7 (30,665 in chips)
+Seat 2: 2a1934a5 (6,186 in chips)
+Seat 3: Hero (9,604 in chips)
+Seat 4: bd16e59d (8,249 in chips)
+Seat 6: 7067fd75 (14,356 in chips)
+442b49d7: posts the ante 30
+7067fd75: posts the ante 30
+2a1934a5: posts the ante 30
+bd16e59d: posts the ante 30
+Hero: posts the ante 30
+7067fd75: posts small blind 90
+442b49d7: posts big blind 180
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Qs Jc Ts 5d]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+2a1934a5: calls 180
+Hero: folds
+bd16e59d: folds
+7067fd75: calls 90
+442b49d7: checks
+*** FLOP *** [2c 6c 8d]
+7067fd75: checks
+442b49d7: bets 355
+2a1934a5: folds
+7067fd75: calls 355
+*** TURN *** [2c 6c 8d] [Qd]
+7067fd75: checks
+442b49d7: bets 1,220
+7067fd75: raises 3,840 to 5,060
+442b49d7: calls 3,840
+*** RIVER *** [2c 6c 8d Qd] [Js]
+7067fd75: checks
+442b49d7: checks
+7067fd75: shows [Qc 5c 8c 7h] (Pair of Queens and Pair of Eights)
+442b49d7: shows [3s 7s 5h 4s] (Queen-High)
+*** SHOWDOWN ***
+7067fd75 collected 11,520 from pot
+*** SUMMARY ***
+Total pot 11,520
+Board [2c 6c 8d Qd Js]
+Seat 1: 442b49d7 (big blind) showed [7s 5h 4s 3s] and lost with Queen-High
+Seat 2: 2a1934a5 folded on the Flop
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d (button) folded before Flop
+Seat 6: 7067fd75 (small blind) showed [Qc 8c 7h 5c] and won (11,520) with Pair of Queens and Pair of Eights
+
+
+Poker Hand #TM106348134: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level4 (90/180) - 2020/06/23 19:26:55
+Table '1' 6-max Seat #6 is the button
+Seat 1: 442b49d7 (25,040 in chips)
+Seat 2: 2a1934a5 (5,976 in chips)
+Seat 3: Hero (9,574 in chips)
+Seat 4: bd16e59d (8,219 in chips)
+Seat 6: 7067fd75 (20,251 in chips)
+442b49d7: posts the ante 30
+7067fd75: posts the ante 30
+2a1934a5: posts the ante 30
+bd16e59d: posts the ante 30
+Hero: posts the ante 30
+442b49d7: posts small blind 90
+2a1934a5: posts big blind 180
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Ac Qd Th 5c]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+Hero: raises 270 to 450
+bd16e59d: folds
+7067fd75: calls 450
+442b49d7: calls 360
+2a1934a5: calls 270
+*** FLOP *** [Ks 7h 4s]
+442b49d7: checks
+2a1934a5: checks
+Hero: checks
+7067fd75: bets 1,944
+442b49d7: calls 1,944
+2a1934a5: folds
+Hero: folds
+*** TURN *** [Ks 7h 4s] [6d]
+442b49d7: checks
+7067fd75: bets 4,824
+442b49d7: raises 15,486 to 20,310
+7067fd75: folds
+Uncalled bet (15,486) returned to 442b49d7
+*** SHOWDOWN ***
+442b49d7 collected 15,486 from pot
+*** SUMMARY ***
+Total pot 15,486
+Board [Ks 7h 4s 6d]
+Seat 1: 442b49d7 (small blind) won (15,486)
+Seat 2: 2a1934a5 (big blind) folded on the Flop
+Seat 3: Hero folded on the Flop
+Seat 4: bd16e59d folded before Flop
+Seat 6: 7067fd75 (button) folded on the Turn
+
+
+Poker Hand #TM106348146: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level4 (90/180) - 2020/06/23 19:28:29
+Table '1' 6-max Seat #1 is the button
+Seat 1: 442b49d7 (33,278 in chips)
+Seat 2: 2a1934a5 (5,496 in chips)
+Seat 3: Hero (9,094 in chips)
+Seat 4: bd16e59d (8,189 in chips)
+Seat 6: 7067fd75 (13,003 in chips)
+442b49d7: posts the ante 30
+7067fd75: posts the ante 30
+2a1934a5: posts the ante 30
+bd16e59d: posts the ante 30
+Hero: posts the ante 30
+2a1934a5: posts small blind 90
+Hero: posts big blind 180
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Ac Qh Jd Td]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+bd16e59d: raises 180 to 360
+7067fd75: calls 360
+442b49d7: calls 360
+2a1934a5: calls 270
+Hero: raises 1,950 to 2,310
+bd16e59d: calls 1,950
+7067fd75: folds
+442b49d7: folds
+2a1934a5: calls 1,950
+*** FLOP *** [Ah 8s 8c]
+2a1934a5: checks
+Hero: bets 900
+bd16e59d: folds
+2a1934a5: folds
+Uncalled bet (900) returned to Hero
+*** SHOWDOWN ***
+Hero collected 7,800 from pot
+*** SUMMARY ***
+Total pot 7,800
+Board [Ah 8s 8c]
+Seat 1: 442b49d7 (button) folded before Flop
+Seat 2: 2a1934a5 (small blind) folded on the Flop
+Seat 3: Hero (big blind) won (7,800)
+Seat 4: bd16e59d folded on the Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106348159: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:29:47
+Table '1' 6-max Seat #2 is the button
+Seat 1: 442b49d7 (32,888 in chips)
+Seat 2: 2a1934a5 (3,156 in chips)
+Seat 3: Hero (14,554 in chips)
+Seat 4: bd16e59d (5,849 in chips)
+Seat 6: 7067fd75 (12,613 in chips)
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+Hero: posts small blind 100
+bd16e59d: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Qd 8d 5s 4h]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+7067fd75: raises 340 to 540
+442b49d7: calls 540
+2a1934a5: folds
+Hero: folds
+bd16e59d: calls 340
+*** FLOP *** [7c 3c 3h]
+bd16e59d: checks
+7067fd75: bets 1,178
+442b49d7: folds
+bd16e59d: folds
+Uncalled bet (1,178) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 1,900 from pot
+*** SUMMARY ***
+Total pot 1,900
+Board [7c 3c 3h]
+Seat 1: 442b49d7 folded on the Flop
+Seat 2: 2a1934a5 (button) folded before Flop
+Seat 3: Hero (small blind) folded before Flop
+Seat 4: bd16e59d (big blind) folded on the Flop
+Seat 6: 7067fd75 won (1,900)
+
+
+Poker Hand #TM106348168: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:30:46
+Table '1' 6-max Seat #3 is the button
+Seat 1: 442b49d7 (32,312 in chips)
+Seat 2: 2a1934a5 (3,120 in chips)
+Seat 3: Hero (14,418 in chips)
+Seat 4: bd16e59d (5,273 in chips)
+Seat 6: 7067fd75 (13,937 in chips)
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+bd16e59d: posts small blind 100
+7067fd75: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Ts 9d 5h 4s]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+442b49d7: raises 200 to 400
+2a1934a5: folds
+Hero: folds
+bd16e59d: calls 300
+7067fd75: calls 200
+*** FLOP *** [2c 6c 5c]
+bd16e59d: checks
+7067fd75: checks
+442b49d7: bets 400
+bd16e59d: folds
+7067fd75: folds
+Uncalled bet (400) returned to 442b49d7
+*** SHOWDOWN ***
+442b49d7 collected 1,380 from pot
+*** SUMMARY ***
+Total pot 1,380
+Board [2c 6c 5c]
+Seat 1: 442b49d7 won (1,380)
+Seat 2: 2a1934a5 folded before Flop
+Seat 3: Hero (button) folded before Flop
+Seat 4: bd16e59d (small blind) folded on the Flop
+Seat 6: 7067fd75 (big blind) folded on the Flop
+
+
+Poker Hand #TM106348185: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:32:12
+Table '1' 6-max Seat #4 is the button
+Seat 1: 442b49d7 (33,256 in chips)
+Seat 2: 2a1934a5 (3,084 in chips)
+Seat 3: Hero (14,382 in chips)
+Seat 4: bd16e59d (4,837 in chips)
+Seat 6: 7067fd75 (13,501 in chips)
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+7067fd75: posts small blind 100
+442b49d7: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Qh 7c 6c 2s]
+Dealt to bd16e59d 
+Dealt to 7067fd75 
+2a1934a5: calls 200
+Hero: folds
+bd16e59d: calls 200
+7067fd75: calls 100
+442b49d7: checks
+*** FLOP *** [2c Qc 5h]
+7067fd75: checks
+442b49d7: checks
+2a1934a5: checks
+bd16e59d: checks
+*** TURN *** [2c Qc 5h] [3d]
+7067fd75: checks
+442b49d7: bets 899
+2a1934a5: calls 899
+bd16e59d: folds
+7067fd75: folds
+*** RIVER *** [2c Qc 5h 3d] [2d]
+442b49d7: checks
+2a1934a5: bets 1,949 and is all-in
+442b49d7: calls 1,949
+2a1934a5: shows [Js Ah Jh 4c] (Fives-High Straight)
+442b49d7: shows [8h 4h 9h As] (Fives-High Straight)
+*** SHOWDOWN ***
+2a1934a5 collected 3,338 from pot
+442b49d7 collected 3,338 from pot
+*** SUMMARY ***
+Total pot 6,676
+Board [2c Qc 5h 3d 2d]
+Seat 1: 442b49d7 (big blind) showed [As 9h 8h 4h] and won (3,338) with Fives-High Straight
+Seat 2: 2a1934a5 showed [Ah Js Jh 4c] and won (3,338) with Fives-High Straight
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d (button) folded on the Turn
+Seat 6: 7067fd75 (small blind) folded on the Turn
+
+
+Poker Hand #TM106348217: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:34:39
+Table '1' 6-max Seat #6 is the button
+Seat 1: 442b49d7 (33,510 in chips)
+Seat 2: 2a1934a5 (3,338 in chips)
+Seat 3: Hero (14,346 in chips)
+Seat 4: bd16e59d (4,601 in chips)
+Seat 5: ab0b03f2 (10,000 in chips)
+Seat 6: 7067fd75 (13,265 in chips)
+ab0b03f2: posts the ante 36
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+442b49d7: posts small blind 100
+2a1934a5: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [As Kc Jh Jc]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+Hero: raises 240 to 440
+bd16e59d: folds
+ab0b03f2: folds
+7067fd75: folds
+442b49d7: calls 340
+2a1934a5: calls 240
+*** FLOP *** [Td Kd 2c]
+442b49d7: checks
+2a1934a5: checks
+Hero: bets 461
+442b49d7: folds
+2a1934a5: calls 461
+*** TURN *** [Td Kd 2c] [2h]
+2a1934a5: checks
+Hero: bets 737
+2a1934a5: folds
+Uncalled bet (737) returned to Hero
+*** SHOWDOWN ***
+Hero collected 2,458 from pot
+*** SUMMARY ***
+Total pot 2,458
+Board [Td Kd 2c 2h]
+Seat 1: 442b49d7 (small blind) folded on the Flop
+Seat 2: 2a1934a5 (big blind) folded on the Turn
+Seat 3: Hero won (2,458)
+Seat 4: bd16e59d folded before Flop
+Seat 5: ab0b03f2 folded before Flop
+Seat 6: 7067fd75 (button) folded before Flop
+
+
+Poker Hand #TM106348230: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:35:26
+Table '1' 6-max Seat #1 is the button
+Seat 1: 442b49d7 (33,034 in chips)
+Seat 2: 2a1934a5 (2,401 in chips)
+Seat 3: Hero (15,867 in chips)
+Seat 4: bd16e59d (4,565 in chips)
+Seat 5: ab0b03f2 (9,964 in chips)
+Seat 6: 7067fd75 (13,229 in chips)
+ab0b03f2: posts the ante 36
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+2a1934a5: posts small blind 100
+Hero: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Jd 9h 4c 3c]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+bd16e59d: raises 716 to 916
+ab0b03f2: folds
+7067fd75: folds
+442b49d7: calls 916
+2a1934a5: folds
+Hero: folds
+*** FLOP *** [Js 3h Kh]
+bd16e59d: checks
+442b49d7: bets 1,199
+bd16e59d: raises 2,414 to 3,613 and is all-in
+442b49d7: calls 2,414
+bd16e59d: shows [6d Ah Kd Ks] (Three Kings)
+442b49d7: shows [6h Qs Ts 7h] (King-High)
+*** TURN *** [Js 3h Kh] [3d]
+*** RIVER *** [Js 3h Kh 3d] [Jh]
+*** SHOWDOWN ***
+bd16e59d collected 9,574 from pot
+*** SUMMARY ***
+Total pot 9,574
+Board [Js 3h Kh 3d Jh]
+Seat 1: 442b49d7 (button) showed [Qs Ts 7h 6h] and lost with King High Flush
+Seat 2: 2a1934a5 (small blind) folded before Flop
+Seat 3: Hero (big blind) folded before Flop
+Seat 4: bd16e59d showed [Ah Ks Kd 6d] and won (9,574) with Kings Full over Jacks
+Seat 5: ab0b03f2 folded before Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106348248: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:36:45
+Table '1' 6-max Seat #2 is the button
+Seat 1: 442b49d7 (28,469 in chips)
+Seat 2: 2a1934a5 (2,265 in chips)
+Seat 3: Hero (15,631 in chips)
+Seat 4: bd16e59d (9,574 in chips)
+Seat 5: ab0b03f2 (9,928 in chips)
+Seat 6: 7067fd75 (13,193 in chips)
+ab0b03f2: posts the ante 36
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+Hero: posts small blind 100
+bd16e59d: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Kd Kc Qh 2s]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+ab0b03f2: folds
+7067fd75: raises 340 to 540
+442b49d7: calls 540
+2a1934a5: folds
+Hero: folds
+bd16e59d: calls 340
+*** FLOP *** [9s Ah Js]
+bd16e59d: checks
+7067fd75: checks
+442b49d7: checks
+*** TURN *** [9s Ah Js] [7s]
+bd16e59d: checks
+7067fd75: checks
+442b49d7: checks
+*** RIVER *** [9s Ah Js 7s] [7d]
+bd16e59d: checks
+7067fd75: checks
+442b49d7: checks
+bd16e59d: shows [8d 6c 3s 4s] (Jack High Flush)
+7067fd75: shows [8h 5s 6h 6s] (Jack High Flush)
+442b49d7: shows [3h 7h 5d 4d] (Three Sevens)
+*** SHOWDOWN ***
+7067fd75 collected 1,936 from pot
+*** SUMMARY ***
+Total pot 1,936
+Board [9s Ah Js 7s 7d]
+Seat 1: 442b49d7 showed [7h 5d 4d 3h] and lost with Three Sevens
+Seat 2: 2a1934a5 (button) folded before Flop
+Seat 3: Hero (small blind) folded before Flop
+Seat 4: bd16e59d (big blind) showed [8d 6c 4s 3s] and lost with Jack High Flush
+Seat 5: ab0b03f2 folded before Flop
+Seat 6: 7067fd75 showed [8h 6s 6h 5s] and won (1,936) with Jack High Flush
+
+
+Poker Hand #TM106348265: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:38:03
+Table '1' 6-max Seat #3 is the button
+Seat 1: 442b49d7 (27,893 in chips)
+Seat 2: 2a1934a5 (2,229 in chips)
+Seat 3: Hero (15,495 in chips)
+Seat 4: bd16e59d (8,998 in chips)
+Seat 5: ab0b03f2 (9,892 in chips)
+Seat 6: 7067fd75 (14,553 in chips)
+ab0b03f2: posts the ante 36
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+bd16e59d: posts small blind 100
+ab0b03f2: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Qd 7h 7d 5d]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+7067fd75: folds
+442b49d7: raises 300 to 500
+2a1934a5: folds
+Hero: folds
+bd16e59d: folds
+ab0b03f2: calls 300
+*** FLOP *** [Qc 7s 9c]
+ab0b03f2: checks
+442b49d7: checks
+*** TURN *** [Qc 7s 9c] [2c]
+ab0b03f2: bets 987
+442b49d7: calls 987
+*** RIVER *** [Qc 7s 9c 2c] [Qs]
+ab0b03f2: bets 2,468
+442b49d7: folds
+Uncalled bet (2,468) returned to ab0b03f2
+*** SHOWDOWN ***
+ab0b03f2 collected 3,290 from pot
+*** SUMMARY ***
+Total pot 3,290
+Board [Qc 7s 9c 2c Qs]
+Seat 1: 442b49d7 folded on the River
+Seat 2: 2a1934a5 folded before Flop
+Seat 3: Hero (button) folded before Flop
+Seat 4: bd16e59d (small blind) folded before Flop
+Seat 5: ab0b03f2 (big blind) won (3,290)
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106348278: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:38:57
+Table '1' 6-max Seat #4 is the button
+Seat 1: 442b49d7 (26,370 in chips)
+Seat 2: 2a1934a5 (2,193 in chips)
+Seat 3: Hero (15,459 in chips)
+Seat 4: bd16e59d (8,862 in chips)
+Seat 5: ab0b03f2 (11,659 in chips)
+Seat 6: 7067fd75 (14,517 in chips)
+ab0b03f2: posts the ante 36
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+ab0b03f2: posts small blind 100
+7067fd75: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [7d 4h 4c 2s]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+442b49d7: raises 200 to 400
+2a1934a5: folds
+Hero: folds
+bd16e59d: folds
+ab0b03f2: raises 1,216 to 1,616
+7067fd75: folds
+442b49d7: calls 1,216
+*** FLOP *** [9c Qs Js]
+ab0b03f2: bets 1,204
+442b49d7: raises 6,056 to 7,260
+ab0b03f2: raises 2,747 to 10,007 and is all-in
+442b49d7: calls 2,747
+ab0b03f2: shows [Qd Kc Ac Qh] (Three Queens)
+442b49d7: shows [9s 7h Ks Jc] (Pair of Jacks and Pair of Nines)
+*** TURN *** [9c Qs Js] [3c]
+*** RIVER *** [9c Qs Js 3c] [8c]
+*** SHOWDOWN ***
+ab0b03f2 collected 23,662 from pot
+*** SUMMARY ***
+Total pot 23,662
+Board [9c Qs Js 3c 8c]
+Seat 1: 442b49d7 showed [Ks Jc 9s 7h] and lost with Pair of Jacks and Pair of Nines
+Seat 2: 2a1934a5 folded before Flop
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d (button) folded before Flop
+Seat 5: ab0b03f2 (small blind) showed [Ac Kc Qh Qd] and won (23,662) with Ace High Flush
+Seat 6: 7067fd75 (big blind) folded before Flop
+
+
+Poker Hand #TM106348296: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level5 (100/200) - 2020/06/23 19:40:23
+Table '1' 6-max Seat #5 is the button
+Seat 1: 442b49d7 (14,711 in chips)
+Seat 2: 2a1934a5 (2,157 in chips)
+Seat 3: Hero (15,423 in chips)
+Seat 4: bd16e59d (8,826 in chips)
+Seat 5: ab0b03f2 (23,662 in chips)
+Seat 6: 7067fd75 (14,281 in chips)
+ab0b03f2: posts the ante 36
+442b49d7: posts the ante 36
+7067fd75: posts the ante 36
+2a1934a5: posts the ante 36
+bd16e59d: posts the ante 36
+Hero: posts the ante 36
+7067fd75: posts small blind 100
+442b49d7: posts big blind 200
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Ks 3s 3c 2h]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+2a1934a5: folds
+Hero: folds
+bd16e59d: folds
+ab0b03f2: raises 300 to 500
+7067fd75: folds
+442b49d7: calls 300
+*** FLOP *** [8s 4c Qd]
+442b49d7: checks
+ab0b03f2: checks
+*** TURN *** [8s 4c Qd] [Ah]
+442b49d7: checks
+ab0b03f2: bets 658
+442b49d7: calls 658
+*** RIVER *** [8s 4c Qd Ah] [Kh]
+442b49d7: checks
+ab0b03f2: bets 1,574
+442b49d7: folds
+Uncalled bet (1,574) returned to ab0b03f2
+*** SHOWDOWN ***
+ab0b03f2 collected 2,632 from pot
+*** SUMMARY ***
+Total pot 2,632
+Board [8s 4c Qd Ah Kh]
+Seat 1: 442b49d7 (big blind) folded on the River
+Seat 2: 2a1934a5 folded before Flop
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: ab0b03f2 (button) won (2,632)
+Seat 6: 7067fd75 (small blind) folded before Flop
+
+
+Poker Hand #TM106348320: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:41:56
+Table '1' 6-max Seat #6 is the button
+Seat 1: 442b49d7 (13,517 in chips)
+Seat 2: 2a1934a5 (2,121 in chips)
+Seat 3: Hero (15,387 in chips)
+Seat 4: bd16e59d (8,790 in chips)
+Seat 5: ab0b03f2 (25,100 in chips)
+Seat 6: 7067fd75 (14,145 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+2a1934a5: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+442b49d7: posts small blind 125
+2a1934a5: posts big blind 250
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [7d 4h 3s 3h]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+Hero: folds
+bd16e59d: calls 250
+ab0b03f2: folds
+7067fd75: raises 875 to 1,125
+442b49d7: calls 1,000
+2a1934a5: folds
+bd16e59d: calls 875
+*** FLOP *** [Ks 6d Qd]
+442b49d7: checks
+bd16e59d: bets 3,853
+7067fd75: folds
+442b49d7: folds
+Uncalled bet (3,853) returned to bd16e59d
+*** SHOWDOWN ***
+bd16e59d collected 3,853 from pot
+*** SUMMARY ***
+Total pot 3,853
+Board [Ks 6d Qd]
+Seat 1: 442b49d7 (small blind) folded on the Flop
+Seat 2: 2a1934a5 (big blind) folded before Flop
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d won (3,853)
+Seat 5: ab0b03f2 folded before Flop
+Seat 6: 7067fd75 (button) folded on the Flop
+
+
+Poker Hand #TM106348337: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:43:03
+Table '1' 6-max Seat #1 is the button
+Seat 1: 442b49d7 (12,354 in chips)
+Seat 2: 2a1934a5 (1,833 in chips)
+Seat 3: Hero (15,349 in chips)
+Seat 4: bd16e59d (11,480 in chips)
+Seat 5: ab0b03f2 (25,062 in chips)
+Seat 6: 7067fd75 (12,982 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+2a1934a5: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+2a1934a5: posts small blind 125
+Hero: posts big blind 250
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Js 9s 9d 8d]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+bd16e59d: folds
+ab0b03f2: folds
+7067fd75: raises 425 to 675
+442b49d7: calls 675
+2a1934a5: folds
+Hero: calls 425
+*** FLOP *** [3s 2h Ac]
+Hero: checks
+7067fd75: checks
+442b49d7: bets 785
+Hero: folds
+7067fd75: calls 785
+*** TURN *** [3s 2h Ac] [Qd]
+7067fd75: checks
+442b49d7: checks
+*** RIVER *** [3s 2h Ac Qd] [6h]
+7067fd75: bets 1,675
+442b49d7: folds
+Uncalled bet (1,675) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 3,948 from pot
+*** SUMMARY ***
+Total pot 3,948
+Board [3s 2h Ac Qd 6h]
+Seat 1: 442b49d7 (button) folded on the River
+Seat 2: 2a1934a5 (small blind) folded before Flop
+Seat 3: Hero (big blind) folded on the Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: ab0b03f2 folded before Flop
+Seat 6: 7067fd75 won (3,948)
+
+
+Poker Hand #TM106348365: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:44:53
+Table '1' 6-max Seat #2 is the button
+Seat 1: 442b49d7 (10,856 in chips)
+Seat 2: 2a1934a5 (1,670 in chips)
+Seat 3: Hero (14,636 in chips)
+Seat 4: bd16e59d (11,442 in chips)
+Seat 5: ab0b03f2 (25,024 in chips)
+Seat 6: 7067fd75 (15,432 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+2a1934a5: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+Hero: posts small blind 125
+bd16e59d: posts big blind 250
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Ac Qc Js 4h]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+ab0b03f2: raises 375 to 625
+7067fd75: folds
+442b49d7: calls 625
+2a1934a5: folds
+Hero: folds
+bd16e59d: calls 375
+*** FLOP *** [7d 8h 5c]
+bd16e59d: checks
+ab0b03f2: checks
+442b49d7: checks
+*** TURN *** [7d 8h 5c] [5d]
+bd16e59d: checks
+ab0b03f2: bets 1,114
+442b49d7: calls 1,114
+bd16e59d: folds
+*** RIVER *** [7d 8h 5c 5d] [6d]
+ab0b03f2: checks
+442b49d7: bets 2,478
+ab0b03f2: folds
+Uncalled bet (2,478) returned to 442b49d7
+*** SHOWDOWN ***
+442b49d7 collected 4,456 from pot
+*** SUMMARY ***
+Total pot 4,456
+Board [7d 8h 5c 5d 6d]
+Seat 1: 442b49d7 won (4,456)
+Seat 2: 2a1934a5 (button) folded before Flop
+Seat 3: Hero (small blind) folded before Flop
+Seat 4: bd16e59d (big blind) folded on the Turn
+Seat 5: ab0b03f2 folded on the River
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106348391: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:46:59
+Table '1' 6-max Seat #3 is the button
+Seat 1: 442b49d7 (13,535 in chips)
+Seat 2: 2a1934a5 (1,632 in chips)
+Seat 3: Hero (14,473 in chips)
+Seat 4: bd16e59d (10,779 in chips)
+Seat 5: ab0b03f2 (23,247 in chips)
+Seat 6: 7067fd75 (15,394 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+2a1934a5: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+bd16e59d: posts small blind 125
+ab0b03f2: posts big blind 250
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Jc Ts 8h 3s]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+7067fd75: folds
+442b49d7: folds
+2a1934a5: folds
+Hero: folds
+bd16e59d: folds
+Uncalled bet (125) returned to ab0b03f2
+*** SHOWDOWN ***
+ab0b03f2 collected 478 from pot
+*** SUMMARY ***
+Total pot 478
+Seat 1: 442b49d7 folded before Flop
+Seat 2: 2a1934a5 folded before Flop
+Seat 3: Hero (button) folded before Flop
+Seat 4: bd16e59d (small blind) folded before Flop
+Seat 5: ab0b03f2 (big blind) collected (478)
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106348398: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:47:29
+Table '1' 6-max Seat #4 is the button
+Seat 1: 442b49d7 (13,497 in chips)
+Seat 2: 2a1934a5 (1,594 in chips)
+Seat 3: Hero (14,435 in chips)
+Seat 4: bd16e59d (10,616 in chips)
+Seat 5: ab0b03f2 (23,562 in chips)
+Seat 6: 7067fd75 (15,356 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+2a1934a5: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+ab0b03f2: posts small blind 125
+7067fd75: posts big blind 250
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Kc Qd 7s 2c]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+442b49d7: folds
+2a1934a5: folds
+Hero: folds
+bd16e59d: folds
+ab0b03f2: raises 728 to 978
+7067fd75: folds
+Uncalled bet (728) returned to ab0b03f2
+*** SHOWDOWN ***
+ab0b03f2 collected 728 from pot
+*** SUMMARY ***
+Total pot 728
+Seat 1: 442b49d7 folded before Flop
+Seat 2: 2a1934a5 folded before Flop
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d (button) folded before Flop
+Seat 5: ab0b03f2 (small blind) collected (728)
+Seat 6: 7067fd75 (big blind) folded before Flop
+
+
+Poker Hand #TM106348401: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:47:48
+Table '1' 6-max Seat #5 is the button
+Seat 1: 442b49d7 (13,459 in chips)
+Seat 2: 2a1934a5 (1,556 in chips)
+Seat 3: Hero (14,397 in chips)
+Seat 4: bd16e59d (10,578 in chips)
+Seat 5: ab0b03f2 (24,002 in chips)
+Seat 6: 7067fd75 (15,068 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+2a1934a5: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+7067fd75: posts small blind 125
+442b49d7: posts big blind 250
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Qc 5h 4d 4c]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+2a1934a5: folds
+Hero: folds
+bd16e59d: folds
+ab0b03f2: folds
+7067fd75: raises 728 to 978
+442b49d7: calls 728
+*** FLOP *** [9c Qs 7d]
+7067fd75: checks
+442b49d7: checks
+*** TURN *** [9c Qs 7d] [6s]
+7067fd75: bets 1,625
+442b49d7: folds
+Uncalled bet (1,625) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 2,184 from pot
+*** SUMMARY ***
+Total pot 2,184
+Board [9c Qs 7d 6s]
+Seat 1: 442b49d7 (big blind) folded on the Turn
+Seat 2: 2a1934a5 folded before Flop
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: ab0b03f2 (button) folded before Flop
+Seat 6: 7067fd75 (small blind) won (2,184)
+
+
+Poker Hand #TM106348414: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:48:34
+Table '1' 6-max Seat #6 is the button
+Seat 1: 442b49d7 (12,443 in chips)
+Seat 2: 2a1934a5 (1,518 in chips)
+Seat 3: Hero (14,359 in chips)
+Seat 4: bd16e59d (10,540 in chips)
+Seat 5: ab0b03f2 (23,964 in chips)
+Seat 6: 7067fd75 (16,236 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+2a1934a5: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+442b49d7: posts small blind 125
+2a1934a5: posts big blind 250
+*** HOLE CARDS ***
+Dealt to 442b49d7 
+Dealt to 2a1934a5 
+Dealt to Hero [Ad 9h 8h 7s]
+Dealt to bd16e59d 
+Dealt to ab0b03f2 
+Dealt to 7067fd75 
+Hero: folds
+bd16e59d: folds
+ab0b03f2: raises 375 to 625
+7067fd75: folds
+442b49d7: folds
+2a1934a5: calls 375
+*** FLOP *** [4d 5d 5s]
+2a1934a5: bets 855 and is all-in
+ab0b03f2: calls 855
+2a1934a5: shows [7d 9d 2c Jd] (Pair of Fives)
+ab0b03f2: shows [8c 9c 3h Ah] (Pair of Fives)
+*** TURN *** [4d 5d 5s] [Tc]
+*** RIVER *** [4d 5d 5s Tc] [Th]
+*** SHOWDOWN ***
+ab0b03f2 collected 3,313 from pot
+*** SUMMARY ***
+Total pot 3,313
+Board [4d 5d 5s Tc Th]
+Seat 1: 442b49d7 (small blind) folded before Flop
+Seat 2: 2a1934a5 (big blind) showed [Jd 9d 7d 2c] and lost with Pair of Tens
+Seat 3: Hero folded before Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: ab0b03f2 showed [Ah 9c 8c 3h] and won (3,313) with Pair of Tens
+Seat 6: 7067fd75 (button) folded before Flop
+
+
+Poker Hand #TM106348845: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:31:51
+Table '5' 6-max Seat #3 is the button
+Seat 1: Hero (5,127 in chips)
+Seat 2: 87ed49bb (27,185 in chips)
+Seat 3: 78390f35 (18,673 in chips)
+Seat 4: b59f4585 (34,114 in chips)
+Seat 5: 5c6388de (30,107 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+b59f4585: posts small blind 250
+5c6388de: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Jd Td 7c 2c]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+Hero: folds
+87ed49bb: folds
+78390f35: raises 1,000 to 1,500
+b59f4585: folds
+5c6388de: folds
+Uncalled bet (1,000) returned to 78390f35
+*** SHOWDOWN ***
+78390f35 collected 1,625 from pot
+*** SUMMARY ***
+Total pot 1,625
+Seat 1: Hero folded before Flop
+Seat 2: 87ed49bb folded before Flop
+Seat 3: 78390f35 (button) collected (1,625)
+Seat 4: b59f4585 (small blind) folded before Flop
+Seat 5: 5c6388de (big blind) folded before Flop
+
+
+Poker Hand #TM106348849: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:32:21
+Table '5' 6-max Seat #4 is the button
+Seat 1: Hero (5,052 in chips)
+Seat 2: 87ed49bb (27,110 in chips)
+Seat 3: 78390f35 (19,723 in chips)
+Seat 4: b59f4585 (33,789 in chips)
+Seat 5: 5c6388de (29,532 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+5c6388de: posts small blind 250
+Hero: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Ac Jc 5d 3h]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+87ed49bb: folds
+78390f35: folds
+b59f4585: raises 1,000 to 1,500
+5c6388de: folds
+Hero: calls 1,000
+*** FLOP *** [4h Ks 8c]
+Hero: checks
+b59f4585: bets 3,625
+Hero: folds
+Uncalled bet (3,625) returned to b59f4585
+*** SHOWDOWN ***
+b59f4585 collected 3,625 from pot
+*** SUMMARY ***
+Total pot 3,625
+Board [4h Ks 8c]
+Seat 1: Hero (big blind) folded on the Flop
+Seat 2: 87ed49bb folded before Flop
+Seat 3: 78390f35 folded before Flop
+Seat 4: b59f4585 (button) won (3,625)
+Seat 5: 5c6388de (small blind) folded before Flop
+
+
+Poker Hand #TM106348854: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:32:53
+Table '5' 6-max Seat #5 is the button
+Seat 1: Hero (3,477 in chips)
+Seat 2: 87ed49bb (27,035 in chips)
+Seat 3: 78390f35 (19,648 in chips)
+Seat 4: b59f4585 (35,839 in chips)
+Seat 5: 5c6388de (29,207 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+Hero: posts small blind 250
+87ed49bb: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [6s 6h 5c 2d]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+78390f35: calls 500
+b59f4585: calls 500
+5c6388de: folds
+Hero: folds
+87ed49bb: checks
+*** FLOP *** [6d 4c Kh]
+87ed49bb: checks
+78390f35: checks
+b59f4585: bets 1,594
+87ed49bb: calls 1,594
+78390f35: folds
+*** TURN *** [6d 4c Kh] [2s]
+87ed49bb: checks
+b59f4585: checks
+*** RIVER *** [6d 4c Kh 2s] [Td]
+87ed49bb: bets 3,750
+b59f4585: calls 3,750
+87ed49bb: shows [7c 9h 7s 5s] (Pair of Sevens)
+b59f4585: shows [4s 4h 8d 7h] (Three Fours)
+*** SHOWDOWN ***
+b59f4585 collected 12,813 from pot
+*** SUMMARY ***
+Total pot 12,813
+Board [6d 4c Kh 2s Td]
+Seat 1: Hero (small blind) folded before Flop
+Seat 2: 87ed49bb (big blind) showed [9h 7s 7c 5s] and lost with Pair of Sevens
+Seat 3: 78390f35 folded on the Flop
+Seat 4: b59f4585 showed [8d 7h 4s 4h] and won (12,813) with Three Fours
+Seat 5: 5c6388de (button) folded before Flop
+
+
+Poker Hand #TM106348869: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:34:27
+Table '5' 6-max Seat #1 is the button
+Seat 1: Hero (3,152 in chips)
+Seat 2: 87ed49bb (21,116 in chips)
+Seat 3: 78390f35 (19,073 in chips)
+Seat 4: b59f4585 (42,733 in chips)
+Seat 5: 5c6388de (29,132 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+87ed49bb: posts small blind 250
+78390f35: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Qd 9h 7s 5c]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+b59f4585: raises 1,000 to 1,500
+5c6388de: folds
+Hero: folds
+87ed49bb: folds
+78390f35: folds
+Uncalled bet (1,000) returned to b59f4585
+*** SHOWDOWN ***
+b59f4585 collected 1,625 from pot
+*** SUMMARY ***
+Total pot 1,625
+Seat 1: Hero (button) folded before Flop
+Seat 2: 87ed49bb (small blind) folded before Flop
+Seat 3: 78390f35 (big blind) folded before Flop
+Seat 4: b59f4585 collected (1,625)
+Seat 5: 5c6388de folded before Flop
+
+
+Poker Hand #TM106348874: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:34:52
+Table '5' 6-max Seat #2 is the button
+Seat 1: Hero (3,077 in chips)
+Seat 2: 87ed49bb (20,791 in chips)
+Seat 3: 78390f35 (18,498 in chips)
+Seat 4: b59f4585 (43,783 in chips)
+Seat 5: 5c6388de (29,057 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+78390f35: posts small blind 250
+b59f4585: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Ah Jh 4c 2s]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+5c6388de: raises 650 to 1,150
+Hero: folds
+87ed49bb: folds
+78390f35: folds
+b59f4585: calls 650
+*** FLOP *** [Js 3d Qd]
+b59f4585: checks
+5c6388de: checks
+*** TURN *** [Js 3d Qd] [Ad]
+b59f4585: checks
+5c6388de: checks
+*** RIVER *** [Js 3d Qd Ad] [7s]
+b59f4585: checks
+5c6388de: checks
+b59f4585: shows [5s 9c Qh 8h] (Pair of Queens)
+5c6388de: shows [Jc 7c Ts Th] (Pair of Jacks and Pair of Sevens)
+*** SHOWDOWN ***
+5c6388de collected 2,925 from pot
+*** SUMMARY ***
+Total pot 2,925
+Board [Js 3d Qd Ad 7s]
+Seat 1: Hero folded before Flop
+Seat 2: 87ed49bb (button) folded before Flop
+Seat 3: 78390f35 (small blind) folded before Flop
+Seat 4: b59f4585 (big blind) showed [Qh 9c 8h 5s] and lost with Pair of Queens
+Seat 5: 5c6388de showed [Jc Ts Th 7c] and won (2,925) with Pair of Jacks and Pair of Sevens
+
+
+Poker Hand #TM106348895: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:36:02
+Table '5' 6-max Seat #3 is the button
+Seat 1: Hero (3,002 in chips)
+Seat 2: 87ed49bb (20,716 in chips)
+Seat 3: 78390f35 (18,173 in chips)
+Seat 4: b59f4585 (42,558 in chips)
+Seat 5: 5c6388de (30,757 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+b59f4585: posts small blind 250
+5c6388de: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Th 9c 4s 2s]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+Hero: folds
+87ed49bb: folds
+78390f35: folds
+b59f4585: calls 250
+5c6388de: checks
+*** FLOP *** [Jd Td 3s]
+b59f4585: checks
+5c6388de: checks
+*** TURN *** [Jd Td 3s] [8d]
+b59f4585: bets 1,031
+5c6388de: folds
+Uncalled bet (1,031) returned to b59f4585
+*** SHOWDOWN ***
+b59f4585 collected 1,375 from pot
+*** SUMMARY ***
+Total pot 1,375
+Board [Jd Td 3s 8d]
+Seat 1: Hero folded before Flop
+Seat 2: 87ed49bb folded before Flop
+Seat 3: 78390f35 (button) folded before Flop
+Seat 4: b59f4585 (small blind) won (1,375)
+Seat 5: 5c6388de (big blind) folded on the Turn
+
+
+Poker Hand #TM106348904: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:36:41
+Table '5' 6-max Seat #4 is the button
+Seat 1: Hero (2,927 in chips)
+Seat 2: 87ed49bb (20,641 in chips)
+Seat 3: 78390f35 (18,098 in chips)
+Seat 4: b59f4585 (43,358 in chips)
+Seat 5: 5c6388de (30,182 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+5c6388de: posts small blind 250
+Hero: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Jc 8c 4d 2c]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+87ed49bb: folds
+78390f35: folds
+b59f4585: raises 1,000 to 1,500
+5c6388de: folds
+Hero: folds
+Uncalled bet (1,000) returned to b59f4585
+*** SHOWDOWN ***
+b59f4585 collected 1,625 from pot
+*** SUMMARY ***
+Total pot 1,625
+Seat 1: Hero (big blind) folded before Flop
+Seat 2: 87ed49bb folded before Flop
+Seat 3: 78390f35 folded before Flop
+Seat 4: b59f4585 (button) collected (1,625)
+Seat 5: 5c6388de (small blind) folded before Flop
+
+
+Poker Hand #TM106348907: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:36:57
+Table '5' 6-max Seat #5 is the button
+Seat 1: Hero (2,352 in chips)
+Seat 2: 87ed49bb (20,566 in chips)
+Seat 3: 78390f35 (18,023 in chips)
+Seat 4: b59f4585 (44,408 in chips)
+Seat 5: 5c6388de (29,857 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+Hero: posts small blind 250
+87ed49bb: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Js 7d 6c 2c]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+78390f35: folds
+b59f4585: raises 1,000 to 1,500
+5c6388de: folds
+Hero: folds
+87ed49bb: calls 1,000
+*** FLOP *** [3d 5s Tc]
+87ed49bb: checks
+b59f4585: bets 2,719
+87ed49bb: calls 2,719
+*** TURN *** [3d 5s Tc] [7h]
+87ed49bb: bets 4,250
+b59f4585: raises 17,563 to 21,813
+87ed49bb: calls 12,022 and is all-in
+Uncalled bet (5,541) returned to b59f4585
+b59f4585: shows [3s 3h 9s Jh] (Three Treys)
+87ed49bb: shows [9d 4h Ah 6h] (Sevens-High Straight)
+*** RIVER *** [3d 5s Tc 7h] [2s]
+*** SHOWDOWN ***
+87ed49bb collected 41,607 from pot
+*** SUMMARY ***
+Total pot 41,607
+Board [3d 5s Tc 7h 2s]
+Seat 1: Hero (small blind) folded before Flop
+Seat 2: 87ed49bb (big blind) showed [Ah 9d 6h 4h] and won (41,607) with Sevens-High Straight
+Seat 3: 78390f35 folded before Flop
+Seat 4: b59f4585 showed [Jh 9s 3s 3h] and lost with Three Treys
+Seat 5: 5c6388de (button) folded before Flop
+
+
+Poker Hand #TM106348924: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:38:06
+Table '5' 6-max Seat #1 is the button
+Seat 1: Hero (2,027 in chips)
+Seat 2: 87ed49bb (41,607 in chips)
+Seat 3: 78390f35 (17,948 in chips)
+Seat 4: b59f4585 (23,842 in chips)
+Seat 5: 5c6388de (29,782 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+87ed49bb: posts small blind 250
+78390f35: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [9s 7s 4s 3h]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+b59f4585: raises 1,000 to 1,500
+5c6388de: folds
+Hero: folds
+87ed49bb: folds
+78390f35: calls 1,000
+*** FLOP *** [Kc 3c Qh]
+78390f35: checks
+b59f4585: checks
+*** TURN *** [Kc 3c Qh] [4h]
+78390f35: bets 2,465
+b59f4585: calls 2,465
+*** RIVER *** [Kc 3c Qh 4h] [5c]
+78390f35: checks
+b59f4585: checks
+78390f35: shows [Kh 6c Qc Qs] (King High Flush)
+b59f4585: shows [Jc 6d Ad Qd] (Pair of Queens)
+*** SHOWDOWN ***
+78390f35 collected 8,555 from pot
+*** SUMMARY ***
+Total pot 8,555
+Board [Kc 3c Qh 4h 5c]
+Seat 1: Hero (button) folded before Flop
+Seat 2: 87ed49bb (small blind) folded before Flop
+Seat 3: 78390f35 (big blind) showed [Kh Qs Qc 6c] and won (8,555) with King High Flush
+Seat 4: b59f4585 showed [Ad Qd Jc 6d] and lost with Pair of Queens
+Seat 5: 5c6388de folded before Flop
+
+
+Poker Hand #TM106348944: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:39:37
+Table '5' 6-max Seat #2 is the button
+Seat 1: Hero (1,952 in chips)
+Seat 2: 87ed49bb (41,282 in chips)
+Seat 3: 78390f35 (22,463 in chips)
+Seat 4: b59f4585 (19,802 in chips)
+Seat 5: 5c6388de (29,707 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+78390f35: posts small blind 250
+b59f4585: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Ad Qs Js 3h]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+5c6388de: folds
+Hero: raises 1,377 to 1,877 and is all-in
+87ed49bb: folds
+78390f35: folds
+b59f4585: calls 1,377
+Hero: shows [Ad 3h Js Qs]
+b59f4585: shows [4c Ks 3d 9d]
+*** FLOP *** [8h Td 5c]
+*** TURN *** [8h Td 5c] [7c]
+*** RIVER *** [8h Td 5c 7c] [7d]
+*** SHOWDOWN ***
+Hero collected 4,379 from pot
+*** SUMMARY ***
+Total pot 4,379
+Board [8h Td 5c 7c 7d]
+Seat 1: Hero showed [Ad Qs Js 3h] and won (4,379) with Pair of Sevens
+Seat 2: 87ed49bb (button) folded before Flop
+Seat 3: 78390f35 (small blind) folded before Flop
+Seat 4: b59f4585 (big blind) showed [Ks 9d 4c 3d] and lost with Pair of Sevens
+Seat 5: 5c6388de folded before Flop
+
+
+Poker Hand #TM106348953: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:40:19
+Table '5' 6-max Seat #3 is the button
+Seat 1: Hero (4,379 in chips)
+Seat 2: 87ed49bb (41,207 in chips)
+Seat 3: 78390f35 (22,138 in chips)
+Seat 4: b59f4585 (17,850 in chips)
+Seat 5: 5c6388de (29,632 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+b59f4585: posts small blind 250
+5c6388de: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Jh Jd 9c 7h]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+Hero: raises 1,625 to 2,125
+87ed49bb: folds
+78390f35: folds
+b59f4585: folds
+5c6388de: folds
+Uncalled bet (1,625) returned to Hero
+*** SHOWDOWN ***
+Hero collected 1,625 from pot
+*** SUMMARY ***
+Total pot 1,625
+Seat 1: Hero collected (1,625)
+Seat 2: 87ed49bb folded before Flop
+Seat 3: 78390f35 (button) folded before Flop
+Seat 4: b59f4585 (small blind) folded before Flop
+Seat 5: 5c6388de (big blind) folded before Flop
+
+
+Poker Hand #TM106348960: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:40:51
+Table '5' 6-max Seat #4 is the button
+Seat 1: Hero (5,429 in chips)
+Seat 2: 87ed49bb (41,132 in chips)
+Seat 3: 78390f35 (22,063 in chips)
+Seat 4: b59f4585 (17,525 in chips)
+Seat 5: 5c6388de (29,057 in chips)
+78390f35: posts the ante 75
+5c6388de: posts the ante 75
+87ed49bb: posts the ante 75
+b59f4585: posts the ante 75
+Hero: posts the ante 75
+5c6388de: posts small blind 250
+Hero: posts big blind 500
+*** HOLE CARDS ***
+Dealt to Hero [Qd 9s 8s 3h]
+Dealt to 87ed49bb 
+Dealt to 78390f35 
+Dealt to b59f4585 
+Dealt to 5c6388de 
+87ed49bb: folds
+78390f35: folds
+b59f4585: raises 1,000 to 1,500
+5c6388de: folds
+Hero: calls 1,000
+*** FLOP *** [Tc 5d 8d]
+Hero: bets 3,625
+b59f4585: raises 3,625 to 7,250
+Hero: calls 229 and is all-in
+Uncalled bet (3,396) returned to b59f4585
+b59f4585: shows [Kc 2d Kd Jd] (Pair of Kings)
+Hero: shows [8s 3h 9s Qd] (Pair of Eights)
+*** TURN *** [Tc 5d 8d] [Th]
+*** RIVER *** [Tc 5d 8d Th] [3d]
+*** SHOWDOWN ***
+b59f4585 collected 11,333 from pot
+*** SUMMARY ***
+Total pot 11,333
+Board [Tc 5d 8d Th 3d]
+Seat 1: Hero (big blind) showed [Qd 9s 8s 3h] and lost with Pair of Tens and Pair of Eights
+Seat 2: 87ed49bb folded before Flop
+Seat 3: 78390f35 folded before Flop
+Seat 4: b59f4585 (button) showed [Kd Kc Jd 2d] and won (11,333) with King High Flush
+Seat 5: 5c6388de (small blind) folded before Flop
+
+
+Poker Hand #TM106366650: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:49:25
+Table '7' 6-max Seat #1 is the button
+Seat 1: c0b3f67b (10,000 in chips)
+Seat 2: ab0b03f2 (25,759 in chips)
+Seat 3: 442b49d7 (12,280 in chips)
+Seat 4: bd16e59d (10,502 in chips)
+Seat 5: Hero (14,321 in chips)
+Seat 6: 7067fd75 (16,198 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+c0b3f67b: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+ab0b03f2: posts small blind 125
+442b49d7: posts big blind 250
+*** HOLE CARDS ***
+Dealt to c0b3f67b 
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Kc Qh Qc 5c]
+Dealt to 7067fd75 
+bd16e59d: folds
+Hero: raises 300 to 550
+7067fd75: calls 550
+c0b3f67b: folds
+ab0b03f2: folds
+442b49d7: calls 300
+*** FLOP *** [3c 4s 4c]
+442b49d7: checks
+Hero: bets 601
+7067fd75: folds
+442b49d7: raises 3,205 to 3,806
+Hero: folds
+Uncalled bet (3,205) returned to 442b49d7
+*** SHOWDOWN ***
+442b49d7 collected 3,205 from pot
+*** SUMMARY ***
+Total pot 3,205
+Board [3c 4s 4c]
+Seat 1: c0b3f67b (button) folded before Flop
+Seat 2: ab0b03f2 (small blind) folded before Flop
+Seat 3: 442b49d7 (big blind) won (3,205)
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero folded on the Flop
+Seat 6: 7067fd75 folded on the Flop
+
+
+Poker Hand #TM106366663: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:50:38
+Table '7' 6-max Seat #2 is the button
+Seat 1: c0b3f67b (9,962 in chips)
+Seat 2: ab0b03f2 (25,596 in chips)
+Seat 3: 442b49d7 (14,296 in chips)
+Seat 4: bd16e59d (10,464 in chips)
+Seat 5: Hero (13,132 in chips)
+Seat 6: 7067fd75 (15,610 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+c0b3f67b: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+442b49d7: posts small blind 125
+bd16e59d: posts big blind 250
+*** HOLE CARDS ***
+Dealt to c0b3f67b 
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Ts Th 7h 2h]
+Dealt to 7067fd75 
+Hero: folds
+7067fd75: folds
+c0b3f67b: raises 375 to 625
+ab0b03f2: calls 625
+442b49d7: calls 500
+bd16e59d: calls 375
+*** FLOP *** [Qs 5c 2d]
+442b49d7: checks
+bd16e59d: checks
+c0b3f67b: checks
+ab0b03f2: checks
+*** TURN *** [Qs 5c 2d] [4c]
+442b49d7: checks
+bd16e59d: checks
+c0b3f67b: checks
+ab0b03f2: checks
+*** RIVER *** [Qs 5c 2d 4c] [7s]
+442b49d7: checks
+bd16e59d: bets 1,250
+c0b3f67b: folds
+ab0b03f2: folds
+442b49d7: folds
+Uncalled bet (1,250) returned to bd16e59d
+*** SHOWDOWN ***
+bd16e59d collected 2,728 from pot
+*** SUMMARY ***
+Total pot 2,728
+Board [Qs 5c 2d 4c 7s]
+Seat 1: c0b3f67b folded on the River
+Seat 2: ab0b03f2 (button) folded on the River
+Seat 3: 442b49d7 (small blind) folded on the River
+Seat 4: bd16e59d (big blind) won (2,728)
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366689: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:52:40
+Table '7' 6-max Seat #3 is the button
+Seat 1: c0b3f67b (9,299 in chips)
+Seat 2: ab0b03f2 (24,933 in chips)
+Seat 3: 442b49d7 (13,633 in chips)
+Seat 4: bd16e59d (12,529 in chips)
+Seat 5: Hero (13,094 in chips)
+Seat 6: 7067fd75 (15,572 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+c0b3f67b: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+bd16e59d: posts small blind 125
+Hero: posts big blind 250
+*** HOLE CARDS ***
+Dealt to c0b3f67b 
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Ah Js Tc 7c]
+Dealt to 7067fd75 
+7067fd75: folds
+c0b3f67b: folds
+ab0b03f2: folds
+442b49d7: raises 500 to 750
+bd16e59d: calls 625
+Hero: raises 2,478 to 3,228
+442b49d7: folds
+bd16e59d: calls 2,478
+*** FLOP *** [3s 5h Qd]
+bd16e59d: bets 7,434
+Hero: folds
+Uncalled bet (7,434) returned to bd16e59d
+*** SHOWDOWN ***
+bd16e59d collected 7,434 from pot
+*** SUMMARY ***
+Total pot 7,434
+Board [3s 5h Qd]
+Seat 1: c0b3f67b folded before Flop
+Seat 2: ab0b03f2 folded before Flop
+Seat 3: 442b49d7 (button) folded before Flop
+Seat 4: bd16e59d (small blind) won (7,434)
+Seat 5: Hero (big blind) folded on the Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366706: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level6 (125/250) - 2020/06/23 19:54:04
+Table '7' 6-max Seat #4 is the button
+Seat 1: c0b3f67b (9,261 in chips)
+Seat 2: ab0b03f2 (24,895 in chips)
+Seat 3: 442b49d7 (12,845 in chips)
+Seat 4: bd16e59d (16,697 in chips)
+Seat 5: Hero (9,828 in chips)
+Seat 6: 7067fd75 (15,534 in chips)
+ab0b03f2: posts the ante 38
+442b49d7: posts the ante 38
+7067fd75: posts the ante 38
+c0b3f67b: posts the ante 38
+bd16e59d: posts the ante 38
+Hero: posts the ante 38
+Hero: posts small blind 125
+7067fd75: posts big blind 250
+*** HOLE CARDS ***
+Dealt to c0b3f67b 
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Jc Td 7h 2c]
+Dealt to 7067fd75 
+c0b3f67b: raises 250 to 500
+ab0b03f2: folds
+442b49d7: folds
+bd16e59d: calls 500
+Hero: folds
+7067fd75: calls 250
+*** FLOP *** [6s 5s 7s]
+7067fd75: checks
+c0b3f67b: checks
+bd16e59d: checks
+*** TURN *** [6s 5s 7s] [2d]
+7067fd75: checks
+c0b3f67b: checks
+bd16e59d: checks
+*** RIVER *** [6s 5s 7s 2d] [As]
+7067fd75: checks
+c0b3f67b: checks
+bd16e59d: checks
+7067fd75: shows [7d Th Qh 7c] (Three Sevens)
+c0b3f67b: shows [Ks Qd 9c Kc] (Pair of Kings)
+bd16e59d: shows [Ac 8c 9d Jd] (Nines-High Straight)
+*** SHOWDOWN ***
+bd16e59d collected 1,853 from pot
+*** SUMMARY ***
+Total pot 1,853
+Board [6s 5s 7s 2d As]
+Seat 1: c0b3f67b showed [Ks Kc Qd 9c] and lost with Pair of Kings
+Seat 2: ab0b03f2 folded before Flop
+Seat 3: 442b49d7 folded before Flop
+Seat 4: bd16e59d (button) showed [Ac Jd 9d 8c] and won (1,853) with Nines-High Straight
+Seat 5: Hero (small blind) folded before Flop
+Seat 6: 7067fd75 (big blind) showed [Qh Th 7d 7c] and lost with Three Sevens
+
+
+Poker Hand #TM106366738: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:03:47
+Table '7' 6-max Seat #5 is the button
+Seat 1: c0b3f67b (8,723 in chips)
+Seat 2: ab0b03f2 (24,857 in chips)
+Seat 3: 442b49d7 (12,807 in chips)
+Seat 4: bd16e59d (18,012 in chips)
+Seat 5: Hero (9,665 in chips)
+Seat 6: 7067fd75 (14,996 in chips)
+ab0b03f2: posts the ante 45
+442b49d7: posts the ante 45
+7067fd75: posts the ante 45
+c0b3f67b: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+7067fd75: posts small blind 150
+c0b3f67b: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c0b3f67b 
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Qh Qc 7c 6d]
+Dealt to 7067fd75 
+ab0b03f2: folds
+442b49d7: folds
+bd16e59d: folds
+Hero: raises 360 to 660
+7067fd75: raises 1,890 to 2,550
+c0b3f67b: folds
+Hero: calls 1,890
+*** FLOP *** [Ks 5d Ac]
+7067fd75: bets 1,644
+Hero: folds
+Uncalled bet (1,644) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 5,670 from pot
+*** SUMMARY ***
+Total pot 5,670
+Board [Ks 5d Ac]
+Seat 1: c0b3f67b (big blind) folded before Flop
+Seat 2: ab0b03f2 folded before Flop
+Seat 3: 442b49d7 folded before Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero (button) folded on the Flop
+Seat 6: 7067fd75 (small blind) won (5,670)
+
+
+Poker Hand #TM106366744: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:04:25
+Table '7' 6-max Seat #6 is the button
+Seat 1: c0b3f67b (8,378 in chips)
+Seat 2: ab0b03f2 (24,812 in chips)
+Seat 3: 442b49d7 (12,762 in chips)
+Seat 4: bd16e59d (17,967 in chips)
+Seat 5: Hero (7,070 in chips)
+Seat 6: 7067fd75 (18,071 in chips)
+ab0b03f2: posts the ante 45
+442b49d7: posts the ante 45
+7067fd75: posts the ante 45
+c0b3f67b: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+c0b3f67b: posts small blind 150
+ab0b03f2: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c0b3f67b 
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Jh Jc Ts 9d]
+Dealt to 7067fd75 
+442b49d7: raises 450 to 750
+bd16e59d: folds
+Hero: folds
+7067fd75: folds
+c0b3f67b: folds
+ab0b03f2: calls 450
+*** FLOP *** [2c 5c 3d]
+ab0b03f2: bets 634
+442b49d7: folds
+Uncalled bet (634) returned to ab0b03f2
+*** SHOWDOWN ***
+ab0b03f2 collected 1,920 from pot
+*** SUMMARY ***
+Total pot 1,920
+Board [2c 5c 3d]
+Seat 1: c0b3f67b (small blind) folded before Flop
+Seat 2: ab0b03f2 (big blind) won (1,920)
+Seat 3: 442b49d7 folded on the Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 (button) folded before Flop
+
+
+Poker Hand #TM106366758: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:05:27
+Table '7' 6-max Seat #1 is the button
+Seat 1: c0b3f67b (8,183 in chips)
+Seat 2: ab0b03f2 (25,937 in chips)
+Seat 3: 442b49d7 (11,967 in chips)
+Seat 4: bd16e59d (17,922 in chips)
+Seat 5: Hero (7,025 in chips)
+Seat 6: 7067fd75 (18,026 in chips)
+ab0b03f2: posts the ante 45
+442b49d7: posts the ante 45
+7067fd75: posts the ante 45
+c0b3f67b: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+ab0b03f2: posts small blind 150
+442b49d7: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c0b3f67b 
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Qd Js 9d 2c]
+Dealt to 7067fd75 
+bd16e59d: folds
+Hero: folds
+7067fd75: raises 510 to 810
+c0b3f67b: calls 810
+ab0b03f2: folds
+442b49d7: calls 510
+*** FLOP *** [3d Ad 2d]
+442b49d7: checks
+7067fd75: bets 2,850
+c0b3f67b: folds
+442b49d7: folds
+Uncalled bet (2,850) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 2,850 from pot
+*** SUMMARY ***
+Total pot 2,850
+Board [3d Ad 2d]
+Seat 1: c0b3f67b (button) folded on the Flop
+Seat 2: ab0b03f2 (small blind) folded before Flop
+Seat 3: 442b49d7 (big blind) folded on the Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 won (2,850)
+
+
+Poker Hand #TM106366770: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:06:26
+Table '7' 6-max Seat #2 is the button
+Seat 1: c0b3f67b (7,328 in chips)
+Seat 2: ab0b03f2 (25,742 in chips)
+Seat 3: 442b49d7 (11,112 in chips)
+Seat 4: bd16e59d (17,877 in chips)
+Seat 5: Hero (6,980 in chips)
+Seat 6: 7067fd75 (20,021 in chips)
+ab0b03f2: posts the ante 45
+442b49d7: posts the ante 45
+7067fd75: posts the ante 45
+c0b3f67b: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+442b49d7: posts small blind 150
+bd16e59d: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c0b3f67b 
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Kc Jd 4s 2c]
+Dealt to 7067fd75 
+Hero: folds
+7067fd75: folds
+c0b3f67b: folds
+ab0b03f2: raises 450 to 750
+442b49d7: calls 600
+bd16e59d: calls 450
+*** FLOP *** [Js 8h Jc]
+442b49d7: checks
+bd16e59d: checks
+ab0b03f2: checks
+*** TURN *** [Js 8h Jc] [Qd]
+442b49d7: checks
+bd16e59d: checks
+ab0b03f2: checks
+*** RIVER *** [Js 8h Jc Qd] [9d]
+442b49d7: checks
+bd16e59d: checks
+ab0b03f2: checks
+442b49d7: shows [Qh 9s 7s 8c] (Pair of Queens and Pair of Jacks)
+bd16e59d: shows [As Ts 6d 7c] (Jacks-High Straight)
+ab0b03f2: shows [Qc Ad Ah 6c] (Pair of Aces and Pair of Jacks)
+*** SHOWDOWN ***
+bd16e59d collected 2,520 from pot
+*** SUMMARY ***
+Total pot 2,520
+Board [Js 8h Jc Qd 9d]
+Seat 1: c0b3f67b folded before Flop
+Seat 2: ab0b03f2 (button) showed [Ah Ad Qc 6c] and lost with Pair of Aces and Pair of Jacks
+Seat 3: 442b49d7 (small blind) showed [Qh 9s 8c 7s] and lost with Pair of Queens and Pair of Jacks
+Seat 4: bd16e59d (big blind) showed [As Ts 7c 6d] and won (2,520) with Jacks-High Straight
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366794: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:08:33
+Table '7' 6-max Seat #3 is the button
+Seat 2: ab0b03f2 (24,947 in chips)
+Seat 3: 442b49d7 (10,317 in chips)
+Seat 4: bd16e59d (19,602 in chips)
+Seat 5: Hero (6,935 in chips)
+Seat 6: 7067fd75 (19,976 in chips)
+ab0b03f2: posts the ante 45
+442b49d7: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+bd16e59d: posts small blind 150
+Hero: posts big blind 300
+*** HOLE CARDS ***
+Dealt to ab0b03f2 
+Dealt to 442b49d7 
+Dealt to bd16e59d 
+Dealt to Hero [Ah Ad Jd 9c]
+Dealt to 7067fd75 
+7067fd75: folds
+ab0b03f2: raises 450 to 750
+442b49d7: folds
+bd16e59d: calls 600
+Hero: raises 2,475 to 3,225
+ab0b03f2: calls 2,475
+bd16e59d: folds
+*** FLOP *** [Kd Tc 7c]
+Hero: bets 3,665 and is all-in
+ab0b03f2: calls 3,665
+Hero: shows [Ah Ad 9c Jd] (Pair of Aces)
+ab0b03f2: shows [Qd Ts Qc 9d] (Pair of Queens)
+*** TURN *** [Kd Tc 7c] [4h]
+*** RIVER *** [Kd Tc 7c 4h] [6c]
+*** SHOWDOWN ***
+Hero collected 14,755 from pot
+*** SUMMARY ***
+Total pot 14,755
+Board [Kd Tc 7c 4h 6c]
+Seat 2: ab0b03f2 showed [Qd Qc Ts 9d] and lost with Pair of Queens
+Seat 3: 442b49d7 (button) folded before Flop
+Seat 4: bd16e59d (small blind) folded before Flop
+Seat 5: Hero (big blind) showed [Ah Ad Jd 9c] and won (14,755) with Pair of Aces
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366809: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:10:05
+Table '7' 6-max Seat #4 is the button
+Seat 1: c2c59063 (7,695 in chips)
+Seat 2: ab0b03f2 (18,012 in chips)
+Seat 4: bd16e59d (18,807 in chips)
+Seat 5: Hero (14,755 in chips)
+Seat 6: 7067fd75 (19,931 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+Hero: posts small blind 150
+7067fd75: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [6d 5s 5h 2h]
+Dealt to 7067fd75 
+c2c59063: folds
+ab0b03f2: folds
+bd16e59d: folds
+Hero: calls 150
+7067fd75: raises 825 to 1,125
+Hero: folds
+Uncalled bet (825) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 825 from pot
+*** SUMMARY ***
+Total pot 825
+Seat 1: c2c59063 folded before Flop
+Seat 2: ab0b03f2 folded before Flop
+Seat 4: bd16e59d (button) folded before Flop
+Seat 5: Hero (small blind) folded before Flop
+Seat 6: 7067fd75 (big blind) collected (825)
+
+
+Poker Hand #TM106366817: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:10:45
+Table '7' 6-max Seat #5 is the button
+Seat 1: c2c59063 (7,650 in chips)
+Seat 2: ab0b03f2 (17,967 in chips)
+Seat 4: bd16e59d (18,762 in chips)
+Seat 5: Hero (14,410 in chips)
+Seat 6: 7067fd75 (20,411 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+7067fd75: posts small blind 150
+c2c59063: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [As 8h 7s 6s]
+Dealt to 7067fd75 
+ab0b03f2: folds
+bd16e59d: folds
+Hero: raises 360 to 660
+7067fd75: folds
+c2c59063: calls 360
+*** FLOP *** [5h 7d Qs]
+c2c59063: checks
+Hero: bets 1,695
+c2c59063: folds
+Uncalled bet (1,695) returned to Hero
+*** SHOWDOWN ***
+Hero collected 1,695 from pot
+*** SUMMARY ***
+Total pot 1,695
+Board [5h 7d Qs]
+Seat 1: c2c59063 (big blind) folded on the Flop
+Seat 2: ab0b03f2 folded before Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero (button) won (1,695)
+Seat 6: 7067fd75 (small blind) folded before Flop
+
+
+Poker Hand #TM106366826: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:11:23
+Table '7' 6-max Seat #6 is the button
+Seat 1: c2c59063 (6,945 in chips)
+Seat 2: ab0b03f2 (17,922 in chips)
+Seat 4: bd16e59d (18,717 in chips)
+Seat 5: Hero (15,400 in chips)
+Seat 6: 7067fd75 (20,216 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+c2c59063: posts small blind 150
+ab0b03f2: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Ah Js 9s 4s]
+Dealt to 7067fd75 
+bd16e59d: calls 300
+Hero: folds
+7067fd75: raises 1,275 to 1,575
+c2c59063: calls 1,425
+ab0b03f2: folds
+bd16e59d: calls 1,275
+*** FLOP *** [5d Jh 6h]
+c2c59063: bets 5,250
+bd16e59d: folds
+7067fd75: raises 5,250 to 10,500
+c2c59063: calls 75 and is all-in
+Uncalled bet (5,175) returned to 7067fd75
+7067fd75: shows [Ad Ac 3s 2s] (Pair of Aces)
+c2c59063: shows [2c 7h Qc Qh] (Pair of Queens)
+*** TURN *** [5d Jh 6h] [8s]
+*** RIVER *** [5d Jh 6h 8s] [9h]
+*** SHOWDOWN ***
+c2c59063 collected 15,900 from pot
+*** SUMMARY ***
+Total pot 15,900
+Board [5d Jh 6h 8s 9h]
+Seat 1: c2c59063 (small blind) showed [Qh Qc 7h 2c] and won (15,900) with Queen High Flush
+Seat 2: ab0b03f2 (big blind) folded before Flop
+Seat 4: bd16e59d folded on the Flop
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 (button) showed [Ad Ac 3s 2s] and lost with Pair of Aces
+
+
+Poker Hand #TM106366837: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:12:40
+Table '7' 6-max Seat #1 is the button
+Seat 1: c2c59063 (15,900 in chips)
+Seat 2: ab0b03f2 (17,577 in chips)
+Seat 4: bd16e59d (17,097 in chips)
+Seat 5: Hero (15,355 in chips)
+Seat 6: 7067fd75 (13,271 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+ab0b03f2: posts small blind 150
+bd16e59d: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [9d 6s 5d 3c]
+Dealt to 7067fd75 
+Hero: folds
+7067fd75: folds
+c2c59063: folds
+ab0b03f2: calls 150
+bd16e59d: checks
+*** FLOP *** [Js 7h Qh]
+ab0b03f2: checks
+bd16e59d: bets 400
+ab0b03f2: folds
+Uncalled bet (400) returned to bd16e59d
+bd16e59d: shows [7s Qc 9c 8d] (Pair of Queens and Pair of Sevens)
+*** SHOWDOWN ***
+bd16e59d collected 825 from pot
+*** SUMMARY ***
+Total pot 825
+Board [Js 7h Qh]
+Seat 1: c2c59063 (button) folded before Flop
+Seat 2: ab0b03f2 (small blind) folded on the Flop
+Seat 4: bd16e59d (big blind) showed [Qc 9c 8d 7s] and won (825) with Pair of Queens and Pair of Sevens
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366850: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:13:43
+Table '7' 6-max Seat #2 is the button
+Seat 1: c2c59063 (15,855 in chips)
+Seat 2: ab0b03f2 (17,232 in chips)
+Seat 4: bd16e59d (17,577 in chips)
+Seat 5: Hero (15,310 in chips)
+Seat 6: 7067fd75 (13,226 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+bd16e59d: posts small blind 150
+Hero: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Qd Js 9s 8c]
+Dealt to 7067fd75 
+7067fd75: folds
+c2c59063: folds
+ab0b03f2: folds
+bd16e59d: folds
+Uncalled bet (150) returned to Hero
+*** SHOWDOWN ***
+Hero collected 525 from pot
+*** SUMMARY ***
+Total pot 525
+Seat 1: c2c59063 folded before Flop
+Seat 2: ab0b03f2 (button) folded before Flop
+Seat 4: bd16e59d (small blind) folded before Flop
+Seat 5: Hero (big blind) collected (525)
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366853: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:13:58
+Table '7' 6-max Seat #4 is the button
+Seat 1: c2c59063 (15,810 in chips)
+Seat 2: ab0b03f2 (17,187 in chips)
+Seat 4: bd16e59d (17,382 in chips)
+Seat 5: Hero (15,640 in chips)
+Seat 6: 7067fd75 (13,181 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+Hero: posts small blind 150
+7067fd75: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Ah Ts Tc 6s]
+Dealt to 7067fd75 
+c2c59063: calls 300
+ab0b03f2: folds
+bd16e59d: folds
+Hero: calls 150
+7067fd75: checks
+*** FLOP *** [Ad 9h 4c]
+Hero: checks
+7067fd75: checks
+c2c59063: bets 600
+Hero: folds
+7067fd75: folds
+Uncalled bet (600) returned to c2c59063
+*** SHOWDOWN ***
+c2c59063 collected 1,125 from pot
+*** SUMMARY ***
+Total pot 1,125
+Board [Ad 9h 4c]
+Seat 1: c2c59063 won (1,125)
+Seat 2: ab0b03f2 folded before Flop
+Seat 4: bd16e59d (button) folded before Flop
+Seat 5: Hero (small blind) folded on the Flop
+Seat 6: 7067fd75 (big blind) folded on the Flop
+
+
+Poker Hand #TM106366860: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:14:42
+Table '7' 6-max Seat #5 is the button
+Seat 1: c2c59063 (16,590 in chips)
+Seat 2: ab0b03f2 (17,142 in chips)
+Seat 4: bd16e59d (17,337 in chips)
+Seat 5: Hero (15,295 in chips)
+Seat 6: 7067fd75 (12,836 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+7067fd75: posts small blind 150
+c2c59063: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Qc 7s 7d 3s]
+Dealt to 7067fd75 
+ab0b03f2: folds
+bd16e59d: raises 600 to 900
+Hero: folds
+7067fd75: folds
+c2c59063: folds
+Uncalled bet (600) returned to bd16e59d
+*** SHOWDOWN ***
+bd16e59d collected 975 from pot
+*** SUMMARY ***
+Total pot 975
+Seat 1: c2c59063 (big blind) folded before Flop
+Seat 2: ab0b03f2 folded before Flop
+Seat 4: bd16e59d collected (975)
+Seat 5: Hero (button) folded before Flop
+Seat 6: 7067fd75 (small blind) folded before Flop
+
+
+Poker Hand #TM106366864: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:15:11
+Table '7' 6-max Seat #6 is the button
+Seat 1: c2c59063 (16,245 in chips)
+Seat 2: ab0b03f2 (17,097 in chips)
+Seat 4: bd16e59d (17,967 in chips)
+Seat 5: Hero (15,250 in chips)
+Seat 6: 7067fd75 (12,641 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+c2c59063: posts small blind 150
+ab0b03f2: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [As Ad Ac 6d]
+Dealt to 7067fd75 
+bd16e59d: folds
+Hero: raises 975 to 1,275
+7067fd75: folds
+c2c59063: folds
+ab0b03f2: folds
+Uncalled bet (975) returned to Hero
+*** SHOWDOWN ***
+Hero collected 975 from pot
+*** SUMMARY ***
+Total pot 975
+Seat 1: c2c59063 (small blind) folded before Flop
+Seat 2: ab0b03f2 (big blind) folded before Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero collected (975)
+Seat 6: 7067fd75 (button) folded before Flop
+
+
+Poker Hand #TM106366869: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level7 (150/300) - 2020/06/23 20:15:42
+Table '7' 6-max Seat #1 is the button
+Seat 1: c2c59063 (16,050 in chips)
+Seat 2: ab0b03f2 (16,752 in chips)
+Seat 4: bd16e59d (17,922 in chips)
+Seat 5: Hero (15,880 in chips)
+Seat 6: 7067fd75 (12,596 in chips)
+c2c59063: posts the ante 45
+ab0b03f2: posts the ante 45
+7067fd75: posts the ante 45
+bd16e59d: posts the ante 45
+Hero: posts the ante 45
+ab0b03f2: posts small blind 150
+bd16e59d: posts big blind 300
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Jh 7h 4d 2h]
+Dealt to 7067fd75 
+Hero: folds
+7067fd75: folds
+c2c59063: folds
+ab0b03f2: calls 150
+bd16e59d: checks
+*** FLOP *** [3d Qd 5c]
+ab0b03f2: checks
+bd16e59d: checks
+*** TURN *** [3d Qd 5c] [Th]
+ab0b03f2: checks
+bd16e59d: checks
+*** RIVER *** [3d Qd 5c Th] [4s]
+ab0b03f2: bets 825
+bd16e59d: folds
+Uncalled bet (825) returned to ab0b03f2
+*** SHOWDOWN ***
+ab0b03f2 collected 825 from pot
+*** SUMMARY ***
+Total pot 825
+Board [3d Qd 5c Th 4s]
+Seat 1: c2c59063 (button) folded before Flop
+Seat 2: ab0b03f2 (small blind) won (825)
+Seat 4: bd16e59d (big blind) folded on the River
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366886: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:17:02
+Table '7' 6-max Seat #2 is the button
+Seat 1: c2c59063 (16,005 in chips)
+Seat 2: ab0b03f2 (17,232 in chips)
+Seat 4: bd16e59d (17,577 in chips)
+Seat 5: Hero (15,835 in chips)
+Seat 6: 7067fd75 (12,551 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+bd16e59d: posts small blind 200
+Hero: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Kc Js 7s 5d]
+Dealt to 7067fd75 
+7067fd75: folds
+c2c59063: folds
+ab0b03f2: folds
+bd16e59d: calls 200
+Hero: checks
+*** FLOP *** [6s 4s Qs]
+bd16e59d: checks
+Hero: checks
+*** TURN *** [6s 4s Qs] [2d]
+bd16e59d: bets 400
+Hero: calls 400
+*** RIVER *** [6s 4s Qs 2d] [Ts]
+bd16e59d: checks
+Hero: bets 1,350
+bd16e59d: folds
+Uncalled bet (1,350) returned to Hero
+*** SHOWDOWN ***
+Hero collected 1,900 from pot
+*** SUMMARY ***
+Total pot 1,900
+Board [6s 4s Qs 2d Ts]
+Seat 1: c2c59063 folded before Flop
+Seat 2: ab0b03f2 (button) folded before Flop
+Seat 4: bd16e59d (small blind) folded on the River
+Seat 5: Hero (big blind) won (1,900)
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366908: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:19:00
+Table '7' 6-max Seat #4 is the button
+Seat 1: c2c59063 (15,945 in chips)
+Seat 2: ab0b03f2 (17,172 in chips)
+Seat 4: bd16e59d (16,717 in chips)
+Seat 5: Hero (16,875 in chips)
+Seat 6: 7067fd75 (12,491 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+Hero: posts small blind 200
+7067fd75: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [As Ac Jc 9d]
+Dealt to 7067fd75 
+c2c59063: folds
+ab0b03f2: folds
+bd16e59d: folds
+Hero: calls 200
+7067fd75: checks
+*** FLOP *** [7h Jh Kc]
+Hero: bets 550
+7067fd75: raises 1,364 to 1,914
+Hero: folds
+Uncalled bet (1,364) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 2,200 from pot
+*** SUMMARY ***
+Total pot 2,200
+Board [7h Jh Kc]
+Seat 1: c2c59063 folded before Flop
+Seat 2: ab0b03f2 folded before Flop
+Seat 4: bd16e59d (button) folded before Flop
+Seat 5: Hero (small blind) folded on the Flop
+Seat 6: 7067fd75 (big blind) won (2,200)
+
+
+Poker Hand #TM106366913: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:19:33
+Table '7' 6-max Seat #5 is the button
+Seat 1: c2c59063 (15,885 in chips)
+Seat 2: ab0b03f2 (17,112 in chips)
+Seat 4: bd16e59d (16,657 in chips)
+Seat 5: Hero (15,865 in chips)
+Seat 6: 7067fd75 (13,681 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+7067fd75: posts small blind 200
+c2c59063: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Kh Jd 6d 3h]
+Dealt to 7067fd75 
+ab0b03f2: raises 600 to 1,000
+bd16e59d: folds
+Hero: folds
+7067fd75: folds
+c2c59063: raises 600 to 1,600
+ab0b03f2: calls 600
+*** FLOP *** [4c Ts Ad]
+c2c59063: checks
+ab0b03f2: checks
+*** TURN *** [4c Ts Ad] [8s]
+c2c59063: bets 1,850
+ab0b03f2: calls 1,850
+*** RIVER *** [4c Ts Ad 8s] [Js]
+c2c59063: checks
+ab0b03f2: bets 7,400
+c2c59063: folds
+Uncalled bet (7,400) returned to ab0b03f2
+*** SHOWDOWN ***
+ab0b03f2 collected 7,400 from pot
+*** SUMMARY ***
+Total pot 7,400
+Board [4c Ts Ad 8s Js]
+Seat 1: c2c59063 (big blind) folded on the River
+Seat 2: ab0b03f2 won (7,400)
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero (button) folded before Flop
+Seat 6: 7067fd75 (small blind) folded before Flop
+
+
+Poker Hand #TM106366931: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:21:18
+Table '7' 6-max Seat #6 is the button
+Seat 1: c2c59063 (12,375 in chips)
+Seat 2: ab0b03f2 (21,002 in chips)
+Seat 4: bd16e59d (16,597 in chips)
+Seat 5: Hero (15,805 in chips)
+Seat 6: 7067fd75 (13,421 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+c2c59063: posts small blind 200
+ab0b03f2: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [As Qd 5h 4d]
+Dealt to 7067fd75 
+bd16e59d: folds
+Hero: folds
+7067fd75: folds
+c2c59063: calls 200
+ab0b03f2: raises 1,100 to 1,500
+c2c59063: raises 3,300 to 4,800
+ab0b03f2: calls 3,300
+*** FLOP *** [Qh Qc Td]
+c2c59063: bets 7,515 and is all-in
+ab0b03f2: folds
+Uncalled bet (7,515) returned to c2c59063
+*** SHOWDOWN ***
+c2c59063 collected 9,900 from pot
+*** SUMMARY ***
+Total pot 9,900
+Board [Qh Qc Td]
+Seat 1: c2c59063 (small blind) won (9,900)
+Seat 2: ab0b03f2 (big blind) folded on the Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 (button) folded before Flop
+
+
+Poker Hand #TM106366945: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:22:18
+Table '7' 6-max Seat #1 is the button
+Seat 1: c2c59063 (17,415 in chips)
+Seat 2: ab0b03f2 (16,142 in chips)
+Seat 4: bd16e59d (16,537 in chips)
+Seat 5: Hero (15,745 in chips)
+Seat 6: 7067fd75 (13,361 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+ab0b03f2: posts small blind 200
+bd16e59d: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Ac Ks Qs 3s]
+Dealt to 7067fd75 
+Hero: raises 480 to 880
+7067fd75: folds
+c2c59063: folds
+ab0b03f2: folds
+bd16e59d: calls 480
+*** FLOP *** [Jh Jd As]
+bd16e59d: checks
+Hero: bets 678
+bd16e59d: calls 678
+*** TURN *** [Jh Jd As] [9h]
+bd16e59d: checks
+Hero: checks
+*** RIVER *** [Jh Jd As 9h] [Tc]
+bd16e59d: checks
+Hero: bets 1,085
+bd16e59d: folds
+Uncalled bet (1,085) returned to Hero
+*** SHOWDOWN ***
+Hero collected 3,616 from pot
+*** SUMMARY ***
+Total pot 3,616
+Board [Jh Jd As 9h Tc]
+Seat 1: c2c59063 (button) folded before Flop
+Seat 2: ab0b03f2 (small blind) folded before Flop
+Seat 4: bd16e59d (big blind) folded on the River
+Seat 5: Hero won (3,616)
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366966: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:23:49
+Table '7' 6-max Seat #2 is the button
+Seat 1: c2c59063 (17,355 in chips)
+Seat 2: ab0b03f2 (15,882 in chips)
+Seat 4: bd16e59d (14,919 in chips)
+Seat 5: Hero (17,743 in chips)
+Seat 6: 7067fd75 (13,301 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+bd16e59d: posts small blind 200
+Hero: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Ts 8c 6c 2d]
+Dealt to 7067fd75 
+7067fd75: folds
+c2c59063: folds
+ab0b03f2: raises 600 to 1,000
+bd16e59d: calls 800
+Hero: folds
+*** FLOP *** [Kc 5h Tc]
+bd16e59d: checks
+ab0b03f2: checks
+*** TURN *** [Kc 5h Tc] [7h]
+bd16e59d: checks
+ab0b03f2: checks
+*** RIVER *** [Kc 5h Tc 7h] [3d]
+bd16e59d: checks
+ab0b03f2: bets 891
+bd16e59d: calls 891
+ab0b03f2: shows [As 3s 5c Jd] (Pair of Fives and Pair of Treys)
+bd16e59d: shows [Td 9c Kh Qh] (Pair of Kings and Pair of Tens)
+*** SHOWDOWN ***
+bd16e59d collected 4,482 from pot
+*** SUMMARY ***
+Total pot 4,482
+Board [Kc 5h Tc 7h 3d]
+Seat 1: c2c59063 folded before Flop
+Seat 2: ab0b03f2 (button) showed [As Jd 5c 3s] and lost with Pair of Fives and Pair of Treys
+Seat 4: bd16e59d (small blind) showed [Kh Qh Td 9c] and won (4,482) with Pair of Kings and Pair of Tens
+Seat 5: Hero (big blind) folded before Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106366984: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:25:04
+Table '7' 6-max Seat #4 is the button
+Seat 1: c2c59063 (17,295 in chips)
+Seat 2: ab0b03f2 (13,931 in chips)
+Seat 4: bd16e59d (17,450 in chips)
+Seat 5: Hero (17,283 in chips)
+Seat 6: 7067fd75 (13,241 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+Hero: posts small blind 200
+7067fd75: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Ah 8d 5h 4d]
+Dealt to 7067fd75 
+c2c59063: folds
+ab0b03f2: folds
+bd16e59d: calls 400
+Hero: calls 200
+7067fd75: checks
+*** FLOP *** [As 6s Jc]
+Hero: checks
+7067fd75: checks
+bd16e59d: bets 700
+Hero: folds
+7067fd75: calls 700
+*** TURN *** [As 6s Jc] [Ac]
+7067fd75: checks
+bd16e59d: bets 1,450
+7067fd75: raises 2,150 to 3,600
+bd16e59d: folds
+Uncalled bet (2,150) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 5,800 from pot
+*** SUMMARY ***
+Total pot 5,800
+Board [As 6s Jc Ac]
+Seat 1: c2c59063 folded before Flop
+Seat 2: ab0b03f2 folded before Flop
+Seat 4: bd16e59d (button) folded on the Turn
+Seat 5: Hero (small blind) folded on the Flop
+Seat 6: 7067fd75 (big blind) won (5,800)
+
+
+Poker Hand #TM106367006: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:26:35
+Table '7' 6-max Seat #5 is the button
+Seat 1: c2c59063 (17,235 in chips)
+Seat 2: ab0b03f2 (13,871 in chips)
+Seat 4: bd16e59d (14,840 in chips)
+Seat 5: Hero (16,823 in chips)
+Seat 6: 7067fd75 (16,431 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+7067fd75: posts small blind 200
+c2c59063: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [8h 7s 4s 2c]
+Dealt to 7067fd75 
+ab0b03f2: raises 600 to 1,000
+bd16e59d: folds
+Hero: folds
+7067fd75: folds
+c2c59063: raises 1,875 to 2,875
+ab0b03f2: calls 1,875
+*** FLOP *** [7d 4h 5s]
+c2c59063: bets 6,250
+ab0b03f2: folds
+Uncalled bet (6,250) returned to c2c59063
+*** SHOWDOWN ***
+c2c59063 collected 6,250 from pot
+*** SUMMARY ***
+Total pot 6,250
+Board [7d 4h 5s]
+Seat 1: c2c59063 (big blind) won (6,250)
+Seat 2: ab0b03f2 folded on the Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero (button) folded before Flop
+Seat 6: 7067fd75 (small blind) folded before Flop
+
+
+Poker Hand #TM106367015: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:27:26
+Table '7' 6-max Seat #6 is the button
+Seat 1: c2c59063 (20,550 in chips)
+Seat 2: ab0b03f2 (10,936 in chips)
+Seat 4: bd16e59d (14,780 in chips)
+Seat 5: Hero (16,763 in chips)
+Seat 6: 7067fd75 (16,171 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+c2c59063: posts small blind 200
+ab0b03f2: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Qs Jd 9c 5c]
+Dealt to 7067fd75 
+bd16e59d: folds
+Hero: folds
+7067fd75: folds
+c2c59063: folds
+Uncalled bet (200) returned to ab0b03f2
+*** SHOWDOWN ***
+ab0b03f2 collected 700 from pot
+*** SUMMARY ***
+Total pot 700
+Seat 1: c2c59063 (small blind) folded before Flop
+Seat 2: ab0b03f2 (big blind) collected (700)
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 (button) folded before Flop
+
+
+Poker Hand #TM106367019: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:27:46
+Table '7' 6-max Seat #1 is the button
+Seat 1: c2c59063 (20,290 in chips)
+Seat 2: ab0b03f2 (11,376 in chips)
+Seat 4: bd16e59d (14,720 in chips)
+Seat 5: Hero (16,703 in chips)
+Seat 6: 7067fd75 (16,111 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+ab0b03f2: posts small blind 200
+bd16e59d: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Ac Jh 8s 3h]
+Dealt to 7067fd75 
+Hero: folds
+7067fd75: folds
+c2c59063: calls 400
+ab0b03f2: folds
+bd16e59d: checks
+*** FLOP *** [8d 6h 3s]
+bd16e59d: checks
+c2c59063: bets 400
+bd16e59d: folds
+Uncalled bet (400) returned to c2c59063
+*** SHOWDOWN ***
+c2c59063 collected 1,300 from pot
+*** SUMMARY ***
+Total pot 1,300
+Board [8d 6h 3s]
+Seat 1: c2c59063 (button) won (1,300)
+Seat 2: ab0b03f2 (small blind) folded before Flop
+Seat 4: bd16e59d (big blind) folded on the Flop
+Seat 5: Hero folded before Flop
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106367026: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level8 (200/400) - 2020/06/23 20:28:30
+Table '7' 6-max Seat #2 is the button
+Seat 1: c2c59063 (21,130 in chips)
+Seat 2: ab0b03f2 (11,116 in chips)
+Seat 4: bd16e59d (14,260 in chips)
+Seat 5: Hero (16,643 in chips)
+Seat 6: 7067fd75 (16,051 in chips)
+c2c59063: posts the ante 60
+ab0b03f2: posts the ante 60
+7067fd75: posts the ante 60
+bd16e59d: posts the ante 60
+Hero: posts the ante 60
+bd16e59d: posts small blind 200
+Hero: posts big blind 400
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to bd16e59d 
+Dealt to Hero [Ad Qd 8h 4d]
+Dealt to 7067fd75 
+7067fd75: folds
+c2c59063: folds
+ab0b03f2: raises 600 to 1,000
+bd16e59d: folds
+Hero: calls 600
+*** FLOP *** [Ah 3s 5d]
+Hero: checks
+ab0b03f2: bets 825
+Hero: raises 4,150 to 4,975
+ab0b03f2: raises 5,081 to 10,056 and is all-in
+Hero: calls 5,081
+ab0b03f2: shows [5c 4c As 7d] (Pair of Aces and Pair of Fives)
+Hero: shows [8h 4d Qd Ad] (Pair of Aces)
+*** TURN *** [Ah 3s 5d] [Ac]
+*** RIVER *** [Ah 3s 5d Ac] [9s]
+*** SHOWDOWN ***
+ab0b03f2 collected 22,612 from pot
+*** SUMMARY ***
+Total pot 22,612
+Board [Ah 3s 5d Ac 9s]
+Seat 1: c2c59063 folded before Flop
+Seat 2: ab0b03f2 (button) showed [As 7d 5c 4c] and won (22,612) with Aces Full over Fives
+Seat 4: bd16e59d (small blind) folded before Flop
+Seat 5: Hero (big blind) showed [Ad Qd 8h 4d] and lost with Three Aces
+Seat 6: 7067fd75 folded before Flop
+
+
+Poker Hand #TM106367048: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:29:41
+Table '7' 6-max Seat #4 is the button
+Seat 1: c2c59063 (21,070 in chips)
+Seat 2: ab0b03f2 (22,612 in chips)
+Seat 3: fa90e96a (10,000 in chips)
+Seat 4: bd16e59d (14,000 in chips)
+Seat 5: Hero (5,527 in chips)
+Seat 6: 7067fd75 (15,991 in chips)
+c2c59063: posts the ante 75
+ab0b03f2: posts the ante 75
+7067fd75: posts the ante 75
+fa90e96a: posts the ante 75
+bd16e59d: posts the ante 75
+Hero: posts the ante 75
+Hero: posts small blind 250
+7067fd75: posts big blind 500
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to fa90e96a 
+Dealt to bd16e59d 
+Dealt to Hero [Jd 7c 3d 2s]
+Dealt to 7067fd75 
+c2c59063: folds
+ab0b03f2: folds
+fa90e96a: folds
+bd16e59d: folds
+Hero: folds
+Uncalled bet (250) returned to 7067fd75
+*** SHOWDOWN ***
+7067fd75 collected 950 from pot
+*** SUMMARY ***
+Total pot 950
+Seat 1: c2c59063 folded before Flop
+Seat 2: ab0b03f2 folded before Flop
+Seat 3: fa90e96a folded before Flop
+Seat 4: bd16e59d (button) folded before Flop
+Seat 5: Hero (small blind) folded before Flop
+Seat 6: 7067fd75 (big blind) collected (950)
+
+
+Poker Hand #TM106367052: Tournament #5948181, High Rollers PLO Main Event $1K Omaha Pot Limit - Level9 (250/500) - 2020/06/23 20:29:57
+Table '7' 6-max Seat #5 is the button
+Seat 1: c2c59063 (20,995 in chips)
+Seat 2: ab0b03f2 (22,537 in chips)
+Seat 3: fa90e96a (9,925 in chips)
+Seat 4: bd16e59d (13,925 in chips)
+Seat 5: Hero (5,202 in chips)
+Seat 6: 7067fd75 (16,616 in chips)
+c2c59063: posts the ante 75
+ab0b03f2: posts the ante 75
+7067fd75: posts the ante 75
+fa90e96a: posts the ante 75
+bd16e59d: posts the ante 75
+Hero: posts the ante 75
+7067fd75: posts small blind 250
+c2c59063: posts big blind 500
+*** HOLE CARDS ***
+Dealt to c2c59063 
+Dealt to ab0b03f2 
+Dealt to fa90e96a 
+Dealt to bd16e59d 
+Dealt to Hero [Ac Jc 6c 3s]
+Dealt to 7067fd75 
+ab0b03f2: folds
+fa90e96a: folds
+bd16e59d: folds
+Hero: folds
+7067fd75: calls 250
+c2c59063: checks
+*** FLOP *** [4s Th 8h]
+7067fd75: bets 1,131
+c2c59063: calls 1,131
+*** TURN *** [4s Th 8h] [Kh]
+7067fd75: bets 2,050
+c2c59063: calls 2,050
+*** RIVER *** [4s Th 8h Kh] [Ts]
+7067fd75: checks
+c2c59063: checks
+7067fd75: shows [9s Js Qh 5c] (Pair of Tens)
+c2c59063: shows [3h 8d Ad 9h] (King High Flush)
+*** SHOWDOWN ***
+c2c59063 collected 7,812 from pot
+*** SUMMARY ***
+Total pot 7,812
+Board [4s Th 8h Kh Ts]
+Seat 1: c2c59063 (big blind) showed [Ad 9h 8d 3h] and won (7,812) with King High Flush
+Seat 2: ab0b03f2 folded before Flop
+Seat 3: fa90e96a folded before Flop
+Seat 4: bd16e59d folded before Flop
+Seat 5: Hero (button) folded before Flop
+Seat 6: 7067fd75 (small blind) showed [Qh Js 9s 5c] and lost with Pair of Tens
+
+
