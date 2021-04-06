@@ -1,0 +1,64 @@
+#40091899: Limit 2-7 Razz - 22/44
+2021-01-06 07:03:50
+Table 'Crazy Anti-Nit Mix'
+Seat 1: Player0 (1,827.32)
+Seat 2: Player1 (440)
+Seat 3: Player2 (2,150.12)
+Seat 4: Player3 (1,161.97)
+Seat 5: Player4 (497.66)
+Seat 6: Player5 (739.68)
+Seat 7: Hero (440)
+Player0: posts ante 16.58
+Player1: posts ante 16.58
+Player2: posts ante 16.58
+Player3: posts ante 16.58
+Player4: posts ante 16.58
+Player5: posts ante 16.58
+Hero: posts ante 16.58
+Dealt to Player0: [X X 4d]
+Dealt to Player1: [X X Td]
+Dealt to Player2: [X X 6c]
+Dealt to Player3: [X X 3d]
+Dealt to Player4: [X X Qc]
+Dealt to Player5: [X X 2s]
+Dealt to Hero: [5h Qs Ah]
+Hero brings in for 16.58
+Player0 bets 22
+Player1 folds
+Player2 folds
+Player3 folds
+Player4 folds
+Player5 raises to 38.58
+Hero folds
+Player0 calls 38.58
+*** 3RD STREET ***
+Dealt to Player0: [Jc]
+Dealt to Player5: [8c]
+Player5 bets 22
+Player0 calls 22
+*** 4TH STREET ***
+Dealt to Player0: [5d]
+Dealt to Player5: [Ks]
+Player0 bets 44
+Player5 calls 44
+*** 5TH STREET ***
+Dealt to Player0: [Kc]
+Dealt to Player5: [9h]
+Player5 bets 44
+Player0 calls 44
+*** 6TH STREET ***
+Dealt to Player0: [X]
+Dealt to Player5: [X]
+Player5 checks
+Player0 bets 44
+Player5 folds
+*** SUMMARY ***
+Seat 1: Player0 (2,086.96) +259.64
+Seat 2: Player1 (423.42) -16.58
+Seat 3: Player2 (2,133.54) -16.58
+Seat 4: Player3 (1,145.39) -16.58
+Seat 5: Player4 (481.08) -16.58
+Seat 6: Player5 (574.52) -165.16
+Seat 7: Hero (406.84) -33.16
+Rake 5
+Player0 wins pot (424.80)

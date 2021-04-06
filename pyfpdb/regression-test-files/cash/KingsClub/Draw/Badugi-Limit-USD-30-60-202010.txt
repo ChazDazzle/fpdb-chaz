@@ -1,0 +1,43 @@
+#37732805: Limit Badugi - 30/60
+2020-10-30 19:53:19
+Table 'Bronx  BT' Seat 1 is the button
+Seat 1: Player0 (1,285)
+Seat 2: Player1 (630)
+Seat 5: Hero (600)
+*** 1ST BETTING ROUND ***
+Player1: posts the small blind 15
+Hero: posts the big blind 30
+Dealt to Player0: [X X X X]
+Dealt to Player1: [X X X X]
+Dealt to Hero: [8d 7s 8h 9d]
+Player0 raises to 60
+Player1 raises to 90
+Hero folds
+Player0 calls 90
+*** 1ST DRAW ***
+Player1 draws 2
+Player0 draws 2
+*** 2ND BETTING ROUND ***
+Player1 checks
+Player0 checks
+*** 2ND DRAW ***
+Player1 draws 2
+Player0 draws 2
+*** 3RD BETTING ROUND ***
+Player1 bets 60
+Player0 calls 60
+*** 3RD DRAW ***
+Player1 draws 1
+Player0 draws 1
+*** 4TH BETTING ROUND ***
+Player1 bets 60
+Player0 raises to 120
+Player1 calls 120
+Player0 shows [4h Ad As 8c]
+Player1 shows [9s 3s 5c 2h]
+*** SUMMARY ***
+Seat 1: Player0 (1,015) -270
+Seat 2: Player1 (928.25) +298.25
+Seat 5: Hero (570) -30
+Rake 1.75
+Player1 wins pot (568.25)

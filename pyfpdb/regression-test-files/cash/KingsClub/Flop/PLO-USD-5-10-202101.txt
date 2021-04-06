@@ -1,0 +1,29 @@
+#39969456: Pot Limit Omaha - 5/10
+2021-01-02 15:54:07
+Table '8 Game Mix' Seat 1 is the button
+Seat 1: Player0 (1,000)
+Seat 6: Hero (1,000)
+Player0: posts the small blind 5
+Hero: posts the big blind 10
+*** HOLE CARDS ***
+Dealt to Player0: [X X X X]
+Dealt to Hero: [4s Qc 2c Jd]
+Player0 raises to 30
+Hero calls 30
+*** FLOP *** [9s Jh 2s]
+Hero checks
+Player0 bets 30
+Hero calls 30
+*** TURN *** [9s Jh 2s] [8s]
+Hero checks
+Player0 bets 45
+Hero calls 45
+*** RIVER *** [9s Jh 2s 8s] [3s]
+Hero checks
+Player0 bets 50
+Hero folds
+*** SUMMARY ***
+Seat 1: Player0 (1,104) +104
+Seat 6: Hero (895) -105
+Rake 1
+Player0 wins pot (209)
