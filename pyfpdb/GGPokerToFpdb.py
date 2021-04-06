@@ -119,7 +119,7 @@ class GGPoker(HandHistoryConverter):
           )?
           # close paren of tournament info
           (?P<GAME>Hold\'em|Hold\'em|6\+\sHold\'em|Omaha|Omaha\sHi/Lo|(5|6)\sCard\sOmaha(\sHi/Lo)?)\s
-          (?P<LIMIT>No\sLimit|Fixed\sLimit|Limit|Pot\sLimit|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop),?\s
+          (?P<LIMIT>No\sLimit|Fixed\sLimit|Limit|Pot\sLimit|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop),?\s*
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?
           (Level(?P<LEVEL>[IVXLC\d]+)\s?)?
