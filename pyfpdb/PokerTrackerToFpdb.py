@@ -147,7 +147,7 @@ class PokerTracker(HandHistoryConverter):
 
     re_HandInfo_Tour     = re.compile("""
           ^Table\s(?P<TABLE>.*),\s(?P<TOURNO>\d+)(,\s\d+)?\s
-          (?P<TOUR>\(Tournament:\s(.+)?\sBuy\-In:\s(?P<BUYIN>(?P<BIAMT>[%(LS)s\d\.]+)\s?\+?\s?(?P<BIRAKE>[%(LS)s\d\.]+))\))
+          (?P<TOUR>\(Tournament:\s(.+)?\sBuy\-In:\s(?P<BUYIN>(?P<BIAMT>(%(LS)s)[%(NUM)s]+)\s?\+?\s?(?P<BIRAKE>(%(LS)s)[%(NUM)s]+)(\s\+\s(?P<BOUNTY>(%(LS)s)[%(NUM)s]+))?)\))
           """ % substitutions
           , re.MULTILINE|re.VERBOSE)
     
@@ -374,12 +374,23 @@ class PokerTracker(HandHistoryConverter):
                                 #FIXME: handle other currencies, play money
                                 log.error(_("PokerTrackerToFpdb.readHandInfo: Failed to detect currency.") + " Hand ID: %s: '%s'" % (hand.handid, info[key]))
                                 raise FpdbParseError
+                            
+                            if info['BOUNTY'] != None:
+                                # There is a bounty, Which means we need to switch BOUNTY and BIRAKE values
+                                tmp = info['BOUNTY']
+                                info['BOUNTY'] = info['BIRAKE']
+                                info['BIRAKE'] = tmp
+                                info['BOUNTY'] = info['BOUNTY'].strip(u'$€£') # Strip here where it isn't 'None'
+                                hand.koBounty = int(100*Decimal(self.clearMoneyString(info['BOUNTY'])))
+                                hand.isKO = True
+                            else:
+                                hand.isKO = False
     
                             info['BIAMT'] = info['BIAMT'].strip(u'$€£')
                             info['BIRAKE'] = info['BIRAKE'].strip(u'$€£')
     
-                            hand.buyin = int(100*Decimal(info['BIAMT']))
-                            hand.fee = int(100*Decimal(info['BIRAKE']))
+                            hand.buyin = int(100*Decimal(self.clearMoneyString(info['BIAMT']))) + hand.koBounty
+                            hand.fee = int(100*Decimal(self.clearMoneyString(info['BIRAKE'])))
             if key == 'TABLE':
                 if hand.gametype['type'] == 'tour':
                     hand.tablename = '0'
