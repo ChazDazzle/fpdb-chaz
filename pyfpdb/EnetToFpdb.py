@@ -81,11 +81,6 @@ class Enet(HandHistoryConverter):
     # Static regexes
     re_GameInfo     = re.compile(u"""
           Game\s\#(?P<HID>[0-9]+):\s+
-          (\{.*\}\s+)?(Tournament\s\#                # open paren of tournament info
-          (?P<TOURNO>\d+),\s
-          # here's how I plan to use LS
-          (?P<BUYIN>(?P<BIAMT>[%(LS)s%(NUM)s]+)?\+?(?P<BIRAKE>[%(LS)s%(NUM)s]+)?\+?\s?(?P<TOUR_ISO>%(LEGAL_ISO)s)?|Freeroll)\s+)?
-          # close paren of tournament info
           (?P<GAME>Hold\'em|Omaha)\s
           \(?                            # open paren of the stakes
           (?P<CURRENCY>%(LS)s|)?
@@ -109,7 +104,7 @@ class Enet(HandHistoryConverter):
           (Seat\s\#(?P<BUTTON>\d+)\sis\sthe\sbutton)?""", 
           re.MULTILINE|re.VERBOSE)
 
-    re_Identify     = re.compile(u'^Game\s\#\d+:')
+    re_Identify     = re.compile(u'^Game\s\#\d+:\s[OH]')
     re_SplitHands   = re.compile('\n\n+')
     re_TailSplitHands   = re.compile('(\n\n+)')
     re_Button       = re.compile('Seat #(?P<BUTTON>\d+) is the button', re.MULTILINE)
