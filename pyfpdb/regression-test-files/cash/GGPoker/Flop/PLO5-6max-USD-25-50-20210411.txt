@@ -1,0 +1,47 @@
+Poker Hand #OM1171200: PLO-5 ($25/$50) - 2021/04/11 03:49:56
+Table 'VO5 Standard1' 6-max Seat #2 is the button
+Seat 1: 6f4c716f ($5,527 in chips)
+Seat 2: 6017cffc ($4,175 in chips)
+Seat 3: 43be033f ($13,611.97 in chips)
+Seat 4: 1d878394 ($6,525 in chips)
+Seat 5: Hero ($5,812.25 in chips)
+Seat 6: 3366123a ($6,775 in chips)
+43be033f: posts small blind $25
+1d878394: posts big blind $50
+*** HOLE CARDS ***
+Dealt to 6f4c716f 
+Dealt to 6017cffc 
+Dealt to 43be033f 
+Dealt to 1d878394 
+Dealt to Hero [2h 8h 2d 6c 8c]
+Dealt to 3366123a 
+Hero: raises $60 to $110
+3366123a: folds
+6f4c716f: folds
+6017cffc: raises $295 to $405
+43be033f: folds
+1d878394: folds
+Hero: calls $295
+*** FLOP *** [3c 3s 2s]
+Hero: checks
+6017cffc: bets $442.5
+Hero: raises $513.3 to $955.8
+6017cffc: calls $513.3
+*** TURN *** [3c 3s 2s] [Jh]
+Hero: checks
+6017cffc: checks
+*** RIVER *** [3c 3s 2s Jh] [9s]
+Hero: bets $1,370.34
+6017cffc: folds
+Uncalled bet ($1,370.34) returned to Hero
+*** SHOWDOWN ***
+Hero collected $2,746.6 from pot
+*** SUMMARY ***
+Total pot $2,796.6 | Rake $50 | Jackpot $0 | Bingo $0
+Board [3c 3s 2s Jh 9s]
+Seat 1: 6f4c716f folded before Flop (didn't bet)
+Seat 2: 6017cffc (button) folded on the River
+Seat 3: 43be033f (small blind) folded before Flop
+Seat 4: 1d878394 (big blind) folded before Flop
+Seat 5: Hero won ($2,746.6)
+Seat 6: 3366123a folded before Flop (didn't bet)

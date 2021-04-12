@@ -89,9 +89,9 @@ class GGPoker(HandHistoryConverter):
                            "6+ Hold'em" : ('hold','6_holdem'),
                                 'Omaha' : ('hold','omahahi'),
                           'Omaha Hi/Lo' : ('hold','omahahilo'),
-                         '5 Card Omaha' : ('hold', '5_omahahi'),
-                   '5 Card Omaha Hi/Lo' : ('hold', '5_omaha8'),
-                         '6 Card Omaha' : ('hold', '6_omahahi')
+                                'PLO'   : ('hold','omahahi'), 
+                                'PLO-5' : ('hold', '5_omahahi'),
+                                'PLO-6' : ('hold', '6_omahahi')
                }
 #    mixes = {
 #                                 'HORSE': 'horse',
@@ -118,8 +118,8 @@ class GGPoker(HandHistoryConverter):
           (?P<TOURNAME>.+?)\s
           )?
           # close paren of tournament info
-          (?P<GAME>Hold\'em|Hold\'em|6\+\sHold\'em|Omaha|Omaha\sHi/Lo|(5|6)\sCard\sOmaha(\sHi/Lo)?)\s
-          (?P<LIMIT>No\sLimit|Fixed\sLimit|Limit|Pot\sLimit|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop),?\s*
+          (?P<GAME>Hold\'em|Hold\'em|6\+\sHold\'em|Omaha|PLO|Omaha\sHi/Lo|PLO\-(5|6))\s
+          (?P<LIMIT>No\sLimit|Fixed\sLimit|Limit|Pot\sLimit|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop)?,?\s*
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?
           (Level(?P<LEVEL>[IVXLC\d]+)\s?)?
@@ -157,6 +157,7 @@ class GGPoker(HandHistoryConverter):
     re_Button       = re.compile('Seat #(?P<BUTTON>\d+) is the button', re.MULTILINE)
     re_Board        = re.compile(r"\[(?P<CARDS>.+)\]")
     re_Board2       = re.compile(r"\[(?P<C1>\S\S)\] \[(\S\S)?(?P<C2>\S\S) (?P<C3>\S\S)\]")
+    re_Board3       = re.compile(r"Board\s\[(?P<FLOP>\S\S \S\S \S\S) (?P<TURN>\S\S) (?P<RIVER>\S\S)\]")
     re_DateTime1     = re.compile("""(?P<Y>[0-9]{4})\/(?P<M>[0-9]{2})\/(?P<D>[0-9]{2})[\- ]+(?P<H>[0-9]+):(?P<MIN>[0-9]+):(?P<S>[0-9]+)""", re.MULTILINE)
     re_DateTime2     = re.compile("""(?P<Y>[0-9]{4})\/(?P<M>[0-9]{2})\/(?P<D>[0-9]{2})[\- ]+(?P<H>[0-9]+):(?P<MIN>[0-9]+)""", re.MULTILINE)
     # revised re including timezone (not currently used):
@@ -169,8 +170,8 @@ class GGPoker(HandHistoryConverter):
     re_PostBUB          = re.compile(r"^%(PLYR)s: posts button blind %(CUR)s(?P<BUB>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_Antes            = re.compile(r"^%(PLYR)s: posts the ante %(CUR)s(?P<ANTE>[,.0-9]+)" % substitutions, re.MULTILINE)
     re_BringIn          = re.compile(r"^%(PLYR)s: brings[- ]in( low|) for %(CUR)s(?P<BRINGIN>[,.0-9]+)" % substitutions, re.MULTILINE)
-    re_PostBoth         = re.compile(r"^%(PLYR)s: posts small \& big blinds %(CUR)s(?P<SBBB>[,.0-9]+)" %  substitutions, re.MULTILINE)
-    re_PostStraddle     = re.compile(r"^%(PLYR)s: posts straddle %(CUR)s(?P<STRADDLE>[,.0-9]+)" %  substitutions, re.MULTILINE)
+    re_PostMissed       = re.compile(r"^%(PLYR)s: posts missed blind %(CUR)s(?P<SBBB>[,.0-9]+)" %  substitutions, re.MULTILINE)
+    re_PostStraddle     = re.compile(r"^%(PLYR)s: straddle %(CUR)s(?P<STRADDLE>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_Action           = re.compile(r"""
                         ^%(PLYR)s:(?P<ATYPE>\sbets|\schecks|\sraises|\scalls|\sfolds|\sdiscards|\sstands\spat)
                         (\s%(CUR)s(?P<BET>[,.\d]+))?(\sto\s%(CUR)s(?P<BETTO>[,.\d]+))?  # the number discarded goes in <BET>
@@ -259,8 +260,10 @@ class GGPoker(HandHistoryConverter):
             raise FpdbParseError
 
         mg = m.groupdict()
-        if 'LIMIT' in mg:
+        if 'LIMIT' in mg and mg['LIMIT'] is not None:
             info['limitType'] = self.limits[mg['LIMIT']]
+        else:
+            info['limitType'] = 'pl'
         if 'GAME' in mg:
             (info['base'], info['category']) = self.games[mg['GAME']]
         if 'SB' in mg and mg['SB'] is not None:
@@ -466,15 +469,7 @@ class GGPoker(HandHistoryConverter):
 
         # PREFLOP = ** Dealing down cards **
         # This re fails if,  say, river is missing; then we don't get the ** that starts the river.
-        if hand.gametype['split']:
-            m =  re.search(r"\*\*\* HOLE CARDS \*\*\*(?P<PREFLOP>.+(?=\*\*\* FIRST\sFLOP \*\*\*)|.+)"
-                       r"(\*\*\* FIRST FLOP \*\*\* (?P<FLOP1>\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* SECOND\sFLOP \*\*\*)|.+))?"
-                       r"(\*\*\* SECOND FLOP \*\*\* (?P<FLOP2>\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* FIRST\sTURN \*\*\*)|.+))?"
-                       r"(\*\*\* FIRST TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN1>\[\S\S\].+(?=\*\*\* SECOND TURN \*\*\*)|.+))?"
-                       r"(\*\*\* SECOND TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN2>\[\S\S\].+(?=\*\*\* FIRST RIVER \*\*\*)|.+))?" 
-                       r"(\*\*\* FIRST RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER1>\[\S\S\].+?(?=\*\*\* SECOND RIVER \*\*\*)|.+))?"
-                       r"(\*\*\* SECOND RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER2>\[\S\S\].+))?", hand.handText,re.DOTALL)
-        elif hand.gametype['base'] in ("hold"):
+        if hand.gametype['base'] in ("hold"):
             m =  re.search(r"\*\*\* HOLE CARDS \*\*\*(?P<PREFLOP>(.+(?P<FLOPET>\[\S\S\]))?.+(?=\*\*\* (FIRST\s)?FLOP \*\*\*)|.+)"
                        r"(\*\*\* FLOP \*\*\*(?P<FLOP> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* (FIRST\s)?TURN \*\*\*)|.+))?"
                        r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN>\[\S\S\].+(?=\*\*\* (FIRST\s)?RIVER \*\*\*)|.+))?"
@@ -485,34 +480,20 @@ class GGPoker(HandHistoryConverter):
                        r"(\*\*\* SECOND FLOP \*\*\*(?P<FLOP2> (\[\S\S\] )?\[\S\S ?\S\S \S\S\].+(?=\*\*\* SECOND TURN \*\*\*)|.+))?"
                        r"(\*\*\* SECOND TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN2>\[\S\S\].+(?=\*\*\* SECOND RIVER \*\*\*)|.+))?"
                        r"(\*\*\* SECOND RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER2>\[\S\S\].+))?", hand.handText,re.DOTALL)
-        elif hand.gametype['base'] in ("stud"):
-            m =  re.search(r"(?P<ANTES>.+(?=\*\*\* 3rd STREET \*\*\*)|.+)"
-                           r"(\*\*\* 3rd STREET \*\*\*(?P<THIRD>.+(?=\*\*\* 4th STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 4th STREET \*\*\*(?P<FOURTH>.+(?=\*\*\* 5th STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 5th STREET \*\*\*(?P<FIFTH>.+(?=\*\*\* 6th STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 6th STREET \*\*\*(?P<SIXTH>.+(?=\*\*\* RIVER \*\*\*)|.+))?"
-                           r"(\*\*\* RIVER \*\*\*(?P<SEVENTH>.+))?", hand.handText,re.DOTALL)
-        elif hand.gametype['base'] in ("draw"):
-            if hand.gametype['category'] in ('27_1draw', 'fivedraw'):
-                m =  re.search(r"(?P<PREDEAL>.+(?=\*\*\* DEALING HANDS \*\*\*)|.+)"
-                           r"(\*\*\* DEALING HANDS \*\*\*(?P<DEAL>.+(?=\*\*\* DRAW \*\*\*)|.+))?"
-                           r"(\*\*\* DRAW \*\*\*(?P<DRAWONE>.+))?", hand.handText,re.DOTALL)
-            else:
-                m =  re.search(r"(?P<PREDEAL>.+(?=\*\*\* DEALING HANDS \*\*\*)|.+)"
-                           r"(\*\*\* DEALING HANDS \*\*\*(?P<DEAL>.+(?=\*\*\* FIRST DRAW \*\*\*)|.+))?"
-                           r"(\*\*\* FIRST DRAW \*\*\*(?P<DRAWONE>.+(?=\*\*\* SECOND DRAW \*\*\*)|.+))?"
-                           r"(\*\*\* SECOND DRAW \*\*\*(?P<DRAWTWO>.+(?=\*\*\* THIRD DRAW \*\*\*)|.+))?"
-                           r"(\*\*\* THIRD DRAW \*\*\*(?P<DRAWTHREE>.+))?", hand.handText,re.DOTALL)
         hand.addStreets(m)
+        if 'AFO' in hand.tablename:
+            m1 = self.re_Board3.search(hand.handText)
+            if m1:
+                hand.streets.update({
+                    'FLOP': '[%s] %s' % (m1.group('FLOP'),hand.streets['FLOP']),
+                    'TURN': '[%s]' % m1.group('TURN'), 
+                    'RIVER': '[%s]' % m1.group('RIVER')
+                })
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
         if street!='FLOPET' or hand.streets.get('FLOP')==None:   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
-            m2 = self.re_Board2.search(hand.streets[street])
-            if m2:
-                hand.setCommunityCards(street, [m2.group('C1'),m2.group('C2'),m2.group('C3')])
-            else:
-                m = self.re_Board.search(hand.streets[street])
-                hand.setCommunityCards(street, m.group('CARDS').split(' '))
+            m = self.re_Board.search(hand.streets[street])
+            hand.setCommunityCards(street, m.group('CARDS').split(' '))
         if street in ('FLOP1', 'TURN1', 'RIVER1', 'FLOP2', 'TURN2', 'RIVER2'):
             hand.runItTimes = 2
             
@@ -533,7 +514,7 @@ class GGPoker(HandHistoryConverter):
             hand.addBringIn(m.group('PNAME'),  self.clearMoneyString(m.group('BRINGIN')))
         
     def readBlinds(self, hand):
-        liveBlind = True
+        liveBlind, straddles = True, set()
         for a in self.re_PostSB.finditer(hand.handText):
             if liveBlind:
                 hand.addBlind(a.group('PNAME'), 'small blind', self.clearMoneyString(a.group('SB')))
@@ -545,12 +526,14 @@ class GGPoker(HandHistoryConverter):
                 else:
                     # Post dead blinds as ante
                     hand.addBlind(a.group('PNAME'), 'secondsb', self.clearMoneyString(a.group('SB')))
-        for a in self.re_PostBB.finditer(hand.handText):
-            hand.addBlind(a.group('PNAME'), 'big blind', self.clearMoneyString(a.group('BB')))
-        for a in self.re_PostBoth.finditer(hand.handText):
-            hand.addBlind(a.group('PNAME'), 'both', self.clearMoneyString(a.group('SBBB')))
+        for a in self.re_PostMissed.finditer(hand.handText):
+            hand.addBlind(a.group('PNAME'), 'secondsb', self.clearMoneyString(a.group('SBBB')))
         for a in self.re_PostStraddle.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'straddle', self.clearMoneyString(a.group('STRADDLE')))
+            straddles.add(a.group('PNAME'))
+        for a in self.re_PostBB.finditer(hand.handText):
+            if a.group('PNAME') not in straddles:
+                hand.addBlind(a.group('PNAME'), 'big blind', self.clearMoneyString(a.group('BB')))
         for a in self.re_PostBUB.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'button blind', self.clearMoneyString(a.group('BUB')))
 

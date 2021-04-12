@@ -1,0 +1,26 @@
+Poker Hand #OM1171256: PLO-5 ($25/$50) - 2021/04/11 03:57:00
+Table 'VO5 Ante1' 6-max Seat #4 is the button
+Seat 3: ce67ea41 ($2,000 in chips)
+Seat 4: 2a287edc ($3,270.7 in chips)
+Seat 5: Hero ($552.57 in chips)
+2a287edc: posts the ante $10
+ce67ea41: posts the ante $10
+Hero: posts the ante $10
+Hero: posts small blind $25
+ce67ea41: posts big blind $50
+ce67ea41: straddle $100
+*** HOLE CARDS ***
+Dealt to ce67ea41 
+Dealt to 2a287edc 
+Dealt to Hero [Kd 2h 3h Qc Tc]
+2a287edc: raises $225 to $325
+Hero: folds
+ce67ea41: folds
+Uncalled bet ($225) returned to 2a287edc
+*** SHOWDOWN ***
+2a287edc collected $242.25 from pot
+*** SUMMARY ***
+Total pot $255 | Rake $12.75 | Jackpot $0 | Bingo $0
+Seat 3: ce67ea41 (big blind) folded before Flop
+Seat 4: 2a287edc (button) collected ($242.25)
+Seat 5: Hero (small blind) folded before Flop
