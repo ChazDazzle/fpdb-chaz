@@ -640,7 +640,7 @@ class Bovada(HandHistoryConverter):
             re_CollectPot = self.re_CollectPot2
         else:
             re_CollectPot = self.re_CollectPot1
-        for m in re_CollectPot.finditer(hand.handText.replace(" [ME]", "")):# [ME]
+        for m in re_CollectPot.finditer(hand.handText.replace(" [ME]", "") if hand.version == 'MVS' else hand.handText):# [ME]
             collect, pot = m.groupdict(), 0
             if 'POT1' in collect and collect['POT1']!=None:
                 pot += Decimal(self.clearMoneyString(collect['POT1']))
