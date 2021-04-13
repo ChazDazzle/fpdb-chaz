@@ -86,7 +86,7 @@ class GGPoker(HandHistoryConverter):
               }
     games = {                          # base, category
                               "Hold'em" : ('hold','holdem'),
-                           "6+ Hold'em" : ('hold','6_holdem'),
+                            "ShortDeck" : ('hold','6_holdem'),
                                 'Omaha' : ('hold','omahahi'),
                           'Omaha Hi/Lo' : ('hold','omahahilo'),
                                 'PLO'   : ('hold','omahahi'), 
@@ -118,7 +118,7 @@ class GGPoker(HandHistoryConverter):
           (?P<TOURNAME>.+?)\s
           )?
           # close paren of tournament info
-          (?P<GAME>Hold\'em|Hold\'em|6\+\sHold\'em|Omaha|PLO|Omaha\sHi/Lo|PLO\-(5|6))\s
+          (?P<GAME>Hold\'em|Hold\'em|ShortDeck|Omaha|PLO|Omaha\sHi/Lo|PLO\-(5|6))\s
           (?P<LIMIT>No\sLimit|Fixed\sLimit|Limit|Pot\sLimit|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop)?,?\s*
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?
@@ -126,7 +126,7 @@ class GGPoker(HandHistoryConverter):
           \(?                            # open paren of the stakes
           (?P<CURRENCY>%(LS)s|)?
           (ante\s\d+,\s)?
-          ((?P<SB>[,.0-9]+)/(%(LS)s)?(?P<BB>[,.0-9]+)|Button\sBlind\s(?P<CURRENCY1>%(LS)s|)(?P<BUB>[,.0-9]+)\s\-\sAnte\s(%(LS)s)?[,.0-9]+\s)
+          ((?P<SB>[,.0-9]+)/(%(LS)s)?(?P<BB>[,.0-9]+)|(?P<BUB>[,.0-9]+))
           (?P<CAP>\s-\s[%(LS)s]?(?P<CAPAMT>[,.0-9]+)\sCap\s-\s)?        # Optional Cap part
           \s?(?P<ISO>%(LEGAL_ISO)s)?
           \)                        # close paren of the stakes
@@ -210,7 +210,7 @@ class GGPoker(HandHistoryConverter):
                          %  substitutions, re.MULTILINE|re.VERBOSE)
     
     re_STP             = re.compile(u"""
-                        STP\sadded:\s%(CUR)s(?P<AMOUNT>[,\.0-9]+)"""
+                        Cash\sDrop\sto\sPot\s:\stotal\s%(CUR)s(?P<AMOUNT>[,\.0-9]+)"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
 
     def compilePlayerRegexs(self,  hand):
@@ -273,12 +273,8 @@ class GGPoker(HandHistoryConverter):
         if 'BUB' in mg and mg['BUB'] is not None:
             info['sb'] = '0'
             info['bb'] = self.clearMoneyString(mg['BUB'])
-        if 'CURRENCY1' in mg and mg['CURRENCY1'] is not None:
-            info['currency'] = self.currencies[mg['CURRENCY1']]
-        elif 'CURRENCY' in mg:
+        if 'CURRENCY' in mg:
             info['currency'] = self.currencies[mg['CURRENCY']]
-#        if 'MIXED' in mg:
-#            if mg['MIXED'] is not None: info['mix'] = self.mixes[mg['MIXED']]
         if 'CAP' in mg and mg['CAP'] is not None:
             info['buyinType'] = 'cap'
         else:
@@ -498,7 +494,9 @@ class GGPoker(HandHistoryConverter):
             hand.runItTimes = 2
             
     def readSTP(self, hand):
-        pass
+        m = self.re_STP.search(hand.handText)
+        if m:
+            hand.addSTP(m.group('AMOUNT'))
 
     def readAntes(self, hand):
         log.debug(_("reading antes"))

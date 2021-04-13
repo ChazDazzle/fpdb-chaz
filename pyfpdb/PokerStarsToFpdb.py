@@ -587,7 +587,7 @@ class PokerStars(HandHistoryConverter):
             hand.runItTimes = 2
             
     def readSTP(self, hand):
-        log.debug(_("read Splash the Pot"))
+        #log.debug(_("read Splash the Pot"))
         m = self.re_STP.search(hand.handText)
         if m:
             hand.addSTP(m.group('AMOUNT'))
