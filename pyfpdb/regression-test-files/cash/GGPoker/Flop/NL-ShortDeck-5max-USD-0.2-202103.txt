@@ -1,0 +1,152 @@
+Poker Hand #SD27208848: ShortDeck No Limit ($0.02) - 2021/03/02 18:22:40
+Table 'SDWhite20' 5-max Seat #3 is the button
+Seat 1: f1da9c5a ($2.75 in chips)
+Seat 2: 27925b27 ($2.09 in chips)
+Seat 3: Hero ($2 in chips)
+Seat 5: 11294517 ($0.8 in chips)
+27925b27: posts the ante $0.02
+11294517: posts the ante $0.02
+Hero: posts the ante $0.02
+f1da9c5a: posts the ante $0.02
+Hero: posts button blind $0.02
+27925b27: straddle $0.04
+*** HOLE CARDS ***
+Dealt to f1da9c5a 
+Dealt to 27925b27 
+Dealt to Hero [Tc Ac]
+Dealt to 11294517 
+Hero: calls $0.02
+11294517: folds
+f1da9c5a: calls $0.04
+27925b27: checks
+*** FLOP *** [Qh 8s 9d]
+f1da9c5a: checks
+27925b27: bets $0.2
+Hero: folds
+f1da9c5a: calls $0.2
+*** TURN *** [Qh 8s 9d] [Ah]
+f1da9c5a: checks
+27925b27: bets $0.3
+f1da9c5a: folds
+Uncalled bet ($0.3) returned to 27925b27
+*** SHOWDOWN ***
+27925b27 collected $0.56 from pot
+*** SUMMARY ***
+Total pot $0.6 | Rake $0.02 | Jackpot $0.02 | Bingo $0
+Board [Qh 8s 9d Ah]
+Seat 1: f1da9c5a folded on the Turn
+Seat 2: 27925b27 won ($0.56)
+Seat 3: Hero (button) folded on the Flop
+Seat 5: 11294517 folded before Flop
+
+
+Poker Hand #SD27208838: ShortDeck No Limit ($0.02) - 2021/03/02 18:21:51
+Table 'SDWhite20' 5-max Seat #2 is the button
+Seat 1: f1da9c5a ($2.44 in chips)
+Seat 2: 27925b27 ($2.41 in chips)
+Seat 3: Hero ($2 in chips)
+Seat 5: 11294517 ($0.82 in chips)
+27925b27: posts the ante $0.02
+11294517: posts the ante $0.02
+f1da9c5a: posts the ante $0.02
+Hero: posts the ante $0.02
+27925b27: posts button blind $0.02
+27925b27: straddle $0.04
+27925b27: straddle $0.08
+*** HOLE CARDS ***
+Dealt to f1da9c5a 
+Dealt to 27925b27 
+Dealt to Hero [6s 9c]
+Dealt to 11294517 
+Hero: folds
+11294517: folds
+f1da9c5a: calls $0.08
+27925b27: raises $0.08 to $0.16
+f1da9c5a: calls $0.08
+*** FLOP *** [Ah 6d Ks]
+f1da9c5a: bets $0.14
+27925b27: calls $0.14
+*** TURN *** [Ah 6d Ks] [Qc]
+f1da9c5a: checks
+27925b27: checks
+*** RIVER *** [Ah 6d Ks Qc] [8h]
+f1da9c5a: checks
+27925b27: checks
+f1da9c5a: shows [Qh Ts] (Pair of Queens)
+27925b27: shows [8d Td] (Pair of Eights)
+*** SHOWDOWN ***
+f1da9c5a collected $0.63 from pot
+*** SUMMARY ***
+Total pot $0.68 | Rake $0.03 | Jackpot $0.02 | Bingo $0
+Board [Ah 6d Ks Qc 8h]
+Seat 1: f1da9c5a showed [Qh Ts] and won ($0.63) with Pair of Queens
+Seat 2: 27925b27 (button) showed [8d Td] and lost with Pair of Eights
+Seat 3: Hero folded before Flop
+Seat 5: 11294517 folded before Flop
+
+
+Poker Hand #SD27208832: ShortDeck No Limit ($0.02) - 2021/03/02 18:21:18
+Table 'SDWhite20' 5-max Seat #1 is the button
+Seat 1: f1da9c5a ($2.48 in chips)
+Seat 2: 27925b27 ($2.33 in chips)
+Seat 3: Hero ($2 in chips)
+Seat 5: 11294517 ($0.84 in chips)
+27925b27: posts the ante $0.02
+11294517: posts the ante $0.02
+f1da9c5a: posts the ante $0.02
+Hero: posts the ante $0.02
+f1da9c5a: posts button blind $0.02
+27925b27: straddle $0.04
+27925b27: straddle $0.08
+27925b27: straddle $0.16
+*** HOLE CARDS ***
+Dealt to f1da9c5a 
+Dealt to 27925b27 
+Dealt to Hero [Ac Tc]
+Dealt to 11294517 
+Hero: folds
+11294517: folds
+f1da9c5a: folds
+Uncalled bet ($0.14) returned to 27925b27
+11294517: shows [7s]
+*** SHOWDOWN ***
+27925b27 collected $0.12 from pot
+*** SUMMARY ***
+Total pot $0.12 | Rake $0 | Jackpot $0 | Bingo $0
+Seat 1: f1da9c5a (button) folded before Flop
+Seat 2: 27925b27 collected ($0.12)
+Seat 3: Hero folded before Flop
+Seat 5: 11294517 folded before Flop
+
+
+Poker Hand #SD27208824: ShortDeck No Limit ($0.02) - 2021/03/02 18:20:47
+Table 'SDWhite20' 5-max Seat #5 is the button
+Seat 1: f1da9c5a ($2.5 in chips)
+Seat 2: 27925b27 ($2.25 in chips)
+Seat 3: Hero ($2 in chips)
+Seat 5: 11294517 ($0.88 in chips)
+27925b27: posts the ante $0.02
+11294517: posts the ante $0.02
+Hero: posts the ante $0.02
+f1da9c5a: posts the ante $0.02
+11294517: posts button blind $0.02
+27925b27: straddle $0.04
+*** HOLE CARDS ***
+Dealt to f1da9c5a 
+Dealt to 27925b27 
+Dealt to Hero [7c Td]
+Dealt to 11294517 
+Hero: folds
+11294517: folds
+f1da9c5a: folds
+Uncalled bet ($0.02) returned to 27925b27
+*** SHOWDOWN ***
+27925b27 collected $0.12 from pot
+*** SUMMARY ***
+Total pot $0.12 | Rake $0 | Jackpot $0 | Bingo $0
+Seat 1: f1da9c5a folded before Flop
+Seat 2: 27925b27 collected ($0.12)
+Seat 3: Hero folded before Flop
+Seat 5: 11294517 (button) folded before Flop
+
+
