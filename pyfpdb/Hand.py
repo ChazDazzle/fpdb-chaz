@@ -857,7 +857,7 @@ class Hand(object):
         self.actions[street].append(act)
 
     def addCollectPot(self,player, pot):
-        log.debug("%s collected %s", player, pot)
+        #log.debug("%s collected %s", player, pot)
         self.checkPlayerExists(player, 'addCollectPot')
         self.collected = self.collected + [[player, pot]]
         if player not in self.collectees:

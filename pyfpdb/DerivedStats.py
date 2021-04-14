@@ -536,44 +536,82 @@ class DerivedStats():
         return boards
     
     def awardPots(self, hand):
-        holeshow = True
+        holeshow = True        
+        base, evalgame, hilo, streets, last, hrange = Card.games[hand.gametype['category']]
         for pot, players in hand.pot.pots:
             for p in players:
                 hcs = hand.join_holecards(p, asList=True)
-                if '0x' in hcs: holeshow = False
-        base, evalgame, hilo, streets, last, hrange = Card.games[hand.gametype['category']]
-        if pokereval and len(hand.pot.pots)>1 and evalgame and holeshow:
+                holes = [str(c) for c in hcs[hrange[-1][0]:hrange[-1][1]] if Card.encodeCardList.get(c)!=None or c=='0x']
+                #log.error((p, holes))
+                if '0x' in holes: holeshow = False
+        factor = 100
+        if ((hand.gametype["type"]=="tour" or 
+            (hand.gametype["type"]=="ring" and 
+             (hand.gametype["currency"]=="play" and 
+              (hand.sitename not in ('Winamax', 'PacificPoker'))))) and
+               (not [n for (n,v) in hand.pot.pots if (n % Decimal('1.00'))!=0])):
+            factor = 1  
+        hiLoKey = {'h':['hi'],'l':['low'],'r':['low'],'s':['hi','low']}
+        #log.error((len(hand.pot.pots)>1, evalgame, holeshow))
+        if pokereval and len(hand.pot.pots)>1 and evalgame and holeshow: #hrange
             hand.collected = [] #list of ?
             hand.collectees = {} # dict from player names to amounts collected (?)
             rakes, totrake, potId = {}, 0, 0
-            board = [str(b) for b in hand.board['FLOP'] + hand.board['TURN'] + hand.board['RIVER']]
+            totalrake = hand.rakes.get('rake')
+            if not totalrake:
+                totalpot = hand.rakes.get('pot')
+                if totalpot:
+                    totalrake = hand.totalpot - totalpot
+                else:
+                    totalrake = 0
             for pot, players in hand.pot.pots:
                 if potId ==0: pot += (sum(hand.pot.common.values()) + hand.pot.stp)
                 potId+=1
-                holecards = []
-                for p in players:
-                    hcs = hand.join_holecards(p, asList=True)
-                    if 'omaha' not in evalgame:
-                        holes = [str(c) for c in hcs[hrange[-1][0]:hrange[-1][1]] + board]
-                        bcards = []
+                boards, boardId, sumpot = self.getBoardsList(hand), 0, 0
+                for b in boards:
+                    boardId += (hand.runItTimes==2)
+                    potBoard = Decimal(int(pot/len(boards)*factor))/factor
+                    modBoard = pot - potBoard*len(boards)
+                    if boardId==1: 
+                        potBoard+=modBoard
+                    holeplayers, holecards = [], []
+                    for p in players:
+                        hcs = hand.join_holecards(p, asList=True)
+                        holes = [str(c) for c in hcs[hrange[-1][0]:hrange[-1][1]] if Card.encodeCardList.get(c)!=None or c=='0x']
+                        board = [str(c) for c in b if 'omaha' in evalgame]
+                        if 'omaha' not in evalgame:
+                            holes = holes + [str(c) for c in b if base=='hold']
+                        if '0x' not in holes and '0x' not in board:
+                            holecards.append(holes)
+                            holeplayers.append(p)
+                    if len(holecards)>1:
+                        try:
+                            win = pokereval.winners(game = evalgame, pockets = holecards, board = board)
+                        except RuntimeError:
+                            #log.error((evalgame, holecards, board))
+                            log.error("awardPots: error evaluating winners for hand %s %s" % (hand.handid, hand.in_path))
+                            win = {}
+                            win[hiLoKey[hilo][0]] = [0]
                     else:
-                        holes = [str(c) for c in hcs[hrange[-1][0]:hrange[-1][1]]]
-                        bcards = [str(b) for b in board]
-                    if '0x' not in hcs:
-                        holecards.append(holes)
-                win = pokereval.winners(game = evalgame, pockets = holecards, board = bcards)
-                totalrake = hand.rakes.get('rake')
-                if not totalrake:
-                    totalpot = hand.rakes.get('pot')
-                    if totalpot:
-                        totalrake = hand.totalpot - totalpot
-                    else:
-                        totalrake = 0
-                rake = (totalrake * (pot/hand.totalpot))
-                for w in win['hi']:
-                    pname = list(players)[w]
-                    ppot  = str(((pot-rake)/len(win['hi'])).quantize(Decimal("0.01"), rounding=ROUND_DOWN))
-                    hand.addCollectPot(player=pname,pot=ppot)
+                        win = {}
+                        win[hiLoKey[hilo][0]] = [0]
+                    for hl in hiLoKey[hilo]:
+                        if hl in win and len(win[hl])>0:
+                            potHiLo = Decimal(int(potBoard/len(win)*factor))/factor
+                            modHiLo = potBoard - potHiLo*len(win)
+                            if len(win)==1 or hl=='hi':
+                                potHiLo+=modHiLo
+                            potSplit = Decimal(int(potHiLo/len(win[hl])*factor))/factor
+                            modSplit = potHiLo - potSplit*len(win[hl])
+                            pnames = players if len(holeplayers)==0 else [holeplayers[w] for w in win[hl]]
+                            for p in pnames:
+                                ppot = potSplit
+                                if modSplit>0:
+                                    cent = (Decimal('0.01') * (100/factor))
+                                    ppot += cent
+                                    modSplit -= cent
+                                rake = (totalrake * (ppot/hand.totalpot)).quantize(Decimal("0.01"), rounding=ROUND_DOWN)
+                                hand.addCollectPot(player=p,pot=(ppot-rake))                 
     
     def assembleHandsPots(self, hand):
         category, positions, playersPots, potFound, positionDict, showdown = hand.gametype['category'], [], {}, {}, {}, False
@@ -594,7 +632,10 @@ class DerivedStats():
             factor = 1  
         hiLoKey = {'h':['hi'],'l':['low'],'r':['low'],'s':['hi','low']}
         base, evalgame, hilo, streets, last, hrange = Card.games[category]
-        if (evalgame and (len(hand.pot.pots)>1 or (showdown and (hilo=='s' or hand.runItTimes==2)))):
+        if ((hand.sitename != 'KingsClub' or base=='hold') and # Can't trust KingsClub draw/stud RIT holecards
+            evalgame and 
+            (len(hand.pot.pots)>1 or (showdown and (hilo=='s' or hand.runItTimes==2)))
+            ):
             #print 'DEBUG hand.collected', hand.collected
             #print 'DEBUG hand.collectees', hand.collectees
             rakes, totrake, potId = {}, 0, 0

@@ -1,0 +1,54 @@
+#3703449: Limit 2-7 Razz - 500/1,000
+2021-02-21 09:28:49
+Table 'Bobbys Room Mix 2'
+Seat 1: Player0 (44,181)
+Seat 2: Player1 (12,749)
+Seat 4: Hero (23,025.75)
+Seat 6: Player2 (1,787.75)
+Player0: posts ante 125
+Player1: posts ante 125
+Hero: posts ante 125
+Player2: posts ante 125
+Dealt to Player0: [X X Tc]
+Dealt to Player1: [X X 9c]
+Dealt to Hero: [4c 5d 8h]
+Dealt to Player2: [X X 4s]
+Player0 brings in for 125
+Player1 bets 500
+Hero raises to 1,000
+Player2 raises to 1,500
+Player0 folds
+Player1 calls 1,500
+Hero raises to 2,000
+Player2 calls 1,662.75, and is all in
+Player1 calls 2,000
+*** 3RD STREET ***
+Dealt to Player1: [Jd]
+Dealt to Hero: [8d]
+Dealt to Player2: [Kd]
+Player1 checks
+Hero checks
+*** 4TH STREET ***
+Dealt to Player1: [As]
+Dealt to Hero: [5c]
+Dealt to Player2: [6s]
+Player1 checks
+Hero bets 1,000
+Player1 calls 1,000
+*** 5TH STREET ***
+Dealt to Player1: [5s]
+Dealt to Hero: [Qd]
+Dealt to Player2: [Jh]
+Player1 bets 1,000
+Hero folds
+Player1 shows [6c 5h 9c Jd As 5s]
+Player2 shows [2c 3h 4s Kd 6s Jh]
+*** 6TH STREET ***
+Dealt to Player1: [X]
+Dealt to Player2: [X]
+*** SUMMARY ***
+Seat 1: Player0 (43,931) -250
+Seat 2: Player1 (12,298.50) -450.50
+Seat 4: Hero (19,900.75) -3,125
+Seat 6: Player2 (5,613.25) +3,825.50
+Player2 wins pot (5,613.25)

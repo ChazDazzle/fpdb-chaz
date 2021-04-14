@@ -121,7 +121,7 @@ class KingsClub(HandHistoryConverter):
           \#(?P<HID>[0-9]+):\s+
           (?P<LIMIT>No\sLimit|Limit|Pot\sLimit)\s
           (?P<GAME>Holdem|Razz|Seven\sCard\sStud|Seven\sCard\sStud\sHi\-Lo|Omaha|Omaha\sHi\-Lo|Badugi|2\-7\sTriple\sDraw|2\-7\sSingle\sDraw|5\sCard\sDraw|Big\sO|2\-7\sRazz|Badacey|Badeucey|A\-5\sTriple\sDraw)\s
-          \-\s(?P<SB>[.0-9]+)/(?P<BB>[.0-9]+)
+          \-\s(?P<SB>[,.0-9]+)/(?P<BB>[,.0-9]+)
         """ % substitutions, re.MULTILINE|re.VERBOSE)
 
     re_PlayerInfo   = re.compile(u"""
@@ -137,6 +137,8 @@ class KingsClub(HandHistoryConverter):
           (?P<PLAY>\(Play\sMoney\)\s)?
           (Seat\s\#(?P<BUTTON>\d+)\sis\sthe\sbutton)?""", 
           re.MULTILINE|re.VERBOSE)
+    
+    re_TourNo = re.compile(u"Table\s\'T(?P<TOURNO>\d+)\s\[(?P<TABLENO>\d+)\]\'")
 
     re_Identify     = re.compile(u'^\#\d+:')
     re_SplitHands   = re.compile('(?:\s?\n){2,}')
@@ -152,7 +154,6 @@ class KingsClub(HandHistoryConverter):
     # we don't have to, and it makes life faster.
     re_PostSB           = re.compile(r"^%(PLYR)s: posts the small blind %(CUR)s(?P<SB>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_PostBB           = re.compile(r"^%(PLYR)s: posts the big blind %(CUR)s(?P<BB>[,.0-9]+)" %  substitutions, re.MULTILINE)
-    re_PostBUB          = re.compile(r"^%(PLYR)s: posts button blind %(CUR)s(?P<BUB>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_Antes            = re.compile(r"^%(PLYR)s: posts ante %(CUR)s(?P<ANTE>[,.0-9]+)" % substitutions, re.MULTILINE)
     re_BringIn          = re.compile(r"^%(PLYR)s brings[- ]in( low|) for %(CUR)s(?P<BRINGIN>[,.0-9]+)" % substitutions, re.MULTILINE)
     re_PostBoth         = re.compile(r"^%(PLYR)s: posts blind %(CUR)s(?P<SBBB>[,.0-9]+)" %  substitutions, re.MULTILINE)
@@ -160,7 +161,7 @@ class KingsClub(HandHistoryConverter):
     re_Action           = re.compile(r"""
                         ^%(PLYR)s(?P<ATYPE>\sbets|\schecks|\sraises|\scalls|\sfolds|\sdiscards|\sstands\spat|\sdraws)
                         (\s%(CUR)s(?P<BET>[,.\d]+))?(\sto\s%(CUR)s(?P<BETTO>[,.\d]+))?  # the number discarded goes in <BET>
-                        \s*(and\sis\sall.in)?
+                        \s*(,\sand\sis\sall.in)?
                         (and\shas\sreached\sthe\s[%(CUR)s\d\.,]+\scap)?
                         (\son|\scards?)?
                         (\s\(disconnect\))?
@@ -248,26 +249,32 @@ class KingsClub(HandHistoryConverter):
         if 'GAME' in mg:
             (info['base'], info['category']) = self.games[mg['GAME']]
         if 'SB' in mg and mg['SB'] is not None:
-            info['sb'] = mg['SB']
+            info['sb'] = self.clearMoneyString(mg['SB'])
         if 'BB' in mg and mg['BB'] is not None:
-            info['bb'] = mg['BB']
-        info['currency'] = 'USD'
-        info['type'] = 'ring'
+            info['bb'] = self.clearMoneyString(mg['BB'])
+        
+        m1 = self.re_TourNo.search(handText)      
+        if m1:
+            info['type'] = 'tour'
+            info['currency'] = 'T$'
+        else:
+            info['type'] = 'ring'
+            info['currency'] = 'USD'
 
         if info['limitType'] == 'fl' and info['bb'] is not None:
             if info['type'] == 'ring':
                 try:
-                    info['sb'] = self.Lim_Blinds[mg['BB']][0]
-                    info['bb'] = self.Lim_Blinds[mg['BB']][1]
+                    info['sb'] = self.Lim_Blinds[self.clearMoneyString(mg['BB'])][0]
+                    info['bb'] = self.Lim_Blinds[self.clearMoneyString(mg['BB'])][1]
                 except KeyError:
-                    info['sb'] = str((Decimal(mg['SB'])/2).quantize(Decimal("0.01")))
-                    info['bb'] = str(Decimal(mg['SB']).quantize(Decimal("0.01"))) 
+                    info['sb'] = str((Decimal(self.clearMoneyString(mg['SB']))/2).quantize(Decimal("0.01")))
+                    info['bb'] = str(Decimal(self.clearMoneyString(mg['SB'])).quantize(Decimal("0.01"))) 
                     #tmp = handText[0:200]
                     #log.error(_("KingsClubToFpdb.determineGameType: Lim_Blinds has no lookup for '%s' - '%s'") % (mg['BB'], tmp))
                     #raise FpdbParseError
             else:
-                info['sb'] = str((Decimal(mg['SB'])/2).quantize(Decimal("0.01")))
-                info['bb'] = str(Decimal(mg['SB']).quantize(Decimal("0.01")))    
+                info['sb'] = str((Decimal(self.clearMoneyString(mg['SB']))/2).quantize(Decimal("0.01")))
+                info['bb'] = str(Decimal(self.clearMoneyString(mg['SB'])).quantize(Decimal("0.01")))   
 
         return info
 
@@ -280,6 +287,7 @@ class KingsClub(HandHistoryConverter):
         m  = self.re_HandInfo.search(hand.handText,re.DOTALL)
         m1  = self.re_DateTime.finditer(hand.handText,re.DOTALL)
         m2 = self.re_GameInfo.search(hand.handText)
+        m3 = self.re_TourNo.search(hand.handText)
         if m is None or m1 is None or m2 is None:
             tmp = hand.handText[0:200]
             log.error(_("KingsClubToFpdb.readHandInfo: '%s'") % tmp)
@@ -287,7 +295,8 @@ class KingsClub(HandHistoryConverter):
 
         info.update(m.groupdict())
         info.update(m2.groupdict())
-        
+        if m3 is not None:
+            info.update(m3.groupdict())
         #2008/11/12 10:00:48 CET [2008/11/12 4:00:48 ET] # (both dates are parsed so ET date overrides the other)
         #2008/08/17 - 01:14:43 (ET)
         #2008/09/07 06:23:14 ET     
@@ -304,10 +313,11 @@ class KingsClub(HandHistoryConverter):
         for key in info:
             if key == 'HID':
                 hand.handid = info[key]
+            if key == 'TOURNO':
+                hand.tourNo = info[key]
             if key == 'TABLE':
-                tablesplit = re.split(" ", info[key])
-                if hand.tourNo != None and len(tablesplit)>1:
-                    hand.tablename = tablesplit[1]
+                if 'TABLENO' in info:
+                    hand.tablename = info['TABLENO']
                 else:
                     hand.tablename = info[key]
             if key == 'BUTTON':
@@ -329,7 +339,7 @@ class KingsClub(HandHistoryConverter):
             hand.addPlayer(
                 int(a.group('SEAT')), 
                 a.group('PNAME'), 
-                self.clearMoneyString(a.group('CASH'))
+                str(Decimal(self.clearMoneyString(a.group('CASH')))*100) if hand.tourNo is not None else self.clearMoneyString(a.group('CASH'))
             )
 
     def markStreets(self, hand):
@@ -383,28 +393,37 @@ class KingsClub(HandHistoryConverter):
                            r"(\*\*\* 2ND DRAW \*\*\*(?P<DRAWTWO>.+(?=\*\*\* 3RD DRAW \*\*\*)|.+))?"
                            r"(\*\*\* 3RD DRAW \*\*\*(?P<DRAWTHREE>.+))?", hand.handText,re.DOTALL)
         hand.addStreets(m)
-        if hand.gametype['base'] in ("hold"):            
+        if hand.gametype['base'] in ("hold"):
             m1 =  re.search(
                 r"(\*\*\* BOARD 1 - RIVER \*\*\* \[(?P<FLOP1>\S\S \S\S \S\S) (?P<TURN1>\S\S)] (?P<RIVER1>\[\S\S\].+(?=\*\*\* BOARD 2 - RIVER \*\*\*)|.+))"
-                r"(\*\*\* BOARD 2 - RIVER \*\*\* \[(?P<FLOP2>\S\S \S\S \S\S) (?P<TURN2>\S\S)] (?P<RIVER2>\[\S\S\].+))", post,re.DOTALL)
+                r"(\*\*\* BOARD 2 - RIVER \*\*\* \[(?P<FLOP2>(\S\S|\-) (\S\S|\-) (\S\S|\-)) (?P<TURN2>(\S\S|\-))] (?P<RIVER2>\[\S\S\].+))", post,re.DOTALL)
             if m1:
                 if hand.streets.get('FLOP') is None:
                     hand.streets.update({'FLOP1': m1.group('FLOP1'),'FLOP2': m1.group('FLOP2')})
                 if hand.streets.get('TURN') is None:
                     hand.streets.update({'TURN1': m1.group('TURN1'),'TURN2': m1.group('TURN2')})
                 hand.streets.update({'RIVER1': m1.group('RIVER1'),'RIVER2': m1.group('RIVER2')})
+            else:
+                m2 =  re.search(
+                    r"(\*\*\* RIVER \*\*\* \[(?P<FLOP>\S\S \S\S \S\S) (?P<TURN>\S\S)] (?P<RIVER>\[\S\S\].+(?=\*\*\* SUMMARY \*\*\*)|.+))", post,re.DOTALL)
+                if m2:
+                    if hand.streets.get('FLOP') is None:
+                        hand.streets.update({'FLOP': m2.group('FLOP')})
+                    if hand.streets.get('TURN') is None:
+                        hand.streets.update({'TURN': m2.group('TURN')})
+                    hand.streets.update({'RIVER': m2.group('RIVER')})
             
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
         if street!='FLOPET' or hand.streets.get('FLOP')==None:   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
-            m2 = self.re_Board2.search(hand.streets[street])
-            if m2:
-                hand.setCommunityCards(street, [m2.group('C1'),m2.group('C2'),m2.group('C3')])
-            elif street in ('FLOP1', 'TURN1', 'FLOP2', 'TURN2'):
+            if street in ('FLOP1', 'TURN1', 'FLOP2', 'TURN2'):
                 hand.setCommunityCards(street, hand.streets[street].split(' '))
             else:
                 m = self.re_Board.search(hand.streets[street])
-                hand.setCommunityCards(street, m.group('CARDS').split(' '))
+                if m:
+                    hand.setCommunityCards(street, m.group('CARDS').split(' '))
+                elif street in ('FLOP', 'TURN'):
+                    hand.setCommunityCards(street, hand.streets[street].split(' '))
         if street in ('FLOP1', 'TURN1', 'RIVER1', 'FLOP2', 'TURN2', 'RIVER2'):
             hand.runItTimes = 2
             
@@ -419,30 +438,45 @@ class KingsClub(HandHistoryConverter):
         m = self.re_Antes.finditer(hand.handText)
         for player in m:
             #~ logging.debug("hand.addAnte(%s,%s)" %(player.group('PNAME'), player.group('ANTE')))
-            hand.addAnte(player.group('PNAME'), self.clearMoneyString(player.group('ANTE')))
+            hand.addAnte(
+                player.group('PNAME'), 
+                str(Decimal(self.clearMoneyString(player.group('ANTE')))*100) if hand.tourNo is not None else self.clearMoneyString(player.group('ANTE'))
+            )
     
     def readBringIn(self, hand):
         m = self.re_BringIn.search(hand.handText,re.DOTALL)
         if m:
             #~ logging.debug("readBringIn: %s for %s" %(m.group('PNAME'),  m.group('BRINGIN')))
-            hand.addBringIn(m.group('PNAME'),  self.clearMoneyString(m.group('BRINGIN')))
+            hand.addBringIn(
+                m.group('PNAME'), 
+                str(Decimal(self.clearMoneyString(m.group('BRINGIN')))*100) if hand.tourNo is not None else self.clearMoneyString(m.group('BRINGIN'))
+            )
         
     def readBlinds(self, hand):
-        liveBlind = True
         for a in self.re_PostSB.finditer(hand.handText):
-            if liveBlind:
-                hand.addBlind(a.group('PNAME'), 'small blind', self.clearMoneyString(a.group('SB')))
-                liveBlind = False
-            else:
-                hand.addBlind(a.group('PNAME'), 'secondsb', self.clearMoneyString(a.group('SB')))
+            hand.addBlind(
+                a.group('PNAME'), 
+                'small blind', 
+                str(Decimal(self.clearMoneyString(a.group('SB')))*100) if hand.tourNo is not None else self.clearMoneyString(a.group('SB'))
+            )
         for a in self.re_PostBB.finditer(hand.handText):
-            hand.addBlind(a.group('PNAME'), 'big blind', self.clearMoneyString(a.group('BB')))
+            hand.addBlind(
+                a.group('PNAME'), 
+                'big blind', 
+                str(Decimal(self.clearMoneyString(a.group('BB')))*100) if hand.tourNo is not None else self.clearMoneyString(a.group('BB'))
+            )
         for a in self.re_PostBoth.finditer(hand.handText):
-            hand.addBlind(a.group('PNAME'), 'both', self.clearMoneyString(a.group('SBBB')))
+            hand.addBlind(
+                a.group('PNAME'), 
+                'big blind', 
+                str(Decimal(self.clearMoneyString(a.group('SBBB')))*100) if hand.tourNo is not None else self.clearMoneyString(a.group('SBBB'))
+            )
         for a in self.re_PostStraddle.finditer(hand.handText):
-            hand.addBlind(a.group('PNAME'), 'straddle', self.clearMoneyString(a.group('STRADDLE')))
-        for a in self.re_PostBUB.finditer(hand.handText):
-            hand.addBlind(a.group('PNAME'), 'button blind', self.clearMoneyString(a.group('BUB')))
+            hand.addBlind(
+                a.group('PNAME'), 
+                'straddle', 
+                str(Decimal(self.clearMoneyString(a.group('STRADDLE')))*100) if hand.tourNo is not None else self.clearMoneyString(a.group('STRADDLE'))
+            )
 
     def readHoleCards(self, hand):
 #    streets PREFLOP, PREDRAW, and THIRD are special cases beacause
@@ -497,14 +531,37 @@ class KingsClub(HandHistoryConverter):
             elif action.group('ATYPE') == ' checks':
                 hand.addCheck( street, action.group('PNAME'))
             elif action.group('ATYPE') == ' calls':
-                hand.addCallTo( street, action.group('PNAME'), self.clearMoneyString(action.group('BET')) )
+                hand.addCallTo(
+                    street, 
+                    action.group('PNAME'), 
+                    str(Decimal(self.clearMoneyString(action.group('BET')))*100) if hand.tourNo is not None else self.clearMoneyString(action.group('BET'))
+                )
             elif action.group('ATYPE') == ' raises':
                 if action.group('BETTO') is not None:
-                    hand.addRaiseTo( street, action.group('PNAME'), self.clearMoneyString(action.group('BETTO')) )
+                    hand.addRaiseTo(
+                        street,
+                        action.group('PNAME'),
+                        str(Decimal(self.clearMoneyString(action.group('BETTO')))*100) if hand.tourNo is not None else self.clearMoneyString(action.group('BETTO')) 
+                    )
                 elif action.group('BET') is not None:
-                   hand.addCallandRaise( street, action.group('PNAME'), self.clearMoneyString(action.group('BET')) ) 
+                   hand.addCallandRaise(
+                       street, 
+                       action.group('PNAME'),
+                       str(Decimal(self.clearMoneyString(action.group('BET')))*100) if hand.tourNo is not None else self.clearMoneyString(action.group('BET'))
+                    ) 
             elif action.group('ATYPE') == ' bets':
-                hand.addBet( street, action.group('PNAME'), self.clearMoneyString(action.group('BET')) )
+                if street in ('PREFLOP', 'THIRD', 'DEAL'):
+                    hand.addRaiseTo(
+                        street,
+                        action.group('PNAME'), 
+                        str(Decimal(self.clearMoneyString(action.group('BET')))*100) if hand.tourNo is not None else self.clearMoneyString(action.group('BET'))
+                    )
+                else:
+                    hand.addBet(
+                        street,
+                        action.group('PNAME'), 
+                        str(Decimal(self.clearMoneyString(action.group('BET')))*100) if hand.tourNo is not None else self.clearMoneyString(action.group('BET'))
+                    )
             elif action.group('ATYPE') == ' discards':
                 hand.addDiscard(street, action.group('PNAME'), len(action.group('CARDS').split(" ")), action.group('CARDS'))
                 if action.group('DRAWS') is not None:
@@ -526,50 +583,15 @@ class KingsClub(HandHistoryConverter):
 # TODO: pick up mucks also??
         for shows in self.re_ShowdownAction.finditer(hand.handText):
             cards = shows.group('CARDS').split(' ')
-            hand.addShownCards(cards, shows.group('PNAME'))
-
-    def readTourneyResults(self, hand):
-        """Reads knockout bounties and add them to the koCounts dict"""
-        if self.re_Bounty.search(hand.handText) == None:
-            koAmounts = {}
-            winner = None
-            #%(PLYR)s wins %(CUR)s(?P<AMT>[\.0-9]+) for eliminating (?P<ELIMINATED>.+?) and their own bounty increases by %(CUR)s(?P<INCREASE>[\.0-9]+) to %(CUR)s(?P<ENDAMT>[\.0-9]+)
-            #re_WinningRankOne   = re.compile(u"^%(PLYR)s wins the tournament and receives %(CUR)s(?P<AMT>[\.0-9]+) - congratulations!$" %  substitutions, re.MULTILINE)
-            for a in self.re_Progressive.finditer(hand.handText):
-                if a.group('PNAME') not in koAmounts:
-                    koAmounts[a.group('PNAME')] = 0
-                koAmounts[a.group('PNAME')] += 100*Decimal(a.group('AMT'))
-                hand.endBounty[a.group('PNAME')] = 100*Decimal(a.group('ENDAMT'))
-                hand.isProgressive = True
-                
-            m = self.re_WinningRankOne.search(hand.handText)
-            if m: winner = m.group('PNAME')
-            
-            if hand.koBounty > 0:
-                for pname, amount in koAmounts.iteritems():
-                    if pname == winner:
-                        end = (amount + hand.endBounty[pname])
-                        hand.koCounts[pname] = (amount + hand.endBounty[pname]) / Decimal(hand.koBounty)
-                    else:
-                        end = 0
-                        hand.koCounts[pname] = amount / Decimal(hand.koBounty)
-        else:
-            for a in self.re_Bounty.finditer(hand.handText):
-                if a.group('SPLIT') == 'split':
-                    pnames = a.group('PNAME').split(', ')
-                    for pname in pnames:
-                        if pname not in hand.koCounts:
-                            hand.koCounts[pname] = 0
-                        hand.koCounts[pname] += (1 / Decimal(len(pnames)))
-                else:
-                    if a.group('PNAME') not in hand.koCounts:
-                        hand.koCounts[a.group('PNAME')] = 0
-                    hand.koCounts[a.group('PNAME')] += 1        
+            hand.addShownCards(cards, shows.group('PNAME'))      
 
     def readCollectPot(self,hand):
+        if hand.gametype['category'] != '27_1draw':# and hand.gametype['limitType'] in ('nl', 'pl'):
+            hand.adjustCollected = True
+            hand.rakes['rake'] = 0
         pre, post = hand.handText.split('*** SUMMARY ***')
         for m in self.re_CollectPot.finditer(post):
-            pot = self.clearMoneyString(m.group('POT'))
+            pot = str(Decimal(self.clearMoneyString(m.group('POT')))*100) if hand.tourNo is not None else self.clearMoneyString(m.group('POT'))
             hand.addCollectPot(player=m.group('PNAME'),pot=pot)
 
     def readShownCards(self,hand):
@@ -587,15 +609,4 @@ class KingsClub(HandHistoryConverter):
 
                 #print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
                 hand.addShownCards(cards=cards, player=m.group('PNAME'), shown=shown, mucked=mucked, string=string)
-            
-
-    @staticmethod
-    def getTableTitleRe(type, table_name=None, tournament = None, table_number=None):
-        "Returns string to search in windows titles"
-        regex = re.escape(str(table_name))
-        if type=="tour":
-            regex = re.escape(str(tournament)) + ".* (Table|Tisch) " + re.escape(str(table_number))
-        log.info("Stars.getTableTitleRe: table_name='%s' tournament='%s' table_number='%s'" % (table_name, tournament, table_number))
-        log.info("Stars.getTableTitleRe: returns: '%s'" % (regex))
-        return regex
 

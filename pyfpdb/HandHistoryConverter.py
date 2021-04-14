@@ -420,8 +420,11 @@ or None if we fail to get the info """
         hand.rake = hand.totalpot - hand.totalcollected #  * Decimal('0.05') # probably not quite right
         round = -1 if hand.gametype['type'] == "tour" else -0.01
         if hand.rake < 0 and (not hand.roundPenny or hand.rake < round) and not hand.cashedOut:
-            log.error(_("hhc.getRake(): '%s': Amount collected (%s) is greater than the pot (%s)") % (hand.handid,str(hand.totalcollected), str(hand.totalpot)))
-            raise FpdbParseError
+            if self.siteId == 28 and (hand.rake + Decimal(str(hand.sb))) == 0:
+                log.error(_("hhc.getRake(): '%s': Missed sb - Amount collected (%s) is greater than the pot (%s)") % (hand.handid,str(hand.totalcollected), str(hand.totalpot)))
+            else:
+                log.error(_("hhc.getRake(): '%s': Amount collected (%s) is greater than the pot (%s)") % (hand.handid,str(hand.totalcollected), str(hand.totalpot)))
+                raise FpdbParseError
         elif hand.totalpot > 0 and Decimal(hand.totalpot/4) < hand.rake and not hand.fastFold and not hand.cashedOut:
             log.error(_("hhc.getRake(): '%s': Suspiciously high rake (%s) > 25 pct of pot (%s)") % (hand.handid,str(hand.rake), str(hand.totalpot)))
             raise FpdbParseError
