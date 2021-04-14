@@ -81,6 +81,11 @@ class Enet(HandHistoryConverter):
     # Static regexes
     re_GameInfo     = re.compile(u"""
           Game\s\#(?P<HID>[0-9]+):\s+
+          (\{.*\}\s+)?(Tournament\s\#                # open paren of tournament info
+          (?P<TOURNO>\d+),\s
+          # here's how I plan to use LS
+          (?P<BUYIN>(?P<BIAMT>[%(LS)s%(NUM)s]+)?\+?(?P<BIRAKE>[%(LS)s%(NUM)s]+)?\+?\s?(?P<TOUR_ISO>%(LEGAL_ISO)s)?|Freeroll)\s+)?
+          # close paren of tournament info
           (?P<GAME>Hold\'em|Omaha)\s
           \(?                            # open paren of the stakes
           (?P<CURRENCY>%(LS)s|)?
