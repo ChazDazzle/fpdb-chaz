@@ -87,7 +87,7 @@ class KingsClub(HandHistoryConverter):
                                'Holdem' : ('hold','holdem'),
                                 'Omaha' : ('hold','omahahi'),
                           'Omaha Hi-Lo' : ('hold','omahahilo'),
-                                'Big O' : ('hold', '5_omahahi'),
+                                'Big O' : ('hold', '5_omaha8'),
                   # '5 Card Omaha Hi-Lo' : ('hold', '5_omaha8'),
                   #       '6 Card Omaha' : ('hold', '6_omahahi'),
                                  'Razz' : ('stud','razz'), 
@@ -98,6 +98,7 @@ class KingsClub(HandHistoryConverter):
                       '2-7 Single Draw' : ('draw','27_1draw'),
                           '5 Card Draw' : ('draw','fivedraw'),
                       'A-5 Triple Draw' : ('draw','a5_3draw'),
+                      'A-5 Single Draw' : ('draw','a5_1draw'),
                              '2-7 Razz' : ('stud','27_razz'), 
                               'Badacey' : ('draw','badacey'),
                              'Badeucey' : ('draw','badeucey')
@@ -120,7 +121,7 @@ class KingsClub(HandHistoryConverter):
     re_GameInfo     = re.compile(u"""
           \#(?P<HID>[0-9]+):\s+
           (?P<LIMIT>No\sLimit|Limit|Pot\sLimit)\s
-          (?P<GAME>Holdem|Razz|Seven\sCard\sStud|Seven\sCard\sStud\sHi\-Lo|Omaha|Omaha\sHi\-Lo|Badugi|2\-7\sTriple\sDraw|2\-7\sSingle\sDraw|5\sCard\sDraw|Big\sO|2\-7\sRazz|Badacey|Badeucey|A\-5\sTriple\sDraw)\s
+          (?P<GAME>Holdem|Razz|Seven\sCard\sStud|Seven\sCard\sStud\sHi\-Lo|Omaha|Omaha\sHi\-Lo|Badugi|2\-7\sTriple\sDraw|2\-7\sSingle\sDraw|5\sCard\sDraw|Big\sO|2\-7\sRazz|Badacey|Badeucey|A\-5\sTriple\sDraw|A\-5\sSingle\sDraw)\s
           \-\s(?P<SB>[,.0-9]+)/(?P<BB>[,.0-9]+)
         """ % substitutions, re.MULTILINE|re.VERBOSE)
 
@@ -190,13 +191,12 @@ class KingsClub(HandHistoryConverter):
                         for\s(splitting\sthe\selimination\sof|eliminating)\s(?P<ELIMINATED>.+?)\s
                         and\stheir\sown\sbounty\sincreases\sby\s%(CUR)s(?P<INCREASE>[\.0-9]+)\sto\s%(CUR)s(?P<ENDAMT>[\.0-9]+)$"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
-    re_Rake             = re.compile(u"""
-                        Total\spot\s%(CUR)s(?P<POT>[,\.0-9]+)(.+?)?\s\|\sRake\s%(CUR)s(?P<RAKE>[,\.0-9]+)"""
-                         %  substitutions, re.MULTILINE|re.VERBOSE)
     
     re_STP             = re.compile(u"""
                         STP\sadded:\s%(CUR)s(?P<AMOUNT>[,\.0-9]+)"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
+    
+    re_Rake = re.compile(r"^Rake\s(?P<RAKE>[,.0-9]+)$", re.MULTILINE)
 
     def compilePlayerRegexs(self,  hand):
         players = set([player[1] for player in hand.players])
@@ -344,20 +344,20 @@ class KingsClub(HandHistoryConverter):
 
     def markStreets(self, hand):
 
-        # There is no marker between deal and draw in Stars single draw games
+        # There is no marker between deal and draw in KingsClubPkr A5 single draw
         #  this upsets the accounting, incorrectly sets handsPlayers.cardxx and 
         #  in consequence the mucked-display is incorrect.
         # Attempt to fix by inserting a DRAW marker into the hand text attribute
 
-        if hand.gametype['category'] in ('27_1draw', 'fivedraw'):
+        if hand.gametype['category'] == 'a5_1draw':
             # isolate the first discard/stand pat line (thanks Carl for the regex)
-            discard_split = re.split(r"(?:(.+(?: stands pat|: discards).+))", hand.handText,re.DOTALL)
+            discard_split = re.split(r"(?:(.+(?: stands pat| discards| draws).+))", hand.handText,re.DOTALL)
             if len(hand.handText) == len(discard_split[0]):
                 # handText was not split, no DRAW street occurred
                 pass
             else:
                 # DRAW street found, reassemble, with DRAW marker added
-                discard_split[0] += "*** DRAW ***\r\n"
+                discard_split[0] += "*** 1ST DRAW ***\r\n"
                 hand.handText = ""
                 for i in discard_split:
                     hand.handText += i
@@ -385,6 +385,9 @@ class KingsClub(HandHistoryConverter):
             if hand.gametype['category'] in ('27_1draw', 'fivedraw'):
                 m =  re.search(r"(?P<PREDEAL>.+(?=\*\*\* 1ST BETTING ROUND \*\*\*)|.+)"
                            r"(\*\*\* 1ST BETTING ROUND \*\*\*(?P<DEAL>.+(?=\*\*\* 1ST DRAW \*\*\*)|.+))?"
+                           r"(\*\*\* 1ST DRAW \*\*\*(?P<DRAWONE>.+))?", hand.handText,re.DOTALL)
+            elif hand.gametype['category'] == 'a5_1draw':
+                m =  re.search(r"(?P<DEAL>.+(?=\*\*\* 1ST DRAW \*\*\*)|.+)"
                            r"(\*\*\* 1ST DRAW \*\*\*(?P<DRAWONE>.+))?", hand.handText,re.DOTALL)
             else:
                 m =  re.search(r"(?P<PREDEAL>.+(?=\*\*\* 1ST BETTING ROUND \*\*\*)|.+)"
@@ -586,13 +589,20 @@ class KingsClub(HandHistoryConverter):
             hand.addShownCards(cards, shows.group('PNAME'))      
 
     def readCollectPot(self,hand):
-        if hand.gametype['category'] != '27_1draw':# and hand.gametype['limitType'] in ('nl', 'pl'):
+        if ((hand.gametype['category'] == '27_1draw' and hand.gametype['limitType'] == 'nl') or
+            hand.gametype['base'] == 'stud'):
+            hand.adjustCollected = False
+        else:
             hand.adjustCollected = True
-            hand.rakes['rake'] = 0
         pre, post = hand.handText.split('*** SUMMARY ***')
         for m in self.re_CollectPot.finditer(post):
             pot = str(Decimal(self.clearMoneyString(m.group('POT')))*100) if hand.tourNo is not None else self.clearMoneyString(m.group('POT'))
             hand.addCollectPot(player=m.group('PNAME'),pot=pot)
+        for m in self.re_Rake.finditer(hand.handText):
+            if hand.rakes.get('rake'):
+                hand.rakes['rake'] += Decimal(self.clearMoneyString(m.group('RAKE')))
+            else:
+                hand.rakes['rake'] = Decimal(self.clearMoneyString(m.group('RAKE')))
 
     def readShownCards(self,hand):
         for m in self.re_ShownCards.finditer(hand.handText):

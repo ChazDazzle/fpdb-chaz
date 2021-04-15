@@ -632,7 +632,7 @@ class DerivedStats():
             factor = 1  
         hiLoKey = {'h':['hi'],'l':['low'],'r':['low'],'s':['hi','low']}
         base, evalgame, hilo, streets, last, hrange = Card.games[category]
-        if ((hand.sitename != 'KingsClub' or base=='hold') and # Can't trust KingsClub draw/stud RIT holecards
+        if ((hand.sitename != 'KingsClub' or hand.adjustCollected) and # Can't trust KingsClub draw/stud holecards  
             evalgame and 
             (len(hand.pot.pots)>1 or (showdown and (hilo=='s' or hand.runItTimes==2)))
             ):
@@ -693,10 +693,11 @@ class DerivedStats():
                                     self.handsplayers[pname]['rake'] = 0
         
             for p, (total, info) in playersPots.iteritems():
+                #log.error((p, (total, info)))
                 if hand.collectees.get(p) and info:
                     potFound[p][1] = hand.collectees.get(p)
                     for item in info:
-                        #print (str(hand.handid)," winners: ",item['winners'])
+                        #log.error((str(hand.handid)," winners: ",item['winners']))
                         split = [n for n in item['winners'] if len(playersPots[n][1])==1 and hand.collectees.get(n)!=None]
                         if len(info)==1:
                             ppot = item['ppot']

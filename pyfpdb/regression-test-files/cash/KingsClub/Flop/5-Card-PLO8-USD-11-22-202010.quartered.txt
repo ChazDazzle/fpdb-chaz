@@ -1,0 +1,37 @@
+#37580510: Pot Limit Big O - 11/22
+2020-10-26 18:33:39
+Table 'Real Deal Mix 3' Seat 7 is the button
+Seat 1: Hero (880)
+Seat 2: Player0 (880)
+Seat 6: Player1 (407.49)
+Seat 7: Player2 (880)
+Hero: posts ante 22
+Player0: posts ante 22
+Player1: posts ante 22
+Player2: posts ante 22
+Hero: posts the small blind 11
+Player0: posts the big blind 22
+Dealt to Hero: [6d 2s Qh 9s 3s]
+Dealt to Player0: [X X X X X]
+Dealt to Player1: [X X X X X]
+Dealt to Player2: [X X X X X]
+Player1 calls 22
+Player2 raises to 187
+Hero folds
+Player0 folds
+Player1 calls 187
+*** FLOP *** [2h 7h Td]
+Player1 bets 198.49, and is all in
+Player2 calls 198.49
+Player1 shows [Kh Tc 9d Qs 8c]
+Player2 shows [5d 6s Ad Ac Ah]
+*** BOARD 1 - RIVER *** [2h 7h Td Ks] [4d]
+*** BOARD 2 - RIVER *** [- - - Qd] [Jd]
+*** SUMMARY ***
+Seat 1: Hero (847) -33
+Seat 2: Player0 (836) -44
+Seat 6: Player1 (222.12) -185.37
+Seat 7: Player2 (1,138.87) +258.87
+Rake 3.50
+Player1 wins (222.12) from pot
+Player2 wins (666.36) from pot
