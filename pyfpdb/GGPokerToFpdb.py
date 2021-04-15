@@ -82,7 +82,8 @@ class GGPoker(HandHistoryConverter):
               'No Limit':'nl', 
               'Pot Limit':'pl', 
               'Fixed Limit':'fl', 
-              'Limit':'fl'
+              'Limit':'fl',
+              '(NL postflop)': 'pn'
               }
     games = {                          # base, category
                               "Hold'em" : ('hold','holdem'),
@@ -119,7 +120,7 @@ class GGPoker(HandHistoryConverter):
           )?
           # close paren of tournament info
           (?P<GAME>Hold\'em|Hold\'em|ShortDeck|Omaha|PLO|Omaha\sHi/Lo|PLO\-(5|6))\s
-          (?P<LIMIT>No\sLimit|Fixed\sLimit|Limit|Pot\sLimit|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop)?,?\s*
+          (?P<LIMIT>No\sLimit|Fixed\sLimit|Limit|Pot\sLimit|\(NL\spostflop\))?,?\s*
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?
           (Level(?P<LEVEL>[IVXLC\d]+)\s?)?
