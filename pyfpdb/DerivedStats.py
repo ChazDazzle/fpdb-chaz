@@ -765,7 +765,7 @@ class DerivedStats():
             self.handsplayers[bi[0]]['position'] = 'S'
             self.handsplayers[bi[0]]['street0FirstToAct'] = True
             if bi[0] in players:  players.remove(bi[0])
-        if st:
+        if st and st[0] in players:
             players.insert(0, players.pop())
 
         #print "DEBUG: actions: '%s'" % actions

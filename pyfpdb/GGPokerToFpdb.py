@@ -513,7 +513,7 @@ class GGPoker(HandHistoryConverter):
             hand.addBringIn(m.group('PNAME'),  self.clearMoneyString(m.group('BRINGIN')))
         
     def readBlinds(self, hand):
-        liveBlind, straddles = True, set()
+        liveBlind, straddles = True, {}
         for a in self.re_PostSB.finditer(hand.handText):
             if liveBlind:
                 hand.addBlind(a.group('PNAME'), 'small blind', self.clearMoneyString(a.group('SB')))
@@ -528,10 +528,14 @@ class GGPoker(HandHistoryConverter):
         for a in self.re_PostMissed.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'secondsb', self.clearMoneyString(a.group('SBBB')))
         for a in self.re_PostStraddle.finditer(hand.handText):
-            hand.addBlind(a.group('PNAME'), 'straddle', self.clearMoneyString(a.group('STRADDLE')))
-            straddles.add(a.group('PNAME'))
+            if straddles.get(a.group('PNAME')) is None:
+                straddles[a.group('PNAME')] = self.clearMoneyString(a.group('STRADDLE'))
+            elif Decimal(straddles[a.group('PNAME')]) < Decimal(self.clearMoneyString(a.group('STRADDLE'))):
+                straddles[a.group('PNAME')] = self.clearMoneyString(a.group('STRADDLE'))
+        for p, amount in straddles.iteritems():
+            hand.addBlind(p, 'straddle', amount)
         for a in self.re_PostBB.finditer(hand.handText):
-            if a.group('PNAME') not in straddles:
+            if straddles.get(a.group('PNAME')) is None:
                 hand.addBlind(a.group('PNAME'), 'big blind', self.clearMoneyString(a.group('BB')))
         for a in self.re_PostBUB.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'button blind', self.clearMoneyString(a.group('BUB')))

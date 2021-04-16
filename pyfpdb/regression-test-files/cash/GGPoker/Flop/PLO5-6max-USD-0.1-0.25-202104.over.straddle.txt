@@ -1,0 +1,23 @@
+Poker Hand #OM1410171: PLO-5 ($0.1/$0.25) - 2021/04/13 10:03:48
+Table 'PLO-5Red7' 6-max Seat #3 is the button
+Seat 1: f279d709 ($5 in chips)
+Seat 3: 9e7f64d4 ($15.35 in chips)
+Seat 4: Hero ($31.73 in chips)
+Hero: posts small blind $0.1
+f279d709: posts big blind $0.25
+9e7f64d4: straddle $0.5
+9e7f64d4: straddle $15.35 and is all-in
+*** HOLE CARDS ***
+Dealt to f279d709 
+Dealt to 9e7f64d4 
+Dealt to Hero [2s 3c 9d 9h Ad]
+Hero: folds
+f279d709: folds
+Uncalled bet ($15.1) returned to 9e7f64d4
+*** SHOWDOWN ***
+9e7f64d4 collected $0.6 from pot
+*** SUMMARY ***
+Total pot $0.6 | Rake $0 | Jackpot $0 | Bingo $0
+Seat 1: f279d709 (big blind) folded before Flop
+Seat 3: 9e7f64d4 (button) collected ($0.6)
+Seat 4: Hero (small blind) folded before Flop
