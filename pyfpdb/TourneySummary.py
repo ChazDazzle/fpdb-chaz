@@ -60,7 +60,7 @@ class TourneySummary(object):
                'UltimateBet':6, 'Betfair':7, 'Absolute':8, 'PartyPoker':9, 'PacificPoker':10,
                'Partouche':11, 'Merge':12, 'PKR':13, 'iPoker':14, 'Winamax':15, 'Everest':16,
                'Cake':17, 'Entraction':18, 'BetOnline':19, 'Microgaming':20, 'Bovada':21, 'Enet':22,
-               'SealsWithClubs': 23, 'WinningPoker': 24}
+               'SealsWithClubs': 23, 'WinningPoker': 24, 'Run It Once Poker': 26}
 
 
     def __init__(self, db, config, siteName, summaryText, in_path='-', builtFrom="HHC", header=""):

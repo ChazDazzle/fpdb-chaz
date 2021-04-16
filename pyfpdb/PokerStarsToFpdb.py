@@ -166,7 +166,7 @@ class PokerStars(HandHistoryConverter):
 
     re_HandInfo     = re.compile("""
           ^\s?Table\s(ID\s)?\'(?P<TABLE>.+?)\'\s
-          ((?P<MAX>\d+)-max\s)?
+          ((?P<MAX>\d+)-[Mm]ax\s)?
           (?P<PLAY>\(Play\sMoney\)\s)?
           (Seat\s\#(?P<BUTTON>\d+)\sis\sthe\sbutton)?""", 
           re.MULTILINE|re.VERBOSE)
