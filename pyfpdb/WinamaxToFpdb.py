@@ -62,10 +62,14 @@ class Winamax(HandHistoryConverter):
                            "5 Card Omaha": ('hold','5_omahahi'),
                      "5 Card Omaha Hi/Lo": ('hold','5_omahahi'), #incorrect in file
                             "Omaha Hi/Lo": ('hold','omahahilo'),
+                                 "Omaha8": ('hold','omahahilo'),
                             "7-Card Stud": ('stud','studhi'),
+                                  "7stud": ('stud','studhi'),
                       "7-Card Stud Hi/Lo": ('stud','studhilo'),
+                                 "7stud8": ('stud','studhilo'),
                                    "Razz": ('stud','razz'),
-                        "2-7 Triple Draw": ('draw','27_3draw')
+                        "2-7 Triple Draw": ('draw','27_3draw'),
+                              "Lowball27": ('draw','27_3draw')
                }
     mixes = { 
                '8games' : '8game',
@@ -91,7 +95,7 @@ class Winamax(HandHistoryConverter):
             (level:\s(?P<LEVEL>\d+))?
             .*)?
             \s-\sHandId:\s\#(?P<HID1>\d+)-(?P<HID2>\d+)-(?P<HID3>\d+)\s-\s  # REB says: HID3 is the correct hand number
-            (?P<GAME>Holdem|Omaha|Omaha5|5\sCard\sOmaha|5\sCard\sOmaha\sHi/Lo|Omaha\sHi/Lo|7\-Card\sStud|7\-Card\sStud\sHi/Lo|Razz|2\-7\sTriple\sDraw)\s
+            (?P<GAME>Holdem|Omaha|Omaha5|Omaha8|5\sCard\sOmaha|5\sCard\sOmaha\sHi/Lo|Omaha\sHi/Lo|7\-Card\sStud|7stud|7\-Card\sStud\sHi/Lo|7stud8|Razz|2\-7\sTriple\sDraw|Lowball27)\s
             (?P<LIMIT>fixed\slimit|no\slimit|pot\slimit)\s
             \(
             (((%(LS)s)?(?P<ANTE>[.0-9]+)(%(LS)s)?)/)?
@@ -143,7 +147,7 @@ class Winamax(HandHistoryConverter):
             self.re_PostBB    = re.compile('%(PLYR)s posts big blind (%(CUR)s)?(?P<BB>[\.0-9]+)(%(CUR)s)?' % subst, re.MULTILINE)
             self.re_DenySB    = re.compile('(?P<PNAME>.*) deny SB' % subst, re.MULTILINE)
             self.re_Antes     = re.compile(r"^%(PLYR)s posts ante (%(CUR)s)?(?P<ANTE>[\.0-9]+)(%(CUR)s)?" % subst, re.MULTILINE)
-            self.re_BringIn   = re.compile(r"^%(PLYR)s brings in (%(CUR)s)?(?P<BRINGIN>[\.0-9]+)(%(CUR)s)?" % subst, re.MULTILINE)
+            self.re_BringIn   = re.compile(r"^%(PLYR)s (brings in|bring\-in) (%(CUR)s)?(?P<BRINGIN>[\.0-9]+)(%(CUR)s)?" % subst, re.MULTILINE)
             self.re_PostBoth  = re.compile('(?P<PNAME>.*): posts small \& big blind \( (%(CUR)s)?(?P<SBBB>[\.0-9]+)(%(CUR)s)?\)' % subst)
             self.re_PostDead  = re.compile('(?P<PNAME>.*) posts dead blind \((%(CUR)s)?(?P<DEAD>[\.0-9]+)(%(CUR)s)?\)' % subst, re.MULTILINE)
             self.re_PostSecondSB = re.compile('%(PLYR)s posts small blind (%(CUR)s)?(?P<SB>[\.0-9]+)(%(CUR)s)? out of position' % subst, re.MULTILINE)
@@ -362,12 +366,12 @@ class Winamax(HandHistoryConverter):
                            r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S](?P<TURN>\[\S\S\].+(?=\*\*\* RIVER \*\*\*)|.+))?"
                            r"(\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S](?P<RIVER>\[\S\S\].+))?", hand.handText,re.DOTALL)
         elif hand.gametype['base'] == "stud":
-            m =  re.search(r"\*\*\* ANTE/BLINDS \*\*\*(?P<ANTES>.+(?=\*\*\* 3rd STREET \*\*\*)|.+)"
-                           r"(\*\*\* 3rd STREET \*\*\*(?P<THIRD>.+(?=\*\*\* 4th STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 4th STREET \*\*\*(?P<FOURTH>.+(?=\*\*\* 5th STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 5th STREET \*\*\*(?P<FIFTH>.+(?=\*\*\* 6th STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 6th STREET \*\*\*(?P<SIXTH>.+(?=\*\*\* 7th STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 7th STREET \*\*\*(?P<SEVENTH>.+))?", hand.handText,re.DOTALL)
+            m =  re.search(r"\*\*\* ANTE/BLINDS \*\*\*(?P<ANTES>.+(?=\*\*\* (3rd STREET|THIRD) \*\*\*)|.+)"
+                           r"(\*\*\* (3rd STREET|THIRD) \*\*\*(?P<THIRD>.+(?=\*\*\* (4th STREET|FOURTH) \*\*\*)|.+))?"
+                           r"(\*\*\* (4th STREET|FOURTH) \*\*\*(?P<FOURTH>.+(?=\*\*\* (5th STREET|FIFTH) \*\*\*)|.+))?"
+                           r"(\*\*\* (5th STREET|FIFTH) \*\*\*(?P<FIFTH>.+(?=\*\*\* (6th STREET|SIXTH) \*\*\*)|.+))?"
+                           r"(\*\*\* (6th STREET|SIXTH) \*\*\*(?P<SIXTH>.+(?=\*\*\* (7th STREET|SEVENTH) \*\*\*)|.+))?"
+                           r"(\*\*\* (7th STREET|SEVENTH) \*\*\*(?P<SEVENTH>.+))?", hand.handText,re.DOTALL)
         else:
             m =  re.search(r"\*\*\* ANTE/BLINDS \*\*\*(?P<PREDEAL>.+(?=\*\*\* FIRST\-BET \*\*\*)|.+)"
                        r"(\*\*\* FIRST\-BET \*\*\*(?P<DEAL>.+(?=\*\*\* FIRST\-DRAW \*\*\*)|.+))?"

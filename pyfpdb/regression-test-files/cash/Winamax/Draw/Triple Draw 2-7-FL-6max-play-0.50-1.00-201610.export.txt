@@ -1,0 +1,68 @@
+Winamax Poker - CashGame - HandId: #9160772-2-1476189756 - Lowball27 fixed limit (0.50/1) - 2016/10/11 12:42:36 UTC
+Table: 'Suceava 02' 6-max (play money) Seat #4 is the button
+Seat 1: Player4 (20)
+Seat 2: Player3 (13.05)
+Seat 3: Player2 (20)
+Seat 4: Player1 (20.87)
+Seat 5: Player0 (19)
+Seat 6: Hero (20)
+*** ANTE/BLINDS ***
+Player0 posts small blind 0.25
+Hero posts big blind 0.50
+Player4 posts big blind 0.50 out of position
+Player3 posts big blind 0.50 out of position
+Player2 posts big blind 0.50 out of position
+*** FIRST-BET *** 
+Player4 checks
+Player3 checks
+Player2 raises 0.50 to 1
+Player1 folds
+Player0 calls 0.75
+Hero calls 0.50
+Player4 calls 0.50
+Player3 calls 0.50
+*** FIRST-DRAW *** 
+Player0 discard 2 cards
+Hero discard 2 cards
+Player4 discard 4 cards
+Player3 discard 2 cards
+Player2 discard 0 card
+*** SECOND-BET *** 
+Player0 checks
+Hero checks
+Player4 checks
+Player3 checks
+Player2 bets 0.50
+Player0 folds
+Hero calls 0.50
+Player4 calls 0.50
+Player3 calls 0.50
+*** SECOND-DRAW *** 
+Hero discard 2 cards
+Player4 discard 2 cards
+Player3 discard 1 card
+Player2 discard 0 card
+*** THIRD-BET *** 
+Hero checks
+Player4 bets 1
+Player3 calls 1
+Player2 calls 1
+Hero folds
+*** THIRD-DRAW *** 
+Player4 discard 1 card
+Player3 discard 1 card
+Player2 discard 0 card
+*** FOURTH-BET *** 
+Player4 bets 1
+Player3 calls 1
+Player2 calls 1
+*** SHOW DOWN ***
+Player4 shows [3s 2c 5s Ks 8c] (High card : King)
+Player3 shows [7c 6c 8s 2s 3c] (High card : 8)
+Player2 shows [3h 7d 5h 8d 2d] (High card : 8)
+Player2 collected 12.15 from pot
+*** SUMMARY ***
+Total pot 12.15 | Rake 0.85
+Seat 1: Player4 showed [3s 2c 5s Ks 8c] and lost with High card : King
+Seat 2: Player3 showed [7c 6c 8s 2s 3c] and lost with High card : 8
+Seat 3: Player2 showed [3h 7d 5h 8d 2d] and won 12.15 with High card : 8

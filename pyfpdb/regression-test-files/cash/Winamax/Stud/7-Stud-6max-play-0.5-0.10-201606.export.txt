@@ -1,0 +1,39 @@
+Winamax Poker - CashGame - HandId: #8835086-564-1465760198 - 7stud fixed limit (0.01/0.05/0.10) - 2016/06/12 19:36:38 UTC
+Table: 'Ceské Budejovice' 6-max (play money) Seat #0 is the button
+Seat 2: Player0 (2.05)
+Seat 3: Player1 (3.15)
+Seat 6: Player2 (1.48)
+*** ANTE/BLINDS ***
+Player1 posts ante 0.01
+Player2 posts ante 0.01
+Player0 posts ante 0.01
+*** THIRD *** 
+Player1 bring-in 0.02
+Player2 calls 0.02
+Player0 calls 0.02
+*** FOURTH *** 
+Player1 checks
+Player2 checks
+Player0 checks
+*** FIFTH *** 
+Player0 checks
+Player1 checks
+Player2 bets 0.10
+Player0 calls 0.10
+Player1 folds
+*** SIXTH *** 
+Player0 checks
+Player2 bets 0.10
+Player0 calls 0.10
+*** SEVENTH *** 
+Player0 checks
+Player2 bets 0.10
+Player0 calls 0.10
+*** SHOW DOWN ***
+Player2 shows [4h Kd 5h 4s Kc 3s 2d] (Two pairs : Kings and 4)
+Player0 shows [8h Ac 7d Th 7s As 6s] (Two pairs : Aces and 7)
+Player0 collected 0.65 from pot
+*** SUMMARY ***
+Total pot 0.65 | Rake 0.04
+Seat 2: Player0 showed [8h Ac 7d Th 7s As 6s] and won 0.65 with Two pairs : Aces and 7
+Seat 6: Player2 showed [4h Kd 5h 4s Kc 3s 2d] and lost with Two pairs : Kings and 4

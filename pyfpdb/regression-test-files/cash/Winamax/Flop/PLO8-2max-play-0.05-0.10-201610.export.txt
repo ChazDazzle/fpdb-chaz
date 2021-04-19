@@ -1,0 +1,35 @@
+Winamax Poker - CashGame - HandId: #8976324-443-1476102647 - Omaha8 pot limit (0.05/0.10) - 2016/10/10 12:30:47 UTC
+Table: 'Derby' 2-max (play money) Seat #2 is the button
+Seat 1: Hero (4)
+Seat 2: Player0 (10)
+*** ANTE/BLINDS ***
+Player0 posts small blind 0.05
+Hero posts big blind 0.10
+Dealt to Hero [5s Qd 2s 3s]
+*** PRE-FLOP *** 
+Player0 calls 0.05
+Hero checks
+*** FLOP *** [3h 4s 5h]
+Hero checks
+Player0 bets 0.10
+Hero calls 0.10
+*** TURN *** [3h 4s 5h][7c]
+Hero checks
+Player0 checks
+*** RIVER *** [3h 4s 5h 7c][4c]
+Hero bets 0.30
+Player0 calls 0.30
+*** SHOW DOWN ***
+Hero shows [5s Qd 2s 3s] (HI : Two pairs : 5 and 4)
+Hero shows [5s Qd 2s 3s] (LO : High card : 7)
+Player0 shows [Jd 7s Js 8c] (HI : Two pairs : Jacks and 4)
+Player0 shows [Jd 7s Js 8c] (LO : High card : 8)
+Player0 collected 0.47 from pot (HI)
+Hero collected 0.46 from pot (LO)
+*** SUMMARY ***
+Total pot 0.93 | Rake 0.07
+Board: [3h 4s 5h 7c 4c]
+Seat 1: Hero (big blind) showed [5s Qd 2s 3s] and lost with HI : Two pairs : 5 and 4
+Seat 1: Hero (big blind) showed [5s Qd 2s 3s] and won 0.46 with LO : High card : 7
+Seat 2: Player0 (small blind) (button) showed [Jd 7s Js 8c] and won 0.47 with HI : Two pairs : Jacks and 4
+Seat 2: Player0 (small blind) (button) showed [Jd 7s Js 8c] and lost with LO : High card : 8
