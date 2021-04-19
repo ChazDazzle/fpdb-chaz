@@ -169,10 +169,10 @@ class PokerTracker(HandHistoryConverter):
 
     # These used to be compiled per player, but regression tests say
     # we don't have to, and it makes life faster.
-    re_PostSB            = re.compile(r"^%(PLYR)s:? ((posts|posted) the small blind( of)?|(Post )?SB) (\- )?%(CUR)s(?P<SB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
-    re_PostBB            = re.compile(r"^%(PLYR)s:? ((posts|posted) the big blind( of)?|posts the dead blind of|(Post )?BB) (\- )?%(CUR)s(?P<BB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
-    re_Antes             = re.compile(r"^%(PLYR)s:? ((posts|posted) (the )?ante( of)?|(Post )?Ante) (\- )?%(CUR)s(?P<ANTE>[%(NUM)s]+)" % substitutions, re.MULTILINE)
-    re_PostBoth1         = re.compile(r"^%(PLYR)s:? (posts|Post|(Post )?DB) %(CUR)s(?P<SBBB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
+    re_PostSB            = re.compile(r"^%(PLYR)s:? ((posts|posted) the small blind( of)?|(Post )?SB)( Allin)? (\- )?%(CUR)s(?P<SB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
+    re_PostBB            = re.compile(r"^%(PLYR)s:? ((posts|posted) the big blind( of)?|posts the dead blind of|(Post )?BB)( Allin)? (\- )?%(CUR)s(?P<BB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
+    re_Antes             = re.compile(r"^%(PLYR)s:? ((posts|posted) (the )?ante( of)?|(Post )?Ante)( Allin)? (\- )?%(CUR)s(?P<ANTE>[%(NUM)s]+)" % substitutions, re.MULTILINE)
+    re_PostBoth1         = re.compile(r"^%(PLYR)s:? (posts|Post|(Post )?DB)( Allin)? %(CUR)s(?P<SBBB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
     re_PostBoth2         = re.compile(r"^%(PLYR)s:? posted to play \- %(CUR)s(?P<SBBB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
     re_HeroCards1        = re.compile(r"^Dealt to %(PLYR)s(?: \[(?P<OLDCARDS>.+?)\])?( \[(?P<NEWCARDS>.+?)\])" % substitutions, re.MULTILINE)
     re_HeroCards2        = re.compile(r"rd(s)? to %(PLYR)s: (?P<OLDCARDS>NONE)?(?P<NEWCARDS>.+)\n" % substitutions, re.MULTILINE)
@@ -470,7 +470,7 @@ class PokerTracker(HandHistoryConverter):
             else:
                 m = self.re_Board1.search(hand.streets[street])
                 if self.sitename=='iPoker':
-                    cards = [c[1:].replace('10', 'T') + c[0].lower() for c in m.group('CARDS').split(' ')]
+                    cards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in m.group('CARDS').split(' ')]
                 else:
                     cards = [c.replace('10', 'T').strip() for c in m.group('CARDS').split(' ')]
             hand.setCommunityCards(street, cards)
@@ -574,7 +574,7 @@ class PokerTracker(HandHistoryConverter):
 #                    else:
                     hand.hero = found.group('PNAME')
                     if self.sitename=='iPoker':
-                        newcards = [c[1:].replace('10', 'T') + c[0].lower() for c in found.group('NEWCARDS').split(' ')]
+                        newcards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in found.group('NEWCARDS').split(' ')]
                     elif self.sitename=='Microgaming':
                         newcards = [c.replace('10', 'T').strip() for c in found.group('NEWCARDS').replace(' of ', '').split(', ')]
                     else:
@@ -590,7 +590,7 @@ class PokerTracker(HandHistoryConverter):
                     newcards = []
                 else:
                     if self.sitename=='iPoker':
-                        newcards = [c[1:].replace('10', 'T') + c[0].lower() for c in found.group('NEWCARDS').split(' ')]
+                        newcards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in found.group('NEWCARDS').split(' ')]
                     elif self.sitename=='Microgaming':
                         newcards = [c.replace('10', 'T').strip() for c in found.group('NEWCARDS').replace(' of ', '').split(', ')]
                     else:
@@ -599,7 +599,7 @@ class PokerTracker(HandHistoryConverter):
                     oldcards = []
                 else:
                     if self.sitename=='iPoker':
-                        oldcards = [c[1:].replace('10', 'T') + c[0].lower() for c in found.group('OLDCARDS').split(' ')]
+                        oldcards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in found.group('OLDCARDS').split(' ')]
                     else:
                         oldcards = [c.replace('10', 'T').strip() for c in found.group('OLDCARDS').split(' ')]
 
@@ -687,7 +687,7 @@ class PokerTracker(HandHistoryConverter):
         for m in re_ShownCards.finditer(hand.handText):
             if m.group('CARDS') is not None and m.group('PNAME') not in found:
                 if self.sitename=='iPoker':
-                    cards = [c[1:].replace('10', 'T') + c[0].lower() for c in m.group('CARDS').split(' ')]
+                    cards = [c[1:].replace('10', 'T') + c[0].lower().replace('x', '') for c in m.group('CARDS').split(' ')]
                 elif self.sitename=='Microgaming':
                     cards = [c.replace('10', 'T').strip() for c in m.group('CARDS').replace(' of ', '').split(', ')]
                 else:
