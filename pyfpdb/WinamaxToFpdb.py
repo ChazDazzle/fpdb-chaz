@@ -99,7 +99,7 @@ class Winamax(HandHistoryConverter):
             ((%(LS)s)?(?P<BB>[.0-9]+)(%(LS)s)?)
             \)\s-\s
             (?P<DATETIME>.*)
-            Table:\s\'(?P<TABLE>[^(]+)
+            Table:?\s\'(?P<TABLE>[^(]+)
             (.(?P<TOURNO>\d+).\#(?P<TABLENO>\d+))?.*
             \'
             \s(?P<MAXPLAYER>\d+)\-max
