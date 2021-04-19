@@ -323,6 +323,8 @@ class Winning(HandHistoryConverter):
         """ %  substitutions, 
         re.MULTILINE|re.VERBOSE
     )
+    #AssFungus collected $92.25 from main pot 1
+    re_CollectPot3 = re.compile(r"^%(PLYR)s collected %(CUR)s(?P<POT>[,.\d]+)" %  substitutions, re.MULTILINE)
     
     def compilePlayerRegexs(self,  hand):
         pass
@@ -717,16 +719,16 @@ class Winning(HandHistoryConverter):
         
     def _markStreets2(self, hand):
         if hand.gametype['base'] in ("hold"):
-            m =  re.search(r"\*\*\* HOLE CARDS \*\*\*(?P<PREFLOP>(.+(?P<FLOPET>\[\S\S\]))?.+(?=\*\*\* (FIRST\s)?FLOP \*\*\*)|.+)"
-                       r"(\*\*\* FLOP \*\*\*(?P<FLOP> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* (FIRST\s)?TURN \*\*\*)|.+))?"
-                       r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN>\[\S\S\].+(?=\*\*\* (FIRST\s)?RIVER \*\*\*)|.+))?"
+            m =  re.search(r"\*\*\* HOLE CARDS \*\*\*(?P<PREFLOP>(.+(?P<FLOPET>\[\S\S\]))?.+(?=\*\*\* (FLOP|FIRST FLOP|FLOP 1) \*\*\*)|.+)"
+                       r"(\*\*\* FLOP \*\*\*(?P<FLOP> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* (TURN|FIRST TURN|TURN 1) \*\*\*)|.+))?"
+                       r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN>\[\S\S\].+(?=\*\*\* (RIVER|FIRST RIVER|RIVER 1) \*\*\*)|.+))?"
                        r"(\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER>\[\S\S\].+))?"
-                       r"(\*\*\* FIRST FLOP \*\*\*(?P<FLOP1> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* FIRST TURN \*\*\*)|.+))?"
-                       r"(\*\*\* FIRST TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN1>\[\S\S\].+(?=\*\*\* FIRST RIVER \*\*\*)|.+))?"
-                       r"(\*\*\* FIRST RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER1>\[\S\S\].+?(?=\*\*\* SECOND (FLOP|TURN|RIVER) \*\*\*)|.+))?"
-                       r"(\*\*\* SECOND FLOP \*\*\*(?P<FLOP2> (\[\S\S\] )?\[\S\S ?\S\S \S\S\].+(?=\*\*\* SECOND TURN \*\*\*)|.+))?"
-                       r"(\*\*\* SECOND TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN2>\[\S\S\].+(?=\*\*\* SECOND RIVER \*\*\*)|.+))?"
-                       r"(\*\*\* SECOND RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER2>\[\S\S\].+))?", hand.handText,re.DOTALL)
+                       r"(\*\*\* (FIRST FLOP|FLOP 1) \*\*\*(?P<FLOP1> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* (FIRST TURN|TURN 1) \*\*\*)|.+))?"
+                       r"(\*\*\* (FIRST TURN|TURN 1) \*\*\* \[\S\S \S\S \S\S] (?P<TURN1>\[\S\S\].+(?=\*\*\* (FIRST RIVER|RIVER 1) \*\*\*)|.+))?"
+                       r"(\*\*\* (FIRST RIVER|RIVER 1) \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER1>\[\S\S\].+?(?=\*\*\* (SECOND (FLOP|TURN|RIVER)|(FLOP|TURN|RIVER) 2) \*\*\*)|.+))?"
+                       r"(\*\*\* (SECOND FLOP|FLOP 2) \*\*\*(?P<FLOP2> (\[\S\S\] )?\[\S\S ?\S\S \S\S\].+(?=\*\*\* (SECOND TURN|TURN 2) \*\*\*)|.+))?"
+                       r"(\*\*\* (SECOND TURN|TURN 2) \*\*\* \[\S\S \S\S \S\S] (?P<TURN2>\[\S\S\].+(?=\*\*\* (SECOND RIVER|RIVER 2) \*\*\*)|.+))?"
+                       r"(\*\*\* (SECOND RIVER|RIVER 2) \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER2>\[\S\S\].+))?", hand.handText,re.DOTALL)
         elif hand.gametype['base'] in ("stud"):
             m =  re.search(r"(?P<ANTES>.+(?=\*\*\* 3rd STREET \*\*\*)|.+)"
                            r"(\*\*\* 3rd STREET \*\*\*(?P<THIRD>.+(?=\*\*\* 4th STREET \*\*\*)|.+))?"
@@ -741,6 +743,8 @@ class Winning(HandHistoryConverter):
             self._readCommunityCards1(hand, street)
         else:
             self._readCommunityCards2(hand, street)
+        if street in ('FLOP1', 'TURN1', 'RIVER1', 'FLOP2', 'TURN2', 'RIVER2'):
+            hand.runItTimes = 2
 
     def _readCommunityCards1(self, hand, street): # street has been matched by markStreets, so exists in this hand
         m = self.re_Board.search(hand.streets[street])
@@ -985,6 +989,8 @@ class Winning(HandHistoryConverter):
     def readCollectPot(self,hand):
         if self.version == 1:
             self._readCollectPot1(hand)
+        elif hand.runItTimes == 2:
+            self._readCollectPot3(hand)
         else:
             self._readCollectPot2(hand)
     
@@ -1019,6 +1025,10 @@ class Winning(HandHistoryConverter):
                 hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot)*2))
             else:
                 hand.addCollectPot(player=m.group('PNAME'),pot=pot)
+    
+    def _readCollectPot3(self,hand):
+        for m in self.re_CollectPot3.finditer(hand.handText):
+            hand.addCollectPot(player=m.group('PNAME'),pot=m.group('POT'))
             
     def readShowdownActions(self, hand):
         # TODO: pick up mucks also??
