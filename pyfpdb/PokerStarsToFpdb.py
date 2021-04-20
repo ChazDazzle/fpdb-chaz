@@ -752,7 +752,7 @@ class PokerStars(HandHistoryConverter):
                 elif m0 == None:
                     bovadaUncalled_v1 = True
                     has_sb = len([a[2] for a in hand.actions.get('BLINDSANTES') if a[1] == 'small blind']) > 0
-                    adjustment = Decimal(hand.sb) if has_sb else Decimal(hand.bb)
+                    adjustment = (Decimal(hand.bb) - Decimal(hand.sb)) if has_sb else Decimal(hand.bb)
                     blindsantes = sum([a[2] for a in hand.actions.get('BLINDSANTES')]) 
         i=0
         pre, post = hand.handText.split('*** SUMMARY ***')

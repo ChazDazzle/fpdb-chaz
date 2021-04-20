@@ -255,6 +255,7 @@ class Winning(HandHistoryConverter):
     
     re_PostSB2       = re.compile(r"^%(PLYR)s posts the small blind %(CUR)s(?P<SB>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_PostBB2       = re.compile(r"^%(PLYR)s posts the big blind %(CUR)s(?P<BB>[,.0-9]+)" %  substitutions, re.MULTILINE)
+    re_PostBoth2     = re.compile(r"^%(PLYR)s posts dead %(CUR)s(?P<SBBB>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_Posts2        = re.compile(r"^%(PLYR)s posts %(CUR)s(?P<SBBB>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_Antes2        = re.compile(r"^%(PLYR)s posts ante %(CUR)s(?P<ANTE>[,.0-9]+)" % substitutions, re.MULTILINE)
     re_BringIn2      = re.compile(r"^%(PLYR)s brings[- ]in( low|) %(CUR)s(?P<BRINGIN>[,.0-9]+)" % substitutions, re.MULTILINE)
@@ -836,6 +837,8 @@ class Winning(HandHistoryConverter):
                 #hand.addBlind(a.group('PNAME'), 'secondsb', a.group('SB'))
         for a in self.re_PostBB2.finditer(hand.handText):
             hand.addBlind(a.group('PNAME'), 'big blind', a.group('BB'))
+        for a in self.re_PostBoth2.finditer(hand.handText):
+            hand.addBlind(a.group('PNAME'), 'both', self.clearMoneyString(a.group('SBBB')))
         for a in self.re_Posts2.finditer(hand.handText):
             if Decimal(self.clearMoneyString(a.group('SBBB'))) == Decimal(hand.bb):
                 hand.addBlind(a.group('PNAME'), 'big blind', a.group('SBBB'))
@@ -1010,7 +1013,7 @@ class Winning(HandHistoryConverter):
             elif m0 == None:
                 bovadaUncalled_v1 = True
                 has_sb = len([a[2] for a in hand.actions.get('BLINDSANTES') if a[1] == 'small blind']) > 0
-                adjustment = Decimal(hand.sb) if has_sb else Decimal(hand.bb)
+                adjustment = (Decimal(hand.bb) - Decimal(hand.sb)) if has_sb else Decimal(hand.bb)
                 blindsantes = sum([a[2] for a in hand.actions.get('BLINDSANTES')])
         else:
             m0 = self.re_Uncalled.search(hand.handText)
