@@ -1,0 +1,33 @@
+***** Hand History For Game 1618961225358jrdwo4ad458 *****
+2000000/4000000 Tourney Texas Holdem Game Table (NL) (MTT Tournament #303423518) (Buyin $50.0 + $5.0) - Tue Apr 20 19:24:47 EDT 2021
+Table (303423518) Table #129 (Real Money) -- Seat 8 is the button
+Total number of players : 2/9
+Seat 2: Player1 (176546400)
+Seat 8: Hero (166097088)
+Player1 posts ante (500000)
+Hero posts ante (500000)
+Hero posts small blind (2000000)
+Player1 posts big blind (4000000)
+** Dealing down cards **
+Dealt to Hero [ Kh, Jh ]
+Hero raises 6000000 to 8000000
+Player1 calls (4000000)
+** Dealing Flop ** : [ 2c, 6h, Jc ]
+Player1 checks
+Hero bets (10800000)
+Player1 calls (10800000)
+** Dealing Turn ** : [ Ad ]
+Player1 checks
+Hero bets (25475998)
+Player1 calls (25475998)
+** Dealing River ** : [ Ks ]
+Player1 checks
+Hero bets (121321080)
+Hero is all-In.
+Player1 calls (121321080)
+Creating Main Pot with 332,194,176 with Hero
+** Summary **
+Main Pot: 332194176
+Board: [ 2c, 6h, Jc, Ad, Ks ]
+Player1 balance 10449321, lost 166097088[ Js, 5h ] [ a pair of jacks -- Ad,Ks,Js,Jc,6h ]
+Hero balance 332194176, bet 166097088, collected 332194176, net +166097088[ Kh, Jh ] [ two pairs, kings and jacks -- Ad,Kh,Ks,Jh,Jc ]
