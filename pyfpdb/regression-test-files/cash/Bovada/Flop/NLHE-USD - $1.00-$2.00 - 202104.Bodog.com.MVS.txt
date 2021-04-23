@@ -1,0 +1,46 @@
+Bodog.com Hand #4107052743 TBL#24061052 HOLDEM No Limit [MVS] - 2021-04-23 11:09:26 UTC
+Table Info: Version: 1, Type: MVS, Stakes: $1-$2, Table: 000618B2-0
+Seat 2: UTG+1 ($197 in chips)
+Seat 4: UTG+2 ($181.50 in chips)
+Seat 5: Dealer ($360.78 in chips)
+Seat 6: Small Blind [ME] ($226.45 in chips)
+Seat 7: Big Blind ($234.05 in chips)
+Seat 8: UTG ($205.65 in chips)
+Dealer : Set dealer [5]
+Player Info: Seat2: P2-c71406de5a711d4f3560fcd2f7b1c775, Seat4: P4-5f5cd5577bfe16396f0f37b58309c6c3, Seat5: P5-25aa02c4148e13bae3c79c11fd23659f, Seat7: P7-e40636b41c414986ac11f621bafda566, Seat8: P8-d8dfc52b19fde5aba177fb3cba840532
+Small Blind [ME] : Small Blind $1
+Big Blind : Big Blind $2
+*** HOLE CARDS ***
+Small Blind [ME] : Card dealt to a spot [Tc Td]
+Big Blind : Card dealt to a spot [Jd Jc]
+UTG : Folds
+UTG+1 : Folds
+UTG+2 : Folds
+Dealer : Folds
+Small Blind [ME] : Raises $5 to $6
+Big Blind : Calls $4
+*** FLOP *** [8c 2s 7c]
+Small Blind [ME] : Checks
+Big Blind : Bets $5.70
+Small Blind [ME] : Raises $18.80 to $18.80
+Big Blind : Calls $13.10
+*** TURN *** [8c 2s 7c] [3d]
+Small Blind [ME] : Bets $47.12
+Big Blind : Calls $47.12
+*** RIVER *** [8c 2s 7c 3d] [Jh]
+Small Blind [ME] : All-in $154.53
+Big Blind : Calls $154.53
+Small Blind [ME] : Showdown [Td Tc Jh 8c 7c]
+Big Blind : Showdown [Jh Jd Jc 8c 7c]
+Small Blind [ME] : Showdown [Td Tc Jh 8c 7c]
+Big Blind : Showdown [Jh Jd Jc 8c 7c]
+Big Blind : Hand result $448.90
+*** SUMMARY ***
+Total Pot($452.90)
+Board [8c 2s 7c 3d Jh]
+Seat+2: UTG+1 Folded before the FLOP
+Seat+4: UTG+2 Folded before the FLOP
+Seat+5: Dealer Folded before the FLOP
+Seat+6: Small Blind [ME] lost with [Tc Td-Td Tc Jh 8c 7c]
+Seat+7: Big Blind $448.90 with [Jd Jc-Jh Jd Jc 8c 7c]
+Seat+8: UTG Folded before the FLOP

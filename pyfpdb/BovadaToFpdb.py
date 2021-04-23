@@ -87,15 +87,14 @@ class Bovada(HandHistoryConverter):
 
     # Static regexes
     re_GameInfo     = re.compile(u"""
-          (Ignition|Bovada|Bodog(\.eu|\sUK|\sCanada|88)?)\sHand\s\#C?(?P<HID>[0-9]+):?\s+
+          (Ignition|Bovada|Bodog(\.com|\.eu|\sUK|\sCanada|88)?)\sHand\s\#C?(?P<HID>[0-9]+):?\s+
           ((?P<ZONE>Zone\sPoker\sID|TBL)\#(?P<TABLE>.+?)\s)?
           (?P<GAME>HOLDEM|OMAHA|OMAHA_HL|7CARD|7CARD\sHiLo|OMAHA\sHiLo|7CARD_HL|HOLDEMZonePoker|OMAHAZonePoker|OMAHA\sHiLoZonePoker)\s+
-          (Tournament\s\#                # open paren of tournament info Tournament #2194767 TBL#1, 
+          (Tournament\s\#(M\-)?                # open paren of tournament info Tournament #2194767 TBL#1, 
           (?P<TOURNO>\d+)\sTBL\#(?P<TABLENO>\d+),
           \s)?
           (?P<HU>1\son\s1\s)? 
           (?P<LIMIT>No\sLimit|Fixed\sLimit|Pot\sLimit|Turbo)?
-          (\s\[(?P<VERSION>MVS)\])?
           (\s?Normal\s?)?
           (-\sLevel\s\d+?\s
           \(?                            # open paren of the stakes
@@ -104,6 +103,7 @@ class Bovada(HandHistoryConverter):
           (?P<BB>[,.0-9]+)
           \s?(?P<ISO>%(LEGAL_ISO)s)?
           \))?
+          (\s\[(?P<VERSION>MVS)\])?
           \s-\s
           (?P<DATETIME>.*$)
         """ % substitutions, re.MULTILINE|re.VERBOSE)
@@ -121,7 +121,7 @@ class Bovada(HandHistoryConverter):
          re.MULTILINE|re.VERBOSE)
     
     re_PlayerSeat = re.compile(u"^Seat\+(?P<SEAT>[0-9]+)", re.MULTILINE|re.VERBOSE)
-    re_Identify     = re.compile(u'(Ignition|Bovada|Bodog(\.eu|\sUK|\sCanada|88)?)\sHand')
+    re_Identify     = re.compile(u'(Ignition|Bovada|Bodog(\.com|\.eu|\sUK|\sCanada|88)?)\sHand')
     re_SplitHands   = re.compile('\n\n+')
     re_TailSplitHands   = re.compile('(\n\n\n+)')
     re_Button       = re.compile('Dealer : Set dealer\/Bring in spot \[(?P<BUTTON>\d+)\]', re.MULTILINE)
@@ -135,9 +135,9 @@ class Bovada(HandHistoryConverter):
     # These used to be compiled per player, but regression tests say
     # we don't have to, and it makes life faster.
     re_PostSB           = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: (Ante\/Small (B|b)lind|Posts chip|Small (B|b)lind) (?P<CURRENCY>%(CUR)s)(?P<SB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
-    re_PostBB           = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: (Big blind\/Bring in|Big blind) (?P<CURRENCY>%(CUR)s)(?P<BB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
+    re_PostBB           = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: (Big (B|b)lind\/Bring in|Big (B|b)lind) (?P<CURRENCY>%(CUR)s)(?P<BB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
     re_Antes            = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: Ante chip %(CUR)s(?P<ANTE>[%(NUM)s]+)" % substitutions, re.MULTILINE)
-    re_BringIn          = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: (Bring_in chip|Big blind\/Bring in|Bring in)\s?(\(timeout\) )?%(CUR)s(?P<BRINGIN>[%(NUM)s]+)" % substitutions, re.MULTILINE)
+    re_BringIn          = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: (Bring_in chip|Big (B|b)lind\/Bring in|Bring in)\s?(\(timeout\) )?%(CUR)s(?P<BRINGIN>[%(NUM)s]+)" % substitutions, re.MULTILINE)
     re_PostBoth         = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: Posts dead chip %(CUR)s(?P<SBBB>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
     re_HeroCards        = re.compile(r"^%(PLYR)s  ?\[ME\] : Card dealt to a spot \[(?P<NEWCARDS>.+?)\]" % substitutions, re.MULTILINE)
     re_Action           = re.compile(r"""(?P<ACTION>

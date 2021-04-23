@@ -1,0 +1,57 @@
+Ignition Hand #4300979169: HOLDEM Tournament #M-20210422003411 TBL#18, Turbo- Level 7 (75/150) [MVS] - 2021-04-22 01:42:48 UTC
+Table Info: Version: 1, Type: MVS, Stakes: 75-150, Table: 0002067C-0, Buyin: $25+$2.50, TableType: MTT
+Seat 65: UTG+2 (21,516 in chips)
+Seat 146: UTG+3 (19,970 in chips)
+Seat 17: UTG+4 (18,580 in chips)
+Seat 66: UTG+5 (23,134 in chips)
+Seat 64: Dealer (11,045 in chips)
+Seat 63: Small Blind (17,337 in chips)
+Seat 39: Big Blind [ME] (37,589 in chips)
+Seat 61: UTG (14,036 in chips)
+Seat 51: UTG+1 (14,813 in chips)
+Seating Info: 65, 146, 17, 66, 64, 63, 39, 61, 51
+Dealer : Set dealer [5]
+Player Info: Seat1: P65-4ba52a2b2482257e014cb19c444d19d2, Seat2: P146-e7d59b6fbdd222c8b722bf108b360247, Seat3: P17-6331d383cbb91ec1a4aa9375f85c6a28, Seat4: P66-0dd87e8dcfe417ea5bde1614ee25b8a9, Seat5: P64-478b7837203149a093aa198cfc4bbcb6, Seat6: P63-baf18514552621e75fc941487ddb4e73, Seat8: P61-d7e9336d7e24b0d7a2c936686a1b554d, Seat9: P51-86ac9c0e33935f284beea825fdda8ce7
+UTG+2 : Ante chip 15
+UTG+3 : Ante chip 15
+UTG+4 : Ante chip 15
+UTG+5 : Ante chip 15
+Dealer : Ante chip 15
+Small Blind : Ante chip 15
+Big Blind [ME] : Ante chip 15
+UTG : Ante chip 15
+UTG+1 : Ante chip 15
+Small Blind : Small Blind 75
+Big Blind [ME] : Big Blind 150
+*** HOLE CARDS ***
+Dealer : Card dealt to a spot [2d As]
+Big Blind [ME] : Card dealt to a spot [Qd Qc]
+UTG : Folds
+UTG+1 : Folds
+UTG+2 : Folds
+UTG+3 : Folds
+UTG+4 : Folds
+UTG+5 : Folds
+Dealer : Raises 450 to 450
+Small Blind : Folds
+Big Blind [ME] : Raises 1,875 to 2,025
+Dealer : All-in(raise) 10,580 to 11,030
+Big Blind [ME] : Calls 9,005
+*** FLOP *** [Jd 6s 4c]
+*** TURN *** [Jd 6s 4c] [3s]
+*** RIVER *** [Jd 6s 4c 3s] [Jc]
+Dealer : Showdown [Jd Jc As 6s 4c]
+Big Blind [ME] : Showdown [Qd Qc Jd Jc 6s]
+Big Blind [ME] : Hand result 22,270
+*** SUMMARY ***
+Total Pot(22,270)
+Board [Jd 6s 4c 3s Jc]
+Seat+1: UTG+2 Folded before the FLOP
+Seat+2: UTG+3 Folded before the FLOP
+Seat+3: UTG+4 Folded before the FLOP
+Seat+4: UTG+5 Folded before the FLOP
+Seat+5: Dealer lost with [2d As-Jd Jc As 6s 4c]
+Seat+6: Small Blind Folded before the FLOP
+Seat+7: Big Blind [ME] 22,270 with [Qd Qc-Qd Qc Jd Jc 6s]
+Seat+8: UTG Folded before the FLOP
+Seat+9: UTG+1 Folded before the FLOP
