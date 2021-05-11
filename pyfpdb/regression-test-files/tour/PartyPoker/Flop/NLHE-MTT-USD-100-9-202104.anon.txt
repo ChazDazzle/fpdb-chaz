@@ -1,0 +1,51 @@
+***** Hand History For Game 16194828757579au6ou93d1 *****
+70000/140000 Tourney Texas Holdem Game Table (NL) (MTT Tournament #303344128) (Buyin $100.0 + $9.0) - Mon Apr 26 20:17:29 EDT 2021
+Table (303344128) Table #62 (Real Money) -- Seat 2 is the button
+Total number of players : 7/8
+Seat 1: Player1 (5049052)
+Seat 2: Player2 (4124268)
+Seat 3: Player3 (2365302)
+Seat 4: Player4 (13574015)
+Seat 5: Player5 (2254879)
+Seat 6: Hero (8537192)
+Seat 7: Player7 (6896988)
+Player1 posts ante (17500)
+Player2 posts ante (17500)
+Player3 posts ante (17500)
+Player4 posts ante (17500)
+Player5 posts ante (17500)
+Hero posts ante (17500)
+Player7 posts ante (17500)
+Player3 posts small blind (70000)
+Player4 posts big blind (140000)
+** Dealing down cards **
+Dealt to Hero [ Ad, Ks ]
+Player5 folds
+Hero raises 294000 to 294000
+Player7 folds
+Player1 calls (294000)
+Player2 folds
+Player3 folds
+Player4 raises 1120000 to 1260000
+Hero calls (966000)
+Player1 folds
+** Dealing Flop ** : [ 8h, 3s, Ac ]
+Player4 checks
+Hero bets (751624)
+Player4 calls (751624)
+** Dealing Turn ** : [ Qd ]
+Player4 bets (1050000)
+Hero calls (1050000)
+** Dealing River ** : [ 4d ]
+Player4 bets (3892000)
+Hero folds
+** Summary **
+Main Pot: 6609750
+Board: [ 8h, 3s, Ac, Qd, 4d ]
+Player1 balance 4737552, lost 311500 (folded)
+Player2 balance 4106768, lost 17500 (folded)
+Player3 balance 2277802, lost 87500 (folded)
+Player4 balance 17104640, bet 6971125, collected 10501750, net +3530625
+Player5 balance 2237379, lost 17500 (folded)
+Hero balance 5458067, lost 3079125 (folded)
+Player7 balance 6879488, lost 17500 (folded)

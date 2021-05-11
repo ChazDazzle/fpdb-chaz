@@ -1,0 +1,29 @@
+***** Hand History For Game 1617936175861pdjsqtzh1do *****
+150/300 Tourney Texas Holdem Game Table (NL) (SNG Tournament #304152365) (Buyin $4.8 + $0.2) - Thu Apr 08 22:42:26 EDT 2021
+Table (304152365) Table #1 (Real Money) -- Seat 8 is the button
+Total number of players : 5/8
+Seat 2: Hero (2356)
+Seat 3: Player2 (5032)
+Seat 4: Player3 (782)
+Seat 5: Player4 (1008)
+Seat 8: Player5 (2822)
+Hero posts ante (25)
+Player2 posts ante (25)
+Player3 posts ante (25)
+Player4 posts ante (25)
+Player5 posts ante (25)
+Hero posts big blind (300)
+** Dealing down cards **
+Dealt to Hero [ Kd, 5s ]
+Player2 raises 1080 to 1080
+Player3 folds
+Player4 folds
+Player5 folds
+Hero folds
+** Summary **
+Main Pot: 725
+Hero balance 2031, lost 325 (folded)
+Player2 balance 5432, bet 1105, collected 1505, net +400
+Player3 balance 757, lost 25 (folded)
+Player4 balance 983, lost 25 (folded)
+Player5 balance 2797, lost 25 (folded)

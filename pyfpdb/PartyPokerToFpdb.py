@@ -471,8 +471,13 @@ class PartyPoker(HandHistoryConverter):
             if key == 'HID':
                 if str(info[key]) == '1111111111':
                     hand.handid = str(int(time.time()*1000))
+                    hand.roundPenny = True
                 else:
-                    hand.handid = re.sub('\D', '', info[key])
+                    if re.search('[a-z]', info[key]):
+                        hand.handid = info[key][:13]
+                        hand.roundPenny = True
+                    else:
+                        hand.handid = info[key]        
             if key == 'TABLE':
                 if 'TOURNO' in info and info['TOURNO'] is None:
                     if info['TABLENO'] is not None:
@@ -653,7 +658,7 @@ class PartyPoker(HandHistoryConverter):
 
     def readBlinds(self, hand):
         noSmallBlind = bool(self.re_NoSmallBlind.search(hand.handText))
-        if hand.gametype['type'] == 'ring' or hand.gametype['sb'] is None or hand.gametype['bb'] is None:
+        if hand.gametype['type'] == 'ring' or hand.gametype['sb'] is None or hand.gametype['bb'] is None or hand.roundPenny:
             try:
                 assert noSmallBlind==False
                 for m in self.re_PostSB.finditer(hand.handText):

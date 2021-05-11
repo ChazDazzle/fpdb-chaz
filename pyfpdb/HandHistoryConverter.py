@@ -418,7 +418,12 @@ or None if we fail to get the info """
     # an inheriting class can calculate it for the specific site if need be.
     def getRake(self, hand):
         hand.rake = hand.totalpot - hand.totalcollected #  * Decimal('0.05') # probably not quite right
-        round = -1 if hand.gametype['type'] == "tour" else -0.01
+        if self.siteId == 9 and hand.gametype['type'] == "tour":
+            round = -5 #round up to 10
+        elif hand.gametype['type'] == "tour":
+            round = -1
+        else:
+            round = -0.01
         if hand.rake < 0 and (not hand.roundPenny or hand.rake < round) and not hand.cashedOut:
             if (self.siteId == 28 and 
             ((hand.rake + Decimal(str(hand.sb)) - (0 if hand.rakes.get('rake') is None else hand.rakes['rake'])) == 0 or 
