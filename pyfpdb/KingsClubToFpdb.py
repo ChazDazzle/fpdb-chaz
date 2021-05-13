@@ -158,7 +158,7 @@ class KingsClub(HandHistoryConverter):
     re_Antes            = re.compile(r"^%(PLYR)s: posts ante %(CUR)s(?P<ANTE>[,.0-9]+)" % substitutions, re.MULTILINE)
     re_BringIn          = re.compile(r"^%(PLYR)s brings[- ]in( low|) for %(CUR)s(?P<BRINGIN>[,.0-9]+)" % substitutions, re.MULTILINE)
     re_PostBoth         = re.compile(r"^%(PLYR)s: posts blind %(CUR)s(?P<SBBB>[,.0-9]+)" %  substitutions, re.MULTILINE)
-    re_PostStraddle     = re.compile(r"^%(PLYR)s: posts straddle %(CUR)s(?P<STRADDLE>[,.0-9]+)" %  substitutions, re.MULTILINE)
+    re_PostStraddle     = re.compile(r"^%(PLYR)s: (posts )?straddles? %(CUR)s(?P<STRADDLE>[,.0-9]+)" %  substitutions, re.MULTILINE)
     re_Action           = re.compile(r"""
                         ^%(PLYR)s(?P<ATYPE>\sbets|\schecks|\sraises|\scalls|\sfolds|\sdiscards|\sstands\spat|\sdraws)
                         (\s%(CUR)s(?P<BET>[,.\d]+))?(\sto\s%(CUR)s(?P<BETTO>[,.\d]+))?  # the number discarded goes in <BET>
@@ -208,8 +208,7 @@ class KingsClub(HandHistoryConverter):
                 'BRKTS': r'(\(button\) |\(small blind\) |\(big blind\) |\(button\) \(small blind\) |\(button\) \(big blind\) )?',
                 'CUR': u"(\$|\xe2\x82\xac|\u20ac||\£|)"
             } 
-            self.re_HeroCards = re.compile(r"^Dealt to %(PLYR)s:(?: \[(?P<OLDCARDS>.+?)\])?( \[(?P<NEWCARDS>.+?)\])" % subst, re.MULTILINE)
-            self.re_ShownCards = re.compile("^Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(?P<SHOWED>showed|mucked) \[(?P<CARDS>.*)\]( and (lost|(won|collected) \(%(CUR)s(?P<POT>[,\.\d]+)\)) with (?P<STRING>.+?)(,\sand\s(won\s\(%(CUR)s[\.\d]+\)|lost)\swith\s(?P<STRING2>.*))?)?$" % subst, re.MULTILINE)   
+            self.re_HeroCards = re.compile(r"^Dealt to %(PLYR)s:(?: \[(?P<OLDCARDS>.+?)\])?( \[(?P<NEWCARDS>.+?)\])" % subst, re.MULTILINE) 
 
     def readSupportedGames(self):
         return [["ring", "hold", "nl"],
@@ -585,8 +584,8 @@ class KingsClub(HandHistoryConverter):
     def readShowdownActions(self, hand):
 # TODO: pick up mucks also??
         for shows in self.re_ShowdownAction.finditer(hand.handText):
-            cards = shows.group('CARDS').split(' ')
-            hand.addShownCards(cards, shows.group('PNAME'))      
+            cards = [x for x in shows.group('CARDS').split(' ') if x != 'X']
+            hand.addShownCards(cards, shows.group('PNAME'))
 
     def readCollectPot(self,hand):
         if ((hand.gametype['category'] == '27_1draw' and hand.gametype['limitType'] == 'nl') or
@@ -594,8 +593,7 @@ class KingsClub(HandHistoryConverter):
             hand.adjustCollected = False
         else:
             hand.adjustCollected = True
-        pre, post = hand.handText.split('*** SUMMARY ***')
-        for m in self.re_CollectPot.finditer(post):
+        for m in self.re_CollectPot.finditer(hand.handText):
             pot = str(Decimal(self.clearMoneyString(m.group('POT')))*100) if hand.tourNo is not None else self.clearMoneyString(m.group('POT'))
             hand.addCollectPot(player=m.group('PNAME'),pot=pot)
         for m in self.re_Rake.finditer(hand.handText):
@@ -605,18 +603,5 @@ class KingsClub(HandHistoryConverter):
                 hand.rakes['rake'] = Decimal(self.clearMoneyString(m.group('RAKE')))
 
     def readShownCards(self,hand):
-        for m in self.re_ShownCards.finditer(hand.handText):
-            if m.group('CARDS') is not None:
-                cards = m.group('CARDS')
-                cards = cards.split(' ') # needs to be a list, not a set--stud needs the order
-                string = m.group('STRING')
-                if m.group('STRING2'):
-                    string += '|' + m.group('STRING2')
-
-                (shown, mucked) = (False, False)
-                if m.group('SHOWED') == "showed": shown = True
-                elif m.group('SHOWED') == "mucked": mucked = True
-
-                #print "DEBUG: hand.addShownCards(%s, %s, %s, %s)" %(cards, m.group('PNAME'), shown, mucked)
-                hand.addShownCards(cards=cards, player=m.group('PNAME'), shown=shown, mucked=mucked, string=string)
+        pass
 
