@@ -254,7 +254,7 @@ class Hand(object):
         if mucked: self.mucked.add(player)
 
         for i in range(len(closed)):
-            if closed[i] in ('', 'Xx', 'Null', 'null'):
+            if closed[i] in ('', 'Xx', 'Null', 'null', 'X'):
                 closed[i] = '0x'
 
         try:

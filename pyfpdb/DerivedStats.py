@@ -337,7 +337,10 @@ class DerivedStats():
                 player_stats['nonShowdownWinnings'] = player_stats['totalProfit']
             for i, card in enumerate(hcs[:20]):
                 player_stats['card%d' % (i+1)] = encodeCard(card)
-            player_stats['startCards'] = calcStartCards(hand, player_name)
+            try:
+                player_stats['startCards'] = calcStartCards(hand, player_name)
+            except IndexError:
+                log.error("IndexError: string index out of range %s %s" % (hand.handid, hand.in_path))
 
         self.setPositions(hand)
         self.calcEffectiveStack(hand)
