@@ -83,7 +83,7 @@ class iPokerSummary(TourneySummary):
     re_TourNo = re.compile(r'\(\#(?P<TOURNO>\d+)\)', re.MULTILINE)
     re_TotalBuyin = re.compile(r"""(?P<BUYIN>(?P<BIAMT>[%(LS)s%(NUM)s]+)\s\+\s?(?P<BIRAKE>[%(LS)s%(NUM)s]+)?)""" % substitutions, re.MULTILINE|re.VERBOSE)
     re_DateTime1 = re.compile("""(?P<D>[0-9]{2})\-(?P<M>[a-zA-Z]{3})\-(?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
-    re_DateTime2 = re.compile("""(?P<D>[0-9]{2})\/(?P<M>[0-9]{2})\/(?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
+    re_DateTime2 = re.compile("""(?P<D>[0-9]{2})[\/\.](?P<M>[0-9]{2})[\/\.](?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
     re_DateTime3 = re.compile("""(?P<Y>[0-9]{4})\/(?P<M>[0-9]{2})\/(?P<D>[0-9]{2})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
     re_Place     = re.compile("\d+")
     re_FPP       = re.compile(r'Pts\s')
@@ -133,9 +133,9 @@ class iPokerSummary(TourneySummary):
             try:
                 self.startTime = datetime.datetime.strptime(mg['DATETIME'], '%Y-%m-%d %H:%M:%S')
             except ValueError:
-                datestr = '%d/%m/%Y %H:%M:%S'
                 date_match = self.re_DateTime2.search(mg['DATETIME'])
                 if date_match != None:
+                    datestr = '%d/%m/%Y %H:%M:%S' if '/' in mg['DATETIME'] else '%d.%m.%Y %H:%M:%S'
                     if date_match.group('S') == None:
                         datestr = '%d/%m/%Y %H:%M'
                 else:
