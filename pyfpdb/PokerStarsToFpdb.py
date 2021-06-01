@@ -398,7 +398,7 @@ class PokerStars(HandHistoryConverter):
                     
             if key == 'HID':
                 hand.handid = info[key]
-            if key == 'TOURNO':
+            if key == 'TOURNO' and info[key]!=None:
                 hand.tourNo = info[key][-18:]
             if key == 'BUYIN':
                 if hand.tourNo!=None:
