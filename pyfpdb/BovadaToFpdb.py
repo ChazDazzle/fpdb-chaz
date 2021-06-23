@@ -317,9 +317,13 @@ class Bovada(HandHistoryConverter):
                             info['BIRAKE'] = info['BIRAKE'].strip(u'$')
                         else:
                             info['BIRAKE'] = '0'
-
-                        hand.buyin = int(100*Decimal(info['BIAMT']))
-                        hand.fee = int(100*Decimal(info['BIRAKE']))
+                        
+                        if info['TICKET'] == None:
+                            hand.buyin = int(100*Decimal(info['BIAMT']))
+                            hand.fee = int(100*Decimal(info['BIRAKE']))
+                        else:
+                            hand.buyin = 0
+                            hand.fee = 0
             if key == 'TABLE':
                 if info.get('TABLENO'):
                     hand.tablename = info.get('TABLENO')

@@ -115,9 +115,13 @@ class BovadaSummary(TourneySummary):
                         info['BIRAKE'] = info['BIRAKE'].strip(u'$')
                     else:
                         info['BIRAKE'] = '0'
-
-                    self.buyin = int(100*Decimal(info['BIAMT']))
-                    self.fee = int(100*Decimal(info['BIRAKE']))
+                    
+                    if info['TICKET'] == None:
+                        self.buyin = int(100*Decimal(info['BIAMT']))
+                        self.fee = int(100*Decimal(info['BIRAKE']))
+                    else:
+                        self.buyin = 0
+                        self.fee = 0
                     
                     if info['TOURNAME'] is not None:
                         tourneyNameFull = info['TOURNAME'] + ' - ' + info['BIAMT'] + '+' + info['BIRAKE']
