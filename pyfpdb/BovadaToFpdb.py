@@ -190,7 +190,7 @@ class Bovada(HandHistoryConverter):
         if gametype['type'] == 'tour':
             handlist = re.split(self.re_SplitHands,  whole_file)
             result = re.findall(self.re_PlayerSeat, handlist[0])
-            gametype['maxSeats'] = len(result)
+            #gametype['maxSeats'] = len(result)
         return gametype
 
     def determineGameType(self, handText):
