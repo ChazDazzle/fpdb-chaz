@@ -572,7 +572,7 @@ class DerivedStats():
                 potId+=1
                 boards, boardId, sumpot = self.getBoardsList(hand), 0, 0
                 for b in boards:
-                    boardId += (hand.runItTimes==2)
+                    boardId += (hand.runItTimes>=2)
                     potBoard = Decimal(int(pot/len(boards)*factor))/factor
                     modBoard = pot - potBoard*len(boards)
                     if boardId==1: 
@@ -637,7 +637,7 @@ class DerivedStats():
         base, evalgame, hilo, streets, last, hrange = Card.games[category]
         if ((hand.sitename != 'KingsClub' or hand.adjustCollected) and # Can't trust KingsClub draw/stud holecards  
             evalgame and 
-            (len(hand.pot.pots)>1 or (showdown and (hilo=='s' or hand.runItTimes==2)))
+            (len(hand.pot.pots)>1 or (showdown and (hilo=='s' or hand.runItTimes>=2)))
             ):
             #print 'DEBUG hand.collected', hand.collected
             #print 'DEBUG hand.collectees', hand.collectees
@@ -647,7 +647,7 @@ class DerivedStats():
                 potId+=1
                 boards, boardId, sumpot = self.getBoardsList(hand), 0, 0
                 for b in boards:
-                    boardId += (hand.runItTimes==2)
+                    boardId += (hand.runItTimes>=2)
                     potBoard = Decimal(int(pot/len(boards)*factor))/factor
                     modBoard = pot - potBoard*len(boards)
                     if boardId==1: 
