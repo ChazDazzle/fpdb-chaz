@@ -102,7 +102,7 @@ class KingsClub(HandHistoryConverter):
                              '2-7 Razz' : ('stud','27_razz'), 
                               'Badacey' : ('draw','badacey'),
                              'Badeucey' : ('draw','badeucey'),
-                         '2-7 Drawmaha' : ('draw','27_drawmaha') 
+                         '2-7 Drawmaha' : ('draw','drawmaha') 
                }
     mixes = {
                                  'HORSE': 'horse',
@@ -364,7 +364,7 @@ class KingsClub(HandHistoryConverter):
 
         # PREFLOP = ** Dealing down cards **
         # This re fails if,  say, river is missing; then we don't get the ** that starts the river.
-        if hand.gametype['category'] == '27_drawmaha':
+        if hand.gametype['category'] == 'drawmaha':
             m =  re.search(r"(?P<DEAL>.+(?=\*\*\* FLOP \*\*\*)|.+)"
                        r"(\*\*\* FLOP \*\*\*(?P<DRAWONE> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* TURN \*\*\*)|.+))?"
                        r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<DRAWTWO>\[\S\S\].+(?=\*\*\* RIVER \*\*\*)|.+))?"
@@ -533,7 +533,7 @@ class KingsClub(HandHistoryConverter):
         m = self.re_Action.finditer(hand.streets[s])
         for action in m:
             acts = action.groupdict()
-            if action.group('ATYPE') in (' discards', ' stands pat', ' draws') and hand.gametype['category'] == '27_drawmaha':
+            if action.group('ATYPE') in (' discards', ' stands pat', ' draws') and hand.gametype['category'] == 'drawmaha':
                 street = 'DRAWTWO'
             #log.error("DEBUG: %s acts: %s" % (street, acts))
             if action.group('ATYPE') == ' folds':

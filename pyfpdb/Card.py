@@ -66,7 +66,7 @@ games = {              # base, category
             '27_razz' : ('stud', 'lowball27', 'l', {'THIRD': 0,'FOURTH': 1,'FIFTH': 2,'SIXTH': 3,'SEVENTH': 4}, 'SEVENTH', [(0,3),(0,4),(0,5),(0,6),(0,7)]), 
             'badacey' : ('draw', None, 's', {'DEAL':0, 'DRAWONE':1, 'DRAWTWO':2, 'DRAWTHREE':3}, 'DRAWTHREE', [(0,5),(5,10),(10,15),(15,20)]),
            'badeucey' : ('draw', None, 's', {'DEAL':0, 'DRAWONE':1, 'DRAWTWO':2, 'DRAWTHREE':3}, 'DRAWTHREE', [(0,5),(5,10),(10,15),(15,20)]),
-        '27_drawmaha' : ('draw', None, 's', {'DEAL':0, 'DRAWONE':1, 'DRAWTWO':2, 'DRAWTHREE':3}, 'DRAWTHREE', [(0,5),(5,10),(10,15),(15,20)]),
+           'drawmaha' : ('draw', None, 's', {'DEAL':0, 'DRAWONE':1, 'DRAWTWO':2, 'DRAWTHREE':3}, 'DRAWTHREE', [(0,5),(5,10),(10,15),(15,20)]),
        }
 
 hands = {   'Nothing' : (1, None),
