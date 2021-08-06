@@ -101,7 +101,8 @@ class KingsClub(HandHistoryConverter):
                       'A-5 Single Draw' : ('draw','a5_1draw'),
                              '2-7 Razz' : ('stud','27_razz'), 
                               'Badacey' : ('draw','badacey'),
-                             'Badeucey' : ('draw','badeucey')
+                             'Badeucey' : ('draw','badeucey'),
+                         '2-7 Drawmaha' : ('draw','27_drawmaha') 
                }
     mixes = {
                                  'HORSE': 'horse',
@@ -121,7 +122,7 @@ class KingsClub(HandHistoryConverter):
     re_GameInfo     = re.compile(u"""
           \#(?P<HID>[0-9]+):\s+
           (?P<LIMIT>No\sLimit|Limit|Pot\sLimit)\s
-          (?P<GAME>Holdem|Razz|Seven\sCard\sStud|Seven\sCard\sStud\sHi\-Lo|Omaha|Omaha\sHi\-Lo|Badugi|2\-7\sTriple\sDraw|2\-7\sSingle\sDraw|5\sCard\sDraw|Big\sO|2\-7\sRazz|Badacey|Badeucey|A\-5\sTriple\sDraw|A\-5\sSingle\sDraw)\s
+          (?P<GAME>Holdem|Razz|Seven\sCard\sStud|Seven\sCard\sStud\sHi\-Lo|Omaha|Omaha\sHi\-Lo|Badugi|2\-7\sTriple\sDraw|2\-7\sSingle\sDraw|5\sCard\sDraw|Big\sO|2\-7\sRazz|Badacey|Badeucey|A\-5\sTriple\sDraw|A\-5\sSingle\sDraw|2\-7\sDrawmaha)\s
           \-\s(?P<SB>[,.0-9]+)/(?P<BB>[,.0-9]+)
         """ % substitutions, re.MULTILINE|re.VERBOSE)
 
@@ -363,7 +364,12 @@ class KingsClub(HandHistoryConverter):
 
         # PREFLOP = ** Dealing down cards **
         # This re fails if,  say, river is missing; then we don't get the ** that starts the river.
-        if hand.gametype['base'] in ("hold"):
+        if hand.gametype['category'] == '27_drawmaha':
+            m =  re.search(r"(?P<DEAL>.+(?=\*\*\* FLOP \*\*\*)|.+)"
+                       r"(\*\*\* FLOP \*\*\*(?P<DRAWONE> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* TURN \*\*\*)|.+))?"
+                       r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<DRAWTWO>\[\S\S\].+(?=\*\*\* RIVER \*\*\*)|.+))?"
+                       r"(\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<DRAWTHREE>\[\S\S\].+))?", hand.handText,re.DOTALL)
+        elif hand.gametype['base'] in ("hold"):
             arr = hand.handText.split('*** HOLE CARDS ***')
             if len(arr) > 1:
                 pre, post = arr
@@ -523,10 +529,12 @@ class KingsClub(HandHistoryConverter):
         else:
             s = street
         if not hand.streets[s]:
-            return
+            return 
         m = self.re_Action.finditer(hand.streets[s])
         for action in m:
             acts = action.groupdict()
+            if action.group('ATYPE') in (' discards', ' stands pat', ' draws') and hand.gametype['category'] == '27_drawmaha':
+                street = 'DRAWTWO'
             #log.error("DEBUG: %s acts: %s" % (street, acts))
             if action.group('ATYPE') == ' folds':
                 hand.addFold( street, action.group('PNAME'))
