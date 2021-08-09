@@ -198,6 +198,7 @@ class KingsClub(HandHistoryConverter):
                          %  substitutions, re.MULTILINE|re.VERBOSE)
     
     re_Rake = re.compile(r"^Rake\s(?P<RAKE>[,.0-9]+)$", re.MULTILINE)
+    re_Split = re.compile(r"\*\*\* BOARD 1 - FLOP \*\*\*")
 
     def compilePlayerRegexs(self,  hand):
         players = set([player[1] for player in hand.players])
@@ -260,6 +261,12 @@ class KingsClub(HandHistoryConverter):
         else:
             info['type'] = 'ring'
             info['currency'] = 'USD'
+        
+        m2 = self.re_Split.search(handText)
+        if m2:
+            info['split'] = True
+        else:
+            info['split'] = False
 
         if info['limitType'] == 'fl' and info['bb'] is not None:
             if info['type'] == 'ring':
@@ -364,7 +371,15 @@ class KingsClub(HandHistoryConverter):
 
         # PREFLOP = ** Dealing down cards **
         # This re fails if,  say, river is missing; then we don't get the ** that starts the river.
-        if hand.gametype['category'] == 'drawmaha':
+        if hand.gametype['split']:
+            m =  re.search(r"\*\*\* HOLE CARDS \*\*\*(?P<PREFLOP>.+(?=\*\*\* BOARD 1 - FLOP \*\*\*)|.+)"
+                       r"(\*\*\* BOARD 1 - FLOP \*\*\* (?P<FLOP1>\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* BOARD 2 - FLOP \*\*\*)|.+))?"
+                       r"(\*\*\* BOARD 2 - FLOP \*\*\* (?P<FLOP2>\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* BOARD 1 - TURN \*\*\*)|.+))?"
+                       r"(\*\*\* BOARD 1 - TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN1>\[\S\S\].+(?=\*\*\* BOARD 2 - TURN \*\*\*)|.+))?"
+                       r"(\*\*\* BOARD 2 - TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN2>\[\S\S\].+(?=\*\*\* BOARD 1 - RIVER \*\*\*)|.+))?" 
+                       r"(\*\*\* BOARD 1 - RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER1>\[\S\S\].+?(?=\*\*\* BOARD 2 - RIVER \*\*\*)|.+))?"
+                       r"(\*\*\* BOARD 2 - RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER2>\[\S\S\].+))?", hand.handText,re.DOTALL)
+        elif hand.gametype['category'] == 'drawmaha':
             m =  re.search(r"(?P<DEAL>.+(?=\*\*\* FLOP \*\*\*)|.+)"
                        r"(\*\*\* FLOP \*\*\*(?P<DRAWONE> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* TURN \*\*\*)|.+))?"
                        r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<DRAWTWO>\[\S\S\].+(?=\*\*\* RIVER \*\*\*)|.+))?"
@@ -401,7 +416,7 @@ class KingsClub(HandHistoryConverter):
                            r"(\*\*\* 2ND DRAW \*\*\*(?P<DRAWTWO>.+(?=\*\*\* 3RD DRAW \*\*\*)|.+))?"
                            r"(\*\*\* 3RD DRAW \*\*\*(?P<DRAWTHREE>.+))?", hand.handText,re.DOTALL)
         hand.addStreets(m)
-        if hand.gametype['base'] in ("hold"):
+        if hand.gametype['base'] in ("hold") and not hand.gametype['split']:
             m1 =  re.search(
                 r"(\*\*\* BOARD 1 - RIVER \*\*\* \[(?P<FLOP1>\S\S \S\S \S\S) (?P<TURN1>\S\S)] (?P<RIVER1>\[\S\S\].+(?=\*\*\* BOARD 2 - RIVER \*\*\*)|.+))"
                 r"(\*\*\* BOARD 2 - RIVER \*\*\* \[(?P<FLOP2>(\S\S|\-) (\S\S|\-) (\S\S|\-)) (?P<TURN2>(\S\S|\-))] (?P<RIVER2>\[\S\S\].+))", post,re.DOTALL)
@@ -424,7 +439,7 @@ class KingsClub(HandHistoryConverter):
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
         if street!='FLOPET' or hand.streets.get('FLOP')==None:   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
-            if street in ('FLOP1', 'TURN1', 'FLOP2', 'TURN2'):
+            if street in ('FLOP1', 'TURN1', 'FLOP2', 'TURN2') and not hand.gametype['split']:
                 hand.setCommunityCards(street, hand.streets[street].split(' '))
             else:
                 m = self.re_Board.search(hand.streets[street])
