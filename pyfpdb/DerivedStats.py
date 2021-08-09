@@ -532,10 +532,11 @@ class DerivedStats():
                     boards[allInStreets[i+1]]['board'] = boardStreets[i]
         else:   
             for s in allInStreets:
-                streetId = streets[s]
-                boards[s] = {}
-                boards[s]['board'] = [[]]
-                boards[s]['allin'] = False
+                if s in streets:
+                    streetId = streets[s]
+                    boards[s] = {}
+                    boards[s]['board'] = [[]]
+                    boards[s]['allin'] = False
         return boards
     
     def awardPots(self, hand):

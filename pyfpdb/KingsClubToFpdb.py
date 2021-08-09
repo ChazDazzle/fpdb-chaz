@@ -167,7 +167,7 @@ class KingsClub(HandHistoryConverter):
                         (and\shas\sreached\sthe\s[%(CUR)s\d\.,]+\scap)?
                         (\son|\scards?)?
                         (\s\(disconnect\))?
-                        (\s\[(?P<CARDS>.+?)\]\sdraws\s\[(?P<DRAWS>.+?)\])?\s*$"""
+                        (\s\[(?P<CARDS>.+?)\]\sdraws\s\[(?P<DRAWS1>.+?)\](\s\[(?P<DRAWS2>.+?)\])?)?\s*$"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
     re_ShowdownAction   = re.compile(r"^%s shows \[(?P<CARDS>.*)\]" % substitutions['PLYR'], re.MULTILINE)
     re_sitsOut          = re.compile("^%s sits out" %  substitutions['PLYR'], re.MULTILINE)
@@ -513,7 +513,7 @@ class KingsClub(HandHistoryConverter):
 #                    else:
                     newcards = [x for x in found.group('NEWCARDS').split(' ') if x != 'X']
                     if len(newcards)>0: 
-                        hand.hero = found.group('PNAME')                       
+                        hand.hero = found.group('PNAME')  
                         hand.addHoleCards(street, hand.hero, closed=newcards, shown=False, mucked=False, dealt=True)
 
         for street, text in hand.streets.iteritems():
@@ -529,7 +529,7 @@ class KingsClub(HandHistoryConverter):
                     oldcards = []
                 else:
                     oldcards = [x for x in found.group('OLDCARDS').split(' ') if x != 'X']
-
+                
                 if street == 'THIRD' and len(newcards) == 3: # hero in stud game
                     hand.hero = player
                     hand.dealt.add(player) # need this for stud??
@@ -589,9 +589,9 @@ class KingsClub(HandHistoryConverter):
                     )
             elif action.group('ATYPE') == ' discards':
                 hand.addDiscard(street, action.group('PNAME'), len(action.group('CARDS').split(" ")), action.group('CARDS'))
-                if action.group('DRAWS') is not None:
+                if action.group('DRAWS1') is not None:
                     player = action.group('PNAME')
-                    newcards = [x for x in action.group('DRAWS').split(' ') if x != 'X']
+                    newcards = [x for x in action.group('DRAWS1').split(' ') if x != 'X']
                     discards = action.group('CARDS').split(' ')
                     laststreet = hand.allStreets[hand.allStreets.index(street)-1]
                     oldcards = [x for x in hand.join_holecards(player, True, laststreet) if x not in discards]
@@ -605,10 +605,7 @@ class KingsClub(HandHistoryConverter):
 
 
     def readShowdownActions(self, hand):
-# TODO: pick up mucks also??
-        for shows in self.re_ShowdownAction.finditer(hand.handText):
-            cards = [x for x in shows.group('CARDS').split(' ') if x != 'X']
-            hand.addShownCards(cards, shows.group('PNAME'))
+        pass
 
     def readCollectPot(self,hand):
         if ((hand.gametype['category'] == '27_1draw' and hand.gametype['limitType'] == 'nl') or
@@ -626,5 +623,24 @@ class KingsClub(HandHistoryConverter):
                 hand.rakes['rake'] = Decimal(self.clearMoneyString(m.group('RAKE')))
 
     def readShownCards(self,hand):
-        pass
-
+        runIt = False
+        for shows in self.re_ShowdownAction.finditer(hand.handText):
+            player = shows.group('PNAME').replace('Run 1: ', '')
+            if 'Run 2: ' in shows.group('PNAME'):
+                runIt = True
+            else:
+                cards = [x for x in shows.group('CARDS').split(' ') if x != 'X']
+                hand.addShownCards(cards, player, shown=True, mucked=False)
+        if runIt:
+            hand.streetList += ['DRAWTWO']
+            hand.allStreets += ['DRAWTWO']
+            hand.holeStreets += ['DRAWTWO']
+            hand.actionStreets += ['DRAWTWO']
+            hand.streets['DRAWTWO'] = ""
+            hand.actions['DRAWTWO'] = []
+            hand.holecards['DRAWTWO'] = {}
+            for shows in self.re_ShowdownAction.finditer(hand.handText):
+                if 'Run 2: ' in shows.group('PNAME'):
+                    cards = [x for x in shows.group('CARDS').split(' ') if x != 'X']
+                    hand.addShownCards(cards, shows.group('PNAME').replace('Run 2: ', ''), shown=True, mucked=False)               
+                    
