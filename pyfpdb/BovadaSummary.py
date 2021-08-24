@@ -109,10 +109,10 @@ class BovadaSummary(TourneySummary):
                         raise FpdbParseError
                     self.currency = self.buyinCurrency
 
-                    info['BIAMT'] = info['BIAMT'].strip(u'$')
+                    info['BIAMT'] = hhc.clearMoneyString(info['BIAMT'].strip(u'$'))
                     
                     if info['BIRAKE']:
-                        info['BIRAKE'] = info['BIRAKE'].strip(u'$')
+                        info['BIRAKE'] = hhc.clearMoneyString(info['BIRAKE'].strip(u'$'))
                     else:
                         info['BIRAKE'] = '0'
                     

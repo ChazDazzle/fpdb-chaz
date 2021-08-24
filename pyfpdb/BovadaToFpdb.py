@@ -149,8 +149,8 @@ class Bovada(HandHistoryConverter):
     re_CollectPot1      = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: Hand (R|r)esult(\-Side (P|p)ot)? %(CUR)s(?P<POT1>[%(NUM)s]+)" %  substitutions, re.MULTILINE)
     re_Bounty           = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: BOUNTY PRIZE \[%(CUR)s(?P<BOUNTY>[%(NUM)s]+)\]" %  substitutions, re.MULTILINE)
     re_Dealt            = re.compile(r"^%(PLYR)s (\s?\[ME\]\s)?: Card dealt to a spot" % substitutions, re.MULTILINE)
-    re_Buyin            = re.compile(r"(\s-\s\d+\s-\s(?P<TOURNAME>.+?))?\s-\s(?P<BUYIN>(?P<TICKET>TT)?(?P<BIAMT>[%(LS)s\d\.]+)-(?P<BIRAKE>[%(LS)s\d\.]+)?)\s-\s" % substitutions)
-    re_Knockout         = re.compile(r"\s\((?P<BOUNTY>[%(LS)s\d\.]+)\sKnockout" % substitutions)
+    re_Buyin            = re.compile(r"(\s-\s\d+\s-\s(?P<TOURNAME>.+?))?\s-\s(?P<BUYIN>(?P<TICKET>TT)?(?P<BIAMT>[%(LS)s\d\.,]+)-(?P<BIRAKE>[%(LS)s\d\.,]+)?)\s-\s" % substitutions)
+    re_Knockout         = re.compile(r"\s\((?P<BOUNTY>[%(LS)s\d\.,]+)\sKnockout" % substitutions)
     re_Stakes           = re.compile(r"(RING|ZONE)\s-\s(?P<CURRENCY>%(LS)s|)?(?P<SB>[%(NUM)s]+)-(%(LS)s)?(?P<BB>[%(NUM)s]+)" % substitutions)
     re_Summary          = re.compile(r"\*\*\*\sSUMMARY\s\*\*\*")
     re_Hole_Third       = re.compile(r"\*\*\*\s(3RD\sSTREET|HOLE\sCARDS)\s\*\*\*")
@@ -305,16 +305,16 @@ class Bovada(HandHistoryConverter):
                             raise FpdbParseError
                     
                         if info.get('BOUNTY') != None:
-                            info['BOUNTY'] = info['BOUNTY'].strip(u'$€£') # Strip here where it isn't 'None'
+                            info['BOUNTY'] = self.clearMoneyString(info['BOUNTY'].strip(u'$')) # Strip here where it isn't 'None'
                             hand.koBounty = int(100*Decimal(info['BOUNTY']))
                             hand.isKO = True
                         else:
                             hand.isKO = False
-
-                        info['BIAMT'] = info['BIAMT'].strip(u'$')
+                            
+                        info['BIAMT'] = self.clearMoneyString(info['BIAMT'].strip(u'$'))
                         
                         if info['BIRAKE']:
-                            info['BIRAKE'] = info['BIRAKE'].strip(u'$')
+                            info['BIRAKE'] = self.clearMoneyString(info['BIRAKE'].strip(u'$'))
                         else:
                             info['BIRAKE'] = '0'
                         
