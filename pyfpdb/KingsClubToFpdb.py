@@ -88,8 +88,8 @@ class KingsClub(HandHistoryConverter):
                                 'Omaha' : ('hold','omahahi'),
                           'Omaha Hi-Lo' : ('hold','omahahilo'),
                                 'Big O' : ('hold', '5_omaha8'),
-                  # '5 Card Omaha Hi-Lo' : ('hold', '5_omaha8'),
-                  #       '6 Card Omaha' : ('hold', '6_omahahi'),
+                         'Omaha 5 Card' : ('hold', '5_omahahi'),
+                         'Omaha 6 Card' : ('hold', '6_omahahi'),
                                  'Razz' : ('stud','razz'), 
                       'Seven Card Stud' : ('stud','studhi'),
                 'Seven Card Stud Hi-Lo' : ('stud','studhilo'),
@@ -122,7 +122,7 @@ class KingsClub(HandHistoryConverter):
     re_GameInfo     = re.compile(u"""
           \#(?P<HID>[0-9]+):\s+
           (?P<LIMIT>No\sLimit|Limit|Pot\sLimit)\s
-          (?P<GAME>Holdem|Razz|Seven\sCard\sStud|Seven\sCard\sStud\sHi\-Lo|Omaha|Omaha\sHi\-Lo|Badugi|2\-7\sTriple\sDraw|2\-7\sSingle\sDraw|5\sCard\sDraw|Big\sO|2\-7\sRazz|Badacey|Badeucey|A\-5\sTriple\sDraw|A\-5\sSingle\sDraw|2\-7\sDrawmaha)\s
+          (?P<GAME>Holdem|Razz|Seven\sCard\sStud|Seven\sCard\sStud\sHi\-Lo|Omaha|Omaha\s(5|6)\sCard|Omaha\sHi\-Lo|Badugi|2\-7\sTriple\sDraw|2\-7\sSingle\sDraw|5\sCard\sDraw|Big\sO|2\-7\sRazz|Badacey|Badeucey|A\-5\sTriple\sDraw|A\-5\sSingle\sDraw|2\-7\sDrawmaha)\s
           \-\s(?P<SB>[,.0-9]+)/(?P<BB>[,.0-9]+)
         """ % substitutions, re.MULTILINE|re.VERBOSE)
 
