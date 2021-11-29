@@ -476,7 +476,7 @@ class DerivedStats():
                             p = valid[i]
                             pid = hand.dbid_pids[p]
                             if street == startstreet:
-                                rake = (hand.rake * (Decimal(pot)/Decimal(hand.totalpot)))
+                                rake = Decimal(0) if hand.cashedOut else (hand.rake * (Decimal(pot)/Decimal(hand.totalpot)))
                                 holecards[p]['eq'] += ((pot - rake) * equities[i])/Decimal(10)
                                 holecards[p]['committed'] = 100*hand.pot.committed[p] + 100*hand.pot.common[p]
                             for j in self.handsstove:
