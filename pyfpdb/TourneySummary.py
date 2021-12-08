@@ -272,7 +272,7 @@ class TourneySummary(object):
         return (stored, duplicates, partial, errors, ttime)
 
 
-    def addPlayer(self, rank, name, winnings, winningsCurrency, rebuyCount, addOnCount, koCount, entryId=1):
+    def addPlayer(self, rank, name, winnings, winningsCurrency, rebuyCount, addOnCount, koCount, entryId=None):
         """\
 Adds a player to the tourney, and initialises data structures indexed by player.
 rank        (int) indicating the finishing rank (can be -1 if unknown)
@@ -281,9 +281,11 @@ winnings    (int) the money the player ended the tourney with (can be 0, or -1 i
 """
         log.debug("addPlayer: rank:%s - name : '%s' - Winnings (%s)" % (rank, name, winnings))
         if self.players.get(name) != None:
-            if entryId in self.players[name]:
+            if entryId is None:
                 entries = self.players[name][-1]
                 self.players[name].append(entries + 1)
+            elif entryId in self.players[name]:
+                return None
             else:
                 self.players[name].append(entryId)
             if rank:
@@ -298,7 +300,7 @@ winnings    (int) the money the player ended the tourney with (can be 0, or -1 i
             self.addOnCounts[name].append(None)
             self.koCounts[name].append(None)
         else:
-            self.players[name] = [entryId]
+            self.players[name] = [entryId if entryId is not None else 1]
             if rank:
                 self.ranks.update({ name : [rank] })
                 self.winnings.update({ name : [winnings] })
