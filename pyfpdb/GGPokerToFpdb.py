@@ -112,7 +112,7 @@ class GGPoker(HandHistoryConverter):
     #Poker Hand #TM247771977: Tournament #5259595, Daily Special $250 Hold'em No Limit - Level2 (60/120) - 2020/06/02 19:17:33
     # Static regexes
     re_GameInfo     = re.compile(u"""
-          Poker\sHand\s\#[A-Z]{2}(?P<HID>[0-9]+):\s+
+          Poker\sHand\s\#[A-Z]{0,2}(?P<HID>[0-9]+):\s+
           (\{.*\}\s+)?((?P<TOUR>((Zoom|Rush)\s)?(Tournament))\s\#                # open paren of tournament info
           (?P<TOURNO>\d+),\s
           # here's how I plan to use LS
@@ -152,7 +152,7 @@ class GGPoker(HandHistoryConverter):
           (Seat\s\#(?P<BUTTON>\d+)\sis\sthe\sbutton)?""", 
           re.MULTILINE|re.VERBOSE)
 
-    re_Identify     = re.compile(u'Poker\sHand\s\#[A-Z]{2}\d+:')
+    re_Identify     = re.compile(u'Poker\sHand\s\#[A-Z]{0,2}?\d+:')
     re_SplitHands   = re.compile('(?:\s?\n){2,}')
     re_TailSplitHands   = re.compile('(\n\n\n+)')
     re_Button       = re.compile('Seat #(?P<BUTTON>\d+) is the button', re.MULTILINE)
@@ -471,10 +471,10 @@ class GGPoker(HandHistoryConverter):
                        r"(\*\*\* FLOP \*\*\*(?P<FLOP> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* (FIRST\s)?TURN \*\*\*)|.+))?"
                        r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN>\[\S\S\].+(?=\*\*\* (FIRST\s)?RIVER \*\*\*)|.+))?"
                        r"(\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER>\[\S\S\].+))?"
-                       r"(\*\*\* FIRST FLOP \*\*\*(?P<FLOP1> (\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* FIRST TURN \*\*\*)|.+))?"
+                       r"(\*\*\* FIRST FLOP \*\*\*(?P<FLOP1>  ?(\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* FIRST TURN \*\*\*)|.+))?"
                        r"(\*\*\* FIRST TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN1>\[\S\S\].+(?=\*\*\* FIRST RIVER \*\*\*)|.+))?"
                        r"(\*\*\* FIRST RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER1>\[\S\S\].+?(?=\*\*\* SECOND (FLOP|TURN|RIVER) \*\*\*)|.+))?"
-                       r"(\*\*\* SECOND FLOP \*\*\*(?P<FLOP2> (\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* SECOND TURN \*\*\*)|.+))?"
+                       r"(\*\*\* SECOND FLOP \*\*\*(?P<FLOP2>  ?(\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* SECOND TURN \*\*\*)|.+))?"
                        r"(\*\*\* SECOND TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN2>\[\S\S\].+(?=\*\*\* SECOND RIVER \*\*\*)|.+))?"
                        r"(\*\*\* SECOND RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER2>\[\S\S\].+?(?=\*\*\* THIRD (FLOP|TURN|RIVER) \*\*\*)|.+))?"
                        r"(\*\*\* THIRD FLOP \*\*\*(?P<FLOP3> (\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* THIRD TURN \*\*\*)|.+))?"
