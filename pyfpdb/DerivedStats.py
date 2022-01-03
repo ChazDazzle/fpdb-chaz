@@ -445,7 +445,7 @@ class DerivedStats():
             self.getAllInEV(hand, evalgame, holeplayers, boards, streets, holecards)
                 
     def getAllInEV(self, hand, evalgame, holeplayers, boards, streets, holecards):
-        startstreet, potId, allInStreets = None, 0, hand.allStreets[1:]
+        startstreet, potId, allInStreets, allplayers = None, 0, hand.allStreets[1:], []
         for pot, players in hand.pot.pots:
             if potId ==0: pot += (sum(hand.pot.common.values()) + hand.pot.stp)
             potId+=1
@@ -457,6 +457,13 @@ class DerivedStats():
                         boardId = n + 1
                     else: boardId = n
                     valid = [p for p in players if self.handsplayers[p]['sawShowdown'] and u'0x' not in holecards[p]['cards'][n]]
+                    if potId == 1:
+                        allplayers = valid
+                        deadcards, deadplayers = [], []
+                    else:
+                        deadplayers = [d for d in allplayers if d not in valid]
+                        _deadcards = [holecards[d]['hole'] for d in deadplayers]
+                        deadcards = [item for sublist in _deadcards for item in sublist]
                     if len(players) == len(valid) and (board['allin'] or hand.publicDB):
                         if board['allin'] and not startstreet: startstreet = street
                         if len(valid) > 1:
@@ -464,7 +471,7 @@ class DerivedStats():
                                 game = evalgame, 
                                 iterations = Card.iter[streetId],
                                 pockets = [holecards[p]['hole'] for p in valid],
-                                dead = [], 
+                                dead = deadcards, 
                                 board = [str(b) for b in board['board'][n]] + (5 - len(board['board'][n])) * ['__']
                             )
                             equities = [e['ev'] for e in evs['eval']]
