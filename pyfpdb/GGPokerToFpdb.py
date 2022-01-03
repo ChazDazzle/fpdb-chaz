@@ -468,7 +468,7 @@ class GGPoker(HandHistoryConverter):
         # This re fails if,  say, river is missing; then we don't get the ** that starts the river.
         if hand.gametype['base'] in ("hold"):
             m =  re.search(r"\*\*\* HOLE CARDS \*\*\*(?P<PREFLOP>(.+(?P<FLOPET>\[\S\S\]))?.+(?=\*\*\* (FIRST\s)?FLOP \*\*\*)|.+)"
-                       r"(\*\*\* FLOP \*\*\*(?P<FLOP> (\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* (FIRST\s)?TURN \*\*\*)|.+))?"
+                       r"(\*\*\* FLOP \*\*\*(?P<FLOP>  ?(\[\S\S\] )?\[(\S\S ?)?\S\S \S\S\].+(?=\*\*\* (FIRST\s)?TURN \*\*\*)|.+))?"
                        r"(\*\*\* TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN>\[\S\S\].+(?=\*\*\* (FIRST\s)?RIVER \*\*\*)|.+))?"
                        r"(\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER>\[\S\S\].+))?"
                        r"(\*\*\* FIRST FLOP \*\*\*(?P<FLOP1>  ?(\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* FIRST TURN \*\*\*)|.+))?"
@@ -477,7 +477,7 @@ class GGPoker(HandHistoryConverter):
                        r"(\*\*\* SECOND FLOP \*\*\*(?P<FLOP2>  ?(\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* SECOND TURN \*\*\*)|.+))?"
                        r"(\*\*\* SECOND TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN2>\[\S\S\].+(?=\*\*\* SECOND RIVER \*\*\*)|.+))?"
                        r"(\*\*\* SECOND RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER2>\[\S\S\].+?(?=\*\*\* THIRD (FLOP|TURN|RIVER) \*\*\*)|.+))?"
-                       r"(\*\*\* THIRD FLOP \*\*\*(?P<FLOP3> (\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* THIRD TURN \*\*\*)|.+))?"
+                       r"(\*\*\* THIRD FLOP \*\*\*(?P<FLOP3>  ?(\[\S\S\] )?\[\S\S \S\S \S\S\].+(?=\*\*\* THIRD TURN \*\*\*)|.+))?"
                        r"(\*\*\* THIRD TURN \*\*\* \[\S\S \S\S \S\S] (?P<TURN3>\[\S\S\].+(?=\*\*\* THIRD RIVER \*\*\*)|.+))?"
                        r"(\*\*\* THIRD RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER3>\[\S\S\].+))?", hand.handText,re.DOTALL)
         hand.addStreets(m)
