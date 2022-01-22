@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="4065811556">
+ <general>
+  <client_version>21.9.2.9</client_version>
+  <mode>real</mode>
+  <gametype>PL €0,50/€1</gametype>
+  <tablename>100BB Leonding 1, 488783729</tablename>
+  <tablecurrency>EUR</tablecurrency>
+  <duration>00:22:33</duration>
+  <gamecount>31</gamecount>
+  <startdate>2022-01-21 16:34:43</startdate>
+  <currency>EUR</currency>
+  <nickname>Hero</nickname>
+  <bets>€507,79</bets>
+  <wins>€176,82</wins>
+  <chipsin>€96,50</chipsin>
+  <chipsout>€0</chipsout>
+  <statuspoints>0,00</statuspoints>
+  <awardpoints>0,00</awardpoints>
+  <ipoints>0,00</ipoints>
+ </general>
+ <game gamecode="3651461297">
+  <general>
+   <startdate>2022-01-21 16:35:26</startdate>
+   <players>
+    <player dealer="0" win="€51,18" bet="€75,47" name="Player0" chips="€341,49" seat="1"/>
+    <player dealer="0" win="€0" bet="€0" name="Player2" chips="€210,50" seat="3"/>
+    <player dealer="0" win="€0" bet="€0" name="Player1" chips="€312,08" seat="5"/>
+    <player dealer="0" win="€0" bet="€6,87" name="Player3" chips="€72,90" seat="6"/>
+    <player dealer="1" win="€0" bet="€22,70" name="Player4" chips="€122,94" seat="8"/>
+    <player dealer="0" win="€0" bet="€0,50" name="Hero" chips="€100" seat="10"/>
+   </players>
+  </general>
+  <round no="0">
+   <action type="1" player="Hero" no="1" sum="€0,50"/>
+   <action type="2" player="Player0" no="2" sum="€1"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Player2">X X X X X</cards>
+   <action type="0" player="Player2" no="3" sum="€0"/>
+   <cards type="Pocket" player="Player1">X X X X X</cards>
+   <action type="0" player="Player1" no="4" sum="€0"/>
+   <cards type="Pocket" player="Player3">X X X X X</cards>
+   <action type="23" player="Player3" no="5" sum="€2"/>
+   <cards type="Pocket" player="Player4">X X X X X</cards>
+   <action type="3" player="Player4" no="6" sum="€2"/>
+   <cards type="Pocket" player="Hero">C3 CK H3 D10 H2</cards>
+   <action type="0" player="Hero" no="7" sum="€0"/>
+   <cards type="Pocket" player="Player0">X X X X X</cards>
+   <action type="3" player="Player0" no="8" sum="€1"/>
+  </round>
+  <round no="2">
+   <cards type="Flop">C8 D5 DA</cards>
+   <action type="4" player="Player0" no="9" sum="€0"/>
+   <action type="5" player="Player3" no="10" sum="€4,87"/>
+   <action type="3" player="Player4" no="11" sum="€4,87"/>
+   <action type="3" player="Player0" no="12" sum="€4,87"/>
+  </round>
+  <round no="3">
+   <cards type="Turn">DQ</cards>
+   <action type="5" player="Player0" no="13" sum="€15,83"/>
+   <action type="0" player="Player3" no="14" sum="€0"/>
+   <action type="3" player="Player4" no="15" sum="€15,83"/>
+  </round>
+  <round no="4">
+   <cards type="River">S2</cards>
+   <action type="5" player="Player0" no="16" sum="€52,77"/>
+   <action type="0" player="Player4" no="17" sum="€0"/>
+  </round>
+ </game>

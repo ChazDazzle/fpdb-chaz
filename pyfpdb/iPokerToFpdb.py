@@ -519,24 +519,25 @@ class iPoker(HandHistoryConverter):
             m = self.re_HeroCards.finditer(hand.streets[street])
             for found in m:
                 player = found.group('PNAME')
-                cards = found.group('CARDS').split(' ')
-                
-                if street == 'SEVENTH' and self.hero != player:
-                    newcards = []
-                    oldcards = [c[1:].replace('10', 'T') + c[0].lower() for c in cards if c[0].lower()!='x']
-                else:
-                    newcards = [c[1:].replace('10', 'T') + c[0].lower() for c in cards if c[0].lower()!='x']
-                    oldcards = []
-                if street == 'THIRD' and len(newcards) == 3 and self.hero == player: # hero in stud game
-                    hand.hero = player
-                    hand.dealt.add(player) # need this for stud??
-                    hand.addHoleCards(street, player, closed=newcards[0:2], open=[newcards[2]], shown=True, mucked=False, dealt=False)
-                elif street == 'SECOND' and len(newcards) == 2 and self.hero == player: # hero in stud game
-                    hand.hero = player
-                    hand.dealt.add(player)
-                    hand.addHoleCards(street, player, closed=[newcards[0]], open=[newcards[1]], shown=True, mucked=False, dealt=False)
-                else:
-                    hand.addHoleCards(street, player, open=newcards, closed=oldcards, shown=True, mucked=False, dealt=False)
+                if player is not None:
+                    cards = found.group('CARDS').split(' ')
+                    
+                    if street == 'SEVENTH' and self.hero != player:
+                        newcards = []
+                        oldcards = [c[1:].replace('10', 'T') + c[0].lower() for c in cards if c[0].lower()!='x']
+                    else:
+                        newcards = [c[1:].replace('10', 'T') + c[0].lower() for c in cards if c[0].lower()!='x']
+                        oldcards = []
+                    if street == 'THIRD' and len(newcards) == 3 and self.hero == player: # hero in stud game
+                        hand.hero = player
+                        hand.dealt.add(player) # need this for stud??
+                        hand.addHoleCards(street, player, closed=newcards[0:2], open=[newcards[2]], shown=True, mucked=False, dealt=False)
+                    elif street == 'SECOND' and len(newcards) == 2 and self.hero == player: # hero in stud game
+                        hand.hero = player
+                        hand.dealt.add(player)
+                        hand.addHoleCards(street, player, closed=[newcards[0]], open=[newcards[1]], shown=True, mucked=False, dealt=False)
+                    else:
+                        hand.addHoleCards(street, player, open=newcards, closed=oldcards, shown=True, mucked=False, dealt=False)
 
     def readAction(self, hand, street):
         # HH format doesn't actually print the actions in order!
