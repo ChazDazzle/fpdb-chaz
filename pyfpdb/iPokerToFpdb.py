@@ -215,7 +215,8 @@ class iPoker(HandHistoryConverter):
                     log.error(_("iPokerToFpdb.determineGameType: '%s'") % tmp)
                     raise FpdbParseError
                 else:
-                    raise FpdbHandPartial
+                    message = _("No startdate")
+                    raise FpdbHandPartial("iPoker partial hand history: %s" % message)
         return gametype
 
     def determineGameType(self, handText):
