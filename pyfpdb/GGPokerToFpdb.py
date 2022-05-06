@@ -187,8 +187,10 @@ class GGPoker(HandHistoryConverter):
     #re_ShownCards       = re.compile("^Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(?P<SHOWED>showed|mucked) \[(?P<CARDS>.*)\]( and (lost|(won|collected) \(%(CUR)s(?P<POT>[.\d]+)\)) with (?P<STRING>.+?)(,\sand\s(won\s\(%(CUR)s[.\d]+\)|lost)\swith\s(?P<STRING2>.*))?)?$" % substitutions, re.MULTILINE)
     re_CollectPot       = re.compile(r"Seat (?P<SEAT>[0-9]+): %(PLYR)s %(BRKTS)s(collected|showed \[.*\] and (won|collected)) \(?%(CUR)s(?P<POT>[,.\d]+)\)?(, mucked| with.*|)" %  substitutions, re.MULTILINE)
     #Vinsand88 cashed out the hand for $2.19 | Cash Out Fee $0.02
-    re_CollectPot2      = re.compile(r"^%(PLYR)s (collected|cashed out the hand for) %(CUR)s(?P<POT>[,.\d]+)" %  substitutions, re.MULTILINE)
-    re_CashedOut        = re.compile(r"cashed\sout\sthe\shand")
+    re_CollectPot2      = re.compile(r"^%(PLYR)s collected %(CUR)s(?P<POT>[,.\d]+)" %  substitutions, re.MULTILINE)
+    re_CollectPot3      = re.compile(r"^%(PLYR)s: Receives Cashout \(%(CUR)s(?P<POT>[,.\d]+)\)" %  substitutions, re.MULTILINE)
+    re_CollectPot4      = re.compile(r"^%(PLYR)s: Pays Cashout Risk \(%(CUR)s(?P<POT>[,.\d]+)\)" %  substitutions, re.MULTILINE)
+    re_CashedOut        = re.compile(r"(Chooses\sto\sEV\sCashout|Receives\sCashout)")
     re_WinningRankOne   = re.compile(u"^%(PLYR)s wins the tournament and receives %(CUR)s(?P<AMT>[,\.0-9]+) - congratulations!$" %  substitutions, re.MULTILINE)
     re_WinningRankOther = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place and received %(CUR)s(?P<AMT>[,.0-9]+)\.$" %  substitutions, re.MULTILINE)
     re_RankOther        = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place$" %  substitutions, re.MULTILINE)
@@ -674,6 +676,13 @@ class GGPoker(HandHistoryConverter):
             for m in self.re_CollectPot2.finditer(pre):
                 pot = self.clearMoneyString(m.group('POT'))
                 hand.addCollectPot(player=m.group('PNAME'),pot=pot)
+            if hand.cashedOut:
+                for m in self.re_CollectPot3.finditer(pre):
+                    pot = self.clearMoneyString(m.group('POT'))
+                    hand.addCollectPot(player=m.group('PNAME'),pot=pot)
+                for m in self.re_CollectPot4.finditer(pre):
+                    pot = '-' + self.clearMoneyString(m.group('POT'))
+                    hand.addCollectPot(player=m.group('PNAME'),pot=pot)
 
     def readShownCards(self,hand):                
         for m in self.re_ShownCards.finditer(hand.handText):
