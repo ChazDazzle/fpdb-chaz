@@ -44,7 +44,7 @@ class PacificPokerSummary(TourneySummary):
                            'NUM' : u".,\d\xa0"                     # legal characters in number format
                     }
     
-    re_Identify = re.compile(u'\*{5}\s(Cassava|888poker|888)(\.[a-z]{2})? Tournament Summary\s\*{5}')
+    re_Identify = re.compile(u'\*{5}\s(Cassava|888poker|888)(\.[a-z]{2})?(\-[a-z]{2})? Tournament Summary\s\*{5}')
     
     re_TourneyInfo = re.compile(u"""
                         Tournament\sID:\s(?P<TOURNO>[0-9]+)\s+
@@ -65,7 +65,7 @@ class PacificPokerSummary(TourneySummary):
 
     @staticmethod
     def getSplitRe(self, head):
-        re_SplitTourneys = re.compile(u'\*\*\*\*\* (?:Cassava|888poker|888.es) Tournament Summary \*\*\*\*\*')
+        re_SplitTourneys = re.compile(u'\*\*\*\*\* (Cassava|888poker|888)(\.[a-z]{2})?(\-[a-z]{2})? Tournament Summary \*\*\*\*\*')
         return re_SplitTourneys
 
     def parseSummary(self):
