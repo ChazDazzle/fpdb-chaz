@@ -480,7 +480,7 @@ def idle_check_tables(hud_main):
         log.exception("Error checking tables.")
 
 if __name__== "__main__":
-    app = QApplication([])
+    app = QApplication(["FPDB"])
 
 #    start the HUD_main object
     hm = HUD_main(db_name = options.dbname)

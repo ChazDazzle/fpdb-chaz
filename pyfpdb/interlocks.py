@@ -104,8 +104,9 @@ class InterProcessLockFcntl(InterProcessLockBase):
             
     def release_impl(self):
         fcntl.lockf(self.lockfd, fcntl.LOCK_UN)
-        self.lockfd.close()
-        self.lockfd = 0
+        if self.lockfd != 0:
+            self.lockfd.close()
+            self.lockfd = 0
         try:
             os.unlink(self.lock_file_name)
         except IOError:

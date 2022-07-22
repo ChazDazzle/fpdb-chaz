@@ -38,7 +38,7 @@ try:
             print e
     from matplotlib.figure import Figure
     from matplotlib.backends.backend_qt5agg import FigureCanvas
-    from matplotlib.finance import candlestick_ochl
+    from mpl_finance import candlestick_ochl
 
     from numpy import diff, nonzero, sum, cumsum, max, min, append
 
@@ -474,7 +474,7 @@ if __name__ == '__main__':
     settings.update(config.get_default_paths())
 
     from PyQt5.QtWidgets import QApplication, QMainWindow
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     import SQL
     sql = SQL.Sql(db_server=settings['db-server'])
     i = GuiSessionViewer(config, sql, None, None)

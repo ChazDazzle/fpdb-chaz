@@ -460,7 +460,7 @@ if __name__ == '__main__':
     sql = SQL.Sql(db_server = config.get_db_parameters()['db-server'])
 
     from PyQt5.QtWidgets import QApplication
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     handlist = [10, 39, 40, 72, 369, 390]
     replayer = GuiReplayer(config, sql, None, handlist)
     replayer.play_hand(0)

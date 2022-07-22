@@ -174,7 +174,7 @@ class Importer:
     def addImportFile(self, filename, site = "auto"):
         #print "addimportfile: filename is a", filename.__class__
         # filename not guaranteed to be unicode
-        if self.filelist.get(filename)!=None or not os.path.exists(filename):
+        if self.filelist.get(filename)!=None or not os.path.exists(filename) or filename.endswith('winamax_positioning_file.dat'):
             return False
 
         self.idsite.processFile(filename)
@@ -210,7 +210,7 @@ class Importer:
 
         # TODO: only add sane files?
         if os.path.isdir(inputPath):
-            for subdir in os.walk(inputPath):
+            for subdir in os.walk(str(inputPath)):
                 for file in subdir[2]:
                     self.addImportFile(os.path.join(subdir[0], file), site=site)
             return True
@@ -231,7 +231,7 @@ class Importer:
                 self.dirlist[site] = [dir] + [filter]
 
             #print "addImportDirectory: checking files in", dir
-            for subdir in os.walk(dir):
+            for subdir in os.walk(str(dir)):
                 for file in subdir[2]:
                     filename = os.path.join(subdir[0], file)
                     if (time() - os.stat(filename).st_mtime)<= 43200: # look all files modded in the last 12 hours

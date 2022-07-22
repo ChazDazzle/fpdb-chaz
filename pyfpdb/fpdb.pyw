@@ -227,7 +227,7 @@ class fpdb(QMainWindow):
             'Eric Blade', '_mt', 'sqlcoder', 'Bostik', 'gimick', 'Chaz',
             _('... and others.'), _("See contributors.txt")])
         dia.set_program_name("Free Poker Database (FPDB)")
-        
+
         if (os.name=="posix"):
             os_text=str(os.uname())
         elif (os.name=="nt"):
@@ -235,7 +235,7 @@ class fpdb(QMainWindow):
             os_text=("Windows" + " " + str(platform.win32_ver()))
         else:
             os_text="Unknown"
-        
+
         import locale
         nums = [(_('Operating System'), os_text),
                 ('Python',           sys.version[0:3]),
@@ -646,7 +646,7 @@ class fpdb(QMainWindow):
         label = QLabel(_("Please select which sites you play on and enter your usernames."))
         dia.setLayout(QVBoxLayout())
         dia.layout().addWidget(label)
-        
+
         self.load_profile()
         site_names = self.config.site_ids
         available_site_names=[]
@@ -656,7 +656,7 @@ class fpdb(QMainWindow):
                 available_site_names.append(site_name)
             except KeyError:
                 pass
-        
+
         column_headers=[_("Site"), _("Detect"), _("Screen Name"), _("Hand History Path"), "", _("Tournament Summary Path"), ""]  # todo _("HUD")
         #HUD column will contain a button that shows favseat and HUD locations. Make it possible to load screenshot to arrange HUD windowlets.
 
@@ -666,40 +666,40 @@ class fpdb(QMainWindow):
         scrolling_frame = QScrollArea(dia)
         dia.layout().addWidget(scrolling_frame)
         scrolling_frame.setLayout(table)
-                
+
         for header_number in range (0, len(column_headers)):
             label = QLabel(column_headers[header_number])
             label.setAlignment(Qt.AlignCenter)
             table.addWidget(label, 0, header_number)
-        
+
         check_buttons=[]
         screen_names=[]
         history_paths=[]
         summary_paths=[]
         detector = DetectInstalledSites.DetectInstalledSites()
-              
+
         y_pos=1
         for site_number in range(0, len(available_site_names)):
             check_button = QCheckBox(available_site_names[site_number])
             check_button.setChecked(self.config.supported_sites[available_site_names[site_number]].enabled)
             table.addWidget(check_button, y_pos, 0)
             check_buttons.append(check_button)
-            
+
             hero = QLineEdit()
             hero.setText(self.config.supported_sites[available_site_names[site_number]].screen_name)
             table.addWidget(hero, y_pos, 2)
             screen_names.append(hero)
             hero.textChanged.connect(partial(self.autoenableSite, checkbox=check_buttons[site_number]))
-            
+
             entry = QLineEdit()
             entry.setText(self.config.supported_sites[available_site_names[site_number]].HH_path)
             table.addWidget(entry, y_pos, 3)
             history_paths.append(entry)
-            
+
             choose1 = QPushButton("Browse")
             table.addWidget(choose1, y_pos, 4)
             choose1.clicked.connect(partial(self.browseClicked, parent=dia, path=history_paths[site_number]))
-            
+
             entry = QLineEdit()
             entry.setText(self.config.supported_sites[available_site_names[site_number]].TS_path)
             table.addWidget(entry, y_pos, 5)
@@ -708,7 +708,7 @@ class fpdb(QMainWindow):
             choose2 = QPushButton("Browse")
             table.addWidget(choose2, y_pos, 6)
             choose2.clicked.connect(partial(self.browseClicked, parent=dia, path=summary_paths[site_number]))
-            
+
             if available_site_names[site_number] in detector.supportedSites:
                 button = QPushButton(_("Detect"))
                 table.addWidget(button, y_pos, 1)
@@ -725,21 +725,21 @@ class fpdb(QMainWindow):
             for site_number in range(0, len(available_site_names)):
                 #print "site %s enabled=%s name=%s" % (available_site_names[site_number], check_buttons[site_number].get_active(), screen_names[site_number].get_text(), history_paths[site_number].get_text())
                 self.config.edit_site(available_site_names[site_number], str(check_buttons[site_number].isChecked()), screen_names[site_number].text(), history_paths[site_number].text(), summary_paths[site_number].text())
-            
+
             self.config.save()
             self.reload_config()
-        
+
     def autoenableSite(self, text, checkbox):
         #autoactivate site if something gets typed in the screename field
         checkbox.setChecked(True)
-                
+
     def browseClicked(self, widget, parent, path):
         """runs when user clicks one of the browse buttons for the TS folder"""
 
         newpath = QFileDialog.getExistingDirectory(parent, _("Please choose the path that you want to Auto Import"), path.text())
         if newpath:
             path.setText(newpath)
-    
+
     def detect_clicked(self, widget, data):
         detector = data[0]
         site_name = data[1]
@@ -751,7 +751,7 @@ class fpdb(QMainWindow):
             entry_history_path.setText(detector.sitestatusdict[site_name]['hhpath'])
             if detector.sitestatusdict[site_name]['tspath']:
                 entry_summary_path.setText(detector.sitestatusdict[site_name]['tspath'])
-    
+
     def reload_config(self):
         if len(self.nb_tab_names) == 1:
             # only main tab open, reload profile
@@ -760,7 +760,7 @@ class fpdb(QMainWindow):
             sys.exit()
         else:
             self.warning_box(_("Updated preferences have not been loaded because windows are open.")+" "+_("Re-start fpdb to load them."))
-    
+
     def addLogText(self, text):
         end_iter = self.logbuffer.get_end_iter()
         self.logbuffer.insert(end_iter, text)
@@ -910,7 +910,7 @@ class fpdb(QMainWindow):
 
             diaConfigVersionWarning.exec_()
             self.config.wrongConfigVersion = False
-            
+
         self.settings = {}
         self.settings['global_lock'] = self.lock
         if (os.sep == "/"):
@@ -960,7 +960,7 @@ class fpdb(QMainWindow):
             # rollback to make sure any locks are cleared:
             self.db.rollback()
 
-        #If the db-version is out of date, don't validate the config 
+        #If the db-version is out of date, don't validate the config
         # otherwise the end user gets bombarded with false messages
         # about every site not existing
         if hasattr(self.db, 'wrongDbVersion'):
@@ -1014,7 +1014,7 @@ class fpdb(QMainWindow):
         self.threads.append(new_aimp_thread)
         self.add_and_display_tab(new_aimp_thread, _("HUD"))
         if options.autoimport:
-            new_aimp_thread.startClicked(new_aimp_thread.startButton, "autostart")
+            new_aimp_thread.startButton.toggle()
             options.autoimport = False
 
     def tab_bulk_import(self, widget, data=None):
@@ -1126,7 +1126,7 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
         else:
             self.display_config_created_dialogue = False
             self.display_site_preferences = False
-            
+
         # create window, move it to specific location on command line
         if options.xloc is not None or options.yloc is not None:
             if options.xloc is None:
@@ -1134,7 +1134,7 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
             if options.yloc is None:
                 options.yloc = 0
             self.move(options.xloc, options.yloc)
-        
+
         self.setWindowTitle("Free Poker DB - v%s" % (VERSION, ))
 
         # set a default x/y size for the window
@@ -1159,7 +1159,7 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
 
         # create the first tab
         self.tab_main_help(None, None)
-        
+
         # determine window visibility from command line options
         if options.minimized:
             self.showMinimized()
@@ -1169,9 +1169,9 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
         if not options.hidden:
             self.show()
             self.visible = True     # Flip on
-            
+
         self.load_profile(create_db=True)
-        
+
         if self.config.install_method == 'app':
             for site in self.config.supported_sites.values():
                 if site.screen_name != "YOUR SCREEN NAME HERE":
@@ -1217,10 +1217,10 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
 #
 #        self.window.connect('window-state-event', self.window_state_event_cb)
         sys.stderr.write(_("fpdb starting ..."))
-        
+
         if options.autoimport:
             self.tab_auto_import(None)
-            
+
     def addImageToTrayMenu(self, image, event=None):
         menuItem = gtk.ImageMenuItem(image)
         if event is not None:
@@ -1228,7 +1228,7 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
         self.statusMenu.append(menuItem)
         menuItem.show()
         return menuItem
-        
+
     def addLabelToTrayMenu(self, label, event=None):
         menuItem = gtk.MenuItem(label)
         if event is not None:
@@ -1236,7 +1236,7 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
         self.statusMenu.append(menuItem)
         menuItem.show()
         return menuItem
-    
+
     def removeFromTrayMenu(self, menuItem):
         menuItem.destroy()
         menuItem = None
@@ -1315,6 +1315,6 @@ You can find the full license texts in agpl-3.0.txt, gpl-2.0.txt, gpl-3.0.txt an
 
 
 if __name__ == "__main__":
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     me = fpdb()
     app.exec_()

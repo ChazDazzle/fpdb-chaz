@@ -932,7 +932,7 @@ if __name__ == '__main__':
                           }
 
     from PyQt5.QtWidgets import QMainWindow, QApplication
-    app = QApplication([])
+    app = QApplication(["FPDB"])
     i = Filters(db, display = filters_display)
     main_window = QMainWindow()
     main_window.setCentralWidget(i)
