@@ -149,11 +149,12 @@ class Winning(HandHistoryConverter):
     #Hand #68217077 - Holdem(No Limit) - $0.05/$0.10 - 2019/06/28 02:38:17 UTC
     #Game Hand #80586589 - Tournament #11182752 - Holdem(No Limit) - Level 15 (250.00/500.00)- 2019/07/21 17:44:50 UTC
     #Game Hand #82980175 - Tournament #11212445 - Omaha H/L(Pot Limit) - Level 1 (250.00/500.00)- 2019/07/25 02:31:33 UTC
+    #Game Hand #1296393662 - $5,000 GTD Tournament #27099516 - Holdem(No Limit) - Level 10 (3000.00/6000.00)- 2022/07/11 01:11:44 UTC
     
     re_GameInfo2 = re.compile(u"""
           (Game\s)?Hand\s\#(?P<HID>[0-9]+)\s\-\s
           (
-          (?P<TOUR>Tournament\s\#(?P<TOURNO>\d+)\s\-\s)                # open paren of tournament info
+          (?P<TOUR>([\$.,\dK]+\sGTD\s)?Tournament\s\#(?P<TOURNO>\d+)\s\-\s) # open paren of tournament info
           )?
           # close paren of tournament info
           (?P<GAME>Holdem|Omaha|Omaha\sH/L|7Stud|7Stud\sH/L)
