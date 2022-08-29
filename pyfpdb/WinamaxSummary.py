@@ -56,7 +56,7 @@ class WinamaxSummary(TourneySummary):
                                            (?P<GAME>.+)?
                                            \((?P<TOURNO>[0-9]+)\)(\s-\sLate\s(r|R)egistration)?\s+
                                            (Player\s:\s(?P<PNAME>.*)\s+)?
-                                           Buy-In\s:\s(?P<BUYIN>(?P<BIAMT>.+)\s\+\s(?P<BIRAKE>.+)|Freeroll|Gratuit|Ticket\suniquement|Free|Ticket)\s+
+                                           Buy-In\s:\s(?P<BUYIN>(?P<BIAMT>.+?)\s\+\s(?P<BIRAKE>.+?)(\s\+\s(?P<BIBOUNTY>.+))?|Freeroll|Gratuit|Ticket\suniquement|Free|Ticket)\s+
                                            (Rebuy\scost\s:\s(?P<REBUY>(?P<REBUYAMT>.+)\s\+\s(?P<REBUYRAKE>.+))\s+)?
                                            (Addon\scost\s:\s(?P<ADDON>(?P<ADDONAMT>.+)\s\+\s(?P<ADDONRAKE>.+))\s+)?
                                            (Your\srebuys\s:\s(?P<PREBUYS>\d+)\s+)?
@@ -76,7 +76,7 @@ class WinamaxSummary(TourneySummary):
                                            Tournament\sstarted\s(?P<DATETIME>[0-9]{4}\/[0-9]{2}\/[0-9]{2}\s[0-9]{2}:[0-9]{2}:[0-9]{2}\sUTC)\s+
                                            (?P<BLAH>You\splayed\s.+)\s+
                                            You\sfinished\sin\s(?P<RANK>[.0-9]+)(st|nd|rd|th)?\splace\s+
-                                           (You\swon\s(?P<WINNINGS>[.0-9%(LS)s]+))?
+                                           (You\swon\s((?P<WINNINGS>[.0-9%(LS)s]+))?(\s\+\s)?(Ticket\s(?P<TICKET>[.0-9%(LS)s]+))?(\s\+\s)?(Bounty\s(?P<BOUNTY>[.0-9%(LS)s]+))?)?
                                         """ % substitutions ,re.VERBOSE|re.MULTILINE)
 
     re_GameType = re.compile("""<h1>((?P<LIMIT>No Limit|Pot Limit) (?P<GAME>Hold\'em|Omaha))</h1>""")
@@ -241,6 +241,12 @@ class WinamaxSummary(TourneySummary):
                     self.buyinCurrency="WIFP"
                 else:
                     self.buyinCurrency="play"
+                    
+                if mg['BIBOUNTY'] != None and mg['BIRAKE'] != None:
+                    self.koBounty = int(100*Decimal(self.convert_to_decimal(mg['BIRAKE'].strip('\r'))))
+                    self.isKO = True
+                    mg['BIRAKE'] = mg['BIBOUNTY'].strip('\r')
+                
                 rake = mg['BIRAKE'].strip('\r')
                 self.buyin = int(100*self.convert_to_decimal(mg['BIAMT']))
                 self.fee   = int(100*self.convert_to_decimal(rake))
@@ -299,6 +305,21 @@ class WinamaxSummary(TourneySummary):
                     rebuyCount = int(mg['PREBUYS'])
                 if 'PADDONS' in mg and mg['PADDONS'] != None:
                     addOnCount = int(mg['PADDONS'])
+                    
+                if 'TICKET' in mg and mg['TICKET'] != None:
+                    winnings += int(100*self.convert_to_decimal(mg['TICKET']))
+                    
+                if 'BOUNTY' in mg and mg['BOUNTY'] != None:
+                    koCount = 100*self.convert_to_decimal(mg['BOUNTY']) / Decimal(self.koBounty)
+                    if winnings == 0:
+                        if mg['BOUNTY'].find(u"€")!=-1:
+                            self.currency="EUR"
+                        elif mg['BOUNTY'].find("FPP")!=-1:
+                            self.currency="WIFP"
+                        elif mg['BOUNTY'].find("Free")!=-1:
+                            self.currency="WIFP"
+                        else:
+                            self.currency="play"
     
                 #print "DEBUG: addPlayer(%s, %s, %s, %s, %s, %s, %s)" %(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount)
                 self.addPlayer(rank, name, winnings, self.currency, rebuyCount, addOnCount, koCount)
