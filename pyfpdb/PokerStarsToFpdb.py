@@ -212,6 +212,7 @@ class PokerStars(HandHistoryConverter):
     re_RankOther        = re.compile(u"^%(PLYR)s finished the tournament in (?P<RANK>[0-9]+)(st|nd|rd|th) place$" %  substitutions, re.MULTILINE)
     re_Cancelled        = re.compile('Hand\scancelled', re.MULTILINE)
     re_Uncalled         = re.compile('Uncalled bet \(%(CUR)s(?P<BET>[,.\d]+)\) returned to' %  substitutions, re.MULTILINE)
+    re_EmptyCard        = re.compile("^\[\]", re.MULTILINE)
     #APTEM-89 wins the $0.27 bounty for eliminating Hero
     #ChazDazzle wins the 22000 bounty for eliminating berkovich609
     #JKuzja, vecenta split the $50 bounty for eliminating ODYSSES
@@ -576,6 +577,8 @@ class PokerStars(HandHistoryConverter):
         hand.addStreets(m)
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
+        if self.re_EmptyCard.search(hand.streets[street]):
+            raise FpdbHandPartial(_("Blank community card"))
         if street!='FLOPET' or hand.streets.get('FLOP')==None:   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
             m2 = self.re_Board2.search(hand.streets[street])
             if m2:
