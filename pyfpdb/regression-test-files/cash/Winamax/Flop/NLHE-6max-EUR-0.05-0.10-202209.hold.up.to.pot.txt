@@ -1,0 +1,34 @@
+Winamax Poker - Go Fast "Floride" - HandId: #17650968-184911-1663973134 - Holdem no limit (0.05€/0.10€) - 2022/09/23 22:45:34 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: Player0 (11.61€)
+Seat 2: Player1 (5.28€)
+Seat 3: Player2 (10.25€)
+Seat 4: Hero (1.04€)
+Seat 5: Player3 (10€)
+Seat 6: Player4 (20.98€)
+Hold-up to Pot: total 2.50€
+*** ANTE/BLINDS ***
+Player0 posts small blind 0.05€
+Player1 posts big blind 0.10€
+Dealt to Hero [9s 5d]
+*** PRE-FLOP *** 
+Player2 raises 0.40€ to 0.50€
+Hero raises 0.54€ to 1.04€ and is all-in
+Player3 folds
+Player4 folds
+Player0 raises 10.57€ to 11.61€ and is all-in
+Player1 folds
+Player2 folds
+*** FLOP *** [Th 9h 3h]
+*** TURN *** [Th 9h 3h][4c]
+*** RIVER *** [Th 9h 3h 4c][Td]
+*** SHOW DOWN ***
+Player0 shows [Kc 7s] (One pair : Tens)
+Hero shows [9s 5d] (Two pairs : Tens and 9)
+Hero collected 4.91€ from main pot
+Player0 collected 10.57€ from side pot 1
+*** SUMMARY ***
+Total pot 15.48€ | Rake 0.27€
+Board: [Th 9h 3h 4c Td]
+Seat 1: Player0 (small blind) showed [Kc 7s] and won 10.57€ with One pair : Tens
+Seat 4: Hero showed [9s 5d] and won 4.91€ with Two pairs : Tens and 9

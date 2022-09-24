@@ -115,6 +115,7 @@ class Winamax(HandHistoryConverter):
     re_Board        = re.compile(r"\[(?P<CARDS>.+)\]")
     re_Total        = re.compile(r"Total pot (?P<TOTAL>[\.\d]+).*(No rake|Rake (?P<RAKE>[\.\d]+))" % substitutions)
     re_Mixed        = re.compile(r'_(?P<MIXED>10games|8games|horse)_')
+    re_HUTP         = re.compile(r'Hold\-up\sto\sPot:\stotal\s((%(LS)s)?(?P<AMOUNT>[.0-9]+)(%(LS)s)?)' %  substitutions, re.MULTILINE|re.VERBOSE)
 
     # 2010/09/21 03:10:51 UTC
     re_DateTime = re.compile("""
@@ -444,6 +445,12 @@ class Winamax(HandHistoryConverter):
         if m:
             #~ logging.debug("readBringIn: %s for %s" %(m.group('PNAME'),  m.group('BRINGIN')))
             hand.addBringIn(m.group('PNAME'),  m.group('BRINGIN'))
+            
+    def readSTP(self, hand):
+        #log.debug(_("read Splash the Pot"))
+        m = self.re_HUTP.search(hand.handText)
+        if m:
+            hand.addSTP(m.group('AMOUNT'))
 
     def readHoleCards(self, hand):
         # streets PREFLOP, PREDRAW, and THIRD are special cases beacause
