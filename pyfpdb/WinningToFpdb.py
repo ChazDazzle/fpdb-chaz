@@ -154,7 +154,7 @@ class Winning(HandHistoryConverter):
     re_GameInfo2 = re.compile(u"""
           (Game\s)?Hand\s\#(?P<HID>[0-9]+)\s\-\s
           (
-          (?P<TOUR>([\$.,\dK]+\sGTD\s)?Tournament\s\#(?P<TOURNO>\d+)\s\-\s) # open paren of tournament info
+          (?P<TOUR>([\$.,\dKkmM]+\sGTD\s)?Tournament\s\#(?P<TOURNO>\d+)\s\-\s) # open paren of tournament info
           )?
           # close paren of tournament info
           (?P<GAME>Holdem|Omaha|Omaha\sH/L|7Stud|7Stud\sH/L)
