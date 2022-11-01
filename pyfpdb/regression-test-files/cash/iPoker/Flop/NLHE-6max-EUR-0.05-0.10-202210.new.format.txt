@@ -1,0 +1,68 @@
+<root><general>
+<client_version>22.9.1.11</client_version>
+<mode>real</mode>
+<gametype>Holdem NL 0,05€/0,10€</gametype>
+<tablename>Gosford, 560234169</tablename>
+<tablecurrency>EUR</tablecurrency>
+<smallblind>0,05€</smallblind>
+<bigblind>0,10€</bigblind>
+<duration>00:22:32</duration>
+<gamecount>36</gamecount>
+<startdate>2022-10-31 20:44:24</startdate>
+<currency>EUR</currency>
+<nickname>Hero</nickname>
+<bets>9,57€</bets>
+<wins>5,77€</wins>
+<chipsin>9,90€</chipsin>
+<chipsout>8,57€</chipsout>
+<statuspoints>1,91</statuspoints>
+<awardpoints>0,00</awardpoints>
+<ipoints>1,91</ipoints>
+<tablesize>6</tablesize>
+</general><game gamecode="6170875590">
+<general>
+<startdate>2022-10-31 21:05:53</startdate>
+<players>
+<player chips="9,86€" seat="1" win="0€" dealer="0" bet="0€" name="Player0"/>
+<player chips="12,17€" seat="3" win="0€" dealer="1" bet="3,60€" name="Hero"/>
+<player chips="10,89€" seat="5" win="0€" dealer="0" bet="0,05€" name="Player1"/>
+<player chips="8,09€" seat="6" win="6,77€" dealer="0" bet="3,60€" name="Player2"/>
+<player chips="6,63€" seat="8" win="0€" dealer="0" bet="0€" name="Player3"/>
+<player chips="11,88€" seat="10" win="0€" dealer="0" bet="0€" name="Player4"/>
+</players>
+</general>
+<round no="0">
+<action player="Player1" sum="0,05€" no="1" type="1"/>
+<action player="Player2" sum="0,10€" no="2" type="2"/>
+</round>
+<round no="1">
+<cards player="Player3" type="Pocket">X X</cards>
+<action player="Player3" sum="0€" no="3" type="0"/>
+<cards player="Player4" type="Pocket">X X</cards>
+<action player="Player4" sum="0€" no="4" type="0"/>
+<cards player="Player0" type="Pocket">X X</cards>
+<action player="Player0" sum="0€" no="5" type="0"/>
+<cards player="Hero" type="Pocket">CA C2</cards>
+<action player="Hero" sum="0,30€" no="6" type="23"/>
+<cards player="Player1" type="Pocket">X X</cards>
+<action player="Player1" sum="0€" no="7" type="0"/>
+<cards player="Player2" type="Pocket">HJ SA</cards>
+<action player="Player2" sum="0,20€" no="8" type="3"/>
+</round>
+<round no="2">
+<cards type="Flop">HA C7 HQ</cards>
+<action player="Player2" sum="0,30€" no="9" type="5"/>
+<action player="Hero" sum="0,30€" no="10" type="3"/>
+</round>
+<round no="3">
+<cards type="Turn">CJ</cards>
+<action player="Player2" sum="0,60€" no="11" type="5"/>
+<action player="Hero" sum="0,60€" no="12" type="3"/>
+</round>
+<round no="4">
+<cards type="River">D2</cards>
+<action player="Player2" sum="0,60€" no="13" type="5"/>
+<action player="Hero" sum="2,40€" no="14" type="23"/>
+<action player="Player2" sum="1,80€" no="15" type="3"/>
+</round>
+</game></root>

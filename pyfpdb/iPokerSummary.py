@@ -60,10 +60,12 @@ class iPokerSummary(TourneySummary):
     re_Identify = re.compile(u'<game\sgamecode=')
 
     re_GameType = re.compile(ur"""
-            <gametype>(?P<GAME>((?P<CATEGORY>(5|7)\sCard\sStud(\sHi\-Lo)?|(Six\sPlus\s)?Holdem|Omaha(\sHi\-Lo)?)?\s?(?P<LIMIT>NL|SL|L|LZ|PL|БЛ|LP|No\slimit|Pot\slimit|Limit))|LH\s(?P<LSB>[%(NUM)s]+)/(?P<LBB>[%(NUM)s]+).+?)
-            (\s(%(LS)s)?(?P<SB>[%(NUM)s]+)/(%(LS)s)?(?P<BB>[%(NUM)s]+))?(\sAnte\s(%(LS)s)?(?P<ANTE>[%(NUM)s]+))?</gametype>\s+?
+            <gametype>(?P<GAME>((?P<CATEGORY>(5|7)\sCard\sStud(\sHi\-Lo)?|(Six\sPlus\s)?Holdem|Omaha(\sHi\-Lo)?)?\s?(?P<LIMIT>NL|SL|L|LZ|PL|БЛ|LP|No\slimit|Pot\slimit|Limit))|LH\s(?P<LSB>[%(NUM)s]+)(%(LS)s)?/(?P<LBB>[%(NUM)s]+)(%(LS)s)?.+?)
+            (\s(%(LS)s)?(?P<SB>[%(NUM)s]+)(%(LS)s)?/(%(LS)s)?(?P<BB>[%(NUM)s]+))?(%(LS)s)?(\sAnte\s(%(LS)s)?(?P<ANTE>[%(NUM)s]+)(%(LS)s)?)?</gametype>\s+?
             <tablename>(?P<TABLE>.+)?</tablename>\s+?
             (<(tablecurrency|tournamentcurrency)>.*</(tablecurrency|tournamentcurrency)>\s+?)?
+            (<smallblind>.+</smallblind>\s+?)?
+            (<bigblind>.+</bigblind>\s+?)?
             <duration>.+</duration>\s+?
             <gamecount>.+</gamecount>\s+?
             <startdate>(?P<DATETIME>.+)</startdate>\s+?

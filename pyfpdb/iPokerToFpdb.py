@@ -143,10 +143,12 @@ class iPoker(HandHistoryConverter):
     re_SplitHands = re.compile(r'</game>')
     re_TailSplitHands = re.compile(r'(</game>)')
     re_GameInfo = re.compile(ur"""
-            <gametype>(?P<GAME>((?P<CATEGORY>(5|7)\sCard\sStud(\sHi\-Lo)?|(Six\sPlus\s)?Holdem|Omaha(\sHi\-Lo)?)?\s?(?P<LIMIT>NL|SL|L|LZ|PL|БЛ|LP|No\slimit|Pot\slimit|Limit))|LH\s(?P<LSB>[%(NUM)s]+)/(?P<LBB>[%(NUM)s]+).+?)
-            (\s(%(LS)s)?(?P<SB>[%(NUM)s]+)/(%(LS)s)?(?P<BB>[%(NUM)s]+))?(\sAnte\s(%(LS)s)?(?P<ANTE>[%(NUM)s]+))?</gametype>\s+?
+            <gametype>(?P<GAME>((?P<CATEGORY>(5|7)\sCard\sStud(\sHi\-Lo)?|(Six\sPlus\s)?Holdem|Omaha(\sHi\-Lo)?)?\s?(?P<LIMIT>NL|SL|L|LZ|PL|БЛ|LP|No\slimit|Pot\slimit|Limit))|LH\s(?P<LSB>[%(NUM)s]+)(%(LS)s)?/(?P<LBB>[%(NUM)s]+)(%(LS)s)?.+?)
+            (\s(%(LS)s)?(?P<SB>[%(NUM)s]+)(%(LS)s)?/(%(LS)s)?(?P<BB>[%(NUM)s]+))?(%(LS)s)?(\sAnte\s(%(LS)s)?(?P<ANTE>[%(NUM)s]+)(%(LS)s)?)?</gametype>\s+?
             <tablename>(?P<TABLE>.+)?</tablename>\s+?
             (<(tablecurrency|tournamentcurrency)>(?P<TABLECURRENCY>.*)</(tablecurrency|tournamentcurrency)>\s+?)?
+            (<smallblind>.+</smallblind>\s+?)?
+            (<bigblind>.+</bigblind>\s+?)?
             <duration>.+</duration>\s+?
             <gamecount>.+</gamecount>\s+?
             <startdate>.+</startdate>\s+?
@@ -159,17 +161,17 @@ class iPoker(HandHistoryConverter):
                 <buyin>(?P<BUYIN>(?P<BIAMT>.+?)(\+(?P<BIRAKE>.+?))?(\+(?P<BIRAKE1>.+?))?)</buyin>\s+?
                 <totalbuyin>(?P<TOTBUYIN>.*)</totalbuyin>\s+?
                 (<ipoints>.+?</ipoints>\s+?)?
-                <win>(%(LS)s)?(?P<WIN>([%(NUM)s]+)|.+?)</win>\s+?)
+                <win>(%(LS)s)?(?P<WIN>([%(NUM)s]+)(%(LS)s)?|.+?)</win>\s+?)
             """ % substitutions, re.MULTILINE|re.VERBOSE)
     re_Buyin = re.compile(r"""(?P<BUYIN>[%(NUM)s]+)""" % substitutions, re.MULTILINE|re.VERBOSE)
     re_TotalBuyin  = re.compile(r"""(?P<BUYIN>(?P<BIAMT>[%(LS)s%(NUM)s]+)\s\+\s?(?P<BIRAKE>[%(LS)s%(NUM)s]+)?)""" % substitutions, re.MULTILINE|re.VERBOSE)
     re_HandInfo = re.compile(r'code="(?P<HID>[0-9]+)">\s*?<general>\s*?<startdate>(?P<DATETIME>[\.a-zA-Z-/: 0-9]+)</startdate>', re.MULTILINE)
-    re_PlayerInfo = re.compile(r'<player( (seat="(?P<SEAT>[0-9]+)"|name="%(PLYR)s"|chips="(%(LS)s)(?P<CASH>[%(NUM)s]+)"|dealer="(?P<BUTTONPOS>(0|1))"|win="(%(LS)s)(?P<WIN>[%(NUM)s]+)"|bet="(%(LS)s)(?P<BET>[^"]+)"|addon="\d*"|rebuy="\d*"|merge="\d*"|reg_code="[\d-]*"))+\s*/>' % substitutions, re.MULTILINE)
+    re_PlayerInfo = re.compile(r'<player( (seat="(?P<SEAT>[0-9]+)"|name="%(PLYR)s"|chips="(%(LS)s)?(?P<CASH>[%(NUM)s]+)(%(LS)s)?"|dealer="(?P<BUTTONPOS>(0|1))"|win="(%(LS)s)?(?P<WIN>[%(NUM)s]+)(%(LS)s)?"|bet="(%(LS)s)?(?P<BET>[^"]+)(%(LS)s)?"|addon="\d*"|rebuy="\d*"|merge="\d*"|reg_code="[\d-]*"))+\s*/>' % substitutions, re.MULTILINE)
     re_Board = re.compile(r'<cards( (type="(?P<STREET>Flop|Turn|River)"|player=""))+>(?P<CARDS>.+?)</cards>', re.MULTILINE)
     re_EndOfHand = re.compile(r'<round id="END_OF_GAME"', re.MULTILINE)
     re_Hero = re.compile(r'<nickname>(?P<HERO>.+)</nickname>', re.MULTILINE)
     re_HeroCards = re.compile(r'<cards( (type="(Pocket|Second\sStreet|Third\sStreet|Fourth\sStreet|Fifth\sStreet|Sixth\sStreet|River)"|player="%(PLYR)s"))+>(?P<CARDS>.+?)</cards>' % substitutions, re.MULTILINE)
-    re_Action = re.compile(r'<action ((no="(?P<ACT>[0-9]+)"|player="%(PLYR)s"|(actiontxt="[^"]+" turntime="[^"]+")|type="(?P<ATYPE>\d+)"|sum="(%(LS)s)(?P<BET>[%(NUM)s]+)"|cards="[^"]*") ?)*/>' % substitutions, re.MULTILINE)
+    re_Action = re.compile(r'<action ((no="(?P<ACT>[0-9]+)"|player="%(PLYR)s"|(actiontxt="[^"]+" turntime="[^"]+")|type="(?P<ATYPE>\d+)"|sum="(%(LS)s)?(?P<BET>[%(NUM)s]+)(%(LS)s)?"|cards="[^"]*") ?)*/>' % substitutions, re.MULTILINE)
     re_SitsOut = re.compile(r'<event sequence="[0-9]+" type="SIT_OUT" player="(?P<PSEAT>[0-9])"/>', re.MULTILINE)
     re_DateTime1 = re.compile("""(?P<D>[0-9]{2})\-(?P<M>[a-zA-Z]{3})\-(?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
     re_DateTime2 = re.compile("""(?P<D>[0-9]{2})[\/\.](?P<M>[0-9]{2})[\/\.](?P<Y>[0-9]{4})\s+(?P<H>[0-9]+):(?P<MIN>[0-9]+)(:(?P<S>[0-9]+))?""", re.MULTILINE)
