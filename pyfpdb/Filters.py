@@ -119,7 +119,7 @@ class Filters(QWidget):
 
         # For use in date ranges.
         self.start_date = QDateEdit(QDate(1970,1,1))
-        self.end_date = QDateEdit(QDate(2100,1,1))
+        self.end_date = QDateEdit(QDate.currentDate())
 
         # For use in groups etc
         self.cbGroups = {}
