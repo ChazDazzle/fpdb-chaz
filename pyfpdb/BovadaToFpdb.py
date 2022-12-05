@@ -427,7 +427,7 @@ class Bovada(HandHistoryConverter):
         if not hand.streets.get(firststreet):
             hand.streets[firststreet] = hand.handText
         if hand.gametype['base'] == "hold":
-            if hand.gametype['fast']:
+            if True: #hand.gametype['fast']:
                 for street in ('FLOP', 'TURN', 'RIVER'):
                     m1 = self.re_Board2[street].search(hand.handText)
                     if m1 and m1.group('CARDS') and not hand.streets.get(street):
@@ -440,7 +440,7 @@ class Bovada(HandHistoryConverter):
             
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
-        if hand.gametype['fast']:
+        if True: #hand.gametype['fast']:
             m = self.re_Board2[street].search(hand.handText)
             if m and m.group('CARDS'):
                 hand.setCommunityCards(street, m.group('CARDS').split(' '))
