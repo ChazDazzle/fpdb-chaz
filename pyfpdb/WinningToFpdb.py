@@ -63,6 +63,8 @@ class Winning(HandHistoryConverter):
         "Holdem" : ('hold','holdem'),
         'Omaha' : ('hold','omahahi'),
         'Omaha H/L' : ('hold','omahahilo'),
+        '5Card Omaha': ('hold','5_omahahi'),
+        '5Card Omaha H/L': ('hold','5_omaha8'),
         #"Six Plus Hold'em" : ('hold','6_holdem'),
         '7Stud' : ('stud','studhi'),
         '7Stud H/L' : ('stud','studhilo')
@@ -157,7 +159,7 @@ class Winning(HandHistoryConverter):
           (?P<TOUR>([\$.,\dKkmM]+\sGTD\s)?Tournament\s\#(?P<TOURNO>\d+)\s\-\s) # open paren of tournament info
           )?
           # close paren of tournament info
-          (?P<GAME>Holdem|Omaha|Omaha\sH/L|7Stud|7Stud\sH/L)
+          (?P<GAME>Holdem|Omaha|Omaha\sH/L|7Stud|7Stud\sH/L|5Card\sOmaha|5Card\sOmaha\sH/L)
           \((?P<LIMIT>No\sLimit|Fixed\sLimit|Pot\sLimit)\)\s\-\s
           (Level\s(?P<LEVEL>[IVXLC\d]+)\s)?
           \(?                            # open paren of the stakes
