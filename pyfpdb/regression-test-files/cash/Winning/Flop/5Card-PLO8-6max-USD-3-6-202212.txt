@@ -1,0 +1,416 @@
+Hand #1471746632 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:11:59 UTC
+Creal Springs 6-max Seat #1 is the button
+Seat 1: Player0 ($126.00)
+Seat 2: Player1 ($299.00)
+Seat 6: Hero ($300.00)
+Player1 posts the small blind $3.00
+Hero posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [Ac Tc Qc Js Qd]
+Player0 folds
+Player1 calls $3.00
+Hero raises $12.00 to $18.00
+Player1 calls $12.00
+*** FLOP *** [8h 3d 8s]
+Main pot $34.50 | Rake $1.50
+Player1 checks
+Hero bets $17.59
+Player1 calls $17.59
+*** TURN *** [8h 3d 8s] [9h]
+Main pot $69.68 | Rake $1.50
+Player1 checks
+Hero checks
+*** RIVER *** [8h 3d 8s 9h] [Ad]
+Main pot $69.68 | Rake $1.50
+Player1 bets $53.38
+Hero folds
+Uncalled bet ($53.38) returned to Player1
+Player1 does not show
+*** SUMMARY ***
+Total pot $69.68 | Rake $1.42 | JP Fee $0.08
+Board [8h 3d 8s 9h Ad]
+Seat 1: Player0 (button) folded on the Pre-Flop
+Seat 2: Player1 did not show and won $69.68
+Seat 6: Hero (big blind) folded on the River
+
+Hand #1471747294 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:12:40 UTC
+Creal Springs 6-max Seat #2 is the button
+Seat 1: Player0 ($126.00)
+Seat 2: Player1 ($333.09)
+Seat 6: Hero ($300.00)
+Hero posts the small blind $3.00
+Player0 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [As Jh 7s 2s Qs]
+Player1 folds
+Hero raises $12.00 to $15.00
+Player0 calls $9.00
+*** FLOP *** [8c 2c Ac]
+Main pot $28.50 | Rake $1.50
+Hero checks
+Player0 bets $15.00
+Hero folds
+Uncalled bet ($15.00) returned to Player0
+Player0 does not show
+*** SUMMARY ***
+Total pot $28.50 | Rake $1.42 | JP Fee $0.08
+Board [8c 2c Ac]
+Seat 1: Player0 did not show and won $28.50
+Seat 2: Player1 (button) folded on the Pre-Flop
+Seat 6: Hero (small blind) folded on the Flop
+
+Hand #1471747644 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:13:02 UTC
+Creal Springs 6-max Seat #6 is the button
+Seat 1: Player0 ($139.50)
+Seat 2: Player1 ($333.09)
+Seat 6: Hero ($300.00)
+Player0 posts the small blind $3.00
+Player1 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [5h 8h 5c 3h Jc]
+Hero folds
+Player0 raises $15.00 to $18.00
+Player1 folds
+Uncalled bet ($12.00) returned to Player0
+Player0 does not show
+*** SUMMARY ***
+Total pot $12.00
+Seat 1: Player0 did not show and won $12.00
+Seat 2: Player1 (big blind) folded on the Pre-Flop
+Seat 6: Hero (button) folded on the Pre-Flop
+
+Hand #1471747860 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:13:15 UTC
+Creal Springs 6-max Seat #1 is the button
+Seat 1: Player0 ($145.50)
+Seat 2: Player1 ($327.09)
+Seat 6: Hero ($300.00)
+Player1 posts the small blind $3.00
+Hero posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [5s 4h 2c Ad 4d]
+Player0 folds
+Player1 folds
+Hero does not show
+*** SUMMARY ***
+Total pot $9.00
+Seat 1: Player0 (button) folded on the Pre-Flop
+Seat 2: Player1 (small blind) folded on the Pre-Flop
+Seat 6: Hero did not show and won $9.00
+
+Hand #1471748024 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:13:25 UTC
+Creal Springs 6-max Seat #2 is the button
+Seat 1: Player0 ($145.50)
+Seat 2: Player1 ($324.09)
+Seat 6: Hero ($303.00)
+Hero posts the small blind $3.00
+Player0 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [3d Qd 6d 8s As]
+Player1 folds
+Hero raises $12.00 to $15.00
+Player0 calls $9.00
+*** FLOP *** [5d 7d Kc]
+Main pot $28.50 | Rake $1.50
+Hero bets $14.53
+Player0 raises $73.59 to $73.59
+Hero calls $59.06
+*** TURN *** [5d 7d Kc] [Tc]
+Main pot $175.68 | Rake $1.50
+Hero checks
+Player0 bets $56.91 and is all-in
+Hero calls $56.91
+*** RIVER *** [5d 7d Kc Tc] [3c]
+Main pot $289.50 | Rake $1.50
+*** SHOW DOWN ***
+Main pot $289.50 | Rake $1.50
+Player0 shows [Qs 5c Ad 3s 7h] (HI - two pair, Sevens and Fives [7h 7d 5d 5c Kc])
+Hero shows [3d Qd 6d 8s As] (HI - a pair of Threes [3d 3c As Kc Tc] | LO - [7,6,5,3,1])
+Player0 collected $144.75 from main pot
+Hero collected $144.75 from main pot
+*** SUMMARY ***
+Total pot $289.50 | Rake $1.42 | JP Fee $0.08
+Board [5d 7d Kc Tc 3c]
+Seat 1: Player0 (big blind) showed [Qs 5c Ad 3s 7h] and won $144.75 with HI - two pair, Sevens and Fives [7h 7d 5d 5c Kc]
+Seat 2: Player1 (button) folded on the Pre-Flop
+Seat 6: Hero (small blind) showed [3d Qd 6d 8s As] and won $144.75 with HI - a pair of Threes [3d 3c As Kc Tc] | LO - [7,6,5,3,1]
+
+Hand #1471748690 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:14:07 UTC
+Creal Springs 6-max Seat #6 is the button
+Seat 1: Player0 ($144.75)
+Seat 2: Player1 ($324.09)
+Seat 6: Hero ($302.25)
+Player0 posts the small blind $3.00
+Player1 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [5s Ad 4h Ks 5c]
+Hero raises $12.60 to $12.60
+Player0 folds
+Player1 folds
+Uncalled bet ($6.60) returned to Hero
+Hero does not show
+*** SUMMARY ***
+Total pot $15.00
+Seat 1: Player0 (small blind) folded on the Pre-Flop
+Seat 2: Player1 (big blind) folded on the Pre-Flop
+Seat 6: Hero did not show and won $15.00
+
+Hand #1471748928 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:14:21 UTC
+Creal Springs 6-max Seat #1 is the button
+Seat 1: Player0 ($141.75)
+Seat 2: Player1 ($318.09)
+Seat 6: Hero ($311.25)
+Player1 posts the small blind $3.00
+Hero posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [Jh 6h Jd Qs 7c]
+Player0 raises $21.00 to $21.00
+Player1 calls $18.00
+Hero folds
+*** FLOP *** [5h 6d 9h]
+Main pot $46.50 | Rake $1.50
+Player1 checks
+Player0 checks
+*** TURN *** [5h 6d 9h] [3c]
+Main pot $46.50 | Rake $1.50
+Player1 bets $36.00
+Player0 folds
+Uncalled bet ($36.00) returned to Player1
+Player1 does not show
+*** SUMMARY ***
+Total pot $46.50 | Rake $1.42 | JP Fee $0.08
+Board [5h 6d 9h 3c]
+Seat 1: Player0 (button) folded on the Turn
+Seat 2: Player1 did not show and won $46.50
+Seat 6: Hero (big blind) folded on the Pre-Flop
+
+Hand #1471749401 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:14:52 UTC
+Creal Springs 6-max Seat #2 is the button
+Seat 1: Player0 ($120.75)
+Seat 2: Player1 ($343.59)
+Seat 6: Hero ($305.25)
+Hero posts the small blind $3.00
+Player0 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [8s 9d Ac 6s 3s]
+Player1 raises $12.00 to $12.00
+Hero calls $9.00
+Player0 calls $6.00
+*** FLOP *** [Qh Ah 2s]
+Main pot $34.50 | Rake $1.50
+Hero checks
+Player0 checks
+Player1 checks
+*** TURN *** [Qh Ah 2s] [5s]
+Main pot $34.50 | Rake $1.50
+Hero bets $17.59
+Player0 folds
+Player1 folds
+Uncalled bet ($17.59) returned to Hero
+Hero does not show
+*** SUMMARY ***
+Total pot $34.50 | Rake $1.42 | JP Fee $0.08
+Board [Qh Ah 2s 5s]
+Seat 1: Player0 (big blind) folded on the Turn
+Seat 2: Player1 (button) folded on the Turn
+Seat 6: Hero did not show and won $34.50
+
+Hand #1471750285 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:15:48 UTC
+Creal Springs 6-max Seat #6 is the button
+Seat 1: Player0 ($120.00)
+Seat 2: Player1 ($331.59)
+Seat 6: Hero ($327.75)
+Player0 posts the small blind $3.00
+Player1 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [2c Jd Js 6d 4c]
+Hero raises $12.60 to $12.60
+Player0 raises $40.80 to $43.80
+Player1 folds
+Hero calls $31.20
+*** FLOP *** [Jh 5h Qh]
+Main pot $92.10 | Rake $1.50
+Player0 bets $76.20 and is all-in
+Hero calls $76.20
+*** TURN *** [Jh 5h Qh] [8h]
+Main pot $244.50 | Rake $1.50
+*** RIVER *** [Jh 5h Qh 8h] [9h]
+Main pot $244.50 | Rake $1.50
+*** SHOW DOWN ***
+Main pot $244.50 | Rake $1.50
+Player0 shows [7h Ac Ks 7d Kc] (HI - a pair of Kings [Ks Kc Qh Jh 9h])
+Hero shows [2c Jd Js 6d 4c] (HI - three of a kind, Set of Jacks [Js Jh Jd Qh 9h])
+Hero collected $244.50 from main pot
+*** SUMMARY ***
+Total pot $244.50 | Rake $1.42 | JP Fee $0.08
+Board [Jh 5h Qh 8h 9h]
+Seat 1: Player0 (small blind) showed [7h Ac Ks 7d Kc] and lost with HI - a pair of Kings [Ks Kc Qh Jh 9h]
+Seat 2: Player1 (big blind) folded on the Pre-Flop
+Seat 6: Hero (button) showed [2c Jd Js 6d 4c] and won $244.50 with HI - three of a kind, Set of Jacks [Js Jh Jd Qh 9h]
+
+Hand #1471750740 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:16:17 UTC
+Creal Springs 6-max Seat #1 is the button
+Seat 1: Player0 ($120.00)
+Seat 2: Player1 ($325.59)
+Seat 6: Hero ($452.25)
+Player1 posts the small blind $3.00
+Hero posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [Ac Qc Td Th Jh]
+Player0 raises $21.00 to $21.00
+Player1 folds
+Hero calls $15.00
+*** FLOP *** [Tc 9c 4s]
+Main pot $43.50 | Rake $1.50
+Hero checks
+Player0 checks
+*** TURN *** [Tc 9c 4s] [5c]
+Main pot $43.50 | Rake $1.50
+Hero bets $32.62
+Player0 folds
+Uncalled bet ($32.62) returned to Hero
+Hero does not show
+*** SUMMARY ***
+Total pot $43.50 | Rake $1.42 | JP Fee $0.08
+Board [Tc 9c 4s 5c]
+Seat 1: Player0 (button) folded on the Turn
+Seat 2: Player1 (small blind) folded on the Pre-Flop
+Seat 6: Hero did not show and won $43.50
+
+Hand #1471751173 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:16:45 UTC
+Creal Springs 6-max Seat #2 is the button
+Seat 1: Player0 ($120.00)
+Seat 2: Player1 ($322.59)
+Seat 6: Hero ($474.75)
+Hero posts the small blind $3.00
+Player0 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [9h 3d 2h Qh Qd]
+Player1 raises $21.00 to $21.00
+Hero calls $18.00
+Player0 raises $78.00 to $84.00
+Player1 raises $252.00 to $273.00
+Hero folds
+Player0 calls $36.00 and is all-in
+Uncalled bet ($153.00) returned to Player1
+*** FLOP *** [4s Qs 8c]
+Main pot $259.50 | Rake $1.50
+*** TURN *** [4s Qs 8c] [9s]
+Main pot $259.50 | Rake $1.50
+*** RIVER *** [4s Qs 8c 9s] [Ah]
+Main pot $259.50 | Rake $1.50
+*** SHOW DOWN ***
+Main pot $259.50 | Rake $1.50
+Player0 shows [4c Ac 9c As 5h] (HI - three of a kind, Set of Aces [As Ah Ac Qs 9s])
+Player1 shows [4d Ad Js Qc 6d] (HI - two pair, Aces and Queens [Ah Ad Qs Qc 9s])
+Player0 collected $259.50 from main pot
+*** SUMMARY ***
+Total pot $259.50 | Rake $1.42 | JP Fee $0.08
+Board [4s Qs 8c 9s Ah]
+Seat 1: Player0 (big blind) showed [4c Ac 9c As 5h] and won $259.50 with HI - three of a kind, Set of Aces [As Ah Ac Qs 9s]
+Seat 2: Player1 (button) showed [4d Ad Js Qc 6d] and lost with HI - two pair, Aces and Queens [Ah Ad Qs Qc 9s]
+Seat 6: Hero (small blind) folded on the Pre-Flop
+
+Hand #1471751803 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:17:23 UTC
+Creal Springs 6-max Seat #6 is the button
+Seat 1: Player0 ($259.50)
+Seat 2: Player1 ($202.59)
+Seat 6: Hero ($453.75)
+Player0 posts the small blind $3.00
+Player1 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [8d Jc 9h Qh As]
+Hero raises $12.60 to $12.60
+Player0 folds
+Player1 raises $34.80 to $40.80
+Hero calls $28.20
+*** FLOP *** [2c 2d Ks]
+Main pot $83.10 | Rake $1.50
+Player1 bets $30.15
+Hero folds
+Uncalled bet ($30.15) returned to Player1
+Player1 does not show
+*** SUMMARY ***
+Total pot $83.10 | Rake $1.42 | JP Fee $0.08
+Board [2c 2d Ks]
+Seat 1: Player0 (small blind) folded on the Pre-Flop
+Seat 2: Player1 did not show and won $83.10
+Seat 6: Hero (button) folded on the Flop
+
+Hand #1471752306 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:17:56 UTC
+Creal Springs 6-max Seat #1 is the button
+Seat 1: Player0 ($256.50)
+Seat 2: Player1 ($244.89)
+Seat 6: Hero ($412.95)
+Player1 posts the small blind $3.00
+Hero posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [4h Jd 9d 8s 5s]
+Player0 raises $12.00 to $12.00
+Player1 calls $9.00
+Hero calls $6.00
+*** FLOP *** [Qd 6d Qs]
+Main pot $34.50 | Rake $1.50
+Player1 checks
+Hero checks
+Player0 checks
+*** TURN *** [Qd 6d Qs] [4d]
+Main pot $34.50 | Rake $1.50
+Player1 checks
+Hero checks
+Player0 checks
+*** RIVER *** [Qd 6d Qs 4d] [5c]
+Main pot $34.50 | Rake $1.50
+Player1 checks
+Hero checks
+Player0 checks
+*** SHOW DOWN ***
+Main pot $34.50 | Rake $1.50
+Player0 shows [3d 4c Kh Ks Jh] (HI - two pair, Kings and Queens [Ks Kh Qs Qd 6d])
+Player1 shows [As 6h Kd 3c 9c] (HI - two pair, Queens and Sixs [Qs Qd 6h 6d As] | LO - [6,5,4,3,1])
+Hero shows [4h Jd 9d 8s 5s] (HI - a flush, Queen high [Qd Jd 9d 6d 4d])
+Player1 collected $17.25 from main pot
+Hero collected $17.25 from main pot
+*** SUMMARY ***
+Total pot $34.50 | Rake $1.42 | JP Fee $0.08
+Board [Qd 6d Qs 4d 5c]
+Seat 1: Player0 (button) showed [3d 4c Kh Ks Jh] and lost with HI - two pair, Kings and Queens [Ks Kh Qs Qd 6d]
+Seat 2: Player1 (small blind) showed [As 6h Kd 3c 9c] and won $17.25 with HI - two pair, Queens and Sixs [Qs Qd 6h 6d As] | LO - [6,5,4,3,1]
+Seat 6: Hero (big blind) showed [4h Jd 9d 8s 5s] and won $17.25 with HI - a flush, Queen high [Qd Jd 9d 6d 4d]
+
+Hand #1471753259 - 5Card Omaha H/L(Pot Limit) - $3.00/$6.00 - 2022/12/04 05:18:56 UTC
+Creal Springs 6-max Seat #2 is the button
+Seat 1: Player0 ($244.50)
+Seat 2: Player1 ($250.14)
+Seat 6: Hero ($418.20)
+Hero posts the small blind $3.00
+Player0 sits out
+Player1 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [Tc Jc Ad Qc Kc]
+Hero calls $3.00
+Player1 raises $12.00 to $18.00
+Hero calls $12.00
+*** FLOP *** [Qd 5d Th]
+Main pot $35.00 | Rake $1.00
+Hero checks
+Player1 checks
+*** TURN *** [Qd 5d Th] [Ac]
+Main pot $35.00 | Rake $1.00
+Hero bets $26.25
+Player1 calls $26.25
+*** RIVER *** [Qd 5d Th Ac] [Kd]
+Main pot $87.50 | Rake $1.00
+Hero checks
+Player1 bets $66.37
+Hero calls $66.37
+*** SHOW DOWN ***
+Main pot $220.24 | Rake $1.00
+Player1 shows [6c 8h 3d Jd 7c] (HI - a flush, King high [Kd Qd Jd 5d 3d])
+Hero shows [Tc Jc Ad Qc Kc] (HI - a straight, Ace high [Ac Kd Qd Jc Tc])
+Player1 collected $220.24 from main pot
+*** SUMMARY ***
+Total pot $220.24 | Rake $0.96 | JP Fee $0.04
+Board [Qd 5d Th Ac Kd]
+Seat 2: Player1 (button) showed [6c 8h 3d Jd 7c] and won $220.24 with HI - a flush, King high [Kd Qd Jd 5d 3d]
+Seat 6: Hero (small blind) showed [Tc Jc Ad Qc Kc] and lost with HI - a straight, Ace high [Ac Kd Qd Jc Tc]
+
