@@ -855,7 +855,9 @@ class DerivedStats():
         p_in = set([x[0] for x in hand.actions[hand.actionStreets[1]]])
         #Add in players who were allin blind
         if hand.pot.pots:
-            if len(hand.pot.pots[0][1])>1: p_in = p_in.union(hand.pot.pots[0][1])
+            if len(hand.pot.pots[0][1])>1: 
+                p_in = p_in.union(hand.pot.pots[0][1])
+                p_in = p_in.union(hand.pot.common.keys())
 
         #
         # discover who folded on each street and remove them from p_in
