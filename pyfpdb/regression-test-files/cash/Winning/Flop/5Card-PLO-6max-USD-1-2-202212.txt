@@ -1,0 +1,33 @@
+Hand #1473752467 - 5Card Omaha(Pot Limit) - $1.00/$2.00 - 2022/12/05 18:02:23 UTC
+Pinckneyville 6-max Seat #6 is the button
+Seat 3: Hero ($200.00)
+Seat 6: Player0 ($392.30)
+Player0 posts the small blind $1.00
+Hero posts the big blind $2.00
+*** HOLE CARDS ***
+Dealt to Hero [Ac Kd 8c Qd 5c]
+Player0 raises $5.00 to $6.00
+Hero calls $4.00
+*** FLOP *** [Kc Ts 3h]
+Main pot $11.50 | Rake $0.50
+Hero checks
+Player0 checks
+*** TURN *** [Kc Ts 3h] [7s]
+Main pot $11.50 | Rake $0.50
+Hero checks
+Player0 checks
+*** RIVER *** [Kc Ts 3h 7s] [4c]
+Main pot $11.50 | Rake $0.50
+Hero checks
+Player0 checks
+*** SHOW DOWN ***
+Main pot $11.50 | Rake $0.50
+Hero shows [Ac Kd 8c Qd 5c] (a pair of Kings [Kd Kc Ac Ts 7s])
+Player0 shows [5h Js 7d 4s Jc] (two pair, Sevens and Fours [7s 7d 4s 4c Kc])
+Player0 collected $11.50 from main pot
+*** SUMMARY ***
+Total pot $11.50 | Rake $0.46 | JP Fee $0.04
+Board [Kc Ts 3h 7s 4c]
+Seat 3: Hero (big blind) showed [Ac Kd 8c Qd 5c] and lost with a pair of Kings [Kd Kc Ac Ts 7s]
+Seat 6: Player0 (button) showed [5h Js 7d 4s Jc] and won $11.50 with two pair, Sevens and Fours [7s 7d 4s 4c Kc]
+
