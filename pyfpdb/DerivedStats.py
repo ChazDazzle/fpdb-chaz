@@ -634,7 +634,7 @@ class DerivedStats():
             if self.handsplayers[p[1]]['sawShowdown']:
                 showdown = True
                 if self.handsplayers[p[1]]['position'] == 9 and self.handsplayers[p[1]]['winnings']>0:
-                    allinAnte = True #CHANGE
+                    allinAnte = True
         positions.sort(reverse=True)
         factor = 100
         if ((hand.gametype["type"]=="tour" or 
