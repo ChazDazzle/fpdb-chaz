@@ -625,7 +625,7 @@ class DerivedStats():
                                 hand.addCollectPot(player=p,pot=(ppot-rake))                 
     
     def assembleHandsPots(self, hand):
-        category, positions, playersPots, potFound, positionDict, showdown = hand.gametype['category'], [], {}, {}, {}, False
+        category, positions, playersPots, potFound, positionDict, showdown, allinAnte = hand.gametype['category'], [], {}, {}, {}, False, False
         for p in hand.players:
             playersPots[p[1]] = [0,[]]
             potFound[p[1]] = [0,0]
@@ -633,6 +633,8 @@ class DerivedStats():
             positions.append(self.handsplayers[p[1]]['position'])
             if self.handsplayers[p[1]]['sawShowdown']:
                 showdown = True
+                if self.handsplayers[p[1]]['position'] == 9 and self.handsplayers[p[1]]['winnings']>0:
+                    allinAnte = True #CHANGE
         positions.sort(reverse=True)
         factor = 100
         if ((hand.gametype["type"]=="tour" or 
@@ -645,7 +647,8 @@ class DerivedStats():
         base, evalgame, hilo, streets, last, hrange = Card.games[category]
         if ((hand.sitename != 'KingsClub' or hand.adjustCollected) and # Can't trust KingsClub draw/stud holecards  
             evalgame and 
-            (len(hand.pot.pots)>1 or (showdown and (hilo=='s' or hand.runItTimes>=2)))
+            (len(hand.pot.pots)>1 or (showdown and (hilo=='s' or hand.runItTimes>=2))) and 
+            allinAnte == False
             ):
             #print 'DEBUG hand.collected', hand.collected
             #print 'DEBUG hand.collectees', hand.collectees

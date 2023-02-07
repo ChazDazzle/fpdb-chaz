@@ -1,0 +1,98 @@
+PokerStars Hand #241636097024: Tournament #3540610518, $0.98+$0.12 USD HORSE (7 Card Stud Hi/Lo Limit) - Level V (200/400) - 2023/02/05 10:25:51 PT [2023/02/05 13:25:51 ET]
+Table '3540610518 2' 8-max
+Seat 1: Player0 (8835 in chips) 
+Seat 2: Player1 (1485 in chips) 
+Seat 3: Player2 (1285 in chips) is sitting out
+Seat 4: Player3 (3265 in chips) 
+Seat 5: Player4 (3939 in chips) 
+Seat 6: Hero (40 in chips) 
+Seat 7: Player5 (4490 in chips) 
+Seat 8: Player6 (3798 in chips) 
+Player0: posts the ante 40
+Player1: posts the ante 40
+Player2: posts the ante 40
+Player3: posts the ante 40
+Player4: posts the ante 40
+Hero: posts the ante 40 and is all-in
+Player5: posts the ante 40
+Player6: posts the ante 40
+*** 3rd STREET ***
+Dealt to Player0 [6c]
+Dealt to Player1 [5c]
+Dealt to Player2 [Js]
+Dealt to Player3 [Qd]
+Dealt to Player4 [Th]
+Dealt to Hero [3h Ah 2s]
+Dealt to Player5 [9d]
+Dealt to Player6 [3c]
+Player5: brings in for 60
+Player6: calls 60
+Player0: calls 60
+Player1: calls 60
+Player2: folds 
+Player3: calls 60
+Player4: folds 
+*** 4th STREET ***
+Dealt to Player0 [6c] [7h]
+Dealt to Player1 [5c] [Qc]
+Dealt to Player3 [Qd] [9c]
+Dealt to Hero [3h Ah 2s] [4d]
+Dealt to Player5 [9d] [4h]
+Dealt to Player6 [3c] [Td]
+Player3: checks 
+Player5: checks 
+Player6: checks 
+Player0: checks 
+Player1: checks 
+*** 5th STREET ***
+Dealt to Player0 [6c 7h] [As]
+Dealt to Player1 [5c Qc] [4s]
+Dealt to Player3 [Qd 9c] [Jh]
+Dealt to Hero [3h Ah 2s 4d] [7d]
+Dealt to Player5 [9d 4h] [8s]
+Dealt to Player6 [3c Td] [2c]
+Player0: checks 
+Player1: checks 
+Player3: checks 
+Player5: checks 
+Player6: checks 
+*** 6th STREET ***
+Dealt to Player0 [6c 7h As] [8d]
+Dealt to Player1 [5c Qc 4s] [6s]
+Dealt to Player3 [Qd 9c Jh] [5d]
+Dealt to Hero [3h Ah 2s 4d 7d] [5h]
+Dealt to Player5 [9d 4h 8s] [Ac]
+Dealt to Player6 [3c Td 2c] [8h]
+Player5: checks 
+Player6: checks 
+Player0: checks 
+Player1: checks 
+Player3: checks 
+*** RIVER ***
+Dealt to Hero [3h Ah 2s 4d 7d 5h] [6d]
+Player5: checks 
+Player6: checks 
+Player0: checks 
+Player1: checks 
+Player3: checks 
+*** SHOW DOWN ***
+Player0: shows [3d 8c 6c 7h As 8d Tc] (HI: a pair of Eights; LO: 8,7,6,3,A)
+Player1: mucks hand 
+Player3: shows [Qs Ks Qd 9c Jh 5d 5s] (HI: two pair, Queens and Fives)
+Player5: mucks hand 
+Player6: mucks hand 
+Player3 collected 150 from side pot
+Player0 collected 150 from side pot
+Hero: shows [3h Ah 2s 4d 7d 5h 6d] (HI: a straight, Three to Seven; LO: 5,4,3,2,A)
+Hero collected 160 from main pot
+Hero collected 160 from main pot
+*** SUMMARY ***
+Total pot 620 Main pot 320. Side pot 300. | Rake 0 
+Seat 1: Player0 showed [3d 8c 6c 7h As 8d Tc] and won (150) with HI: a pair of Eights; LO: 8,7,6,3,A
+Seat 2: Player1 mucked [Jd 7c 5c Qc 4s 6s 7s]
+Seat 3: Player2 folded on the 3rd Street (didn't bet)
+Seat 4: Player3 showed [Qs Ks Qd 9c Jh 5d 5s] and won (150) with HI: two pair, Queens and Fives
+Seat 5: Player4 folded on the 3rd Street (didn't bet)
+Seat 6: Hero showed [3h Ah 2s 4d 7d 5h 6d] and won (320) with HI: a straight, Three to Seven; LO: 5,4,3,2,A
+Seat 7: Player5 mucked [Kc Ad 9d 4h 8s Ac Jc]
+Seat 8: Player6 mucked [9h 2h 3c Td 2c 8h Kh]
