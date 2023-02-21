@@ -52,6 +52,8 @@ class PartyPoker(HandHistoryConverter):
                         'Omaha Hi' : ('hold','omahahi'),
                      'Omaha Hi-Lo' : ('hold','omahahilo'),
                "7 Card Stud Hi-Lo" : ('stud','studhilo'),
+                     'Omaha Hi/Lo' : ('hold','omahahilo'),
+               "7 Card Stud Hi/Lo" : ('stud','studhilo'),
                      "7 Card Stud" : ('stud','studhi'),
                   "Double Hold'em" : ('hold','2_holdem'),
                    "Double Holdem" : ('hold','2_holdem'),
@@ -118,7 +120,7 @@ class PartyPoker(HandHistoryConverter):
              ((?P<CASHBI>[%(NUM)s]+)\s*(?:%(LEGAL_ISO)s)?\s*)(?P<FAST2>fastforward\s)?(?P<LIMIT2>(NL|PL|FL|))?\s*
             )
             (Tourney\s*)?
-            (?P<GAME>(Texas\sHold\'?em|Hold\'?em|Omaha\sHi-Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud|Double\sHold\'?em|Short\sDeck))\s*
+            (?P<GAME>(Texas\sHold\'?em|Hold\'?em|Omaha\sHi-Lo|Omaha\sHi/Lo|Omaha(\sHi)?|7\sCard\sStud\sHi-Lo|7\sCard\sStud\sHi/Lo|7\sCard\sStud|Double\sHold\'?em|Short\sDeck))\s*
             (Game\sTable\s*)?
             (
              (\((?P<LIMIT>(NL|PL|FL|Limit|))\)\s*)?

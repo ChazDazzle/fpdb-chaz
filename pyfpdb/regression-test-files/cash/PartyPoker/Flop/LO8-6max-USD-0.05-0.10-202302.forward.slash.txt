@@ -1,0 +1,41 @@
+***** Hand History For Game 1676832422659jxi26omnah *****
+0.05/0.10 Omaha Hi/Lo Game Table (PL) - Sun Feb 19 13:45:49 EST 2023
+Table Fremont 14 (Real Money) -- Seat 1 is the button
+Total number of players : 6/6
+Seat 1: Player6 ($4.99)
+Seat 2: Player1 ($13.65)
+Seat 3: Player2 ($20.08)
+Seat 4: Hero ($21.97)
+Seat 5: Player4 ($15.12)
+Seat 6: Player5 ($10.56)
+Player1 posts small blind (0.05)
+Player2 posts big blind (0.10)
+** Dealing down cards **
+Dealt to Hero [ Kh, 6d, 4d, 9d ]
+Hero folds 
+Player4 folds 
+Player5 folds 
+Player6 calls (0.10)
+Player1 raises 0.35 to 0.40
+Player2 calls (0.30)
+Player6 calls (0.30)
+** Dealing Flop ** :  [ 6h, Kc, 3h ]
+Player1 checks 
+Player2 checks 
+Player6 checks 
+** Dealing Turn ** :  [ As ]
+Player1 bets (0.57)
+Player2 calls (0.57)
+Player6 folds 
+** Dealing River ** :  [ 8h ]
+Player1 checks 
+Player2 checks 
+** Summary **
+Main Pot: $2.23 Rake: $0.11
+Board: [ 6h, Kc, 3h, As, 8h ]
+Player6 balance $4.59, lost $0.40 (folded)
+Player1 balance $14.91, bet $0.97, collected $2.23, net +$1.26[ Ad, 5c, 4s, Th ] [ a pair of aces -- Ad,As,Kc,Th,8h ]
+Player2 balance $19.11, lost $0.97[ 4h, 7s, Kd, 4c ] [ a pair of kings -- As,Kd,Kc,8h,7s ]
+Hero balance $21.97, didn't bet (folded)
+Player4 balance $15.12, didn't bet (folded)
+Player5 balance $10.56, didn't bet (folded)
