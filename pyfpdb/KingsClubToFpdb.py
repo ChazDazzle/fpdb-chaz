@@ -396,11 +396,20 @@ class KingsClub(HandHistoryConverter):
                        r"(\*\*\* RIVER \*\*\* \[\S\S \S\S \S\S \S\S] (?P<RIVER>\[\S\S\].+))?", post,re.DOTALL)
             
         elif hand.gametype['base'] in ("stud"):
-            m =  re.search(r"(?P<THIRD>.+(?=\*\*\* 3RD STREET \*\*\*)|.+)"
-                           r"(\*\*\* 3RD STREET \*\*\*(?P<FOURTH>.+(?=\*\*\* 4TH STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 4TH STREET \*\*\*(?P<FIFTH>.+(?=\*\*\* 5TH STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 5TH STREET \*\*\*(?P<SIXTH>.+(?=\*\*\* 6TH STREET \*\*\*)|.+))?"
-                           r"(\*\*\* 6TH STREET \*\*\*(?P<SEVENTH>.+))?", hand.handText,re.DOTALL)
+            arr = hand.handText.split('*** 3RD STREET ***')
+            if self.re_BringIn.search(arr[0]):
+                m =  re.search(r"(?P<THIRD>.+(?=\*\*\* 3RD STREET \*\*\*)|.+)"
+                               r"(\*\*\* 3RD STREET \*\*\*(?P<FOURTH>.+(?=\*\*\* 4TH STREET \*\*\*)|.+))?"
+                               r"(\*\*\* 4TH STREET \*\*\*(?P<FIFTH>.+(?=\*\*\* 5TH STREET \*\*\*)|.+))?"
+                               r"(\*\*\* 5TH STREET \*\*\*(?P<SIXTH>.+(?=\*\*\* 6TH STREET \*\*\*)|.+))?"
+                               r"(\*\*\* 6TH STREET \*\*\*(?P<SEVENTH>.+))?", hand.handText,re.DOTALL)
+            else:
+                m =  re.search(r"(?P<ANTES>.+(?=\*\*\* 3RD STREET \*\*\*)|.+)"
+                               r"(\*\*\* 3RD STREET \*\*\*(?P<THIRD>.+(?=\*\*\* 4TH STREET \*\*\*)|.+))?"
+                               r"(\*\*\* 4TH STREET \*\*\*(?P<FOURTH>.+(?=\*\*\* 5TH STREET \*\*\*)|.+))?"
+                               r"(\*\*\* 5TH STREET \*\*\*(?P<FIFTH>.+(?=\*\*\* 6TH STREET \*\*\*)|.+))?"
+                               r"(\*\*\* 6TH STREET \*\*\*(?P<SIXTH>.+(?=\*\*\* 7TH STREET \*\*\*)|.+))?"
+                               r"(\*\*\* 7TH STREET \*\*\*(?P<SEVENTH>.+))?", hand.handText,re.DOTALL)
         elif hand.gametype['base'] in ("draw"):
             if hand.gametype['category'] in ('27_1draw', 'fivedraw'):
                 m =  re.search(r"(?P<PREDEAL>.+(?=\*\*\* 1ST BETTING ROUND \*\*\*)|.+)"
