@@ -1,0 +1,28 @@
+#6155563: No Limit Short Deck Holdem - 0/0
+2023-02-21 10:20:44
+Table 'Osaka' Seat 1 is the button
+Seat 1: Player0 (813.62)
+Seat 3: Player1 (1,969)
+Seat 4: Hero (1,209)
+Player0: posts ante 5
+Player1: posts ante 5
+Hero: posts ante 5
+Player0: posts ante 5
+Dealt to Player0: [X X]
+Dealt to Player1: [X X]
+Dealt to Hero: [Kd Ad]
+Player1 raises to 25
+Hero raises to 1,204, and is all in
+Player0 calls 808.62, and is all in
+Player1 folds
+Player0 shows [As Qc]
+Hero shows [Kd Ad]
+*** BOARD 1 - RIVER *** [Ts 9h 8c 8s] [Jc]
+*** BOARD 2 - RIVER *** [Kc 8d 6h Qs] [8h]
+*** SUMMARY * **
+Seat 1: Player0 (826.62) +13
+Seat 3: Player1 (1,939) -30
+Seat 4: Hero (1,222) +13
+Rake 4
+Player0 wins (826.62) from pot
+Hero wins (826.62) from pot
