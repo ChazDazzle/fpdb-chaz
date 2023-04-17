@@ -1,0 +1,33 @@
+Hand #784373412 - Holdem(No Limit) - $0.02/$0.05 - 2021/04/20 18:33:50 UTC
+Fort Lupton 9-max Seat #5 is the button
+Seat 1: Player0 ($9.10) is sitting out
+Seat 2: Player1 ($9.81)
+Seat 3: Hero ($5.61)
+Seat 4: Player2 ($5.00)
+Seat 5: Player3 ($3.14)
+Seat 6: Player4 ($1.53)
+Seat 7: Player5 ($5.03)
+Seat 8: Player6 ($6.46)
+Seat 9: Player7 ($6.58)
+Player4 posts the small blind $0.02
+Player5 posts the big blind $0.05
+*** HOLE CARDS ***
+Dealt to Hero [4c Kh]
+Player6 folds
+Player7 folds
+Player1 folds
+Hero folds
+Player2 folds
+Player3 folds
+Player4 folds
+Player5 does not show
+*** SUMMARY ***
+Total pot $0.07
+Seat 2: Player1 folded on the Pre-Flop and did not bet
+Seat 3: Hero folded on the Pre-Flop and did not bet
+Seat 4: Player2 folded on the Pre-Flop and did not bet
+Seat 5: Player3 (button) folded on the Pre-Flop
+Seat 6: Player4 (small blind) folded on the Pre-Flop
+Seat 7: Player5 did not show and won $0.07
+Seat 8: Player6 folded on the Pre-Flop and did not bet
+Seat 9: Player7 folded on the Pre-Flop and did not bet

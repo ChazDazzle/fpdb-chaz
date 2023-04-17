@@ -1,0 +1,31 @@
+PokerStars Hand #164954571644:  8-Game (7 Card Stud Hi/Lo Limit, $400/$800 USD) - 2017/01/21 16:58:03 ET
+Table 'Educatio' 6-max
+Seat 1: Hero ($51125.64 in chips) 
+Seat 3: Player0 ($36765.21 in chips) 
+Hero: posts the ante $60
+Player0: posts the ante $60
+*** 3rd STREET ***
+Dealt to Hero [7s 7c Ah]
+Dealt to Player0 [Ts]
+Player0: brings in for $120
+Hero: raises $280 to $400
+Player0: raises $400 to $800
+Hero: raises $400 to $1200
+Player0: calls $400
+*** 4th STREET ***
+Dealt to Hero [7s 7c Ah] [Jh]
+Dealt to Player0 [Ts] [4s]
+Hero: bets $400
+Player0: calls $400
+*** 5th STREET ***
+Dealt to Hero [7s 7c Ah Jh] [Jd]
+Dealt to Player0 [Ts 4s] [9d]
+Hero: bets $800
+Player0: folds 
+Uncalled bet ($800) returned to Hero
+Hero collected $3318 from pot
+Hero: doesn't show hand 
+*** SUMMARY ***
+Total pot $3320 | Rake $2 
+Seat 1: Hero collected ($3318)
+Seat 3: Player0 folded on the 5th Street

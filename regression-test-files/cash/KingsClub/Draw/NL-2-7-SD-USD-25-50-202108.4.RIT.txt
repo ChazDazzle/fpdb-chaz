@@ -1,0 +1,43 @@
+#45383120: No Limit 2-7 Single Draw - 25/50
+2021-08-04 06:53:29
+Table 'The Zoo' Seat 5 is the button
+Seat 1: Player0 (1,200)
+Seat 2: Hero (1,200)
+Seat 3: Player1 (1,200)
+Seat 5: Player2 (1,200)
+Seat 6: Player3 (1,200)
+*** 1ST BETTING ROUND ***
+Player0: posts ante 20
+Hero: posts ante 20
+Player1: posts ante 20
+Player2: posts ante 20
+Player3: posts ante 20
+Player3: posts the small blind 25
+Player0: posts the big blind 50
+Dealt to Player0: [X X X X X]
+Dealt to Hero: [Tc 3s 7h 5c 9h]
+Dealt to Player1: [X X X X X]
+Dealt to Player2: [X X X X X]
+Dealt to Player3: [X X X X X]
+Hero raises to 150
+Player1 raises to 1,180, and is all in
+Player2 folds
+Player3 folds
+Player0 folds
+Hero calls 1,180, and is all in
+*** 1ST DRAW ***
+Hero stands pat
+Player1 draws 2
+Hero shows [Tc 3s 7h 5c 9h]
+Run 1: Player1 shows [5h 9c Jd 8d 4s]
+Run 2: Player1 shows [5h 9c 7c 8d 4s]
+*** 2ND BETTING ROUND ***
+*** SUMMARY ***
+Seat 1: Player0 (1,130) -70
+Seat 2: Hero (1,264) +64
+Seat 3: Player1 (1,264) +64
+Seat 5: Player2 (1,180) -20
+Seat 6: Player3 (1,155) -45
+Rake 7
+Hero wins (1,264) from pot
+Player1 wins (1,264) from pot

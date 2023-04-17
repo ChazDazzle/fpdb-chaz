@@ -1,0 +1,25 @@
+Winamax Poker - Go Fast "Buzau" - HandId: #9434802-28434-1490719852 - Holdem no limit (2€/4€) - 2017/03/28 16:50:52 UTC
+Table: 'Buzau' 2-max (real money) Seat #1 is the button
+Seat 1: Player0 (402.96€)
+Seat 2: Hero (400€)
+*** ANTE/BLINDS ***
+Player0 posts small blind 2€
+Hero posts big blind 4€
+Dealt to Hero [8h 9s]
+*** PRE-FLOP *** 
+Player0 raises 4€ to 8€
+Hero calls 4€
+*** FLOP *** [Kc 2d 3d]
+Hero checks
+Player0 checks
+*** TURN *** [Kc 2d 3d][Qs]
+Hero checks
+Player0 checks
+*** RIVER *** [Kc 2d 3d Qs][7s]
+Hero bets 9.50€
+Player0 folds
+Hero collected 24.46€ from pot
+*** SUMMARY ***
+Total pot 24.46€ | Rake 1.04€
+Board: [Kc 2d 3d Qs 7s]
+Seat 2: Hero (big blind) won 24.46€

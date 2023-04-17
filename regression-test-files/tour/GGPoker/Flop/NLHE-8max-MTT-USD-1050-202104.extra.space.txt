@@ -1,0 +1,58 @@
+Poker Hand #TM600571038: Tournament #25313426, H-04: $1,050 GGMasters High Rollers Hold'em No Limit   - Level14(300/600) - 2021/04/04 20:43:56
+Table '137' 8-max Seat #8 is the button
+Seat 2: e15d8ef6 (21,929 in chips)
+Seat 3: 69040cb9 (19,005 in chips)
+Seat 4: Hero (13,820 in chips)
+Seat 5: e8b93b44 (41,343 in chips)
+Seat 6: c8acdd97 (15,879 in chips)
+Seat 7: 47309291 (9,690 in chips)
+Seat 8: 31afb6e2 (46,372 in chips)
+Hero: posts the ante 75
+c8acdd97: posts the ante 75
+e15d8ef6: posts the ante 75
+e8b93b44: posts the ante 75
+69040cb9: posts the ante 75
+47309291: posts the ante 75
+31afb6e2: posts the ante 75
+e15d8ef6: posts small blind 300
+69040cb9: posts big blind 600
+*** HOLE CARDS ***
+Dealt to e15d8ef6
+Dealt to 69040cb9
+Dealt to Hero [Kc Jc]
+Dealt to e8b93b44
+Dealt to c8acdd97
+Dealt to 47309291
+Dealt to 31afb6e2
+Hero: raises 600 to 1,200
+e8b93b44: folds
+c8acdd97: folds
+47309291: folds
+31afb6e2: folds
+e15d8ef6: folds
+69040cb9: calls 600
+*** FLOP *** [Kd 9s 7h]
+69040cb9: checks
+Hero: bets 1,665
+69040cb9: calls 1,665
+*** TURN *** [Kd 9s 7h] [7c]
+69040cb9: bets 2,164
+Hero: calls 2,164
+*** RIVER *** [Kd 9s 7h 7c] [8h]
+69040cb9: checks
+Hero: bets 8,716 and is all-in
+69040cb9: calls 8,716
+Hero: shows [Kc Jc] (Pair of Kings and Pair of Sevens)
+69040cb9: shows [9d 8s] (Pair of Nines and Pair of Eights)
+*** SHOWDOWN ***
+Hero collected 28,315 from pot
+*** SUMMARY ***
+Total pot 28,315 | Rake 0 | Jackpot 0 | Bingo 0
+Board [Kd 9s 7h 7c 8h]
+Seat 2: e15d8ef6 (small blind) folded before Flop
+Seat 3: 69040cb9 (big blind) showed [9d 8s] and lost with Pair of Nines and Pair of Eights
+Seat 4: Hero showed [Kc Jc] and won (28,315) with Pair of Kings and Pair of Sevens
+Seat 5: e8b93b44 folded before Flop
+Seat 6: c8acdd97 folded before Flop
+Seat 7: 47309291 folded before Flop
+Seat 8: 31afb6e2 (button) folded before Flop

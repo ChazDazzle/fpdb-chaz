@@ -1,0 +1,36 @@
+PokerStars Hand #232772509770:  6 Card Omaha Pot Limit ($0.10/$0.25 USD) - 2022/01/03 13:19:43 EET [2022/01/03 6:19:43 ET]
+Table 'Benetnasch III' 6-max Seat #6 is the button
+Seat 1: Hero ($48.46 in chips) 
+Seat 3: Player0 ($7.79 in chips) 
+Seat 4: Player1 ($63.90 in chips) 
+Seat 6: Player2 ($46.46 in chips) 
+Hero: posts small blind $0.10
+Player0: posts big blind $0.25
+*** HOLE CARDS ***
+Dealt to Hero [As Ah 2h Kh 8d Qc]
+Player1: raises $0.60 to $0.85
+Player2: folds 
+Hero: calls $0.75
+Player0: raises $2.55 to $3.40
+Player1: raises $7.65 to $11.05
+Hero: raises $25.50 to $36.55
+Player0: calls $4.39 and is all-in
+Player1: raises $27.35 to $63.90 and is all-in
+Hero: calls $11.91 and is all-in
+Uncalled bet ($15.44) returned to Player1
+*** FLOP *** [3c 5d Qh]
+*** TURN *** [3c 5d Qh] [7s]
+*** RIVER *** [3c 5d Qh 7s] [7h]
+*** SHOW DOWN ***
+Hero: shows [As Ah 2h Kh 8d Qc] (two pair, Aces and Sevens)
+Player1: shows [5h Kc Ad 2d 4s Ac] (two pair, Aces and Sevens)
+Player0: shows [Jh 4h 9h Th Kd Td] (two pair, Tens and Sevens)
+Hero cashed out the hand for $35.72 | Cash Out Fee $0.36
+Player1 cashed out the hand for $57.71 | Cash Out Fee $0.58
+*** SUMMARY ***
+Total pot $104.71 Main pot $22.38. Side pot $81.33. | Rake $1 
+Board [3c 5d Qh 7s 7h]
+Seat 1: Hero (small blind) showed [As Ah 2h Kh 8d Qc] and won ($51.86) with two pair, Aces and Sevens (pot not awarded as player cashed out)
+Seat 3: Player0 (big blind) showed [Jh 4h 9h Th Kd Td] and lost with two pair, Tens and Sevens
+Seat 4: Player1 showed [5h Kc Ad 2d 4s Ac] and won ($51.85) with two pair, Aces and Sevens (pot not awarded as player cashed out)
+Seat 6: Player2 (button) folded before Flop (didn't bet)

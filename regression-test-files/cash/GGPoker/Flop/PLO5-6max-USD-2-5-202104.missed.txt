@@ -1,0 +1,39 @@
+Poker Hand #OM102163: PLO-5 ($2/$5) - 2021/04/03 00:00:47
+Table 'PLO-5Gold9' 6-max Seat #5 is the button
+Seat 1: 512ea5fb ($1,122.91 in chips)
+Seat 2: d4f0076d ($250 in chips)
+Seat 4: 22c0851a ($100 in chips)
+Seat 5: 46ac401e ($417.55 in chips)
+Seat 6: Hero ($186 in chips)
+Hero: posts small blind $2
+512ea5fb: posts big blind $5
+22c0851a: posts missed blind $2
+*** HOLE CARDS ***
+Dealt to 512ea5fb 
+Dealt to d4f0076d 
+Dealt to 22c0851a 
+Dealt to 46ac401e 
+Dealt to Hero [Kh Ac 8c 6c 7c]
+d4f0076d: folds
+22c0851a: folds
+46ac401e: folds
+Hero: calls $3
+512ea5fb: checks
+*** FLOP *** [Th Td Jd]
+Hero: checks
+512ea5fb: checks
+*** TURN *** [Th Td Jd] [4d]
+Hero: checks
+512ea5fb: bets $6
+Hero: folds
+Uncalled bet ($6) returned to 512ea5fb
+*** SHOWDOWN ***
+512ea5fb collected $11.4 from pot
+*** SUMMARY ***
+Total pot $12 | Rake $0.6 | Jackpot $0 | Bingo $0
+Board [Th Td Jd 4d]
+Seat 1: 512ea5fb (big blind) won ($11.4)
+Seat 2: d4f0076d folded before Flop (didn't bet)
+Seat 4: 22c0851a folded before Flop
+Seat 5: 46ac401e (button) folded before Flop (didn't bet)
+Seat 6: Hero (small blind) folded on the Turn

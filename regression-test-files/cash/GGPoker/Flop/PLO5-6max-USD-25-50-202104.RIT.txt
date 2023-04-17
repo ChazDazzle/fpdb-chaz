@@ -1,0 +1,45 @@
+Poker Hand #OM785467: PLO-5 ($25/$50) - 2021/04/08 01:31:11
+Table 'VO5 Standard2' 6-max Seat #1 is the button
+Seat 1: d6e0299a ($4,451.94 in chips)
+Seat 2: Hero ($2,265 in chips)
+Seat 3: 6babca1 ($1,719.48 in chips)
+Seat 4: 18cc49f9 ($5,045.91 in chips)
+Seat 6: 9be70104 ($2,050 in chips)
+Hero: posts small blind $25
+6babca1: posts big blind $50
+*** HOLE CARDS ***
+Dealt to d6e0299a 
+Dealt to Hero [6c Ts 7c 3s 2h]
+Dealt to 6babca1 
+Dealt to 18cc49f9 
+Dealt to 9be70104 
+18cc49f9: folds
+9be70104: folds
+d6e0299a: folds
+Hero: raises $100 to $150
+6babca1: raises $300 to $450
+Hero: calls $300
+*** FLOP *** [5c 6s 8c]
+Hero: bets $900
+6babca1: raises $369.48 to $1,269.48 and is all-in
+Hero: calls $369.48
+6babca1: shows [6h 4d Kd Qc Ks] (Pair of Kings and Pair of Sixes)
+Hero: shows [6c Ts 7c 3s 2h] (Pair of Sixes)
+*** FIRST TURN *** [5c 6s 8c] [Jh]
+*** FIRST RIVER *** [5c 6s 8c Jh] [Jd]
+*** SECOND TURN *** [5c 6s 8c] [2c]
+*** SECOND RIVER *** [5c 6s 8c 2c] [Kc]
+*** FIRST SHOWDOWN ***
+6babca1 collected $1,694.48 from pot
+*** SECOND SHOWDOWN ***
+Hero collected $1,694.48 from pot
+*** SUMMARY ***
+Total pot $3,438.96 | Rake $50 | Jackpot $0 | Bingo $0
+Hand was run two times
+FIRST Board [5c 6s 8c Jh Jd]
+SECOND Board [2c Kc]
+Seat 1: d6e0299a (button) folded before Flop (didn't bet)
+Seat 2: Hero (small blind) showed [6c Ts 7c 3s 2h] and lost with Pair of Jacks and Pair of Sixes, and won ($1,694.48) with Pair of Twos
+Seat 3: 6babca1 (big blind) showed [6h 4d Kd Qc Ks] and won ($1,694.48) with Pair of Kings and Pair of Jacks, and lost with Three Kings
+Seat 4: 18cc49f9 folded before Flop (didn't bet)
+Seat 6: 9be70104 folded before Flop (didn't bet)

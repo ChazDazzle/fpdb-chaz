@@ -1,0 +1,26 @@
+Hand #779388412 - Omaha H/L(No Limit) - $3.00/$6.00 - 2021/04/16 19:22:47 UTC
+Parachute 6-max Seat #6 is the button
+Seat 1: Player1 ($135.00)
+Seat 2: Player0 ($1133.13)
+Seat 3: Hero ($139.00)
+Seat 4: Player2 ($176.90)
+Seat 5: Player3 ($180.00)
+Seat 6: Player4 ($667.75)
+Player1 posts the small blind $3.00
+Player0 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [Qs 2c 8d 8c]
+Hero folds
+Player2 folds
+Player3 folds
+Player4 folds
+Player1 folds
+Player0 does not show
+*** SUMMARY ***
+Total pot $9.00
+Seat 1: Player1 (small blind) folded on the Pre-Flop
+Seat 2: Player0 did not show and won $9.00
+Seat 3: Hero folded on the Pre-Flop and did not bet
+Seat 4: Player2 folded on the Pre-Flop and did not bet
+Seat 5: Player3 folded on the Pre-Flop and did not bet
+Seat 6: Player4 (button) folded on the Pre-Flop

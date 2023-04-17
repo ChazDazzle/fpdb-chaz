@@ -72,7 +72,7 @@ rem   ******************************************************************
 rem after UAC escalation, we need to cd to the folder containing this script
 cd %~dp0
 
-cd pyfpdb
+rem cd pyfpdb
 
 rem   rebuild the gtk svg loader cache file
 

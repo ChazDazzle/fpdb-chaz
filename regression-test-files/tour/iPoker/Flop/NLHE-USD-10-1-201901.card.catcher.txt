@@ -1,0 +1,65 @@
+<session sessioncode="263540">
+  <general>
+    <mode>real</mode>
+    <gametype>Holdem NL</gametype>
+    <tablename>Table47D10000Guaranteed10KChips10MinuteLevels21387633</tablename>
+    <duration>N/A</duration>
+    <gamecount>0</gamecount>
+    <startdate>2019-02-10 07:17:31</startdate>
+    <currency>USD</currency>
+    <nickname>Hero</nickname>
+    <bets>0</bets>
+    <wins>0</wins>
+    <chipsin>0</chipsin>
+    <chipsout>0</chipsout>
+    <ipoints>0</ipoints>
+    <statuspoints>0</statuspoints>
+    <awardpoints>0</awardpoints>
+    <tournamentcode>21387633</tournamentcode>
+    <tournamentname>Table47D10000Guaranteed10KChips10MinuteLevels21387633</tournamentname>
+    <place>25</place>
+    <buyin>$10+$1</buyin>
+    <totalbuyin>$11</totalbuyin>
+    <win>0</win>
+  </general>
+<game gamecode="3826297126">
+  <general>
+    <startdate>2019-02-10 07:20:24</startdate>
+    <players>
+      <player seat="2" name="P776-546004VQ" chips="428065" dealer="0" win="0" bet="4000" rebuy="0" addon="0" />
+      <player seat="3" name="P282-152432OW" chips="418953" dealer="0" win="0" bet="4000" rebuy="0" addon="0" />
+      <player seat="4" name="P1287-600384XA" chips="900103" dealer="0" win="0" bet="4000" rebuy="0" addon="0" />
+      <player seat="5" name="P793-132146TM" chips="368496" dealer="0" win="452496" bet="368496" rebuy="0" addon="0" />
+      <player seat="6" name="P885-967323LU" chips="1647942" dealer="1" win="0" bet="4000" rebuy="0" addon="0" />
+      <player seat="8" name="P388-883048WP" chips="1012298" dealer="0" win="0" bet="24000" rebuy="0" addon="0" />
+      <player seat="10" name="P778-291061TD" chips="959944" dealer="0" win="0" bet="44000" rebuy="0" addon="0" />
+    </players>
+  </general>
+  <round no="0">
+    <action no="1" player="P776-546004VQ" type="15" sum="4000" cards="[cards]" />
+    <action no="2" player="P282-152432OW" type="15" sum="4000" cards="[cards]" />
+    <action no="3" player="P1287-600384XA" type="15" sum="4000" cards="[cards]" />
+    <action no="4" player="P793-132146TM" type="15" sum="4000" cards="[cards]" />
+    <action no="5" player="P885-967323LU" type="15" sum="4000" cards="[cards]" />
+    <action no="6" player="P388-883048WP" type="15" sum="4000" cards="[cards]" />
+    <action no="7" player="P778-291061TD" type="15" sum="4000" cards="[cards]" />
+    <action no="8" player="P388-883048WP" type="1" sum="20000" cards="[cards]" />
+    <action no="9" player="P778-291061TD" type="2" sum="40000" cards="[cards]" />
+  </round>
+  <round no="1">
+    <cards type="Pocket" player="P776-546004VQ">X X</cards>
+    <cards type="Pocket" player="P282-152432OW">X X</cards>
+    <cards type="Pocket" player="P1287-600384XA">X X</cards>
+    <cards type="Pocket" player="P793-132146TM">X X</cards>
+    <cards type="Pocket" player="P885-967323LU">X X</cards>
+    <cards type="Pocket" player="P388-883048WP">X X</cards>
+    <cards type="Pocket" player="P778-291061TD">X X</cards>
+    <action no="10" player="P776-546004VQ" type="0" sum="0" cards="" />
+    <action no="11" player="P282-152432OW" type="0" sum="0" cards="" />
+    <action no="12" player="P1287-600384XA" type="0" sum="0" cards="" />
+    <action no="13" player="P793-132146TM" type="7" sum="364496" cards="" />
+    <action no="14" player="P885-967323LU" type="0" sum="0" cards="" />
+    <action no="15" player="P388-883048WP" type="0" sum="0" cards="" />
+    <action no="16" player="P778-291061TD" type="0" sum="0" cards="" />
+  </round>
+</game>

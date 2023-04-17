@@ -37,58 +37,58 @@ DEPEND="${RDEPEND}"
 src_install() {
 	insinto "${GAMES_DATADIR}"/${PN}
 	doins -r gfx || die "failed to install gfx directory"
-	doins -r pyfpdb || die "failed to install pyfpdb directory"
+	doins -r *.* || die "failed to install fpdb directory"
 
 	if use linguas_ca; then
-		msgfmt pyfpdb/locale/fpdb-ca_ES.po -o pyfpdb/locale/ca.mo || die "failed to create Catalan mo file"
+		msgfmt locale/fpdb-ca_ES.po -o locale/ca.mo || die "failed to create Catalan mo file"
 	fi
 
 	if use linguas_de; then
-		msgfmt pyfpdb/locale/fpdb-de_DE.po -o pyfpdb/locale/de.mo || die "failed to create German mo file"
+		msgfmt locale/fpdb-de_DE.po -o locale/de.mo || die "failed to create German mo file"
 	fi
 
 	if use linguas_es; then
-		msgfmt pyfpdb/locale/fpdb-es_ES.po -o pyfpdb/locale/es.mo || die "failed to create Spanish mo file"
+		msgfmt locale/fpdb-es_ES.po -o locale/es.mo || die "failed to create Spanish mo file"
 	fi
 
 	if use linguas_fr; then
-		msgfmt pyfpdb/locale/fpdb-fr_FR.po -o pyfpdb/locale/fr.mo || die "failed to create French mo file"
+		msgfmt locale/fpdb-fr_FR.po -o locale/fr.mo || die "failed to create French mo file"
 	fi
 
 	if use linguas_hu; then
-		msgfmt pyfpdb/locale/fpdb-hu_HU.po -o pyfpdb/locale/hu.mo || die "failed to create Hungarian mo file"
+		msgfmt locale/fpdb-hu_HU.po -o locale/hu.mo || die "failed to create Hungarian mo file"
 	fi
 
 	if use linguas_it; then
-		msgfmt pyfpdb/locale/fpdb-it_IT.po -o pyfpdb/locale/it.mo || die "failed to create Italian mo file"
+		msgfmt locale/fpdb-it_IT.po -o locale/it.mo || die "failed to create Italian mo file"
 	fi
 
 	if use linguas_lt; then
-		msgfmt pyfpdb/locale/fpdb-lt_IT.po -o pyfpdb/locale/lt.mo || die "failed to create Lithuanian mo file"
+		msgfmt locale/fpdb-lt_IT.po -o locale/lt.mo || die "failed to create Lithuanian mo file"
 	fi
 
 	if use linguas_pl; then
-		msgfmt pyfpdb/locale/fpdb-pl_PL.po -o pyfpdb/locale/pl.mo || die "failed to create Polish mo file"
+		msgfmt locale/fpdb-pl_PL.po -o locale/pl.mo || die "failed to create Polish mo file"
 	fi
 
 	if use linguas_pt; then
-		msgfmt pyfpdb/locale/fpdb-pt_BR.po -o pyfpdb/locale/pt.mo || die "failed to create Portuguese mo file"
+		msgfmt locale/fpdb-pt_BR.po -o locale/pt.mo || die "failed to create Portuguese mo file"
 	fi
 
 	if use linguas_ro; then
-		msgfmt pyfpdb/locale/fpdb-ro_RO.po -o pyfpdb/locale/ro.mo || die "failed to create Romanian mo file"
+		msgfmt locale/fpdb-ro_RO.po -o locale/ro.mo || die "failed to create Romanian mo file"
 	fi
 
 	if use linguas_ru; then
-		msgfmt pyfpdb/locale/fpdb-ru_RU.po -o pyfpdb/locale/ru.mo || die "failed to create Russian mo file"
+		msgfmt locale/fpdb-ru_RU.po -o locale/ru.mo || die "failed to create Russian mo file"
 	fi
 
 	if use linguas_zh; then
-		msgfmt pyfpdb/locale/fpdb-zh_CN.po -o pyfpdb/locale/zh.mo || die "failed to create Chinese mo file"
+		msgfmt locale/fpdb-zh_CN.po -o locale/zh.mo || die "failed to create Chinese mo file"
 	fi
 
 	if use linguas_ca || use linguas_de || use linguas_es || use linguas_fr || use linguas_hu || use linguas_it || use linguas_lt|| use linguas_pl || use linguas_pt || use linguas_ro || use	linguas_ru || use linguas_zh; then
-		domo pyfpdb/locale/*.mo || die "failed to install mo files"
+		domo locale/*.mo || die "failed to install mo files"
 	fi
 
 	doins readme.txt || die "failed to install readme.txt file"
@@ -102,8 +102,8 @@ src_install() {
 	newicon gfx/fpdb-icon.png ${PN}.png || die "failed to install fpdb icon"
 	make_desktop_entry ${PN}  || die "failed to create desktop entry"
 
-	fperms +x "${GAMES_DATADIR}"/${PN}/pyfpdb/fpdb.pyw
-	fperms +x "${GAMES_DATADIR}"/${PN}/pyfpdb/HUD_main.pyw
+	fperms +x "${GAMES_DATADIR}"/${PN}/fpdb.pyw
+	fperms +x "${GAMES_DATADIR}"/${PN}/HUD_main.pyw
 
 	prepgamesdirs
 }

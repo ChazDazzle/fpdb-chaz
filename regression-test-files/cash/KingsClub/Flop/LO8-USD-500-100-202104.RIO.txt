@@ -1,0 +1,22 @@
+#3969308: Limit Omaha Hi-Lo - 500/1,000
+2021-04-01 08:16:08
+Table 'Bobbys Room Omaha 2' Seat 5 is the button
+Seat 1: Hero (32,500)
+Seat 5: Player0 (125)
+Seat 7: Player1 (51,250)
+Player1: posts the small blind 250
+Hero: posts the big blind 500
+*** HOLE CARDS ***
+Dealt to Hero: [7h 9h Qd 7d]
+Dealt to Player0: [X X X X]
+Dealt to Player1: [X X X X]
+Player0 calls 125, and is all in
+Player1 folds
+Hero shows [7h 9h Qd 7d]
+Player0 shows [5d 4h 8h 5c]
+*** RIVER *** [2s Th 6h 7c] [5s]
+*** SUMMARY ***
+Seat 1: Hero (32,500)
+Seat 5: Player0 (375) +250
+Seat 7: Player1 (51,000) -250
+Player0 wins pot (375)

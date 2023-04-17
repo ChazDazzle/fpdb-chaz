@@ -1,0 +1,33 @@
+PokerStars Hand #3210773305: Tournament #12305244, $125+$10 - Hold'em No Limit (3000/6000) - 2015/06/14 21:06:43
+Table '#17 9' 6-max Seat #3 is the button
+Seat 2: UTGplus2 (165,836 in chips)
+Seat 3: Dealer (100,431 in chips)
+Seat 5: Small Blind (170,703 in chips)
+Seat 6: HOOP (226,000 in chips)
+Seat 7: UTG (123,203 in chips)
+Seat 9: UTGplus1 (148,827 in chips)
+UTGplus2: posts the ante 600
+Dealer: posts the ante 600
+Small Blind: posts the ante 600
+HOOP: posts the ante 600
+UTG: posts the ante 600
+UTGplus1: posts the ante 600
+Small Blind: posts small blind 3000
+HOOP: posts big blind 6000
+*** HOLE CARDS ***
+Dealt to HOOP [9d 5h]
+UTG: folds
+UTGplus1: folds
+UTGplus2: folds
+Dealer: folds
+Small Blind: folds
+HOOP: shows [9d 5h]
+HOOP collected 12600 from pot
+*** SUMMARY ***
+Total pot 12600 | Rake 0
+Seat 2: UTGplus2 mucked [5d 6c]
+Seat 3: Dealer (button) mucked [4c 3h]
+Seat 5: Small Blind (small blind) mucked [4s 2d]
+Seat 6: HOOP (big blind) won (12600)
+Seat 7: UTG mucked [Qs 4h]
+Seat 9: UTGplus1 mucked [Td 7s]

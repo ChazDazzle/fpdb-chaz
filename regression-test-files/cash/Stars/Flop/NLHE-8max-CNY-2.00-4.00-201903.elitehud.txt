@@ -1,0 +1,21 @@
+PokerMaster Hand #3713015100020: Hold'em No Limit (¥2/¥4 CNY) - 2019/03/19 10:57:09 UTC
+Table '37130151' 8-max Seat #5 is the button
+Seat 2: 933215526 (¥182 in chips) 
+Seat 5: 4872679785 (¥998 in chips) 
+Seat 6: 3072954636 (¥820 in chips) 
+933215526: posts the ante ¥1
+4872679785: posts the ante ¥1
+3072954636: posts the ante ¥1
+3072954636: posts small blind ¥2
+933215526: posts big blind ¥4
+*** HOLE CARDS ***
+4872679785: raises ¥8 to ¥12
+3072954636: folds 
+933215526: folds 
+Uncalled bet (¥8) returned to 4872679785
+4872679785 collected ¥13 from pot
+*** SUMMARY ***
+Total pot ¥13 | Rake ¥0 
+Seat 2: 933215526 (big blind) folded before Flop
+Seat 5: 4872679785 (button) collected (¥13)
+Seat 6: 3072954636 (small blind) folded before Flop

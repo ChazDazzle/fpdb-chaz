@@ -1,0 +1,46 @@
+Poker Hand #OM48096271: PLO-5 ($2/$5) - 2022/05/06 03:00:57
+Table 'PLO-5Gold3' 6-max Seat #6 is the button
+Seat 1: Hero ($1,945.51 in chips)
+Seat 2: 79d46bc2 ($251.24 in chips)
+Seat 3: 6f5c3d9a ($535.37 in chips)
+Seat 4: d50c19ff ($1,127.6 in chips)
+Seat 5: ac112925 ($278.53 in chips)
+Seat 6: 32f6686e ($534.5 in chips)
+Hero: posts small blind $2
+79d46bc2: posts big blind $5
+*** HOLE CARDS ***
+Dealt to Hero [6s As 6d 4s Ad]
+Dealt to 79d46bc2 
+Dealt to 6f5c3d9a 
+Dealt to d50c19ff 
+Dealt to ac112925 
+Dealt to 32f6686e 
+6f5c3d9a: calls $5
+d50c19ff: folds
+ac112925: calls $5
+32f6686e: folds
+Hero: raises $20 to $25
+79d46bc2: raises $60 to $85
+6f5c3d9a: folds
+ac112925: folds
+Hero: raises $180 to $265
+79d46bc2: calls $166.24 and is all-in
+Uncalled bet ($13.76) returned to Hero
+Hero: shows [6s As 6d 4s Ad] (Pair of Aces)
+79d46bc2: shows [Kh 9s Kd 9h 2h] (Pair of Kings)
+*** FLOP *** [Kc 3c 7h]
+*** TURN *** [Kc 3c 7h] [Ac]
+Hero: Chooses to EV Cashout 
+*** RIVER *** [Kc 3c 7h Ac] [4c]
+Hero: Pays Cashout Risk ($13.15)
+*** SHOWDOWN ***
+Hero collected $499.98 from pot
+*** SUMMARY ***
+Total pot $512.48 | Rake $7.5 | Jackpot $5 | Bingo $0
+Board [Kc 3c 7h Ac 4c]
+Seat 1: Hero (small blind) showed [6s As 6d 4s Ad] and won ($499.98) with Three Aces, Cashout Risk ($13.15)
+Seat 2: 79d46bc2 (big blind) showed [Kh 9s Kd 9h 2h] and lost with Three Kings
+Seat 3: 6f5c3d9a folded before Flop
+Seat 4: d50c19ff folded before Flop (didn't bet)
+Seat 5: ac112925 folded before Flop
+Seat 6: 32f6686e (button) folded before Flop (didn't bet)

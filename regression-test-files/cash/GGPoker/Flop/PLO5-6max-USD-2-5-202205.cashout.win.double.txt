@@ -1,0 +1,50 @@
+Poker Hand #OM47349310: PLO-5 ($2/$5) - 2022/05/01 22:41:42
+Table 'PLO-5Gold4' 6-max Seat #6 is the button
+Seat 1: 466a0aa1 ($2,137.61 in chips)
+Seat 2: 4ad7448f ($500 in chips)
+Seat 3: Hero ($1,306.18 in chips)
+Seat 4: 68e6a63e ($1,093.18 in chips)
+Seat 5: 834069ba ($652.75 in chips)
+Seat 6: e0684116 ($234.96 in chips)
+466a0aa1: posts small blind $2
+4ad7448f: posts big blind $5
+*** HOLE CARDS ***
+Dealt to 466a0aa1 
+Dealt to 4ad7448f 
+Dealt to Hero [Kh Ks Kd 2c 8h]
+Dealt to 68e6a63e 
+Dealt to 834069ba 
+Dealt to e0684116 
+Hero: folds
+68e6a63e: folds
+834069ba: raises $12 to $17
+e0684116: calls $17
+466a0aa1: calls $15
+4ad7448f: folds
+*** FLOP *** [7h 3d Js]
+466a0aa1: checks
+834069ba: checks
+e0684116: bets $56
+466a0aa1: raises $168 to $224
+834069ba: folds
+e0684116: calls $161.96 and is all-in
+Uncalled bet ($6.04) returned to 466a0aa1
+466a0aa1: shows [9s 9h 7s Jd 7c] (Three Sevens)
+e0684116: shows [4d 3c 4s 3h 2h] (Three Treys)
+466a0aa1: Chooses to EV Cashout 
+*** TURN *** [7h 3d Js] [9c]
+466a0aa1: Pays Cashout Risk ($2)
+466a0aa1: Chooses to EV Cashout 
+*** RIVER *** [7h 3d Js 9c] [Qs]
+466a0aa1: Pays Cashout Risk ($2)
+*** SHOWDOWN ***
+466a0aa1 collected $479.42 from pot
+*** SUMMARY ***
+Total pot $491.92 | Rake $7.5 | Jackpot $5 | Bingo $0
+Board [7h 3d Js 9c Qs]
+Seat 1: 466a0aa1 (small blind) showed [9s 9h 7s Jd 7c] and won ($479.42) with Three Nines, Cashout Risk ($4)
+Seat 2: 4ad7448f (big blind) folded before Flop
+Seat 3: Hero folded before Flop (didn't bet)
+Seat 4: 68e6a63e folded before Flop (didn't bet)
+Seat 5: 834069ba folded on the Flop
+Seat 6: e0684116 (button) showed [4d 3c 4s 3h 2h] and lost with Three Treys

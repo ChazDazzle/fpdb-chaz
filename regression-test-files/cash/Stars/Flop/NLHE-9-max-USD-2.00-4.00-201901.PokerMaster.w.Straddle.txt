@@ -1,0 +1,55 @@
+PokerMaster Hand #154651502936610012: Hold'em No Limit ($2/$4 USD) - 2019/01/03 11:48:00 UTC
+Table 'H28桌248at2' 9-max Seat #9 is the button
+Seat 1: 身轻如燕 ($730 in chips) 
+Seat 2: 打死也不说 ($755 in chips) 
+Seat 3: 上战场女武神 ($539 in chips) 
+Seat 4: 男人本色 ($822 in chips) 
+Seat 6: 赤兔丶 ($783 in chips) 
+Seat 7: 不太紧的小玩家 ($390 in chips) 
+Seat 8: 乖就亲你 ($586 in chips) 
+Seat 9: 糖醋排骨 ($390 in chips) 
+身轻如燕: posts the ante $2
+打死也不说: posts the ante $2
+上战场女武神: posts the ante $2
+男人本色: posts the ante $2
+赤兔丶: posts the ante $2
+不太紧的小玩家: posts the ante $2
+乖就亲你: posts the ante $2
+糖醋排骨: posts the ante $2
+身轻如燕: posts small blind $2
+打死也不说: posts big blind $4
+上战场女武神: posts big blind $8
+*** HOLE CARDS ***
+Dealt to 乖就亲你 [Td Jd]
+男人本色: folds 
+赤兔丶: raises $25 to $33
+不太紧的小玩家: folds 
+乖就亲你: raises $48 to $81
+糖醋排骨: folds 
+身轻如燕: folds 
+打死也不说: folds 
+上战场女武神: folds 
+赤兔丶: calls $48
+*** FLOP *** [6h 6c 3s]
+赤兔丶: checks 
+乖就亲你: bets $64
+赤兔丶: raises $86 to $150
+乖就亲你: calls $86
+*** TURN *** [6h 6c 3s] [Ad]
+赤兔丶: checks 
+乖就亲你: bets $353 and is all-in
+赤兔丶: folds 
+Uncalled bet ($353) returned to 乖就亲你
+乖就亲你 collected $492 from pot
+*** SUMMARY ***
+Total pot $492 | Rake $0 
+Board [6h 6c 3s Ad]
+Seat 1: 身轻如燕 (small blind) folded before Flop
+Seat 2: 打死也不说 (big blind) folded before Flop
+Seat 3: 上战场女武神 folded before Flop
+Seat 4: 男人本色 folded before Flop (didn't bet)
+Seat 6: 赤兔丶 folded on the Turn
+Seat 7: 不太紧的小玩家 folded before Flop (didn't bet)
+Seat 8: 乖就亲你 collected ($492)
+Seat 9: 糖醋排骨 (button) folded before Flop (didn't bet)
+

@@ -3,7 +3,7 @@ import os, glob
 
 # Hand history parsers are imported programmatically so we have to
 # manually specify them for pyinstaller.
-parsers = glob.glob('pyfpdb/*ToFpdb.py') + glob.glob('pyfpdb/*Summary.py')
+parsers = glob.glob('*ToFpdb.py') + glob.glob('*Summary.py')
 parsers = [os.path.splitext(os.path.basename(p))[0] for p in parsers]
 
 # Likewise hud classes.
@@ -13,7 +13,7 @@ import platform
 os_family = platform.system()
 ignore=['sqlite3.test'] # sqlite test suite brings in tkinter, don't want that
 
-a = Analysis(['pyfpdb/fpdb.pyw'],
+a = Analysis(['fpdb.pyw'],
              excludes=['gobject'] + ignore,
              pathex=['../pypoker-eval'],
              # MergeStructures should be auto-added as it is imported
@@ -22,7 +22,7 @@ a = Analysis(['pyfpdb/fpdb.pyw'],
              hiddenimports=parsers + ['MergeStructures', '_pokereval_2_7'],
              hookspath=None,
              runtime_hooks=None)
-ahud = Analysis(['pyfpdb/HUD_main.pyw'],
+ahud = Analysis(['HUD_main.pyw'],
              excludes=ignore,
              hiddenimports=parsers + ['MergeStructures'] + hudclasses,
              hookspath=None,
@@ -46,9 +46,9 @@ coll = COLLECT(exe,
                a.zipfiles,
                a.datas,
                Tree('gfx', prefix='gfx'),
-               Tree('pyfpdb/locale', prefix='pyfpdb/locale', excludes=['*.po', '*.pot', '*.sh']),
-               [('pyfpdb/logging.conf','pyfpdb/logging.conf','DATA')],
-               [('pyfpdb/HUD_config.xml.example','pyfpdb/HUD_config.xml.example','DATA')],
+               Tree('locale', prefix='locale', excludes=['*.po', '*.pot', '*.sh']),
+               [('logging.conf','logging.conf','DATA')],
+               [('HUD_config.xml.example','HUD_config.xml.example','DATA')],
                strip=None,
                upx=True,
                name='fpdb')

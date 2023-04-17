@@ -1,0 +1,34 @@
+Poker Hand #OM812126: PLO-5 ($5/$10) - 2021/04/08 01:36:05
+Table 'PLO-5Platinum6' 6-max Seat #4 is the button
+Seat 1: 305cb110 ($585 in chips)
+Seat 2: 59c39d07 ($595 in chips)
+Seat 3: 54de9dcd ($2,600.35 in chips)
+Seat 4: 6bf5ff85 ($953.9 in chips)
+Seat 5: 22129698 ($1,260.62 in chips)
+Seat 6: Hero ($440.91 in chips)
+22129698: posts small blind $5
+Hero: posts big blind $10
+6bf5ff85: straddle $20
+*** HOLE CARDS ***
+Dealt to 305cb110 
+Dealt to 59c39d07 
+Dealt to 54de9dcd 
+Dealt to 6bf5ff85 
+Dealt to 22129698 
+Dealt to Hero [Ks 3c 4s 2s 9s]
+22129698: folds
+Hero: folds
+305cb110: folds
+59c39d07: folds
+54de9dcd: folds
+Uncalled bet ($10) returned to 6bf5ff85
+*** SHOWDOWN ***
+6bf5ff85 collected $25 from pot
+*** SUMMARY ***
+Total pot $25 | Rake $0 | Jackpot $0 | Bingo $0
+Seat 1: 305cb110 folded before Flop (didn't bet)
+Seat 2: 59c39d07 folded before Flop (didn't bet)
+Seat 3: 54de9dcd folded before Flop (didn't bet)
+Seat 4: 6bf5ff85 (button) collected ($25)
+Seat 5: 22129698 (small blind) folded before Flop
+Seat 6: Hero (big blind) folded before Flop

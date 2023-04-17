@@ -187,7 +187,7 @@ FileDelete("pywin32.7z")
 FileDelete("default.conf")
 
 $goodbyeBox = MsgBox(4100, "End of Installation", "The Computer needs to be restarted for the installation to be complete." & @CRLF & _
-	"After that you can start fpdb by double clicking the file fpdb.py which is located in the folder pyfpdb of the fpdb build you downloaded." & @CRLF & _
+	"After that you can start fpdb by double clicking the file fpdb.py which is located in the root folder of the fpdb build you downloaded." & @CRLF & _
 	"If you haven't downloaded fpdb yet you can do it here: http://ovh.dl.sourceforge.net/sourceforge/fpdb/fpdb-alpha2-p68.zip" & @CRLF & @CRLF & _
 	"If you want to restart the computer now click 'Yes'." & @CRLF & _
 	"If you want to restart the computer later click 'No'.")

@@ -25,17 +25,17 @@
 #get rid of extraneous stuff
 rm regression-test/*.found.txt
 rm regression-test/*.pyc
-rm pyfpdb/*.pyc
-rm pyfpdb/*~
-rm pyfpdb/fpdb-error-log.txt
-rm pyfpdb/HUD-error.txt
-rm pyfpdb/hand-errors.txt
+rm *.pyc
+rm *~
+rm fpdb-error-log.txt
+rm HUD-error.txt
+rm hand-errors.txt
 
 # make the fpdb_$1.zip file for windows
 echo "*** making zip file"
 zip -r ../fpdb_$1.zip docs
 zip -r ../fpdb_$1.zip packaging
-zip -r ../fpdb_$1.zip pyfpdb
+zip -r ../fpdb_$1.zip *.*
 
 # now make the fpdb_$1.tar.bz2 file for linux
 echo "*** making tar.bz2 file"

@@ -1,0 +1,46 @@
+PokerStars Hand #202058540722:  6+ Hold'em No Limit (Button Blind $0.50 - Ante $0.50  USD) - 2019/07/07 0:30:30 JST [2019/07/06 11:30:30 ET]
+Table 'Archid II' 6-max Seat #4 is the button
+Seat 2: Player0 ($57.22 in chips) 
+Seat 3: Player1 ($22.50 in chips) 
+Seat 4: Player2 ($215.09 in chips) 
+Seat 5: Player3 ($18.75 in chips) 
+Seat 6: Hero ($50 in chips) 
+Player0: posts the ante $0.50
+Player1: posts the ante $0.50
+Player2: posts the ante $0.50
+Player3: posts the ante $0.50
+Hero: posts the ante $0.50
+Player2: posts button blind $0.50
+*** HOLE CARDS ***
+Dealt to Hero [7c 9c]
+Player3: raises $1 to $1.50
+Ya1yMami leaves the table
+Hero: folds 
+Player0: calls $1.50
+Player1: calls $1.50
+Player2: calls $1
+*** FLOP *** [Th 8c 6d]
+Player3: bets $1.50
+Player0: calls $1.50
+Player1: calls $1.50
+Player2: raises $9.50 to $11
+Player3: raises $5.75 to $16.75 and is all-in
+Player0: folds 
+Player1: raises $3.75 to $20.50 and is all-in
+Player2: calls $9.50
+*** TURN *** [Th 8c 6d] [6c]
+*** RIVER *** [Th 8c 6d 6c] [Kd]
+*** SHOW DOWN ***
+Player1: shows [9s Kc] (two pair, Kings and Sixes)
+Player2: shows [8d 7d] (two pair, Eights and Sixes)
+Player1 collected $7.50 from side pot
+Player3: shows [Jc Ah] (a pair of Sixes)
+Player1 collected $57.75 from main pot
+*** SUMMARY ***
+Total pot $67.75 Main pot $57.75. Side pot $7.50. | Rake $2.50 
+Board [Th 8c 6d 6c Kd]
+Seat 2: Player0 folded on the Flop
+Seat 3: Player1 showed [9s Kc] and won ($65.25) with two pair, Kings and Sixes
+Seat 4: Player2 (button blind) showed [8d 7d] and lost with two pair, Eights and Sixes
+Seat 5: Player3 showed [Jc Ah] and lost with a pair of Sixes
+Seat 6: Hero folded before Flop (didn't bet)

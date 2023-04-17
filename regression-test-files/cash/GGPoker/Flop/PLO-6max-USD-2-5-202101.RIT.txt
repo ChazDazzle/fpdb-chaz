@@ -1,0 +1,50 @@
+Poker Hand #OM232657303: PLO ($2/$5) - 2021/01/21 02:41:55
+Table 'PLOGold9' 6-max Seat #6 is the button
+Seat 1: Hero ($82.4 in chips)
+Seat 2: 21e21aa8 ($644.26 in chips)
+Seat 3: e0cf801d ($500 in chips)
+Seat 4: 3b7dff87 ($50 in chips)
+Seat 5: a45e9ced ($668.42 in chips)
+Seat 6: 657a57ac ($760.29 in chips)
+Hero: posts small blind $2
+21e21aa8: posts big blind $5
+3b7dff87: posts missed blind $2
+3b7dff87: posts big blind $5
+*** HOLE CARDS ***
+Dealt to Hero [Ad Jd Jc Ks]
+Dealt to 21e21aa8 
+Dealt to e0cf801d 
+Dealt to 3b7dff87 
+Dealt to a45e9ced 
+Dealt to 657a57ac 
+e0cf801d: folds
+3b7dff87: raises $14 to $19
+a45e9ced: folds
+657a57ac: folds
+Hero: raises $45 to $64
+21e21aa8: folds
+3b7dff87: calls $29 and is all-in
+Uncalled bet ($16) returned to Hero
+Hero: shows [Ad Jd Jc Ks]
+3b7dff87: shows [5d 2s 5c 2h]
+*** FIRST FLOP *** [2d 4h Ac]
+*** FIRST TURN *** [2d 4h Ac] [7h]
+*** FIRST RIVER *** [2d 4h Ac 7h] [Qs]
+*** SECOND FLOP *** [Td Qc 2c]
+*** SECOND TURN *** [Td Qc 2c] [Kc]
+*** SECOND RIVER *** [Td Qc 2c Kc] [Ah]
+*** FIRST SHOWDOWN ***
+3b7dff87 collected $48.93 from pot
+*** SECOND SHOWDOWN ***
+Hero collected $48.92 from pot
+*** SUMMARY ***
+Total pot $103 | Rake $5.15 | Jackpot $0 | Bingo $0
+Hand was run two times
+FIRST Board [2d 4h Ac 7h Qs]
+SECOND Board [Td Qc 2c Kc Ah]
+Seat 1: Hero (small blind) showed [Ad Jd Jc Ks] and lost with Pair of Aces, and won ($48.92) with Aces-High Straight
+Seat 2: 21e21aa8 (big blind) folded before Flop
+Seat 3: e0cf801d folded before Flop (didn't bet)
+Seat 4: 3b7dff87 showed [5d 2s 5c 2h] and won ($48.93) with Three Twos, and lost with Three Twos
+Seat 5: a45e9ced folded before Flop (didn't bet)
+Seat 6: 657a57ac (button) folded before Flop (didn't bet)

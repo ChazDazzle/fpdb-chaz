@@ -1,0 +1,36 @@
+Run It Once Poker Hand #55582352: Tournament #158168, €4.69+€0.31 Cub3d, Hold'em No Limit (10/20) - 2021/04/12 16:01 UTC [2021/04/12 17:01 CET]
+Table ID '55582350' 3-Max Seat #5 is the button
+Seat 1: Lyle N (500 in chips)
+Seat 3: Doc (500 in chips) [hero]
+Seat 5: Vance K (500 in chips)
+Lyle N: posts small blind 10
+Doc: posts big blind 20
+*** HOLE CARDS ***
+Dealt to Lyle N [Kd 5d]
+Dealt to Doc [9s 4s]
+Dealt to Vance K [8c 5c]
+Vance K: raises 20 to 40
+Lyle N: calls 30
+Doc: calls 20
+*** FLOP *** [Js Tc 7d]
+Lyle N: checks
+Doc: checks
+Vance K: checks
+*** TURN *** [Js Tc 7d] [9h]
+Lyle N: checks
+Doc: checks
+Vance K: bets 80
+Lyle N: folds
+Doc: folds
+Vance K: mucks hand
+*** SHOWDOWN ***
+Vance K: mucks hand
+Uncalled bet (80) returned to Vance K
+Vance K collected 120 from pot
+*** SUMMARY ***
+Total pot 120 | Rake 0
+Board [Js Tc 7d 9h]
+Seat 1: Lyle N (small blind) folded before River
+Seat 3: Doc (big blind) folded before River
+Seat 5: Vance K (button) mucked hand and won 120
+

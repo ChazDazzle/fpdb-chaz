@@ -1,0 +1,41 @@
+#39969428: Limit Seven Card Stud Hi-Lo - 40/80
+2021-01-02 15:52:36
+Table '8 Game Mix'
+Seat 1: Player0 (1,725.59)
+Seat 6: Hero (1,384.19)
+Player0: posts ante 10
+Hero: posts ante 10
+Dealt to Player0: [X X Td]
+Dealt to Hero: [Qh 4s Qs]
+Player0 brings in for 10
+Hero bets 40
+Player0 calls 40
+*** 3RD STREET ***
+Dealt to Player0: [Ks]
+Dealt to Hero: [3d]
+Player0 checks
+Hero bets 40
+Player0 calls 40
+*** 4TH STREET ***
+Dealt to Player0: [5d]
+Dealt to Hero: [6h]
+Player0 checks
+Hero bets 80
+Player0 calls 80
+*** 5TH STREET ***
+Dealt to Player0: [6d]
+Dealt to Hero: [As]
+Hero bets 80
+Player0 calls 80
+*** 6TH STREET ***
+Dealt to Player0: [X]
+Dealt to Hero: [Kd]
+Hero bets 80
+Player0 calls 80
+Hero shows [4s Qh Qs 3d 6h As Kd]
+Player0 shows [7s Ts Td Ks 5d 6d Kh]
+*** SUMMARY ***
+Seat 1: Player0 (2,054.59) +329
+Seat 6: Hero (1,054.19) -330
+Rake 1
+Player0 wins pot (659)
