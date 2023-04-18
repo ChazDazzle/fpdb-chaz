@@ -1,0 +1,37 @@
+Bovada Hand #4383748337 TBL#28228697 OMAHA Pot Limit [MVS] - 2022-12-05 04:04:40 UTC
+Table Info: Version: 1, Type: MVS, Stakes: $0.50-$1, Table: 00090336-0
+Seat 1: UTG ($92.67 in chips)
+Seat 2: UTG+1 ($84.63 in chips)
+Seat 4: Dealer ($93.42 in chips)
+Seat 5: Small Blind ($326.67 in chips)
+Seat 6: Big Blind [ME] ($100 in chips)
+Dealer : Set dealer [4]
+Player Info: Seat1: P1-5c44eae542055ea5c6f134dda6f06c4f, Seat2: P2-53a8a581ccad780cc23721bd37897eba, Seat4: P4-9c9798cef4570201ecd0a85adf505604, Seat5: P5-68c1ae1cd720cfe9ed50abc0b4139fd8
+Small Blind : Small Blind $0.50
+Big Blind [ME] : Big Blind $1
+*** HOLE CARDS ***
+Big Blind [ME] : Card dealt to a spot [7s Ac 7h As]
+UTG : Folds
+UTG+1 : Raises $3.50 to $3.50
+Dealer : Folds
+Small Blind : Folds
+Big Blind [ME] : Raises $10 to $11
+UTG+1 : Calls $7.50
+*** FLOP *** [Ad 6d 7c]
+Big Blind [ME] : Bets $21.38
+UTG+1 : Calls $21.38
+*** TURN *** [Ad 6d 7c] [3d]
+Big Blind [ME] : Checks
+UTG+1 : All-in $52.25
+Big Blind [ME] : Folds
+UTG+1 : Return uncalled portion of bet $52.25
+UTG+1 : Does not show
+UTG+1 : Hand result $62.26
+*** SUMMARY ***
+Total Pot($65.26)
+Board [Ad 6d 7c 3d]
+Seat+1: UTG Folded before the FLOP
+Seat+2: UTG+1 $62.26 [Does not show]
+Seat+4: Dealer Folded before the FLOP
+Seat+5: Small Blind Folded before the FLOP
+Seat+6: Big Blind [ME] Folded on the TURN

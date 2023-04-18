@@ -1,0 +1,21 @@
+PokerStars Hand #2762719793: Hold'em No Limit ($3/$6) - 2013/10/18 16:44:33
+Table '#5724496' 6-max Seat #4 is the button
+Seat 3: HOOP ($600 in chips)
+Seat 4: Dealer ($325 in chips)
+Seat 5: Small Blind ($252.50 in chips)
+Small Blind: posts small blind $3
+HOOP: posts big blind $6
+*** HOLE CARDS ***
+Dealt to HOOP [7c Th]
+Dealer: folds
+Small Blind: folds
+HOOP: shows [7c Th]
+HOOP collected $9 from pot
+Small Blind: Table deposit $347.50 
+*** SUMMARY ***
+Total pot $9 | Rake $0.00
+Seat 3: HOOP (big blind) won ($9)
+Seat 4: Dealer (button) mucked [3s 8d]
+Seat 5: Small Blind (small blind) mucked [6c 2c]
+
+

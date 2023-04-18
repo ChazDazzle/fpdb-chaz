@@ -1,0 +1,49 @@
+Bovada Hand #4086249181 TBL#23799796 HOLDEM No Limit [MVS] - 2021-03-11 22:58:57 UTC
+Table Info: Version: 1, Type: MVS, Stakes: $0.25-$0.50, Table: 000A031E-0
+Seat 1: Big Blind ($98.75 in chips)
+Seat 2: UTG ($18.11 in chips)
+Seat 3: UTG+1 [ME] ($75.67 in chips)
+Seat 4: UTG+2 ($69.62 in chips)
+Seat 6: Small Blind ($77.69 in chips)
+Dealer : Set dealer [5]
+Player Info: Seat1: P1-d07e9231948e51d3174b777a4673828d, Seat2: P2-44fbd5113ff5581f5a26b0ba89c64fce, Seat4: P4-4be1435659dd6477e8716fba5499e672, Seat6: P6-0bce045b1715d3fe9f17816328eec5e2
+Small Blind : Small Blind $0.25
+Big Blind : Big Blind $0.50
+*** HOLE CARDS ***
+Big Blind : Card dealt to a spot [Kc Js]
+UTG+1 [ME] : Card dealt to a spot [Kd Qs]
+UTG+2 : Card dealt to a spot [Ks 4h]
+UTG : Folds
+UTG+1 [ME] : Raises $1.25 to $1.25
+UTG+2 : Calls $1.25
+Small Blind : Calls $1
+Big Blind : Calls $0.75
+*** FLOP *** [7d Kh 9h]
+Small Blind : Checks
+Big Blind : Checks
+UTG+1 [ME] : Bets $1.50
+UTG+2 : Raises $9.25 to $9.25
+Small Blind : Folds
+Big Blind : Calls $9.25
+UTG+1 [ME] : Raises $33.92 to $35.42
+UTG+2 : Calls $26.17
+Big Blind : Calls $26.17
+*** TURN *** [7d Kh 9h] [Qd]
+Big Blind : Checks
+UTG+1 [ME] : All-in $39
+UTG+2 : All-in $32.95
+Big Blind : Calls $39
+*** RIVER *** [7d Kh 9h Qd] [7h]
+Big Blind : Showdown [Kh Kc 7h 7d Qd]
+UTG+1 [ME] : Showdown [Kh Kd Qs Qd 9h]
+UTG+2 : Showdown [Ks Kh 7h 7d Qd]
+UTG+1 [ME] : Hand result-Side pot $11.94
+UTG+1 [ME] : Hand result $207.27
+*** SUMMARY ***
+Total Pot($222.21)
+Board [7d Kh 9h Qd 7h]
+Seat+1: Big Blind lost with [Kc Js-Kh Kc 7h 7d Qd]
+Seat+2: UTG Folded before the FLOP
+Seat+3: UTG+1 [ME] $219.21 with [Kd Qs-Kh Kd Qs Qd 9h]
+Seat+4: UTG+2 lost with [Ks 4h-Ks Kh 7h 7d Qd]
+Seat+6: Small Blind Folded on the FLOP

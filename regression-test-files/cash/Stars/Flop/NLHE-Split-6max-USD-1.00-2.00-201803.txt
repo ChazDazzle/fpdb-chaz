@@ -1,0 +1,54 @@
+PokerStars Hand #184487904738:  Split Hold'em No Limit ($1/$2 USD) - 2018/03/28 19:38:18 CET [2018/03/28 13:38:18 ET]
+Table 'Rhodesia' 6-max Seat #3 is the button
+Seat 1: Player0 ($430.69 in chips) 
+Seat 2: Player1 ($138.26 in chips) 
+Seat 3: Player2 ($284.50 in chips) 
+Seat 4: Hero ($160 in chips) 
+Seat 5: Player3 ($205.52 in chips) 
+Seat 6: Player4 ($359.72 in chips) 
+Hero: posts small blind $1
+Player3: posts big blind $2
+*** HOLE CARDS ***
+Dealt to Hero [Qs Jd]
+Player4: folds 
+Player0 said, "<4"
+Player0: folds 
+Hero said, "have to make a living somehow"
+Player0 said, "(cwl)"
+Player1: raises $4 to $6
+Player2: calls $6
+Player0 said, "<3"
+Hero: folds 
+Player3: folds 
+*** FIRST FLOP *** [Ks 4c 8c]
+*** SECOND FLOP *** [4s Qd 5h]
+Player1: bets $7.41
+Player0 said, "hopefully they bring the plo equiv out :D"
+Player2: calls $7.41
+*** FIRST TURN *** [Ks 4c 8c] [8d]
+*** SECOND TURN *** [4s Qd 5h] [Ac]
+Player1: bets $20
+Hero said, "that would be fun"
+Player2: calls $20
+*** FIRST RIVER *** [Ks 4c 8c 8d] [6h]
+*** SECOND RIVER *** [4s Qd 5h Ac] [Ts]
+Player1: checks 
+Player2: checks 
+*** FIRST SHOW DOWN ***
+Player1: shows [7c 6c] (two pair, Eights and Sixes)
+Player2: shows [3d Ad] (a pair of Eights)
+Player1 collected $33.54 from pot
+*** SECOND SHOW DOWN ***
+Player1: shows [7c 6c] (high card Ace)
+Player2: shows [3d Ad] (a pair of Aces)
+Player2 collected $33.53 from pot
+*** SUMMARY ***
+Total pot $69.82 | Rake $2.75 
+FIRST Board [Ks 4c 8c 8d 6h]
+SECOND Board [4s Qd 5h Ac Ts]
+Seat 1: Player0 folded before Flop (didn't bet)
+Seat 2: Player1 showed [7c 6c] and won ($33.54) with two pair, Eights and Sixes, and lost with high card Ace
+Seat 3: Player2 (button) showed [3d Ad] and lost with a pair of Eights, and won ($33.53) with a pair of Aces
+Seat 4: Hero (small blind) folded before Flop
+Seat 5: Player3 (big blind) folded before Flop
+Seat 6: Player4 folded before Flop (didn't bet)

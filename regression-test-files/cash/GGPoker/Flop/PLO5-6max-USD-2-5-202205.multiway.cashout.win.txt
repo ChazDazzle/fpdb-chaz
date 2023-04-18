@@ -1,0 +1,51 @@
+Poker Hand #OM48095320: PLO-5 ($2/$5) - 2022/05/06 01:50:43
+Table 'PLO-5Gold3' 6-max Seat #6 is the button
+Seat 1: Hero ($305.88 in chips)
+Seat 2: 2bed592f ($373.99 in chips)
+Seat 3: 6f5c3d9a ($347.6 in chips)
+Seat 4: d50c19ff ($752.7 in chips)
+Seat 5: ac112925 ($313.43 in chips)
+Seat 6: 32f6686e ($1,059.65 in chips)
+Hero: posts small blind $2
+2bed592f: posts big blind $5
+*** HOLE CARDS ***
+Dealt to Hero [4h Kd 6d Kc 4c]
+Dealt to 2bed592f 
+Dealt to 6f5c3d9a 
+Dealt to d50c19ff 
+Dealt to ac112925 
+Dealt to 32f6686e 
+6f5c3d9a: raises $12 to $17
+d50c19ff: raises $41 to $58
+ac112925: calls $58
+32f6686e: folds
+Hero: calls $56
+2bed592f: folds
+6f5c3d9a: raises $237 to $295
+d50c19ff: raises $457.7 to $752.7 and is all-in
+ac112925: calls $255.43 and is all-in
+Hero: calls $247.88 and is all-in
+6f5c3d9a: calls $52.6 and is all-in
+Uncalled bet ($405.1) returned to d50c19ff
+d50c19ff: shows [Qc 9h Ad 8d Qh] (Pair of Queens)
+ac112925: shows [9s Ts Kh Ks Ac] (Pair of Kings)
+Hero: shows [4h Kd 6d Kc 4c] (Pair of Kings)
+6f5c3d9a: shows [As 8c Qd Jc 6s] (Ace-High)
+*** FLOP *** [2d Tc 4s]
+Hero: Chooses to EV Cashout 
+*** TURN *** [2d Tc 4s] [3h]
+Hero: Pays Cashout Risk ($317.72)
+*** RIVER *** [2d Tc 4s 3h] [2h]
+*** SHOWDOWN ***
+Hero collected $1,216.84 from pot
+ac112925 collected $22.47 from pot
+d50c19ff collected $67.72 from pot
+*** SUMMARY ***
+Total pot $1,319.51 | Rake $7.48 | Jackpot $5 | Bingo $0
+Board [2d Tc 4s 3h 2h]
+Seat 1: Hero (small blind) showed [4h Kd 6d Kc 4c] and won ($1,216.84) with Fours Full over Twos, Cashout Risk ($317.72)
+Seat 2: 2bed592f (big blind) folded before Flop
+Seat 3: 6f5c3d9a showed [As 8c Qd Jc 6s] and lost with Pair of Twos
+Seat 4: d50c19ff showed [Qc 9h Ad 8d Qh] and won ($67.72) with Pair of Queens and Pair of Twos
+Seat 5: ac112925 showed [9s Ts Kh Ks Ac] and won ($22.47) with Pair of Kings and Pair of Twos
+Seat 6: 32f6686e (button) folded before Flop (didn't bet)

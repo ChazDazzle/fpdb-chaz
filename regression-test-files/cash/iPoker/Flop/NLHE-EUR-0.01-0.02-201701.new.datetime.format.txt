@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="4096452442">
+ <general>
+  <mode>real</mode>
+  <gametype>Holdem NL €0.01/€0.02</gametype>
+  <tablename>Ajaccio, 486280776</tablename>
+  <tablecurrency>EUR</tablecurrency>
+  <duration>00:05:21</duration>
+  <gamecount>3</gamecount>
+  <startdate>2017/01/23 22:27:48</startdate>
+  <currency>EUR</currency>
+  <nickname>Hero</nickname>
+  <bets>€0.02</bets>
+  <wins>€0.00</wins>
+  <chipsin>€0.78</chipsin>
+  <chipsout>€0.78</chipsout>
+  <statuspoints>0.00</statuspoints>
+  <awardpoints>0.00</awardpoints>
+  <ipoints>0.00</ipoints>
+ </general>
+ <game gamecode="3858162574">
+  <general>
+   <startdate>2017/01/23 22:27:48</startdate>
+   <players>
+    <player chips="€2.02" dealer="0" seat="1" name="Player0" bet="€0.02" win="€0.00"/>
+    <player chips="€1.58" dealer="0" seat="2" name="Player1" bet="€0.02" win="€0.00"/>
+    <player chips="€3.05" dealer="0" seat="3" name="Player2" bet="€0.00" win="€0.00"/>
+    <player chips="€3.00" dealer="0" seat="4" name="Player3" bet="€0.00" win="€0.00"/>
+    <player chips="€0.66" dealer="0" seat="6" name="Player4" bet="€0.06" win="€0.00"/>
+    <player chips="€2.61" dealer="0" seat="8" name="Player5" bet="€0.00" win="€0.00"/>
+    <player chips="€1.42" dealer="1" seat="10" name="Player6" bet="€0.06" win="€0.15"/>
+   </players>
+  </general>
+  <round no="0">
+   <action no="1" cards="" type="1" sum="€0.01" player="Player0"/>
+   <action no="2" cards="" type="2" sum="€0.02" player="Player1"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Player2">X X</cards>
+   <action no="3" cards="" type="0" sum="€0.00" player="Player2"/>
+   <cards type="Pocket" player="Player3">X X</cards>
+   <action no="4" cards="" type="0" sum="€0.00" player="Player3"/>
+   <cards type="Pocket" player="Player4">H8 HK</cards>
+   <action no="5" cards="" type="3" sum="€0.02" player="Player4"/>
+   <cards type="Pocket" player="Player5">X X</cards>
+   <action no="6" cards="" type="0" sum="€0.00" player="Player5"/>
+   <cards type="Pocket" player="Player6">CQ CJ</cards>
+   <action no="7" cards="" type="3" sum="€0.02" player="Player6"/>
+   <cards type="Pocket" player="Player0">X X</cards>
+   <action no="8" cards="" type="3" sum="€0.01" player="Player0"/>
+   <cards type="Pocket" player="Player1">X X</cards>
+   <action no="9" cards="" type="4" sum="€0.00" player="Player1"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">D9 C10 HQ</cards>
+   <action no="10" cards="" type="4" sum="€0.00" player="Player0"/>
+   <action no="11" cards="" type="4" sum="€0.00" player="Player1"/>
+   <action no="12" cards="" type="4" sum="€0.00" player="Player4"/>
+   <action no="13" cards="" type="4" sum="€0.00" player="Player6"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">D5</cards>
+   <action no="14" cards="" type="4" sum="€0.00" player="Player0"/>
+   <action no="15" cards="" type="4" sum="€0.00" player="Player1"/>
+   <action no="16" cards="" type="4" sum="€0.00" player="Player4"/>
+   <action no="17" cards="" type="5" sum="€0.04" player="Player6"/>
+   <action no="18" cards="" type="0" sum="€0.00" player="Player0"/>
+   <action no="19" cards="" type="0" sum="€0.00" player="Player1"/>
+   <action no="20" cards="" type="3" sum="€0.04" player="Player4"/>
+  </round>
+  <round no="4">
+   <cards type="River" player="">H5</cards>
+   <action no="21" cards="" type="4" sum="€0.00" player="Player4"/>
+   <action no="22" cards="" type="4" sum="€0.00" player="Player6"/>
+  </round>
+ </game>
+ <game gamecode="3858162748">
+  <general>
+   <startdate>2017/01/23 22:29:14</startdate>
+   <players>
+    <player chips="€2.00" dealer="1" seat="1" name="Player0" bet="€0.16" win="€0.24"/>
+    <player chips="€1.56" dealer="0" seat="2" name="Player1" bet="€0.05" win="€0.00"/>
+    <player chips="€3.05" dealer="0" seat="3" name="Player2" bet="€0.02" win="€0.00"/>
+    <player chips="€3.00" dealer="0" seat="4" name="Player3" bet="€0.00" win="€0.00"/>
+    <player chips="€0.80" dealer="0" seat="5" name="Hero" bet="€0.02" win="€0.00"/>
+    <player chips="€0.60" dealer="0" seat="6" name="Player4" bet="€0.00" win="€0.00"/>
+    <player chips="€2.61" dealer="0" seat="8" name="Player5" bet="€0.00" win="€0.00"/>
+    <player chips="€1.51" dealer="0" seat="10" name="Player6" bet="€0.00" win="€0.00"/>
+   </players>
+  </general>
+  <round no="0">
+   <action no="1" cards="" type="1" sum="€0.01" player="Player1"/>
+   <action no="2" cards="" type="2" sum="€0.02" player="Player2"/>
+   <action no="3" cards="" type="2" sum="€0.02" player="Hero"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Player3">X X</cards>
+   <action no="4" cards="" type="0" sum="€0.00" player="Player3"/>
+   <cards type="Pocket" player="Hero">S7 S8</cards>
+   <action no="5" cards="" type="4" sum="€0.00" player="Hero"/>
+   <cards type="Pocket" player="Player4">X X</cards>
+   <action no="6" cards="" type="0" sum="€0.00" player="Player4"/>
+   <cards type="Pocket" player="Player5">X X</cards>
+   <action no="7" cards="" type="0" sum="€0.00" player="Player5"/>
+   <cards type="Pocket" player="Player6">X X</cards>
+   <action no="8" cards="" type="0" sum="€0.00" player="Player6"/>
+   <cards type="Pocket" player="Player0">X X</cards>
+   <action no="9" cards="" type="3" sum="€0.02" player="Player0"/>
+   <cards type="Pocket" player="Player1">X X</cards>
+   <action no="10" cards="" type="23" sum="€0.04" player="Player1"/>
+   <cards type="Pocket" player="Player2">X X</cards>
+   <action no="11" cards="" type="0" sum="€0.00" player="Player2"/>
+   <action no="12" cards="" type="0" sum="€0.00" player="Hero"/>
+   <action no="13" cards="" type="3" sum="€0.02" player="Player0"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">D4 H6 SJ</cards>
+   <action no="14" cards="" type="4" sum="€0.00" player="Player1"/>
+   <action no="15" cards="" type="4" sum="€0.00" player="Player0"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">S6</cards>
+   <action no="16" cards="" type="4" sum="€0.00" player="Player1"/>
+   <action no="17" cards="" type="5" sum="€0.12" player="Player0"/>
+   <action no="18" cards="" type="0" sum="€0.00" player="Player1"/>
+  </round>
+ </game>
+ <game gamecode="3858162919">
+  <general>
+   <startdate>2017/01/23 22:30:41</startdate>
+   <players>
+    <player chips="€2.08" dealer="0" seat="1" name="Player0" bet="€0.02" win="€0.00"/>
+    <player chips="€1.52" dealer="1" seat="2" name="Player1" bet="€0.00" win="€0.00"/>
+    <player chips="€3.03" dealer="0" seat="3" name="Player2" bet="€0.01" win="€0.00"/>
+    <player chips="€3.00" dealer="0" seat="4" name="Player3" bet="€0.02" win="€0.00"/>
+    <player chips="€0.78" dealer="0" seat="5" name="Hero" bet="€0.00" win="€0.00"/>
+    <player chips="€0.60" dealer="0" seat="6" name="Player4" bet="€0.02" win="€0.07"/>
+    <player chips="€2.61" dealer="0" seat="8" name="Player5" bet="€0.00" win="€0.00"/>
+    <player chips="€1.51" dealer="0" seat="10" name="Player6" bet="€0.00" win="€0.00"/>
+   </players>
+  </general>
+  <round no="0">
+   <action no="1" cards="" type="1" sum="€0.01" player="Player2"/>
+   <action no="2" cards="" type="2" sum="€0.02" player="Player3"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Hero">C8 HA</cards>
+   <action no="3" cards="" type="0" sum="€0.00" player="Hero"/>
+   <cards type="Pocket" player="Player4">SJ H2</cards>
+   <action no="4" cards="" type="3" sum="€0.02" player="Player4"/>
+   <cards type="Pocket" player="Player5">X X</cards>
+   <action no="5" cards="" type="0" sum="€0.00" player="Player5"/>
+   <cards type="Pocket" player="Player6">X X</cards>
+   <action no="6" cards="" type="0" sum="€0.00" player="Player6"/>
+   <cards type="Pocket" player="Player0">SK D9</cards>
+   <action no="7" cards="" type="3" sum="€0.02" player="Player0"/>
+   <cards type="Pocket" player="Player1">X X</cards>
+   <action no="8" cards="" type="0" sum="€0.00" player="Player1"/>
+   <cards type="Pocket" player="Player2">X X</cards>
+   <action no="9" cards="" type="0" sum="€0.00" player="Player2"/>
+   <cards type="Pocket" player="Player3">H10 CA</cards>
+   <action no="10" cards="" type="4" sum="€0.00" player="Player3"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">H4 C6 S6</cards>
+   <action no="11" cards="" type="4" sum="€0.00" player="Player3"/>
+   <action no="12" cards="" type="4" sum="€0.00" player="Player4"/>
+   <action no="13" cards="" type="4" sum="€0.00" player="Player0"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">S8</cards>
+   <action no="14" cards="" type="4" sum="€0.00" player="Player3"/>
+   <action no="15" cards="" type="4" sum="€0.00" player="Player4"/>
+   <action no="16" cards="" type="4" sum="€0.00" player="Player0"/>
+  </round>
+  <round no="4">
+   <cards type="River" player="">C2</cards>
+   <action no="17" cards="" type="4" sum="€0.00" player="Player3"/>
+   <action no="18" cards="" type="4" sum="€0.00" player="Player4"/>
+   <action no="19" cards="" type="4" sum="€0.00" player="Player0"/>
+  </round>
+ </game>
+</session>

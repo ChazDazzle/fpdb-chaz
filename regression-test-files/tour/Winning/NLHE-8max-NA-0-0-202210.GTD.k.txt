@@ -1,0 +1,61 @@
+Game Hand #1414880620 - $100k GTD Tournament #28282580 - Holdem(No Limit) - Level 14 (5000.00/10000.00)- 2022/10/17 01:22:20 UTC
+Table '2' 8-max Seat #6 is the button
+Seat 1: Player0 (366186.00)
+Seat 2: Player1 (88632.00)
+Seat 3: Player2 (128964.00)
+Seat 4: Hero (354263.00)
+Seat 5: Player3 (281546.00)
+Seat 6: Player4 (587797.00)
+Seat 7: Player5 (510416.00)
+Seat 8: Player6 (130320.00)
+Player0 posts ante 1250.00
+Player1 posts ante 1250.00
+Player2 posts ante 1250.00
+Hero posts ante 1250.00
+Player3 posts ante 1250.00
+Player4 posts ante 1250.00
+Player5 posts ante 1250.00
+Player6 posts ante 1250.00
+Player5 posts the small blind 5000.00
+Player6 posts the big blind 10000.00
+*** HOLE CARDS ***
+Main pot 10000.00
+Dealt to Hero [Ah Qh]
+Player0 folds
+Player1 folds
+Player2 folds
+Hero raises 21000.00 to 21000.00
+Player3 folds
+Player4 calls 21000.00
+Player5 folds
+Player6 calls 11000.00
+*** FLOP *** [6s 4c 6h]
+Main pot 78000.00
+Player6 checks
+Hero checks
+Player4 checks
+*** TURN *** [6s 4c 6h] [5h]
+Main pot 78000.00
+Player6 bets 19500.00
+Hero calls 19500.00
+Player4 folds
+*** RIVER *** [6s 4c 6h 5h] [Th]
+Main pot 117000.00
+Player6 bets 88570.00 and is all-in
+Hero calls 88570.00
+*** SHOW DOWN ***
+Main pot 294140.00
+Hero shows [Ah Qh] (a flush, Ace high [Ah Qh Th 6h 5h])
+Player6 shows [8c 6c] (three of a kind, Set of Sixs [6s 6h 6c Th 8c])
+Hero collected 294140.00 from main pot
+*** SUMMARY ***
+Total pot 294140.00
+Board [6s 4c 6h 5h Th]
+Seat 1: Player0 folded on the Pre-Flop and did not bet
+Seat 2: Player1 folded on the Pre-Flop and did not bet
+Seat 3: Player2 folded on the Pre-Flop and did not bet
+Seat 4: Hero showed [Ah Qh] and won 294140.00 with a flush, Ace high [Ah Qh Th 6h 5h]
+Seat 5: Player3 folded on the Pre-Flop and did not bet
+Seat 6: Player4 (button) folded on the Turn
+Seat 7: Player5 (small blind) folded on the Pre-Flop
+Seat 8: Player6 (big blind) showed [8c 6c] and lost with three of a kind, Set of Sixs [6s 6h 6c Th 8c]

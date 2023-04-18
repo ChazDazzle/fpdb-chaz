@@ -244,7 +244,7 @@ pytz was installed as part of the matplotlib package, but needs fixing to allow 
 In a py2exe package, this directory is actually a library.zip container file, so windows cannot find the timezone definitions, and will crash the app.
 
 We need to make a one-line change to pytz to search in the current working directory (which is not a container), and not the application directory.
-The py2exe script copies the timezone datafiles into the package folder pyfpdb/zoneinfo.
+The py2exe script copies the timezone datafiles into the package folder /zoneinfo.
 
 Thanks to Jeff Peck <peck.jeff <at> gmail.com> on the py2exe mailing list for documenting this problem and solution.
 
@@ -281,7 +281,7 @@ dos> cd Desktop\fpdb\packaging\windows
 dos> write py2exe_setup.py
 change the value of the variable "fpdbver" and save the file
 
-12.3/ edit pyfpdb/card_path.py
+12.3/ edit card_path.py
 
 Define this function (overwrite any existing definition):
 
@@ -333,7 +333,7 @@ Step 16 basic testing
 16.3/ Double click run_fpdb.bat
 16.4/ hopefully, fpdb will run 
 
-16.5/ check the contents of pyfpdb\fpdb.exe.log
+16.5/ check the contents of fpdb.exe.log
 16.6/ check the contents of fpdb_prerun.txt
 16.7/ check the contents of C:\Documents and Settings\xxxxxxx\Application Data\fpdb\log
 

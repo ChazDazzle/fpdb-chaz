@@ -1,0 +1,36 @@
+GAME #9041577782 Version:20.11.3.12 Uncalled:Y Texas Hold'em NL €5/€10 2021-04-06 03:09:09/GMT
+Table Kali Vrysi
+Seat 1: Player0 (€965.00 in chips)
+Seat 3: Player1 (€2,382.66 in chips) DEALER
+Seat 5: Player2 (€1,074.41 in chips)
+Seat 6: Hero (€1,417.59 in chips)
+Seat 8: Player3 (€1,226.00 in chips)
+Seat 10: Player4 (€1,194.40 in chips)
+Player2: Post SB €5.00
+Hero: Post BB €10.00
+*** HOLE CARDS ***
+Dealt to Hero [SA H9]
+Player3: Fold
+Player4: Fold
+Player0: Fold
+Player1: Raise (NF) €30.00
+Player2: Fold
+Hero: Call €20.00
+*** FLOP *** [HQ DA S5]
+Hero: Check
+Player1: Bet €45.50
+Hero: Call €45.50
+*** TURN *** [HJ]
+Hero: Check
+Player1: Bet €109.20
+Hero: Call €109.20
+*** RIVER *** [C4]
+Hero: Check
+Player1: Bet €262.08
+Hero: Call €262.08
+*** SUMMARY ***
+Total pot €894.56 Rake €4.00
+Player3: Shows [D9 X]
+Player1: Shows [DK H10] Straight, Ace High
+Hero: Mucks [SA H9] One Pair, Aces
+Player1: wins €894.56

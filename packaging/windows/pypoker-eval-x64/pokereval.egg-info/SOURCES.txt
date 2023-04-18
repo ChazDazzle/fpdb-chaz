@@ -1,0 +1,17 @@
+CHANGES.txt
+LICENSE.txt
+MANIFEST.in
+README.rst
+files.txt
+setup.cfg
+setup.py
+pokereval/__init__.py
+pokereval/bug-1823.py
+pokereval/compile.py
+pokereval/pokereval.py
+pokereval/sha256hash.py
+pokereval/test.py
+pokereval.egg-info/PKG-INFO
+pokereval.egg-info/SOURCES.txt
+pokereval.egg-info/dependency_links.txt
+pokereval.egg-info/top_level.txt

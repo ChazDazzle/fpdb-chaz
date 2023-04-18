@@ -1,0 +1,59 @@
+Hand #779379637 - Omaha H/L(No Limit) - $3.00/$6.00 - 2021/04/16 19:14:14 UTC
+Parachute 6-max Seat #5 is the button
+Seat 1: Player0 ($124.50)
+Seat 2: Player1 ($1142.13)
+Seat 3: Hero ($120.00)
+Seat 4: Player2 ($134.00)
+Seat 5: Player3 ($180.00)
+Seat 6: Player4 ($517.75)
+Player4 posts the small blind $3.00
+Player0 posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [Ac 4d 2d 2h]
+Player1 folds
+Hero raises $120.00 to $120.00 and is all-in
+Player2 raises $134.00 to $134.00 and is all-in
+Player3 folds
+Player4 folds
+Player0 folds
+Uncalled bet ($14.00) returned to Player2
+*** RUN IT TWICE ***
+*** FLOP 1 *** [8h Qd 7d]
+Main pot 1 $123.00 | Rake $1.50
+*** TURN 1 *** [8h Qd 7d] [7h]
+Main pot 1 $123.00 | Rake $1.50
+*** RIVER 1 *** [8h Qd 7d 7h] [5d]
+Main pot 1 $123.00 | Rake $1.50
+*** SHOW DOWN 1 ***
+Main pot 1 $123.00 | Rake $1.50
+Hero shows [Ac 4d 2d 2h] (HI - a flush, Queen high [Qd 7d 5d 4d 2d] | LO - [8,7,5,2,1])
+Player2 shows [Ad 7s 2c Th] (HI - three of a kind, Set of Sevens [7s 7h 7d Ad Qd] | LO - [8,7,5,2,1])
+Hero collected $92.25 from main pot 1
+Player2 collected $30.75 from main pot 1
+*** FLOP 2 *** [6c 9s Jh]
+Main pot 2 $123.00 | Rake $1.50
+*** TURN 2 *** [6c 9s Jh] [8c]
+Main pot 2 $123.00 | Rake $1.50
+*** RIVER 2 *** [6c 9s Jh 8c] [6s]
+Main pot 2 $123.00 | Rake $1.50
+*** SHOW DOWN 2 ***
+Main pot 2 $123.00 | Rake $1.50
+Hero shows [Ac 4d 2d 2h] (HI - two pair, Sixs and Deuces [6s 6c 2h 2d Jh] | LO - [])
+Player2 shows [Ad 7s 2c Th] (HI - a straight, Jack high [Jh Th 9s 8c 7s] | LO - [])
+Player2 collected $123.00 from main pot 2
+*** SUMMARY ***
+Total pot $246.00 | Rake $2.76 | JP Fee $0.24
+Board 1 [8h Qd 7d 7h 5d]
+Seat 1: Player0 (big blind) folded on the Pre-Flop
+Seat 2: Player1 folded on the Pre-Flop and did not bet
+Seat 3: Hero showed [Ac 4d 2d 2h] and won $61.50 with HI - a flush, Queen high [Qd 7d 5d 4d 2d] | LO - [8,7,5,2,1]
+Seat 4: Player2 showed [Ad 7s 2c Th] and lost with HI - three of a kind, Set of Sevens [7s 7h 7d Ad Qd] | LO - [8,7,5,2,1]
+Seat 5: Player3 (button) folded on the Pre-Flop
+Seat 6: Player4 (small blind) folded on the Pre-Flop
+Board 2 [6c 9s Jh 8c 6s]
+Seat 1: Player0 (big blind) folded on the Pre-Flop
+Seat 2: Player1 folded on the Pre-Flop and did not bet
+Seat 3: Hero showed [Ac 4d 2d 2h] and lost with HI - two pair, Sixs and Deuces [6s 6c 2h 2d Jh] | LO - []
+Seat 4: Player2 showed [Ad 7s 2c Th] and won $123.00 with HI - a straight, Jack high [Jh Th 9s 8c 7s] | LO - []
+Seat 5: Player3 (button) folded on the Pre-Flop
+Seat 6: Player4 (small blind) folded on the Pre-Flop

@@ -17,7 +17,7 @@ rem   You should have received a copy of the GNU Affero General Public License
 rem   along with this program. If not, see <http://www.gnu.org/licenses/>.
 rem   In the "official" distribution you can find the license in agpl-3.0.txt.
 
-cd pyfpdb
+rem cd pyfpdb
 
 rem   rebuild the gtk svg loader cache file
 
@@ -39,7 +39,7 @@ rem    problem will also be detailed in fpdb_prerun.txt
 rem    -v flag (verbose) activates text output
 rem    errorlevel 2 signals a first-time run of fpdb.
 
-fpdb_prerun.exe -v >..\fpdb_prerun.txt
+fpdb_prerun.exe -v >.\fpdb_prerun.txt
 if %ERRORLEVEL% == 1 goto:end
 if %ERRORLEVEL% == 2 goto:initialrun
 
@@ -64,6 +64,4 @@ echo. c:\fpdb or c:\mylocalprogrammes\fpdb would be valid for fpdb.
 pause
 
 :end
-
-cd ..
 

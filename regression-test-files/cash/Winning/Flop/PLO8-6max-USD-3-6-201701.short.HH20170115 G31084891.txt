@@ -1,0 +1,40 @@
+Game started at: 2017/1/15 7:47:50
+Game ID: 820605052 3/6 (PRR) Pamola (Short) (Omaha HiLow)
+Seat 5 is the button
+Seat 1: Hero (300).
+Seat 4: Player0 (300).
+Seat 5: Player1 (1111.96).
+Seat 6: Player2 (405.40).
+Player Player2 has small blind (3)
+Player Hero has big blind (6)
+Player Player2 received a card.
+Player Player2 received a card.
+Player Player2 received a card.
+Player Player2 received a card.
+Player Hero received card: [4d]
+Player Hero received card: [7d]
+Player Hero received card: [8c]
+Player Hero received card: [5s]
+Player Player0 received a card.
+Player Player0 received a card.
+Player Player0 received a card.
+Player Player0 received a card.
+Player Player1 received a card.
+Player Player1 received a card.
+Player Player1 received a card.
+Player Player1 received a card.
+Player Player0 raises (12)
+Player Player1 calls (12)
+Player Player2 allin (402.40)
+Player Hero folds
+Player Player0 folds
+Player Player1 folds
+Uncalled bet (393.40) returned to Player2
+Player Player2 mucks cards
+------ Summary ------
+Pot: 42. Rake 0
+Player Hero does not show cards.Bets: 6. Collects: 0. Loses: 6.
+Player Player0 does not show cards.Bets: 12. Collects: 0. Loses: 12.
+Player Player1 does not show cards.Bets: 12. Collects: 0. Loses: 12.
+*Player Player2 mucks (does not show cards). Bets: 12. Collects: 42. Wins: 30.
+Game ended at: 2017/1/15 7:48:9

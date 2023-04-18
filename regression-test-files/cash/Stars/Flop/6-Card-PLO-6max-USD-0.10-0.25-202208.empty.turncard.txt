@@ -1,0 +1,39 @@
+PokerStars Hand #238296909420:  6 Card Omaha Pot Limit ($0.10/$0.25 USD) - 2022/08/29 23:53:18 EET [2022/08/29 16:53:18 ET]
+Table 'Miriam II' 6-max Seat #6 is the button
+Seat 1: Player0 ($55.64 in chips) 
+Seat 2: Hero ($25 in chips) 
+Seat 4: Player1 ($74.45 in chips) 
+Seat 5: Player2 ($21.01 in chips) 
+Seat 6: Player3 ($24.76 in chips) 
+Player0: posts small blind $0.10
+Hero: posts big blind $0.25
+*** HOLE CARDS ***
+Dealt to Hero [Tc Kc 2s 3s 5h 7c]
+Player1: folds 
+Player2: raises $0.60 to $0.85
+Player3: raises $2.05 to $2.90
+Player0: folds 
+Hero: folds 
+Player2: calls $2.05
+*** FLOP *** [3c Jd 6d]
+Player2: checks 
+Player3: bets $4.50
+Player2: calls $4.50
+*** TURN *** [3c Jd 6d] []
+Player2: checks 
+Player3: bets $14.51
+Player2: calls $13.61 and is all-in
+Uncalled bet ($0.90) returned to Player3
+*** RIVER *** [3c Jd 6d] [5s]
+*** SHOW DOWN ***
+Player2: shows [9d 9h Qd Kd Jc Kh] (three of a kind, Jacks)
+Player3: shows [Ac 6h Ks 9c Ah 6s] (a full house, Sixes full of Jacks)
+Player3 collected $40.57 from pot
+*** SUMMARY ***
+Total pot $42.37 | Rake $1.80 
+Board [3c Jd 6d Jh 5s]
+Seat 1: Player0 (small blind) folded before Flop
+Seat 2: Hero (big blind) folded before Flop
+Seat 4: Player1 folded before Flop (didn't bet)
+Seat 5: Player2 showed [9d 9h Qd Kd Jc Kh] and lost with three of a kind, Jacks
+Seat 6: Player3 (button) showed [Ac 6h Ks 9c Ah 6s] and won ($40.57) with a full house, Sixes full of Jacks

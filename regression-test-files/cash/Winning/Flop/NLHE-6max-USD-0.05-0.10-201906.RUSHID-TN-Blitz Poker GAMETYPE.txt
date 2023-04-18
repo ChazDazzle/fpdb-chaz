@@ -1,0 +1,29 @@
+Hand #68217077 - Holdem(No Limit) - $0.05/$0.10 - 2019/06/28 02:38:17 UTC
+Blitz Poker 6-max Seat #1 is the button
+Seat 1: Player0 ($10.30)
+Seat 2: Player1 ($10.00)
+Seat 3: Hero ($10.00)
+Seat 4: Player2 ($20.15)
+Seat 5: Player3 ($13.82)
+Seat 6: Player4 ($13.59)
+Player1 posts the small blind $0.05
+Hero posts the big blind $0.10
+*** HOLE CARDS ***
+Dealt to Hero [6s 3s]
+Player2 folds
+Player3 raises $0.22 to $0.22
+Player4 folds
+Player0 folds
+Player1 folds
+Hero folds
+Uncalled bet ($0.12) returned to Player3
+Player3 does not show
+*** SUMMARY ***
+Total pot $0.25
+Seat 1: Player0 (button) folded on the Pre-Flop
+Seat 2: Player1 (small blind) folded on the Pre-Flop
+Seat 3: Hero (big blind) folded on the Pre-Flop
+Seat 4: Player2 folded on the Pre-Flop and did not bet
+Seat 5: Player3 did not show and won $0.25
+Seat 6: Player4 folded on the Pre-Flop and did not bet
+

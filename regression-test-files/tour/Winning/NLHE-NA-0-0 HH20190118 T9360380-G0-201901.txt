@@ -1,0 +1,48 @@
+Game started at: 2019/1/18 15:20:50
+Game ID: 1356882665 30/60  (Hold'em)
+Seat 1 is the button
+Seat 1: IvyTree (1115).
+Seat 2: leadlando (1500).
+Seat 3: Gambizzy (1290).
+Seat 4: TheHedgehog (3747).
+Seat 5: realcf77 (1460).
+Seat 6: Barbarrossa (4102).
+Seat 7: DonkyShark (1260).
+Seat 8: jaimao8 (5857).
+Player Gambizzy has small blind (30)
+Player TheHedgehog has big blind (60)
+Player Gambizzy received a card.
+Player Gambizzy received a card.
+Player TheHedgehog received a card.
+Player TheHedgehog received a card.
+Player realcf77 received a card.
+Player realcf77 received a card.
+Player Barbarrossa received a card.
+Player Barbarrossa received a card.
+Player DonkyShark received a card.
+Player DonkyShark received a card.
+Player jaimao8 received a card.
+Player jaimao8 received a card.
+Player IvyTree received a card.
+Player IvyTree received a card.
+Player realcf77 folds
+Player Barbarrossa folds
+Player DonkyShark folds
+Player jaimao8 raises (120)
+Player IvyTree folds
+Player Gambizzy folds
+Player TheHedgehog folds
+Uncalled bet (60) returned to jaimao8
+Player jaimao8 mucks cards
+------ Summary ------
+Pot: 150
+Player IvyTree does not show cards. Bets: 0. Collects: 0. Loses: 0.
+Player leadlando does not show cards. Bets: 0. Collects: 0. Loses: 0.
+Player Gambizzy does not show cards. Bets: 30. Collects: 0. Loses: 30.
+Player TheHedgehog does not show cards. Bets: 60. Collects: 0. Loses: 60.
+Player realcf77 does not show cards. Bets: 0. Collects: 0. Loses: 0.
+Player Barbarrossa does not show cards. Bets: 0. Collects: 0. Loses: 0.
+Player DonkyShark does not show cards. Bets: 0. Collects: 0. Loses: 0.
+*Player jaimao8 mucks (does not show cards). Bets: 60. Collects: 150. Wins: 90.
+Player bagunga1 does not show cards. Bets: 0. Collects: 0. Loses: 0.
+Game ended at: 2019/1/18 15:21:16

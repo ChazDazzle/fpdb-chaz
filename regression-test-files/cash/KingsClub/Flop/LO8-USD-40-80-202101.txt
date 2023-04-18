@@ -1,0 +1,32 @@
+#39969218: Limit Omaha Hi-Lo - 40/80
+2021-01-02 15:39:12
+Table '8 Game Mix' Seat 6 is the button
+Seat 1: Player0 (600)
+Seat 6: Hero (1,200)
+Hero: posts the small blind 20
+Player0: posts the big blind 40
+*** HOLE CARDS ***
+Dealt to Player0: [X X X X]
+Dealt to Hero: [4d Kd Ac 5s]
+Hero raises to 80
+Player0 calls 80
+*** FLOP *** [4s Td 6c]
+Player0 checks
+Hero bets 40
+Player0 calls 40
+*** TURN *** [4s Td 6c] [Th]
+Player0 checks
+Hero bets 80
+Player0 calls 80
+*** RIVER *** [4s Td 6c Th] [2h]
+Player0 checks
+Hero bets 80
+Player0 calls 80
+Hero shows [4d Kd Ac 5s]
+Player0 shows [2d 2c 8d 6h]
+*** SUMMARY ***
+Seat 1: Player0 (599.50) -0.50
+Seat 6: Hero (1,199.50) -0.50
+Rake 1
+Player0 wins (279.50) from pot
+Hero wins (279.50) from pot

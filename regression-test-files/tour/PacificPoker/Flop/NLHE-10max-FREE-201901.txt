@@ -1,0 +1,32 @@
+#Game No : 1059729553
+***** 888.ro Hand History for Game 1059729553 *****
+3.000 $/6.000 $ Blinds No Limit Holdem - *** 
+Tournament #133191603 Free 10 Max (Real Money)
+Seat 6 is the button
+Total number of players : 5
+Seat 1: EVGooo ( 432.999 $ )
+Seat 2: aeon.nOOb ( 295.092 $ )
+Seat 4: LprMessiah ( 240.388 $ )
+Seat 6: Grazietutti ( 81.072 $ )
+Seat 9: hale_bop123 ( 109.874 $ )
+aeon.nOOb posts ante [750 $]
+LprMessiah posts ante [750 $]
+EVGooo posts ante [750 $]
+hale_bop123 posts ante [750 $]
+Grazietutti posts ante [750 $]
+hale_bop123 posts small blind [3.000 $]
+EVGooo posts big blind [6.000 $]
+** Dealing down cards **
+Dealt to Grazietutti [ 6c, As ]
+aeon.nOOb folds
+LprMessiah folds
+Grazietutti raises [80.322 $]
+hale_bop123 folds
+EVGooo calls [74.322 $]
+** Dealing flop ** [ Qs, 8s, 8c ]
+** Dealing turn ** [ 3c ]
+** Dealing river ** [ Ac ]
+** Summary **
+EVGooo shows [ Qc, Kd ]
+Grazietutti shows [ 6c, As ]
+Grazietutti collected [ 167.394 $ ]

@@ -1,0 +1,31 @@
+Run It Once Poker Hand #55044222: Tournament #145677, €15.55+€0.95 Classic, Hold'em No Limit (10/20) - 2021/03/22 20:02 UTC [2021/03/22 21:02 CET]
+Table ID '55044218' 3-Max Seat #5 is the button
+Seat 1: Elizabeth O (550 in chips)
+Seat 3: Nick M (500 in chips)
+Seat 5: AlexMusk (450 in chips) [hero]
+Elizabeth O: posts small blind 10
+Nick M: posts big blind 20
+*** HOLE CARDS ***
+Dealt to AlexMusk [Ad 4c]
+AlexMusk: raises 20 to 40
+Elizabeth O: calls 30
+Nick M: folds
+*** FLOP *** [Ah Jd Kc]
+Elizabeth O: checks
+AlexMusk: bets 50
+Elizabeth O: calls 50
+*** TURN *** [Ah Jd Kc] [8c]
+Elizabeth O: checks
+AlexMusk: checks
+*** RIVER *** [Ah Jd Kc 8c] [5s]
+Elizabeth O: bets 110
+AlexMusk: calls 110
+*** SHOWDOWN ***
+AlexMusk shows [Ad 4c] for Pair [Ah Ad Kc Jd 8c]
+AlexMusk collected 420 from pot
+*** SUMMARY ***
+Total pot 420 | Rake 0
+Board [Ah Jd Kc 8c 5s]
+Seat 3: Nick M (big blind) folded before Flop
+Seat 5: AlexMusk (button) showed [Ad 4c] and won 420 with Pair of A and K J 8
+Seat 1: Elizabeth O (small blind) mucked [7s 6c] and lost

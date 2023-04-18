@@ -1,0 +1,34 @@
+Hand #78708209 - Omaha H/L(Fixed Limit) - $20.00/$40.00 - 2019/07/18 15:13:01 UTC
+St. Lucie 6-max Seat #1 is the button
+Seat 1: Hero ($200.00)
+Seat 4: Player0 ($555.23)
+Hero posts the small blind $10.00
+Player0 posts the big blind $20.00
+*** HOLE CARDS ***
+Dealt to Hero [Kd 4c 9s 6s]
+Hero raises $30.00 to $40.00
+Player0 calls $20.00
+*** FLOP *** [5d 4h As]
+Main pot $79.20 | Rake $0.80
+Player0 checks
+Hero bets $20.00
+Player0 calls $20.00
+*** TURN *** [5d 4h As] [Js]
+Main pot $119.00 | Rake $1.00
+Player0 checks
+Hero checks
+*** RIVER *** [5d 4h As Js] [2h]
+Main pot $119.00 | Rake $1.00
+Player0 bets $40.00
+Hero calls $40.00
+*** SHOW DOWN ***
+Main pot $199.00 | Rake $1.00
+Player0 shows [Tc 4s 3h Qd] (HI - a straight, Five high [5d 4s 3h 2h As] | LO - [5,4,3,2,1])
+Hero mucks hand
+Player0 collected $199.00 from main pot
+*** SUMMARY ***
+Total pot $199.00 | Rake $0.96 | JP Fee $0.04
+Board [5d 4h As Js 2h]
+Seat 1: Hero (button) mucked [Kd 4c 9s 6s]
+Seat 4: Player0 (big blind) showed [Tc 4s 3h Qd] and won $199.00 with HI - a straight, Five high [5d 4s 3h 2h As] | LO - [5,4,3,2,1]
+

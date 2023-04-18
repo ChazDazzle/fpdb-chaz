@@ -1,0 +1,33 @@
+GAME #8162156892 Version:18.5.6.4 Uncalled:Y Texas Hold'em NL €0.01/€0.02 2018-12-26 22:40:05/GMT
+Table Barghe
+Seat 1: czarlando (€2.27 in chips) DEALER
+Seat 3: ken1950 (€1.94 in chips)
+Seat 5: petediddy80 (€1.67 in chips)
+Seat 6: whigga1987 (€2.05 in chips)
+Seat 8: johnny20015 (€2.04 in chips)
+Seat 10: musum42000 (€1.68 in chips)
+ken1950: Post SB €0.01
+petediddy80: Post BB €0.02
+*** HOLE CARDS ***
+Dealt to czarlando [SQ DQ]
+whigga1987: Fold
+johnny20015: Raise (NF) €0.06
+musum42000: Fold
+czarlando: Call €0.06
+ken1950: Call €0.05
+petediddy80: Fold
+*** FLOP *** [S3 S9 C4]
+ken1950: Bet €0.02
+johnny20015: Raise (NF) €0.08
+czarlando: Call €0.08
+ken1950: Call €0.06
+*** TURN *** [C9]
+ken1950: Bet €0.02
+johnny20015: Fold
+czarlando: Call €0.02
+*** RIVER *** [SK]
+ken1950: Bet €0.14
+czarlando: Fold
+*** SUMMARY ***
+Total pot €0.45 Rake €0.03
+ken1950: wins €0.45

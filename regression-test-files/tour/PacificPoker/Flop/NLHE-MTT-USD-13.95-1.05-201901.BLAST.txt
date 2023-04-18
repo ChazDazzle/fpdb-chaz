@@ -1,0 +1,19 @@
+#Game No : 1008664844
+***** 888.ro BLAST Hand History for Game 1008664844 *****
+42.797,60 $/0 $ Blinds No Limit Holdem - *** 
+Tournament #133514588 13,95 $ + 1,05 $ - Table #1 4 Max (Real Money)
+Seat 7 is the button
+Total number of players : 2
+Seat 1: playurbet ( 3.530 $ )
+Seat 7: PreaCaLaTara ( 2.470 $ )
+playurbet posts ante [3.530 $]
+PreaCaLaTara posts ante [2.470 $]
+** Dealing down cards **
+Dealt to PreaCaLaTara [ 5d, Kc ]
+** Dealing flop ** [ As, 3h, Ac ]
+** Dealing turn ** [ 8c ]
+** Dealing river ** [ 7c ]
+** Summary **
+playurbet shows [ 4s, Jc ]
+PreaCaLaTara shows [ 5d, Kc ]
+PreaCaLaTara collected [ 4.940 $ ]

@@ -1,0 +1,44 @@
+Poker Hand #OM47349243: PLO-5 ($2/$5) - 2022/05/01 22:37:45
+Table 'PLO-5Gold4' 6-max Seat #3 is the button
+Seat 1: 466a0aa1 ($832.49 in chips)
+Seat 3: Hero ($493 in chips)
+Seat 4: 68e6a63e ($1,100.18 in chips)
+Seat 5: 834069ba ($634.85 in chips)
+Seat 6: e0684116 ($1,074.45 in chips)
+68e6a63e: posts small blind $2
+834069ba: posts big blind $5
+*** HOLE CARDS ***
+Dealt to 466a0aa1 
+Dealt to Hero [6c Th Jh Tc Ac]
+Dealt to 68e6a63e 
+Dealt to 834069ba 
+Dealt to e0684116 
+e0684116: raises $12 to $17
+466a0aa1: raises $41 to $58
+Hero: raises $140 to $198
+68e6a63e: folds
+834069ba: folds
+e0684116: raises $461 to $659
+466a0aa1: calls $601
+Hero: calls $295 and is all-in
+*** FLOP *** [Ts Jd Td]
+e0684116: bets $210
+466a0aa1: calls $173.49 and is all-in
+Uncalled bet ($36.51) returned to e0684116
+e0684116: shows [7h As 7d 3s Ah] (Pair of Aces and Pair of Tens)
+466a0aa1: shows [9d 3h Qd 9h 5c] (Pair of Tens and Pair of Nines)
+Hero: shows [6c Th Jh Tc Ac] (Four Tens)
+*** TURN *** [Ts Jd Td] [Kd]
+Hero: Receives Cashout ($1,306.18)
+*** RIVER *** [Ts Jd Td Kd] [7c]
+*** SHOWDOWN ***
+466a0aa1 collected $1,477.42 from pot
+466a0aa1 collected $675.07 from pot
+*** SUMMARY ***
+Total pot $2,164.98 | Rake $7.49 | Jackpot $5 | Bingo $0
+Board [Ts Jd Td Kd 7c]
+Seat 1: 466a0aa1 showed [9d 3h Qd 9h 5c] and won ($2,152.49) with King-High Straight Flush
+Seat 3: Hero (button) showed [6c Th Jh Tc Ac] and lost with Four Tens, EV Cashout ($1,306.18)
+Seat 4: 68e6a63e (small blind) folded before Flop with King High Flush
+Seat 5: 834069ba (big blind) folded before Flop with Pair of Kings and Pair of Tens
+Seat 6: e0684116 showed [7h As 7d 3s Ah] and lost with Sevens Full over Tens

@@ -1,0 +1,10 @@
+/__init__.py
+/_pokereval_2_4.pyd
+/bug-1823.py
+/pokereval.py
+/test.py
+/__pycache__/__init__.cpython-27.pyc
+/__pycache__/bug-1823.cpython-27.pyc
+/__pycache__.cpython-27.pyc
+/__pycache__/test.cpython-27.pyc
+/pokereval-0.2.0-py2.7.egg-info
