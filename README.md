@@ -43,4 +43,4 @@ To install from source follow procedure on wiki: http://fpdb.wikidot.com/develop
 
 - For HUD using GTK you need to install my GTK2 runtime version (GTK-2.22.1-runtime.zip) from windows packaging folder and add its bin folder (e.g. C:\GTK\bin) to environment PATH, and install unofficial PyGTK modules for Py2.7x64 from: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pygtk
 - To use PokerEval you need to install my compiled PyPoker-Eval module for Py2.7x64 from windows packaging folder (pypoker-eval-x64)
-- I also provide on my fork an already FPDB-x64 compiled distribution and a Windows Installer on my Releases
+- I also provide on my Releases an already FPDB-x64 compiled distribution and a Windows Installer made with the free powerful InstallForge: https://installforge.net/download/
