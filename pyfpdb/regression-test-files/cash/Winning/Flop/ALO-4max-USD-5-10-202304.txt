@@ -1,0 +1,17 @@
+Hand #1672582062 - Omaha(All-in or Fold Limit) - $5.00/$10.00 - 2023/04/27 23:37:06 UTC
+Boca Raton 4-max Seat #1 is the button
+Seat 1: Player0 ($250.00)
+Seat 2: Hero ($50.00)
+Seat 3: Player1 ($50.00)
+Hero posts the small blind $5.00
+Player1 posts the big blind $10.00
+*** HOLE CARDS ***
+Dealt to Hero [Ks 5c 3h 6c]
+Player0 folds
+Hero folds
+Player1 does not show
+*** SUMMARY ***
+Total pot $15.00
+Seat 1: Player0 (button) folded on the Pre-Flop
+Seat 2: Hero (small blind) folded on the Pre-Flop
+Seat 3: Player1 did not show and won $15.00

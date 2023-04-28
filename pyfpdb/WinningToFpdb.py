@@ -72,7 +72,8 @@ class Winning(HandHistoryConverter):
     limits = { 
           'No Limit':'nl', 
           'Pot Limit':'pl', 
-          'Fixed Limit':'fl'
+          'Fixed Limit':'fl',
+          'All-in or Fold Limit':'al'
     }
     speeds = {
         'Turbo': 'Turbo',
@@ -160,7 +161,7 @@ class Winning(HandHistoryConverter):
           )?
           # close paren of tournament info
           (?P<GAME>Holdem|Omaha|Omaha\sH/L|7Stud|7Stud\sH/L|5Card\sOmaha|5Card\sOmaha\sH/L)
-          \((?P<LIMIT>No\sLimit|Fixed\sLimit|Pot\sLimit)\)\s\-\s
+          \((?P<LIMIT>No\sLimit|Fixed\sLimit|Pot\sLimit|All\-in\sor\sFold\sLimit)\)\s\-\s
           (Level\s(?P<LEVEL>[IVXLC\d]+)\s)?
           \(?                            # open paren of the stakes
           (?P<CURRENCY>%(LS)s|)?
@@ -338,12 +339,14 @@ class Winning(HandHistoryConverter):
             ["ring", "hold", "nl"],
             ["ring", "hold", "fl"],
             ["ring", "hold", "pl"],
+            ["ring", "hold", "al"],
 
             ["ring", "stud", "fl"],
             
             ["tour", "hold", "nl"],
             ["tour", "hold", "fl"],
             ["tour", "hold", "pl"],
+            ["tour", "hold", "al"],
             
             ["tour", "stud", "fl"]
         ]
