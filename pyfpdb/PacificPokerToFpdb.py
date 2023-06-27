@@ -241,6 +241,8 @@ class PacificPoker(HandHistoryConverter):
                     datetimestr = "%s/%s/%s %s:%s:%s" % (a.group('Y'), a.group('M'),a.group('D'),a.group('H'),a.group('MIN'),a.group('S'))
                 hand.startTime = datetime.datetime.strptime(datetimestr, "%Y/%m/%d %H:%M:%S")
                 hand.startTime = HandHistoryConverter.changeTimezone(hand.startTime, "ET", "UTC")
+                hand.newFormat = datetime.datetime.strptime('20220908000000','%Y%m%d%H%M%S') #this is a guess
+                hand.newFormat = HandHistoryConverter.changeTimezone(hand.newFormat, "ET", "UTC")
             if key == 'HID':
                 hand.handid = info[key]
             if key == 'TOURNO' and info['TOURNO'] != None:
@@ -350,7 +352,8 @@ class PacificPoker(HandHistoryConverter):
             hand.addBringIn(m.group('PNAME'),  m.group('BRINGIN'))
         
     def readBlinds(self, hand):
-        hand.setUncalledBets(True)
+        if hand.startTime < hand.newFormat:
+            hand.setUncalledBets(True)
         liveBlind, hand.allInBlind = True, False
         for a in self.re_PostSB.finditer(hand.handText):
             if a.group('PNAME') in hand.stacks:

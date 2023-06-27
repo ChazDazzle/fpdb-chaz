@@ -1,0 +1,24 @@
+#Game No : 678485555
+***** 888poker Snap Poker Hand History for Game 678485555 *****
+$0.02/$0.05 Blinds No Limit Holdem - *** 27 06 2023 12:02:42
+Table Kazan 6 Max (Real Money)
+Seat 4 is the button
+Total number of players : 6
+Seat 1: Player9 ( $2.02 )
+Seat 2: Player8 ( $1.55 )
+Seat 4: Player7 ( $5 )
+Seat 6: Hero ( $5.74 )
+Seat 7: Player6 ( $3.52 )
+Seat 9: Player5 ( $3.62 )
+Hero posts small blind [$0.02]
+Player6 posts big blind [$0.05]
+** Dealing down cards **
+Dealt to Hero [ 6d, 5c ]
+Player5 folds
+Player9 folds
+Player8 folds
+Player7 folds
+Hero folds
+** Summary **
+Player6 did not show his hand
+Player6 collected [ $0.04 ]
