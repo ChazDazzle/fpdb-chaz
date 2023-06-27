@@ -1,0 +1,40 @@
+PokerStars Hand #244265880496:  Hold'em No Limit (Rs. 1/Rs. 2 INR) - 2023/06/14 20:33:40 IST [2023/06/14 11:03:40 ET]
+Table 'Moguntia' 6-max Seat #5 is the button
+Seat 1: Player0 (Rs. 155.47 in chips)
+Seat 2: Player1 (Rs. 234.15 in chips)
+Seat 3: Player2 (Rs. 602.39 in chips)
+Seat 5: Hero (Rs. 202 in chips)
+Seat 6: Player3 (Rs. 224.21 in chips)
+Player3: posts small blind Rs. 1
+Player0: posts big blind Rs. 2
+*** HOLE CARDS ***
+Dealt to Hero [Ac Qd]
+Player1: calls Rs. 2
+Player2: folds
+Hero: raises Rs. 10 to Rs. 12
+Player3: calls Rs. 11
+Player0: folds
+Player1: folds
+*** FLOP *** [Ad 8d Qh]
+Player3: checks
+Hero: bets Rs. 18
+Player3: calls Rs. 18
+*** TURN *** [Ad 8d Qh] [Kc]
+Player3: checks
+Hero: bets Rs. 48
+Player3: raises Rs. 146.21 to Rs. 194.21 and is all-in
+Hero: calls Rs. 124 and is all-in
+Uncalled bet (Rs. 22.21) returned to Player3
+*** RIVER *** [Ad 8d Qh Kc] [Ks]
+*** SHOW DOWN ***
+Player3: shows [Th Jh] (a straight, Ten to Ace)
+Hero: shows [Ac Qd] (two pair, Aces and Kings)
+Player3 collected Rs. 387.60 from pot
+*** SUMMARY ***
+Total pot Rs. 408 | Rake Rs. 20.40
+Board [Ad 8d Qh Kc Ks]
+Seat 1: Player0 (big blind) folded before Flop
+Seat 2: Player1 folded before Flop
+Seat 3: Player2 folded before Flop (didn't bet)
+Seat 5: Hero (button) showed [Ac Qd] and lost with two pair, Aces and Kings
+Seat 6: Player3 (small blind) showed [Th Jh] and won (Rs. 387.60) with a straight, Ten to Ace

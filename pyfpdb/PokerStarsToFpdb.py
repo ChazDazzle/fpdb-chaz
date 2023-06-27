@@ -40,9 +40,9 @@ class PokerStars(HandHistoryConverter):
     sym = {'USD': "\$", 'CAD': "\$", 'T$': "", "EUR": "\xe2\x82\xac", "GBP": "\£", "play": "", "INR": "\₹", "CNY": "\¥"}         # ADD Euro, Sterling, etc HERE
     substitutions = {
                      'LEGAL_ISO' : "USD|EUR|GBP|CAD|FPP|SC|INR|CNY",      # legal ISO currency codes
-                            'LS' : u"\$|\xe2\x82\xac|\u20ac|\£|\u20b9|\¥|", # legal currency symbols - Euro(cp1252, utf-8)
+                            'LS' : u"\$|\xe2\x82\xac|\u20ac|\£|\u20b9|\¥|Rs\.\s|", # legal currency symbols - Euro(cp1252, utf-8)
                            'PLYR': r'\s?(?P<PNAME>.+?)',
-                            'CUR': u"(\$|\xe2\x82\xac|\u20ac||\£|\u20b9|\¥|)",
+                            'CUR': u"(\$|\xe2\x82\xac|\u20ac||\£|\u20b9|\¥|Rs\.\s|)",
                           'BRKTS': r'(\(button\) |\(small blind\) |\(big blind\) |\(button blind\) |\(button\) \(small blind\) |\(small blind\) \(button\) |\(big blind\) \(button\) |\(small blind/button\) |\(button\) \(big blind\) )?',
                     }
                     
@@ -124,7 +124,7 @@ class PokerStars(HandHistoryConverter):
                            'Mixed Omaha': 'momaha',
                            'Triple Stud': '3stud'
                } # Legal mixed games
-    currencies = { u'€':'EUR', '$':'USD', '':'T$', u'£':'GBP', u'¥':'CNY', u'₹':'INR'}
+    currencies = { u'€':'EUR', '$':'USD', '':'T$', u'£':'GBP', u'¥':'CNY', u'₹':'INR', 'Rs. ':'INR'}
 
     # Static regexes
     re_GameInfo     = re.compile(u"""
@@ -423,6 +423,8 @@ class PokerStars(HandHistoryConverter):
                         elif info[key].find(u"€")!=-1:
                             hand.buyinCurrency="EUR"
                         elif info[key].find(u"₹")!=-1:
+                            hand.buyinCurrency="INR"
+                        elif info[key].find("Rs. ")!=-1:
                             hand.buyinCurrency="INR"
                         elif info[key].find(u"¥")!=-1:
                             hand.buyinCurrency="CNY"
