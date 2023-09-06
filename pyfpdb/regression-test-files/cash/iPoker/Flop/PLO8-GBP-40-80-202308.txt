@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="7778277669">
+ <general>
+  <client_version>23.3.1.9</client_version>
+  <mode>real</mode>
+  <gametype>Omaha HiLow PL €5/€10</gametype>
+  <tablename>Black tern, 464241001</tablename>
+  <tablecurrency>EUR</tablecurrency>
+  <smallblind>€5</smallblind>
+  <bigblind>€10</bigblind>
+  <duration>00:09:32</duration>
+  <gamecount>22</gamecount>
+  <startdate>2023-08-12 23:07:42</startdate>
+  <currency>GBP</currency>
+  <nickname>Hero</nickname>
+  <bets>€930</bets>
+  <wins>€713</wins>
+  <chipsin>€360</chipsin>
+  <chipsout>€633</chipsout>
+  <statuspoints>0.00</statuspoints>
+  <awardpoints>0.00</awardpoints>
+  <ipoints>0.00</ipoints>
+  <tablesize>6</tablesize>
+ </general>
+ <game gamecode="10233063324">
+  <general>
+   <startdate>2023-08-12 23:07:42</startdate>
+   <players>
+    <player chips="€400" dealer="0" seat="3" bet="€40" name="Hero" win="€0"/>
+    <player chips="€1,000" dealer="1" seat="8" bet="€80" name="Player0" win="€79"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="Player0" type="1" no="1" sum="€5"/>
+   <action player="Hero" type="2" no="2" sum="€10"/>
+  </round>
+  <round no="1">
+   <cards player="Player0" type="Pocket">X X X X</cards>
+   <action player="Player0" type="23" no="3" sum="€20"/>
+   <cards player="Hero" type="Pocket">CJ S6 D2 C4</cards>
+   <action player="Hero" type="3" no="4" sum="€10"/>
+  </round>
+  <round no="2">
+   <cards type="Flop">C5 DJ D5</cards>
+   <action player="Hero" type="4" no="5" sum="€0"/>
+   <action player="Player0" type="5" no="6" sum="€20"/>
+   <action player="Hero" type="3" no="7" sum="€20"/>
+  </round>
+  <round no="3">
+   <cards type="Turn">S10</cards>
+   <action player="Hero" type="4" no="8" sum="€0"/>
+   <action player="Player0" type="5" no="9" sum="€40"/>
+   <action player="Hero" type="0" no="10" sum="€0"/>
+  </round>
+ </game>

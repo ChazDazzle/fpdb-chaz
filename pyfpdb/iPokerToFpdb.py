@@ -76,11 +76,13 @@ class iPoker(HandHistoryConverter):
     games = {              # base, category
                 '7 Card Stud' : ('stud','studhi'),
           '7 Card Stud Hi-Lo' : ('stud','studhilo'),
+          '7 Card Stud HiLow' : ('stud','studhilo'),
                 '5 Card Stud' : ('stud','5_studhi'),
                      'Holdem' : ('hold','holdem'),
             'Six Plus Holdem' : ('hold','6_holdem'),
                       'Omaha' : ('hold','omahahi'),
                 'Omaha Hi-Lo' : ('hold','omahahilo'),
+                'Omaha HiLow' : ('hold','omahahilo'),
             }
 
     currencies = { u'€':'EUR', '$':'USD', '':'T$', u'£':'GBP', 'RSD': 'RSD'}
@@ -143,7 +145,7 @@ class iPoker(HandHistoryConverter):
     re_SplitHands = re.compile(r'</game>')
     re_TailSplitHands = re.compile(r'(</game>)')
     re_GameInfo = re.compile(ur"""
-            <gametype>(?P<GAME>((?P<CATEGORY>(5|7)\sCard\sStud(\sHi\-Lo)?|(Six\sPlus\s)?Holdem|Omaha(\sHi\-Lo)?)?\s?(?P<LIMIT>NL|SL|L|LZ|PL|БЛ|LP|No\slimit|Pot\slimit|Limit))|LH\s(?P<LSB>[%(NUM)s]+)(%(LS)s)?/(?P<LBB>[%(NUM)s]+)(%(LS)s)?.+?)
+            <gametype>(?P<GAME>((?P<CATEGORY>(5|7)\sCard\sStud(\sHi\-Lo)?(\sHiLow)?|(Six\sPlus\s)?Holdem|Omaha(\sHi\-Lo)?(\sHiLow)?)?\s?(?P<LIMIT>NL|SL|L|LZ|PL|БЛ|LP|No\slimit|Pot\slimit|Limit))|LH\s(?P<LSB>[%(NUM)s]+)(%(LS)s)?/(?P<LBB>[%(NUM)s]+)(%(LS)s)?.+?)
             (\s(%(LS)s)?(?P<SB>[%(NUM)s]+)(%(LS)s)?/(%(LS)s)?(?P<BB>[%(NUM)s]+))?(%(LS)s)?(\sAnte\s(%(LS)s)?(?P<ANTE>[%(NUM)s]+)(%(LS)s)?)?</gametype>\s+?
             <tablename>(?P<TABLE>.+)?</tablename>\s+?
             (<(tablecurrency|tournamentcurrency)>(?P<TABLECURRENCY>.*)</(tablecurrency|tournamentcurrency)>\s+?)?
