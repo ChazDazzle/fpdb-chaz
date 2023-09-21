@@ -239,7 +239,7 @@ class PartyPoker(HandHistoryConverter):
                 r"%(PLYR)s posts button blind  ?[%(BRAX)s]?%(CUR_SYM)s?(?P<BUB>[.,0-9]+)\s*%(CUR)s?[%(BRAX)s]?\.?\s*$" %  subst,
                 re.MULTILINE)
             self.re_Antes = re.compile(
-                r"%(PLYR)s posts ante( of)? [%(BRAX)s]?%(CUR_SYM)s(?P<ANTE>[.,0-9]+)\s*%(CUR)s[%(BRAX)s]?\.?\s*$" %  subst,
+                r"%(PLYR)s posts ante( of)? [%(BRAX)s]?%(CUR_SYM)s?(?P<ANTE>[.,0-9]+)\s*(%(CUR)s)?[%(BRAX)s]?\.?\s*$" %  subst,
                 re.MULTILINE)
             self.re_HeroCards = re.compile(
                 r"Dealt to %(PLYR)s \[\s*(?P<NEWCARDS>.+)\s*\]" % subst,
