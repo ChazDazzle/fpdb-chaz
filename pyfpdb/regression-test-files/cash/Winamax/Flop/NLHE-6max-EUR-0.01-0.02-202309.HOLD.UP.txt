@@ -1,0 +1,40 @@
+Winamax Poker - HOLD-UP "Colorado" - HandId: #18802718-2083747-1694790950 - Holdem no limit (0.01€/0.02€) - 2023/09/15 15:15:50 UTC
+Table: 'Colorado' 6-max (real money) Seat #6 is the button
+Seat 1: Hero (2.02€)
+Seat 2: Player0 (2€)
+Seat 3: Player1 (2€)
+Seat 4: Player2 (1.70€)
+Seat 5: Player3 (2.21€)
+Seat 6: Player4 (2.33€)
+*** ANTE/BLINDS ***
+Hero posts small blind 0.01€
+Player0 posts big blind 0.02€
+Dealt to Hero [Ah 5h]
+*** PRE-FLOP ***
+Player1 folds
+Player2 folds
+Player3 folds
+Player4 raises 0.04€ to 0.06€
+Hero raises 0.18€ to 0.24€
+Player0 folds
+Player4 calls 0.18€
+*** FLOP *** [Ad 7d 6h]
+Hero bets 0.18€
+Player4 calls 0.18€
+*** TURN *** [Ad 7d 6h][Jc]
+Hero checks
+Player4 bets 0.30€
+Hero calls 0.30€
+*** RIVER *** [Ad 7d 6h Jc][Qc]
+Hero checks
+Player4 bets 0.95€
+Hero calls 0.95€
+*** SHOW DOWN ***
+Player4 shows [Kh 2h] (High card : Ace)
+Hero shows [Ah 5h] (One pair : Aces)
+Hero collected 3.02€ from pot
+*** SUMMARY ***
+Total pot 3.02€ | Rake 0.34€
+Board: [Ad 7d 6h Jc Qc]
+Seat 1: Hero (small blind) showed [Ah 5h] and won 3.02€ with One pair : Aces
+Seat 6: Player4 (button) showed [Kh 2h] and lost with High card : Ace
