@@ -16,7 +16,7 @@
 #In the "official" distribution you can find the license in agpl-3.0.txt.
 import L10n
 _ = L10n.init_translation()
-
+import ctypes
 import os
 import sys
 import re
@@ -95,7 +95,8 @@ try:
 except:
     VERSION = "0.40.4"
 
-
+ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 6)
+    
 class fpdb(QMainWindow):
     def tab_clicked(self, widget, tab_name):
         """called when a tab button is clicked to activate that tab"""
