@@ -201,7 +201,7 @@ class KingsClub(HandHistoryConverter):
     
     re_Rake = re.compile(r"^Rake\s(?P<RAKE>[,.0-9]+)$", re.MULTILINE)
     re_Split = re.compile(r"\*\*\* BOARD 1 - FLOP \*\*\*")
-    re_AOF = re.compile(r"Table '\w+? AOF \w+?'")
+    re_Table = re.compile(r"^\s?Table\s(ID\s)?\'(?P<TABLE>.+?)\'\s", re.MULTILINE|re.VERBOSE)
 
     def compilePlayerRegexs(self,  hand):
         players = set([player[1] for player in hand.players])
@@ -271,8 +271,8 @@ class KingsClub(HandHistoryConverter):
         else:
             info['split'] = False
             
-        m3 = self.re_AOF.search(handText)
-        if m3:
+        m3 = self.re_Table.search(handText)
+        if m3 and 'AOF' in m3.group('TABLE'):
             info['category'] = 'aof_omaha'
 
         if info['limitType'] == 'fl' and info['bb'] is not None:
