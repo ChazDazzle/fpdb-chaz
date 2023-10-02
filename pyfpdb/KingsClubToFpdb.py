@@ -201,6 +201,7 @@ class KingsClub(HandHistoryConverter):
     
     re_Rake = re.compile(r"^Rake\s(?P<RAKE>[,.0-9]+)$", re.MULTILINE)
     re_Split = re.compile(r"\*\*\* BOARD 1 - FLOP \*\*\*")
+    re_AOF = re.compile(r"Table '\w+? AOF \w+?'")
 
     def compilePlayerRegexs(self,  hand):
         players = set([player[1] for player in hand.players])
@@ -266,9 +267,13 @@ class KingsClub(HandHistoryConverter):
         
         m2 = self.re_Split.search(handText)
         if m2:
-            info['split'] = True
+            info['split'] = True 
         else:
             info['split'] = False
+            
+        m3 = self.re_AOF.search(handText)
+        if m3:
+            info['category'] = 'aof_omaha'
 
         if info['limitType'] == 'fl' and info['bb'] is not None:
             if info['type'] == 'ring':
@@ -534,7 +539,8 @@ class KingsClub(HandHistoryConverter):
                     newcards = [x for x in found.group('NEWCARDS').split(' ') if x != 'X']
                     if len(newcards)>0: 
                         hand.hero = found.group('PNAME')  
-                        hand.addHoleCards(street, hand.hero, closed=newcards, shown=False, mucked=False, dealt=True)
+                        _street = 'FLOP' if hand.gametype['category'] == 'aof_omaha' else street
+                        hand.addHoleCards(_street, hand.hero, closed=newcards, shown=False, mucked=False, dealt=True)
 
         for street, text in hand.streets.iteritems():
             if not text or street in ('PREFLOP', 'DEAL'): continue  # already done these

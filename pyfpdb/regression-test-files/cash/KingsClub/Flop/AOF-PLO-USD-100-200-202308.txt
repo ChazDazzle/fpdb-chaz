@@ -1,0 +1,25 @@
+#7071017: Pot Limit Omaha - 100/200
+2023-08-14 02:22:40
+Table 'MAD AOF PLO' Seat 3 is the button
+Seat 1: Nich B (1,000)
+Seat 2: Christo A. (1,000)
+Seat 3: Brian Str (1,000)
+Nich B: posts the small blind 100
+Christo A.: posts the big blind 200
+*** HOLE CARDS ***
+Dealt to Nich B: [9c 9d Kh Jh]
+Dealt to Christo A.: [X X X X]
+Dealt to Brian Str: [X X X X]
+*** FLOP *** [Ah Qd Tc]
+Brian Str folds
+Nich B raises to 1,000, and is all in
+Christo A. calls 1,000, and is all in
+Nich B shows [9c 9d Kh Jh]
+Christo A. shows [Qh Kd As 9s]
+*** RIVER *** [Ah Qd Tc Qs] [8c]
+*** SUMMARY * **
+Seat 1: Nich B (0) -1,000
+Seat 2: Christo A. (1,992) +992
+Seat 3: Brian Str (1,000)
+Rake 8
+Christo A. wins pot (1,992)
