@@ -425,13 +425,17 @@ class DerivedStats():
                             maxcards = (base!='hold' and len(cards)>=5)
                             if notnull and (postflop or maxcards):
                                 for hl, side in hiLoKey[hilo]:
-                                    value, rank = pokereval.best(side, cards, bcards)
-                                    rankId = Card.hands[rank[0]][0]
-                                    if rank!=None and rank[0] != 'Nothing':
-                                        _cards = ''.join([pokereval.card2string(i)[0] for i in rank[1:]])
-                                    else:
-                                        _cards = None
-                                    self.handsstove.append( [hand.dbid_hands, hand.dbid_pids[pname], streetId, boardId, hl, rankId, value, _cards, 0] )
+                                    try:
+                                        value, rank = pokereval.best(side, cards, bcards)
+                                        rankId = Card.hands[rank[0]][0]
+                                        if rank!=None and rank[0] != 'Nothing':
+                                            _cards = ''.join([pokereval.card2string(i)[0] for i in rank[1:]])
+                                        else:
+                                            _cards = None
+                                        self.handsstove.append( [hand.dbid_hands, hand.dbid_pids[pname], streetId, boardId, hl, rankId, value, _cards, 0] )
+                                    except RuntimeError:
+                                        log.error("assembleHandsStove: error determining value and rank for hand %s %s" % (hand.handid, hand.in_path))
+                                        self.handsstove.append( [hand.dbid_hands, hand.dbid_pids[pname], streetId, boardId, 'n', 1, 0, None, 0] )
                             else:
                                 self.handsstove.append( [hand.dbid_hands, hand.dbid_pids[pname], streetId, boardId, 'n', 1, 0, None, 0] )
             else:
@@ -467,14 +471,18 @@ class DerivedStats():
                     if len(players) == len(valid) and (board['allin'] or hand.publicDB):
                         if board['allin'] and not startstreet: startstreet = street
                         if len(valid) > 1:
-                            evs = pokereval.poker_eval(
-                                game = evalgame, 
-                                iterations = Card.iter[streetId],
-                                pockets = [holecards[p]['hole'] for p in valid],
-                                dead = deadcards, 
-                                board = [str(b) for b in board['board'][n]] + (5 - len(board['board'][n])) * ['__']
-                            )
-                            equities = [e['ev'] for e in evs['eval']]
+                            try:
+                                evs = pokereval.poker_eval(
+                                    game = evalgame, 
+                                    iterations = Card.iter[streetId],
+                                    pockets = [holecards[p]['hole'] for p in valid],
+                                    dead = deadcards, 
+                                    board = [str(b) for b in board['board'][n]] + (5 - len(board['board'][n])) * ['__']
+                                )
+                                equities = [e['ev'] for e in evs['eval']]
+                            except RuntimeError:
+                                log.error("getAllInEV: error running poker_eval for hand %s %s" % (hand.handid, hand.in_path))
+                                equities = [1000]
                         else:
                             equities = [1000]
                         remainder = (1000 - sum(equities)) / Decimal(len(equities))
