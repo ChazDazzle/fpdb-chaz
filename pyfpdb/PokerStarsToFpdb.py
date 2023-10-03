@@ -99,6 +99,7 @@ class PokerStars(HandHistoryConverter):
                          '5 Card Omaha' : ('hold', '5_omahahi'),
                    '5 Card Omaha Hi/Lo' : ('hold', '5_omaha8'),
                          '6 Card Omaha' : ('hold', '6_omahahi'),
+                   '6 Card Omaha Hi/Lo' : ('hold', '6_omaha8'),
                            'Courchevel' : ('hold', 'cour_hi'),
                      'Courchevel Hi/Lo' : ('hold', 'cour_hilo'),
                                  'Razz' : ('stud','razz'), 

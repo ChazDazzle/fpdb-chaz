@@ -42,6 +42,7 @@ class PokerStarsSummary(TourneySummary):
                    '5 Card Omaha Hi/Lo' : ('hold', '5_omaha8'),
                      '5 Card Omaha H/L' : ('hold', '5_omaha8'),
                          '6 Card Omaha' : ('hold', '6_omahahi'),
+                   '6 Card Omaha Hi/Lo' : ('hold', '6_omaha8'),
                            'Courchevel' : ('hold', 'cour_hi'),
                      'Courchevel Hi/Lo' : ('hold', 'cour_hilo'),
                        'Courchevel H/L' : ('hold', 'cour_hilo'),

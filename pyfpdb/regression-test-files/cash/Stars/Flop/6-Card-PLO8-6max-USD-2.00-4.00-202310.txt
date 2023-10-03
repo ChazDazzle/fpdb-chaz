@@ -1,0 +1,37 @@
+PokerMaster Hand #201579300118:  6 Card Omaha Hi/Lo Pot Limit ($2/$4 USD) - 2023/10/03 09:07:54 UTC
+Table 'dv0hp 31011613' 6-max Seat #2 is the button
+Seat 1: Player0 ($1141 in chips) 
+Seat 2: Player1 ($1252 in chips) 
+Seat 4: Player2 ($928 in chips) 
+Seat 6: Player3 ($1213 in chips) 
+# {"gt":"PLO6HL","tn":"dv0hp 31011613","tid":1696313564782,"pn":{"0":"Disaster Call","1":"JUICY","3":"Chris Palmer","5":"B🏀🏀kie"},"pids":{"0":7044636183970884691,"1":5707228074119767200,"3":2759167385187450845,"5":2020603134989480303},"hwnd":1053506,"hbcName":"Cooler Central","room":"Prr","ownerClubCode":"dv0hp","pc":{"0":"3XX3S","1":"2QHQC","3":"H3S9T","5":"EW828"}}
+Player2: posts small blind $2
+Player3: posts big blind $4
+*** HOLE CARDS ***
+Player0: raises $10 to $14
+Player1: folds 
+Player2: calls $12
+Player3: calls $10
+*** FLOP *** [Qd 6d Jd]
+Player2: checks 
+Player3: checks 
+Player0: checks 
+*** TURN *** [Qd 6d Jd] [3s]
+Player2: checks 
+Player3: checks 
+Player0: checks 
+*** RIVER *** [Qd 6d Jd 3s] [3h]
+Player2: checks 
+Player3: checks 
+Player0: checks 
+*** SHOW DOWN ***
+Player2: shows [As Ts Tc 9h 6h 5d]
+Player3: shows [Kh Kc 9s 7h 4h 3c]
+Player3 collected $41 from pot
+*** SUMMARY ***
+Total pot $42 | Rake $1 
+Board [Qd 6d Jd 3s 3h]
+Seat 1: Player0 mucked
+Seat 2: Player1 (button) folded before Flop (didn't bet)
+Seat 4: Player2 (small blind) showed [As Ts Tc 9h 6h 5d] and lost with XZ
+Seat 6: Player3 (big blind) showed [Kh Kc 9s 7h 4h 3c] and won ($41) with XZ
