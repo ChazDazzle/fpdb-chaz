@@ -878,11 +878,13 @@ class Database:
             self.cursor = self.connection.cursor()
             self.cursor.execute(self.sql.query['set tx level'])
             self.check_version(database=database, create=create)
+            self.commit()
 
     def get_sites(self):
         self.cursor.execute("SELECT name,id FROM Sites")
         sites = self.cursor.fetchall()
         self.config.set_site_ids(sites)
+        self.commit()
 
     def check_version(self, database, create):
         self.wrongDbVersion = False
