@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="7833284185">
+ <general>
+  <client_version>23.5.1.8</client_version>
+  <mode>real</mode>
+  <gametype>Omaha PL 50kr/100kr</gametype>
+  <tablename>Göteborg 10, 1055504526</tablename>
+  <tablecurrency>SEK</tablecurrency>
+  <smallblind>50kr</smallblind>
+  <bigblind>100kr</bigblind>
+  <duration>00:46:25</duration>
+  <gamecount>97</gamecount>
+  <startdate>2023-10-16 22:37:34</startdate>
+  <currency>SEK</currency>
+  <nickname>Hero</nickname>
+  <bets>50,979.51kr</bets>
+  <wins>24,753kr</wins>
+  <chipsin>13,484.51kr</chipsin>
+  <chipsout>0kr</chipsout>
+  <statuspoints>150.00</statuspoints>
+  <awardpoints>0.00</awardpoints>
+  <ipoints>150.00</ipoints>
+  <tablesize>6</tablesize>
+ </general>
+ <game gamecode="10347371194">
+  <general>
+   <startdate>2023-10-16 22:37:34</startdate>
+   <players>
+    <player win="1,790kr" bet="1,494kr" name="Player0" seat="3" dealer="0" chips="4,510kr"/>
+    <player win="0kr" bet="900kr" name="Hero" seat="6" dealer="1" chips="14,384.51kr"/>
+   </players>
+  </general>
+  <round no="0">
+   <action type="1" sum="50kr" no="1" player="Hero"/>
+   <action type="2" sum="100kr" no="2" player="Player0"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Hero">D10 D9 H5 S6</cards>
+   <action type="23" sum="300kr" no="3" player="Hero"/>
+   <cards type="Pocket" player="Player0">X X X X</cards>
+   <action type="23" sum="900kr" no="4" player="Player0"/>
+   <action type="3" sum="600kr" no="5" player="Hero"/>
+  </round>
+  <round no="2">
+   <cards type="Flop">HA HK H10</cards>
+   <action type="5" sum="594kr" no="6" player="Player0"/>
+   <action type="0" sum="0kr" no="7" player="Hero"/>
+  </round>
+ </game>

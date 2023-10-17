@@ -58,7 +58,7 @@ class iPoker(HandHistoryConverter):
     summaryInFile = True
 
     substitutions = {
-                     'LS'  : u"\$|\xe2\x82\xac|\xe2\u201a\xac|\u20ac|\xc2\xa3|\£|RSD|",
+                     'LS'  : u"\$|\xe2\x82\xac|\xe2\u201a\xac|\u20ac|\xc2\xa3|\£|RSD|kr|",
                      'PLYR': r'(?P<PNAME>[^"]+)',
                      'NUM' : r'.,\d',
                     }
@@ -85,7 +85,7 @@ class iPoker(HandHistoryConverter):
                 'Omaha HiLow' : ('hold','omahahilo'),
             }
 
-    currencies = { u'€':'EUR', '$':'USD', '':'T$', u'£':'GBP', 'RSD': 'RSD'}
+    currencies = { u'€':'EUR', '$':'USD', '':'T$', u'£':'GBP', 'RSD': 'RSD', 'kr': 'kr'}
     
     # translations from captured groups to fpdb info strings
     Lim_Blinds = {      '0.04': ('0.01', '0.02'),         '0.08': ('0.02', '0.04'),
