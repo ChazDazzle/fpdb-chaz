@@ -85,7 +85,7 @@ class iPoker(HandHistoryConverter):
                 'Omaha HiLow' : ('hold','omahahilo'),
             }
 
-    currencies = { u'€':'EUR', '$':'USD', '':'T$', u'£':'GBP', 'RSD': 'RSD', 'kr': 'kr'}
+    currencies = { u'€':'EUR', '$':'USD', '':'T$', u'£':'GBP', 'RSD': 'RSD', 'kr': 'SEK'}
     
     # translations from captured groups to fpdb info strings
     Lim_Blinds = {      '0.04': ('0.01', '0.02'),         '0.08': ('0.02', '0.04'),
