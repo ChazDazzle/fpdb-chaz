@@ -1,0 +1,41 @@
+MPLPoker Hand #4227510401:  Hold'em No Limit (₹50/₹100) - 2023/10/17 10:36:50 UTC
+Table 'NLH 50/100 #31'(1941947783) 6-max (Real Money) Seat #6 is the button
+Seat 1: Player0 (₹10,274.40 in chips)
+Seat 2: Hero (₹10,000 in chips)
+Seat 3: Player1 (₹9,433.91 in chips)
+Seat 4: Player2 (₹7,313.75 in chips)
+Seat 5: Player3 (₹23,639.03 in chips)
+Seat 6: Player4 (₹9,600.18 in chips)
+Player0: posts small blind ₹50
+Hero: posts big blind ₹100
+*** HOLE CARDS ***
+Dealt to Hero [Ah 8d]
+Player1: folds
+Player2: folds
+Player3: folds
+Player4: raises ₹200 to ₹200
+Player0: folds
+Hero: calls ₹100
+*** FLOP *** [6s 2c Jc]
+Hero: checks
+Player4: checks
+*** TURN *** [6s 2c Jc] [Ad]
+Hero: checks
+Player4: bets ₹300
+Hero: calls ₹300
+*** RIVER *** [6s 2c Jc Ad] [Jh]
+Hero: checks
+Player4: checks
+*** SHOW DOWN ***
+Hero: shows [Ah 8d] (two pair, Aces and Jacks)
+Player4: mucks hand
+Hero collected ₹1,050 from pot
+*** SUMMARY ***
+Total pot ₹1,050 | Rake ₹53.76 
+Board [6s 2c Jc Ad Jh]
+Seat 1: Player0 (small blind) folded before Flop 
+Seat 2: Hero (big blind) showed [Ah 8d] and won (₹1,050) with two pair, Aces and Jacks
+Seat 3: Player1 folded before Flop (didn't bet)
+Seat 4: Player2 folded before Flop (didn't bet)
+Seat 5: Player3 folded before Flop (didn't bet)
+Seat 6: Player4 (button) mucked
