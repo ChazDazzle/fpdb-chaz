@@ -97,8 +97,10 @@ class PokerStars(HandHistoryConverter):
                           'Omaha Hi/Lo' : ('hold','omahahilo'),
                           'OMAHA HI/LO' : ('hold','omahahilo'),
                          '5 Card Omaha' : ('hold', '5_omahahi'),
+                        'Omaha 5 Cards' : ('hold', '5_omahahi'),
                    '5 Card Omaha Hi/Lo' : ('hold', '5_omaha8'),
                          '6 Card Omaha' : ('hold', '6_omahahi'),
+                        'Omaha 6 Cards' : ('hold', '6_omahahi'),
                    '6 Card Omaha Hi/Lo' : ('hold', '6_omaha8'),
                            'Courchevel' : ('hold', 'cour_hi'),
                      'Courchevel Hi/Lo' : ('hold', 'cour_hilo'),
@@ -139,7 +141,7 @@ class PokerStars(HandHistoryConverter):
           # close paren of tournament info
           (?P<MIXED>HORSE|8\-Game|8\-GAME|HOSE|Mixed\sOmaha\sH/L|Mixed\sHold\'em|Mixed\sPLH/PLO|Mixed\sNLH/PLO|Mixed\sOmaha|Triple\sStud)?\s?\(?
           (?P<SPLIT>Split)?\s?
-          (?P<GAME>Hold\'em|HOLD\'EM|Hold\'em|6\+\sHold\'em|Razz|RAZZ|7\sCard\sStud|7\sCARD\sSTUD|7\sCard\sStud\sHi/Lo|7\sCARD\sSTUD\sHI/LO|Omaha|OMAHA|Omaha\sHi/Lo|OMAHA\sHI/LO|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|(5|6)\sCard\sOmaha(\sHi/Lo)?|Courchevel(\sHi/Lo)?)\s
+          (?P<GAME>Hold\'em|HOLD\'EM|Hold\'em|6\+\sHold\'em|Razz|RAZZ|7\sCard\sStud|7\sCARD\sSTUD|7\sCard\sStud\sHi/Lo|7\sCARD\sSTUD\sHI/LO|Omaha|OMAHA|Omaha\sHi/Lo|OMAHA\sHI/LO|Badugi|Triple\sDraw\s2\-7\sLowball|Single\sDraw\s2\-7\sLowball|5\sCard\sDraw|(5|6)\sCard\sOmaha(\sHi/Lo)?|Omaha\s(5|6)\sCards|Courchevel(\sHi/Lo)?)\s
           (?P<LIMIT>No\sLimit|NO\sLIMIT|Fixed\sLimit|Limit|LIMIT|Pot\sLimit|POT\sLIMIT|Pot\sLimit\sPre\-Flop,\sNo\sLimit\sPost\-Flop)\)?,?\s
           (-\s)?
           (?P<SHOOTOUT>Match.*,\s)?
@@ -164,9 +166,6 @@ class PokerStars(HandHistoryConverter):
           \)
           (?P<SITOUT>\sis\ssitting\sout)?""" % substitutions, 
           re.MULTILINE|re.VERBOSE)
-    
-    #MPLPoker Hand #4227510401:  Hold'em No Limit (₹50/₹100) - 2023/10/17 10:36:50 UTC
-    #Table 'NLH 50/100 #31'(1941947783) 6-max (Real Money) Seat #6 is the button
 
     re_HandInfo     = re.compile("""
           ^\s?Table\s(ID\s)?\'(?P<TABLE>.+?)\'(\(\d+\))?\s

@@ -1,0 +1,22 @@
+MPLPoker Hand #4227871731:  Omaha 5 Cards Pot Limit (₹100/₹200) - 2023/10/17 22:39:01 UTC
+Table 'PLO5  100/200 RIT #7'(1941903751) 6-max (Real Money) Seat #1 is the button
+Seat 1: Player0 (₹8,946.98 in chips)
+Seat 4: Hero (₹20,000 in chips)
+Player0: posts small blind ₹100
+Hero: posts big blind ₹200
+*** HOLE CARDS ***
+Dealt to Hero [2s 6d 7s Kh 3h]
+Player0: calls ₹100
+Hero: checks
+*** FLOP *** [Ah 2d Th]
+Hero: bets ₹300
+Player0: folds
+Uncalled bet (₹300) returned to Hero
+*** SHOW DOWN ***
+Hero: doesn't show hand
+Hero collected ₹400 from pot
+*** SUMMARY ***
+Total pot ₹400 | Rake ₹15.35 
+Board [Ah 2d Th]
+Seat 1: Player0 (button) (small blind) folded on the Flop 
+Seat 4: Hero (big blind) collected (₹400)
