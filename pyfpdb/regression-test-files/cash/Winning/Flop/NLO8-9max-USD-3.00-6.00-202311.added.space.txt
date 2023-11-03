@@ -1,0 +1,23 @@
+Hand #1916523972 - Omaha H/L (No Limit) - $3.00/$6.00 - 2023/11/02 13:08:56 UTC
+Catlettsburg 9-max Seat #2 is the button
+Seat 1: Player0 ($502.98)
+Seat 2: Player1 ($287.70)
+Seat 3: Player2 ($243.00)
+Seat 4: Hero ($120.00)
+Seat 9: Player3 ($180.77)
+Player2 posts the small blind $3.00
+Hero posts the big blind $6.00
+*** HOLE CARDS ***
+Dealt to Hero [7d Th 4s Qc]
+Player3 folds
+Player0 folds
+Player1 folds
+Player2 folds
+Hero does not show
+*** SUMMARY ***
+Total pot $9.00
+Seat 1: Player0 folded on the Pre-Flop and did not bet
+Seat 2: Player1 (button) folded on the Pre-Flop
+Seat 3: Player2 (small blind) folded on the Pre-Flop
+Seat 4: Hero did not show and won $9.00
+Seat 9: Player3 folded on the Pre-Flop and did not bet
