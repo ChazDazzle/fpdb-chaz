@@ -161,7 +161,8 @@ class Winning(HandHistoryConverter):
           (?P<TOUR>([\$.,\dKkmM]+\sGTD\s)?Tournament\s\#(?P<TOURNO>\d+)\s\-\s) # open paren of tournament info
           )?
           # close paren of tournament info
-          (?P<GAME>Holdem|Omaha|Omaha\sH/L|7Stud|7Stud\sH/L|5Card\sOmaha|5Card\sOmaha\sH/L)\s? 
+          (?P<GAME>Holdem|Omaha|Omaha\sH/L|7Stud|7Stud\sH/L|5Card\sOmaha|5Card\sOmaha\sH/L)
+          (\sReshuffle)?\s?
           \((?P<LIMIT>No\sLimit|Fixed\sLimit|Pot\sLimit|All\-in\sor\sFold\sLimit)\)\s\-\s
           (Level\s(?P<LEVEL>[IVXLC\d]+)\s)?
           \(?                            # open paren of the stakes

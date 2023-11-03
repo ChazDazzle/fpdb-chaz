@@ -1,0 +1,22 @@
+Hand #1917987732 - 5Card Omaha Reshuffle (Pot Limit) - $10.00/$20.00 - 2023/11/03 20:57:05 UTC
+Olympia Fields 4-max Seat #4 is the button
+Seat 1: Player0 ($5556.08)
+Seat 2: Hero ($800.00)
+Seat 3: Player1 ($2242.37)
+Seat 4: Player2 ($2771.23)
+Player0 posts the small blind $10.00
+Hero posts the big blind $20.00
+*** HOLE CARDS ***
+Player1 folds
+Player2 raises $70.00 to $70.00
+Player0 folds
+Dealt to Hero [Jc 7h Kh 6h Kd]
+Hero folds
+Uncalled bet ($50.00) returned to Player2
+Player2 does not show
+*** SUMMARY ***
+Total pot $50.00
+Seat 1: Player0 (small blind) folded on the Pre-Flop
+Seat 2: Hero (big blind) folded on the Pre-Flop
+Seat 3: Player1 folded on the Pre-Flop and did not bet
+Seat 4: Player2 did not show and won $50.00
