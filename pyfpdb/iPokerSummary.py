@@ -30,7 +30,7 @@ class iPokerSummary(TourneySummary):
     substitutions = {
                      'LS'  : u"\$|\xe2\x82\xac|\xe2\u201a\xac|\u20ac|\xc2\xa3|\£|RSD|kr|",
                      'PLYR': r'(?P<PNAME>[^"]+)',
-                     'NUM' : r'.,0-9',
+                     'NUM' : r'.,0-9\s',
                     }
     currencies = { u'€':'EUR', '$':'USD', '':'T$', u'£':'GBP', 'RSD': 'RSD', 'kr': 'SEK'}
 
