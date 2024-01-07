@@ -1,0 +1,30 @@
+PokerStars Hand #247946884164: Tournament #3688115389, €45+€45+€10 EUR Hold'em No Limit - Level I (125/250) [ADM ID: M5B4211F65DB6CXO] - 2023/12/29 23:04:22 CET [2023/12/29 17:04:22 ET]
+Table '3688115389 14' 6-max Seat #2 is the button
+Seat 2: Player0 (26200 in chips, €45 bounty)
+Seat 3: Player1 (23770 in chips, €45 bounty)
+Seat 4: Player2 (25000 in chips, €45 bounty)
+Seat 5: Player3 (25000 in chips, €45 bounty)
+Seat 6: Hero (25000 in chips, €45 bounty)
+Player0: posts the ante 30
+Player1: posts the ante 30
+Player2: posts the ante 30
+Player3: posts the ante 30
+Hero: posts the ante 30
+Player1: posts small blind 125
+Player2: posts big blind 250
+*** HOLE CARDS ***
+Dealt to Hero [Jh 2h]
+Player3: folds
+Hero: folds
+Player0: raises 300 to 550
+Player1: folds
+Player2: folds
+Uncalled bet (300) returned to Player0
+Player0 collected 775 from pot
+*** SUMMARY ***
+Total pot 775 | Rake 0
+Seat 2: Player0 (button) collected (775)
+Seat 3: Player1 (small blind) folded before Flop
+Seat 4: Player2 (big blind) folded before Flop
+Seat 5: Player3 folded before Flop (didn't bet)
+Seat 6: Hero folded before Flop (didn't bet)
