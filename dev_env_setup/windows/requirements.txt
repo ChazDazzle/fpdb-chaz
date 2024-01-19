@@ -1,0 +1,9 @@
+matplotlib==1.4.3
+winpaths==0.2
+pytz==2015.4
+six==1.9.0
+python-dateutil==2.4.2
+pyparsing==2.0.3
+beautifulsoup==3.2.1
+xlrd==0.9.3
+pyinstaller==2.1
