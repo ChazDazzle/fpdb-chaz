@@ -785,6 +785,10 @@ class PokerStars(HandHistoryConverter):
                     hand.addCollectPot(player=m.group('PNAME'),pot=str(Decimal(pot)*2))
                 else:
                     hand.addCollectPot(player=m.group('PNAME'),pot=pot)
+        if hand.cashedOut:
+            m = self.re_Rake.search(post)
+            if m:
+                hand.rake = Decimal(m.group('RAKE'))
 
     def readShownCards(self,hand):
         if self.siteId == 26:

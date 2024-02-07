@@ -491,7 +491,7 @@ class DerivedStats():
                             p = valid[i]
                             pid = hand.dbid_pids[p]
                             if street == startstreet:
-                                rake = Decimal(0) if hand.cashedOut else (hand.rake * (Decimal(pot)/Decimal(hand.totalpot)))
+                                rake = hand.rake * (Decimal(pot)/Decimal(hand.totalpot))
                                 holecards[p]['eq'] += ((pot - rake) * equities[i])/Decimal(10)
                                 holecards[p]['committed'] = 100*hand.pot.committed[p] + 100*hand.pot.common[p]
                             for j in self.handsstove:
@@ -660,6 +660,10 @@ class DerivedStats():
             ):
             #print 'DEBUG hand.collected', hand.collected
             #print 'DEBUG hand.collectees', hand.collectees
+            if not hand.cashedOut:
+                for p in hand.players:
+                    self.handsplayers[p[1]]['rake'] = 0
+                hand.rake = 0
             rakes, totrake, potId = {}, 0, 0
             for pot, players in hand.pot.pots:
                 if potId ==0: pot += (sum(hand.pot.common.values()) + hand.pot.stp)
@@ -712,7 +716,6 @@ class DerivedStats():
                                     potFound[pname][0] += ppot
                                     data = {'potId': potId, 'boardId': boardId, 'hiLo': hl,'ppot':ppot, 'winners': [m for m in pnames if pname!=n], 'mod': ppot>potSplit}
                                     playersPots[pname][1].append(data)
-                                    self.handsplayers[pname]['rake'] = 0
         
             for p, (total, info) in playersPots.iteritems():
                 #log.error((p, (total, info)))
@@ -741,7 +744,9 @@ class DerivedStats():
                         potFound[p][1] -= collected
                         insert = [None, item['potId'], item['boardId'], item['hiLo'][0], hand.dbid_pids[p], int(item['ppot']*100), int(collected*100), int(rake*100)]   
                         self.handspots.append(insert)
-                        self.handsplayers[p]['rake'] += int(rake*100)
+                        if not hand.cashedOut:
+                            self.handsplayers[p]['rake'] += int(rake*100)
+                            hand.rake += rake
 
     def setPositions(self, hand):
         """Sets the position for each player in HandsPlayers

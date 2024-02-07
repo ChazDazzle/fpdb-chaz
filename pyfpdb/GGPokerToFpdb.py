@@ -209,7 +209,7 @@ class GGPoker(HandHistoryConverter):
                         and\stheir\sown\sbounty\sincreases\sby\s%(CUR)s(?P<INCREASE>[\.0-9]+)\sto\s%(CUR)s(?P<ENDAMT>[\.0-9]+)$"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
     re_Rake             = re.compile(u"""
-                        Total\spot\s%(CUR)s(?P<POT>[,\.0-9]+)(.+?)?\s\|\sRake\s%(CUR)s(?P<RAKE>[,\.0-9]+)"""
+                        Total\spot\s%(CUR)s(?P<POT>[,\.0-9]+)(.+?)?\s\|\sRake\s%(CUR)s(?P<RAKE>[,\.0-9]+)(\s\|\sJackpot\s%(CUR)s(?P<JACKPOT>[,\.0-9]+))?(\s\|\ssBingo\s%(CUR)s(?P<BINGO>[,\.0-9]+))?"""
                          %  substitutions, re.MULTILINE|re.VERBOSE)
     
     re_STP             = re.compile(u"""
@@ -683,6 +683,14 @@ class GGPoker(HandHistoryConverter):
                 for m in self.re_CollectPot4.finditer(pre):
                     pot = '-' + self.clearMoneyString(m.group('POT'))
                     hand.addCollectPot(player=m.group('PNAME'),pot=pot)
+        if hand.cashedOut:
+            m = self.re_Rake.search(post)
+            if m:
+                hand.rake = Decimal(m.group('RAKE'))
+                if m.group('JACKPOT'):
+                    hand.rake += Decimal(m.group('JACKPOT'))
+                if m.group('BINGO'):
+                    hand.rake += Decimal(m.group('BINGO'))
 
     def readShownCards(self,hand):                
         for m in self.re_ShownCards.finditer(hand.handText):
